@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔴 Nico Monitor - WhatsApp Activity</title>
+  <title>🔴 Nico Monitor - Log</title>
   <style>
     * {
       margin: 0;
@@ -15,49 +15,47 @@
       font-family: 'Courier New', monospace;
       background: #1a1a1a;
       color: #ffffff;
-      line-height: 1.4;
+      line-height: 1.6;
+      font-size: 12px;
     }
 
     .container {
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      height: 100vh;
     }
 
     /* HEADER */
     .header {
       background: #0d0d0f;
       border-bottom: 2px solid #333;
-      padding: 15px 20px;
+      padding: 12px 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
     }
 
     .header h1 {
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 16px;
       letter-spacing: 1px;
     }
 
-    .header-controls {
+    .controls {
       display: flex;
-      gap: 15px;
+      gap: 10px;
       align-items: center;
     }
 
-    .status-indicator {
+    .status {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 12px;
+      gap: 6px;
+      font-size: 11px;
     }
 
     .status-dot {
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: #2ecc71;
       animation: pulse 2s infinite;
@@ -77,17 +75,16 @@
       background: #3498db;
       border: 1px solid #2980b9;
       color: #fff;
-      padding: 8px 16px;
-      border-radius: 4px;
+      padding: 6px 12px;
+      border-radius: 3px;
       cursor: pointer;
       font-family: 'Courier New', monospace;
-      font-size: 12px;
+      font-size: 11px;
       transition: all 0.2s;
     }
 
     .btn:hover {
       background: #2980b9;
-      border-color: #1f618d;
     }
 
     .btn:active {
@@ -99,141 +96,105 @@
       cursor: not-allowed;
     }
 
-    /* MAIN CONTENT */
-    .content {
-      flex: 1;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      overflow: hidden;
-    }
-
-    .column {
-      display: flex;
-      flex-direction: column;
-      border-right: 1px solid #333;
-      overflow: hidden;
-    }
-
-    .column:last-child {
-      border-right: none;
-    }
-
-    .column-header {
-      padding: 15px;
-      border-bottom: 2px solid #333;
-      background: #0d0d0f;
-    }
-
-    .column-header h2 {
-      font-size: 16px;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    .column-header .stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      font-size: 11px;
-      color: #999;
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .stat-label {
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .stat-value {
-      color: #2ecc71;
-      font-weight: bold;
-    }
-
-    /* CLIENT COLORS */
-    .column.erico .column-header { border-bottom-color: #d6ba9e; }
-    .column.erico .column-header h2 { color: #d6ba9e; }
-
-    .column.humberto .column-header { border-bottom-color: #3498db; }
-    .column.humberto .column-header h2 { color: #3498db; }
-
-    .column.gabrielle .column-header { border-bottom-color: #e74c3c; }
-    .column.gabrielle .column-header h2 { color: #e74c3c; }
-
-    /* TABLE */
-    .table-wrapper {
+    /* LOG AREA */
+    .log {
       flex: 1;
       overflow-y: auto;
-      overflow-x: auto;
-      padding: 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 10px;
-    }
-
-    thead {
-      position: sticky;
-      top: 0;
-      background: #0d0d0f;
-      border-bottom: 2px solid #333;
-    }
-
-    th {
-      padding: 8px;
-      text-align: left;
-      font-weight: bold;
-      color: #3498db;
-      white-space: nowrap;
-      border: 1px solid #333;
-    }
-
-    td {
-      padding: 8px;
-      border: 1px solid #333;
-      word-break: break-word;
-      max-width: 150px;
-    }
-
-    tr:hover {
-      background: #252525;
-    }
-
-    tr:nth-child(even) {
-      background: #1f1f1f;
-    }
-
-    .empty {
-      text-align: center;
-      color: #666;
-      padding: 40px 20px;
-      font-size: 11px;
-    }
-
-    /* SCROLLBAR */
-    .table-wrapper::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    .table-wrapper::-webkit-scrollbar-track {
+      padding: 10px 15px;
       background: #1a1a1a;
     }
 
-    .table-wrapper::-webkit-scrollbar-thumb {
+    .log-entry {
+      padding: 6px 0;
+      border-bottom: 1px solid #2a2a2a;
+      display: flex;
+      gap: 12px;
+      animation: slideIn 0.2s ease-out;
+      word-break: break-word;
+    }
+
+    .log-entry:hover {
+      background: #1f1f1f;
+      padding: 6px 8px;
+      border-radius: 2px;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .log-time {
+      color: #666;
+      min-width: 75px;
+      white-space: nowrap;
+    }
+
+    .log-client {
+      min-width: 90px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .log-client.erico {
+      color: #d6ba9e;
+    }
+
+    .log-client.humberto {
+      color: #3498db;
+    }
+
+    .log-client.gabrielle {
+      color: #e74c3c;
+    }
+
+    .log-name {
+      color: #999;
+      min-width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .log-message {
+      flex: 1;
+      color: #e0e0e0;
+      word-break: break-word;
+    }
+
+    .log-status {
+      color: #2ecc71;
+      min-width: 25px;
+      white-space: nowrap;
+    }
+
+    .empty {
+      color: #666;
+      text-align: center;
+      padding: 40px;
+    }
+
+    /* SCROLLBAR */
+    .log::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .log::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    .log::-webkit-scrollbar-thumb {
       background: #333;
       border-radius: 4px;
     }
 
-    .table-wrapper::-webkit-scrollbar-thumb:hover {
+    .log::-webkit-scrollbar-thumb:hover {
       background: #444;
     }
 
@@ -241,7 +202,7 @@
     .footer {
       background: #0d0d0f;
       border-top: 2px solid #333;
-      padding: 12px 20px;
+      padding: 10px 15px;
       font-size: 11px;
       color: #999;
       display: flex;
@@ -249,52 +210,27 @@
       align-items: center;
     }
 
-    .footer-stats {
+    .stats {
       display: flex;
-      gap: 30px;
+      gap: 20px;
     }
 
-    .footer-stat {
+    .stat {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      gap: 5px;
     }
 
-    .footer-label {
+    .stat-label {
       color: #666;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
 
-    .footer-value {
+    .stat-value {
       color: #2ecc71;
       font-weight: bold;
     }
 
     .last-update {
       color: #666;
-      font-size: 10px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 1400px) {
-      .content {
-        grid-template-columns: 1fr;
-      }
-
-      .column {
-        border-right: none;
-        border-bottom: 1px solid #333;
-      }
-
-      table {
-        font-size: 9px;
-      }
-
-      td {
-        max-width: 100px;
-        padding: 6px;
-      }
     }
   </style>
 </head>
@@ -302,236 +238,166 @@
   <div class="container">
     <!-- HEADER -->
     <div class="header">
-      <h1>🔴 NICO MONITOR</h1>
-      <div class="header-controls">
-        <div class="status-indicator">
+      <h1>🔴 NICO MONITOR - LOG</h1>
+      <div class="controls">
+        <div class="status">
           <span class="status-dot" id="status-dot"></span>
-          <span id="status-text">Status: 🟢 Online</span>
+          <span id="status-text">Online</span>
         </div>
-        <button class="btn" id="refresh-btn" onclick="loadMessages()">
-          🔄 Refresh
-        </button>
+        <button class="btn" id="refresh-btn" onclick="loadLog()">🔄 Refresh</button>
+        <button class="btn" onclick="clearLog()">🗑️ Limpar</button>
       </div>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="content">
-      <!-- ERICO -->
-      <div class="column erico">
-        <div class="column-header">
-          <h2>👨 ERICO</h2>
-          <div class="stats">
-            <div class="stat-item">
-              <span class="stat-label">Total</span>
-              <span class="stat-value" id="erico-total">0</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-label">Última</span>
-              <span class="stat-value" id="erico-last">—</span>
-            </div>
-          </div>
-        </div>
-        <div class="table-wrapper" id="erico-table-wrapper">
-          <div class="empty">Carregando...</div>
-        </div>
-      </div>
-
-      <!-- HUMBERTO -->
-      <div class="column humberto">
-        <div class="column-header">
-          <h2>👨 HUMBERTO</h2>
-          <div class="stats">
-            <div class="stat-item">
-              <span class="stat-label">Total</span>
-              <span class="stat-value" id="humberto-total">0</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-label">Última</span>
-              <span class="stat-value" id="humberto-last">—</span>
-            </div>
-          </div>
-        </div>
-        <div class="table-wrapper" id="humberto-table-wrapper">
-          <div class="empty">Carregando...</div>
-        </div>
-      </div>
-
-      <!-- GABRIELLE -->
-      <div class="column gabrielle">
-        <div class="column-header">
-          <h2>👩 GABRIELLE</h2>
-          <div class="stats">
-            <div class="stat-item">
-              <span class="stat-label">Total</span>
-              <span class="stat-value" id="gabrielle-total">0</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-label">Última</span>
-              <span class="stat-value" id="gabrielle-last">—</span>
-            </div>
-          </div>
-        </div>
-        <div class="table-wrapper" id="gabrielle-table-wrapper">
-          <div class="empty">Carregando...</div>
-        </div>
-      </div>
+    <!-- LOG -->
+    <div class="log" id="log">
+      <div class="empty">Aguardando mensagens...</div>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
-      <div class="footer-stats">
-        <div class="footer-stat">
-          <span class="footer-label">Total Geral</span>
-          <span class="footer-value" id="footer-total">0 msgs</span>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">Total:</span>
+          <span class="stat-value" id="total">0</span>
         </div>
-        <div class="footer-stat">
-          <span class="footer-label">Erico</span>
-          <span class="footer-value" id="footer-erico">0</span>
+        <div class="stat">
+          <span class="stat-label">Erico:</span>
+          <span class="stat-value" id="erico-count">0</span>
         </div>
-        <div class="footer-stat">
-          <span class="footer-label">Humberto</span>
-          <span class="footer-value" id="footer-humberto">0</span>
+        <div class="stat">
+          <span class="stat-label">Humberto:</span>
+          <span class="stat-value" id="humberto-count">0</span>
         </div>
-        <div class="footer-stat">
-          <span class="footer-label">Gabrielle</span>
-          <span class="footer-value" id="footer-gabrielle">0</span>
+        <div class="stat">
+          <span class="stat-label">Gabrielle:</span>
+          <span class="stat-value" id="gabrielle-count">0</span>
         </div>
       </div>
       <div class="last-update">
-        Última atualização: <span id="last-update-time">—</span>
+        Última: <span id="last-update">—</span>
       </div>
     </div>
   </div>
 
   <script>
-    const state = {
-      erico: [],
-      humberto: [],
-      gabrielle: []
-    };
+    const logData = [];
+    const MAX_ENTRIES = 100;
 
-    function formatDate(timestamp) {
-      if (!timestamp) return '—';
+    function formatTime(timestamp) {
       const date = new Date(timestamp);
-      return date.toLocaleString('pt-BR', {
-        month: '2-digit',
-        day: '2-digit',
+      return date.toLocaleTimeString('pt-BR', {
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit'
       });
     }
 
-    function formatTimeAgo(timestamp) {
-      if (!timestamp) return '—';
-      const now = Date.now();
-      const diff = Math.floor((now - timestamp) / 1000);
-
-      if (diff < 60) return `${diff}s atrás`;
-      if (diff < 3600) return `${Math.floor(diff / 60)}m atrás`;
-      if (diff < 86400) return `${Math.floor(diff / 3600)}h atrás`;
-      return `${Math.floor(diff / 86400)}d atrás`;
+    function truncateText(text, length = 60) {
+      if (!text) return '[vazio]';
+      if (text.length > length) return text.substring(0, length) + '...';
+      return text;
     }
 
-    function renderTable(client, messages) {
-      const wrapper = document.getElementById(`${client}-table-wrapper`);
+    function addEntry(client, pushName, message, timestamp) {
+      const entry = { client, pushName, message, timestamp };
+      logData.unshift(entry);
 
-      if (!messages || messages.length === 0) {
-        wrapper.innerHTML = '<div class="empty">Nenhuma mensagem encontrada</div>';
+      // Manter apenas últimas 100
+      if (logData.length > MAX_ENTRIES) {
+        logData.pop();
+      }
+
+      renderLog();
+      updateStats();
+    }
+
+    function renderLog() {
+      const logEl = document.getElementById('log');
+
+      if (logData.length === 0) {
+        logEl.innerHTML = '<div class="empty">Aguardando mensagens...</div>';
         return;
       }
 
-      const columns = Object.keys(messages[0]);
-      const html = `
-        <table>
-          <thead>
-            <tr>
-              ${columns.map(col => `<th>${col}</th>`).join('')}
-            </tr>
-          </thead>
-          <tbody>
-            ${messages.map(msg => `
-              <tr>
-                ${columns.map(col => {
-                  let value = msg[col];
-                  if (col.includes('timestamp') && typeof value === 'number') {
-                    value = formatDate(value);
-                  }
-                  return `<td title="${value}">${value || '—'}</td>`;
-                }).join('')}
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      `;
+      logEl.innerHTML = logData.map(entry => `
+        <div class="log-entry">
+          <div class="log-time">${formatTime(entry.timestamp)}</div>
+          <div class="log-client ${entry.client}">${entry.client.toUpperCase()}</div>
+          <div class="log-name" title="${entry.pushName}">${entry.pushName}</div>
+          <div class="log-message" title="${entry.message}">${truncateText(entry.message)}</div>
+          <div class="log-status">✅</div>
+        </div>
+      `).join('');
 
-      wrapper.innerHTML = html;
+      logEl.scrollTop = 0;
     }
 
     function updateStats() {
-      const ericoCount = state.erico.length;
-      const humbertoCount = state.humberto.length;
-      const gabrielleCount = state.gabrielle.length;
-      const total = ericoCount + humbertoCount + gabrielleCount;
+      const total = logData.length;
+      const erico = logData.filter(e => e.client === 'erico').length;
+      const humberto = logData.filter(e => e.client === 'humberto').length;
+      const gabrielle = logData.filter(e => e.client === 'gabrielle').length;
 
-      document.getElementById('erico-total').textContent = ericoCount;
-      document.getElementById('humberto-total').textContent = humbertoCount;
-      document.getElementById('gabrielle-total').textContent = gabrielleCount;
-
-      document.getElementById('erico-last').textContent = state.erico[0]
-        ? formatTimeAgo(state.erico[0].timestamp)
-        : '—';
-      document.getElementById('humberto-last').textContent = state.humberto[0]
-        ? formatTimeAgo(state.humberto[0].timestamp)
-        : '—';
-      document.getElementById('gabrielle-last').textContent = state.gabrielle[0]
-        ? formatTimeAgo(state.gabrielle[0].timestamp)
-        : '—';
-
-      document.getElementById('footer-total').textContent = `${total} msgs`;
-      document.getElementById('footer-erico').textContent = ericoCount;
-      document.getElementById('footer-humberto').textContent = humbertoCount;
-      document.getElementById('footer-gabrielle').textContent = gabrielleCount;
-
-      document.getElementById('last-update-time').textContent = new Date().toLocaleTimeString('pt-BR');
+      document.getElementById('total').textContent = total;
+      document.getElementById('erico-count').textContent = erico;
+      document.getElementById('humberto-count').textContent = humberto;
+      document.getElementById('gabrielle-count').textContent = gabrielle;
+      document.getElementById('last-update').textContent = new Date().toLocaleTimeString('pt-BR');
     }
 
-    async function loadMessages() {
+    function clearLog() {
+      if (confirm('Limpar log? ⚠️')) {
+        logData.length = 0;
+        renderLog();
+        updateStats();
+      }
+    }
+
+    async function loadLog() {
       const btn = document.getElementById('refresh-btn');
       btn.classList.add('loading');
       btn.disabled = true;
 
       try {
-        const response = await fetch('/api/monitor/messages?limit=10');
+        const response = await fetch('/api/monitor/messages?limit=100');
         const data = await response.json();
 
-        state.erico = data.erico || [];
-        state.humberto = data.humberto || [];
-        state.gabrielle = data.gabrielle || [];
+        logData.length = 0;
 
-        renderTable('erico', state.erico);
-        renderTable('humberto', state.humberto);
-        renderTable('gabrielle', state.gabrielle);
+        // Adicionar mensagens em ordem inversa (mais recentes primeiro)
+        [
+          ...data.gabrielle.reverse(),
+          ...data.humberto.reverse(),
+          ...data.erico.reverse()
+        ].forEach(msg => {
+          addEntry(
+            msg.chat_name?.toLowerCase().includes('erico') ? 'erico' :
+            msg.chat_name?.toLowerCase().includes('humberto') ? 'humberto' :
+            'gabrielle',
+            msg.push_name || 'Desconhecido',
+            msg.content || '[sem conteúdo]',
+            msg.timestamp
+          );
+        });
 
+        renderLog();
         updateStats();
       } catch (err) {
         console.error('Load error:', err);
         document.getElementById('status-dot').classList.add('offline');
-        document.getElementById('status-text').textContent = 'Status: 🔴 Erro ao carregar';
+        document.getElementById('status-text').textContent = 'Offline';
       } finally {
         btn.classList.remove('loading');
         btn.disabled = false;
       }
     }
 
-    // Auto-refresh a cada 5 segundos
-    setInterval(loadMessages, 5000);
-
-    // Atualizar "última" a cada segundo
-    setInterval(updateStats, 1000);
+    // Auto-refresh a cada 3 segundos
+    setInterval(loadLog, 3000);
 
     // Carregar na inicialização
-    loadMessages();
+    loadLog();
   </script>
 </body>
 </html>
