@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔴 Nico Monitor - Professional Activity Dashboard</title>
+  <title>🔴 Nico Monitor - Professional Dashboard</title>
   <style>
     * {
       margin: 0;
@@ -22,11 +22,14 @@
       --erico: #d6ba9e;
       --humberto: #3b82f6;
       --gabrielle: #ef4444;
-      --accent: #06b6d4;
+      --vanessa: #8b5cf6;
+      --torre1: #f59e0b;
+      --fourcred: #06b6d4;
+      --prof-humberto: #ec4899;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
       background: var(--bg-primary);
       color: var(--text-primary);
       line-height: 1.5;
@@ -37,11 +40,10 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
-      max-width: 1400px;
+      max-width: 1600px;
       margin: 0 auto;
     }
 
-    /* HEADER */
     .header {
       background: var(--bg-surface);
       border-bottom: 1px solid var(--border);
@@ -49,24 +51,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex: 1;
     }
 
     .header-title {
       font-size: 14px;
       font-weight: bold;
-      letter-spacing: 1px;
       display: flex;
-      align-items: center;
       gap: 8px;
+      align-items: center;
     }
 
     .status-badge {
@@ -88,165 +80,128 @@
       animation: pulse 2s infinite;
     }
 
-    .status-dot.offline {
-      background: #ef4444;
-      animation: none;
-    }
-
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.6; }
     }
 
-    .header-right {
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn {
-      padding: 8px 14px;
-      background: var(--bg-hover);
-      border: 1px solid var(--border);
-      color: var(--text-primary);
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 11px;
-      font-family: inherit;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--bg-primary);
-    }
-
-    .btn:active {
-      transform: scale(0.95);
-    }
-
-    .btn.loading {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    /* MAIN GRID */
     .main {
       flex: 1;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      overflow-y: auto;
       padding: 16px;
-      overflow: hidden;
-    }
-
-    /* CARD */
-    .card {
       display: flex;
       flex-direction: column;
+      gap: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .tab-btn {
+      padding: 8px 16px;
+      background: transparent;
+      color: var(--text-secondary);
+      border: none;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      font-size: 12px;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      color: var(--text-primary);
+      border-bottom-color: var(--status-online);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 12px;
+    }
+
+    .card {
       background: var(--bg-surface);
       border: 1px solid var(--border);
       border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s;
+      padding: 16px;
+      transition: all 0.2s;
     }
 
     .card:hover {
       border-color: var(--accent);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.1);
     }
 
     .card-header {
-      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.3);
     }
 
     .card-title {
       font-size: 13px;
       font-weight: bold;
-      margin-bottom: 8px;
       display: flex;
       align-items: center;
-      gap: 6px;
-    }
-
-    .card-title.erico {
-      color: var(--erico);
-    }
-
-    .card-title.humberto {
-      color: var(--humberto);
-    }
-
-    .card-title.gabrielle {
-      color: var(--gabrielle);
-    }
-
-    .card-meta {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 8px;
-      font-size: 11px;
     }
 
-    .meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .client-badge {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
     }
 
-    .meta-label {
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-size: 10px;
-    }
+    .badge-erico { background: var(--erico); }
+    .badge-humberto { background: var(--humberto); }
+    .badge-gabrielle { background: var(--gabrielle); }
+    .badge-vanessa { background: var(--vanessa); }
+    .badge-torre1 { background: var(--torre1); }
+    .badge-fourcred { background: var(--fourcred); }
+    .badge-prof-humberto { background: var(--prof-humberto); }
 
-    .meta-value {
-      color: var(--status-online);
+    .message-count {
+      font-size: 20px;
       font-weight: bold;
-      font-size: 12px;
+      color: var(--accent);
     }
 
-    .meta-value.count {
-      font-size: 16px;
-    }
-
-    /* FEED */
     .feed {
-      flex: 1;
-      overflow-y: auto;
-      padding: 8px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 8px;
+      max-height: 300px;
+      overflow-y: auto;
     }
 
-    .message-row {
-      padding: 6px 8px;
-      background: rgba(0, 0, 0, 0.2);
-      border-left: 2px solid transparent;
-      border-radius: 2px;
-      font-size: 11px;
-      display: flex;
-      gap: 6px;
-      align-items: flex-start;
-      transition: all 0.2s;
-      animation: slideIn 0.2s ease-out;
-    }
-
-    .message-row:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-left-color: var(--accent);
+    .message-item {
+      padding: 8px;
+      background: var(--bg-hover);
+      border-left: 3px solid var(--border);
+      border-radius: 3px;
+      animation: slideIn 0.3s ease;
     }
 
     @keyframes slideIn {
       from {
         opacity: 0;
-        transform: translateX(-4px);
+        transform: translateX(-10px);
       }
       to {
         opacity: 1;
@@ -255,55 +210,99 @@
     }
 
     .message-time {
-      color: var(--text-secondary);
-      min-width: 35px;
-      white-space: nowrap;
       font-size: 10px;
+      color: var(--text-secondary);
+      margin-bottom: 2px;
     }
 
-    .message-name {
+    .message-sender {
+      font-size: 11px;
+      font-weight: bold;
       color: var(--accent);
-      min-width: 60px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: 10px;
+      margin-bottom: 2px;
     }
 
     .message-text {
-      color: var(--text-primary);
-      flex: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .empty-state {
-      color: var(--text-secondary);
-      text-align: center;
-      padding: 20px;
       font-size: 11px;
+      color: var(--text-primary);
+      word-break: break-word;
     }
 
-    /* SCROLLBAR */
-    .feed::-webkit-scrollbar {
-      width: 6px;
+    .message-meta {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+      font-size: 10px;
     }
 
-    .feed::-webkit-scrollbar-track {
-      background: transparent;
+    .urgency-badge {
+      padding: 2px 6px;
+      border-radius: 2px;
+      font-weight: bold;
     }
 
-    .feed::-webkit-scrollbar-thumb {
-      background: var(--border);
+    .urgency-critical {
+      background: #dc2626;
+      color: white;
+    }
+
+    .urgency-high {
+      background: #f97316;
+      color: white;
+    }
+
+    .urgency-medium {
+      background: #eab308;
+      color: black;
+    }
+
+    .urgency-low {
+      background: #6b7280;
+      color: white;
+    }
+
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .urgency-breakdown {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .urgency-bar {
+      flex: 1;
+      height: 24px;
       border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: bold;
     }
 
-    .feed::-webkit-scrollbar-thumb:hover {
-      background: var(--text-secondary);
-    }
-
-    /* FOOTER */
     .footer {
       background: var(--bg-surface);
       border-top: 1px solid var(--border);
@@ -311,300 +310,246 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .stats {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .stat-label {
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      font-size: 10px;
-      letter-spacing: 0.5px;
-    }
-
-    .stat-value {
-      color: var(--status-online);
-      font-weight: bold;
-      font-size: 12px;
-    }
-
-    .last-update {
-      color: var(--text-secondary);
       font-size: 11px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 1200px) {
-      .main {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      color: var(--text-secondary);
     }
 
     @media (max-width: 768px) {
-      .main {
+      .grid {
         grid-template-columns: 1fr;
       }
-
       .header {
         flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .card-meta {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
-        width: 100%;
+        gap: 12px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- HEADER -->
     <div class="header">
-      <div class="header-left">
-        <div class="header-title">
-          🔴 NICO MONITOR
-        </div>
+      <div class="header-title">
+        <span>🔴 Nico Monitor</span>
         <div class="status-badge">
-          <span class="status-dot" id="status-dot"></span>
-          <span id="status-text">Online</span>
+          <div class="status-dot"></div>
+          <span id="status">Online</span>
         </div>
       </div>
-      <div class="header-right">
-        <button class="btn" id="refresh-btn" onclick="loadData()">🔄 Refresh</button>
-        <button class="btn" onclick="clearData()">🗑️ Clear</button>
+      <div id="lastUpdate" class="status-badge">
+        Atualizado agora
       </div>
     </div>
 
-    <!-- MAIN GRID -->
     <div class="main">
-      <!-- ERICO CARD -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title erico">👨 ERICO</div>
-          <div class="card-meta">
-            <div class="meta-item">
-              <span class="meta-label">Mensagens</span>
-              <span class="meta-value count" id="erico-count">0</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Última</span>
-              <span class="meta-value" id="erico-last">—</span>
-            </div>
-          </div>
-        </div>
-        <div class="feed" id="erico-feed">
-          <div class="empty-state">Aguardando mensagens...</div>
-        </div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('clients')">Clientes</button>
+        <button class="tab-btn" onclick="switchTab('analytics')">Analytics</button>
       </div>
 
-      <!-- HUMBERTO CARD -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title humberto">👨 HUMBERTO</div>
-          <div class="card-meta">
-            <div class="meta-item">
-              <span class="meta-label">Mensagens</span>
-              <span class="meta-value count" id="humberto-count">0</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Última</span>
-              <span class="meta-value" id="humberto-last">—</span>
-            </div>
-          </div>
-        </div>
-        <div class="feed" id="humberto-feed">
-          <div class="empty-state">Aguardando mensagens...</div>
-        </div>
+      <div id="clients" class="tab-content active">
+        <div class="grid" id="clientsGrid"></div>
       </div>
 
-      <!-- GABRIELLE CARD -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title gabrielle">👩 GABRIELLE</div>
-          <div class="card-meta">
-            <div class="meta-item">
-              <span class="meta-label">Mensagens</span>
-              <span class="meta-value count" id="gabrielle-count">0</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Última</span>
-              <span class="meta-value" id="gabrielle-last">—</span>
-            </div>
-          </div>
-        </div>
-        <div class="feed" id="gabrielle-feed">
-          <div class="empty-state">Aguardando mensagens...</div>
-        </div>
+      <div id="analytics" class="tab-content">
+        <div class="analytics-grid" id="analyticsGrid"></div>
       </div>
     </div>
 
-    <!-- FOOTER -->
     <div class="footer">
-      <div class="stats">
-        <div class="stat">
-          <span class="stat-label">Total</span>
-          <span class="stat-value" id="total-stat">0</span>
-        </div>
-        <div class="stat">
-          <span class="stat-label">Erico</span>
-          <span class="stat-value" id="erico-stat">0</span>
-        </div>
-        <div class="stat">
-          <span class="stat-label">Humberto</span>
-          <span class="stat-value" id="humberto-stat">0</span>
-        </div>
-        <div class="stat">
-          <span class="stat-label">Gabrielle</span>
-          <span class="stat-value" id="gabrielle-stat">0</span>
-        </div>
-      </div>
-      <div class="last-update">
-        Última atualização: <span id="last-update-time">—</span>
-      </div>
+      <span id="totalMsg">Total: 0 mensagens</span>
+      <span id="time"></span>
     </div>
   </div>
 
   <script>
-    const data = {
-      erico: [],
-      humberto: [],
-      gabrielle: []
+    const CLIENTS = ['erico', 'humberto', 'gabrielle', 'vanessa', 'torre1', 'fourcred', 'prof-humberto'];
+    const COLORS = {
+      'erico': '#d6ba9e',
+      'humberto': '#3b82f6',
+      'gabrielle': '#ef4444',
+      'vanessa': '#8b5cf6',
+      'torre1': '#f59e0b',
+      'fourcred': '#06b6d4',
+      'prof-humberto': '#ec4899'
     };
 
-    function formatTime(timestamp) {
-      const date = new Date(timestamp);
-      return date.toLocaleTimeString('pt-BR', {
-        hour: '2-digit',
-        minute: '2-digit'
+    let clientData = {};
+    let analyticsData = {};
+
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tab).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    async function updateData() {
+      try {
+        // Fetch messages
+        const msgRes = await fetch('/api/monitor/messages');
+        const msgData = await msgRes.json();
+        clientData = msgData;
+
+        // Fetch analytics
+        const analyticsRes = await fetch('/api/monitor/analytics/summary');
+        const analyticsData = await analyticsRes.json();
+
+        renderClients(msgData);
+        renderAnalytics(analyticsData);
+
+        // Update timestamp
+        const now = new Date();
+        document.getElementById('time').textContent = now.toLocaleTimeString('pt-BR');
+        document.getElementById('lastUpdate').textContent = 'Atualizado ' + timeAgo(now);
+
+        // Calculate total
+        const total = Object.values(msgData.totals || {}).reduce((a, b) => a + b, 0);
+        document.getElementById('totalMsg').textContent = `Total: ${total} mensagens`;
+      } catch (err) {
+        console.error('Erro ao atualizar:', err);
+      }
+    }
+
+    function renderClients(data) {
+      const grid = document.getElementById('clientsGrid');
+      grid.innerHTML = '';
+
+      CLIENTS.forEach(client => {
+        const messages = data[client] || [];
+        const total = data.totals?.[client] || 0;
+
+        const html = `
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">
+                <span class="client-badge badge-${client}"></span>
+                ${formatClientName(client)}
+              </div>
+              <div class="message-count">${total}</div>
+            </div>
+
+            <div class="feed">
+              ${messages.length === 0 ? '<div class="message-item">Nenhuma mensagem</div>' : ''}
+              ${messages.slice(0, 5).map(msg => `
+                <div class="message-item">
+                  <div class="message-time">${formatTime(msg.timestamp)}</div>
+                  <div class="message-sender">${msg.push_name || 'Unknown'}</div>
+                  <div class="message-text">${escapeHtml(msg.content?.substring(0, 60) || '[Sem conteúdo]')}</div>
+                  <div class="message-meta">
+                    <span class="urgency-badge urgency-${getUrgencyLevel(msg.urgency_score)}">${getUrgencyLevel(msg.urgency_score).toUpperCase()}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+
+        grid.innerHTML += html;
       });
     }
 
-    function formatTimeAgo(timestamp) {
-      if (!timestamp) return '—';
-      const now = Date.now();
-      const diff = Math.floor((now - timestamp) / 1000);
+    function renderAnalytics(data) {
+      const grid = document.getElementById('analyticsGrid');
+      grid.innerHTML = '';
 
-      if (diff < 60) return `${diff}s`;
-      if (diff < 3600) return `${Math.floor(diff / 60)}m`;
-      if (diff < 86400) return `${Math.floor(diff / 3600)}h`;
-      return `${Math.floor(diff / 86400)}d`;
-    }
+      const summary = data.summary || {};
+      const clients = data.clients || {};
 
-    function truncate(text, len = 40) {
-      if (!text) return '[vazio]';
-      if (text.length > len) return text.substring(0, len) + '...';
-      return text;
-    }
-
-    function renderFeed(client, messages) {
-      const feed = document.getElementById(`${client}-feed`);
-
-      if (!messages || messages.length === 0) {
-        feed.innerHTML = '<div class="empty-state">Aguardando mensagens...</div>';
-        return;
-      }
-
-      feed.innerHTML = messages.map(msg => `
-        <div class="message-row" title="${msg.content}">
-          <div class="message-time">${formatTime(msg.timestamp)}</div>
-          <div class="message-name">${msg.push_name?.substring(0, 12) || 'Desconhecido'}</div>
-          <div class="message-text">${truncate(msg.content)}</div>
+      // Summary card
+      grid.innerHTML += `
+        <div class="stat-card">
+          <div class="stat-label">RESUMO GERAL</div>
+          <div class="stat-value">${summary.totalMessages || 0}</div>
+          <div style="font-size: 11px; color: var(--text-secondary); margin-top: 8px;">
+            Críticas: <span style="color: #dc2626;">${summary.criticalCount || 0}</span><br>
+            Reclamações: <span style="color: #f97316;">${summary.complaintCount || 0}</span><br>
+            Taxa Crítica: <span style="color: var(--accent);">${summary.avgCriticalityRate || '0%'}</span>
+          </div>
         </div>
-      `).join('');
+      `;
+
+      // Client stats
+      CLIENTS.forEach(client => {
+        const stats = clients[client] || {};
+        html = `
+          <div class="stat-card">
+            <div class="stat-label" style="color: ${COLORS[client]};">${formatClientName(client)}</div>
+            <div class="stat-value">${stats.totalMessages || 0}</div>
+            <div style="font-size: 10px; color: var(--text-secondary); margin-top: 8px;">
+              Críticas: ${stats.criticalCount || 0}<br>
+              Reclamações: ${stats.complaintCount || 0}
+            </div>
+          </div>
+        `;
+        grid.innerHTML += html;
+      });
     }
 
-    function updateStats() {
-      const total = data.erico.length + data.humberto.length + data.gabrielle.length;
-
-      document.getElementById('erico-count').textContent = data.erico.length;
-      document.getElementById('humberto-count').textContent = data.humberto.length;
-      document.getElementById('gabrielle-count').textContent = data.gabrielle.length;
-
-      document.getElementById('erico-last').textContent = data.erico[0]
-        ? formatTimeAgo(data.erico[0].timestamp)
-        : '—';
-      document.getElementById('humberto-last').textContent = data.humberto[0]
-        ? formatTimeAgo(data.humberto[0].timestamp)
-        : '—';
-      document.getElementById('gabrielle-last').textContent = data.gabrielle[0]
-        ? formatTimeAgo(data.gabrielle[0].timestamp)
-        : '—';
-
-      document.getElementById('total-stat').textContent = total;
-      document.getElementById('erico-stat').textContent = data.erico.length;
-      document.getElementById('humberto-stat').textContent = data.humberto.length;
-      document.getElementById('gabrielle-stat').textContent = data.gabrielle.length;
-
-      document.getElementById('last-update-time').textContent = new Date().toLocaleTimeString('pt-BR');
+    function formatClientName(name) {
+      const names = {
+        'erico': 'Dr. Erico Servano',
+        'humberto': 'Dr. Humberto',
+        'gabrielle': 'Dra. Gabrielle',
+        'vanessa': 'Dra. Vanessa',
+        'torre1': 'Torre 1',
+        'fourcred': 'Fourcred',
+        'prof-humberto': 'Prof. Dr. Humberto'
+      };
+      return names[name] || name;
     }
 
-    async function loadData() {
-      const btn = document.getElementById('refresh-btn');
-      btn.classList.add('loading');
-      btn.disabled = true;
-
-      try {
-        const response = await fetch('/api/monitor/messages?limit=5');
-        const result = await response.json();
-
-        data.erico = result.erico || [];
-        data.humberto = result.humberto || [];
-        data.gabrielle = result.gabrielle || [];
-
-        renderFeed('erico', data.erico);
-        renderFeed('humberto', data.humberto);
-        renderFeed('gabrielle', data.gabrielle);
-
-        updateStats();
-
-        document.getElementById('status-dot').classList.remove('offline');
-        document.getElementById('status-text').textContent = 'Online';
-      } catch (err) {
-        console.error('Load error:', err);
-        document.getElementById('status-dot').classList.add('offline');
-        document.getElementById('status-text').textContent = 'Offline';
-      } finally {
-        btn.classList.remove('loading');
-        btn.disabled = false;
-      }
+    function formatTime(ts) {
+      if (!ts) return '—';
+      const date = new Date(ts);
+      const hours = String(date.getHours()).padStart(2, '0');
+      const mins = String(date.getMinutes()).padStart(2, '0');
+      return `${hours}:${mins}`;
     }
 
-    function clearData() {
-      if (confirm('Limpar log? ⚠️')) {
-        data.erico = [];
-        data.humberto = [];
-        data.gabrielle = [];
-        renderFeed('erico', []);
-        renderFeed('humberto', []);
-        renderFeed('gabrielle', []);
-        updateStats();
-      }
+    function timeAgo(date) {
+      const secs = Math.floor((new Date() - date) / 1000);
+      if (secs < 60) return 'agora';
+      const mins = Math.floor(secs / 60);
+      if (mins < 60) return `${mins}m atrás`;
+      const hours = Math.floor(mins / 60);
+      if (hours < 24) return `${hours}h atrás`;
+      return date.toLocaleDateString('pt-BR');
     }
 
-    // Auto-refresh a cada 3 segundos
-    setInterval(loadData, 3000);
+    function getUrgencyLevel(score) {
+      score = score || 0;
+      if (score >= 70) return 'critical';
+      if (score >= 50) return 'high';
+      if (score >= 30) return 'medium';
+      return 'low';
+    }
 
-    // Atualizar timeago a cada segundo
-    setInterval(() => updateStats(), 1000);
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
 
-    // Carregar na inicialização
-    loadData();
+    // SSE for real-time updates
+    function connectSSE() {
+      const eventSource = new EventSource('/api/monitor/stream');
+      
+      eventSource.onmessage = (event) => {
+        console.log('📨 New message:', event.data);
+        updateData();
+      };
+
+      eventSource.onerror = () => {
+        console.error('SSE connection error');
+        eventSource.close();
+        setTimeout(connectSSE, 3000);
+      };
+    }
+
+    // Initial load and periodic updates
+    updateData();
+    setInterval(updateData, 3000);
+    connectSSE();
   </script>
 </body>
 </html>

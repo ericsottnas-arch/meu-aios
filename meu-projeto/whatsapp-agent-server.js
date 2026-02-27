@@ -32,11 +32,13 @@ const whatsappDB = require('./lib/whatsapp-db');
 const whatsappDBErico = require('./lib/whatsapp-db-erico');
 const whatsappDBHumberto = require('./lib/whatsapp-db-humberto');
 const whatsappDBGabrielle = require('./lib/whatsapp-db-gabrielle');
+const whatsappDBVanessa = require('./lib/whatsapp-db-vanessa');
+const whatsappDBTorre1 = require('./lib/whatsapp-db-torre1');
+const whatsappDBFourcred = require('./lib/whatsapp-db-fourcred');
+const whatsappDBProfHumberto = require('./lib/whatsapp-db-prof-humberto');
+const accountAnalyzer = require('./lib/account-analyzer');
 
-// ============================================================
-// Static Files (Monitor UI)
-// ============================================================
-app.use(express.static(path.join(__dirname, 'public')));
+// NOTA: Static files definidos no final, DEPOIS de todos os endpoints de API
 
 // ============================================================
 // Health check
@@ -253,6 +255,22 @@ function handleStevoWebhook(req, res) {
                             instanceName?.toLowerCase().includes('gab') ||
                             botNumber === '5511947937034';
 
+      const isDraVanessa = instanceName?.toLowerCase().includes('vanessa') ||
+                           instanceId === 'vanessa-soares';
+
+      const IsTorre1 = instanceName?.toLowerCase().includes('torre') ||
+                       instanceId === 'torre-1';
+
+      const IsFourcred = instanceName?.toLowerCase().includes('fourcred') ||
+                        instanceId === 'fourcred';
+
+      const IsProfHumberto = instanceName?.toLowerCase().includes('prof') ||
+                            instanceId === 'prof-humberto';
+
+      // Análise da mensagem
+      const analysis = accountAnalyzer.analyzeMessage(parsed.text, parsed.type);
+      parsed.urgencyScore = analysis.urgencyScore;
+
       // Salvar no banco correto
       let clientName = 'unknown';
       try {
@@ -260,31 +278,54 @@ function handleStevoWebhook(req, res) {
           clientName = 'erico';
           console.log(`   ✅ → Dr. Erico DB`);
           whatsappDBErico.saveMessage(parsed);
-          console.log(`   💾 Salvo com sucesso`);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
         } else if (isDrHumberto) {
           clientName = 'humberto';
           console.log(`   ✅ → Dr. Humberto DB`);
           whatsappDBHumberto.saveMessage(parsed);
-          console.log(`   💾 Salvo com sucesso`);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
         } else if (isDraGabrielle) {
           clientName = 'gabrielle';
           console.log(`   ✅ → Dra Gabrielle DB`);
           whatsappDBGabrielle.saveMessage(parsed);
-          console.log(`   💾 Salvo com sucesso`);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
+        } else if (isDraVanessa) {
+          clientName = 'vanessa';
+          console.log(`   ✅ → Dra. Vanessa DB`);
+          whatsappDBVanessa.saveMessage(parsed);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
+        } else if (IsTorre1) {
+          clientName = 'torre1';
+          console.log(`   ✅ → Torre 1 DB`);
+          whatsappDBTorre1.saveMessage(parsed);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
+        } else if (IsFourcred) {
+          clientName = 'fourcred';
+          console.log(`   ✅ → Fourcred DB`);
+          whatsappDBFourcred.saveMessage(parsed);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
+        } else if (IsProfHumberto) {
+          clientName = 'prof-humberto';
+          console.log(`   ✅ → Prof. Dr. Humberto DB`);
+          whatsappDBProfHumberto.saveMessage(parsed);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
         } else {
           clientName = 'general';
           console.log(`   ✅ → Banco Geral`);
           whatsappDB.saveMessage(parsed);
-          console.log(`   💾 Salvo com sucesso`);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
         }
 
-        // Broadcast to monitor
+        // Broadcast to monitor com análise
         broadcastMonitorEvent({
           client: clientName,
           timestamp: parsed.timestamp,
           pushName: parsed.pushName,
           message: parsed.text?.substring(0, 50) || '[Mensagem]',
           type: parsed.type,
+          urgencyScore: analysis.urgencyScore,
+          urgencyLevel: analysis.urgencyLevel,
+          hasComplaint: analysis.hasNegativeContent,
           status: 'saved'
         });
       } catch (err) {
@@ -337,6 +378,10 @@ app.get('/api/monitor/stats', (req, res) => {
     const ericoCount = whatsappDBErico.getTotalMessages();
     const humbertoCount = whatsappDBHumberto.getTotalMessages?.() || 0;
     const gabrielleCount = whatsappDBGabrielle.getTotalMessages?.() || 0;
+    const vanessaCount = whatsappDBVanessa.getTotalMessages?.() || 0;
+    const torre1Count = whatsappDBTorre1.getTotalMessages?.() || 0;
+    const fourcredCount = whatsappDBFourcred.getTotalMessages?.() || 0;
+    const profHumbertoCount = whatsappDBProfHumberto.getTotalMessages?.() || 0;
 
     const stats = {
       timestamp: new Date().toISOString(),
@@ -344,8 +389,12 @@ app.get('/api/monitor/stats', (req, res) => {
         erico: { total: ericoCount, lastActivity: getLastActivity(whatsappDBErico) },
         humberto: { total: humbertoCount, lastActivity: getLastActivity(whatsappDBHumberto) },
         gabrielle: { total: gabrielleCount, lastActivity: getLastActivity(whatsappDBGabrielle) },
+        vanessa: { total: vanessaCount, lastActivity: getLastActivity(whatsappDBVanessa) },
+        torre1: { total: torre1Count, lastActivity: getLastActivity(whatsappDBTorre1) },
+        fourcred: { total: fourcredCount, lastActivity: getLastActivity(whatsappDBFourcred) },
+        'prof-humberto': { total: profHumbertoCount, lastActivity: getLastActivity(whatsappDBProfHumberto) },
       },
-      totalMessages: ericoCount + humbertoCount + gabrielleCount,
+      totalMessages: ericoCount + humbertoCount + gabrielleCount + vanessaCount + torre1Count + fourcredCount + profHumbertoCount,
       healthStatus: 'ok'
     };
 
@@ -365,10 +414,18 @@ app.get('/api/monitor/messages', (req, res) => {
       erico: whatsappDBErico.getAllMessages(limit) || [],
       humberto: whatsappDBHumberto.getAllMessages?.(limit) || [],
       gabrielle: whatsappDBGabrielle.getAllMessages?.(limit) || [],
+      vanessa: whatsappDBVanessa.getAllMessages?.(limit) || [],
+      torre1: whatsappDBTorre1.getAllMessages?.(limit) || [],
+      fourcred: whatsappDBFourcred.getAllMessages?.(limit) || [],
+      'prof-humberto': whatsappDBProfHumberto.getAllMessages?.(limit) || [],
       totals: {
         erico: whatsappDBErico.getTotalMessages() || 0,
         humberto: whatsappDBHumberto.getTotalMessages?.() || 0,
-        gabrielle: whatsappDBGabrielle.getTotalMessages?.() || 0
+        gabrielle: whatsappDBGabrielle.getTotalMessages?.() || 0,
+        vanessa: whatsappDBVanessa.getTotalMessages?.() || 0,
+        torre1: whatsappDBTorre1.getTotalMessages?.() || 0,
+        fourcred: whatsappDBFourcred.getTotalMessages?.() || 0,
+        'prof-humberto': whatsappDBProfHumberto.getTotalMessages?.() || 0
       }
     };
 
@@ -400,6 +457,98 @@ function broadcastMonitorEvent(event) {
 }
 
 // ============================================================
+// Analytics Endpoints
+// ============================================================
+app.get('/api/monitor/analytics/summary', (req, res) => {
+  try {
+    const allDBs = [
+      { name: 'erico', db: whatsappDBErico },
+      { name: 'humberto', db: whatsappDBHumberto },
+      { name: 'gabrielle', db: whatsappDBGabrielle },
+      { name: 'vanessa', db: whatsappDBVanessa },
+      { name: 'torre1', db: whatsappDBTorre1 },
+      { name: 'fourcred', db: whatsappDBFourcred },
+      { name: 'prof-humberto', db: whatsappDBProfHumberto }
+    ];
+
+    const analytics = {};
+    let totalMessages = 0;
+    let criticalCount = 0;
+    let complaintCount = 0;
+
+    for (const { name, db } of allDBs) {
+      const messages = db.getAllMessages?.(100) || [];
+      const stats = accountAnalyzer.generateStats(messages);
+      analytics[name] = stats;
+      totalMessages += stats.totalMessages;
+      criticalCount += stats.criticalCount;
+      complaintCount += stats.complaintCount;
+    }
+
+    res.json({
+      timestamp: new Date().toISOString(),
+      summary: {
+        totalMessages,
+        criticalCount,
+        complaintCount,
+        avgCriticalityRate: totalMessages > 0 ? ((criticalCount / totalMessages) * 100).toFixed(2) + '%' : '0%'
+      },
+      clients: analytics
+    });
+  } catch (err) {
+    console.error('Analytics summary error:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/monitor/analytics/urgency', (req, res) => {
+  try {
+    const allDBs = [
+      { name: 'erico', db: whatsappDBErico },
+      { name: 'humberto', db: whatsappDBHumberto },
+      { name: 'gabrielle', db: whatsappDBGabrielle },
+      { name: 'vanessa', db: whatsappDBVanessa },
+      { name: 'torre1', db: whatsappDBTorre1 },
+      { name: 'fourcred', db: whatsappDBFourcred },
+      { name: 'prof-humberto', db: whatsappDBProfHumberto }
+    ];
+
+    const urgencyBreakdown = {};
+
+    for (const { name, db } of allDBs) {
+      const messages = db.getAllMessages?.(50) || [];
+      let critical = 0;
+      let high = 0;
+      let medium = 0;
+      let low = 0;
+
+      for (const msg of messages) {
+        const score = msg.urgency_score || 0;
+        if (score >= 70) critical++;
+        else if (score >= 50) high++;
+        else if (score >= 30) medium++;
+        else low++;
+      }
+
+      urgencyBreakdown[name] = { critical, high, medium, low };
+    }
+
+    res.json({
+      timestamp: new Date().toISOString(),
+      urgencyBreakdown
+    });
+  } catch (err) {
+    console.error('Urgency analytics error:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ============================================================
+// Static Files (Monitor UI) - Deve estar DEPOIS dos endpoints!
+// ============================================================
+app.use(express.static(path.join(__dirname, 'public')));
+
+// ============================================================
 // Startup
 // ============================================================
 app.listen(PORT, () => {
@@ -418,4 +567,8 @@ app.listen(PORT, () => {
   whatsappDBErico.initDB();
   whatsappDBHumberto.initDB();
   whatsappDBGabrielle.initDB();
+  whatsappDBVanessa.initDB();
+  whatsappDBTorre1.initDB();
+  whatsappDBFourcred.initDB();
+  whatsappDBProfHumberto.initDB();
 });
