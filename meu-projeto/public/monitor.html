@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔴 Nico Monitor - WhatsApp Activity</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: #1a1a1a;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      background: #0d0d0f;
+      border-bottom: 2px solid #333;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .header-status {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #2ecc71;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .status-dot.offline {
+      background: #e74c3c;
+      animation: none;
+    }
+
+    .header-stats {
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* MAIN CONTENT */
+    .content {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      gap: 0;
+    }
+
+    /* COLUMNS */
+    .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #333;
+      overflow: hidden;
+    }
+
+    .column:last-child {
+      border-right: none;
+    }
+
+    .column-header {
+      padding: 15px;
+      border-bottom: 2px solid #333;
+      background: #0d0d0f;
+    }
+
+    .column-header h2 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .column-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      font-size: 11px;
+      color: #999;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .meta-label {
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .meta-value {
+      color: #2ecc71;
+      font-weight: bold;
+    }
+
+    /* CLIENT COLORS */
+    .column.erico .column-header { border-bottom-color: #0d0d0f; }
+    .column.erico .column-header h2 { color: #d6ba9e; }
+
+    .column.humberto .column-header { border-bottom-color: #3498db; }
+    .column.humberto .column-header h2 { color: #3498db; }
+
+    .column.gabrielle .column-header { border-bottom-color: #e74c3c; }
+    .column.gabrielle .column-header h2 { color: #e74c3c; }
+
+    /* FEED */
+    .feed {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .message {
+      background: #252525;
+      border: 1px solid #333;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      animation: slideIn 0.3s ease-out;
+      transition: all 0.2s;
+    }
+
+    .message:hover {
+      background: #2a2a2a;
+      border-color: #444;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .message-time {
+      color: #999;
+      font-size: 10px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .message-status {
+      color: #2ecc71;
+      font-weight: bold;
+    }
+
+    .message-sender {
+      color: #3498db;
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-size: 10px;
+    }
+
+    .message-text {
+      color: #e0e0e0;
+      word-break: break-word;
+      font-size: 11px;
+    }
+
+    .message-type {
+      color: #999;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+
+    .empty-state {
+      color: #666;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 12px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #0d0d0f;
+      border-top: 2px solid #333;
+      padding: 15px 20px;
+      font-size: 11px;
+      color: #999;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .footer-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .footer-label {
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-value {
+      color: #2ecc71;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    /* SCROLLBAR */
+    .feed::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .feed::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    .feed::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
+    }
+
+    .feed::-webkit-scrollbar-thumb:hover {
+      background: #444;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .column-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <div class="header">
+      <h1>🔴 NICO MONITOR</h1>
+      <div class="header-status">
+        <div class="status-indicator">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Status: 🟢 All Connected</span>
+        </div>
+        <div class="header-stats">
+          <span>Today: <strong id="total-today">0</strong> msgs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+      <!-- ERICO -->
+      <div class="column erico" data-client="erico">
+        <div class="column-header">
+          <h2>👨 ERICO</h2>
+          <div class="column-meta">
+            <div class="meta-item">
+              <span class="meta-label">Status</span>
+              <span class="meta-value">🟢 Online</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Messages</span>
+              <span class="meta-value" id="erico-count">0</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Last</span>
+              <span class="meta-value" id="erico-last">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="feed" id="erico-feed">
+          <div class="empty-state">Aguardando mensagens...</div>
+        </div>
+      </div>
+
+      <!-- HUMBERTO -->
+      <div class="column humberto" data-client="humberto">
+        <div class="column-header">
+          <h2>👨 HUMBERTO</h2>
+          <div class="column-meta">
+            <div class="meta-item">
+              <span class="meta-label">Status</span>
+              <span class="meta-value">🟢 Online</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Messages</span>
+              <span class="meta-value" id="humberto-count">0</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Last</span>
+              <span class="meta-value" id="humberto-last">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="feed" id="humberto-feed">
+          <div class="empty-state">Aguardando mensagens...</div>
+        </div>
+      </div>
+
+      <!-- GABRIELLE -->
+      <div class="column gabrielle" data-client="gabrielle">
+        <div class="column-header">
+          <h2>👩 GABRIELLE</h2>
+          <div class="column-meta">
+            <div class="meta-item">
+              <span class="meta-label">Status</span>
+              <span class="meta-value">🟢 Online</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Messages</span>
+              <span class="meta-value" id="gabrielle-count">0</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Last</span>
+              <span class="meta-value" id="gabrielle-last">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="feed" id="gabrielle-feed">
+          <div class="empty-state">Aguardando mensagens...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-grid">
+        <div class="footer-item">
+          <span class="footer-label">Total</span>
+          <span class="footer-value" id="footer-total">0 msgs</span>
+        </div>
+        <div class="footer-item">
+          <span class="footer-label">Erico</span>
+          <span class="footer-value" id="footer-erico">0</span>
+        </div>
+        <div class="footer-item">
+          <span class="footer-label">Humberto</span>
+          <span class="footer-value" id="footer-humberto">0</span>
+        </div>
+        <div class="footer-item">
+          <span class="footer-label">Gabrielle</span>
+          <span class="footer-value" id="footer-gabrielle">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const state = {
+      erico: { count: 0, messages: [], lastTime: null },
+      humberto: { count: 0, messages: [], lastTime: null },
+      gabrielle: { count: 0, messages: [], lastTime: null }
+    };
+
+    const MAX_MESSAGES = 10;
+
+    function formatTime(timestamp) {
+      const date = new Date(timestamp);
+      return date.toLocaleTimeString('pt-BR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+    }
+
+    function formatTimeAgo(timestamp) {
+      const now = Date.now();
+      const diff = Math.floor((now - timestamp) / 1000);
+
+      if (diff < 60) return `${diff}s ago`;
+      if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+      return `${Math.floor(diff / 3600)}h ago`;
+    }
+
+    function addMessage(client, message) {
+      const clientState = state[client];
+      if (!clientState) return;
+
+      clientState.count++;
+      clientState.lastTime = message.timestamp;
+      clientState.messages.unshift(message);
+
+      // Manter apenas últimas 10
+      if (clientState.messages.length > MAX_MESSAGES) {
+        clientState.messages.pop();
+      }
+
+      renderFeed(client);
+      updateStats();
+    }
+
+    function renderFeed(client) {
+      const feed = document.getElementById(`${client}-feed`);
+      const clientState = state[client];
+
+      if (clientState.messages.length === 0) {
+        feed.innerHTML = '<div class="empty-state">Aguardando mensagens...</div>';
+        return;
+      }
+
+      feed.innerHTML = clientState.messages.map(msg => `
+        <div class="message">
+          <div class="message-time">
+            <span>${formatTime(msg.timestamp)}</span>
+            <span class="message-status">✅ ${msg.status}</span>
+          </div>
+          <div class="message-sender">${msg.pushName}</div>
+          <div class="message-text">${msg.message}</div>
+          <div class="message-type">${msg.type}</div>
+        </div>
+      `).join('');
+
+      // Auto-scroll para cima
+      feed.scrollTop = 0;
+    }
+
+    function updateStats() {
+      const total = state.erico.count + state.humberto.count + state.gabrielle.count;
+
+      document.getElementById('erico-count').textContent = state.erico.count;
+      document.getElementById('humberto-count').textContent = state.humberto.count;
+      document.getElementById('gabrielle-count').textContent = state.gabrielle.count;
+
+      document.getElementById('erico-last').textContent = state.erico.lastTime
+        ? formatTimeAgo(state.erico.lastTime)
+        : '—';
+      document.getElementById('humberto-last').textContent = state.humberto.lastTime
+        ? formatTimeAgo(state.humberto.lastTime)
+        : '—';
+      document.getElementById('gabrielle-last').textContent = state.gabrielle.lastTime
+        ? formatTimeAgo(state.gabrielle.lastTime)
+        : '—';
+
+      document.getElementById('total-today').textContent = total;
+      document.getElementById('footer-total').textContent = `${total} msgs`;
+      document.getElementById('footer-erico').textContent = state.erico.count;
+      document.getElementById('footer-humberto').textContent = state.humberto.count;
+      document.getElementById('footer-gabrielle').textContent = state.gabrielle.count;
+    }
+
+    // Connect to SSE
+    function connectMonitor() {
+      const eventSource = new EventSource('/api/monitor/stream');
+
+      eventSource.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          addMessage(data.client, data);
+        } catch (err) {
+          console.error('Parse error:', err);
+        }
+      };
+
+      eventSource.onerror = (err) => {
+        console.error('SSE error:', err);
+        document.getElementById('status-dot').classList.add('offline');
+        document.getElementById('status-text').textContent = 'Status: 🔴 Disconnected';
+
+        // Retry em 3 segundos
+        setTimeout(connectMonitor, 3000);
+      };
+    }
+
+    // Atualizar "Last" a cada segundo
+    setInterval(() => {
+      updateStats();
+    }, 1000);
+
+    // Inicializar
+    connectMonitor();
+    updateStats();
+  </script>
+</body>
+</html>

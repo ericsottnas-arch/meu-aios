@@ -34,6 +34,11 @@ const whatsappDBHumberto = require('./lib/whatsapp-db-humberto');
 const whatsappDBGabrielle = require('./lib/whatsapp-db-gabrielle');
 
 // ============================================================
+// Static Files (Monitor UI)
+// ============================================================
+app.use(express.static(path.join(__dirname, 'public')));
+
+// ============================================================
 // Health check
 // ============================================================
 app.get('/', (req, res) => {
@@ -44,6 +49,10 @@ app.get('/', (req, res) => {
     uptime: Math.floor(process.uptime()),
     timestamp: new Date().toISOString(),
   });
+});
+
+app.get('/monitor', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'monitor.html'));
 });
 
 // ============================================================
@@ -245,24 +254,39 @@ function handleStevoWebhook(req, res) {
                             botNumber === '5511947937034';
 
       // Salvar no banco correto
+      let clientName = 'unknown';
       try {
         if (isDrErico) {
+          clientName = 'erico';
           console.log(`   ✅ → Dr. Erico DB`);
           whatsappDBErico.saveMessage(parsed);
           console.log(`   💾 Salvo com sucesso`);
         } else if (isDrHumberto) {
+          clientName = 'humberto';
           console.log(`   ✅ → Dr. Humberto DB`);
           whatsappDBHumberto.saveMessage(parsed);
           console.log(`   💾 Salvo com sucesso`);
         } else if (isDraGabrielle) {
+          clientName = 'gabrielle';
           console.log(`   ✅ → Dra Gabrielle DB`);
           whatsappDBGabrielle.saveMessage(parsed);
           console.log(`   💾 Salvo com sucesso`);
         } else {
+          clientName = 'general';
           console.log(`   ✅ → Banco Geral`);
           whatsappDB.saveMessage(parsed);
           console.log(`   💾 Salvo com sucesso`);
         }
+
+        // Broadcast to monitor
+        broadcastMonitorEvent({
+          client: clientName,
+          timestamp: parsed.timestamp,
+          pushName: parsed.pushName,
+          message: parsed.text?.substring(0, 50) || '[Mensagem]',
+          type: parsed.type,
+          status: 'saved'
+        });
       } catch (err) {
         console.error(`   ❌ ERRO ao salvar:`, err.message);
         console.error(`   Stack:`, err.stack);
@@ -287,6 +311,70 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+// ============================================================
+// Monitor SSE Stream (Real-time Activity)
+// ============================================================
+const monitorClients = [];
+
+app.get('/api/monitor/stream', (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+
+  monitorClients.push(res);
+  console.log(`📺 Monitor client connected (${monitorClients.length} active)`);
+
+  res.on('close', () => {
+    const idx = monitorClients.indexOf(res);
+    if (idx !== -1) monitorClients.splice(idx, 1);
+    console.log(`📺 Monitor client disconnected (${monitorClients.length} active)`);
+  });
+});
+
+app.get('/api/monitor/stats', (req, res) => {
+  try {
+    const ericoCount = whatsappDBErico.getTotalMessages();
+    const humbertoCount = whatsappDBHumberto.getTotalMessages?.() || 0;
+    const gabrielleCount = whatsappDBGabrielle.getTotalMessages?.() || 0;
+
+    const stats = {
+      timestamp: new Date().toISOString(),
+      clients: {
+        erico: { total: ericoCount, lastActivity: getLastActivity(whatsappDBErico) },
+        humberto: { total: humbertoCount, lastActivity: getLastActivity(whatsappDBHumberto) },
+        gabrielle: { total: gabrielleCount, lastActivity: getLastActivity(whatsappDBGabrielle) },
+      },
+      totalMessages: ericoCount + humbertoCount + gabrielleCount,
+      healthStatus: 'ok'
+    };
+
+    res.json(stats);
+  } catch (err) {
+    console.error('Monitor stats error:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+function getLastActivity(db) {
+  try {
+    const result = db.getTotalMessages?.() || 0;
+    return new Date().toISOString();
+  } catch {
+    return null;
+  }
+}
+
+function broadcastMonitorEvent(event) {
+  const data = `data: ${JSON.stringify(event)}\n\n`;
+  monitorClients.forEach(client => {
+    try {
+      client.write(data);
+    } catch (err) {
+      console.error('Broadcast error:', err.message);
+    }
+  });
+}
 
 // ============================================================
 // Startup
