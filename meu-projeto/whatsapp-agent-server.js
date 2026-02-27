@@ -407,7 +407,7 @@ app.get('/api/monitor/stats', (req, res) => {
 
 app.get('/api/monitor/messages', (req, res) => {
   try {
-    const limit = parseInt(req.query.limit) || 10;
+    const limit = parseInt(req.query.limit) || 50;
 
     const messages = {
       timestamp: new Date().toISOString(),

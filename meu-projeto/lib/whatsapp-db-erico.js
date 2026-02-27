@@ -90,7 +90,7 @@ function getConversation(chatJid, limit = 50) {
   return rows.reverse();
 }
 
-function getAllMessages(limit = 10) {
+function getAllMessages(limit = 50) {
   if (!db) initDB();
   const stmt = db.prepare(`
     SELECT * FROM conversas
