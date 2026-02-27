@@ -195,18 +195,7 @@
       background: var(--bg-hover);
       border-left: 3px solid var(--border);
       border-radius: 3px;
-      animation: slideIn 0.3s ease;
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      transition: opacity 0.2s ease;
     }
 
     .message-time {
@@ -412,13 +401,14 @@
 
     function renderClients(data) {
       const grid = document.getElementById('clientsGrid');
-      grid.innerHTML = '';
 
+      // Build all HTML at once instead of += repeatedly
+      let html = '';
       CLIENTS.forEach(client => {
         const messages = data[client] || [];
         const total = data.totals?.[client] || 0;
 
-        const html = `
+        html += `
           <div class="card">
             <div class="card-header">
               <div class="card-title">
@@ -443,20 +433,20 @@
             </div>
           </div>
         `;
-
-        grid.innerHTML += html;
       });
+
+      // Single innerHTML assignment instead of += loop
+      grid.innerHTML = html;
     }
 
     function renderAnalytics(data) {
       const grid = document.getElementById('analyticsGrid');
-      grid.innerHTML = '';
 
       const summary = data.summary || {};
       const clients = data.clients || {};
 
-      // Summary card
-      grid.innerHTML += `
+      // Build all HTML at once
+      let html = `
         <div class="stat-card">
           <div class="stat-label">RESUMO GERAL</div>
           <div class="stat-value">${summary.totalMessages || 0}</div>
@@ -471,7 +461,7 @@
       // Client stats
       CLIENTS.forEach(client => {
         const stats = clients[client] || {};
-        html = `
+        html += `
           <div class="stat-card">
             <div class="stat-label" style="color: ${COLORS[client]};">${formatClientName(client)}</div>
             <div class="stat-value">${stats.totalMessages || 0}</div>
@@ -481,8 +471,10 @@
             </div>
           </div>
         `;
-        grid.innerHTML += html;
       });
+
+      // Single innerHTML assignment
+      grid.innerHTML = html;
     }
 
     function formatClientName(name) {
@@ -548,7 +540,7 @@
 
     // Initial load and periodic updates
     updateData();
-    setInterval(updateData, 3000);
+    setInterval(updateData, 5000); // Update every 5 seconds (smooth)
     connectSSE();
   </script>
 </body>
