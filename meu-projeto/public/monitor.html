@@ -420,7 +420,7 @@
 
             <div class="feed">
               ${messages.length === 0 ? '<div class="message-item">Nenhuma mensagem</div>' : ''}
-              ${messages.slice(0, 5).map(msg => `
+              ${messages.slice(-5).reverse().map(msg => `
                 <div class="message-item">
                   <div class="message-time">${formatTime(msg.timestamp)}</div>
                   <div class="message-sender">${msg.push_name || 'Unknown'}</div>
