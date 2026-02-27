@@ -356,6 +356,24 @@ app.get('/api/monitor/stats', (req, res) => {
   }
 });
 
+app.get('/api/monitor/messages', (req, res) => {
+  try {
+    const limit = parseInt(req.query.limit) || 10;
+
+    const messages = {
+      timestamp: new Date().toISOString(),
+      erico: whatsappDBErico.getAllMessages(limit) || [],
+      humberto: whatsappDBHumberto.getAllMessages?.(limit) || [],
+      gabrielle: whatsappDBGabrielle.getAllMessages?.(limit) || []
+    };
+
+    res.json(messages);
+  } catch (err) {
+    console.error('Monitor messages error:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 function getLastActivity(db) {
   try {
     const result = db.getTotalMessages?.() || 0;

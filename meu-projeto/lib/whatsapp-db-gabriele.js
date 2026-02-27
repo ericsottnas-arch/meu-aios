@@ -129,10 +129,22 @@ function getStats(chatJid) {
   return stmt.get(chatJid);
 }
 
+function getAllMessages(limit = 10) {
+  if (!db) initDB();
+  const stmt = db.prepare(`
+    SELECT * FROM conversas
+    ORDER BY timestamp DESC
+    LIMIT ?
+  `);
+  const rows = stmt.all(limit);
+  return rows.reverse();
+}
+
 module.exports = {
   initDB,
   saveMessage,
   getConversation,
+  getAllMessages,
   listChats,
   getTotalMessages,
   getStats
