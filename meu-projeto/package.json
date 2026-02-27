@@ -1,0 +1,35 @@
+{
+  "name": "meu-projeto",
+  "version": "1.0.0",
+  "description": "Bot Telegram → ClickUp (texto e áudio)",
+  "main": "telegram-webhook-server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node telegram-webhook-server.js",
+    "set-webhook": "node scripts/set-telegram-webhook.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "better-sqlite3": "^12.6.2",
+    "body-parser": "^2.2.2",
+    "dotenv": "^17.3.1",
+    "exceljs": "^4.4.0",
+    "express": "^5.2.1",
+    "facebook-nodejs-business-sdk": "^24.0.1",
+    "googleapis": "^133.0.0",
+    "node-cron": "^4.2.1"
+  },
+  "devDependencies": {
+    "ngrok": "^5.0.0-beta.2"
+  }
+}

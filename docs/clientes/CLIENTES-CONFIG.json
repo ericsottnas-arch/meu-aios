@@ -1,0 +1,282 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-25T12:41:25.238905",
+  "agency": "Syra Digital",
+  "clients": {
+    "dr-erico-servano": {
+      "id": "dr-erico-servano",
+      "name": "Dr. Erico Servano",
+      "type": "B2B Professional Services",
+      "category": "Legal Consulting",
+      "status": "active",
+      "priority": "premium",
+      "location": "Belo Horizonte, MG",
+      "contact": {
+        "email": "contato@servanoadvogados.com",
+        "phone": "+55 31 XXXX-XXXX",
+        "instagram": "@ericoservano",
+        "linkedin": "Erico Servano"
+      },
+      "specialty": "Direito de Harmonização Orofacial",
+      "targetAudience": [
+        "Fonoaudiólogos",
+        "Fisioterapeutas",
+        "Esteticistas habilitados",
+        "Clínicas de harmonização",
+        "Empreendedores em estética"
+      ],
+      "celo": {
+        "clientId": "dr-erico-servano",
+        "agency": "Syra",
+        "adsPlatform": "meta",
+        "metaAdAccountId": "act_1397446335381640",
+        "metaPageId": "804491499425586",
+        "ghlLocationId": "9VML3WG6LUoz7Eh5fb9U",
+        "budget": {
+          "monthly": 0,
+          "currency": "BRL",
+          "testingPercentage": 0.1
+        },
+        "autopilot": {
+          "enabled": true,
+          "checkIntervalHours": 4,
+          "morningBriefing": "08:00",
+          "eveningSummary": "20:00"
+        }
+      },
+      "googleSheets": {
+        "spreadsheetId": "1Br8Fg23cMKwLEjP8dbsz2DRIjwPoRSNoDu47SoX2FW0",
+        "ranges": {
+          "overview": "'Visão Geral'!A1:Z100",
+          "leads": "'Leads'!A1:Z500",
+          "sales": "'Vendas'!A1:Z500",
+          "campaigns": "'Campanhas'!A1:Z200"
+        }
+      },
+      "paths": {
+        "folder": "docs/clientes/dr-erico-servano",
+        "readme": "docs/clientes/dr-erico-servano/README.md",
+        "profile": "docs/clientes/dr-erico-servano/profile.md",
+        "knowledgeBase": "docs/clientes/dr-erico-servano/knowledge-base/data.json"
+      },
+      "contentStrategy": {
+        "channels": [
+          "LinkedIn",
+          "Instagram",
+          "Newsletter",
+          "WhatsApp",
+          "Webinar",
+          "Podcast"
+        ],
+        "frequency": {
+          "linkedin": "2-3x/semana",
+          "instagram": "diário",
+          "newsletter": "1x/semana",
+          "webinar": "1x/mês"
+        },
+        "ticketSize": "Alto (R$ 5.000 - 10.000)"
+      }
+    },
+    "dra-vanessa-soares": {
+      "id": "dra-vanessa-soares",
+      "name": "Dra. Vanessa Soares",
+      "type": "B2C Healthcare",
+      "category": "Medical Aesthetic Services",
+      "status": "active",
+      "priority": "premium",
+      "location": "Belo Horizonte, MG",
+      "contact": {
+        "email": "contato@dra-vanessasoares.com",
+        "phone": "+55 31 XXXX-XXXX",
+        "instagram": "@dra.vanessasoares.bh",
+        "website": "www.dra-vanessasoares.com"
+      },
+      "specialty": "Dermatologia e Medicina Estética",
+      "targetAudience": [
+        "Mulheres 25-55 anos",
+        "Profissionais urbanos",
+        "Pessoas com problemas de pele",
+        "Noivas em preparação",
+        "Pacientes buscando rejuvenescimento"
+      ],
+      "celo": {
+        "clientId": "dra-vanessa-soares",
+        "agency": "Syra",
+        "adsPlatform": "meta",
+        "metaAdAccountId": "act_659024227004356",
+        "metaPageId": "280473538472405",
+        "budget": {
+          "monthly": 0,
+          "currency": "BRL",
+          "testingPercentage": 0.1
+        },
+        "autopilot": {
+          "enabled": false,
+          "checkIntervalHours": 4,
+          "morningBriefing": "08:00",
+          "eveningSummary": "20:00"
+        }
+      },
+      "paths": {
+        "folder": "docs/clientes/dra-vanessa-soares",
+        "readme": "docs/clientes/dra-vanessa-soares/README.md",
+        "profile": "docs/clientes/dra-vanessa-soares/profile.md",
+        "knowledgeBase": "docs/clientes/dra-vanessa-soares/knowledge-base/data.json"
+      },
+      "contentStrategy": {
+        "platforms": [
+          "Instagram",
+          "WhatsApp"
+        ],
+        "frequency": {
+          "posts": "4-5x/semana",
+          "stories": "diários",
+          "liveSessions": "semanais"
+        },
+        "metrics": {
+          "targetFollowers": "50k-100k",
+          "engagementRate": "5-8%",
+          "monthlyDMs": "50-100"
+        },
+        "ticketSize": "Médio (R$ 200 - 1.000)"
+      }
+    },
+    "estetica-gabrielleoliveira": {
+      "id": "estetica-gabrielleoliveira",
+      "name": "Estética Gabrielle Oliveira",
+      "type": "B2C Beauty Services",
+      "category": "Aesthetic and Beauty Services",
+      "status": "active",
+      "priority": "growth",
+      "location": "Brasil (Nacional)",
+      "contact": {
+        "email": "gabrielle@estetica.com",
+        "phone": "+55 XX XXXX-XXXX",
+        "instagram": "@estetica_gabrielleoliveira"
+      },
+      "specialty": "Serviços de Beleza e Estética",
+      "services": [
+        "Limpeza de pele",
+        "Peeling químico",
+        "Microagulhamento",
+        "Hidratação profunda",
+        "Radiofrequência",
+        "Ultrassom microfocado",
+        "Depilação a laser",
+        "Design de sobrancelha",
+        "Massagem terapêutica"
+      ],
+      "targetAudience": [
+        "Mulheres 25-45 anos",
+        "Profissionais urbanos",
+        "Noivas",
+        "Pessoas com problemas de pele",
+        "Profissionais de beleza (colaborações)"
+      ],
+      "paths": {
+        "folder": "docs/clientes/estetica-gabrielleoliveira",
+        "readme": "docs/clientes/estetica-gabrielleoliveira/README.md",
+        "profile": "docs/clientes/estetica-gabrielleoliveira/profile.md"
+      },
+      "contentStrategy": {
+        "platforms": [
+          "Instagram"
+        ],
+        "frequency": {
+          "posts": "4-5x/semana",
+          "stories": "diários"
+        },
+        "contentTypes": [
+          "Antes/depois",
+          "Educação skincare",
+          "Bastidor",
+          "Depoimentos",
+          "How-to",
+          "Promoções"
+        ],
+        "metrics": {
+          "targetFollowers": "75k-150k",
+          "engagementRate": "6-9%",
+          "conversionRate": "3-7%",
+          "monthlyRevenue": "R$ 10k-100k+"
+        },
+        "ticketSize": "Médio (R$ 200 - 1.000)"
+      }
+    },
+    "torre-1": {
+      "id": "torre-1",
+      "name": "Torre 1",
+      "type": "Agency Client",
+      "status": "active",
+      "priority": "standard",
+      "contact": {
+        "email": "contato@torre1.com",
+        "phone": "+55 XX XXXX-XXXX"
+      },
+      "celo": {
+        "clientId": "torre-1",
+        "agency": "Syra",
+        "adsPlatform": "meta",
+        "metaAdAccountId": "act_4992030634193032",
+        "metaPageId": "837049336158107",
+        "budget": {
+          "monthly": 0,
+          "currency": "BRL",
+          "testingPercentage": 0.1
+        },
+        "autopilot": {
+          "enabled": false,
+          "checkIntervalHours": 4,
+          "morningBriefing": "08:00",
+          "eveningSummary": "20:00"
+        }
+      },
+      "paths": {
+        "folder": "docs/clientes/torre-1",
+        "readme": "docs/clientes/torre-1/README.md"
+      }
+    },
+    "humbertoandradebr": {
+      "id": "humbertoandradebr",
+      "name": "Humberto Andrade",
+      "status": "active",
+      "priority": "standard",
+      "paths": {
+        "folder": "docs/clientes/humbertoandradebr",
+        "readme": "docs/clientes/humbertoandradebr/README.md",
+        "profile": "docs/clientes/humbertoandradebr/profile.md"
+      }
+    },
+    "fourcred": {
+      "id": "fourcred",
+      "name": "Fourcred",
+      "status": "active",
+      "priority": "standard",
+      "paths": {
+        "folder": "docs/clientes/fourcred",
+        "readme": "docs/clientes/fourcred/README.md",
+        "profile": "docs/clientes/fourcred/profile.md"
+      }
+    },
+    "prof-dr-humberto-andrade": {
+      "id": "prof-dr-humberto-andrade",
+      "name": "Prof. Dr. Humberto Andrade",
+      "type": "Education/Consulting",
+      "category": "Acadêmica/Consultoria (A Validar)",
+      "status": "active",
+      "priority": "standard",
+      "paths": {
+        "folder": "docs/clientes/prof-dr-humberto-andrade",
+        "readme": "docs/clientes/prof-dr-humberto-andrade/README.md",
+        "profile": "docs/clientes/prof-dr-humberto-andrade/profile.md"
+      }
+    }
+  },
+  "summary": {
+    "totalClients": 7,
+    "activeClients": 7,
+    "premiumClients": 2,
+    "growthClients": 1,
+    "standardClients": 3
+  }
+}

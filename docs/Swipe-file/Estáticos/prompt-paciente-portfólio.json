@@ -1,0 +1,381 @@
+{
+  "metadata": {
+    "project": "Paciente Portfólio",
+    "reference_style": "Belle Fernandes Premium Aesthetic",
+    "model": "Nano Banana Pro 2",
+    "purpose": "Replicar estilo visual exato com novo paciente",
+    "date": "2026-02-26"
+  },
+
+  "design_system": {
+    "color_palette": {
+      "background_primary": "#0d0d0f",
+      "background_secondary": "#1a1a1d",
+      "text_primary": "#f5f0eb",
+      "accent_warm": "#d6ba9e",
+      "accent_gold": "#c9a876",
+      "circle_stroke": "#d6ba9e",
+      "shadow_deep": "#000000"
+    },
+    "typography": {
+      "title_primary": {
+        "font": "Playfair Display",
+        "weight": 900,
+        "style": "italic",
+        "size_px": 140,
+        "line_height": 1.1,
+        "letter_spacing": 8,
+        "color": "#d6ba9e",
+        "text_transform": "uppercase"
+      },
+      "subtitle_secondary": {
+        "font": "Montserrat",
+        "weight": 600,
+        "style": "normal",
+        "size_px": 18,
+        "letter_spacing": 3,
+        "color": "#d6ba9e",
+        "text_transform": "uppercase",
+        "text": "// PACIENTE PORTFÓLIO | RESULTADO&TRANSFORMAÇÃO"
+      },
+      "subtitle_offer": {
+        "font": "Montserrat",
+        "weight": 500,
+        "style": "normal",
+        "size_px": 24,
+        "color": "#f5f0eb",
+        "text": "Você paga apenas os custos dos materiais."
+      },
+      "speech_bubble_question": {
+        "font": "Montserrat",
+        "weight": 500,
+        "style": "normal",
+        "size_px": 16,
+        "color": "#0d0d0f",
+        "text": "\"Resultado transformado?\""
+      },
+      "speech_bubble_subtext": {
+        "font": "Montserrat",
+        "weight": 400,
+        "style": "normal",
+        "size_px": 14,
+        "color": "#0d0d0f",
+        "text": "Veja a integridade do resultado preservada"
+      },
+      "cta_primary": {
+        "font": "Montserrat",
+        "weight": 600,
+        "style": "normal",
+        "size_px": 20,
+        "color": "#f5f0eb",
+        "text": "Envie \"Eu quero\" para confirmar"
+      }
+    }
+  },
+
+  "layout": {
+    "canvas": {
+      "width_px": 1080,
+      "height_px": 1350,
+      "aspect_ratio": "9:11.25",
+      "background_color": "#0d0d0f"
+    },
+
+    "header_section": {
+      "top_px": 40,
+      "left_px": 40,
+      "width_px": 1000,
+      "height_px": 60,
+      "content": "subtitle_secondary",
+      "alignment": "left",
+      "opacity": 0.8
+    },
+
+    "title_section": {
+      "top_px": 100,
+      "left_px": 40,
+      "width_px": 1000,
+      "height_px": 280,
+      "content": "PACIENTE PORTFÓLIO",
+      "font_spec": "title_primary",
+      "alignment": "left",
+      "vertical_align": "top",
+      "word_wrap": true,
+      "line_break_strategy": "natural"
+    },
+
+    "subtitle_offer_section": {
+      "top_px": 380,
+      "left_px": 40,
+      "width_px": 1000,
+      "height_px": 80,
+      "content": "subtitle_offer",
+      "alignment": "left",
+      "opacity": 0.95
+    },
+
+    "photo_section": {
+      "top_px": 220,
+      "left_px": 420,
+      "width_px": 650,
+      "height_px": 900,
+      "type": "patient_photo",
+      "positioning": "right-side",
+      "crop": "headshot-upper-body",
+      "background_removal": "enabled",
+      "content_aware_fill": true
+    },
+
+    "speech_bubble": {
+      "top_px": 280,
+      "left_px": 520,
+      "width_px": 420,
+      "height_px": 100,
+      "shape": "rounded_rectangle",
+      "background_color": "#f5f0eb",
+      "border_radius_px": 20,
+      "padding_px": 20,
+      "border": {
+        "width_px": 2,
+        "color": "#d6ba9e"
+      },
+      "content": [
+        {
+          "text": "speech_bubble_question",
+          "position": "top"
+        },
+        {
+          "text": "speech_bubble_subtext",
+          "position": "bottom",
+          "margin_top_px": 8
+        }
+      ],
+      "shadow": {
+        "blur_px": 20,
+        "offset_x": 0,
+        "offset_y": 8,
+        "color": "#000000",
+        "opacity": 0.3
+      }
+    }
+  },
+
+  "visual_effects": {
+    "background": {
+      "type": "solid_with_vignette",
+      "vignette": {
+        "enabled": true,
+        "radius": 1.5,
+        "darkness": 0.4,
+        "feather_px": 200
+      }
+    },
+
+    "zoom_circles": {
+      "enabled": true,
+      "count": 3,
+      "style": "before_after_highlight",
+      "specifications": [
+        {
+          "id": "circle_1",
+          "position": "lower_left",
+          "top_px": 920,
+          "left_px": 480,
+          "diameter_px": 160,
+          "stroke_width_px": 3,
+          "stroke_color": "#d6ba9e",
+          "stroke_opacity": 0.8,
+          "content": "zoom_result_left_side",
+          "scale_factor": 2.0,
+          "source_from_photo": "left_cheek_area"
+        },
+        {
+          "id": "circle_2",
+          "position": "right",
+          "top_px": 520,
+          "left_px": 1040,
+          "diameter_px": 180,
+          "stroke_width_px": 3,
+          "stroke_color": "#d6ba9e",
+          "stroke_opacity": 0.8,
+          "content": "zoom_result_right_eye_area",
+          "scale_factor": 2.2,
+          "source_from_photo": "right_eye_corner"
+        },
+        {
+          "id": "circle_3",
+          "position": "lower_right",
+          "top_px": 860,
+          "left_px": 1020,
+          "diameter_px": 170,
+          "stroke_width_px": 3,
+          "stroke_color": "#d6ba9e",
+          "stroke_opacity": 0.8,
+          "content": "zoom_result_cheek_detail",
+          "scale_factor": 2.1,
+          "source_from_photo": "cheek_detail_area"
+        }
+      ]
+    },
+
+    "glow_effect": {
+      "enabled": true,
+      "type": "subtle_rim_light",
+      "color": "#d6ba9e",
+      "opacity": 0.15,
+      "blur_radius_px": 40,
+      "position": "around_face",
+      "intensity": "soft"
+    },
+
+    "highlight_layer": {
+      "enabled": true,
+      "type": "strategic_light_spots",
+      "color": "#f5f0eb",
+      "opacity": 0.1,
+      "locations": [
+        "cheekbones",
+        "under_eyes",
+        "forehead_light_areas"
+      ],
+      "blur_radius_px": 25
+    },
+
+    "photo_enhancement": {
+      "skin_tone_warmth": "+15%",
+      "contrast_subtle": "+8%",
+      "clarity_light": "+10%",
+      "saturation_controlled": "+5%",
+      "shadows_lifted": "+12%",
+      "highlights_preserved": "natural"
+    }
+  },
+
+  "photo_requirements": {
+    "source_image": {
+      "instructions": "USAR FOTO DO PACIENTE REAL - Manter 100% de autenticidade",
+      "angle": "frontal_slight_45_degrees",
+      "framing": "headshot_to_upper_shoulders",
+      "lighting": "frontal_soft_natural_or_studio",
+      "background_requirement": "deve_ser_removido_transparente"
+    },
+
+    "integrity_requirements": {
+      "CRITICAL": "Se modificar a foto, MANTER INTEGRIDADE TOTAL DAS CARACTERÍSTICAS",
+      "preservation_rules": [
+        "✓ Manter características naturais do paciente (não fazer parecer perfeito demais)",
+        "✓ Preservar tom de pele autêntico",
+        "✓ Manter formato natural do rosto",
+        "✓ Não criar resultados impossíveis (apenas realçar o que existe)",
+        "✓ Se há resultado/transformação, mostrar diferença REAL (antes/depois)",
+        "✓ Manter simetria natural (não artificial)",
+        "✓ Preservar marcas/características únicas que fazem pessoa ser reconhecível",
+        "✓ Não alterar idade/etnias características"
+      ],
+      "what_to_enhance": [
+        "Luminosidade da pele (reequilíbrio)",
+        "Suavidade de pequenas linhas (se houver tratamento)",
+        "Brilho natural (glow profissional)",
+        "Contraste olhos/sobrancelhas",
+        "Tom uniforme (se relevante ao tratamento)"
+      ],
+      "what_NOT_to_do": [
+        "✗ Não fazer facial reconstruction/morphing",
+        "✗ Não adicionar features que não existem",
+        "✗ Não remover características naturais importantes",
+        "✗ Não criar ilusão de resultado imposível",
+        "✗ Não alterar profundamente textura ou tom",
+        "✗ Não fazer parecer filtrado/irreal"
+      ]
+    },
+
+    "output_specification": {
+      "format": "PNG",
+      "background": "transparent",
+      "resolution_min_px": "1080x1350",
+      "color_space": "sRGB",
+      "compression": "PNG_lossless"
+    }
+  },
+
+  "cta_section": {
+    "enabled": true,
+    "position": "bottom",
+    "top_px": 1200,
+    "left_px": 40,
+    "width_px": 1000,
+    "height_px": 130,
+    "content": {
+      "text": "Envie \"Eu quero\" para confirmar",
+      "font_spec": "cta_primary"
+    },
+    "background": "none",
+    "alignment": "center",
+    "styling": {
+      "text_shadow": {
+        "blur_px": 2,
+        "offset_x": 0,
+        "offset_y": 1,
+        "color": "#000000",
+        "opacity": 0.5
+      }
+    }
+  },
+
+  "output_specifications": {
+    "format": "PNG",
+    "resolution": "1080x1350",
+    "color_profile": "sRGB",
+    "quality": "maximum",
+    "background_transparency": false,
+    "final_background_color": "#0d0d0f"
+  },
+
+  "execution_notes": {
+    "critical_instructions": [
+      "1. USAR FOTO REAL DO PACIENTE - não usar modelo ou referência",
+      "2. Manter 100% integridade de características (não distorcer rosto)",
+      "3. Se houver antes/depois, mostrar diferença REAL do resultado",
+      "4. Cores devem ser EXATAMENTE a paleta especificada (#0d0d0f, #f5f0eb, #d6ba9e)",
+      "5. Tipografia Playfair 900 italic para título - não substituir",
+      "6. Títulos DEVEM estar em MAIÚSCULAS",
+      "7. Zoom circles com stroke #d6ba9e, não cores diferentes",
+      "8. Vignette deve ser SUAVE (não dramático)",
+      "9. Glow effect deve ser SUBTIL (profissional, não artificial)",
+      "10. Speech bubble DEVE manter border e background conforme especificado"
+    ],
+    "failure_scenarios": [
+      "❌ Se usar modelo genérico = REJEITAR",
+      "❌ Se distorcer características = REJEITAR",
+      "❌ Se cores não baterem com paleta = REJEITAR",
+      "❌ Se tipografia não for Playfair 900 italic = REJEITAR",
+      "❌ Se resultado parecer filtrado/fake = REJEITAR"
+    ],
+    "validation_checklist": [
+      "☐ Foto é do paciente real (reconhecível)",
+      "☐ Características naturais preservadas",
+      "☐ Paleta de cores exata (#0d0d0f, #f5f0eb, #d6ba9e)",
+      "☐ Tipografia exata (Playfair 900 italic para título)",
+      "☐ 3 zoom circles com stroke #d6ba9e",
+      "☐ Vignette suave no background",
+      "☐ Glow effect subtil ao redor",
+      "☐ Speech bubble com border e texto corretos",
+      "☐ CTA \"Envie 'Eu quero' para confirmar\" visível",
+      "☐ Layout matches reference (sem desvios)"
+    ]
+  },
+
+  "style_reference": {
+    "inspiration": "Belle Fernandes - Exausta de Ouvir",
+    "aesthetic_principles": [
+      "Premium dark luxury (fundo escuro #0d0d0f)",
+      "Warm accent tones (#d6ba9e) para elegância",
+      "Tipografia italic + bold para drama",
+      "Subtle glow effects (profissional, não cartoon)",
+      "Foto em destaque com detalhe zoom circles",
+      "Speech bubble para conversational tone",
+      "Vignette suave para focus na foto"
+    ],
+    "tone": "Premium, consultative, before-after showcase, result-focused"
+  }
+}
