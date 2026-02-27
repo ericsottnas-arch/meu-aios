@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "name": "Default Task Queue",
+    "created": "2026-02-27T10:00:00Z",
+    "duration_hours": 5,
+    "mode": "slow",
+    "executor": "autonomous-system",
+    "description": "Template de fila de tarefas para modo autônomo"
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "agent": "@pm",
+      "command": "*onboard-client",
+      "description": "Onboard novo cliente no sistema",
+      "params": ["Nome do Cliente"],
+      "priority": "high",
+      "wait_before_minutes": 0,
+      "timeout_minutes": 30,
+      "status": "pending",
+      "notes": "Cria estrutura de pastas, Google Drive folders, documentação inicial"
+    },
+    {
+      "id": 2,
+      "agent": "@copy-chef",
+      "command": "*client-brief",
+      "description": "Preparar briefing de cliente",
+      "params": ["Nome do Cliente"],
+      "priority": "high",
+      "wait_before_minutes": 15,
+      "timeout_minutes": 45,
+      "status": "pending",
+      "notes": "Coleta dados, analisa perfil, prepara tone of voice"
+    },
+    {
+      "id": 3,
+      "agent": "@georgi",
+      "command": "*write",
+      "description": "Escrever sequência de vendas premium",
+      "params": ["Nome do Cliente"],
+      "priority": "high",
+      "wait_before_minutes": 20,
+      "timeout_minutes": 60,
+      "status": "pending",
+      "notes": "Cria sales letter de alto ticket usando templates de Stefan Georgi"
+    },
+    {
+      "id": 4,
+      "agent": "@follow-up-specialist",
+      "command": "*sequence",
+      "description": "Criar sequência de follow-up 6 meses",
+      "params": ["Nome do Cliente", "180"],
+      "priority": "medium",
+      "wait_before_minutes": 25,
+      "timeout_minutes": 45,
+      "status": "pending",
+      "notes": "6-phase Russell Brunson method, 20+ mensagens"
+    },
+    {
+      "id": 5,
+      "agent": "@ghl-maestro",
+      "command": "*sync-conversations",
+      "description": "Sincronizar conversas GHL com base de dados local",
+      "params": [],
+      "priority": "medium",
+      "wait_before_minutes": 20,
+      "timeout_minutes": 30,
+      "status": "pending",
+      "notes": "Pull todas as conversas, mensagens, contatos"
+    },
+    {
+      "id": 6,
+      "agent": "@account",
+      "command": "*analyze-conversations",
+      "description": "Analisar conversas com Nico",
+      "params": ["últimas 24 horas"],
+      "priority": "medium",
+      "wait_before_minutes": 15,
+      "timeout_minutes": 30,
+      "status": "pending",
+      "notes": "Extrai insights, oportunidades, padrões de conversa"
+    }
+  ],
+  "execution_notes": {
+    "how_to_use": "1. Copie este arquivo para task-queue.json; 2. Edite os params com dados reais; 3. Execute /trabalhe-para-mim",
+    "recommended_order": "onboard → brief → copy → follow-up → ghl → analysis",
+    "slow_mode_gaps": "10-15 min entre tarefas (não contínuo)",
+    "duration": "~4-5 horas com todos os tasks"
+  }
+}

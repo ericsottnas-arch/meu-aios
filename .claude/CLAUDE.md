@@ -173,6 +173,148 @@ await story.save();
 - `npm run build` - Build project
 <!-- AIOS-MANAGED-END: common-commands -->
 
+## Autonomous Operation Mode (Trabalhe para Mim)
+
+### Overview
+When Eric is away, agents operate in **Slow Autonomous Mode** for up to 5 hours (until token reset). This mode allows continuous work without user intervention or permission prompts.
+
+### Activation
+**Command:** `/trabalhe-para-mim`
+
+Usage:
+```
+/trabalhe-para-mim [duration] [queue-file]
+```
+
+Examples:
+- `/trabalhe-para-mim` - Default 5 hours
+- `/trabalhe-para-mim 3h` - 3 hours
+- `/trabalhe-para-mim queue.json` - Load custom task queue
+
+### Task Queue Format
+File: `.aios/autonomous/task-queue.json`
+
+```json
+{
+  "meta": {
+    "created": "2026-02-27T10:30:00Z",
+    "duration_hours": 5,
+    "mode": "slow",
+    "executor": "autonomous-system"
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "agent": "@pm",
+      "command": "*onboard-client",
+      "params": ["Dra. Bruna Nogueira"],
+      "priority": "high",
+      "wait_before_minutes": 0,
+      "timeout_minutes": 30,
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "agent": "@copy-chef",
+      "command": "*client-brief",
+      "params": ["Dr. Erico Servano"],
+      "priority": "high",
+      "wait_before_minutes": 15,
+      "timeout_minutes": 45,
+      "status": "pending"
+    }
+  ]
+}
+```
+
+### Execution Rules (Autonomous Mode)
+
+**CRITICAL DIRECTIVES:**
+
+1. **No User Interaction** - All tasks execute without asking for confirmation
+2. **Auto-Approve Permissions** - All tool calls auto-approved (user is away)
+3. **Graceful Degradation** - Skip failed tasks, continue queue
+4. **Slow Execution** - Add delays between tasks (10-30 min gaps)
+5. **Self-Healing** - Retry failed tasks once automatically
+6. **Token Awareness** - Stop 5 minutes before expected reset
+7. **State Logging** - Log all progress to `.aios/autonomous/execution-log.json`
+
+### Task Queue Management
+
+**Available Commands (root level):**
+- `*queue-list` - Show all pending tasks
+- `*queue-add {agent} {command} {params}` - Add task to queue
+- `*queue-remove {task-id}` - Remove task from queue
+- `*queue-pause` - Pause execution (resume manually)
+- `*queue-resume` - Resume paused execution
+- `*queue-clear` - Clear all pending tasks
+- `*queue-export` - Export execution log
+
+### Agent Behavior in Autonomous Mode
+
+**All agents:**
+1. Skip `*help` and interactive prompts
+2. Use default/sensible parameters if not specified
+3. Log output to task execution record (not just console)
+4. Continue to next task even if current fails
+5. Report status every 30 minutes (brief summary)
+
+**Example (Agent Behavior):**
+```
+@pm receives: *onboard-client Dra. Bruna Nogueira
+→ Skips "Are you sure?" prompts
+→ Uses default folder structure
+→ Logs completion to autonomous log
+→ Returns to queue manager
+```
+
+### Status Tracking
+Check progress at any time:
+```
+.aios/autonomous/execution-log.json
+```
+
+Example output:
+```json
+{
+  "session_start": "2026-02-27T10:30:00Z",
+  "mode": "autonomous",
+  "tasks_completed": 3,
+  "tasks_pending": 7,
+  "last_update": "2026-02-27T11:15:00Z",
+  "completed_tasks": [
+    {
+      "id": 1,
+      "agent": "@pm",
+      "command": "*onboard-client",
+      "status": "completed",
+      "duration_minutes": 12,
+      "timestamp": "2026-02-27T10:45:00Z"
+    }
+  ],
+  "next_task_at": "2026-02-27T11:30:00Z"
+}
+```
+
+### Safety Limits
+
+- **Max concurrent tasks**: 1 (serial execution only)
+- **Max retries per task**: 1 (fail → retry once → skip)
+- **Max task duration**: 60 minutes (timeout if exceeds)
+- **Min delay between tasks**: 10 minutes (slow mode)
+- **Auto-stop**: 5 min before token reset
+- **Memory check**: If memory > 80%, pause and wait
+
+### Token Reset Handling
+
+When tokens reset:
+1. Current task completes
+2. New session inherits remaining task queue
+3. Execution continues automatically (no re-activation needed)
+4. Logs merge across sessions
+
+---
+
 ## Debugging
 
 ### Enable Debug Mode

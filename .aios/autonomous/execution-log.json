@@ -1,0 +1,31 @@
+{
+  "session_id": "none",
+  "session_start": null,
+  "session_end": null,
+  "mode": "idle",
+  "meta": {
+    "description": "Autonomous execution log (auto-updated)",
+    "format_version": "1.0"
+  },
+  "statistics": {
+    "total_tasks_queued": 0,
+    "tasks_completed": 0,
+    "tasks_failed": 0,
+    "tasks_retried": 0,
+    "tasks_skipped": 0,
+    "tasks_pending": 0,
+    "total_duration_minutes": 0,
+    "average_task_duration_minutes": 0,
+    "success_rate_percent": 0
+  },
+  "current_session": {
+    "active": false,
+    "current_task_id": null,
+    "current_task_agent": null,
+    "started_at": null,
+    "next_task_scheduled_at": null
+  },
+  "completed_tasks": [],
+  "failed_tasks": [],
+  "pending_tasks": []
+}

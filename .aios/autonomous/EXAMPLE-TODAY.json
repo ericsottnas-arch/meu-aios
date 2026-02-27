@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "name": "Exemplo para HOJE - Copie e Use",
+    "description": "Fila de tarefas pronta para copiar, editar com seus dados e rodar",
+    "created": "2026-02-27T11:00:00Z",
+    "duration_hours": 5,
+    "mode": "slow",
+    "instructions": [
+      "1. Copie todo o conteúdo deste arquivo",
+      "2. Cole em .aios/autonomous/task-queue.json",
+      "3. Edite os params com SEUS dados",
+      "4. Rode: /trabalhe-para-mim",
+      "5. Saia e deixe rodando por 5 horas"
+    ]
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "agent": "@pm",
+      "command": "*onboard-client",
+      "description": "Onboard novo cliente no sistema - cria pastas, documentação, estrutura",
+      "params": ["Dr. Erico Servano"],
+      "priority": "high",
+      "wait_before_minutes": 0,
+      "timeout_minutes": 30,
+      "status": "pending",
+      "notes": "EDITE: Troque 'Dr. Erico Servano' pelo seu cliente real"
+    },
+    {
+      "id": 2,
+      "agent": "@copy-chef",
+      "command": "*client-brief",
+      "description": "Preparar briefing de cliente - coleta dados, ICP, painpoints, tom de voz",
+      "params": ["Dr. Erico Servano"],
+      "priority": "high",
+      "wait_before_minutes": 15,
+      "timeout_minutes": 45,
+      "status": "pending",
+      "notes": "EDITE: Use o mesmo nome do cliente acima"
+    },
+    {
+      "id": 3,
+      "agent": "@halbert",
+      "command": "*headlines",
+      "description": "Gerar 10-20 headlines high-impact (Gary Halbert style)",
+      "params": ["Dr. Erico Servano", "leads frios"],
+      "priority": "high",
+      "wait_before_minutes": 20,
+      "timeout_minutes": 30,
+      "status": "pending",
+      "notes": "EDITE: 'leads frios' pode ser: 'high-ticket', 'relação existente', 'quentes', etc"
+    },
+    {
+      "id": 4,
+      "agent": "@georgi",
+      "command": "*write",
+      "description": "Escrever sales letter premium (Stefan Georgi - high-ticket)",
+      "params": ["Dr. Erico Servano"],
+      "priority": "high",
+      "wait_before_minutes": 20,
+      "timeout_minutes": 60,
+      "status": "pending",
+      "notes": "EDITE: Stefan escreverá exatamente para este cliente"
+    },
+    {
+      "id": 5,
+      "agent": "@orzechowski",
+      "command": "*email-sequence",
+      "description": "Sequência de 5+ emails (Russell Brunson method)",
+      "params": ["Dr. Erico Servano"],
+      "priority": "high",
+      "wait_before_minutes": 20,
+      "timeout_minutes": 45,
+      "status": "pending",
+      "notes": "EDITE: Criará sequência de email automação completa"
+    },
+    {
+      "id": 6,
+      "agent": "@follow-up-specialist",
+      "command": "*sequence",
+      "description": "6-mês follow-up sequence completa (20+ mensagens)",
+      "params": ["Dr. Erico Servano", "180"],
+      "priority": "medium",
+      "wait_before_minutes": 20,
+      "timeout_minutes": 45,
+      "status": "pending",
+      "notes": "EDITE: Gera 6 phases, ~20 mensagens, pronta para automação"
+    }
+  ],
+  "execution_summary": {
+    "total_time_estimate_minutes": 240,
+    "expected_results": [
+      "✅ Cliente onboarded (pastas, docs estruturadas)",
+      "✅ Briefing completo coletado",
+      "✅ 15+ headlines high-impact",
+      "✅ Sales letter premium (500-800 palavras)",
+      "✅ Email sequence 5+ emails",
+      "✅ 6-month follow-up sequence (20 msgs)"
+    ],
+    "deliverables": [
+      "Estrutura de pastas no Google Drive",
+      "Documentação do cliente em /docs/clientes/",
+      "Headlines em arquivo JSON estruturado",
+      "Sales letter em markdown/HTML",
+      "Email sequence pronta para automação",
+      "Follow-up sequence em JSON com timings"
+    ],
+    "what_you_can_do": [
+      "1. Revisar os outputs quando voltar",
+      "2. Aproveitar para lançar campanhas",
+      "3. Usar como base para iterações",
+      "4. Compartilhar com cliente para feedback",
+      "5. Colocar na automação (Stevo, GHL)"
+    ]
+  }
+}
