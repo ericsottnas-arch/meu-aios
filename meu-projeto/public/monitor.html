@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔴 Nico Monitor - Log</title>
+  <title>🔴 Nico Monitor - Professional Activity Dashboard</title>
   <style>
     * {
       margin: 0;
@@ -11,11 +11,25 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --bg-primary: #0f0f12;
+      --bg-surface: #1a1a1f;
+      --bg-hover: #242429;
+      --border: #2a2a32;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a8;
+      --status-online: #10b981;
+      --erico: #d6ba9e;
+      --humberto: #3b82f6;
+      --gabrielle: #ef4444;
+      --accent: #06b6d4;
+    }
+
     body {
-      font-family: 'Courier New', monospace;
-      background: #1a1a1a;
-      color: #ffffff;
-      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.5;
       font-size: 12px;
     }
 
@@ -23,68 +37,89 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     /* HEADER */
     .header {
-      background: #0d0d0f;
-      border-bottom: 2px solid #333;
-      padding: 12px 15px;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .header h1 {
-      font-size: 16px;
-      letter-spacing: 1px;
-    }
-
-    .controls {
+    .header-left {
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 12px;
+      flex: 1;
     }
 
-    .status {
+    .header-title {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-badge {
       display: flex;
       align-items: center;
       gap: 6px;
       font-size: 11px;
+      padding: 6px 12px;
+      background: var(--bg-hover);
+      border: 1px solid var(--border);
+      border-radius: 4px;
     }
 
     .status-dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: #2ecc71;
+      background: var(--status-online);
       animation: pulse 2s infinite;
     }
 
     .status-dot.offline {
-      background: #e74c3c;
+      background: #ef4444;
       animation: none;
     }
 
     @keyframes pulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      50% { opacity: 0.6; }
+    }
+
+    .header-right {
+      display: flex;
+      gap: 8px;
     }
 
     .btn {
-      background: #3498db;
-      border: 1px solid #2980b9;
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 3px;
+      padding: 8px 14px;
+      background: var(--bg-hover);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      border-radius: 4px;
       cursor: pointer;
-      font-family: 'Courier New', monospace;
       font-size: 11px;
+      font-family: inherit;
       transition: all 0.2s;
+      white-space: nowrap;
     }
 
     .btn:hover {
-      background: #2980b9;
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg-primary);
     }
 
     .btn:active {
@@ -96,33 +131,122 @@
       cursor: not-allowed;
     }
 
-    /* LOG AREA */
-    .log {
+    /* MAIN GRID */
+    .main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 16px;
+      overflow: hidden;
+    }
+
+    /* CARD */
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-header {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-title.erico {
+      color: var(--erico);
+    }
+
+    .card-title.humberto {
+      color: var(--humberto);
+    }
+
+    .card-title.gabrielle {
+      color: var(--gabrielle);
+    }
+
+    .card-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .meta-label {
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 10px;
+    }
+
+    .meta-value {
+      color: var(--status-online);
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .meta-value.count {
+      font-size: 16px;
+    }
+
+    /* FEED */
+    .feed {
       flex: 1;
       overflow-y: auto;
-      padding: 10px 15px;
-      background: #1a1a1a;
-    }
-
-    .log-entry {
-      padding: 6px 0;
-      border-bottom: 1px solid #2a2a2a;
+      padding: 8px;
       display: flex;
-      gap: 12px;
-      animation: slideIn 0.2s ease-out;
-      word-break: break-word;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    .log-entry:hover {
-      background: #1f1f1f;
+    .message-row {
       padding: 6px 8px;
+      background: rgba(0, 0, 0, 0.2);
+      border-left: 2px solid transparent;
       border-radius: 2px;
+      font-size: 11px;
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+      transition: all 0.2s;
+      animation: slideIn 0.2s ease-out;
+    }
+
+    .message-row:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-left-color: var(--accent);
     }
 
     @keyframes slideIn {
       from {
         opacity: 0;
-        transform: translateX(-10px);
+        transform: translateX(-4px);
       }
       to {
         opacity: 1;
@@ -130,107 +254,121 @@
       }
     }
 
-    .log-time {
-      color: #666;
-      min-width: 75px;
+    .message-time {
+      color: var(--text-secondary);
+      min-width: 35px;
       white-space: nowrap;
+      font-size: 10px;
     }
 
-    .log-client {
-      min-width: 90px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .log-client.erico {
-      color: #d6ba9e;
-    }
-
-    .log-client.humberto {
-      color: #3498db;
-    }
-
-    .log-client.gabrielle {
-      color: #e74c3c;
-    }
-
-    .log-name {
-      color: #999;
-      min-width: 100px;
+    .message-name {
+      color: var(--accent);
+      min-width: 60px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      font-size: 10px;
     }
 
-    .log-message {
+    .message-text {
+      color: var(--text-primary);
       flex: 1;
-      color: #e0e0e0;
-      word-break: break-word;
-    }
-
-    .log-status {
-      color: #2ecc71;
-      min-width: 25px;
+      overflow: hidden;
+      text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    .empty {
-      color: #666;
+    .empty-state {
+      color: var(--text-secondary);
       text-align: center;
-      padding: 40px;
+      padding: 20px;
+      font-size: 11px;
     }
 
     /* SCROLLBAR */
-    .log::-webkit-scrollbar {
-      width: 8px;
+    .feed::-webkit-scrollbar {
+      width: 6px;
     }
 
-    .log::-webkit-scrollbar-track {
-      background: #1a1a1a;
+    .feed::-webkit-scrollbar-track {
+      background: transparent;
     }
 
-    .log::-webkit-scrollbar-thumb {
-      background: #333;
-      border-radius: 4px;
+    .feed::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
     }
 
-    .log::-webkit-scrollbar-thumb:hover {
-      background: #444;
+    .feed::-webkit-scrollbar-thumb:hover {
+      background: var(--text-secondary);
     }
 
     /* FOOTER */
     .footer {
-      background: #0d0d0f;
-      border-top: 2px solid #333;
-      padding: 10px 15px;
-      font-size: 11px;
-      color: #999;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
     }
 
     .stats {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .stat {
       display: flex;
-      gap: 5px;
+      flex-direction: column;
+      gap: 2px;
     }
 
     .stat-label {
-      color: #666;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.5px;
     }
 
     .stat-value {
-      color: #2ecc71;
+      color: var(--status-online);
       font-weight: bold;
+      font-size: 12px;
     }
 
     .last-update {
-      color: #666;
+      color: var(--text-secondary);
+      font-size: 11px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .main {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .card-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -238,162 +376,203 @@
   <div class="container">
     <!-- HEADER -->
     <div class="header">
-      <h1>🔴 NICO MONITOR - LOG</h1>
-      <div class="controls">
-        <div class="status">
+      <div class="header-left">
+        <div class="header-title">
+          🔴 NICO MONITOR
+        </div>
+        <div class="status-badge">
           <span class="status-dot" id="status-dot"></span>
           <span id="status-text">Online</span>
         </div>
-        <button class="btn" id="refresh-btn" onclick="loadLog()">🔄 Refresh</button>
-        <button class="btn" onclick="clearLog()">🗑️ Limpar</button>
+      </div>
+      <div class="header-right">
+        <button class="btn" id="refresh-btn" onclick="loadData()">🔄 Refresh</button>
+        <button class="btn" onclick="clearData()">🗑️ Clear</button>
       </div>
     </div>
 
-    <!-- LOG -->
-    <div class="log" id="log">
-      <div class="empty">Aguardando mensagens...</div>
+    <!-- MAIN GRID -->
+    <div class="main">
+      <!-- ERICO CARD -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title erico">👨 ERICO</div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <span class="meta-label">Mensagens</span>
+              <span class="meta-value count" id="erico-count">0</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Última</span>
+              <span class="meta-value" id="erico-last">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="feed" id="erico-feed">
+          <div class="empty-state">Aguardando mensagens...</div>
+        </div>
+      </div>
+
+      <!-- HUMBERTO CARD -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title humberto">👨 HUMBERTO</div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <span class="meta-label">Mensagens</span>
+              <span class="meta-value count" id="humberto-count">0</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Última</span>
+              <span class="meta-value" id="humberto-last">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="feed" id="humberto-feed">
+          <div class="empty-state">Aguardando mensagens...</div>
+        </div>
+      </div>
+
+      <!-- GABRIELLE CARD -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title gabrielle">👩 GABRIELLE</div>
+          <div class="card-meta">
+            <div class="meta-item">
+              <span class="meta-label">Mensagens</span>
+              <span class="meta-value count" id="gabrielle-count">0</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Última</span>
+              <span class="meta-value" id="gabrielle-last">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="feed" id="gabrielle-feed">
+          <div class="empty-state">Aguardando mensagens...</div>
+        </div>
+      </div>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
       <div class="stats">
         <div class="stat">
-          <span class="stat-label">Total:</span>
-          <span class="stat-value" id="total">0</span>
+          <span class="stat-label">Total</span>
+          <span class="stat-value" id="total-stat">0</span>
         </div>
         <div class="stat">
-          <span class="stat-label">Erico:</span>
-          <span class="stat-value" id="erico-count">0</span>
+          <span class="stat-label">Erico</span>
+          <span class="stat-value" id="erico-stat">0</span>
         </div>
         <div class="stat">
-          <span class="stat-label">Humberto:</span>
-          <span class="stat-value" id="humberto-count">0</span>
+          <span class="stat-label">Humberto</span>
+          <span class="stat-value" id="humberto-stat">0</span>
         </div>
         <div class="stat">
-          <span class="stat-label">Gabrielle:</span>
-          <span class="stat-value" id="gabrielle-count">0</span>
+          <span class="stat-label">Gabrielle</span>
+          <span class="stat-value" id="gabrielle-stat">0</span>
         </div>
       </div>
       <div class="last-update">
-        Última: <span id="last-update">—</span>
+        Última atualização: <span id="last-update-time">—</span>
       </div>
     </div>
   </div>
 
   <script>
-    const logData = [];
-    const MAX_ENTRIES = 100;
+    const data = {
+      erico: [],
+      humberto: [],
+      gabrielle: []
+    };
 
     function formatTime(timestamp) {
       const date = new Date(timestamp);
       return date.toLocaleTimeString('pt-BR', {
         hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
+        minute: '2-digit'
       });
     }
 
-    function truncateText(text, length = 60) {
+    function formatTimeAgo(timestamp) {
+      if (!timestamp) return '—';
+      const now = Date.now();
+      const diff = Math.floor((now - timestamp) / 1000);
+
+      if (diff < 60) return `${diff}s`;
+      if (diff < 3600) return `${Math.floor(diff / 60)}m`;
+      if (diff < 86400) return `${Math.floor(diff / 3600)}h`;
+      return `${Math.floor(diff / 86400)}d`;
+    }
+
+    function truncate(text, len = 40) {
       if (!text) return '[vazio]';
-      if (text.length > length) return text.substring(0, length) + '...';
+      if (text.length > len) return text.substring(0, len) + '...';
       return text;
     }
 
-    function addEntry(client, pushName, message, timestamp) {
-      const entry = { client, pushName, message, timestamp };
-      logData.unshift(entry);
+    function renderFeed(client, messages) {
+      const feed = document.getElementById(`${client}-feed`);
 
-      // Manter apenas últimas 100
-      if (logData.length > MAX_ENTRIES) {
-        logData.pop();
-      }
-
-      renderLog();
-      updateStats();
-    }
-
-    function renderLog() {
-      const logEl = document.getElementById('log');
-
-      if (logData.length === 0) {
-        logEl.innerHTML = '<div class="empty">Aguardando mensagens...</div>';
+      if (!messages || messages.length === 0) {
+        feed.innerHTML = '<div class="empty-state">Aguardando mensagens...</div>';
         return;
       }
 
-      logEl.innerHTML = logData.map(entry => `
-        <div class="log-entry">
-          <div class="log-time">${formatTime(entry.timestamp)}</div>
-          <div class="log-client ${entry.client}">${entry.client.toUpperCase()}</div>
-          <div class="log-name" title="${entry.pushName}">${entry.pushName}</div>
-          <div class="log-message" title="${entry.message}">${truncateText(entry.message)}</div>
-          <div class="log-status">✅</div>
+      feed.innerHTML = messages.map(msg => `
+        <div class="message-row" title="${msg.content}">
+          <div class="message-time">${formatTime(msg.timestamp)}</div>
+          <div class="message-name">${msg.push_name?.substring(0, 12) || 'Desconhecido'}</div>
+          <div class="message-text">${truncate(msg.content)}</div>
         </div>
       `).join('');
-
-      logEl.scrollTop = 0;
     }
 
     function updateStats() {
-      const total = logData.length;
-      const erico = logData.filter(e => e.client === 'erico').length;
-      const humberto = logData.filter(e => e.client === 'humberto').length;
-      const gabrielle = logData.filter(e => e.client === 'gabrielle').length;
+      const total = data.erico.length + data.humberto.length + data.gabrielle.length;
 
-      document.getElementById('total').textContent = total;
-      document.getElementById('erico-count').textContent = erico;
-      document.getElementById('humberto-count').textContent = humberto;
-      document.getElementById('gabrielle-count').textContent = gabrielle;
-      document.getElementById('last-update').textContent = new Date().toLocaleTimeString('pt-BR');
+      document.getElementById('erico-count').textContent = data.erico.length;
+      document.getElementById('humberto-count').textContent = data.humberto.length;
+      document.getElementById('gabrielle-count').textContent = data.gabrielle.length;
+
+      document.getElementById('erico-last').textContent = data.erico[0]
+        ? formatTimeAgo(data.erico[0].timestamp)
+        : '—';
+      document.getElementById('humberto-last').textContent = data.humberto[0]
+        ? formatTimeAgo(data.humberto[0].timestamp)
+        : '—';
+      document.getElementById('gabrielle-last').textContent = data.gabrielle[0]
+        ? formatTimeAgo(data.gabrielle[0].timestamp)
+        : '—';
+
+      document.getElementById('total-stat').textContent = total;
+      document.getElementById('erico-stat').textContent = data.erico.length;
+      document.getElementById('humberto-stat').textContent = data.humberto.length;
+      document.getElementById('gabrielle-stat').textContent = data.gabrielle.length;
+
+      document.getElementById('last-update-time').textContent = new Date().toLocaleTimeString('pt-BR');
     }
 
-    function clearLog() {
-      if (confirm('Limpar log? ⚠️')) {
-        logData.length = 0;
-        renderLog();
-        updateStats();
-      }
-    }
-
-    async function loadLog() {
+    async function loadData() {
       const btn = document.getElementById('refresh-btn');
       btn.classList.add('loading');
       btn.disabled = true;
 
       try {
-        const response = await fetch('/api/monitor/messages?limit=100');
-        const data = await response.json();
+        const response = await fetch('/api/monitor/messages?limit=5');
+        const result = await response.json();
 
-        logData.length = 0;
+        data.erico = result.erico || [];
+        data.humberto = result.humberto || [];
+        data.gabrielle = result.gabrielle || [];
 
-        // Adicionar mensagens em ordem inversa (mais recentes primeiro)
-        [
-          ...data.gabrielle.reverse(),
-          ...data.humberto.reverse(),
-          ...data.erico.reverse()
-        ].forEach(msg => {
-          addEntry(
-            msg.chat_name?.toLowerCase().includes('erico') ? 'erico' :
-            msg.chat_name?.toLowerCase().includes('humberto') ? 'humberto' :
-            'gabrielle',
-            msg.push_name || 'Desconhecido',
-            msg.content || '[sem conteúdo]',
-            msg.timestamp
-          );
-        });
+        renderFeed('erico', data.erico);
+        renderFeed('humberto', data.humberto);
+        renderFeed('gabrielle', data.gabrielle);
 
-        renderLog();
         updateStats();
 
-        // Atualizar contadores totais do BD
-        if (data.totals) {
-          document.getElementById('total').textContent =
-            (data.totals.erico || 0) + (data.totals.humberto || 0) + (data.totals.gabrielle || 0);
-          document.getElementById('erico-count').textContent = data.totals.erico || 0;
-          document.getElementById('humberto-count').textContent = data.totals.humberto || 0;
-          document.getElementById('gabrielle-count').textContent = data.totals.gabrielle || 0;
-        }
-
-        // Atualizar status
         document.getElementById('status-dot').classList.remove('offline');
         document.getElementById('status-text').textContent = 'Online';
       } catch (err) {
@@ -406,11 +585,26 @@
       }
     }
 
+    function clearData() {
+      if (confirm('Limpar log? ⚠️')) {
+        data.erico = [];
+        data.humberto = [];
+        data.gabrielle = [];
+        renderFeed('erico', []);
+        renderFeed('humberto', []);
+        renderFeed('gabrielle', []);
+        updateStats();
+      }
+    }
+
     // Auto-refresh a cada 3 segundos
-    setInterval(loadLog, 3000);
+    setInterval(loadData, 3000);
+
+    // Atualizar timeago a cada segundo
+    setInterval(() => updateStats(), 1000);
 
     // Carregar na inicialização
-    loadLog();
+    loadData();
   </script>
 </body>
 </html>
