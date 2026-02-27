@@ -364,7 +364,12 @@ app.get('/api/monitor/messages', (req, res) => {
       timestamp: new Date().toISOString(),
       erico: whatsappDBErico.getAllMessages(limit) || [],
       humberto: whatsappDBHumberto.getAllMessages?.(limit) || [],
-      gabrielle: whatsappDBGabrielle.getAllMessages?.(limit) || []
+      gabrielle: whatsappDBGabrielle.getAllMessages?.(limit) || [],
+      totals: {
+        erico: whatsappDBErico.getTotalMessages() || 0,
+        humberto: whatsappDBHumberto.getTotalMessages?.() || 0,
+        gabrielle: whatsappDBGabrielle.getTotalMessages?.() || 0
+      }
     };
 
     res.json(messages);

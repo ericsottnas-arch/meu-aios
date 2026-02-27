@@ -383,6 +383,19 @@
 
         renderLog();
         updateStats();
+
+        // Atualizar contadores totais do BD
+        if (data.totals) {
+          document.getElementById('total').textContent =
+            (data.totals.erico || 0) + (data.totals.humberto || 0) + (data.totals.gabrielle || 0);
+          document.getElementById('erico-count').textContent = data.totals.erico || 0;
+          document.getElementById('humberto-count').textContent = data.totals.humberto || 0;
+          document.getElementById('gabrielle-count').textContent = data.totals.gabrielle || 0;
+        }
+
+        // Atualizar status
+        document.getElementById('status-dot').classList.remove('offline');
+        document.getElementById('status-text').textContent = 'Online';
       } catch (err) {
         console.error('Load error:', err);
         document.getElementById('status-dot').classList.add('offline');
