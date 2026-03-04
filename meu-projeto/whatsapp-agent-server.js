@@ -36,7 +36,9 @@ const whatsappDBVanessa = require('./lib/whatsapp-db-vanessa');
 const whatsappDBTorre1 = require('./lib/whatsapp-db-torre1');
 const whatsappDBFourcred = require('./lib/whatsapp-db-fourcred');
 const whatsappDBProfHumberto = require('./lib/whatsapp-db-prof-humberto');
+const instagramDBProspeccao = require('./lib/instagram-db-prospeccao');
 const accountAnalyzer = require('./lib/account-analyzer');
+const coldOutreach = require('./lib/cold-outreach');
 
 // NOTA: Static files definidos no final, DEPOIS de todos os endpoints de API
 
@@ -54,6 +56,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/monitor', (req, res) => {
+  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
   res.sendFile(path.join(__dirname, 'public', 'monitor.html'));
 });
 
@@ -194,7 +199,7 @@ function extractMessageContent(message) {
 // ============================================================
 // Webhook Handler
 // ============================================================
-const MESSAGE_EVENTS = new Set(['messages.upsert', 'Messages', 'Message', 'message']);
+const MESSAGE_EVENTS = new Set(['messages.upsert', 'Messages', 'Message', 'message', 'SendMessage']);
 const IGNORED_EVENTS = new Set(['Receipt', 'receipt', 'ChatPresence', 'chat.presence', 'HistorySync', 'history.sync', 'connection.update']);
 
 function handleStevoWebhook(req, res) {
@@ -229,6 +234,17 @@ function handleStevoWebhook(req, res) {
 
       console.log(`   📝 Tipo: ${parsed.type} | Texto: "${parsed.text?.substring(0, 50) || 'vazio'}"`);
 
+      // Cold Outreach: processar resposta de lead da campanha (inclui diálogo investigativo)
+      if (!parsed.isFromMe && parsed.senderJid && parsed.text) {
+        try {
+          if (coldOutreach.isInCampaign(parsed.senderJid)) {
+            coldOutreach.handleLeadResponse(parsed.senderJid, parsed.text).catch(() => {});
+          }
+        } catch (e) {
+          // Silencioso - não quebra o fluxo principal
+        }
+      }
+
       // Filtrar apenas texto
       if (parsed.type !== 'text' && parsed.type !== 'link') {
         console.log(`   ↪ Ignorado: ${parsed.type} [${parsed.id}]`);
@@ -242,12 +258,15 @@ function handleStevoWebhook(req, res) {
       console.log(`[ROTEAMENTO] Instance: ${instanceId} | Name: ${instanceName} | Bot: ${botNumber}`);
 
       // Identificar cliente
-      const isDrErico = instanceId === 'smv2-10' ||
+      const isDrErico = (instanceId === 'smv2-10' && botNumber !== '559681311503') ||
                        instanceName?.toLowerCase().includes('erico') ||
                        botNumber === '553121810819';
 
       const isDrHumberto = instanceId === 'smv2-7' ||
+                          instanceId === 'sm-cavalo' ||
                           instanceName?.toLowerCase().includes('humberto') ||
+                          instanceName?.toLowerCase().includes('dddmacapa') ||
+                          instanceName?.toLowerCase().includes('dddsaopaulo') ||
                           botNumber === '559681311503';
 
       const isDraGabrielle = instanceId === 'sm-galo' ||
@@ -382,6 +401,7 @@ app.get('/api/monitor/stats', (req, res) => {
     const torre1Count = whatsappDBTorre1.getTotalMessages?.() || 0;
     const fourcredCount = whatsappDBFourcred.getTotalMessages?.() || 0;
     const profHumbertoCount = whatsappDBProfHumberto.getTotalMessages?.() || 0;
+    const igProspeccaoCount = instagramDBProspeccao.getTotalMessages?.() || 0;
 
     const stats = {
       timestamp: new Date().toISOString(),
@@ -393,8 +413,9 @@ app.get('/api/monitor/stats', (req, res) => {
         torre1: { total: torre1Count, lastActivity: getLastActivity(whatsappDBTorre1) },
         fourcred: { total: fourcredCount, lastActivity: getLastActivity(whatsappDBFourcred) },
         'prof-humberto': { total: profHumbertoCount, lastActivity: getLastActivity(whatsappDBProfHumberto) },
+        'ig-prospeccao': { total: igProspeccaoCount, lastActivity: getLastActivity(instagramDBProspeccao), platform: 'instagram' },
       },
-      totalMessages: ericoCount + humbertoCount + gabrielleCount + vanessaCount + torre1Count + fourcredCount + profHumbertoCount,
+      totalMessages: ericoCount + humbertoCount + gabrielleCount + vanessaCount + torre1Count + fourcredCount + profHumbertoCount + igProspeccaoCount,
       healthStatus: 'ok'
     };
 
@@ -418,6 +439,7 @@ app.get('/api/monitor/messages', (req, res) => {
       torre1: whatsappDBTorre1.getAllMessages?.(limit) || [],
       fourcred: whatsappDBFourcred.getAllMessages?.(limit) || [],
       'prof-humberto': whatsappDBProfHumberto.getAllMessages?.(limit) || [],
+      'ig-prospeccao': instagramDBProspeccao.getAllMessages?.(limit) || [],
       totals: {
         erico: whatsappDBErico.getTotalMessages() || 0,
         humberto: whatsappDBHumberto.getTotalMessages?.() || 0,
@@ -425,7 +447,8 @@ app.get('/api/monitor/messages', (req, res) => {
         vanessa: whatsappDBVanessa.getTotalMessages?.() || 0,
         torre1: whatsappDBTorre1.getTotalMessages?.() || 0,
         fourcred: whatsappDBFourcred.getTotalMessages?.() || 0,
-        'prof-humberto': whatsappDBProfHumberto.getTotalMessages?.() || 0
+        'prof-humberto': whatsappDBProfHumberto.getTotalMessages?.() || 0,
+        'ig-prospeccao': instagramDBProspeccao.getTotalMessages?.() || 0
       }
     };
 
@@ -468,7 +491,8 @@ app.get('/api/monitor/analytics/summary', (req, res) => {
       { name: 'vanessa', db: whatsappDBVanessa },
       { name: 'torre1', db: whatsappDBTorre1 },
       { name: 'fourcred', db: whatsappDBFourcred },
-      { name: 'prof-humberto', db: whatsappDBProfHumberto }
+      { name: 'prof-humberto', db: whatsappDBProfHumberto },
+      { name: 'ig-prospeccao', db: instagramDBProspeccao }
     ];
 
     const analytics = {};
@@ -510,7 +534,8 @@ app.get('/api/monitor/analytics/urgency', (req, res) => {
       { name: 'vanessa', db: whatsappDBVanessa },
       { name: 'torre1', db: whatsappDBTorre1 },
       { name: 'fourcred', db: whatsappDBFourcred },
-      { name: 'prof-humberto', db: whatsappDBProfHumberto }
+      { name: 'prof-humberto', db: whatsappDBProfHumberto },
+      { name: 'ig-prospeccao', db: instagramDBProspeccao }
     ];
 
     const urgencyBreakdown = {};
