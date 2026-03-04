@@ -36,6 +36,7 @@ const whatsappDBVanessa = require('./lib/whatsapp-db-vanessa');
 const whatsappDBTorre1 = require('./lib/whatsapp-db-torre1');
 const whatsappDBFourcred = require('./lib/whatsapp-db-fourcred');
 const whatsappDBProfHumberto = require('./lib/whatsapp-db-prof-humberto');
+const whatsappDBEricSantos = require('./lib/whatsapp-db-eric');
 const instagramDBProspeccao = require('./lib/instagram-db-prospeccao');
 const accountAnalyzer = require('./lib/account-analyzer');
 const coldOutreach = require('./lib/cold-outreach');
@@ -286,6 +287,10 @@ function handleStevoWebhook(req, res) {
       const IsProfHumberto = instanceName?.toLowerCase().includes('prof') ||
                             instanceId === 'prof-humberto';
 
+      const isEricSantos = instanceName?.toLowerCase().includes('syrav0') ||
+                           instanceId === 'smv2-6' ||
+                           botNumber === '5511947835619';
+
       // Análise da mensagem
       const analysis = accountAnalyzer.analyzeMessage(parsed.text, parsed.type);
       parsed.urgencyScore = analysis.urgencyScore;
@@ -327,6 +332,11 @@ function handleStevoWebhook(req, res) {
           clientName = 'prof-humberto';
           console.log(`   ✅ → Prof. Dr. Humberto DB`);
           whatsappDBProfHumberto.saveMessage(parsed);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
+        } else if (isEricSantos) {
+          clientName = 'eric-santos';
+          console.log(`   ✅ → Eric Santos DB`);
+          whatsappDBEricSantos.saveMessage(parsed);
           console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
         } else {
           clientName = 'general';
@@ -401,6 +411,7 @@ app.get('/api/monitor/stats', (req, res) => {
     const torre1Count = whatsappDBTorre1.getTotalMessages?.() || 0;
     const fourcredCount = whatsappDBFourcred.getTotalMessages?.() || 0;
     const profHumbertoCount = whatsappDBProfHumberto.getTotalMessages?.() || 0;
+    const ericSantosCount = whatsappDBEricSantos.getTotalMessages?.() || 0;
     const igProspeccaoCount = instagramDBProspeccao.getTotalMessages?.() || 0;
 
     const stats = {
@@ -413,9 +424,10 @@ app.get('/api/monitor/stats', (req, res) => {
         torre1: { total: torre1Count, lastActivity: getLastActivity(whatsappDBTorre1) },
         fourcred: { total: fourcredCount, lastActivity: getLastActivity(whatsappDBFourcred) },
         'prof-humberto': { total: profHumbertoCount, lastActivity: getLastActivity(whatsappDBProfHumberto) },
+        'eric-santos': { total: ericSantosCount, lastActivity: getLastActivity(whatsappDBEricSantos) },
         'ig-prospeccao': { total: igProspeccaoCount, lastActivity: getLastActivity(instagramDBProspeccao), platform: 'instagram' },
       },
-      totalMessages: ericoCount + humbertoCount + gabrielleCount + vanessaCount + torre1Count + fourcredCount + profHumbertoCount + igProspeccaoCount,
+      totalMessages: ericoCount + humbertoCount + gabrielleCount + vanessaCount + torre1Count + fourcredCount + profHumbertoCount + ericSantosCount + igProspeccaoCount,
       healthStatus: 'ok'
     };
 
@@ -439,6 +451,7 @@ app.get('/api/monitor/messages', (req, res) => {
       torre1: whatsappDBTorre1.getAllMessages?.(limit) || [],
       fourcred: whatsappDBFourcred.getAllMessages?.(limit) || [],
       'prof-humberto': whatsappDBProfHumberto.getAllMessages?.(limit) || [],
+      'eric-santos': whatsappDBEricSantos.getAllMessages?.(limit) || [],
       'ig-prospeccao': instagramDBProspeccao.getAllMessages?.(limit) || [],
       totals: {
         erico: whatsappDBErico.getTotalMessages() || 0,
@@ -448,6 +461,7 @@ app.get('/api/monitor/messages', (req, res) => {
         torre1: whatsappDBTorre1.getTotalMessages?.() || 0,
         fourcred: whatsappDBFourcred.getTotalMessages?.() || 0,
         'prof-humberto': whatsappDBProfHumberto.getTotalMessages?.() || 0,
+        'eric-santos': whatsappDBEricSantos.getTotalMessages?.() || 0,
         'ig-prospeccao': instagramDBProspeccao.getTotalMessages?.() || 0
       }
     };
@@ -492,6 +506,7 @@ app.get('/api/monitor/analytics/summary', (req, res) => {
       { name: 'torre1', db: whatsappDBTorre1 },
       { name: 'fourcred', db: whatsappDBFourcred },
       { name: 'prof-humberto', db: whatsappDBProfHumberto },
+      { name: 'eric-santos', db: whatsappDBEricSantos },
       { name: 'ig-prospeccao', db: instagramDBProspeccao }
     ];
 
@@ -535,6 +550,7 @@ app.get('/api/monitor/analytics/urgency', (req, res) => {
       { name: 'torre1', db: whatsappDBTorre1 },
       { name: 'fourcred', db: whatsappDBFourcred },
       { name: 'prof-humberto', db: whatsappDBProfHumberto },
+      { name: 'eric-santos', db: whatsappDBEricSantos },
       { name: 'ig-prospeccao', db: instagramDBProspeccao }
     ];
 
