@@ -1,7 +1,7 @@
 {
   "clientId": "dra-gabrielle",
   "clientName": "Dra. Gabrielle",
-  "exportedAt": "2026-03-19T02:35:19.402Z",
+  "exportedAt": "2026-03-19T02:57:27.461Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -149,16 +149,16 @@
           },
           {
             "date": "2026-03-18",
-            "impressions": 768,
-            "clicks": 18,
-            "spend": 25.4,
-            "cpc": 1.411111,
-            "ctr": 2.34375,
-            "cpm": 33.072917,
-            "reach": 681,
-            "frequency": 1.127753,
+            "impressions": 808,
+            "clicks": 19,
+            "spend": 27.76,
+            "cpc": 1.461053,
+            "ctr": 2.351485,
+            "cpm": 34.356436,
+            "reach": 723,
+            "frequency": 1.117566,
             "conversions": 1,
-            "costPerResult": 25.4,
+            "costPerResult": 27.76,
             "linkClicks": 0,
             "landingPageViews": 0,
             "costPerLandingPageView": 0,
@@ -1061,14 +1061,14 @@
           },
           {
             "date": "2026-03-18",
-            "impressions": 636,
-            "clicks": 15,
-            "spend": 5.33,
-            "cpc": 0.355333,
-            "ctr": 2.358491,
-            "cpm": 8.380503,
-            "reach": 587,
-            "frequency": 1.083475,
+            "impressions": 676,
+            "clicks": 16,
+            "spend": 5.57,
+            "cpc": 0.348125,
+            "ctr": 2.366864,
+            "cpm": 8.239645,
+            "reach": 617,
+            "frequency": 1.095624,
             "conversions": 0,
             "costPerResult": 0,
             "linkClicks": 0,
@@ -5608,383 +5608,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120230657325270249",
-            "name": "04 - [Laranjeiras 5km] - [10$] (Mulheres) — Cópia",
-            "status": "PAUSED",
-            "dailyBudget": 10,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                25,
-                40
-              ],
-              "flexible_spec": [
-                {
-                  "interests": [
-                    {
-                      "id": "6003384248805",
-                      "name": "Saúde e boa forma (fitness)"
-                    }
-                  ]
-                }
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "places": [
-                  {
-                    "key": "325128341535653",
-                    "name": "Laranjeiras-Caieiras-Sp",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3951792716,
-                    "longitude": -46.7156517392,
-                    "radius": 5,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2025-08-08T10:46:02-0300",
-            "startTime": "2025-08-08T10:46:02-0300",
-            "ads": [
-              {
-                "id": "120230657325230249",
-                "name": "VD004 - SAIR DISSO",
-                "status": "ACTIVE",
-                "createdTime": "2025-08-08T10:46:04-0300",
-                "creativeId": "1532755074767917",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120230657325260249",
-            "name": "03 - [Laranjeiras 5km] - [10$] (Mulheres) — Cópia",
-            "status": "PAUSED",
-            "dailyBudget": 10,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                25,
-                40
-              ],
-              "flexible_spec": [
-                {
-                  "interests": [
-                    {
-                      "id": "6003384248805",
-                      "name": "Saúde e boa forma (fitness)"
-                    }
-                  ]
-                }
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "places": [
-                  {
-                    "key": "325128341535653",
-                    "name": "Laranjeiras-Caieiras-Sp",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3951792716,
-                    "longitude": -46.7156517392,
-                    "radius": 5,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2025-08-08T10:46:02-0300",
-            "startTime": "2025-08-08T10:46:02-0300",
-            "ads": [
-              {
-                "id": "120230657325300249",
-                "name": "VD003 - Perder de 5 a 7kg",
-                "status": "ACTIVE",
-                "createdTime": "2025-08-08T10:46:04-0300",
-                "creativeId": "1271394374478350",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120230657325250249",
-            "name": "02 - [Laranjeiras 5km] - [10$] (Mulheres) — Cópia",
-            "status": "ACTIVE",
-            "dailyBudget": 10,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                25,
-                40
-              ],
-              "flexible_spec": [
-                {
-                  "interests": [
-                    {
-                      "id": "6003384248805",
-                      "name": "Saúde e boa forma (fitness)"
-                    }
-                  ]
-                }
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "places": [
-                  {
-                    "key": "325128341535653",
-                    "name": "Laranjeiras-Caieiras-Sp",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3951792716,
-                    "longitude": -46.7156517392,
-                    "radius": 5,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2025-08-08T10:46:06-0300",
-            "startTime": "2025-08-08T10:46:07-0300",
-            "ads": [
-              {
-                "id": "120230657325290249",
-                "name": "VD002 - Cremes milagrosos",
-                "status": "ACTIVE",
-                "createdTime": "2025-08-08T10:46:08-0300",
-                "creativeId": "1094516089304317",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120230657325240249",
-            "name": "01 - [Laranjeiras 5km] - [10$] (Mulheres)",
-            "status": "PAUSED",
-            "dailyBudget": 10,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                25,
-                40
-              ],
-              "flexible_spec": [
-                {
-                  "interests": [
-                    {
-                      "id": "6003384248805",
-                      "name": "Saúde e boa forma (fitness)"
-                    }
-                  ]
-                }
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "places": [
-                  {
-                    "key": "325128341535653",
-                    "name": "Laranjeiras-Caieiras-Sp",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3951792716,
-                    "longitude": -46.7156517392,
-                    "radius": 5,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2025-08-08T10:46:06-0300",
-            "startTime": "2025-08-08T10:46:07-0300",
-            "ads": [
-              {
-                "id": "120230657325280249",
-                "name": "VD001 - Janela",
-                "status": "ACTIVE",
-                "createdTime": "2025-08-08T10:46:08-0300",
-                "creativeId": "1145040407671778",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120230656430960249",
-            "name": "05 - [Laranjeiras 5km] - [10$] (Mulheres)",
-            "status": "PAUSED",
-            "dailyBudget": 10,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                25,
-                40
-              ],
-              "flexible_spec": [
-                {
-                  "interests": [
-                    {
-                      "id": "6003384248805",
-                      "name": "Saúde e boa forma (fitness)"
-                    }
-                  ]
-                }
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "places": [
-                  {
-                    "key": "325128341535653",
-                    "name": "Laranjeiras-Caieiras-Sp",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3951792716,
-                    "longitude": -46.7156517392,
-                    "radius": 5,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2025-08-08T10:45:50-0300",
-            "startTime": "2025-08-08T10:45:50-0300",
-            "ads": [
-              {
-                "id": "120230656430970249",
-                "name": "VD005 - Diferença disso e isso",
-                "status": "ACTIVE",
-                "createdTime": "2025-08-08T10:45:52-0300",
-                "creativeId": "2141997682975461",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120229772020200249",

@@ -199,13 +199,12 @@
       grid-template-columns: 1fr 1fr;
       position: relative;
       overflow: hidden;
-      padding-top: 5rem;
     }
     .hero-content {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 1.5rem var(--cpx) 1.5rem max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
+      justify-content: flex-start;
+      padding: clamp(5rem, 9vh, 6.5rem) var(--cpx) 1.5rem max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
       position: relative;
       z-index: 2;
       overflow: hidden;
@@ -855,7 +854,7 @@
       }
       .hero-photo { display: none; }
       .hero-content {
-        padding: 5.5rem var(--cpx) 3.5rem;
+        padding: clamp(5rem, 9vh, 6rem) var(--cpx) 3rem;
         z-index: 1;
       }
       .hero-ghost { font-size: clamp(5rem, 18vw, 8rem); }
@@ -994,15 +993,6 @@
     </div>
   </div>
 
-  <!-- FOTO MOBILE (visível só em mobile, entre ticker e resultados) -->
-  <div class="mobile-dr-photo">
-    <img src="dr-enio-hero.png" alt="Dr. Enio Leite">
-    <div class="mobile-dr-photo-caption">
-      <span>O Especialista</span>
-      <p>Dr. Enio Leite</p>
-    </div>
-  </div>
-
   <!-- ANTES E DEPOIS -->
   <section id="resultados">
     <div class="container">
@@ -1049,6 +1039,12 @@
         <div class="ba-label">Lipo de Papada</div>
       </div>
     </div>
+    <div style="text-align:center;padding:3rem var(--cpx) 0;">
+      <button class="btn btn-gold reveal reveal-d1 open-modal" style="margin:0 auto;">
+        <span>Quero um resultado assim</span>
+        <span class="btn-arrow">&#8599;</span>
+      </button>
+    </div>
   </section>
 
   <!-- PROCEDIMENTOS -->
@@ -1090,6 +1086,12 @@
         <p class="svc-desc">Aquele contorno embaixo do queixo que some nas fotos. Definido de vez, de um jeito que muda o rosto inteiro.</p>
       </div>
     </div>
+    <div style="text-align:center;padding:3rem var(--cpx) 0;position:relative;z-index:1;">
+      <button class="btn btn-gold reveal reveal-d1 open-modal" style="margin:0 auto;">
+        <span>Agendar minha consulta</span>
+        <span class="btn-arrow">&#8599;</span>
+      </button>
+    </div>
   </section>
 
   <!-- SOBRE -->
@@ -1110,6 +1112,12 @@
             <div class="cred-item reveal" style="transition-delay:.6s">Especialista em Harmonizacao Orofacial · EPAO 1575</div>
             <div class="cred-item reveal" style="transition-delay:.7s">Referencia em Vitoria, ES</div>
             <div class="cred-item reveal" style="transition-delay:.8s">Foco em Lipo de Papada e Rinomodelacao Estruturada</div>
+          </div>
+          <div style="margin-top:2.5rem;">
+            <button class="btn btn-gold reveal open-modal" style="transition-delay:.9s;">
+              <span>Agendar com Dr. Enio</span>
+              <span class="btn-arrow">&#8599;</span>
+            </button>
           </div>
         </div>
       </div>
@@ -1149,6 +1157,12 @@
           </div>
           <p class="dep-quote">"Voltei no mesmo dia pro trabalho. Ninguem percebeu nada. Todo mundo falou que eu estava bem."</p>
         </div>
+      </div>
+      <div style="text-align:center;margin-top:3rem;">
+        <button class="btn btn-gold reveal reveal-d3 open-modal" style="margin:0 auto;">
+          <span>Quero meu resultado</span>
+          <span class="btn-arrow">&#8599;</span>
+        </button>
       </div>
     </div>
   </section>
@@ -1210,6 +1224,12 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">Sim. O valor e informado pela nossa equipe no primeiro contato.</div>
+      </div>
+      <div style="margin-top:3rem;">
+        <button class="btn btn-gold reveal open-modal">
+          <span>Agendar consulta agora</span>
+          <span class="btn-arrow">&#8599;</span>
+        </button>
       </div>
     </div>
   </section>
@@ -1399,6 +1419,7 @@
 
     document.getElementById('cta-btn').addEventListener('click', openModal);
     document.getElementById('nav-cta-btn').addEventListener('click', e => { e.preventDefault(); openModal(); });
+    document.querySelectorAll('.open-modal').forEach(btn => btn.addEventListener('click', openModal));
     document.getElementById('modal-close').addEventListener('click', closeModal);
     overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
