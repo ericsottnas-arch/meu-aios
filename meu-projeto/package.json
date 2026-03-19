@@ -8,8 +8,21 @@
   },
   "scripts": {
     "start": "node telegram-webhook-server.js",
+    "dev": "node alpha-class-webhook-server.js",
+    "alpha-class": "node alpha-class-webhook-server.js",
     "set-webhook": "node scripts/set-telegram-webhook.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cold-outreach": "node cold-outreach-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:restart": "pm2 restart ecosystem.config.js",
+    "pm2:reload": "pm2 reload ecosystem.config.js",
+    "pm2:status": "pm2 status",
+    "pm2:logs": "pm2 logs",
+    "pm2:monit": "pm2 monit",
+    "pm2:kill": "pm2 kill",
+    "pm2:startup": "pm2 startup",
+    "pm2:save": "pm2 save"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -20,14 +33,25 @@
   "type": "commonjs",
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
+    "axios": "^1.13.6",
     "better-sqlite3": "^12.6.2",
     "body-parser": "^2.2.2",
+    "docx": "^9.6.0",
     "dotenv": "^17.3.1",
     "exceljs": "^4.4.0",
     "express": "^5.2.1",
     "facebook-nodejs-business-sdk": "^24.0.1",
+    "google-ads-api": "^23.0.0",
     "googleapis": "^133.0.0",
-    "node-cron": "^4.2.1"
+    "image-size": "^2.0.2",
+    "mammoth": "^1.11.0",
+    "multer": "^2.1.1",
+    "node-cron": "^4.2.1",
+    "openai": "^6.27.0",
+    "pixelmatch": "^7.1.0",
+    "playwright": "^1.58.2",
+    "pngjs": "^7.0.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "ngrok": "^5.0.0-beta.2"

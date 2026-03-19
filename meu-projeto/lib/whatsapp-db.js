@@ -79,6 +79,16 @@ function initDB() {
     END;
   `);
 
+  // Tabela de grupos monitorados dinamicamente (via onboarding)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS monitored_groups (
+      group_jid TEXT PRIMARY KEY,
+      client_key TEXT NOT NULL,
+      client_name TEXT NOT NULL,
+      added_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+  `);
+
   console.log(`✅ WhatsApp DB inicializado em ${DB_PATH}`);
 }
 
@@ -260,6 +270,63 @@ function cleanupOldMessages(daysOld = 90) {
   return result.changes;
 }
 
+// ============================================================
+// Monitored Groups (grupos adicionados dinamicamente)
+// ============================================================
+
+/**
+ * Registra um grupo para monitoramento
+ * @param {string} groupJid - JID do grupo WhatsApp (ex: 120363xxx@g.us)
+ * @param {string} clientKey - Chave do cliente (ex: 'dra-bruna-nogueira')
+ * @param {string} clientName - Nome do cliente (ex: 'Dra. Bruna Nogueira')
+ */
+function registerMonitoredGroup(groupJid, clientKey, clientName) {
+  if (!db) initDB();
+  db.prepare(`
+    INSERT OR REPLACE INTO monitored_groups (group_jid, client_key, client_name)
+    VALUES (?, ?, ?)
+  `).run(groupJid, clientKey, clientName);
+}
+
+/**
+ * Busca grupo monitorado pelo JID
+ * @param {string} groupJid
+ * @returns {{ group_jid: string, client_key: string, client_name: string } | null}
+ */
+function getMonitoredGroup(groupJid) {
+  if (!db) initDB();
+  return db.prepare('SELECT * FROM monitored_groups WHERE group_jid = ?').get(groupJid) || null;
+}
+
+/**
+ * Lista todos os grupos monitorados
+ * @returns {Array}
+ */
+function listMonitoredGroups() {
+  if (!db) initDB();
+  return db.prepare('SELECT * FROM monitored_groups ORDER BY client_name').all();
+}
+
+/**
+ * Remove um grupo do monitoramento
+ * @param {string} groupJid
+ */
+function removeMonitoredGroup(groupJid) {
+  if (!db) initDB();
+  db.prepare('DELETE FROM monitored_groups WHERE group_jid = ?').run(groupJid);
+}
+
+/**
+ * Busca grupo monitorado pelo chatJid de uma mensagem
+ * Verifica se a mensagem veio de um grupo registrado
+ * @param {string} chatJid
+ * @returns {{ client_key: string, client_name: string } | null}
+ */
+function findMonitoredGroupByChatJid(chatJid) {
+  if (!db) initDB();
+  return db.prepare('SELECT client_key, client_name FROM monitored_groups WHERE group_jid = ?').get(chatJid) || null;
+}
+
 module.exports = {
   initDB,
   saveMessage,
@@ -269,4 +336,9 @@ module.exports = {
   listChats,
   getTotalMessages,
   cleanupOldMessages,
+  registerMonitoredGroup,
+  getMonitoredGroup,
+  listMonitoredGroups,
+  removeMonitoredGroup,
+  findMonitoredGroupByChatJid,
 };

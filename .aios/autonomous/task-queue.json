@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "created": "2026-02-27T14:00:00Z",
+    "duration_hours": 5,
+    "mode": "slow",
+    "executor": "autonomous-system",
+    "description": "5-hour deep work session: Syra Digital analysis + Eric Santos profile + Agent optimization",
+    "total_tasks": 11,
+    "estimated_completion": "2026-02-27T19:00:00Z"
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "name": "BLOCO 1.2: Análise Profunda de Clientes",
+      "agent": "@analyst",
+      "command": "*analise-clientes-profunda",
+      "params": ["dr-erico", "dra-vanessa", "gabrielle"],
+      "priority": "high",
+      "description": "Análise profunda dos 3 clientes principais: pain points, transformação, messaging, potencial de growth",
+      "expected_output": "analise-profunda-clientes.md",
+      "wait_before_minutes": 0,
+      "timeout_minutes": 30,
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "name": "PAUSA - Processamento",
+      "agent": "system",
+      "command": "*pause",
+      "params": [],
+      "priority": "normal",
+      "wait_before_minutes": 30,
+      "timeout_minutes": 5,
+      "status": "pending",
+      "description": "Pausa deliberada para processar informações"
+    },
+    {
+      "id": 3,
+      "name": "BLOCO 1.3: Modelo de Negócio Syra",
+      "agent": "@analyst",
+      "command": "*modelo-negocio-syra",
+      "params": [],
+      "priority": "high",
+      "description": "Análise financeira: ticket médio, CAC, LTV, margin, projeção de growth",
+      "expected_output": "modelo-negocio-syra-v2.md",
+      "wait_before_minutes": 5,
+      "timeout_minutes": 15,
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "name": "BLOCO 2.1: Zona de Genialidade de Eric",
+      "agent": "@architect",
+      "command": "*eric-zona-genialidade",
+      "params": [],
+      "priority": "high",
+      "description": "Análise profunda: o que Eric faz melhor, padrões, temas que o entusiasmam",
+      "expected_output": "eric-zona-genialidade-detalhada.md",
+      "wait_before_minutes": 5,
+      "timeout_minutes": 25,
+      "status": "pending"
+    },
+    {
+      "id": 5,
+      "name": "PAUSA - Descanso",
+      "agent": "system",
+      "command": "*pause",
+      "params": [],
+      "priority": "normal",
+      "wait_before_minutes": 30,
+      "timeout_minutes": 5,
+      "status": "pending"
+    },
+    {
+      "id": 6,
+      "name": "BLOCO 2.2: Comportamentos e Padrões de Eric",
+      "agent": "@architect",
+      "command": "*eric-comportamentos-detalhado",
+      "params": [],
+      "priority": "high",
+      "description": "Como Eric trabalha na prática: decisões, padrões, delegação, iteração, escalação",
+      "expected_output": "eric-comportamentos-detalhado.md",
+      "wait_before_minutes": 5,
+      "timeout_minutes": 25,
+      "status": "pending"
+    },
+    {
+      "id": 7,
+      "name": "BLOCO 2.3: Visão Estratégica de Eric",
+      "agent": "@architect",
+      "command": "*eric-visao-estrategica",
+      "params": [],
+      "priority": "high",
+      "description": "O que Eric está construindo: objetivos 1yr/3yr/5yr, legacy, estratégia",
+      "expected_output": "eric-visao-estrategica.md",
+      "wait_before_minutes": 5,
+      "timeout_minutes": 15,
+      "status": "pending"
+    },
+    {
+      "id": 8,
+      "name": "PAUSA - Reflexão",
+      "agent": "system",
+      "command": "*pause",
+      "params": [],
+      "priority": "normal",
+      "wait_before_minutes": 30,
+      "timeout_minutes": 5,
+      "status": "pending"
+    },
+    {
+      "id": 9,
+      "name": "BLOCO 3.1: Estrutura Hierárquica Final",
+      "agent": "@pm",
+      "command": "*hierarquia-agentes-final",
+      "params": [],
+      "priority": "high",
+      "description": "Mapeamento final: 7 departamentos, 34+ agentes, fluxos, matriz RACI",
+      "expected_output": "estrutura-departamentos-final.md + fluxos-comunicacao-agentes.md",
+      "wait_before_minutes": 5,
+      "timeout_minutes": 30,
+      "status": "pending"
+    },
+    {
+      "id": 10,
+      "name": "BLOCO 4: Especificação de 9 Novos Agentes",
+      "agent": "@architect",
+      "command": "*novos-agentes-especificacao",
+      "params": ["analytics", "sales-closer", "customer-success", "content-strategist", "community-manager", "brand-strategist", "video-producer", "training-specialist", "nutricionista-specialist"],
+      "priority": "high",
+      "description": "Especificação completa de 9 novos agentes: expertise, funções, comandos, KPIs",
+      "expected_output": "9-agentes-novos-especificacao.md",
+      "wait_before_minutes": 5,
+      "timeout_minutes": 35,
+      "status": "pending"
+    },
+    {
+      "id": 11,
+      "name": "BLOCO 5: Consolidação e Resumo Final",
+      "agent": "@pm",
+      "command": "*consolidacao-resumo-final",
+      "params": [],
+      "priority": "high",
+      "description": "Atualizar MEMORY.md, criar roadmap de implementação, resumo executivo",
+      "expected_output": "MEMORY.md atualizado + roadmap-implementacao-agentes.md + RESUMO-SESSAO-2-FINAL.md",
+      "wait_before_minutes": 5,
+      "timeout_minutes": 25,
+      "status": "pending"
+    }
+  ],
+  "execution_rules": {
+    "no_user_interaction": true,
+    "auto_approve_permissions": true,
+    "graceful_degradation": true,
+    "slow_execution": true,
+    "min_delay_between_tasks_minutes": 5,
+    "max_concurrent_tasks": 1,
+    "max_task_duration_minutes": 60,
+    "auto_retry_failed": true,
+    "max_retries": 1,
+    "token_awareness": true,
+    "stop_before_reset_minutes": 5,
+    "memory_check": true,
+    "max_memory_percent": 85
+  },
+  "expected_outputs": {
+    "documents_created": 10,
+    "memory_files_updated": 2,
+    "total_lines_documented": 4500,
+    "quality_level": "high",
+    "profundidade": "deep"
+  }
+}

@@ -40,11 +40,18 @@ const memoryStore = require('./lib/memory-store');
 const knowledgeBase = require('./lib/knowledge-base');
 const knowledgeExtractor = require('./lib/knowledge-extractor');
 const CampaignsExporter = require('./lib/campaigns-exporter');
+const AdsSyncer = require('./lib/ads-syncer');
+const GhlSyncer = require('./lib/ghl-syncer');
+const GhlCrm = require('./lib/ghl-crm');
+const adsDb = require('./lib/ads-db');
+const ghlDb = require('./lib/ghl-analytics-db');
 
 const celo = new CeloAgent();
 const adsManager = new AdsManager();
 const optimizer = new CeloOptimizer(adsManager);
 const campaignsExporter = new CampaignsExporter();
+const adsSyncer = new AdsSyncer();
+const ghlSyncer = new GhlSyncer();
 let autopilot = null; // Inicializado no startup
 
 const GROQ_API_KEY = process.env.GROQ_API_KEY?.replace(/"/g, '');
@@ -87,6 +94,15 @@ async function transcribeAudio(fileUrl) {
 }
 
 // ============================================================
+// Static files & Dashboard
+// ============================================================
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'celo-dashboard.html'));
+});
+
+// ============================================================
 // Health check
 // ============================================================
 app.get('/', (req, res) => {
@@ -95,6 +111,7 @@ app.get('/', (req, res) => {
     service: 'celo-media-buyer',
     uptime: Math.floor(process.uptime()),
     timestamp: new Date().toISOString(),
+    dashboard: `http://localhost:${PORT}/dashboard`,
   });
 });
 
@@ -137,6 +154,17 @@ app.post('/webhook', async (req, res) => {
           return;
         }
         campaignWizard.setStepValue(chatId, 'dailyBudget', budget);
+        const prompt = campaignWizard.getStepPrompt(campaignWizard.getSession(chatId));
+        if (prompt.keyboard) {
+          await celoTelegram.sendInlineKeyboard(chatId, prompt.text, prompt.keyboard);
+        } else {
+          await celoTelegram.sendMessage(chatId, prompt.text);
+        }
+        return;
+      }
+      if (wizSession.step === 'interest') {
+        // Texto livre para interesse de audiência
+        campaignWizard.setStepValue(chatId, 'interest', message.text.trim());
         const prompt = campaignWizard.getStepPrompt(campaignWizard.getSession(chatId));
         if (prompt.keyboard) {
           await celoTelegram.sendInlineKeyboard(chatId, prompt.text, prompt.keyboard);
@@ -202,17 +230,23 @@ app.post('/webhook', async (req, res) => {
         case '/help':
           await celoTelegram.sendMessage(chatId,
             'Celo - Media Buyer Expert\n\n' +
-            'Campanhas:\n' +
-            '  /campaigns {cliente} - Listar campanhas\n' +
+            'Campanhas (Meta/Google):\n' +
+            '  /campaigns [meta|google] {cliente}\n' +
             '  /create - Criar campanha (wizard)\n' +
-            '  /metrics {id} - Metricas\n' +
-            '  /pause {id} - Pausar\n' +
-            '  /activate {id} - Ativar\n' +
-            '  /scale {id} {valor} - Budget\n' +
-            '  /duplicate {id} - Duplicar\n' +
+            '  /metrics [meta|google] {id} [periodo]\n' +
+            '  /pause [meta|google] {id}\n' +
+            '  /activate [meta|google] {id}\n' +
+            '  /scale [meta|google] {id} {valor}\n' +
+            '  /duplicate [meta|google] {id}\n' +
             '  /audiences - Publicos\n\n' +
+            'Google Ads:\n' +
+            '  /search-terms {id} [periodo]\n' +
+            '  /quality-score {id} - QS keywords\n' +
+            '  /adgroups {id} - Ad Groups\n' +
+            '  /sync-google {cliente} - Sync dados\n' +
+            '  /google-status - Verificar config\n\n' +
             'Otimizacao:\n' +
-            '  /autooptimize {cliente} - Analise + sugestoes\n\n' +
+            '  /autooptimize {cliente}\n\n' +
             'Budget:\n' +
             '  /budget {cliente} - Verba mensal\n' +
             '  /pending - Aprovacoes\n\n' +
@@ -501,30 +535,55 @@ app.post('/webhook', async (req, res) => {
 
         case '/metrics': {
           if (!args) {
-            await celoTelegram.sendMessage(chatId, 'Uso: /metrics {campaign-id} [last_7d|last_30d|today]');
+            await celoTelegram.sendMessage(chatId, 'Uso: /metrics [meta|google] {campaign-id} [last_7d|last_30d|today]');
             return;
           }
-          const [metricId, datePreset] = args.split(/\s+/);
-          await celoTelegram.sendMessage(chatId, 'Buscando metricas...');
+          const metricParts = args.split(/\s+/);
+          let metricPlatform = 'meta';
+          let metricIdx = 0;
+
+          if (metricParts[0] === 'meta' || metricParts[0] === 'google') {
+            metricPlatform = metricParts[0];
+            metricIdx = 1;
+          }
+
+          const metricId = metricParts[metricIdx];
+          const datePreset = metricParts[metricIdx + 1] || 'last_7d';
+
+          if (!metricId) {
+            await celoTelegram.sendMessage(chatId, 'Uso: /metrics [meta|google] {campaign-id} [last_7d|last_30d|today]');
+            return;
+          }
+
+          await celoTelegram.sendMessage(chatId, `Buscando metricas ${metricPlatform}...`);
           try {
-            const metrics = await adsManager.getCampaignMetrics('meta', metricId, datePreset || 'last_7d');
+            const metrics = await adsManager.getCampaignMetrics(metricPlatform, metricId, datePreset);
             if (!metrics) {
               await celoTelegram.sendMessage(chatId, 'Sem dados para este periodo.');
               return;
             }
-            await celoTelegram.sendMessage(chatId,
-              `Metricas (${datePreset || 'last_7d'}):\n\n` +
+
+            let metricsText = `📊 Metricas ${metricPlatform.toUpperCase()} (${datePreset}):\n\n` +
               `Impressoes: ${metrics.impressions.toLocaleString()}\n` +
               `Cliques: ${metrics.clicks.toLocaleString()}\n` +
               `CTR: ${metrics.ctr.toFixed(2)}%\n` +
               `CPC: R$ ${metrics.cpc.toFixed(2)}\n` +
               `CPM: R$ ${metrics.cpm.toFixed(2)}\n` +
               `Gasto: R$ ${metrics.spend.toFixed(2)}\n` +
-              `Alcance: ${metrics.reach.toLocaleString()}\n` +
-              `Frequencia: ${metrics.frequency.toFixed(2)}\n` +
               `Conversoes: ${metrics.conversions}\n` +
-              `CPL: R$ ${metrics.costPerResult.toFixed(2)}`
-            );
+              `CPL: R$ ${metrics.costPerResult.toFixed(2)}`;
+
+            // Google-specific metrics
+            if (metricPlatform === 'google') {
+              if (metrics.roas > 0) metricsText += `\nROAS: ${metrics.roas.toFixed(2)}`;
+              if (metrics.conversionsValue > 0) metricsText += `\nValor conversoes: R$ ${metrics.conversionsValue.toFixed(2)}`;
+              if (metrics.impressionShare != null) metricsText += `\nImpression Share: ${(metrics.impressionShare * 100).toFixed(1)}%`;
+            } else {
+              metricsText += `\nAlcance: ${metrics.reach.toLocaleString()}`;
+              metricsText += `\nFrequencia: ${metrics.frequency.toFixed(2)}`;
+            }
+
+            await celoTelegram.sendMessage(chatId, metricsText);
           } catch (err) {
             await celoTelegram.sendMessage(chatId, `Erro: ${err.message}`);
           }
@@ -533,12 +592,23 @@ app.post('/webhook', async (req, res) => {
 
         case '/pause': {
           if (!args) {
-            await celoTelegram.sendMessage(chatId, 'Uso: /pause {campaign-id}');
+            await celoTelegram.sendMessage(chatId, 'Uso: /pause [meta|google] {campaign-id}');
+            return;
+          }
+          const pauseParts = args.trim().split(/\s+/);
+          let pausePlatform = 'meta';
+          let pauseId = pauseParts[0];
+          if (pauseParts[0] === 'meta' || pauseParts[0] === 'google') {
+            pausePlatform = pauseParts[0];
+            pauseId = pauseParts[1];
+          }
+          if (!pauseId) {
+            await celoTelegram.sendMessage(chatId, 'Uso: /pause [meta|google] {campaign-id}');
             return;
           }
           try {
-            await adsManager.updateStatus('meta', args.trim(), 'campaign', false);
-            await celoTelegram.sendMessage(chatId, `⏸️ Campanha ${args.trim()} pausada.`);
+            await adsManager.updateStatus(pausePlatform, pauseId, 'campaign', false);
+            await celoTelegram.sendMessage(chatId, `⏸️ Campanha ${pausePlatform} ${pauseId} pausada.`);
           } catch (err) {
             await celoTelegram.sendMessage(chatId, `Erro: ${err.message}`);
           }
@@ -547,12 +617,23 @@ app.post('/webhook', async (req, res) => {
 
         case '/activate': {
           if (!args) {
-            await celoTelegram.sendMessage(chatId, 'Uso: /activate {campaign-id}');
+            await celoTelegram.sendMessage(chatId, 'Uso: /activate [meta|google] {campaign-id}');
+            return;
+          }
+          const actParts = args.trim().split(/\s+/);
+          let actPlatform = 'meta';
+          let actId = actParts[0];
+          if (actParts[0] === 'meta' || actParts[0] === 'google') {
+            actPlatform = actParts[0];
+            actId = actParts[1];
+          }
+          if (!actId) {
+            await celoTelegram.sendMessage(chatId, 'Uso: /activate [meta|google] {campaign-id}');
             return;
           }
           try {
-            await adsManager.updateStatus('meta', args.trim(), 'campaign', true);
-            await celoTelegram.sendMessage(chatId, `🟢 Campanha ${args.trim()} ativada.`);
+            await adsManager.updateStatus(actPlatform, actId, 'campaign', true);
+            await celoTelegram.sendMessage(chatId, `🟢 Campanha ${actPlatform} ${actId} ativada.`);
           } catch (err) {
             await celoTelegram.sendMessage(chatId, `Erro: ${err.message}`);
           }
@@ -561,26 +642,34 @@ app.post('/webhook', async (req, res) => {
 
         case '/scale': {
           if (!args) {
-            await celoTelegram.sendMessage(chatId, 'Uso: /scale {campaign-id} {novo-budget-diario}');
+            await celoTelegram.sendMessage(chatId, 'Uso: /scale [meta|google] {campaign-id} {novo-budget-diario}');
             return;
           }
           const scaleParts = args.trim().split(/\s+/);
-          const scaleId = scaleParts[0];
-          const newBudget = parseFloat(scaleParts[1]);
+          let scalePlatform = 'meta';
+          let scaleIdx = 0;
+
+          if (scaleParts[0] === 'meta' || scaleParts[0] === 'google') {
+            scalePlatform = scaleParts[0];
+            scaleIdx = 1;
+          }
+
+          const scaleId = scaleParts[scaleIdx];
+          const newBudget = parseFloat(scaleParts[scaleIdx + 1]);
 
           if (!scaleId || isNaN(newBudget)) {
-            await celoTelegram.sendMessage(chatId, 'Uso: /scale {campaign-id} {novo-budget-diario}\nEx: /scale 123456 150.00');
+            await celoTelegram.sendMessage(chatId, 'Uso: /scale [meta|google] {campaign-id} {novo-budget-diario}\nEx: /scale 123456 150.00');
             return;
           }
 
           try {
             // Buscar budget atual para calcular % de mudança
-            const campaigns = await adsManager.listCampaigns('meta', {});
+            const campaigns = await adsManager.listCampaigns(scalePlatform, {});
             const campaign = campaigns.find((c) => c.id === scaleId);
             const currentBudget = campaign?.budget?.daily || 0;
 
             const result = await adsManager.updateBudget(
-              'meta', scaleId, 'campaign', currentBudget, newBudget,
+              scalePlatform, scaleId, 'campaign', currentBudget, newBudget,
               { campaignName: campaign?.name || scaleId, reason: 'Comando /scale' }
             );
 
@@ -612,26 +701,213 @@ app.post('/webhook', async (req, res) => {
 
         case '/duplicate': {
           if (!args) {
-            await celoTelegram.sendMessage(chatId, 'Uso: /duplicate {campaign-id} [novo-nome]');
+            await celoTelegram.sendMessage(chatId, 'Uso: /duplicate [meta|google] {campaign-id} [novo-nome]');
             return;
           }
           const dupParts = args.trim().split(/\s+/);
-          const dupId = dupParts[0];
-          const dupName = dupParts.slice(1).join(' ') || undefined;
+          let dupPlatform = 'meta';
+          let dupIdx = 0;
+          if (dupParts[0] === 'meta' || dupParts[0] === 'google') {
+            dupPlatform = dupParts[0];
+            dupIdx = 1;
+          }
+          const dupId = dupParts[dupIdx];
+          const dupName = dupParts.slice(dupIdx + 1).join(' ') || undefined;
 
-          await celoTelegram.sendMessage(chatId, 'Duplicando campanha...');
+          await celoTelegram.sendMessage(chatId, `Duplicando campanha ${dupPlatform}...`);
           try {
-            const result = await adsManager.duplicateCampaign('meta', dupId, dupName);
+            const result = await adsManager.duplicateCampaign(dupPlatform, dupId, dupName);
+            const groupLabel = dupPlatform === 'google' ? 'Ad Groups' : 'AdSets';
             await celoTelegram.sendMessage(chatId,
-              `📋 Campanha duplicada!\n\n` +
+              `📋 Campanha ${dupPlatform} duplicada!\n\n` +
               `Nova campanha: ${result.campaignId}\n` +
-              `AdSets: ${result.adSets}\n` +
+              `${groupLabel}: ${result.adGroups || result.adSets}\n` +
               `Ads: ${result.ads}\n` +
               `Status: PAUSED`
             );
           } catch (err) {
             await celoTelegram.sendMessage(chatId, `Erro: ${err.message}`);
           }
+          return;
+        }
+
+        // ============================================================
+        // Google Ads Specific Commands
+        // ============================================================
+
+        case '/search-terms':
+        case '/searchterms': {
+          if (!args) {
+            await celoTelegram.sendMessage(chatId, 'Uso: /search-terms {campaign-id} [last_7d|last_30d]');
+            return;
+          }
+          const stParts = args.trim().split(/\s+/);
+          const stCampaignId = stParts[0];
+          const stDatePreset = stParts[1] || 'last_7d';
+
+          await celoTelegram.sendMessage(chatId, 'Buscando search terms Google Ads...');
+          try {
+            await adsManager._ensurePlatform('google');
+            const googleAdapter = adsManager._getAdapter('google');
+            const terms = await googleAdapter.getSearchTerms(stCampaignId, stDatePreset);
+
+            if (!terms || terms.length === 0) {
+              await celoTelegram.sendMessage(chatId, 'Nenhum search term encontrado para este periodo.');
+              return;
+            }
+
+            const top20 = terms.slice(0, 20);
+            const lines = top20.map((t, i) => {
+              const convIcon = t.conversions > 0 ? '✅' : '';
+              return `${i + 1}. "${t.searchTerm}"\n   ${t.clicks} cliques | R$ ${t.spend.toFixed(2)} | ${t.conversions} conv ${convIcon}`;
+            });
+
+            await celoTelegram.sendMessage(chatId,
+              `🔍 Top Search Terms (${stDatePreset}):\n\n${lines.join('\n\n')}\n\n` +
+              `Total: ${terms.length} termos encontrados`
+            );
+          } catch (err) {
+            await celoTelegram.sendMessage(chatId, `Erro: ${err.message}`);
+          }
+          return;
+        }
+
+        case '/quality-score':
+        case '/qs': {
+          if (!args) {
+            await celoTelegram.sendMessage(chatId, 'Uso: /quality-score {campaign-id}');
+            return;
+          }
+          const qsCampaignId = args.trim().split(/\s+/)[0];
+
+          await celoTelegram.sendMessage(chatId, 'Analisando Quality Scores Google Ads...');
+          try {
+            await adsManager._ensurePlatform('google');
+            const googleAdapter = adsManager._getAdapter('google');
+            const keywords = await googleAdapter.getKeywordQualityScores(qsCampaignId);
+
+            if (!keywords || keywords.length === 0) {
+              await celoTelegram.sendMessage(chatId, 'Nenhuma keyword encontrada.');
+              return;
+            }
+
+            const lines = keywords.map((kw) => {
+              const qs = kw.qualityScore != null ? `QS: ${kw.qualityScore}/10` : 'QS: N/A';
+              const creative = kw.creativeQuality || '-';
+              const landing = kw.landingPageQuality || '-';
+              const ctr = kw.expectedCtr || '-';
+              return `"${kw.keyword}" [${kw.matchType}]\n   ${qs} | Creative: ${creative} | LP: ${landing} | eCTR: ${ctr}`;
+            });
+
+            const avgQs = keywords.filter(k => k.qualityScore).reduce((sum, k) => sum + k.qualityScore, 0) /
+              (keywords.filter(k => k.qualityScore).length || 1);
+
+            await celoTelegram.sendMessage(chatId,
+              `📊 Quality Scores:\n\n${lines.join('\n\n')}\n\n` +
+              `Media QS: ${avgQs.toFixed(1)}/10`
+            );
+          } catch (err) {
+            await celoTelegram.sendMessage(chatId, `Erro: ${err.message}`);
+          }
+          return;
+        }
+
+        case '/adgroups': {
+          if (!args) {
+            await celoTelegram.sendMessage(chatId, 'Uso: /adgroups {campaign-id}');
+            return;
+          }
+          const agCampaignId = args.trim().split(/\s+/)[0];
+
+          await celoTelegram.sendMessage(chatId, 'Carregando ad groups Google Ads...');
+          try {
+            await adsManager._ensurePlatform('google');
+            const googleAdapter = adsManager._getAdapter('google');
+            const adGroups = await googleAdapter.getCampaignAdGroups(agCampaignId);
+
+            if (!adGroups || adGroups.length === 0) {
+              await celoTelegram.sendMessage(chatId, 'Nenhum ad group encontrado.');
+              return;
+            }
+
+            const lines = adGroups.map((ag) => {
+              const emoji = AdsManager.statusEmoji(ag.status);
+              const bid = ag.cpcBid ? `CPC: R$ ${ag.cpcBid.toFixed(2)}` : '';
+              return `${emoji} ${ag.name}\n   ID: ${ag.id} ${bid}`;
+            });
+
+            await celoTelegram.sendMessage(chatId,
+              `${adGroups.length} Ad Group(s):\n\n${lines.join('\n\n')}`
+            );
+          } catch (err) {
+            await celoTelegram.sendMessage(chatId, `Erro: ${err.message}`);
+          }
+          return;
+        }
+
+        case '/sync-google': {
+          let sgClientId = args?.trim() || null;
+          if (!sgClientId) {
+            const clients = celoConfig.listClients();
+            const googleClients = clients.filter(c => {
+              const platforms = Array.isArray(c.adsPlatform) ? c.adsPlatform : [c.adsPlatform];
+              return platforms.includes('google') && c.googleCustomerId;
+            });
+            if (googleClients.length === 1) {
+              sgClientId = googleClients[0].id;
+            } else if (googleClients.length > 1) {
+              const lines = googleClients.map(c => `  /sync-google ${c.id}`);
+              await celoTelegram.sendMessage(chatId, `Qual cliente?\n\n${lines.join('\n')}`);
+              return;
+            } else {
+              await celoTelegram.sendMessage(chatId, 'Nenhum cliente com Google Ads configurado.');
+              return;
+            }
+          }
+
+          await celoTelegram.sendMessage(chatId, `Sincronizando Google Ads de ${sgClientId}...`);
+          try {
+            const result = await adsSyncer.syncGoogleClient(sgClientId);
+            if (result.skipped) {
+              await celoTelegram.sendMessage(chatId, `Sync pulado: ${result.reason || 'em andamento'}`);
+            } else if (result.error) {
+              await celoTelegram.sendMessage(chatId, `Erro no sync: ${result.error}`);
+            } else {
+              await celoTelegram.sendMessage(chatId,
+                `✅ Google Ads sincronizado!\n\n` +
+                `Campanhas: ${result.campaigns}\n` +
+                `Ad Groups: ${result.adgroups}\n` +
+                `Ads: ${result.ads}\n` +
+                `Linhas diarias: ${result.dailyRows}\n` +
+                `Tempo: ${(result.durationMs / 1000).toFixed(1)}s`
+              );
+            }
+          } catch (err) {
+            await celoTelegram.sendMessage(chatId, `Erro: ${err.message}`);
+          }
+          return;
+        }
+
+        case '/google-status': {
+          const isReady = adsSyncer.isGoogleReady();
+          const client = celoConfig.getClient('dr-erico-servano');
+          const hasCustomerId = !!(client?.googleCustomerId);
+
+          let statusText = `🔧 Google Ads Status:\n\n`;
+          statusText += `API inicializada: ${isReady ? '✅' : '❌'}\n`;
+          statusText += `Customer ID configurado: ${hasCustomerId ? '✅ ' + client.googleCustomerId : '❌ Vazio'}\n`;
+
+          if (!isReady) {
+            statusText += `\n⚠️ Credenciais Google Ads nao configuradas no .env\n`;
+            statusText += `Variaveis necessarias:\n`;
+            statusText += `- GOOGLE_ADS_CLIENT_ID\n`;
+            statusText += `- GOOGLE_ADS_CLIENT_SECRET\n`;
+            statusText += `- GOOGLE_ADS_DEVELOPER_TOKEN\n`;
+            statusText += `- GOOGLE_ADS_REFRESH_TOKEN\n`;
+            statusText += `\nExecute: node setup-google-ads-auth.js`;
+          }
+
+          await celoTelegram.sendMessage(chatId, statusText);
           return;
         }
 
@@ -977,25 +1253,62 @@ async function handleCeloCallback(callbackQuery) {
         campaignWizard.setStepValue(chatId, 'dailyBudget', parseFloat(value));
         break;
       }
+      case 'gender': {
+        campaignWizard.setStepValue(chatId, 'gender', value);
+        break;
+      }
+      case 'age': {
+        campaignWizard.setStepValue(chatId, 'ageRange', value);
+        break;
+      }
+      case 'plat': {
+        campaignWizard.setStepValue(chatId, 'placements', value.split('+'));
+        break;
+      }
+      case 'interest': {
+        campaignWizard.setStepValue(chatId, 'interest', value);
+        break;
+      }
       case 'confirm': {
         if (value === 'yes') {
           const finalData = campaignWizard.getFinalData(session);
           campaignWizard.deleteSession(chatId);
-          await celoTelegram.sendMessage(chatId, 'Criando campanha...');
+          await celoTelegram.sendMessage(chatId, 'Criando campanha + conjunto de anuncios...');
           try {
-            const result = await adsManager.createCampaign('meta', {
+            // 1. Criar campanha
+            const campaignResult = await adsManager.createCampaign('meta', {
               clientId: finalData.clientId,
-              name: finalData.name,
-              objective: finalData.objective,
-              dailyBudget: finalData.dailyBudget,
+              name: finalData.campaign.name,
+              objective: finalData.campaign.objective,
+              dailyBudget: finalData.campaign.budgetType === 'CBO' ? finalData.campaign.dailyBudget : undefined,
             });
+
+            // 2. Criar adset com targeting
+            let adsetMsg = '';
+            try {
+              const metaAds = adsManager._getAdapter('meta');
+              const { adAccountId } = adsManager._resolveClient(finalData.clientId);
+              const adsetResult = await metaAds.createAdSet({
+                campaignId: campaignResult.id,
+                name: finalData.adset.name,
+                dailyBudget: finalData.adset.dailyBudget || finalData.campaign.dailyBudget,
+                targeting: finalData.adset.targeting,
+                adAccountId,
+              });
+              adsetMsg = `\nAdSet: ${adsetResult.id} (${finalData.adset.name})`;
+            } catch (adsetErr) {
+              adsetMsg = `\nAdSet: Erro - ${adsetErr.message}`;
+              console.error('Wizard: Erro ao criar AdSet:', adsetErr.message);
+            }
+
             await celoTelegram.sendMessage(chatId,
               `Campanha criada!\n\n` +
-              `ID: ${result.id}\n` +
-              `Nome: ${finalData.name}\n` +
-              `Budget: R$ ${finalData.dailyBudget.toFixed(2)}/dia\n` +
-              `Status: PAUSED\n\n` +
-              `Use /activate ${result.id} para ativar.`
+              `Campanha: ${campaignResult.id}\n` +
+              `Nome: ${finalData.campaign.name}\n` +
+              `Budget: R$ ${finalData.campaign.dailyBudget.toFixed(2)}/dia` +
+              adsetMsg +
+              `\nStatus: PAUSED\n\n` +
+              `Use /activate ${campaignResult.id} para ativar.`
             );
           } catch (err) {
             await celoTelegram.sendMessage(chatId, `Erro ao criar: ${err.message}`);
@@ -1349,8 +1662,9 @@ app.post('/api/ads/audiences', async (req, res) => {
 // ============================================================
 // Optimization (API)
 // ============================================================
-app.post('/api/ads/optimize/:clientId', async (req, res) => {
-  const { cplTarget } = req.body;
+// Aceita GET e POST
+app.all('/api/ads/optimize/:clientId', async (req, res) => {
+  const cplTarget = req.body?.cplTarget || req.query?.cplTarget;
   try {
     const analysis = await optimizer.analyze(req.params.clientId, { cplTarget });
     res.json(analysis);
@@ -1436,6 +1750,40 @@ app.post('/api/autopilot/toggle/:clientId', (req, res) => {
   }
 
   res.json({ clientId: req.params.clientId, autopilot: cfg.clients[req.params.clientId].autopilot });
+});
+
+// ============================================================
+// Optimizer & Health Score (API)
+// ============================================================
+
+// Health score + sugestões do optimizer (rules-based, sem LLaMA)
+app.get('/api/autopilot/health/:clientId', async (req, res) => {
+  try {
+    const result = await optimizer.analyze(req.params.clientId, {
+      cplTarget: celoConfig.getClient(req.params.clientId)?.budget?.cplTarget,
+    });
+    res.json({
+      health: result.health,
+      pacing: result.pacing,
+      suggestions: result.suggestions,
+      benchmarks: result.benchmarks,
+      summary: result.summary,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Executar uma sugestão do optimizer
+app.post('/api/autopilot/execute-suggestion', async (req, res) => {
+  try {
+    const { suggestion } = req.body;
+    if (!suggestion) return res.status(400).json({ error: 'suggestion required' });
+    const result = await optimizer.execute(suggestion);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // ============================================================
@@ -1551,6 +1899,15 @@ app.post('/api/campaigns/sync-all', async (req, res) => {
 app.get('/api/campaigns/sync-status', (req, res) => {
   try {
     const status = campaignsExporter.getStatus();
+    res.json(status);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/ads/sync-status', (req, res) => {
+  try {
+    const status = adsSyncer.getStatus();
     res.json(status);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -1835,6 +2192,280 @@ app.get('/api/naming/constants', (req, res) => {
 });
 
 // ============================================================
+// CRM x Ads Cross-Reference (consulta BANCO LOCAL, não API)
+// ============================================================
+
+function normalizeName(name) {
+  return (name || '').toLowerCase().replace(/[\[\](){}]/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function findCrmMatch(metaName, crmCampaigns) {
+  const norm = normalizeName(metaName);
+  // Tier 1: exact match
+  const exact = crmCampaigns.find(c => normalizeName(c.campaign) === norm);
+  if (exact) return exact;
+  // Tier 2: contains
+  const contains = crmCampaigns.find(c => {
+    const cn = normalizeName(c.campaign);
+    return cn.includes(norm) || norm.includes(cn);
+  });
+  if (contains) return contains;
+  // Tier 3: token overlap > 50%
+  const metaTokens = norm.split(' ').filter(Boolean);
+  if (metaTokens.length === 0) return null;
+  let bestMatch = null, bestOverlap = 0;
+  for (const c of crmCampaigns) {
+    const crmTokens = normalizeName(c.campaign).split(' ').filter(Boolean);
+    if (crmTokens.length === 0) continue;
+    const common = metaTokens.filter(t => crmTokens.includes(t)).length;
+    const overlap = common / Math.max(metaTokens.length, crmTokens.length);
+    if (overlap > 0.5 && overlap > bestOverlap) {
+      bestOverlap = overlap;
+      bestMatch = c;
+    }
+  }
+  return bestMatch;
+}
+
+function computeCampaignQuality(crm, funnelStages) {
+  if (!crm) return 0;
+  const total = (crm.total || 0);
+  if (total === 0) return 0;
+  const wonWeight = (crm.won_count || 0) * 40;
+  const openWeight = (crm.open_count || 0) * 20;
+  const totalWeight = total * 10;
+  const raw = wonWeight + openWeight + totalWeight;
+  return Math.min(100, Math.round(raw / total));
+}
+
+/**
+ * Monta crossref usando BANCO LOCAL (ghlDb + adsDb).
+ * Zero chamadas à API — tudo SQLite.
+ */
+function buildCrossrefFromDb(clientId, start30d, end) {
+  // === CRM data (SQLite) ===
+  const crmCampaigns = ghlDb.getCampaignPerformance(clientId, start30d, end);
+  const crmAds = ghlDb.getAdPerformance(clientId, start30d, end);
+  const crmAdsets = ghlDb.getAdsetPerformance(clientId, start30d, end);
+  const funnelStages = ghlDb.getFunnelStages(clientId);
+  const oppSummary = ghlDb.getOpportunitySummary(clientId, start30d, end);
+  const contactsByCampaign = ghlDb.getContactsByCampaign(clientId, start30d, end);
+  const stages = ghlDb.getPipelineStages(clientId);
+  const pipelineName = stages[0]?.pipeline_name || 'Pipeline';
+
+  // === Ads data (SQLite) ===
+  const adsCampaigns = adsDb.getCampaignSummaries(clientId, start30d, end);
+  const adsAds = adsDb.getAdSummaries(clientId, start30d, end);
+  const adsAdsets = adsDb.getAdsetSummaries(clientId, start30d, end);
+
+  // Contact leads lookup by campaign
+  const contactLeadMap = {};
+  for (const c of contactsByCampaign) {
+    contactLeadMap[normalizeName(c.campaign)] = c.leads;
+  }
+
+  // CRM ads lookup by name
+  const crmAdMap = {};
+  for (const a of crmAds) {
+    crmAdMap[normalizeName(a.ad_name)] = a;
+  }
+
+  // CRM adsets lookup by name
+  const crmAdsetMap = {};
+  for (const a of crmAdsets) {
+    crmAdsetMap[normalizeName(a.adset_name)] = a;
+  }
+
+  // Merge campaigns
+  const campaigns = adsCampaigns.map(ac => {
+    const crm = findCrmMatch(ac.name, crmCampaigns);
+    const quality = computeCampaignQuality(crm, funnelStages);
+    const crmLeads = crm?.total || contactLeadMap[normalizeName(ac.name)] || 0;
+    const crmWon = crm?.won_count || 0;
+    const crmWonValue = crm?.won_value || 0;
+    const roas = (ac.spend > 0 && crmWonValue > 0) ? (crmWonValue / ac.spend) : 0;
+    return {
+      name: ac.name,
+      status: ac.status,
+      spend: ac.spend || 0,
+      clicks: ac.clicks || 0,
+      impressions: ac.impressions || 0,
+      metaLeads: ac.leads || 0,
+      cplMeta: ac.cost_per_result || 0,
+      ctr: ac.ctr || 0,
+      crmMatched: !!crm,
+      crmLeads,
+      crmOpen: crm?.open_count || 0,
+      crmWon,
+      crmLost: crm?.lost_count || 0,
+      crmWonValue,
+      roas,
+      quality,
+      cplCrm: (ac.spend > 0 && crmLeads > 0) ? ac.spend / crmLeads : 0,
+    };
+  });
+
+  // Merge ads (criativos)
+  const ads = adsAds.map(ad => {
+    const crmAd = crmAdMap[normalizeName(ad.name)];
+    const crmLeads = crmAd?.leads || 0;
+    return {
+      name: ad.name,
+      status: ad.status,
+      campaignName: ad.campaign_name,
+      spend: ad.spend || 0,
+      metaLeads: ad.leads || 0,
+      crmLeads,
+      cplCrm: (ad.spend > 0 && crmLeads > 0) ? ad.spend / crmLeads : 0,
+      ctr: ad.ctr || 0,
+    };
+  });
+
+  // Merge adsets (conjuntos)
+  const adsets = adsAdsets.map(as => {
+    const crmAs = crmAdsetMap[normalizeName(as.name)];
+    const crmLeads = crmAs?.leads || 0;
+    return {
+      name: as.name,
+      status: as.status,
+      campaignName: as.campaign_name,
+      spend: as.spend || 0,
+      metaLeads: as.leads || 0,
+      crmLeads,
+      cplCrm: (as.spend > 0 && crmLeads > 0) ? as.spend / crmLeads : 0,
+      ctr: as.ctr || 0,
+    };
+  });
+
+  // Totals
+  const totalCrmLeads = oppSummary?.total || 0;
+  const totalWon = oppSummary?.total_won || 0;
+  const totalWonValue = oppSummary?.won_value || 0;
+  const totalLost = oppSummary?.total_lost || 0;
+  const totalSpend = campaigns.reduce((s, c) => s + c.spend, 0);
+  const conversionRate = (totalWon + totalLost) > 0
+    ? Math.round((totalWon / (totalWon + totalLost)) * 100) : 0;
+
+  // Consultas agendadas (look for stage containing 'consulta' or 'agendad')
+  const consultaStage = funnelStages.find(s =>
+    s.stage_name?.toLowerCase().includes('consulta') || s.stage_name?.toLowerCase().includes('agendad')
+  );
+  const consultasAgendadas = consultaStage?.count || 0;
+  const custoConsulta = (totalSpend > 0 && consultasAgendadas > 0)
+    ? totalSpend / consultasAgendadas : 0;
+
+  // Rankings
+  const qualityRanking = [...campaigns]
+    .filter(c => c.crmMatched)
+    .sort((a, b) => b.quality - a.quality)
+    .slice(0, 5);
+
+  const efficientAds = [...ads]
+    .filter(a => a.crmLeads > 0)
+    .sort((a, b) => a.cplCrm - b.cplCrm)
+    .slice(0, 5);
+
+  const consultaCampaigns = [...campaigns]
+    .filter(c => c.crmMatched && c.crmWon > 0)
+    .sort((a, b) => b.crmWon - a.crmWon)
+    .slice(0, 5);
+
+  // Last sync info
+  const lastSync = ghlDb.getLastSync(clientId);
+
+  return {
+    kpis: {
+      totalCrmLeads,
+      won30d: totalWon,
+      wonValue30d: totalWonValue,
+      roas: totalSpend > 0 ? totalWonValue / totalSpend : 0,
+      conversionRate,
+      consultasAgendadas,
+      custoConsulta,
+    },
+    funnel: funnelStages.map(s => ({ name: s.stage_name, count: s.count || 0, value: s.value || 0 })),
+    campaigns: campaigns.sort((a, b) => b.spend - a.spend),
+    ads: ads.filter(a => a.spend > 0).sort((a, b) => b.spend - a.spend),
+    adsets: adsets.filter(a => a.spend > 0).sort((a, b) => b.spend - a.spend),
+    qualityRanking,
+    efficientAds,
+    consultaCampaigns,
+    pipelineName,
+    lastSync: lastSync ? { at: lastSync.created_at, opps: lastSync.opportunities_synced, contacts: lastSync.contacts_synced } : null,
+    hasData: (totalCrmLeads > 0 || adsCampaigns.length > 0),
+  };
+}
+
+app.get('/api/crm-crossref/:clientId', (req, res) => {
+  try {
+    const clientId = req.params.clientId;
+    const client = celoConfig.getClient(clientId);
+    if (!client) return res.status(404).json({ error: 'Cliente nao encontrado' });
+
+    // Init DBs if needed
+    ghlDb.initDB();
+    adsDb.initDB();
+
+    // Check if we have data
+    const hasCrmData = ghlDb.hasData(clientId);
+    const hasAdsData = adsDb.hasData(clientId);
+
+    if (!hasCrmData && !hasAdsData) {
+      return res.json({
+        hasData: false,
+        error: 'Nenhum dado sincronizado. Use POST /api/crm-sync/:clientId para popular.',
+        kpis: { totalCrmLeads: 0, won30d: 0, wonValue30d: 0, roas: 0, conversionRate: 0, consultasAgendadas: 0, custoConsulta: 0 },
+        funnel: [], campaigns: [], ads: [], adsets: [],
+        qualityRanking: [], efficientAds: [], consultaCampaigns: [],
+        pipelineName: '--', lastSync: null,
+      });
+    }
+
+    const now = new Date();
+    const start30d = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const end = now.toISOString().split('T')[0];
+
+    const crossref = buildCrossrefFromDb(clientId, start30d, end);
+    res.json(crossref);
+  } catch (err) {
+    console.error('❌ CRM Crossref error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Sync manual CRM + Ads para um cliente
+app.post('/api/crm-sync/:clientId', async (req, res) => {
+  try {
+    const clientId = req.params.clientId;
+    const client = celoConfig.getClient(clientId);
+    if (!client) return res.status(404).json({ error: 'Cliente nao encontrado' });
+
+    console.log(`🔄 Sync manual iniciado para ${clientId}...`);
+    const results = {};
+
+    // Sync GHL CRM
+    if (client.ghlLocationId && client.ghlToken) {
+      results.ghl = await ghlSyncer.syncClient(clientId);
+    } else {
+      results.ghl = { skipped: true, reason: 'Sem GHL configurado' };
+    }
+
+    // Sync Meta Ads
+    if (client.metaAdAccountId) {
+      results.ads = await adsSyncer.syncClient(clientId);
+    } else {
+      results.ads = { skipped: true, reason: 'Sem Meta Ads configurado' };
+    }
+
+    console.log(`✅ Sync manual concluido para ${clientId}:`, JSON.stringify(results));
+    res.json({ status: 'ok', clientId, results });
+  } catch (err) {
+    console.error(`❌ Sync manual error ${req.params.clientId}:`, err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ============================================================
 // Startup
 // ============================================================
 app.listen(PORT, async () => {
@@ -1881,17 +2512,33 @@ app.listen(PORT, async () => {
   });
   autopilot.start();
 
-  // Inicializar CampaignsExporter
+  // Inicializar syncers
   await campaignsExporter.init();
+  await adsSyncer.init();
+  await ghlSyncer.init();
 
-  // Scheduler: sincronizar campanhas a cada 4 horas
-  const CAMPAIGN_SYNC_INTERVAL = 4 * 3600 * 1000; // 4 horas
+  // Scheduler: sincronizar campanhas, ads BD e GHL a cada 15 minutos
+  const CAMPAIGN_SYNC_INTERVAL = 15 * 60 * 1000; // 15 minutos
   setInterval(async () => {
     try {
-      console.log('📊 Sincronizando campanhas (scheduler)...');
-      const results = await campaignsExporter.syncAllClients();
-      const successful = Array.from(results.values()).filter(r => r.success).length;
-      console.log(`✅ Sincronização completa: ${successful}/${results.size} clientes`);
+      console.log('📊 Sincronizando campanhas + ads BD + GHL (scheduler)...');
+      const [results, adsResults, ghlResults] = await Promise.allSettled([
+        campaignsExporter.syncAllClients(),
+        adsSyncer.syncAllClients(),
+        ghlSyncer.syncAllClients(),
+      ]);
+      if (results.status === 'fulfilled') {
+        const successful = Array.from(results.value.values()).filter(r => r.success).length;
+        console.log(`✅ Campanhas: ${successful}/${results.value.size} clientes`);
+      }
+      if (adsResults.status === 'fulfilled') {
+        const successful = Array.from(adsResults.value.values()).filter(r => r.success).length;
+        console.log(`✅ Ads BD: ${successful}/${adsResults.value.size} clientes`);
+      }
+      if (ghlResults.status === 'fulfilled') {
+        const successful = Array.from(ghlResults.value.values()).filter(r => r.success).length;
+        console.log(`✅ GHL BD: ${successful}/${ghlResults.value.size} clientes`);
+      }
     } catch (err) {
       console.error('❌ Erro no scheduler de campanhas:', err.message);
     }
@@ -1905,6 +2552,20 @@ app.listen(PORT, async () => {
       console.log('✅ Sincronização inicial completa');
     } catch (err) {
       console.error('❌ Erro na sincronização inicial:', err.message);
+    }
+    try {
+      console.log('📊 Sincronizando ads BD (startup)...');
+      await adsSyncer.syncAllClients();
+      console.log('✅ Ads BD sincronização inicial completa');
+    } catch (err) {
+      console.error('❌ Erro na sincronização inicial ads BD:', err.message);
+    }
+    try {
+      console.log('📊 Sincronizando GHL BD (startup)...');
+      await ghlSyncer.syncAllClients();
+      console.log('✅ GHL BD sincronização inicial completa');
+    } catch (err) {
+      console.error('❌ Erro na sincronização inicial GHL BD:', err.message);
     }
   });
 

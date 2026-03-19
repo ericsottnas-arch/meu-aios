@@ -1,55 +1,77 @@
 /**
- * Helpers para interação avançada com a API do Telegram.
- * Inline keyboards, callback queries, etc.
+ * Helpers para interacao com a API do Telegram.
+ * Factory pattern: cada servidor usa seu proprio BOT_TOKEN.
+ *
+ * Uso:
+ *   const { createTelegramClient } = require('./lib/telegram');
+ *   const telegram = createTelegramClient(MY_BOT_TOKEN);
+ *
+ * Backward-compatible: exporta instancia default com TELEGRAM_BOT_TOKEN.
  */
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN?.replace(/"/g, '');
+// --- Factory ---
 
-async function callTelegramAPI(method, body) {
-  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/${method}`;
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  const data = await res.json();
-  if (!data.ok) {
-    console.error(`Telegram API ${method} error:`, data.description);
+function createTelegramClient(botToken) {
+  const token = botToken || process.env.TELEGRAM_BOT_TOKEN?.replace(/"/g, '');
+
+  async function callTelegramAPI(method, body) {
+    const url = `https://api.telegram.org/bot${token}/${method}`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (!data.ok) {
+      console.error(`Telegram API ${method} error:`, data.description);
+    }
+    return data;
   }
-  return data;
+
+  function sendMessage(chatId, text, options = {}) {
+    return callTelegramAPI('sendMessage', {
+      chat_id: chatId,
+      text,
+      parse_mode: options.parseMode || undefined,
+      reply_markup: options.replyMarkup || undefined,
+    });
+  }
+
+  function sendInlineKeyboard(chatId, text, buttons) {
+    return sendMessage(chatId, text, {
+      replyMarkup: { inline_keyboard: buttons },
+    });
+  }
+
+  function answerCallbackQuery(callbackQueryId, text) {
+    return callTelegramAPI('answerCallbackQuery', {
+      callback_query_id: callbackQueryId,
+      text: text || undefined,
+    });
+  }
+
+  function editMessageText(chatId, messageId, text) {
+    return callTelegramAPI('editMessageText', {
+      chat_id: chatId,
+      message_id: messageId,
+      text,
+    });
+  }
+
+  async function getFileUrl(fileId) {
+    const data = await callTelegramAPI('getFile', { file_id: fileId });
+    if (!data.ok) return null;
+    const filePath = data.result.file_path;
+    return {
+      filePath,
+      fileUrl: `https://api.telegram.org/file/bot${token}/${filePath}`,
+    };
+  }
+
+  return { sendMessage, sendInlineKeyboard, answerCallbackQuery, editMessageText, getFileUrl };
 }
 
-function sendMessage(chatId, text, options = {}) {
-  return callTelegramAPI('sendMessage', {
-    chat_id: chatId,
-    text,
-    parse_mode: options.parseMode || undefined,
-    reply_markup: options.replyMarkup || undefined,
-  });
-}
-
-function sendInlineKeyboard(chatId, text, buttons) {
-  return sendMessage(chatId, text, {
-    replyMarkup: { inline_keyboard: buttons },
-  });
-}
-
-function answerCallbackQuery(callbackQueryId, text) {
-  return callTelegramAPI('answerCallbackQuery', {
-    callback_query_id: callbackQueryId,
-    text: text || undefined,
-  });
-}
-
-function editMessageText(chatId, messageId, text) {
-  return callTelegramAPI('editMessageText', {
-    chat_id: chatId,
-    message_id: messageId,
-    text,
-  });
-}
-
-// --- Keyboards pré-definidos ---
+// --- Keyboards e constantes (nao dependem de token) ---
 
 function priorityKeyboard() {
   return [
@@ -64,10 +86,6 @@ function priorityKeyboard() {
   ];
 }
 
-/**
- * Cria teclado inline com opções de clientes do ClickUp.
- * @param {Array<{id: string, name: string}>} clients - Opções do campo personalizado
- */
 function clientKeyboard(clients) {
   const rows = [];
   for (let i = 0; i < clients.length; i += 2) {
@@ -127,21 +145,6 @@ function formatDate(d) {
   return `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}`;
 }
 
-/**
- * Obtém a URL temporária de download de um arquivo no Telegram.
- * @param {string} fileId
- * @returns {Promise<{filePath: string, fileUrl: string}|null>}
- */
-async function getFileUrl(fileId) {
-  const data = await callTelegramAPI('getFile', { file_id: fileId });
-  if (!data.ok) return null;
-  const filePath = data.result.file_path;
-  return {
-    filePath,
-    fileUrl: `https://api.telegram.org/file/bot${TELEGRAM_BOT_TOKEN}/${filePath}`,
-  };
-}
-
 const PRIORITY_LABELS = {
   1: '🔴 Urgente',
   2: '🟠 Alta',
@@ -149,12 +152,12 @@ const PRIORITY_LABELS = {
   4: '🔵 Baixa',
 };
 
+// --- Backward-compatible: instancia default ---
+const defaultClient = createTelegramClient();
+
 module.exports = {
-  sendMessage,
-  sendInlineKeyboard,
-  answerCallbackQuery,
-  editMessageText,
-  getFileUrl,
+  ...defaultClient,
+  createTelegramClient,
   priorityKeyboard,
   clientKeyboard,
   dateKeyboard,

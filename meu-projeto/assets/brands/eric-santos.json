@@ -1,0 +1,18 @@
+{
+  "name": "Eric Santos",
+  "handle": "@byericsantos",
+  "colors": {
+    "primary": "#00FF66",
+    "secondary": "#FFFFFF",
+    "background": "#0A0A0A",
+    "textPrimary": "#FFFFFF",
+    "textSecondary": "#CCCCCC"
+  },
+  "fonts": {
+    "headline": "Inter",
+    "body": "Inter"
+  },
+  "logo": null,
+  "defaultPhoto": "eric-santos-01.png",
+  "defaultPreset": "neon-green"
+}

@@ -483,6 +483,7 @@ class MetaAds {
   async createAdSet({
     campaignId, name, dailyBudget, targeting,
     billingEvent = 'IMPRESSIONS', optimizationGoal = 'LEAD_GENERATION',
+    destinationType, promotedObject,
     adAccountId,
   }) {
     this._ensureReady();
@@ -492,12 +493,23 @@ class MetaAds {
       const params = {
         [AdSet.Fields.name]: name,
         [AdSet.Fields.campaign_id]: campaignId,
-        [AdSet.Fields.daily_budget]: Math.round(dailyBudget * 100),
         [AdSet.Fields.billing_event]: billingEvent,
         [AdSet.Fields.optimization_goal]: optimizationGoal,
         [AdSet.Fields.targeting]: targeting,
         [AdSet.Fields.status]: 'PAUSED',
       };
+
+      if (dailyBudget != null) {
+        params[AdSet.Fields.daily_budget] = Math.round(dailyBudget * 100);
+      }
+
+      if (destinationType) {
+        params.destination_type = destinationType;
+      }
+
+      if (promotedObject) {
+        params.promoted_object = promotedObject;
+      }
 
       const result = await account.createAdSet([], params);
       console.log(`MetaAds: AdSet criado: ${result.id} (${name})`);
@@ -678,6 +690,254 @@ class MetaAds {
 
     console.log(`MetaAds: Campanha duplicada: ${newCampaign.id} (${adSetCount} adsets, ${adCount} ads)`);
     return { campaignId: newCampaign.id, adSets: adSetCount, ads: adCount };
+  }
+
+  /**
+   * Retorna insights diários de um adset
+   * @param {string} adsetId
+   * @param {Date|null} customStartDate
+   * @param {Date|null} customEndDate
+   * @returns {Promise<Array>}
+   */
+  async getAdsetInsightsDaily(adsetId, customStartDate = null, customEndDate = null) {
+    this._ensureReady();
+
+    return this._withRetry(async () => {
+      const adset = new AdSet(adsetId);
+
+      let startDate = customStartDate;
+      if (!startDate) {
+        startDate = new Date();
+        startDate.setMonth(startDate.getMonth() - 6);
+      }
+      const endDate = customEndDate || new Date();
+      const formatDate = (d) => d.toISOString().split('T')[0];
+
+      let insights = [];
+      try {
+        insights = await adset.getInsights(
+          ['impressions', 'clicks', 'spend', 'cpc', 'ctr', 'cpm', 'reach', 'frequency', 'actions', 'cost_per_action_type', 'date_start', 'date_stop'],
+          { time_range: { since: formatDate(startDate), until: formatDate(endDate) }, time_increment: 1, limit: 1000 }
+        );
+      } catch (err) {
+        console.warn(`MetaAds: Erro insights adset ${adsetId}:`, err.message);
+        return [];
+      }
+
+      if (!insights || insights.length === 0) return [];
+
+      return insights.map(data => {
+        const conversions = data.actions?.find(a => a.action_type === 'lead' || a.action_type === 'offsite_conversion.fb_pixel_lead');
+        const costPerResult = data.cost_per_action_type?.find(a => a.action_type === 'lead' || a.action_type === 'offsite_conversion.fb_pixel_lead');
+        return {
+          date: data.date_start || data.date_stop,
+          impressions: Number(data.impressions || 0), clicks: Number(data.clicks || 0),
+          spend: Number(data.spend || 0), cpc: Number(data.cpc || 0), ctr: Number(data.ctr || 0),
+          cpm: Number(data.cpm || 0), reach: Number(data.reach || 0), frequency: Number(data.frequency || 0),
+          conversions: conversions ? Number(conversions.value) : 0,
+          costPerResult: costPerResult ? Number(costPerResult.value) : 0,
+        };
+      });
+    });
+  }
+
+  /**
+   * Retorna insights diários de um ad
+   * @param {string} adId
+   * @param {Date|null} customStartDate
+   * @param {Date|null} customEndDate
+   * @returns {Promise<Array>}
+   */
+  async getAdInsightsDaily(adId, customStartDate = null, customEndDate = null) {
+    this._ensureReady();
+
+    return this._withRetry(async () => {
+      const ad = new Ad(adId);
+
+      let startDate = customStartDate;
+      if (!startDate) {
+        startDate = new Date();
+        startDate.setMonth(startDate.getMonth() - 6);
+      }
+      const endDate = customEndDate || new Date();
+      const formatDate = (d) => d.toISOString().split('T')[0];
+
+      let insights = [];
+      try {
+        insights = await ad.getInsights(
+          ['impressions', 'clicks', 'spend', 'cpc', 'ctr', 'cpm', 'reach', 'frequency', 'actions', 'cost_per_action_type', 'date_start', 'date_stop'],
+          { time_range: { since: formatDate(startDate), until: formatDate(endDate) }, time_increment: 1, limit: 1000 }
+        );
+      } catch (err) {
+        console.warn(`MetaAds: Erro insights ad ${adId}:`, err.message);
+        return [];
+      }
+
+      if (!insights || insights.length === 0) return [];
+
+      return insights.map(data => {
+        const conversions = data.actions?.find(a => a.action_type === 'lead' || a.action_type === 'offsite_conversion.fb_pixel_lead');
+        const costPerResult = data.cost_per_action_type?.find(a => a.action_type === 'lead' || a.action_type === 'offsite_conversion.fb_pixel_lead');
+        return {
+          date: data.date_start || data.date_stop,
+          impressions: Number(data.impressions || 0), clicks: Number(data.clicks || 0),
+          spend: Number(data.spend || 0), cpc: Number(data.cpc || 0), ctr: Number(data.ctr || 0),
+          cpm: Number(data.cpm || 0), reach: Number(data.reach || 0), frequency: Number(data.frequency || 0),
+          conversions: conversions ? Number(conversions.value) : 0,
+          costPerResult: costPerResult ? Number(costPerResult.value) : 0,
+        };
+      });
+    });
+  }
+
+  // ============================================================
+  // Lead Forms (Formulários Instantâneos)
+  // ============================================================
+
+  /**
+   * Obtém o Page Access Token a partir do User Token.
+   * Lead Forms requerem Page Token (não User Token).
+   * @param {string} pageId
+   * @returns {Promise<string>}
+   */
+  async _getPageToken(pageId) {
+    const res = await fetch(
+      `https://graph.facebook.com/v21.0/${pageId}?fields=access_token&access_token=${META_ACCESS_TOKEN}`
+    );
+    const data = await res.json();
+    if (data.error) throw new Error(`Meta API getPageToken: ${data.error.message}`);
+    return data.access_token;
+  }
+
+  /**
+   * Cria um Lead Form (Formulário Instantâneo) numa Page.
+   * IMPORTANTE: Usa Page Access Token (obtido automaticamente).
+   * @param {Object} params
+   * @param {string} [params.pageId] - Page ID (ou usa META_DEFAULT_PAGE_ID)
+   * @param {string} params.name - Nome do formulário
+   * @param {Array} params.questions - [{type, key?, label?, options?: [{key, value}]}]
+   * @param {string} params.privacyPolicyUrl - URL da política de privacidade
+   * @param {string} [params.followUpUrl] - URL de follow-up (obrigatório pela API)
+   * @param {Object} [params.welcomeScreen] - {title, description}
+   * @param {Object} [params.thankYouPage] - {title, body, buttonText, buttonUrl}
+   * @returns {Promise<{id: string}>}
+   */
+  async createLeadForm({ pageId, name, questions, privacyPolicyUrl, followUpUrl, welcomeScreen, thankYouPage }) {
+    this._ensureReady();
+    const pid = pageId || META_DEFAULT_PAGE_ID;
+    if (!pid) throw new Error('pageId não informado e META_PAGE_ID não configurado.');
+
+    return this._withRetry(async () => {
+      // Lead forms requerem Page Access Token
+      const pageToken = await this._getPageToken(pid);
+
+      const params = new URLSearchParams();
+      params.append('name', name);
+      params.append('questions', JSON.stringify(questions));
+      params.append('privacy_policy', JSON.stringify({ url: privacyPolicyUrl }));
+      params.append('follow_up_action_url', followUpUrl || privacyPolicyUrl);
+      params.append('access_token', pageToken);
+
+      if (welcomeScreen) {
+        params.append('context_card', JSON.stringify({
+          title: welcomeScreen.title,
+          content: [welcomeScreen.description],
+          style: 'PARAGRAPH_STYLE',
+        }));
+      }
+
+      if (thankYouPage) {
+        params.append('thank_you_page', JSON.stringify({
+          title: thankYouPage.title,
+          body: thankYouPage.body,
+          button_text: thankYouPage.buttonText,
+          button_type: 'VIEW_WEBSITE',
+          website_url: thankYouPage.buttonUrl,
+        }));
+      }
+
+      const res = await fetch(`https://graph.facebook.com/v21.0/${pid}/leadgen_forms`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      });
+
+      const data = await res.json();
+      if (data.error) throw new Error(`Meta API createLeadForm: ${data.error.message}`);
+
+      console.log(`MetaAds: Lead Form criado: ${data.id} (${name})`);
+      return { id: data.id };
+    });
+  }
+
+  /**
+   * Busca leads de um formulário.
+   * @param {string} formId - ID do formulário
+   * @param {number} [limit=50]
+   * @returns {Promise<Array>} Array de leads com campos parseados
+   */
+  async getFormLeads(formId, limit = 50) {
+    this._ensureReady();
+
+    return this._withRetry(async () => {
+      const fields = 'id,created_time,field_data,ad_id,ad_name,adset_id,adset_name,campaign_id,campaign_name';
+      const res = await fetch(
+        `https://graph.facebook.com/v21.0/${formId}/leads?fields=${fields}&limit=${limit}&access_token=${META_ACCESS_TOKEN}`
+      );
+
+      const data = await res.json();
+      if (data.error) throw new Error(`Meta API getFormLeads: ${data.error.message}`);
+
+      return (data.data || []).map(lead => ({
+        id: lead.id,
+        createdTime: lead.created_time,
+        fields: (lead.field_data || []).reduce((acc, f) => {
+          acc[f.name] = f.values?.[0] || '';
+          return acc;
+        }, {}),
+        adId: lead.ad_id,
+        adName: lead.ad_name,
+        adsetId: lead.adset_id,
+        adsetName: lead.adset_name,
+        campaignId: lead.campaign_id,
+        campaignName: lead.campaign_name,
+      }));
+    });
+  }
+
+  /**
+   * Busca dados de um lead específico pelo ID.
+   * Usado pelo webhook handler para obter dados após receber leadgen event.
+   * @param {string} leadId - ID do lead (leadgen_id do webhook)
+   * @returns {Promise<Object>}
+   */
+  async getLeadById(leadId) {
+    this._ensureReady();
+
+    return this._withRetry(async () => {
+      const fields = 'id,created_time,field_data,ad_id,ad_name,adset_id,adset_name,campaign_id,campaign_name';
+      const res = await fetch(
+        `https://graph.facebook.com/v21.0/${leadId}?fields=${fields}&access_token=${META_ACCESS_TOKEN}`
+      );
+
+      const data = await res.json();
+      if (data.error) throw new Error(`Meta API getLeadById: ${data.error.message}`);
+
+      return {
+        id: data.id,
+        createdTime: data.created_time,
+        fields: (data.field_data || []).reduce((acc, f) => {
+          acc[f.name] = f.values?.[0] || '';
+          return acc;
+        }, {}),
+        adId: data.ad_id,
+        adName: data.ad_name,
+        adsetId: data.adset_id,
+        adsetName: data.adset_name,
+        campaignId: data.campaign_id,
+        campaignName: data.campaign_name,
+      };
+    });
   }
 
   // ============================================================

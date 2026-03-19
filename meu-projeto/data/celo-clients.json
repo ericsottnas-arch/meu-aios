@@ -10,17 +10,20 @@
         "campaigns": "'Campanhas'!A1:Z200"
       },
       "budget": {
-        "monthly": 0,
+        "monthly": 5000,
         "testingPercentage": 0.1,
         "currency": "BRL"
       },
       "agency": "Syra",
-      "adsPlatform": "meta",
+      "adsPlatform": ["meta", "google"],
       "metaAdAccountId": "act_1397446335381640",
       "metaPageId": "804491499425586",
+      "googleCustomerId": "2169824174",
       "icp": null,
       "active": true,
       "ghlLocationId": "9VML3WG6LUoz7Eh5fb9U",
+      "ghlToken": "pit-bb328204-dbc2-47e1-833a-83b06a9c0849",
+      "ghlPipelineId": "gSnNjh0nlDzezTgXQV29",
       "autopilot": {
         "enabled": true,
         "checkIntervalHours": 4,
@@ -41,6 +44,31 @@
       "adsPlatform": "meta",
       "metaAdAccountId": "act_4992030634193032",
       "metaPageId": "837049336158107",
+      "icp": null,
+      "active": true,
+      "autopilot": {
+        "enabled": false,
+        "checkIntervalHours": 4,
+        "morningBriefing": "08:00",
+        "eveningSummary": "20:00"
+      }
+    },
+    "dra-gabrielle": {
+      "name": "Dra. Gabrielle",
+      "spreadsheetId": "",
+      "sheetRanges": {},
+      "budget": {
+        "monthly": 1000,
+        "testingPercentage": 0.1,
+        "currency": "BRL"
+      },
+      "agency": "Syra",
+      "adsPlatform": "meta",
+      "metaAdAccountId": "act_1136892320236480",
+      "metaPageId": "2002691046685746",
+      "ghlLocationId": "3iNi7kJci5f0BNUoq4kX",
+      "ghlPipelineId": "IqBgqQLwrueiZlsV4yzI",
+      "ghlToken": "pit-1965f764-1709-4e20-b0a3-97d330a9f665",
       "icp": null,
       "active": true,
       "autopilot": {

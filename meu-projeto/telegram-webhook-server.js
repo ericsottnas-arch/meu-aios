@@ -1,21 +1,17 @@
 // meu-projeto/telegram-webhook-server.js
+// Servidor Telegram do Nico (porta 3000) — Assistente de Agenda
+// Cria eventos no Google Calendar via linguagem natural.
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
-// Em produção (Railway), usa env vars do sistema
-// Em dev local, tenta .env local e depois .env no diretório pai
+// Env vars
 if (process.env.NODE_ENV !== 'production') {
   const localEnv = path.resolve(__dirname, '.env');
   const parentEnv = path.resolve(__dirname, '..', '.env');
-  if (fs.existsSync(localEnv)) {
-    require('dotenv').config({ path: localEnv });
-  } else if (fs.existsSync(parentEnv)) {
-    require('dotenv').config({ path: parentEnv });
-  } else {
-    require('dotenv').config();
-  }
+  if (fs.existsSync(localEnv)) require('dotenv').config({ path: localEnv });
+  if (fs.existsSync(parentEnv)) require('dotenv').config({ path: parentEnv });
 }
 
 const app = express();
@@ -26,90 +22,149 @@ const WEBHOOK_SECRET = process.env.TELEGRAM_WEBHOOK_SECRET;
 const ALLOWED_CHAT_IDS = process.env.TELEGRAM_ALLOWED_CHAT_IDS
   ? process.env.TELEGRAM_ALLOWED_CHAT_IDS.split(',').map(id => id.trim())
   : [];
-// Clientes carregados do campo personalizado do ClickUp (preenchido no boot)
-let CLIENT_OPTIONS = [];
 
 if (!TELEGRAM_BOT_TOKEN) {
   console.error('TELEGRAM_BOT_TOKEN is not set');
   process.exit(1);
 }
 
-if (!GROQ_API_KEY) {
-  console.error('GROQ_API_KEY is not set — needed for audio transcription');
-  process.exit(1);
-}
-
-if (!WEBHOOK_SECRET) {
-  console.warn('⚠️  TELEGRAM_WEBHOOK_SECRET not set — webhook requests will NOT be verified (dev mode)');
-}
-
-if (ALLOWED_CHAT_IDS.length === 0) {
-  console.warn('⚠️  TELEGRAM_ALLOWED_CHAT_IDS not set — accepting messages from ALL chats');
-}
-
 app.use(bodyParser.json());
 
 // Módulos
-const { logTaskCreation } = require('./lib/supabase');
-const { analyzeTask } = require('./lib/ai-analyzer');
-const conversation = require('./lib/conversation');
-const telegram = require('./lib/telegram');
-const clickup = require('./lib/clickup');
+const { createTelegramClient } = require('./lib/telegram');
+const googleCalendar = require('./lib/google-calendar');
 
+const telegram = createTelegramClient(TELEGRAM_BOT_TOKEN);
 
 // ============================================================
-// Health check
+// State management (in-memory, TTL 10min)
 // ============================================================
-app.get('/', (req, res) => {
-  res.json({
-    status: 'ok',
-    service: 'telegram-clickup-bot',
-    uptime: Math.floor(process.uptime()),
-    timestamp: new Date().toISOString(),
-  });
-});
+const EXPIRY_MS = 10 * 60 * 1000;
+const sessions = new Map();
 
-// ============================================================
-// Security middlewares
-// ============================================================
-function verifyWebhookSecret(req, res, next) {
-  if (!WEBHOOK_SECRET) return next();
-  const token = req.headers['x-telegram-bot-api-secret-token'];
-  if (token !== WEBHOOK_SECRET) {
-    console.warn(`🚫 Rejected webhook — invalid secret from ${req.ip}`);
-    return res.status(403).json({ error: 'Forbidden' });
+function getSession(chatId) {
+  const key = String(chatId);
+  const s = sessions.get(key);
+  if (!s) return null;
+  if (Date.now() - s.updatedAt > EXPIRY_MS) {
+    sessions.delete(key);
+    return null;
   }
-  next();
+  s.updatedAt = Date.now();
+  return s;
 }
 
-function verifyChatId(req, res, next) {
-  if (ALLOWED_CHAT_IDS.length === 0) return next();
-  // Callback queries e messages têm chat ID em locais diferentes
-  const chatId = (
-    req.body?.message?.chat?.id ||
-    req.body?.callback_query?.message?.chat?.id
-  )?.toString();
-  if (!chatId || !ALLOWED_CHAT_IDS.includes(chatId)) {
-    console.warn(`🚫 Rejected from unauthorized chat: ${chatId}`);
-    return res.status(200).send('OK');
+function setSession(chatId, data) {
+  sessions.set(String(chatId), { ...data, updatedAt: Date.now() });
+}
+
+function clearSession(chatId) {
+  sessions.delete(String(chatId));
+}
+
+// Cleanup periódico
+setInterval(() => {
+  const now = Date.now();
+  for (const [key, s] of sessions.entries()) {
+    if (now - s.updatedAt > EXPIRY_MS) sessions.delete(key);
   }
-  next();
+}, 60_000);
+
+// ============================================================
+// Groq helpers
+// ============================================================
+const GROQ_MODEL = 'llama-3.3-70b-versatile';
+
+async function parseCalendarIntent(text) {
+  if (!GROQ_API_KEY) return { intent: 'other' };
+
+  const now = new Date();
+  const today = now.toISOString().split('T')[0];
+  const dayNames = ['Domingo', 'Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado'];
+  const dayOfWeek = dayNames[now.getDay()];
+
+  const tomorrow = new Date(now);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowDate = tomorrow.toISOString().split('T')[0];
+
+  const systemPrompt = `Voce e Nico, assistente de agenda da Syra Digital.
+Hoje e ${today} (${dayOfWeek}). Timezone: America/Sao_Paulo (UTC-3).
+
+Analise a mensagem e extraia detalhes do evento.
+Responda SEMPRE em JSON valido:
+
+{
+  "intent": "calendar" ou "other",
+  "title": "Titulo do evento (max 60 chars)",
+  "date": "YYYY-MM-DD",
+  "time": "HH:MM",
+  "durationMinutes": 60,
+  "attendees": [],
+  "description": null
+}
+
+Regras:
+- "amanha" = ${tomorrowDate}
+- Dia da semana = proxima ocorrencia a partir de hoje
+- Duracao padrao: 60 minutos
+- Horario padrao (se nao especificado): 14:00
+- Nomes de pessoas vao no titulo, nao em attendees (a menos que tenham email)
+- Se NAO for sobre agendar/marcar/criar evento/reuniao/call/compromisso, intent = "other"
+- Exemplos de intent "calendar": "marca reuniao", "agende call", "cria evento", "lembrete", "compromisso amanha"
+- Exemplos de intent "other": "ola", "tudo bem?", "obrigado", "qual seu nome"`;
+
+  try {
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${GROQ_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: GROQ_MODEL,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: text },
+        ],
+        temperature: 0.1,
+        max_tokens: 500,
+        response_format: { type: 'json_object' },
+      }),
+    });
+
+    if (!response.ok) {
+      console.warn(`Groq calendar parse error ${response.status}`);
+      return { intent: 'other' };
+    }
+
+    const data = await response.json();
+    const content = data.choices?.[0]?.message?.content;
+    if (!content) return { intent: 'other' };
+
+    const parsed = JSON.parse(content);
+    return {
+      intent: parsed.intent === 'calendar' ? 'calendar' : 'other',
+      title: (parsed.title || '').substring(0, 60),
+      date: parsed.date || null,
+      time: parsed.time || '14:00',
+      durationMinutes: parsed.durationMinutes || 60,
+      attendees: Array.isArray(parsed.attendees) ? parsed.attendees : [],
+      description: parsed.description || null,
+    };
+  } catch (err) {
+    console.warn('parseCalendarIntent failed:', err.message);
+    return { intent: 'other' };
+  }
 }
 
 // ============================================================
 // Telegram file & audio helpers
 // ============================================================
 async function downloadTelegramFile(fileId) {
-  const fileInfoUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getFile?file_id=${fileId}`;
-  const fileInfoRes = await fetch(fileInfoUrl);
-  const fileInfo = await fileInfoRes.json();
-  if (!fileInfo.ok) throw new Error(`Failed to get file info: ${fileInfo.description}`);
-
-  const filePath = fileInfo.result.file_path;
-  const fileUrl = `https://api.telegram.org/file/bot${TELEGRAM_BOT_TOKEN}/${filePath}`;
-  const fileRes = await fetch(fileUrl);
+  const info = await telegram.getFileUrl(fileId);
+  if (!info) throw new Error('Failed to get file info');
+  const fileRes = await fetch(info.fileUrl);
   if (!fileRes.ok) throw new Error(`Failed to download file: ${fileRes.statusText}`);
-
   return Buffer.from(await fileRes.arrayBuffer());
 }
 
@@ -129,660 +184,483 @@ async function transcribeAudio(audioBuffer, fileName) {
 
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(`Groq API error ${response.status}: ${errorText}`);
+    throw new Error(`Groq Whisper error ${response.status}: ${errorText}`);
   }
 
   return (await response.text()).trim();
 }
 
 // ============================================================
-// Fluxo interativo de criação de tarefas
+// Formatting helpers
+// ============================================================
+function formatEventPreview(parsed) {
+  const date = parsed.date ? new Date(parsed.date + 'T12:00:00') : null;
+  const dayNames = ['Domingo', 'Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado'];
+
+  let dateStr = 'Nao definida';
+  if (date) {
+    const dayName = dayNames[date.getUTCDay()];
+    const dd = String(date.getUTCDate()).padStart(2, '0');
+    const mm = String(date.getUTCMonth() + 1).padStart(2, '0');
+    const yyyy = date.getUTCFullYear();
+    dateStr = `${dayName}, ${dd}/${mm}/${yyyy}`;
+  }
+
+  const startTime = parsed.time || '14:00';
+  const [h, m] = startTime.split(':').map(Number);
+  const endMinutes = h * 60 + m + (parsed.durationMinutes || 60);
+  const endH = String(Math.floor(endMinutes / 60) % 24).padStart(2, '0');
+  const endM = String(endMinutes % 60).padStart(2, '0');
+  const durationLabel = parsed.durationMinutes >= 60
+    ? `${Math.floor(parsed.durationMinutes / 60)}h${parsed.durationMinutes % 60 > 0 ? parsed.durationMinutes % 60 + 'min' : ''}`
+    : `${parsed.durationMinutes}min`;
+
+  const attendeesStr = parsed.attendees?.length > 0
+    ? parsed.attendees.join(', ')
+    : 'Sem participantes';
+
+  let msg = `Novo evento:\n\n`;
+  msg += `${parsed.title || 'Sem titulo'}\n`;
+  msg += `${dateStr}\n`;
+  msg += `${startTime} - ${endH}:${endM} (${durationLabel})\n`;
+  msg += `${attendeesStr}`;
+
+  if (parsed.description) {
+    msg += `\n${parsed.description}`;
+  }
+
+  return msg;
+}
+
+function confirmationKeyboard() {
+  return [
+    [
+      { text: 'Confirmar', callback_data: 'cal_confirm' },
+      { text: 'Cancelar', callback_data: 'cal_cancel' },
+    ],
+    [
+      { text: 'Editar', callback_data: 'cal_edit' },
+    ],
+  ];
+}
+
+function editFieldKeyboard() {
+  return [
+    [
+      { text: 'Titulo', callback_data: 'cal_edit_field:title' },
+      { text: 'Data', callback_data: 'cal_edit_field:date' },
+    ],
+    [
+      { text: 'Horario', callback_data: 'cal_edit_field:time' },
+      { text: 'Duracao', callback_data: 'cal_edit_field:duration' },
+    ],
+    [
+      { text: 'Participantes', callback_data: 'cal_edit_field:attendees' },
+      { text: 'Voltar', callback_data: 'cal_edit_back' },
+    ],
+  ];
+}
+
+// ============================================================
+// Message handlers
 // ============================================================
 
-/**
- * Inicia o fluxo: analisa mensagem com AI e pergunta prioridade.
- * @param {number} chatId
- * @param {string} text
- * @param {string} messageType - 'text'|'voice'|'photo'|'document'|'video'
- * @param {Object} [extra] - { voiceMetadata, attachments }
- */
-async function startTaskFlow(chatId, text, messageType, extra = {}) {
+const WELCOME_MSG = `Oi! Sou o Nico, seu assistente de agenda.
+
+Posso criar eventos no seu Google Calendar por texto ou audio.
+
+Exemplos:
+- "Marca reuniao com equipe amanha 10h"
+- "Agende call sexta 14h por 30 min"
+- "Compromisso com Dr. Erico dia 10/03 as 9h"
+
+Comandos:
+/agenda - Agendar evento
+/help - Ajuda
+/cancel - Cancelar operacao`;
+
+const HELP_MSG = `Nico - Assistente de Agenda
+
+Envie uma mensagem de texto ou audio descrevendo o evento.
+
+Exemplos:
+- "Reuniao com cliente amanha 15h"
+- "Call com equipe segunda 10h 30min"
+- "Compromisso quarta 14h por 2 horas"
+
+Comandos:
+/start - Inicio
+/agenda - Iniciar agendamento
+/help - Esta mensagem
+/cancel - Cancelar operacao atual`;
+
+const NOT_CALENDAR_MSG = `Sou o Nico, assistente de agenda da Syra Digital.
+
+Para agendar um evento, me diga algo como:
+"Marca reuniao com equipe amanha 10h"
+
+Use /help para ver mais exemplos.`;
+
+async function handleTextMessage(chatId, text) {
+  // Comandos
+  const cmd = text.split(/\s|@/)[0].toLowerCase();
+
+  if (cmd === '/start') {
+    return telegram.sendMessage(chatId, WELCOME_MSG);
+  }
+  if (cmd === '/help') {
+    return telegram.sendMessage(chatId, HELP_MSG);
+  }
+  if (cmd === '/cancel') {
+    const had = !!getSession(chatId);
+    clearSession(chatId);
+    return telegram.sendMessage(chatId, had ? 'Operacao cancelada.' : 'Nenhuma operacao ativa.');
+  }
+  if (cmd === '/agenda') {
+    return telegram.sendMessage(chatId, 'Me diga o que agendar. Exemplo:\n"Reuniao com cliente amanha 14h"');
+  }
+
+  // Conversa ativa? (editando campo)
+  const session = getSession(chatId);
+  if (session?.step === 'editing_field') {
+    return handleFieldEdit(chatId, text, session);
+  }
+
+  // Parse intent
+  await telegram.sendMessage(chatId, 'Analisando...');
+
+  const parsed = await parseCalendarIntent(text);
+
+  if (parsed.intent !== 'calendar') {
+    return telegram.sendMessage(chatId, NOT_CALENDAR_MSG);
+  }
+
+  // Salvar no state e mostrar confirmacao
+  setSession(chatId, { step: 'confirming', parsed });
+
+  const preview = formatEventPreview(parsed);
+  return telegram.sendInlineKeyboard(chatId, preview, confirmationKeyboard());
+}
+
+async function handleFieldEdit(chatId, text, session) {
+  const field = session.editingField;
+  const parsed = session.parsed;
+
+  switch (field) {
+    case 'title':
+      parsed.title = text.substring(0, 60);
+      break;
+    case 'date': {
+      // Aceita DD/MM/YYYY ou YYYY-MM-DD
+      const match = text.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+      if (match) {
+        parsed.date = `${match[3]}-${match[2].padStart(2, '0')}-${match[1].padStart(2, '0')}`;
+      } else if (/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+        parsed.date = text;
+      } else {
+        return telegram.sendMessage(chatId, 'Formato invalido. Use DD/MM/YYYY ou YYYY-MM-DD.');
+      }
+      break;
+    }
+    case 'time': {
+      const match = text.match(/(\d{1,2}):?(\d{2})?/);
+      if (match) {
+        const h = match[1].padStart(2, '0');
+        const m = (match[2] || '00').padStart(2, '0');
+        parsed.time = `${h}:${m}`;
+      } else {
+        return telegram.sendMessage(chatId, 'Formato invalido. Use HH:MM (ex: 14:30).');
+      }
+      break;
+    }
+    case 'duration': {
+      const num = parseInt(text, 10);
+      if (num > 0 && num <= 480) {
+        parsed.durationMinutes = num;
+      } else {
+        return telegram.sendMessage(chatId, 'Digite a duracao em minutos (ex: 30, 60, 90).');
+      }
+      break;
+    }
+    case 'attendees':
+      parsed.attendees = text.split(/[,;\s]+/).filter(e => e.includes('@'));
+      if (parsed.attendees.length === 0) {
+        return telegram.sendMessage(chatId, 'Digite emails separados por virgula. Ex: joao@email.com, maria@email.com');
+      }
+      break;
+    default:
+      break;
+  }
+
+  // Voltar para confirmacao
+  setSession(chatId, { step: 'confirming', parsed });
+  const preview = formatEventPreview(parsed);
+  return telegram.sendInlineKeyboard(chatId, preview, confirmationKeyboard());
+}
+
+async function handleVoiceMessage(chatId, voice) {
+  console.log(`Voice from ${chatId}: ${voice.duration}s`);
+
+  if (!GROQ_API_KEY) {
+    return telegram.sendMessage(chatId, 'Transcricao de audio nao disponivel (GROQ_API_KEY nao configurada).');
+  }
+
   try {
-    telegram.sendMessage(chatId, '🧠 Analisando sua mensagem...');
+    await telegram.sendMessage(chatId, 'Transcrevendo audio...');
+    const audioBuffer = await downloadTelegramFile(voice.file_id);
+    const transcription = await transcribeAudio(audioBuffer, 'voice.ogg');
 
-    const clientNames = CLIENT_OPTIONS.map(c => c.name);
-    const analysis = await analyzeTask(text, clientNames);
-    conversation.startConversation(chatId, {
-      analysis,
-      originalText: text,
-      messageType,
-      voiceMetadata: extra.voiceMetadata || null,
-      attachments: extra.attachments || [],
-    });
-
-    // Mostra o que a AI entendeu
-    let summary = `📋 *Entendi a tarefa:*\n\n`;
-    summary += `📌 *Título:* ${analysis.title}\n`;
-    summary += `📝 *Descrição:* ${analysis.description.substring(0, 200)}${analysis.description.length > 200 ? '...' : ''}\n`;
-    if (analysis.subtasks.length > 0) {
-      summary += `\n📎 *Subtarefas sugeridas:*\n`;
-      analysis.subtasks.forEach((s, i) => { summary += `  ${i + 1}. ${s}\n`; });
+    if (!transcription) {
+      return telegram.sendMessage(chatId, 'Nao consegui transcrever o audio. Tente novamente ou envie por texto.');
     }
-    summary += `\n🎯 *Prioridade sugerida:* ${telegram.PRIORITY_LABELS[priorityFromString(analysis.suggested_priority)] || '🟡 Normal'}`;
 
-    await telegram.sendMessage(chatId, summary);
-
-    // Pergunta prioridade
-    await telegram.sendInlineKeyboard(
-      chatId,
-      '⚡ Qual a prioridade desta tarefa?',
-      telegram.priorityKeyboard()
-    );
+    await telegram.sendMessage(chatId, `Transcricao:\n"${transcription}"`);
+    return handleTextMessage(chatId, transcription);
   } catch (err) {
-    console.error('Error starting task flow:', err);
-    telegram.sendMessage(chatId, `❌ Erro ao analisar mensagem: ${err.message}`);
+    console.error('Voice processing error:', err);
+    return telegram.sendMessage(chatId, 'Erro ao processar audio. Tente enviar por texto.');
   }
 }
 
-/**
- * Pergunta o cliente ou auto-preenche se a AI detectou.
- */
-async function askClient(chatId) {
-  const state = conversation.getConversation(chatId);
-
-  // Verifica se a AI detectou um cliente
-  if (state?.analysis?.detected_client) {
-    const detected = state.analysis.detected_client;
-    const match = CLIENT_OPTIONS.find(
-      (c) => c.name.toLowerCase() === detected.toLowerCase()
-    );
-    if (match) {
-      // Auto-preenche e avança
-      conversation.updateConversation(chatId, {
-        client: match.name,
-        clientOptionId: match.id,
-        step: 'awaiting_date',
-      });
-      await telegram.sendMessage(chatId, `🏢 Cliente detectado: ${match.name}`);
-      await askDate(chatId);
-      return;
-    }
-  }
-
-  // Sem detecção — mostra lista do ClickUp
-  if (CLIENT_OPTIONS.length > 0) {
-    await telegram.sendInlineKeyboard(
-      chatId,
-      '🏢 Qual o cliente?',
-      telegram.clientKeyboard(CLIENT_OPTIONS)
-    );
-  } else {
-    conversation.updateConversation(chatId, { step: 'awaiting_client' });
-    await telegram.sendMessage(chatId, '🏢 Qual o cliente? (digite o nome)');
-  }
-}
-
-/**
- * Pergunta a data de entrega.
- */
-async function askDate(chatId) {
-  await telegram.sendInlineKeyboard(
-    chatId,
-    '📅 Qual a data de entrega?',
-    telegram.dateKeyboard()
-  );
-}
-
-/**
- * Pergunta o responsável.
- */
-async function askAssignee(chatId) {
-  const members = await clickup.getTeamMembers();
-  if (members.length > 0) {
-    await telegram.sendInlineKeyboard(
-      chatId,
-      '👤 Quem é o responsável?',
-      telegram.assigneeKeyboard(members)
-    );
-  } else {
-    // Sem membros — pula para criação
-    conversation.updateConversation(chatId, { step: 'creating' });
-    await finalizeTask(chatId);
-  }
-}
-
-/**
- * Cria a tarefa final no ClickUp com todos os dados coletados.
- */
-async function finalizeTask(chatId) {
-  const state = conversation.getConversation(chatId);
-  if (!state) return;
-
-  try {
-    telegram.sendMessage(chatId, '⏳ Criando tarefa no ClickUp...');
-
-    // Monta descrição enriquecida
-    let fullDescription = state.analysis.description;
-    if (state.messageType === 'voice') {
-      fullDescription = `🎤 *Transcrito de áudio do Telegram*\n\n${state.originalText}\n\n---\n${state.analysis.description}`;
-    }
-    if (state.client) {
-      fullDescription += `\n\n🏢 Cliente: ${state.client}`;
-    }
-
-    // Custom fields: campo "Cliente" com o option ID
-    const customFields = [];
-    if (state.clientOptionId) {
-      customFields.push({
-        id: clickup.CLIENT_FIELD_ID,
-        value: state.clientOptionId,
-      });
-    }
-
-    // Cria a task principal
-    const result = await clickup.createTask({
-      title: state.analysis.title,
-      description: fullDescription,
-      priority: state.priority,
-      dueDateMs: state.dueDateMs,
-      assignees: state.assigneeId ? [Number(state.assigneeId)] : [],
-      customFields,
-    });
-
-    const taskTitle = state.analysis.title;
-
-    // Cria subtasks se houver
-    let subtaskInfo = '';
-    if (state.analysis.subtasks.length > 0) {
-      const subtasks = await clickup.createSubtasks(result.id, state.analysis.subtasks);
-      if (subtasks.length > 0) {
-        subtaskInfo = `\n📎 ${subtasks.length} subtarefa(s) criada(s)`;
-      }
-    }
-
-    // Upload de anexos (fotos, documentos, vídeos)
-    let attachmentInfo = '';
-    if (state.attachments.length > 0) {
-      let uploaded = 0;
-      for (const att of state.attachments) {
-        try {
-          const buffer = await downloadTelegramFile(att.file_id);
-          const fileName = att.file_name || `${att.type}_${Date.now()}.${att.type === 'photo' ? 'jpg' : 'bin'}`;
-          const uploadResult = await clickup.uploadAttachment(result.id, fileName, buffer);
-          if (uploadResult) uploaded++;
-        } catch (err) {
-          console.warn(`⚠️  Falha ao anexar ${att.type}:`, err.message);
-        }
-      }
-      if (uploaded > 0) {
-        attachmentInfo = `\n📎 ${uploaded} anexo(s) incluído(s)`;
-      }
-    }
-
-    // Monta mensagem de confirmação
-    let msg = `✅ Tarefa criada com sucesso!\n\n`;
-    msg += `📌 ${taskTitle}\n`;
-    msg += `⚡ Prioridade: ${telegram.PRIORITY_LABELS[state.priority] || 'Normal'}\n`;
-    if (state.client) msg += `🏢 Cliente: ${state.client}\n`;
-    if (state.dueDate) msg += `📅 Prazo: ${state.dueDate}\n`;
-    if (state.assigneeName) msg += `👤 Responsável: ${state.assigneeName}\n`;
-    msg += subtaskInfo;
-    msg += attachmentInfo;
-    msg += `\n\n🔗 ${result.url}`;
-
-    await telegram.sendMessage(chatId, msg);
-
-    // Log no Supabase
-    await logTaskCreation({
-      telegram_chat_id: String(chatId),
-      message_type: state.messageType,
-      original_text: state.originalText,
-      task_title: taskTitle,
-      clickup_task_id: result.id,
-      clickup_task_url: result.url,
-      status: 'success',
-      metadata: {
-        priority: state.priority,
-        client: state.client,
-        due_date: state.dueDate,
-        assignee: state.assigneeName,
-        subtasks_count: state.analysis.subtasks.length,
-        ...(state.voiceMetadata || {}),
-      },
-    });
-
-    console.log(`✅ Task created: ${taskTitle} → ${result.url}`);
-  } catch (err) {
-    console.error('Error creating task:', err);
-    telegram.sendMessage(chatId, `❌ Erro ao criar tarefa: ${err.message}`);
-
-    await logTaskCreation({
-      telegram_chat_id: String(chatId),
-      message_type: state.messageType,
-      original_text: state.originalText,
-      task_title: state.analysis.title,
-      status: 'error',
-      error_message: err.message,
-    });
-  } finally {
-    conversation.endConversation(chatId);
-  }
-}
-
-// ============================================================
-// Callback query handler (botões inline)
-// ============================================================
 async function handleCallbackQuery(callbackQuery) {
   const chatId = callbackQuery.message.chat.id;
   const data = callbackQuery.data;
-  const queryId = callbackQuery.id;
 
-  const state = conversation.getConversation(chatId);
-  if (!state) {
-    await telegram.answerCallbackQuery(queryId, 'Sessão expirada. Envie a tarefa novamente.');
-    return;
+  await telegram.answerCallbackQuery(callbackQuery.id);
+
+  const session = getSession(chatId);
+
+  if (data === 'cal_confirm') {
+    if (!session?.parsed) {
+      return telegram.sendMessage(chatId, 'Sessao expirada. Envie o evento novamente.');
+    }
+
+    const p = session.parsed;
+    const startTime = `${p.date}T${p.time}:00`;
+
+    await telegram.sendMessage(chatId, 'Criando evento...');
+
+    const result = await googleCalendar.createEvent({
+      title: p.title,
+      startTime,
+      durationMinutes: p.durationMinutes,
+      description: p.description,
+      attendees: p.attendees,
+    });
+
+    clearSession(chatId);
+
+    if (result.success) {
+      let msg = `Evento criado!\n\n"${p.title}"`;
+      if (result.htmlLink) {
+        msg += `\n\n${result.htmlLink}`;
+      }
+      return telegram.sendMessage(chatId, msg);
+    } else {
+      return telegram.sendMessage(chatId, `Erro ao criar evento: ${result.error}\n\nVerifique se o Google Calendar esta configurado corretamente.`);
+    }
   }
 
-  // Parse do callback_data: "type:value" ou "type:value:extra"
-  const [type, ...valueParts] = data.split(':');
-  const value = valueParts.join(':');
+  if (data === 'cal_cancel') {
+    clearSession(chatId);
+    return telegram.sendMessage(chatId, 'Cancelado.');
+  }
 
-  switch (type) {
-    case 'priority': {
-      const priority = parseInt(value, 10);
-      conversation.updateConversation(chatId, { priority, step: 'awaiting_client' });
-      await telegram.answerCallbackQuery(queryId, telegram.PRIORITY_LABELS[priority]);
-      await telegram.editMessageText(chatId, callbackQuery.message.message_id,
-        `⚡ Prioridade: ${telegram.PRIORITY_LABELS[priority]}`);
-      await askClient(chatId);
-      break;
+  if (data === 'cal_edit') {
+    if (!session?.parsed) {
+      return telegram.sendMessage(chatId, 'Sessao expirada. Envie o evento novamente.');
+    }
+    return telegram.sendInlineKeyboard(chatId, 'Qual campo deseja editar?', editFieldKeyboard());
+  }
+
+  if (data === 'cal_edit_back') {
+    if (!session?.parsed) {
+      return telegram.sendMessage(chatId, 'Sessao expirada. Envie o evento novamente.');
+    }
+    const preview = formatEventPreview(session.parsed);
+    return telegram.sendInlineKeyboard(chatId, preview, confirmationKeyboard());
+  }
+
+  if (data.startsWith('cal_edit_field:')) {
+    const field = data.split(':')[1];
+    if (!session?.parsed) {
+      return telegram.sendMessage(chatId, 'Sessao expirada. Envie o evento novamente.');
     }
 
-    case 'client': {
-      // callback_data format: client:{optionId}:{name}
-      const [optionId, ...clientNameParts] = value.split(':');
-      const clientName = clientNameParts.join(':');
-      if (optionId === '__custom__') {
-        await telegram.answerCallbackQuery(queryId);
-        await telegram.editMessageText(chatId, callbackQuery.message.message_id,
-          '🏢 Digite o nome do cliente:');
-        // step permanece 'awaiting_client' — próximo texto será o nome do cliente
-      } else {
-        conversation.updateConversation(chatId, {
-          client: clientName,
-          clientOptionId: optionId,
-          step: 'awaiting_date',
-        });
-        await telegram.answerCallbackQuery(queryId, clientName);
-        await telegram.editMessageText(chatId, callbackQuery.message.message_id,
-          `🏢 Cliente: ${clientName}`);
-        await askDate(chatId);
-      }
-      break;
-    }
+    setSession(chatId, { ...session, step: 'editing_field', editingField: field });
 
-    case 'date': {
-      if (value === '__custom__') {
-        await telegram.answerCallbackQuery(queryId);
-        await telegram.editMessageText(chatId, callbackQuery.message.message_id,
-          '📅 Digite a data (DD/MM/AAAA ou DD/MM):');
-        // step permanece 'awaiting_date'
-      } else if (value === '__none__') {
-        conversation.updateConversation(chatId, { dueDate: null, dueDateMs: null, step: 'awaiting_assignee' });
-        await telegram.answerCallbackQuery(queryId, 'Sem prazo');
-        await telegram.editMessageText(chatId, callbackQuery.message.message_id,
-          '📅 Prazo: Sem prazo definido');
-        await askAssignee(chatId);
-      } else {
-        // value = YYYY-MM-DD
-        const date = new Date(value + 'T23:59:59');
-        const formatted = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()}`;
-        conversation.updateConversation(chatId, {
-          dueDate: formatted,
-          dueDateMs: date.getTime(),
-          step: 'awaiting_assignee',
-        });
-        await telegram.answerCallbackQuery(queryId, formatted);
-        await telegram.editMessageText(chatId, callbackQuery.message.message_id,
-          `📅 Prazo: ${formatted}`);
-        await askAssignee(chatId);
-      }
-      break;
-    }
+    const prompts = {
+      title: 'Digite o novo titulo:',
+      date: 'Digite a nova data (DD/MM/YYYY):',
+      time: 'Digite o novo horario (HH:MM):',
+      duration: 'Digite a duracao em minutos (ex: 30, 60, 90):',
+      attendees: 'Digite os emails dos participantes separados por virgula:',
+    };
 
-    case 'assignee': {
-      const [assigneeId, ...nameParts] = value.split(':');
-      const assigneeName = nameParts.join(':');
-      if (assigneeId === '__none__') {
-        conversation.updateConversation(chatId, { assigneeId: null, assigneeName: null, step: 'creating' });
-        await telegram.answerCallbackQuery(queryId, 'Sem responsável');
-        await telegram.editMessageText(chatId, callbackQuery.message.message_id,
-          '👤 Responsável: Não atribuído');
-      } else {
-        conversation.updateConversation(chatId, { assigneeId, assigneeName, step: 'creating' });
-        await telegram.answerCallbackQuery(queryId, assigneeName);
-        await telegram.editMessageText(chatId, callbackQuery.message.message_id,
-          `👤 Responsável: ${assigneeName}`);
-      }
-      await finalizeTask(chatId);
-      break;
-    }
-
-    default:
-      await telegram.answerCallbackQuery(queryId, 'Opção não reconhecida');
+    return telegram.sendMessage(chatId, prompts[field] || 'Digite o novo valor:');
   }
 }
 
 // ============================================================
-// Text input handler durante conversa ativa
+// Health check
 // ============================================================
-async function handleTextDuringConversation(chatId, text, state) {
-  switch (state.step) {
-    case 'awaiting_description': {
-      // Usuário mandou foto/doc/vídeo sem legenda — agora descreveu a tarefa
-      const attachmentLabel = state.attachments.map(a => {
-        if (a.type === 'photo') return '[Foto anexada]';
-        if (a.type === 'document') return `[Documento "${a.file_name}" anexado]`;
-        if (a.type === 'video') return '[Vídeo anexado]';
-        return '[Anexo]';
-      }).join(' ');
-      const textForAI = `${attachmentLabel} ${text}`;
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ok',
+    service: 'nico-telegram',
+    calendar: googleCalendar.isConfigured() ? 'configured' : 'not configured',
+    uptime: Math.floor(process.uptime()),
+    timestamp: new Date().toISOString(),
+  });
+});
 
-      // Destrói a conversa parcial e inicia o fluxo completo mantendo anexos
-      const attachments = [...state.attachments];
-      conversation.endConversation(chatId);
-      await startTaskFlow(chatId, textForAI, state.messageType, { attachments });
-      break;
-    }
-    case 'awaiting_client': {
-      const typed = text.trim();
-      // Tenta match parcial com as opções do ClickUp
-      const match = CLIENT_OPTIONS.find(
-        (c) => c.name.toLowerCase().includes(typed.toLowerCase())
-          || typed.toLowerCase().includes(c.name.toLowerCase().split(' ').pop())
-      );
-      if (match) {
-        conversation.updateConversation(chatId, {
-          client: match.name,
-          clientOptionId: match.id,
-          step: 'awaiting_date',
-        });
-        await telegram.sendMessage(chatId, `🏢 Cliente: ${match.name}`);
-      } else {
-        conversation.updateConversation(chatId, { client: typed, step: 'awaiting_date' });
-        await telegram.sendMessage(chatId, `🏢 Cliente: ${typed}`);
-      }
-      await askDate(chatId);
-      break;
-    }
-    case 'awaiting_date': {
-      const parsed = parseDate(text.trim());
-      if (!parsed) {
-        await telegram.sendMessage(chatId, '⚠️ Formato inválido. Use DD/MM/AAAA ou DD/MM.');
-        return;
-      }
-      conversation.updateConversation(chatId, {
-        dueDate: parsed.formatted,
-        dueDateMs: parsed.timestamp,
-        step: 'awaiting_assignee',
-      });
-      await telegram.sendMessage(chatId, `📅 Prazo: ${parsed.formatted}`);
-      await askAssignee(chatId);
-      break;
-    }
-    default:
-      // Se recebe texto fora de um step esperado, trata como nova tarefa
-      await startTaskFlow(chatId, text, 'text');
+// ============================================================
+// Security middlewares
+// ============================================================
+function verifyWebhookSecret(req, res, next) {
+  if (!WEBHOOK_SECRET) return next();
+  const token = req.headers['x-telegram-bot-api-secret-token'];
+  if (token !== WEBHOOK_SECRET) {
+    console.warn(`Rejected webhook — invalid secret from ${req.ip}`);
+    return res.status(403).json({ error: 'Forbidden' });
   }
+  next();
 }
 
-function parseDate(text) {
-  // DD/MM/AAAA ou DD/MM
-  const match = text.match(/^(\d{1,2})[\/\-.](\d{1,2})(?:[\/\-.](\d{4}))?$/);
-  if (!match) return null;
-
-  const day = parseInt(match[1], 10);
-  const month = parseInt(match[2], 10) - 1;
-  const year = match[3] ? parseInt(match[3], 10) : new Date().getFullYear();
-
-  const date = new Date(year, month, day, 23, 59, 59);
-  if (isNaN(date.getTime())) return null;
-
-  return {
-    formatted: `${String(day).padStart(2, '0')}/${String(month + 1).padStart(2, '0')}/${year}`,
-    timestamp: date.getTime(),
-  };
-}
-
-function priorityFromString(str) {
-  const map = { urgent: 1, high: 2, normal: 3, low: 4 };
-  return map[str] || 3;
+function verifyChatId(req, res, next) {
+  if (ALLOWED_CHAT_IDS.length === 0) return next();
+  const chatId = (
+    req.body?.message?.chat?.id ||
+    req.body?.callback_query?.message?.chat?.id
+  )?.toString();
+  if (!chatId || !ALLOWED_CHAT_IDS.includes(chatId)) {
+    console.warn(`Rejected from unauthorized chat: ${chatId}`);
+    return res.status(200).send('OK');
+  }
+  next();
 }
 
 // ============================================================
 // Webhook endpoint
 // ============================================================
 app.post('/webhook', verifyWebhookSecret, verifyChatId, async (req, res) => {
-  // Responde imediatamente para evitar retries do Telegram
   res.status(200).send('OK');
 
   try {
-    // --- Callback Query (botões inline) ---
+    // Callback queries (botoes inline)
     if (req.body.callback_query) {
       await handleCallbackQuery(req.body.callback_query);
       return;
     }
 
-    // --- Mensagem normal ---
     const message = req.body.message;
     if (!message) return;
 
     const chatId = message.chat.id;
 
-    // --- Comandos do bot ---
-    if (message.text && message.text.startsWith('/')) {
-      const cmd = message.text.split(/\s|@/)[0].toLowerCase();
-      switch (cmd) {
-        case '/start':
-          await telegram.sendMessage(chatId,
-            `📌 Olá! Eu sou o Alex, seu Account Manager.\n\n` +
-            `Envie qualquer briefing e eu crio a tarefa no ClickUp pra você.\n\n` +
-            `Aceito:\n` +
-            `  📝 Texto\n` +
-            `  🎤 Áudio / voz\n` +
-            `  📷 Foto (com legenda descrevendo a tarefa)\n` +
-            `  📄 Documento (com legenda)\n` +
-            `  🎬 Vídeo (com legenda)\n` +
-            `  🔗 Links (no texto)\n\n` +
-            `Antes de criar, vou te perguntar: prioridade, cliente, prazo e responsável.\n\n` +
-            `Comandos:\n` +
-            `/help — o que posso fazer\n` +
-            `/cancel — cancelar tarefa em andamento`
-          );
-          return;
-        case '/help':
-          await telegram.sendMessage(chatId,
-            `📌 Alex — Account Manager\n\n` +
-            `Envie um briefing de qualquer forma:\n` +
-            `  📝 Texto — descreva a tarefa\n` +
-            `  🎤 Áudio — gravo e transcrevo automaticamente\n` +
-            `  📷 Foto — mande com legenda descrevendo a tarefa\n` +
-            `  📄 Documento — mande com legenda\n` +
-            `  🎬 Vídeo — mande com legenda\n\n` +
-            `Depois vou perguntar:\n` +
-            `  ⚡ Prioridade\n` +
-            `  🏢 Cliente\n` +
-            `  📅 Data de entrega\n` +
-            `  👤 Responsável\n\n` +
-            `/cancel — cancela o fluxo atual`
-          );
-          return;
-        case '/cancel':
-          if (conversation.hasActiveConversation(chatId)) {
-            conversation.endConversation(chatId);
-            await telegram.sendMessage(chatId, '🚫 Criação de tarefa cancelada.');
-          } else {
-            await telegram.sendMessage(chatId, 'Nenhuma tarefa em andamento para cancelar.');
-          }
-          return;
-      }
-    }
-
-    // --- Conversa ativa: input de texto para etapas do fluxo ---
-    if (message.text && conversation.hasActiveConversation(chatId)) {
-      const state = conversation.getConversation(chatId);
-      if (state && (state.step === 'awaiting_description' || state.step === 'awaiting_client' || state.step === 'awaiting_date')) {
-        await handleTextDuringConversation(chatId, message.text, state);
-        return;
-      }
-    }
-
-    // --- Nova tarefa: TEXTO ---
-    if (message.text) {
-      console.log(`📨 Text from ${chatId}: "${message.text}"`);
-      await startTaskFlow(chatId, message.text, 'text');
-    }
-
-    // --- Nova tarefa: ÁUDIO ---
-    else if (message.voice || message.audio) {
+    // Voz / audio
+    if (message.voice || message.audio) {
       const voice = message.voice || message.audio;
-      console.log(`🎤 Voice from ${chatId}: ${voice.duration}s`);
-
-      telegram.sendMessage(chatId, '🎤 Recebendo áudio... Transcrevendo...');
-
-      const audioBuffer = await downloadTelegramFile(voice.file_id);
-      const transcribeStart = Date.now();
-      const transcription = await transcribeAudio(audioBuffer, 'voice.ogg');
-      const transcribeMs = Date.now() - transcribeStart;
-
-      console.log(`Transcription (${transcribeMs}ms): "${transcription}"`);
-
-      if (!transcription) {
-        telegram.sendMessage(chatId, '⚠️ Não consegui entender o áudio. Tente novamente.');
-        return;
-      }
-
-      await telegram.sendMessage(chatId, `📝 Transcrição:\n"${transcription}"`);
-      await startTaskFlow(chatId, transcription, 'voice', {
-        voiceMetadata: { audio_duration: voice.duration, transcribe_ms: transcribeMs },
-      });
+      await handleVoiceMessage(chatId, voice);
+      return;
     }
 
-    // --- Nova tarefa: FOTO ---
-    else if (message.photo) {
-      // Telegram envia array de tamanhos — pegamos o maior (último)
-      const photo = message.photo[message.photo.length - 1];
-      const caption = message.caption || '';
-      console.log(`📷 Photo from ${chatId}: ${photo.file_id} caption="${caption}"`);
-
-      const attachment = { type: 'photo', file_id: photo.file_id, file_name: `photo_${Date.now()}.jpg` };
-
-      if (caption) {
-        // Tem legenda — usa como briefing
-        const textForAI = `[Foto anexada] ${caption}`;
-        await startTaskFlow(chatId, textForAI, 'photo', { attachments: [attachment] });
-      } else {
-        // Sem legenda — guarda o anexo e pede descrição
-        conversation.startConversation(chatId, {
-          analysis: null,
-          originalText: '',
-          messageType: 'photo',
-          attachments: [attachment],
-        });
-        conversation.updateConversation(chatId, { step: 'awaiting_description' });
-        await telegram.sendMessage(chatId, '📷 Foto recebida! Descreva a tarefa relacionada a essa imagem:');
-      }
+    // Texto
+    if (message.text) {
+      await handleTextMessage(chatId, message.text);
+      return;
     }
 
-    // --- Nova tarefa: DOCUMENTO ---
-    else if (message.document) {
-      const doc = message.document;
-      const caption = message.caption || '';
-      console.log(`📄 Document from ${chatId}: ${doc.file_name} caption="${caption}"`);
-
-      const attachment = {
-        type: 'document',
-        file_id: doc.file_id,
-        file_name: doc.file_name || `document_${Date.now()}`,
-        mime_type: doc.mime_type,
-      };
-
-      if (caption) {
-        const textForAI = `[Documento "${doc.file_name}" anexado] ${caption}`;
-        await startTaskFlow(chatId, textForAI, 'document', { attachments: [attachment] });
-      } else {
-        conversation.startConversation(chatId, {
-          analysis: null,
-          originalText: '',
-          messageType: 'document',
-          attachments: [attachment],
-        });
-        conversation.updateConversation(chatId, { step: 'awaiting_description' });
-        await telegram.sendMessage(chatId, `📄 Documento "${doc.file_name}" recebido! Descreva a tarefa:`);
-      }
-    }
-
-    // --- Nova tarefa: VÍDEO ---
-    else if (message.video) {
-      const video = message.video;
-      const caption = message.caption || '';
-      console.log(`🎬 Video from ${chatId}: ${video.duration}s caption="${caption}"`);
-
-      const attachment = {
-        type: 'video',
-        file_id: video.file_id,
-        file_name: video.file_name || `video_${Date.now()}.mp4`,
-        mime_type: video.mime_type,
-      };
-
-      if (caption) {
-        const textForAI = `[Vídeo anexado - ${video.duration}s] ${caption}`;
-        await startTaskFlow(chatId, textForAI, 'video', { attachments: [attachment] });
-      } else {
-        conversation.startConversation(chatId, {
-          analysis: null,
-          originalText: '',
-          messageType: 'video',
-          attachments: [attachment],
-        });
-        conversation.updateConversation(chatId, { step: 'awaiting_description' });
-        await telegram.sendMessage(chatId, '🎬 Vídeo recebido! Descreva a tarefa:');
-      }
-    }
-
-    // --- Tipo não suportado ---
-    else {
-      console.log(`⚠️ Unsupported message type from ${chatId}`);
-      telegram.sendMessage(chatId, '📌 Envie texto, áudio, foto, documento ou vídeo com uma descrição da tarefa.\n/help para mais info.');
-    }
+    // Outros tipos de mensagem
+    await telegram.sendMessage(chatId, 'Envie texto ou audio para agendar um evento. Use /help para mais info.');
   } catch (err) {
     console.error('Webhook handler error:', err);
   }
 });
 
 // ============================================================
+// Polling mode (dev — quando sem webhook)
+// ============================================================
+let lastUpdateId = 0;
+
+async function pollUpdates() {
+  try {
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ offset: lastUpdateId + 1, timeout: 30 }),
+    });
+
+    const data = await res.json();
+    if (!data.ok || !data.result?.length) return;
+
+    for (const update of data.result) {
+      lastUpdateId = update.update_id;
+
+      // Simular req.body para reusar handler
+      const fakeReq = {
+        body: update,
+        headers: {},
+        ip: 'polling',
+      };
+      const fakeRes = {
+        status: () => ({ send: () => {}, json: () => {} }),
+      };
+
+      // Callback queries
+      if (update.callback_query) {
+        try { await handleCallbackQuery(update.callback_query); } catch (err) {
+          console.error('Polling callback error:', err);
+        }
+        continue;
+      }
+
+      const message = update.message;
+      if (!message) continue;
+
+      const chatId = message.chat.id;
+
+      // Check allowed chats
+      if (ALLOWED_CHAT_IDS.length > 0 && !ALLOWED_CHAT_IDS.includes(String(chatId))) {
+        continue;
+      }
+
+      try {
+        if (message.voice || message.audio) {
+          await handleVoiceMessage(chatId, message.voice || message.audio);
+        } else if (message.text) {
+          await handleTextMessage(chatId, message.text);
+        } else {
+          await telegram.sendMessage(chatId, 'Envie texto ou audio para agendar. Use /help para mais info.');
+        }
+      } catch (err) {
+        console.error('Polling message error:', err);
+      }
+    }
+  } catch (err) {
+    if (!err.message?.includes('ECONNRESET')) {
+      console.error('Polling error:', err.message);
+    }
+  }
+}
+
+// ============================================================
 // Startup
 // ============================================================
-app.listen(port, async () => {
-  console.log(`\n🤖 Telegram Webhook Server running on port ${port}`);
-  console.log(`📡 Webhook URL: POST http://localhost:${port}/webhook`);
-  console.log(`🔑 Bot Token: ...${TELEGRAM_BOT_TOKEN.slice(-8)}`);
-  console.log(`🎤 Groq Whisper: Ready`);
-  console.log(`🧠 AI Analyzer: ${GROQ_API_KEY ? 'Groq LLaMA' : 'Fallback'}`);
-  console.log(`🔒 Webhook Secret: ${WEBHOOK_SECRET ? 'Configured' : 'Not set (dev mode)'}`);
-  console.log(`👥 Allowed Chats: ${ALLOWED_CHAT_IDS.length > 0 ? ALLOWED_CHAT_IDS.join(', ') : 'All (unrestricted)'}`);
-  console.log(`📊 Supabase Logging: ${process.env.SUPABASE_URL ? 'Enabled' : 'Disabled'}`);
+app.listen(port, () => {
+  console.log(`\nNico Telegram (Agenda) running on port ${port}`);
+  console.log(`Bot Token: ...${TELEGRAM_BOT_TOKEN.slice(-8)}`);
+  console.log(`Webhook Secret: ${WEBHOOK_SECRET ? 'Configured' : 'Not set (dev mode)'}`);
+  console.log(`Allowed Chats: ${ALLOWED_CHAT_IDS.length > 0 ? ALLOWED_CHAT_IDS.join(', ') : 'All (unrestricted)'}`);
+  console.log(`Calendar: ${googleCalendar.isConfigured() ? 'Service account found' : 'NOT CONFIGURED'}`);
 
-  // Pre-cache de membros e clientes do ClickUp
-  const members = await clickup.getTeamMembers();
-  if (members.length > 0) {
-    console.log(`👥 ClickUp Members: ${members.map(m => m.name).join(', ')}`);
-  }
-  CLIENT_OPTIONS = await clickup.getClientOptions();
-  if (CLIENT_OPTIONS.length > 0) {
-    console.log(`🏢 Clientes: ${CLIENT_OPTIONS.map(c => c.name).join(', ')}`);
+  // Se nao tem webhook secret, usa polling mode
+  if (!WEBHOOK_SECRET) {
+    console.log('Mode: POLLING (no webhook secret)');
+    setInterval(pollUpdates, 1000);
   } else {
-    console.log(`🏢 Clientes: Nenhum (campo "Cliente" não encontrado no ClickUp)`);
+    console.log('Mode: WEBHOOK');
   }
   console.log('');
 });

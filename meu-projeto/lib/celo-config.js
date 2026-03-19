@@ -67,7 +67,11 @@ function listClients() {
   const cfg = getConfig();
   return Object.entries(cfg.clients)
     .filter(([, c]) => c.active)
-    .map(([id, c]) => ({ id, name: c.name, budget: c.budget, active: c.active }));
+    .map(([id, c]) => ({
+      id, name: c.name, budget: c.budget, active: c.active,
+      adsPlatform: c.adsPlatform, googleCustomerId: c.googleCustomerId,
+      metaAdAccountId: c.metaAdAccountId,
+    }));
 }
 
 /**

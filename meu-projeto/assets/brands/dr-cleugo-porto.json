@@ -1,0 +1,88 @@
+{
+  "name": "Dr. Cleugo Porto",
+  "brandName": "Dream Incision — Dr. Cleugo Porto",
+  "handle": "@drcleugo",
+  "tagline": "Esculpindo Autoestima",
+  "descriptor": "Medicina · Estética · Integrativa",
+  "specialty": "Celulite, Lipedema, Harmonização Corporal",
+  "website": "https://fascinating-dodol-3149ef.netlify.app/",
+  "colors": {
+    "primary": "#020202",
+    "accent": "#D1A84B",
+    "dark": "#020202",
+    "light": "#EEEEEE",
+    "card": "#060606",
+    "muted": "#121212",
+    "border": "#2D1F01",
+    "textOnDark": "#EEEEEE",
+    "textOnLight": "#020202",
+    "gold": "#D1A84B",
+    "mutedText": "#8F8F8F",
+    "secondaryText": "#CECECE",
+    "whatsapp": "#25D366"
+  },
+  "fonts": {
+    "headline": "Playfair Display",
+    "body": "Inter"
+  },
+  "style": "premium-dark-medical-aesthetic",
+  "theme": "dark",
+  "themeColor": "#0A0A0A",
+  "pattern": "Monograma CP circular — logotipo pessoal do médico",
+  "logos": {
+    "monogram-dark": "/assets/logos/dr-cleugo-porto/monogram-dark.png",
+    "dream-incision": "/assets/logos/dr-cleugo-porto/dream-incision.png",
+    "full-dark": "/assets/logos/dr-cleugo-porto/full-dark.png"
+  },
+  "usage": {
+    "dos": [
+      "Usar fundo escuro (#020202) como base — marca é dark mode",
+      "Gold (#D1A84B) apenas para destaques, accent e marca",
+      "Playfair Display para headlines, Inter para body",
+      "Fotografias com iluminação low-key e tons quentes",
+      "Espaçamento generoso entre elementos",
+      "Texto uppercase com tracking amplo para labels/badges",
+      "Manter contraste alto: gold sobre preto"
+    ],
+    "donts": [
+      "Nunca usar fundos brancos ou claros — a marca é dark mode",
+      "Não usar mais de 2 cores de destaque por peça",
+      "Evitar fontes decorativas ou script fora das logos",
+      "Não usar imagens com saturação alta ou filtros coloridos",
+      "Nunca colocar texto gold sobre fundos claros",
+      "Não usar gold como cor de fundo extenso — é cor de accent",
+      "Nunca distorcer proporções dos logos"
+    ]
+  },
+  "cssTokens": {
+    "background": "#020202",
+    "foreground": "#EEEEEE",
+    "primary": "#D1A84B",
+    "primaryForeground": "#020202",
+    "card": "#060606",
+    "cardForeground": "#EEEEEE",
+    "muted": "#121212",
+    "mutedForeground": "#8F8F8F",
+    "secondary": "#0B0B0B",
+    "secondaryForeground": "#CECECE",
+    "border": "#2D1F01",
+    "input": "#121212",
+    "ring": "#D1A84B",
+    "destructive": "#82181A",
+    "destructiveForeground": "#FB2C36"
+  },
+  "typography": {
+    "heroH1": "text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-serif leading-tight",
+    "sectionH2": "text-3xl lg:text-5xl font-serif",
+    "sectionLabel": "text-xs text-primary tracking-[0.3em] uppercase",
+    "body": "text-base lg:text-xl text-foreground/80 leading-relaxed",
+    "navLinks": "text-sm tracking-widest uppercase"
+  },
+  "borderRadius": {
+    "default": "0.625rem",
+    "md": "8px",
+    "xl": "14px",
+    "2xl": "1rem",
+    "full": "9999px"
+  }
+}

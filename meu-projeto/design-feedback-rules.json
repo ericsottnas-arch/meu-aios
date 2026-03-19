@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "version": 1,
+    "created": "2026-03-09T22:00:00Z",
+    "lastUpdated": "2026-03-10T00:35:00Z",
+    "totalRules": 5,
+    "description": "Regras extraídas de feedback real do Eric. Aplicadas automaticamente em toda geração."
+  },
+  "rules": {
+    "typography": [
+      {
+        "id": "typography-001",
+        "rule": "Texto precisa de respiro entre elementos — nunca empilhar headline, subtitle e CTA sem espaçamento generoso (mínimo 24px entre blocos de texto)",
+        "severity": "HIGH",
+        "addedAt": "2026-03-10T00:35:00Z",
+        "source": "eric-feedback"
+      }
+    ],
+    "composition": [
+      {
+        "id": "composition-001",
+        "rule": "Botão CTA deve ter padding interno generoso (mínimo 14px vertical, 36px horizontal), bordas arredondadas consistentes, e não parecer amador — testar visualmente antes de entregar",
+        "severity": "HIGH",
+        "addedAt": "2026-03-10T00:35:00Z",
+        "source": "eric-feedback"
+      },
+      {
+        "id": "composition-002",
+        "rule": "Elementos de preview/miniatura (ex: foto 'antes') devem estar visualmente conectados à composição principal — nunca flutuando isolados sem relação com o layout",
+        "severity": "HIGH",
+        "addedAt": "2026-03-10T00:35:00Z",
+        "source": "eric-feedback"
+      }
+    ],
+    "effects": [
+      {
+        "id": "effects-001",
+        "rule": "Feathering/sombra nas bordas da foto deve ser sutil e gradual — nunca pesado demais que pareça recortada. Se a foto original tem corpo/costas visíveis, manter visível com transição suave",
+        "severity": "CRITICAL",
+        "addedAt": "2026-03-10T00:35:00Z",
+        "source": "eric-feedback"
+      }
+    ],
+    "colors": [],
+    "photos": [
+      {
+        "id": "photos-001",
+        "rule": "NUNCA cortar a foto de forma abrupta — se a foto original mostra costas/corpo/membros, a versão no criativo deve respeitar o enquadramento original. Cortes secos são proibidos. Usar fade gradual se precisar limitar a área",
+        "severity": "CRITICAL",
+        "addedAt": "2026-03-10T00:35:00Z",
+        "source": "eric-feedback"
+      }
+    ],
+    "copy": [
+      {
+        "id": "copy-001",
+        "rule": "PROIBIDO o caractere '—' (travessão/em dash) em qualquer material. Substituir por ponto final, vírgula, dois pontos, quebra de linha ou reescrever sem o conector. Aplica a TODOS os agentes e TODOS os formatos.",
+        "severity": "CRITICAL",
+        "addedAt": "2026-03-18T00:00:00Z",
+        "source": "eric-feedback"
+      }
+    ],
+    "general": []
+  },
+  "overrides": {
+    "effects-001": { "key": "featherRadius", "value": 12 },
+    "photos-001": { "key": "photoScale", "value": 0.85 }
+  }
+}

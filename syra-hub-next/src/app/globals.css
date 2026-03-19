@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--bg-base);
+  --color-foreground: var(--text-primary);
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-brand: 'Nunito Sans', 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  /* — Backgrounds — */
+  --bg-base:       #030303;
+  --bg-surface:    #0a0a0a;
+  --bg-elevated:   #101013;
+  --bg-overlay:    #18181d;
+  --bg-card:       #0d0d10;
+  --bg-muted:      #141417;
+
+  /* — Borders — */
+  --border-faint:  #141417;
+  --border-subtle: #1e1e23;
+  --border-base:   #27272d;
+  --border-strong: #35353c;
+  --border-accent: rgba(200, 255, 0, 0.28);
+
+  /* — Text — */
+  --text-primary:   #F0F0F5;
+  --text-secondary: #8F8FA0;
+  --text-muted:     #505060;
+  --text-disabled:  #36363f;
+  --text-on-accent: #0a0a0a;
+
+  /* — Brand Accent — */
+  --accent:           #C8FF00;
+  --accent-hover:     #D8FF40;
+  --accent-dim:       rgba(200, 255, 0, 0.08);
+  --accent-mid:       rgba(200, 255, 0, 0.15);
+  --accent-glow:      rgba(200, 255, 0, 0.22);
+  --accent-border:    rgba(200, 255, 0, 0.28);
+
+  /* — Semantic — */
+  --success:     #22C55E;
+  --success-bg:  rgba(34, 197, 94, 0.10);
+  --warning:     #F59E0B;
+  --warning-bg:  rgba(245, 158, 11, 0.10);
+  --danger:      #EF4444;
+  --danger-bg:   rgba(239, 68, 68, 0.10);
+  --info:        #60A5FA;
+  --info-bg:     rgba(96, 165, 250, 0.10);
+
+  /* — Shadows — */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 14px rgba(0,0,0,0.6);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.7);
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-base); border-radius: 3px; }
+
+/* Selection */
+::selection {
+  background: var(--accent-mid);
+  color: var(--text-primary);
+}
+
+/* Font classes for Tailwind */
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
+.font-mono { font-family: var(--font-mono); }
+.font-brand { font-family: var(--font-brand); }

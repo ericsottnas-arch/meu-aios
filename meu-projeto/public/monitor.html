@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🔴 Nico Monitor - Professional Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,13 +15,39 @@
     }
 
     :root {
-      --bg-primary: #0f0f12;
-      --bg-surface: #1a1a1f;
-      --bg-hover: #242429;
-      --border: #2a2a32;
-      --text-primary: #ffffff;
-      --text-secondary: #a0a0a8;
-      --status-online: #10b981;
+      /* ── DS Backgrounds ── */
+      --bg-base: #030303;
+      --bg-surface: #0a0a0a;
+      --bg-elevated: #101013;
+      --bg-overlay: #18181d;
+      /* ── DS Borders ── */
+      --border-faint: #141417;
+      --border-subtle: #1e1e23;
+      --border-base: #27272d;
+      --border-strong: #35353c;
+      /* ── DS Text ── */
+      --text-primary: #F0F0F5;
+      --text-secondary: #8F8FA0;
+      --text-muted: #505060;
+      /* ── DS Accent ── */
+      --accent: #C8FF00;
+      --accent-dim: rgba(200, 255, 0, 0.08);
+      --accent-glow: rgba(200, 255, 0, 0.22);
+      /* ── DS Semantic ── */
+      --success: #22C55E;
+      --success-bg: rgba(34, 197, 94, 0.10);
+      --warning: #F59E0B;
+      --danger: #EF4444;
+      /* ── DS Typography ── */
+      --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      /* ── DS Radius ── */
+      --r-xs: 3px; --r-sm: 6px; --r-md: 8px; --r-lg: 12px; --r-full: 9999px;
+      /* ── DS Transitions ── */
+      --ease-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      /* ── Client Colors (page-specific) ── */
       --erico: #d6ba9e;
       --humberto: #3b82f6;
       --gabrielle: #ef4444;
@@ -29,11 +58,12 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
-      background: var(--bg-primary);
+      font-family: var(--font-body);
+      background: var(--bg-base);
       color: var(--text-primary);
       line-height: 1.5;
       font-size: 12px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
@@ -46,7 +76,7 @@
 
     .header {
       background: var(--bg-surface);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-base);
       padding: 16px;
       display: flex;
       justify-content: space-between;
@@ -67,16 +97,16 @@
       gap: 6px;
       font-size: 11px;
       padding: 6px 12px;
-      background: var(--bg-hover);
-      border: 1px solid var(--border);
-      border-radius: 4px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-base);
+      border-radius: var(--r-xs);
     }
 
     .status-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--status-online);
+      background: var(--success);
       animation: pulse 2s infinite;
     }
 
@@ -97,7 +127,7 @@
     .tabs {
       display: flex;
       gap: 12px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-base);
       padding-bottom: 12px;
     }
 
@@ -109,12 +139,12 @@
       cursor: pointer;
       border-bottom: 2px solid transparent;
       font-size: 12px;
-      transition: all 0.2s;
+      transition: all var(--ease-base);
     }
 
     .tab-btn.active {
       color: var(--text-primary);
-      border-bottom-color: var(--status-online);
+      border-bottom-color: var(--success);
     }
 
     .tab-content {
@@ -133,10 +163,10 @@
 
     .card {
       background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
+      border: 1px solid var(--border-base);
+      border-radius: var(--r-sm);
       padding: 16px;
-      transition: all 0.2s;
+      transition: all var(--ease-base);
     }
 
     .card:hover {
@@ -150,7 +180,7 @@
       align-items: center;
       margin-bottom: 12px;
       padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-base);
     }
 
     .card-title {
@@ -192,10 +222,10 @@
 
     .message-item {
       padding: 8px;
-      background: var(--bg-hover);
-      border-left: 3px solid var(--border);
-      border-radius: 3px;
-      transition: opacity 0.2s ease;
+      background: var(--bg-elevated);
+      border-left: 3px solid var(--border-base);
+      border-radius: var(--r-xs);
+      transition: opacity var(--ease-base);
     }
 
     .message-time {
@@ -226,7 +256,7 @@
 
     .urgency-badge {
       padding: 2px 6px;
-      border-radius: 2px;
+      border-radius: var(--r-xs);
       font-weight: bold;
     }
 
@@ -258,8 +288,8 @@
 
     .stat-card {
       background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
+      border: 1px solid var(--border-base);
+      border-radius: var(--r-sm);
       padding: 12px;
     }
 
@@ -284,7 +314,7 @@
     .urgency-bar {
       flex: 1;
       height: 24px;
-      border-radius: 3px;
+      border-radius: var(--r-xs);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -294,7 +324,7 @@
 
     .footer {
       background: var(--bg-surface);
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--border-base);
       padding: 12px 16px;
       display: flex;
       justify-content: space-between;

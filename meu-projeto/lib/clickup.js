@@ -335,6 +335,9 @@ async function listTasks(filters = {}) {
         queryParts.push(`assignees[]=${encodeURIComponent(id)}`);
       });
     }
+    if (filters.subtasks) {
+      queryParts.push('subtasks=true');
+    }
     if (filters.include_closed !== undefined) {
       queryParts.push(`include_closed=${filters.include_closed ? 'true' : 'false'}`);
     }
@@ -361,6 +364,30 @@ async function listTasks(filters = {}) {
     console.error('Erro ao listar tarefas do ClickUp:', err.message);
     return { tasks: [], total_count: 0, page: 0 };
   }
+}
+
+/**
+ * Lista tarefas de uma lista específica (por listId).
+ * @param {string} listId
+ * @param {Object} filters
+ * @returns {Promise<{tasks: Array, total_count: number}>}
+ */
+async function listTasksInList(listId, filters = {}) {
+  const queryParts = [];
+  if (filters.subtasks) queryParts.push('subtasks=true');
+  if (filters.include_closed) queryParts.push('include_closed=true');
+  if (filters.page !== undefined) queryParts.push(`page=${filters.page}`);
+
+  const qs = queryParts.length > 0 ? '?' + queryParts.join('&') : '';
+  const res = await clickupFetch(`/list/${listId}/task${qs}`);
+
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`ClickUp API ${res.status}: ${errText}`);
+  }
+
+  const data = await res.json();
+  return { tasks: data.tasks || [], total_count: data.total_count || 0 };
 }
 
 /**
@@ -428,16 +455,371 @@ async function getListStatuses() {
   }
 }
 
+/**
+ * Busca detalhes completos de uma tarefa (incluindo custom_fields, parent, subtasks).
+ * @param {string} taskId
+ * @returns {Promise<Object>}
+ */
+async function getTask(taskId) {
+  const res = await clickupFetch(`/task/${taskId}?include_subtasks=true`);
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`ClickUp API ${res.status}: ${errText}`);
+  }
+  return res.json();
+}
+
+/**
+ * Busca os comentários de uma tarefa.
+ * @param {string} taskId
+ * @returns {Promise<Array<{text: string, user: string, date: string}>>}
+ */
+async function getTaskComments(taskId) {
+  try {
+    const res = await clickupFetch(`/task/${taskId}/comment`);
+    if (!res.ok) return [];
+    const data = await res.json();
+    return (data.comments || []).map(c => ({
+      text: c.comment_text || '',
+      user: c.user?.username || c.user?.email || 'desconhecido',
+      date: c.date ? new Date(Number(c.date)).toISOString() : '',
+    }));
+  } catch (err) {
+    console.warn('⚠️  Erro ao buscar comentários:', err.message);
+    return [];
+  }
+}
+
+// ============================================================
+// Criação de Listas (onboarding de clientes)
+// ============================================================
+
+const FOLDER_ID = '90130944836'; // Folder "Clientes" no Space SYRA DIGITAL
+
+/** Statuses padrão Kanban — mesmo padrão da lista TAREFAS original */
+const KANBAN_STATUSES = [
+  { status: 'na fila',              color: '#8d8d8d', orderindex: 0, type: 'open'   },
+  { status: 'andamento',            color: '#f76808', orderindex: 1, type: 'custom' },
+  { status: 'aguardando cliente',   color: '#e5484d', orderindex: 2, type: 'custom' },
+  { status: 'revisão',              color: '#ffc53d', orderindex: 3, type: 'custom' },
+  { status: 'aprovação cliente',    color: '#6647f0', orderindex: 4, type: 'custom' },
+  { status: 'tráfego',              color: '#0091ff', orderindex: 5, type: 'custom' },
+  { status: 'complete',             color: '#008844', orderindex: 6, type: 'closed' },
+];
+
+/**
+ * Cria uma nova Lista dentro do Folder "Clientes" com os statuses Kanban padrão.
+ * @param {string} listName - Nome da lista (ex: "Dra. Bruna Nogueira")
+ * @returns {Promise<{id: string, name: string, url: string}>}
+ */
+async function createClientList(listName) {
+  if (!API_KEY) throw new Error('CLICKUP_API_KEY não configurada');
+
+  const body = {
+    name: listName,
+    statuses: KANBAN_STATUSES,
+  };
+
+  const res = await clickupFetch(`/folder/${FOLDER_ID}/list`, {
+    method: 'POST',
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`ClickUp createList ${res.status}: ${errText}`);
+  }
+
+  const data = await res.json();
+  return {
+    id: data.id,
+    name: data.name,
+    url: `https://app.clickup.com/${data.id}`,
+  };
+}
+
+/**
+ * Cria uma tarefa em uma lista específica (não na LIST_ID padrão).
+ * @param {string} listId - ID da lista destino
+ * @param {Object} params - Mesmos params do createTask
+ * @returns {Promise<{id: string, name: string, url: string}>}
+ */
+async function createTaskInList(listId, { title, description, priority, dueDateMs, assignees, tags }) {
+  if (!API_KEY) throw new Error('CLICKUP_API_KEY não configurada');
+
+  const body = {
+    name: title,
+    description: description || undefined,
+    status: DEFAULT_STATUS,
+  };
+
+  if (priority && priority >= 1 && priority <= 4) body.priority = priority;
+  if (dueDateMs) { body.due_date = dueDateMs; body.due_date_time = true; }
+  if (assignees && assignees.length > 0) body.assignees = assignees;
+  if (tags && tags.length > 0) body.tags = tags;
+
+  Object.keys(body).forEach((k) => body[k] === undefined && delete body[k]);
+
+  let res = await clickupFetch(`/list/${listId}/task`, {
+    method: 'POST',
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok && body.status) {
+    delete body.status;
+    res = await clickupFetch(`/list/${listId}/task`, {
+      method: 'POST',
+      body: JSON.stringify(body),
+    });
+  }
+
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`ClickUp API ${res.status}: ${errText}`);
+  }
+
+  const data = await res.json();
+  return {
+    id: data.id,
+    name: data.name,
+    url: data.url || `https://app.clickup.com/t/${data.id}`,
+  };
+}
+
+/**
+ * Cria subtasks numa lista específica.
+ */
+async function createSubtasksInList(listId, parentTaskId, subtaskTitles) {
+  if (!subtaskTitles || subtaskTitles.length === 0) return [];
+
+  const results = [];
+  for (const title of subtaskTitles) {
+    try {
+      const res = await clickupFetch(`/list/${listId}/task`, {
+        method: 'POST',
+        body: JSON.stringify({ name: title, parent: parentTaskId }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        results.push({ id: data.id, name: data.name });
+      } else {
+        console.warn(`⚠️  Falha ao criar subtask "${title}"`);
+      }
+    } catch (err) {
+      console.warn(`⚠️  Erro subtask "${title}":`, err.message);
+    }
+  }
+  return results;
+}
+
+/**
+ * Lista todas as listas dentro do Folder "Clientes".
+ * @returns {Promise<Array<{id: string, name: string, taskCount: number}>>}
+ */
+async function listClientLists() {
+  const res = await clickupFetch(`/folder/${FOLDER_ID}`);
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`ClickUp API ${res.status}: ${errText}`);
+  }
+
+  const data = await res.json();
+  return (data.lists || []).map((l) => ({
+    id: l.id,
+    name: l.name,
+    taskCount: l.task_count || 0,
+  }));
+}
+
+// ============================================================
+// Mapeamento Cliente → Lista (cache)
+// ============================================================
+
+let cachedClientListMap = null;
+
+/**
+ * Retorna mapa de nome de cliente (lowercase) → listId.
+ * Usado para rotear tarefas para a lista correta do cliente.
+ * @param {boolean} [forceRefresh=false]
+ * @returns {Promise<Map<string, {id: string, name: string}>>}
+ */
+async function getClientListMap(forceRefresh = false) {
+  if (cachedClientListMap && !forceRefresh) return cachedClientListMap;
+
+  const lists = await listClientLists();
+  cachedClientListMap = new Map();
+  for (const l of lists) {
+    cachedClientListMap.set(l.name.toLowerCase(), { id: l.id, name: l.name });
+  }
+  return cachedClientListMap;
+}
+
+/**
+ * Normaliza string para comparação (remove acentos, lowercase).
+ */
+function normalizeForMatch(str) {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+}
+
+/**
+ * Busca o list ID do cliente pelo nome (fuzzy match com normalização de acentos).
+ * @param {string} clientName - Nome do cliente (ex: "Dr. Erico Servano", "Dra Vanessa")
+ * @returns {Promise<string|null>} listId ou null se não encontrado
+ */
+async function findClientListId(clientName) {
+  const map = await getClientListMap();
+  const norm = normalizeForMatch(clientName);
+
+  // Match exato (normalizado)
+  for (const [key, val] of map) {
+    if (normalizeForMatch(key) === norm) return val.id;
+  }
+
+  // Match parcial (substring)
+  for (const [key, val] of map) {
+    const keyNorm = normalizeForMatch(key);
+    if (keyNorm.includes(norm) || norm.includes(keyNorm)) return val.id;
+  }
+
+  // Match sem prefixo (Dr/Dra/Prof.)
+  const stripped = norm.replace(/^(dr\.?|dra\.?|prof\.?\s*(dr\.?)?)\s*/i, '').trim();
+  if (stripped.length < 3) return null; // evitar matches muito curtos
+
+  for (const [key, val] of map) {
+    const keyStripped = normalizeForMatch(key).replace(/^(dr\.?|dra\.?|prof\.?\s*(dr\.?)?)\s*/i, '').trim();
+    if (keyStripped === stripped || keyStripped.includes(stripped) || stripped.includes(keyStripped)) {
+      return val.id;
+    }
+  }
+
+  return null;
+}
+
+// ============================================================
+// Desativação de Clientes
+// ============================================================
+
+/**
+ * Desativa um cliente — arquiva sua lista no ClickUp.
+ * A lista some da visualização geral mas tarefas ficam preservadas.
+ * @param {string} listId - ID da lista do cliente
+ * @returns {Promise<{success: boolean, message: string}>}
+ */
+async function deactivateClientList(listId) {
+  const res = await clickupFetch(`/list/${listId}`, {
+    method: 'PUT',
+    body: JSON.stringify({ archived: true }),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`ClickUp deactivate ${res.status}: ${errText}`);
+  }
+
+  cachedClientListMap = null;
+
+  const data = await res.json();
+  return { success: true, message: `Lista "${data.name}" arquivada (removida da visualização geral)` };
+}
+
+/**
+ * Reativa um cliente — desarquiva sua lista no ClickUp.
+ * @param {string} listId - ID da lista do cliente
+ * @returns {Promise<{success: boolean, message: string}>}
+ */
+async function reactivateClientList(listId) {
+  const res = await clickupFetch(`/list/${listId}`, {
+    method: 'PUT',
+    body: JSON.stringify({ archived: false }),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`ClickUp reactivate ${res.status}: ${errText}`);
+  }
+
+  cachedClientListMap = null;
+
+  const data = await res.json();
+  return { success: true, message: `Lista "${data.name}" reativada em Clientes` };
+}
+
+/**
+ * Lista clientes inativos (arquivados).
+ */
+async function listInactiveClients() {
+  const res = await clickupFetch(`/folder/${FOLDER_ID}?archived=true`);
+  if (!res.ok) return [];
+
+  const data = await res.json();
+  return (data.lists || [])
+    .filter((l) => l.archived)
+    .map((l) => ({
+      id: l.id,
+      name: l.name,
+      taskCount: l.task_count || 0,
+    }));
+}
+
+/**
+ * Adiciona um comentário em uma tarefa existente.
+ * Usado por agentes especialistas para documentar suas contribuições.
+ * @param {string} taskId
+ * @param {string} commentText - Texto do comentário (suporta Markdown)
+ * @returns {Promise<{id: string}|null>}
+ */
+async function addTaskComment(taskId, commentText) {
+  if (!API_KEY) {
+    console.warn('⚠️  CLICKUP_API_KEY não configurada');
+    return null;
+  }
+
+  try {
+    const res = await clickupFetch(`/task/${taskId}/comment`, {
+      method: 'POST',
+      body: JSON.stringify({ comment_text: commentText }),
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      console.warn(`⚠️  Erro ao adicionar comentário ClickUp: ${res.status} ${errText}`);
+      return null;
+    }
+
+    const data = await res.json();
+    return { id: data.id };
+  } catch (err) {
+    console.warn('⚠️  Erro addTaskComment:', err.message);
+    return null;
+  }
+}
+
 module.exports = {
   getTeamMembers,
   getClientOptions,
   CLIENT_FIELD_ID,
+  FOLDER_ID,
+  KANBAN_STATUSES,
   createTask,
   createSubtasks,
   updateTaskName,
   uploadAttachment,
   searchTasks,
   listTasks,
+  listTasksInList,
   updateTaskStatus,
   getListStatuses,
+  getTask,
+  getTaskComments,
+  addTaskComment,
+  createClientList,
+  createTaskInList,
+  createSubtasksInList,
+  listClientLists,
+  getClientListMap,
+  findClientListId,
+  deactivateClientList,
+  reactivateClientList,
+  listInactiveClients,
 };

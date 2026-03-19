@@ -4,6 +4,7 @@
  */
 
 const MetaAds = require('./meta-ads');
+const GoogleAds = require('./google-ads');
 const celoConfig = require('./celo-config');
 const celoConversation = require('./celo-conversation');
 
@@ -13,7 +14,7 @@ const BUDGET_APPROVAL_THRESHOLD = 0.20;
 class AdsManager {
   constructor() {
     this._meta = new MetaAds();
-    this._google = null; // Phase 4
+    this._google = new GoogleAds();
     this._initialized = { meta: false, google: false };
   }
 
@@ -26,8 +27,9 @@ class AdsManager {
       this._initialized.meta = await this._meta.init();
       if (!this._initialized.meta) throw new Error('Meta Ads não configurado. Defina META_ACCESS_TOKEN e META_AD_ACCOUNT_ID no .env');
     }
-    if (platform === 'google') {
-      throw new Error('Google Ads será implementado na Phase 4.');
+    if (platform === 'google' && !this._initialized.google) {
+      this._initialized.google = await this._google.init();
+      if (!this._initialized.google) throw new Error('Google Ads nao configurado. Execute setup-google-ads-auth.js e defina as variaveis no .env');
     }
   }
 
@@ -49,6 +51,7 @@ class AdsManager {
     return {
       adAccountId: client.metaAdAccountId || undefined,
       pageId: client.metaPageId || undefined,
+      googleCustomerId: client.googleCustomerId || undefined,
     };
   }
 
@@ -97,7 +100,14 @@ class AdsManager {
   async listCampaigns(platform, options = {}) {
     await this._ensurePlatform(platform);
     const adapter = this._getAdapter(platform);
-    const { adAccountId } = this._resolveClient(options.clientId);
+    const { adAccountId, googleCustomerId } = this._resolveClient(options.clientId);
+
+    if (platform === 'google' && googleCustomerId) {
+      adapter.setLastCustomerId(googleCustomerId);
+      const campaigns = await adapter.listCampaigns({ ...options, customerId: googleCustomerId });
+      return campaigns.map((c) => this._normalizeCampaign(c, platform));
+    }
+
     const campaigns = await adapter.listCampaigns({ ...options, adAccountId });
     return campaigns.map((c) => this._normalizeCampaign(c, platform));
   }
@@ -108,9 +118,15 @@ class AdsManager {
    * @param {string} campaignId
    * @param {string} [datePreset='last_7d']
    */
-  async getCampaignMetrics(platform, campaignId, datePreset = 'last_7d') {
+  async getCampaignMetrics(platform, campaignId, datePreset = 'last_7d', clientId = null) {
     await this._ensurePlatform(platform);
     const adapter = this._getAdapter(platform);
+
+    if (platform === 'google' && clientId) {
+      const { googleCustomerId } = this._resolveClient(clientId);
+      return adapter.getCampaignInsights(campaignId, datePreset, googleCustomerId);
+    }
+
     return adapter.getCampaignInsights(campaignId, datePreset);
   }
 
@@ -123,25 +139,36 @@ class AdsManager {
   async createCampaign(platform, params) {
     await this._ensurePlatform(platform);
     const adapter = this._getAdapter(platform);
-    const { adAccountId } = this._resolveClient(params.clientId);
+    const { adAccountId, googleCustomerId } = this._resolveClient(params.clientId);
+
+    if (platform === 'google') {
+      return adapter.createCampaign({ ...params, customerId: googleCustomerId });
+    }
     return adapter.createCampaign({ ...params, adAccountId });
   }
 
   /**
-   * Cria ad set.
+   * Cria ad set (Meta) ou ad group (Google).
    */
   async createAdSet(platform, params) {
     await this._ensurePlatform(platform);
     const adapter = this._getAdapter(platform);
-    const { adAccountId } = this._resolveClient(params.clientId);
+    const { adAccountId, googleCustomerId } = this._resolveClient(params.clientId);
+
+    if (platform === 'google') {
+      return adapter.createAdGroup({ ...params, customerId: googleCustomerId });
+    }
     return adapter.createAdSet({ ...params, adAccountId });
   }
 
   /**
-   * Cria ad creative.
+   * Cria ad creative (Meta only — Google usa createAd direto).
    */
   async createAdCreative(platform, params) {
     await this._ensurePlatform(platform);
+    if (platform === 'google') {
+      throw new Error('Google Ads nao usa AdCreative separado. Use createAd com headlines/descriptions.');
+    }
     const adapter = this._getAdapter(platform);
     const { adAccountId, pageId } = this._resolveClient(params.clientId);
     return adapter.createAdCreative({ ...params, adAccountId, pageId: params.pageId || pageId });
@@ -153,7 +180,11 @@ class AdsManager {
   async createAd(platform, params) {
     await this._ensurePlatform(platform);
     const adapter = this._getAdapter(platform);
-    const { adAccountId } = this._resolveClient(params.clientId);
+    const { adAccountId, googleCustomerId } = this._resolveClient(params.clientId);
+
+    if (platform === 'google') {
+      return adapter.createAd({ ...params, customerId: googleCustomerId });
+    }
     return adapter.createAd({ ...params, adAccountId });
   }
 
@@ -164,9 +195,14 @@ class AdsManager {
    * @param {'campaign'|'adset'|'ad'} type
    * @param {boolean} active
    */
-  async updateStatus(platform, objectId, type, active) {
+  async updateStatus(platform, objectId, type, active, clientId = null) {
     await this._ensurePlatform(platform);
     const adapter = this._getAdapter(platform);
+
+    if (platform === 'google' && clientId) {
+      const { googleCustomerId } = this._resolveClient(clientId);
+      return adapter.updateStatus(objectId, type, active, googleCustomerId);
+    }
     return adapter.updateStatus(objectId, type, active);
   }
 
@@ -241,7 +277,11 @@ class AdsManager {
   async listAudiences(platform, clientId) {
     await this._ensurePlatform(platform);
     const adapter = this._getAdapter(platform);
-    const { adAccountId } = this._resolveClient(clientId);
+    const { adAccountId, googleCustomerId } = this._resolveClient(clientId);
+
+    if (platform === 'google') {
+      return adapter.listAudiences(googleCustomerId);
+    }
     return adapter.listAudiences(adAccountId);
   }
 
@@ -250,6 +290,19 @@ class AdsManager {
     const adapter = this._getAdapter(platform);
     const { adAccountId } = this._resolveClient(params.clientId);
     return adapter.createCustomAudience({ ...params, adAccountId });
+  }
+
+  /**
+   * Retorna plataformas ativas de um cliente.
+   * @param {string} clientId
+   * @returns {string[]} - ['meta'], ['meta', 'google'], etc.
+   */
+  getClientPlatforms(clientId) {
+    const client = celoConfig.getClient(clientId);
+    if (!client) return ['meta'];
+    const platform = client.adsPlatform;
+    if (Array.isArray(platform)) return platform;
+    return platform ? [platform] : ['meta'];
   }
 }
 

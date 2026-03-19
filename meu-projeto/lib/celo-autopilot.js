@@ -137,11 +137,13 @@ class CeloAutopilot {
   }
 
   // ============================================================
-  // Ciclo Principal de Análise
+  // Ciclo Principal de Análise (Rules-Based + LLaMA)
   // ============================================================
 
   /**
    * Executa um ciclo completo de análise para um cliente.
+   * Fase 1: Rules-based (optimizer) — rápido, barato, ações automáticas
+   * Fase 2: LLaMA — análise profunda de contexto + vendas + CRM
    */
   async runCycle(clientId) {
     const client = celoConfig.getClient(clientId);
@@ -149,6 +151,63 @@ class CeloAutopilot {
 
     console.log(`Autopilot: Iniciando ciclo para ${client.name}...`);
     this._lastRun.set(clientId, Date.now());
+
+    // ── Fase 1: Rules-Based (Optimizer) ──
+    // Mais rápido e barato que LLaMA. Executa regras determinísticas.
+    let optimizerResult = null;
+    try {
+      optimizerResult = await this.optimizer.analyze(clientId, {
+        cplTarget: client.budget?.cplTarget || undefined,
+      });
+
+      if (optimizerResult.suggestions.length > 0) {
+        console.log(`Autopilot: ${client.name} — Optimizer: ${optimizerResult.summary}`);
+
+        // Processar ações HIGH do optimizer automaticamente (sem LLaMA)
+        const highPriority = optimizerResult.suggestions.filter((s) => s.priority === 'high');
+        for (const suggestion of highPriority) {
+          await this._processOptimizerSuggestion(clientId, client, suggestion);
+        }
+
+        // Alertas de creative fatigue → pedir criativo
+        const fatigueAlerts = optimizerResult.suggestions.filter((s) => s.type === 'creative_fatigue');
+        for (const alert of fatigueAlerts) {
+          await this._requestCreative(client, {
+            campaignName: alert.target,
+            reason: alert.reason,
+            format: 'Video ou Carrossel',
+            hookSuggestion: 'Variar abordagem — público saturando',
+            cta: 'Manter CTA atual',
+            audience: 'Mesmo público (novo criativo)',
+          });
+        }
+
+        // Alertas de budget pacing → notificar
+        const pacingAlerts = optimizerResult.suggestions.filter(
+          (s) => s.type === 'alert' && s.metrics?.pacingRatio
+        );
+        for (const alert of pacingAlerts) {
+          await this.telegram.sendMessage(
+            this.approvalChatId,
+            `PACING ALERT — ${client.name}\n\n${alert.target}: ${alert.action}\n${alert.reason}\n\n— Celo`
+          );
+        }
+      }
+
+      // Budget pacing mensal
+      if (optimizerResult.pacing && !optimizerResult.pacing.onTrack) {
+        const p = optimizerResult.pacing;
+        await this.telegram.sendMessage(
+          this.approvalChatId,
+          `BUDGET ALERT — ${client.name}\n\nProjecao mensal: R$ ${p.projectedMonthly.toFixed(2)} (${p.pctUsed}% do budget R$ ${p.monthlyBudget.toFixed(2)})\nMedia diaria: R$ ${p.dailyAvg.toFixed(2)}\nDias restantes: ${p.daysRemaining}\n\nRisco de estourar o budget mensal.\n\n— Celo`
+        );
+      }
+    } catch (err) {
+      console.error(`Autopilot: Erro no optimizer de ${clientId}:`, err.message);
+    }
+
+    // ── Fase 2: LLaMA — Análise Profunda ──
+    // Complementa o optimizer com inteligência contextual.
 
     // 1. Buscar dados de campanhas (Meta Ads)
     let campaigns = [];
@@ -159,7 +218,6 @@ class CeloAutopilot {
         statusFilter: ['ACTIVE', 'PAUSED'],
       });
 
-      // Métricas das ativas
       const active = campaigns.filter((c) => c.status === 'ACTIVE');
       const results = await Promise.allSettled(
         active.map(async (c) => {
@@ -196,35 +254,135 @@ class CeloAutopilot {
       console.warn(`Autopilot: Sem dados GHL para ${clientId}:`, err.message);
     }
 
-    // 3. Montar contexto para LLaMA
-    const context = this._buildContext(client, clientId, campaigns, campaignMetrics, salesData, crmContext);
+    // 3. Montar contexto para LLaMA (incluindo resultados do optimizer)
+    let context = this._buildContext(client, clientId, campaigns, campaignMetrics, salesData, crmContext);
 
-    // 4. Chamar LLaMA para análise
+    // Injetar contexto do optimizer para LLaMA saber o que já foi feito
+    if (optimizerResult) {
+      const optimizerCtx = [
+        '',
+        '=== OPTIMIZER RULES-BASED (ja executado) ===',
+        `Health Score: ${optimizerResult.health.grade} (${optimizerResult.health.score}/100)`,
+      ];
+      if (optimizerResult.health.campaigns.length > 0) {
+        for (const h of optimizerResult.health.campaigns) {
+          optimizerCtx.push(`  ${h.name}: ${h.score}/100 (${h.status})`);
+        }
+      }
+      if (optimizerResult.pacing) {
+        const p = optimizerResult.pacing;
+        optimizerCtx.push(`Budget pacing: ${p.pctUsed}% (projecao R$ ${p.projectedMonthly.toFixed(2)} / budget R$ ${p.monthlyBudget.toFixed(2)})`);
+      }
+      if (optimizerResult.suggestions.length > 0) {
+        optimizerCtx.push(`Acoes do optimizer: ${optimizerResult.suggestions.map((s) => `${s.type}:${s.target}`).join(', ')}`);
+      }
+      context += '\n' + optimizerCtx.join('\n');
+    }
+
+    // 4. Chamar LLaMA para análise complementar
     const analysis = await this._callGroq(prompts.ANALYSIS_CYCLE_PROMPT, context);
     if (!analysis) {
       console.warn(`Autopilot: Sem resposta do LLaMA para ${clientId}.`);
       return;
     }
 
-    console.log(`Autopilot: ${client.name} — ${analysis.actions?.length || 0} ações sugeridas.`);
+    console.log(`Autopilot: ${client.name} — LLaMA: ${analysis.actions?.length || 0} ações sugeridas.`);
 
-    // 5. Processar ações
+    // 5. Processar ações do LLaMA (não duplicar com optimizer)
     if (analysis.actions?.length > 0) {
+      const executedIds = new Set(
+        (optimizerResult?.suggestions || [])
+          .filter((s) => s.priority === 'high')
+          .map((s) => s.targetId)
+      );
+
       for (const action of analysis.actions) {
+        // Pular se o optimizer já tratou esta campanha
+        if (action.campaignId && executedIds.has(action.campaignId)) {
+          console.log(`Autopilot: Pulando ${action.campaignName} (já tratado pelo optimizer)`);
+          continue;
+        }
         await this._processAction(clientId, client, action);
       }
     }
 
-    // 6. Processar pedidos de criativo
+    // 6. Processar pedidos de criativo do LLaMA
     if (analysis.creativeRequests?.length > 0) {
       for (const req of analysis.creativeRequests) {
         await this._requestCreative(client, req);
       }
     }
 
-    // 7. Se não tem ações, enviar análise resumida
+    // 7. Log final
     if ((!analysis.actions || analysis.actions.length === 0) && analysis.analysis) {
-      console.log(`Autopilot: ${client.name} — Sem ações. Análise: ${analysis.analysis.slice(0, 100)}...`);
+      console.log(`Autopilot: ${client.name} — Sem ações LLaMA. Análise: ${analysis.analysis.slice(0, 100)}...`);
+    }
+  }
+
+  /**
+   * Processa sugestão do optimizer (rules-based).
+   * High priority → envia para aprovação via Telegram.
+   */
+  async _processOptimizerSuggestion(clientId, client, suggestion) {
+    const chatId = this.approvalChatId;
+
+    if (suggestion.type === 'pause') {
+      const approval = celoConversation.createApproval({
+        clientId,
+        clientName: client.name,
+        campaign: suggestion.target,
+        currentBudget: 0,
+        proposedBudget: 0,
+        reason: suggestion.reason,
+        direction: 'pause',
+        pctChange: 0,
+        _action: {
+          type: 'pause',
+          platform: 'meta',
+          campaignId: suggestion.targetId,
+        },
+        _analysisContext: `[Optimizer] ${suggestion.action}`,
+      });
+
+      await this.telegram.sendInlineKeyboard(chatId,
+        `[OPTIMIZER] ${client.name}\n\n${suggestion.action}\n${suggestion.reason}`,
+        [
+          [
+            { text: 'Aprovar', callback_data: `auto:approve:${approval.requestId}` },
+            { text: 'Rejeitar', callback_data: `auto:reject:${approval.requestId}` },
+          ],
+        ]
+      );
+    } else if (suggestion.type === 'scale' && suggestion.metrics?.suggestedBudget > 0) {
+      const approval = celoConversation.createApproval({
+        clientId,
+        clientName: client.name,
+        campaign: suggestion.target,
+        currentBudget: suggestion.metrics.currentBudget,
+        proposedBudget: suggestion.metrics.suggestedBudget,
+        reason: suggestion.reason,
+        direction: 'increase',
+        pctChange: 30, // max scale 30%
+        _action: {
+          type: 'scale',
+          platform: 'meta',
+          campaignId: suggestion.targetId,
+          objectId: suggestion.targetId,
+          objectType: 'campaign',
+          newBudget: suggestion.metrics.suggestedBudget,
+        },
+        _analysisContext: `[Optimizer] ${suggestion.action}`,
+      });
+
+      await this.telegram.sendInlineKeyboard(chatId,
+        `[OPTIMIZER] ${client.name}\n\n${suggestion.action}\n${suggestion.reason}`,
+        [
+          [
+            { text: 'Aprovar', callback_data: `auto:approve:${approval.requestId}` },
+            { text: 'Rejeitar', callback_data: `auto:reject:${approval.requestId}` },
+          ],
+        ]
+      );
     }
   }
 
@@ -237,6 +395,24 @@ class CeloAutopilot {
     if (!client) return;
 
     console.log(`Autopilot: Briefing matinal para ${client.name}`);
+
+    // Health score rápido (optimizer rules-based)
+    let healthCtx = '';
+    try {
+      const healthResult = await this.optimizer.analyze(clientId, {
+        cplTarget: client.budget?.cplTarget,
+      });
+      if (healthResult.health) {
+        healthCtx = `\nHealth Score: ${healthResult.health.grade} (${healthResult.health.score}/100)`;
+        for (const h of healthResult.health.campaigns) {
+          healthCtx += `\n  ${h.name}: ${h.score}/100 (${h.status})`;
+        }
+      }
+      if (healthResult.pacing) {
+        const p = healthResult.pacing;
+        healthCtx += `\nBudget pacing: ${p.pctUsed}% do mensal (R$ ${p.projectedMonthly.toFixed(2)} projetado / R$ ${p.monthlyBudget.toFixed(2)} budget)`;
+      }
+    } catch (_) {}
 
     // Buscar dados
     let campaigns = [];
@@ -265,14 +441,16 @@ class CeloAutopilot {
       if (ghl) crmContext = GhlCrm.formatForContext(await ghl.getCrmSummary());
     } catch (_) {}
 
-    const context = this._buildContext(client, clientId, campaigns, campaignMetrics, salesData, crmContext);
+    let context = this._buildContext(client, clientId, campaigns, campaignMetrics, salesData, crmContext);
+    if (healthCtx) context += '\n' + healthCtx;
+
     const briefing = await this._callGroq(prompts.MORNING_BRIEFING_PROMPT, context);
 
     if (briefing?.briefing) {
-      await this.telegram.sendMessage(
-        this.approvalChatId,
-        `BRIEFING MATINAL — ${client.name}\n\n${briefing.briefing}\n\n— Celo`
-      );
+      const header = healthCtx
+        ? `BRIEFING MATINAL — ${client.name}${healthCtx}\n\n${briefing.briefing}`
+        : `BRIEFING MATINAL — ${client.name}\n\n${briefing.briefing}`;
+      await this.telegram.sendMessage(this.approvalChatId, header + '\n\n— Celo');
     }
   }
 
@@ -285,6 +463,21 @@ class CeloAutopilot {
     if (!client) return;
 
     console.log(`Autopilot: Resumo diário para ${client.name}`);
+
+    // Health score + pacing
+    let healthCtx = '';
+    try {
+      const healthResult = await this.optimizer.analyze(clientId, {
+        cplTarget: client.budget?.cplTarget,
+      });
+      if (healthResult.health) {
+        healthCtx = `\nHealth: ${healthResult.health.grade} (${healthResult.health.score}/100)`;
+      }
+      if (healthResult.pacing) {
+        const p = healthResult.pacing;
+        healthCtx += ` | Budget: ${p.pctUsed}% projetado (${p.daysRemaining}d restantes)`;
+      }
+    } catch (_) {}
 
     let campaigns = [];
     let campaignMetrics = [];
@@ -312,11 +505,13 @@ class CeloAutopilot {
       if (ghl) crmContext = GhlCrm.formatForContext(await ghl.getCrmSummary());
     } catch (_) {}
 
-    const context = this._buildContext(client, clientId, campaigns, campaignMetrics, salesData, crmContext);
+    let context = this._buildContext(client, clientId, campaigns, campaignMetrics, salesData, crmContext);
+    if (healthCtx) context += '\n' + healthCtx;
+
     const summary = await this._callGroq(prompts.EVENING_SUMMARY_PROMPT, context);
 
     if (summary?.summary) {
-      let msg = `RESUMO DO DIA — ${client.name}\n\n${summary.summary}`;
+      let msg = `RESUMO DO DIA — ${client.name}${healthCtx}\n\n${summary.summary}`;
       if (summary.needsFromOwner?.length > 0) {
         msg += `\n\nPreciso de voce:\n${summary.needsFromOwner.map((n) => `- ${n}`).join('\n')}`;
       }
@@ -802,12 +997,18 @@ class CeloAutopilot {
       const full = celoConfig.getClient(client.id);
       const ap = full?.autopilot;
       const lastRun = this._lastRun.get(client.id);
+      const nextRun = lastRun
+        ? new Date(lastRun + (ap?.checkIntervalHours || 4) * 60 * 60 * 1000).toISOString()
+        : null;
       status.push({
         clientId: client.id,
         clientName: client.name,
         enabled: ap?.enabled || false,
         intervalHours: ap?.checkIntervalHours || 4,
         lastRun: lastRun ? new Date(lastRun).toISOString() : null,
+        nextRun,
+        morningBriefing: ap?.morningBriefing || '08:00',
+        eveningSummary: ap?.eveningSummary || '20:00',
       });
     }
     return { running: this._running, clients: status };

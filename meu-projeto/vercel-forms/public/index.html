@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Processo Seletivo — SDR ou Social Seller | Dr. Cleugo Porto</title>
+<meta name="theme-color" content="#020202">
+<link rel="icon" type="image/png" href="/logo-syra.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background-color:#020202;color:#EEEEEE;
+  margin:0;padding:0;
+  width:100%;height:100vh;height:100dvh;
+  overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* === PROGRESS BAR === */
+.progress-bar{position:fixed;top:0;left:0;width:100%;height:4px;z-index:100;background:#121212}
+.progress-fill{height:100%;background:linear-gradient(90deg,#D1A84B,#E8C876);transition:width .5s cubic-bezier(.4,0,.2,1);width:0;border-radius:0 2px 2px 0}
+
+/* === CONTAINER === */
+.form-container{width:100%;height:100%;position:relative;overflow:hidden}
+
+/* === SLIDE === */
+.slide{
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  padding:2rem 1.25rem;padding-bottom:5rem;
+  opacity:0;transform:translateY(50px);pointer-events:none;
+  transition:opacity .45s cubic-bezier(.4,0,.2,1),transform .45s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.slide[data-type="welcome"]{justify-content:flex-start;padding-top:1.5rem}
+.slide.active{opacity:1;transform:translateY(0);pointer-events:auto}
+
+.slide-inner{width:100%;max-width:580px;text-align:left}
+
+/* === SECTION DIVIDER === */
+.slide.section-divider .slide-inner{text-align:center}
+.section-number{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:56px;height:56px;border-radius:50%;border:2px solid #D1A84B;
+  color:#D1A84B;font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;
+  margin-bottom:1.25rem;font-weight:600;
+}
+.section-title{
+  font-family:'Playfair Display',Georgia,serif;font-size:2rem;color:#EEEEEE;
+  margin-bottom:.75rem;line-height:1.25;
+}
+.section-subtitle{color:#8F8F8F;font-size:1rem;line-height:1.6}
+
+/* === TYPOGRAPHY === */
+.q-label{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.5rem;line-height:1.35;
+  margin-bottom:.5rem;color:#EEEEEE;
+}
+.q-sublabel{color:#8F8F8F;font-size:.9rem;margin-bottom:1.5rem;line-height:1.6}
+.q-number{
+  display:inline-block;color:#D1A84B;font-size:.8rem;
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;
+  font-weight:600;
+}
+.q-scenario{
+  background:#060606;border:1px solid #2D1F01;border-radius:12px;
+  padding:1.25rem 1.5rem;margin-bottom:1.5rem;font-size:1rem;
+  color:#CECECE;line-height:1.7;font-style:italic;
+}
+
+/* === INPUTS === */
+input[type="text"],input[type="email"],input[type="tel"],
+input[type="url"],input[type="date"],textarea,select{
+  width:100%;background:#0A0A0A;border:1.5px solid #2D1F01;
+  border-radius:12px;color:#EEEEEE;font-family:'Inter',system-ui,sans-serif;
+  font-size:1.1rem;padding:1rem 1.25rem;outline:none;
+  transition:border-color .25s,box-shadow .25s;
+}
+input:focus,textarea:focus,select:focus{
+  border-color:#D1A84B;box-shadow:0 0 0 3px rgba(209,168,75,.15);
+}
+textarea{resize:vertical;min-height:140px;line-height:1.7}
+select{cursor:pointer;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238F8F8F' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1.25rem center;
+  padding-right:3rem;
+}
+input[type="date"]{color-scheme:dark}
+::placeholder{color:#666}
+
+/* === RANGE SLIDER === */
+.range-wrap{margin-top:.75rem}
+.range-labels{display:flex;justify-content:space-between;font-size:.85rem;color:#8F8F8F;margin-top:.5rem}
+.range-value{text-align:center;font-size:3.5rem;font-family:'Playfair Display',Georgia,serif;color:#D1A84B;margin-bottom:1rem;font-weight:700}
+input[type="range"]{
+  -webkit-appearance:none;width:100%;height:8px;border-radius:4px;
+  background:#121212;outline:none;border:none;padding:0;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:28px;height:28px;border-radius:50%;
+  background:#D1A84B;cursor:pointer;border:3px solid #020202;
+  box-shadow:0 0 0 2px #D1A84B;
+}
+input[type="range"]::-moz-range-thumb{
+  width:28px;height:28px;border-radius:50%;background:#D1A84B;
+  cursor:pointer;border:3px solid #020202;box-shadow:0 0 0 2px #D1A84B;
+}
+
+/* === YES/NO BUTTONS === */
+.yesno-group{display:flex;gap:1rem;margin-top:.5rem}
+.yesno-btn{
+  flex:1;padding:1.25rem;border-radius:12px;border:1.5px solid #2D1F01;
+  background:#060606;color:#EEEEEE;font-size:1.1rem;cursor:pointer;
+  transition:all .25s;text-align:center;font-family:'Inter',system-ui,sans-serif;
+  font-weight:500;
+}
+.yesno-btn:hover{border-color:#D1A84B;background:rgba(209,168,75,.05)}
+.yesno-btn.selected{border-color:#D1A84B;background:rgba(209,168,75,.12);color:#D1A84B;font-weight:600}
+
+/* === SELECT OPTIONS === */
+.option-group{display:flex;flex-direction:column;gap:.625rem;margin-top:.5rem}
+.option-btn{
+  padding:1rem 1.25rem;border-radius:12px;border:1.5px solid #2D1F01;
+  background:#060606;color:#EEEEEE;font-size:1rem;cursor:pointer;
+  transition:all .25s;text-align:left;font-family:'Inter',system-ui,sans-serif;
+  display:flex;align-items:center;gap:.875rem;
+}
+.option-btn:hover{border-color:#D1A84B;background:rgba(209,168,75,.05)}
+.option-btn.selected{border-color:#D1A84B;background:rgba(209,168,75,.12);color:#D1A84B;font-weight:500}
+.option-dot{
+  width:20px;height:20px;border-radius:50%;border:2px solid #2D1F01;
+  flex-shrink:0;transition:all .25s;display:flex;align-items:center;justify-content:center;
+}
+.option-btn.selected .option-dot{border-color:#D1A84B;background:#D1A84B}
+.option-btn.selected .option-dot::after{content:'';width:7px;height:7px;border-radius:50%;background:#020202}
+
+/* === WORD COUNTER === */
+.word-counter{text-align:right;font-size:.8rem;color:#8F8F8F;margin-top:.5rem}
+.word-counter.over{color:#FB2C36}
+
+/* === BUTTONS === */
+.btn-next{
+  display:inline-flex;align-items:center;gap:.625rem;
+  background:#D1A84B;color:#020202;border:none;
+  padding:1rem 2.25rem;border-radius:12px;font-size:1rem;
+  font-weight:700;cursor:pointer;transition:all .25s;
+  letter-spacing:.05em;text-transform:uppercase;
+  font-family:'Inter',system-ui,sans-serif;margin-top:1.75rem;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-next:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-next:active{transform:scale(.97)}
+.btn-next:disabled{opacity:.4;cursor:not-allowed;transform:none;filter:none}
+.btn-next svg{width:18px;height:18px}
+
+.btn-back{
+  position:fixed;bottom:1.5rem;left:1.5rem;z-index:50;
+  background:rgba(6,6,6,.9);border:1.5px solid #2D1F01;color:#8F8F8F;
+  width:48px;height:48px;border-radius:50%;cursor:pointer;
+  display:none;align-items:center;justify-content:center;
+  transition:all .25s;backdrop-filter:blur(8px);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-back:hover{border-color:#D1A84B;color:#D1A84B}
+.btn-back svg{width:18px;height:18px}
+
+/* === KEYBOARD HINT === */
+.key-hint{
+  margin-top:1.25rem;font-size:.75rem;color:#666;
+  display:flex;align-items:center;gap:.4rem;
+}
+.key-hint kbd{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#121212;border:1px solid #2D1F01;border-radius:4px;
+  padding:2px 7px;font-size:.7rem;font-family:'Inter',system-ui,sans-serif;color:#CECECE;
+}
+
+/* === VALIDATION ERROR === */
+.field-error{
+  color:#FB2C36;font-size:.8rem;margin-top:.5rem;
+  opacity:0;transition:opacity .25s;height:0;overflow:hidden;
+}
+.field-error.visible{opacity:1;height:auto}
+
+/* === WELCOME === */
+.slide[data-type="welcome"]{
+  justify-content:flex-start;padding-top:2.5rem;padding-bottom:2rem;
+}
+.welcome-split{
+  display:flex;flex-direction:column;align-items:center;
+  width:100%;max-width:1100px;gap:1.5rem;
+}
+.welcome-content{flex:1;text-align:left}
+.brand-logo{display:none}
+.resume-overlay{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(2,2,2,.92);
+  display:flex;align-items:center;justify-content:center;
+  padding:1.5rem;
+}
+.resume-box{
+  background:#1A1A1A;border:1px solid #333;border-radius:16px;
+  padding:2rem;max-width:380px;width:100%;text-align:center;
+}
+.resume-box h3{font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;margin-bottom:.75rem}
+.resume-box p{color:#AAAAAA;font-size:.9rem;line-height:1.6;margin-bottom:1.5rem}
+.resume-btns{display:flex;flex-direction:column;gap:.75rem}
+.resume-btn{
+  padding:.9rem 1.5rem;border-radius:10px;border:none;
+  font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;
+  transition:opacity .2s;
+}
+.resume-btn:hover{opacity:.85}
+.resume-btn--continue{background:#D1A84B;color:#020202}
+.resume-btn--restart{background:transparent;color:#AAAAAA;border:1px solid #444}
+.welcome-logo{width:60px;height:auto;margin-bottom:1rem;opacity:.9}
+.welcome-title{
+  font-family:'Playfair Display',Georgia,serif;font-size:2rem;line-height:1.2;
+  margin-bottom:.75rem;
+}
+.welcome-desc{color:#CECECE;font-size:.95rem;line-height:1.7;margin-bottom:1rem}
+.welcome-bullets{list-style:none;padding:0;margin:0 0 1rem 0}
+.welcome-bullets li{
+  color:#CECECE;font-size:.95rem;line-height:1.5;
+  padding:.3rem 0 .3rem 1.5rem;position:relative;
+}
+.welcome-bullets li::before{
+  content:'';position:absolute;left:0;top:.7rem;
+  width:7px;height:7px;border-radius:50%;background:#D1A84B;
+}
+.welcome-ig{
+  display:inline-flex;align-items:center;gap:.5rem;
+  color:#D1A84B;text-decoration:none;font-size:.9rem;
+  margin-bottom:1rem;transition:opacity .2s;
+}
+.welcome-ig:hover{opacity:.8}
+.welcome-time{color:#8F8F8F;font-size:.8rem;margin-bottom:1.25rem;display:block}
+
+/* === THANK YOU === */
+.thank-check{
+  width:72px;height:72px;border-radius:50%;background:rgba(209,168,75,.12);
+  border:2px solid #D1A84B;display:flex;align-items:center;justify-content:center;
+}
+.thank-check svg{width:32px;height:32px}
+.thank-title{font-family:'Playfair Display',Georgia,serif;font-size:2rem;margin-bottom:1rem}
+.thank-desc{color:#CECECE;font-size:1.05rem;line-height:1.8}
+
+/* === SYRA BRANDING === */
+.syra-top{
+  position:fixed;top:12px;right:16px;z-index:90;
+  display:flex;align-items:center;gap:6px;
+  opacity:.45;transition:opacity .25s;
+}
+.syra-top:hover{opacity:.7}
+.syra-top img{width:20px;height:20px;border-radius:4px}
+.syra-top span{font-size:.65rem;color:#8F8F8F;letter-spacing:.05em;font-weight:500}
+
+/* === INFO SLIDE (Dia a Dia) === */
+.info-slide .slide-inner{max-width:640px}
+.info-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:56px;height:56px;border-radius:50%;border:2px solid #D1A84B;
+  color:#D1A84B;font-size:1.5rem;margin-bottom:1.25rem;
+}
+.info-title{
+  font-family:'Playfair Display',Georgia,serif;font-size:2rem;color:#EEEEEE;
+  margin-bottom:.5rem;line-height:1.25;
+}
+.info-subtitle{color:#8F8F8F;font-size:.95rem;line-height:1.6;margin-bottom:1.75rem}
+.info-block{
+  background:#060606;border:1px solid #2D1F01;border-radius:14px;
+  padding:1.25rem 1.5rem;margin-bottom:1rem;
+}
+.info-block-header{
+  display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;
+}
+.info-block-icon{font-size:1.25rem;flex-shrink:0}
+.info-block-title{
+  font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;
+  color:#D1A84B;font-weight:600;
+}
+.info-block ul{list-style:none;padding:0;margin:0}
+.info-block li{
+  color:#CECECE;font-size:.9rem;line-height:1.6;
+  padding:.3rem 0 .3rem 1.25rem;position:relative;
+}
+.info-block li::before{
+  content:'';position:absolute;left:0;top:.65rem;
+  width:6px;height:6px;border-radius:50%;background:#D1A84B;opacity:.6;
+}
+.info-modality{
+  display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem;margin-bottom:.5rem;
+}
+.info-tag{
+  background:rgba(209,168,75,.08);border:1px solid rgba(209,168,75,.25);
+  border-radius:8px;padding:.5rem 1rem;color:#D1A84B;font-size:.85rem;
+  font-weight:500;display:flex;align-items:center;gap:.5rem;
+}
+.info-tag-icon{font-size:.95rem}
+
+/* === MOBILE RESPONSIVE === */
+@media(max-width:480px){
+  .slide{padding:1.75rem 1.25rem;padding-bottom:5.5rem}
+  .slide[data-type="welcome"]{padding:1.5rem 1.25rem 1.5rem}
+  .slide[data-type="info"]{padding:1.5rem 1.25rem 5.5rem}
+  .syra-top{top:8px;right:12px}
+  .syra-top img{width:16px;height:16px}
+  .syra-top span{font-size:.6rem}
+  .syra-footer img{width:14px;height:14px}
+  .syra-footer span{font-size:.55rem}
+  .q-label{font-size:1.35rem}
+  .q-scenario{padding:1rem;font-size:.95rem}
+  .section-title{font-size:1.75rem}
+  .info-title{font-size:1.6rem}
+  .info-block{padding:1rem 1.15rem}
+  .info-block-title{font-size:1.05rem}
+  .info-block li{font-size:.85rem}
+  .info-modality{gap:.5rem}
+  .info-tag{font-size:.8rem;padding:.4rem .75rem}
+  .welcome-split{text-align:center;gap:1rem}
+  .welcome-content{text-align:center}
+  .welcome-logo{width:50px;margin-bottom:.75rem}
+  .welcome-title{font-size:1.6rem}
+  .welcome-desc{font-size:.9rem;margin-bottom:.75rem}
+  .welcome-bullets{margin-bottom:.75rem}
+  .welcome-bullets li{text-align:left;font-size:.9rem;padding:.25rem 0 .25rem 1.25rem}
+  .welcome-bullets li::before{top:.6rem;width:6px;height:6px}
+  .welcome-ig{font-size:.85rem;margin-bottom:.75rem}
+  .welcome-time{font-size:.78rem;margin-bottom:1rem}
+  .btn-next{width:100%;justify-content:center;padding:1.1rem}
+  input[type="text"],input[type="email"],input[type="tel"],
+  input[type="url"],input[type="date"],textarea,select{
+    font-size:1rem;padding:.9rem 1rem;
+  }
+  .option-btn{padding:.9rem 1rem;font-size:.95rem}
+  .yesno-btn{padding:1.1rem;font-size:1.05rem}
+  .range-value{font-size:3rem}
+  .key-hint{display:none}
+}
+@media(min-width:481px) and (max-width:768px){
+  .slide{padding:2.5rem 2rem;padding-bottom:5rem}
+  .slide[data-type="welcome"]{padding:2rem 2rem 2rem}
+  .q-label{font-size:1.6rem}
+  .welcome-split{gap:1.5rem}
+  .welcome-title{font-size:2.25rem}
+  .welcome-desc{font-size:1rem}
+  .btn-next{min-width:200px}
+}
+@media(min-width:769px){
+  .slide{padding:3rem 2rem}
+  .slide[data-type="welcome"]{padding:3rem 4rem;justify-content:center}
+  .q-label{font-size:1.75rem}
+  .welcome-split{
+    flex-direction:row;align-items:center;gap:4rem;
+  }
+  .welcome-content{flex:1}
+  .welcome-logo{width:72px;margin-bottom:1.25rem}
+  .welcome-title{font-size:2.75rem;margin-bottom:1rem}
+  .welcome-desc{font-size:1.1rem;margin-bottom:1.5rem}
+  .welcome-bullets li{font-size:1.05rem}
+  .section-title{font-size:2.25rem}
+  .q-scenario{font-size:1.05rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Brand Logo -->
+<img src="/logo-cleugo-nobg.png" alt="Dr. Cleugo Porto" class="brand-logo">
+
+<!-- Syra Digital Branding -->
+<div class="syra-top"><img src="/logo-syra.png" alt="Syra Digital"><span>SYRA DIGITAL</span></div>
+
+<!-- Progress Bar -->
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- Back Button -->
+<button class="btn-back" id="btnBack" aria-label="Voltar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+</button>
+
+<!-- Resume Modal -->
+<div class="resume-overlay" id="resumeOverlay" style="display:none">
+  <div class="resume-box">
+    <h3>Bem-vindo(a) de volta!</h3>
+    <p>Voc&#234; j&#225; come&#231;ou a preencher este formul&#225;rio. Deseja continuar de onde parou ou come&#231;ar do zero?</p>
+    <div class="resume-btns">
+      <button class="resume-btn resume-btn--continue" id="btnResume">Continuar de onde parei</button>
+      <button class="resume-btn resume-btn--restart" id="btnRestart">Come&#231;ar do zero</button>
+    </div>
+  </div>
+</div>
+
+<div class="form-container" id="formContainer">
+
+  <!-- ===== SLIDE 0: WELCOME ===== -->
+  <div class="slide active" data-slide="0" data-type="welcome">
+    <div class="welcome-split">
+      <div class="welcome-content">
+        <img src="/logo-cleugo-nobg.png" alt="Dr. Cleugo Porto" class="welcome-logo">
+        <h1 class="welcome-title">Processo Seletivo</h1>
+        <p class="welcome-desc" style="margin-bottom:.75rem">
+          <strong style="color:#D1A84B;font-size:1.2em">SDR ou Social Seller</strong>
+        </p>
+        <p class="welcome-desc">
+          O <strong>Dr. Cleugo Porto</strong> &#233; m&#233;dico especialista em <strong style="color:#D1A84B">celulite, lipedema e medicina integrativa</strong>, refer&#234;ncia nacional no tratamento dessas condi&#231;&#245;es.
+        </p>
+        <p class="welcome-desc">
+          Estamos contratando um(a) profissional de vendas para atuar no <strong>atendimento e prospec&#231;&#227;o de pacientes</strong> via Instagram e WhatsApp &#8212; agendando consultas, respondendo d&#250;vidas e acompanhando cada pessoa do primeiro contato at&#233; o agendamento.
+        </p>
+        <p class="welcome-desc" style="margin-bottom:.75rem"><strong>O que buscamos:</strong></p>
+        <ul class="welcome-bullets">
+          <li>Empatia e comunica&#231;&#227;o impec&#225;vel</li>
+          <li>Perfil comercial com vontade de crescer</li>
+          <li>Identifica&#231;&#227;o com o universo da sa&#250;de e est&#233;tica</li>
+          <li>Conforto em conversar com desconhecidos por mensagem</li>
+        </ul>
+        <a href="https://instagram.com/drcleugo" target="_blank" class="welcome-ig">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D1A84B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#D1A84B" stroke="none"/></svg>
+          @drcleugo
+        </a>
+        <span class="welcome-time">O formul&#225;rio leva cerca de 10 minutos. Responda com calma e honestidade.</span>
+        <button class="btn-next" onclick="nextSlide()">
+          Come&#231;ar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+        <div class="key-hint"><kbd>Enter</kbd> para come&#231;ar</div>
+      </div>
+      <!-- logo moved to top-left corner -->
+    </div>
+  </div>
+
+  <!-- ===== SLIDE: DIA A DIA ===== -->
+  <div class="slide info-slide" data-slide="0.5" data-type="info">
+    <div class="slide-inner">
+      <div class="info-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h2 class="info-title">O que voc&#234; vai fazer no dia a dia</h2>
+      <p class="info-subtitle">Antes de come&#231;ar, conhe&#231;a a rotina real da vaga para saber se faz sentido para voc&#234;.</p>
+
+      <div class="info-block">
+        <ul>
+          <li>Atender leads que chegam pelo Instagram, WhatsApp e formul&#225;rios</li>
+          <li>Responder mensagens com agilidade &#8212; o ideal &#233; em at&#233; 5 minutos</li>
+          <li>Qualificar cada lead: entender o problema, interesse e momento de compra</li>
+          <li>Agendar consultas e avalia&#231;&#245;es na agenda do Dr. Cleugo</li>
+          <li>Fazer follow-up com quem n&#227;o respondeu (sequ&#234;ncias de 5 a 10 contatos)</li>
+          <li>Engajar nas redes sociais do m&#233;dico: coment&#225;rios, stories, DMs</li>
+          <li>Registrar todas as intera&#231;&#245;es no CRM</li>
+          <li>Manter comunica&#231;&#227;o emp&#225;tica e premium &#8212; o p&#250;blico &#233; feminino e high-ticket</li>
+          <li>D&#250;vidas t&#233;cnicas s&#227;o sempre encaminhadas ao doutor &#8212; voc&#234; n&#227;o precisa ser da &#225;rea m&#233;dica</li>
+        </ul>
+      </div>
+
+      <div class="info-modality">
+        <span class="info-tag"><span class="info-tag-icon">&#127968;</span> In&#237;cio remoto (home office)</span>
+        <span class="info-tag"><span class="info-tag-icon">&#128205;</span> Migra&#231;&#227;o presencial (Alphaville ou centro de SP) em 6-12 meses</span>
+        <span class="info-tag"><span class="info-tag-icon">&#128338;</span> Sem hor&#225;rio fixo &#8212; cobran&#231;a por performance</span>
+        <span class="info-tag"><span class="info-tag-icon">&#128188;</span> PJ &#8212; sal&#225;rio fixo + b&#244;nus de performance</span>
+      </div>
+
+      <button class="btn-next" onclick="nextSlide()" style="margin-top:1.5rem">
+        Entendi, vamos l&#225;
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+      <div class="key-hint"><kbd>Enter</kbd> para continuar</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 1 DIVIDER ===== -->
+  <div class="slide section-divider" data-slide="1" data-type="divider">
+    <div class="slide-inner">
+      <div class="section-number">1</div>
+      <h2 class="section-title">Dados Pessoais</h2>
+      <p class="section-subtitle">Precisamos conhecer voc&#234;. Seus dados est&#227;o protegidos.</p>
+      <button class="btn-next" onclick="nextSlide()" style="margin:1.75rem auto 0;display:inline-flex">Continuar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q1: Nome -->
+  <div class="slide" data-slide="2" data-type="text" data-field="nome" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 1 de 32</span>
+      <h2 class="q-label">Qual o seu nome completo?</h2>
+      <p class="q-sublabel">Como aparece no documento.</p>
+      <input type="text" id="f_nome" placeholder="Digite seu nome completo" autocomplete="name">
+      <div class="field-error" id="err_nome">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Enter</kbd> para continuar</div>
+    </div>
+  </div>
+
+  <!-- Q2: Email -->
+  <div class="slide" data-slide="3" data-type="email" data-field="email" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 2 de 32</span>
+      <h2 class="q-label">Qual o seu e-mail?</h2>
+      <p class="q-sublabel">Enviaremos atualiza&#231;&#245;es por aqui.</p>
+      <input type="email" id="f_email" placeholder="seu@email.com" autocomplete="email">
+      <div class="field-error" id="err_email">Insira um e-mail v&#225;lido</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Enter</kbd> para continuar</div>
+    </div>
+  </div>
+
+  <!-- Q3: WhatsApp -->
+  <div class="slide" data-slide="4" data-type="tel" data-field="whatsapp" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 3 de 32</span>
+      <h2 class="q-label">Qual o seu WhatsApp?</h2>
+      <p class="q-sublabel">Com DDD. Exemplo: (11) 99999-0000</p>
+      <input type="tel" id="f_whatsapp" placeholder="(11) 99999-0000" autocomplete="tel">
+      <div class="field-error" id="err_whatsapp">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Enter</kbd> para continuar</div>
+    </div>
+  </div>
+
+  <!-- Q4: Cidade -->
+  <div class="slide" data-slide="5" data-type="text" data-field="cidade" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 4 de 32</span>
+      <h2 class="q-label">Qual sua cidade e estado?</h2>
+      <p class="q-sublabel">Exemplo: S&#227;o Paulo - SP</p>
+      <input type="text" id="f_cidade" placeholder="Cidade - UF">
+      <div class="field-error" id="err_cidade">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Enter</kbd> para continuar</div>
+    </div>
+  </div>
+
+  <!-- Q5: Nascimento -->
+  <div class="slide" data-slide="6" data-type="date" data-field="nascimento" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 5 de 32</span>
+      <h2 class="q-label">Qual a sua data de nascimento?</h2>
+      <input type="date" id="f_nascimento">
+      <div class="field-error" id="err_nascimento">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Enter</kbd> para continuar</div>
+    </div>
+  </div>
+
+  <!-- Q6: LinkedIn -->
+  <div class="slide" data-slide="7" data-type="url" data-field="linkedin">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 6 de 32</span>
+      <h2 class="q-label">Tem LinkedIn?</h2>
+      <p class="q-sublabel">Opcional. Cole o link do seu perfil.</p>
+      <input type="url" id="f_linkedin" placeholder="https://linkedin.com/in/seu-perfil">
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Enter</kbd> para pular ou continuar</div>
+    </div>
+  </div>
+
+  <!-- Q7: Instagram -->
+  <div class="slide" data-slide="8" data-type="text" data-field="instagram">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 7 de 32</span>
+      <h2 class="q-label">Qual o seu Instagram pessoal?</h2>
+      <p class="q-sublabel">Opcional. Apenas o @.</p>
+      <input type="text" id="f_instagram" placeholder="@seuinstagram">
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Enter</kbd> para pular ou continuar</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 2 DIVIDER ===== -->
+  <div class="slide section-divider" data-slide="9" data-type="divider">
+    <div class="slide-inner">
+      <div class="section-number">2</div>
+      <h2 class="section-title">Experi&#234;ncia</h2>
+      <p class="section-subtitle">Conte sobre seu background profissional.</p>
+      <button class="btn-next" onclick="nextSlide()" style="margin:1.75rem auto 0;display:inline-flex">Continuar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="slide" data-slide="10" data-type="yesno" data-field="exp_vendas" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 8 de 32</span>
+      <h2 class="q-label">Voc&#234; j&#225; trabalhou com vendas ou atendimento comercial?</h2>
+      <div class="yesno-group">
+        <button class="yesno-btn" data-value="Sim" onclick="selectYesNo(this)">Sim</button>
+        <button class="yesno-btn" data-value="N&#227;o" onclick="selectYesNo(this)">N&#227;o</button>
+      </div>
+      <div class="field-error" id="err_exp_vendas">Selecione uma op&#231;&#227;o</div>
+    </div>
+  </div>
+
+  <!-- Q9 (condicional) -->
+  <div class="slide" data-slide="11" data-type="textarea" data-field="exp_vendas_desc" data-conditional="exp_vendas:Sim">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 9 de 32</span>
+      <h2 class="q-label">Descreva brevemente sua experi&#234;ncia com vendas.</h2>
+      <p class="q-sublabel">Onde trabalhou, por quanto tempo, que tipo de venda.</p>
+      <textarea id="f_exp_vendas_desc" placeholder="Conte sua experi&#234;ncia..."></textarea>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha &#124; <kbd>Enter</kbd> continuar</div>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="slide" data-slide="12" data-type="yesno" data-field="exp_saude" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 10 de 32</span>
+      <h2 class="q-label">J&#225; trabalhou no segmento de sa&#250;de, medicina ou est&#233;tica?</h2>
+      <div class="yesno-group">
+        <button class="yesno-btn" data-value="Sim" onclick="selectYesNo(this)">Sim</button>
+        <button class="yesno-btn" data-value="N&#227;o" onclick="selectYesNo(this)">N&#227;o</button>
+      </div>
+      <div class="field-error" id="err_exp_saude">Selecione uma op&#231;&#227;o</div>
+    </div>
+  </div>
+
+  <!-- Q11 (condicional) -->
+  <div class="slide" data-slide="13" data-type="textarea" data-field="exp_saude_desc" data-conditional="exp_saude:Sim">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 11 de 32</span>
+      <h2 class="q-label">Em qual fun&#231;&#227;o e por quanto tempo?</h2>
+      <p class="q-sublabel">&#193;rea, cargo e dura&#231;&#227;o.</p>
+      <textarea id="f_exp_saude_desc" placeholder="Descreva sua experi&#234;ncia no segmento..."></textarea>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha &#124; <kbd>Enter</kbd> continuar</div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="slide" data-slide="14" data-type="text" data-field="crm_usado">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 12 de 32</span>
+      <h2 class="q-label">J&#225; usou algum CRM? Qual?</h2>
+      <p class="q-sublabel">Opcional. Exemplos: Pipedrive, HubSpot, RD Station...</p>
+      <input type="text" id="f_crm_usado" placeholder="Nome do CRM ou 'N&#227;o usei'">
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Enter</kbd> para continuar</div>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="slide" data-slide="15" data-type="range" data-field="familiaridade_social" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 13 de 32</span>
+      <h2 class="q-label">Qual sua familiaridade com Instagram e WhatsApp Business?</h2>
+      <div class="range-wrap">
+        <div class="range-value" id="rv_familiaridade_social">3</div>
+        <input type="range" id="f_familiaridade_social" min="1" max="5" value="3" oninput="updateRange(this)">
+        <div class="range-labels"><span>1 &#8212; B&#225;sico</span><span>5 &#8212; Expert</span></div>
+      </div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3 DIVIDER ===== -->
+  <div class="slide section-divider" data-slide="16" data-type="divider">
+    <div class="slide-inner">
+      <div class="section-number">3</div>
+      <h2 class="section-title">Perfil Comportamental</h2>
+      <p class="section-subtitle">Queremos entender como voc&#234; lida com situa&#231;&#245;es do dia a dia.</p>
+      <button class="btn-next" onclick="nextSlide()" style="margin:1.75rem auto 0;display:inline-flex">Continuar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="slide" data-slide="17" data-type="textarea" data-field="demora_responder" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 14 de 32</span>
+      <h2 class="q-label">Como voc&#234; lida com uma pessoa que demora para responder suas mensagens?</h2>
+      <textarea id="f_demora_responder" placeholder="Descreva sua abordagem..."></textarea>
+      <div class="field-error" id="err_demora_responder">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha &#124; <kbd>Enter</kbd> continuar</div>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="slide" data-slide="18" data-type="textarea" data-field="vou_pensar" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 15 de 32</span>
+      <h2 class="q-label">Uma potencial cliente disse &#8220;vou pensar&#8221; depois de voc&#234; apresentar o procedimento. O que voc&#234; faz?</h2>
+      <textarea id="f_vou_pensar" placeholder="Descreva sua rea&#231;&#227;o..."></textarea>
+      <div class="field-error" id="err_vou_pensar">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha &#124; <kbd>Enter</kbd> continuar</div>
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="slide" data-slide="19" data-type="textarea" data-field="paciencia" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 16 de 32</span>
+      <h2 class="q-label">Descreva uma situa&#231;&#227;o onde voc&#234; precisou ter muita paci&#234;ncia com algu&#233;m.</h2>
+      <textarea id="f_paciencia" placeholder="Conte uma experi&#234;ncia..."></textarea>
+      <div class="field-error" id="err_paciencia">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha &#124; <kbd>Enter</kbd> continuar</div>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="slide" data-slide="20" data-type="select" data-field="conforto_desconhecidos" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 17 de 32</span>
+      <h2 class="q-label">Como voc&#234; se sente conversando com pessoas que n&#227;o conhece?</h2>
+      <div class="option-group">
+        <button class="option-btn" data-value="Muito confort&#225;vel" onclick="selectOption(this)"><span class="option-dot"></span>Muito confort&#225;vel</button>
+        <button class="option-btn" data-value="Confort&#225;vel" onclick="selectOption(this)"><span class="option-dot"></span>Confort&#225;vel</button>
+        <button class="option-btn" data-value="Um pouco desconfort&#225;vel" onclick="selectOption(this)"><span class="option-dot"></span>Um pouco desconfort&#225;vel</button>
+        <button class="option-btn" data-value="Desconfort&#225;vel" onclick="selectOption(this)"><span class="option-dot"></span>Desconfort&#225;vel</button>
+      </div>
+      <div class="field-error" id="err_conforto_desconhecidos">Selecione uma op&#231;&#227;o</div>
+    </div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="slide" data-slide="21" data-type="select" data-field="perfil_social" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 18 de 32</span>
+      <h2 class="q-label">Voc&#234; se considera mais extrovertida ou introvertida?</h2>
+      <div class="option-group">
+        <button class="option-btn" data-value="Extrovertida" onclick="selectOption(this)"><span class="option-dot"></span>Extrovertida</button>
+        <button class="option-btn" data-value="Mais para extrovertida" onclick="selectOption(this)"><span class="option-dot"></span>Mais para extrovertida</button>
+        <button class="option-btn" data-value="Equil&#237;brio" onclick="selectOption(this)"><span class="option-dot"></span>Equil&#237;brio entre os dois</button>
+        <button class="option-btn" data-value="Mais para introvertida" onclick="selectOption(this)"><span class="option-dot"></span>Mais para introvertida</button>
+        <button class="option-btn" data-value="Introvertida" onclick="selectOption(this)"><span class="option-dot"></span>Introvertida</button>
+      </div>
+      <div class="field-error" id="err_perfil_social">Selecione uma op&#231;&#227;o</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4 DIVIDER ===== -->
+  <div class="slide section-divider" data-slide="22" data-type="divider">
+    <div class="slide-inner">
+      <div class="section-number">4</div>
+      <h2 class="section-title">Cen&#225;rios Pr&#225;ticos</h2>
+      <p class="section-subtitle">Situa&#231;&#245;es reais do dia a dia. Responda como se fosse de verdade.</p>
+      <button class="btn-next" onclick="nextSlide()" style="margin:1.75rem auto 0;display:inline-flex">Continuar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q19 -->
+  <div class="slide" data-slide="23" data-type="textarea" data-field="cenario_1" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 19 de 32 &#8212; Cen&#225;rio 1</span>
+      <h2 class="q-label">Primeiro Contato</h2>
+      <div class="q-scenario">Uma mulher de 38 anos preencheu um formul&#225;rio dizendo que tem celulite grau 3 e que &#8220;j&#225; tentou de tudo&#8221;. Como voc&#234; inicia a conversa com ela pelo WhatsApp?</div>
+      <textarea id="f_cenario_1" placeholder="Escreva a mensagem que voc&#234; enviaria..."></textarea>
+      <div class="field-error" id="err_cenario_1">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha &#124; <kbd>Enter</kbd> continuar</div>
+    </div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="slide" data-slide="24" data-type="textarea" data-field="cenario_2" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 20 de 32 &#8212; Cen&#225;rio 2</span>
+      <h2 class="q-label">Obje&#231;&#227;o de Pre&#231;o</h2>
+      <div class="q-scenario">Uma potencial cliente perguntou o valor do procedimento. Depois que voc&#234; informou, ela disse: &#8220;Nossa, achei caro. Vou pesquisar mais.&#8221; O que voc&#234; responde?</div>
+      <textarea id="f_cenario_2" placeholder="Escreva sua resposta..."></textarea>
+      <div class="field-error" id="err_cenario_2">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha &#124; <kbd>Enter</kbd> continuar</div>
+    </div>
+  </div>
+
+  <!-- Q22 -->
+  <div class="slide" data-slide="26" data-type="textarea" data-field="cenario_4" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 21 de 32 &#8212; Cen&#225;rio 3</span>
+      <h2 class="q-label">Urg&#234;ncia Emocional</h2>
+      <div class="q-scenario">Uma mulher manda mensagem dizendo que est&#225; muito incomodada com a apar&#234;ncia das pernas e que &#8220;n&#227;o aguenta mais&#8221;. Ela est&#225; visivelmente emocionada. Como voc&#234; conduz essa conversa?</div>
+      <textarea id="f_cenario_4" placeholder="Escreva como voc&#234; conduziria..."></textarea>
+      <div class="field-error" id="err_cenario_4">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha &#124; <kbd>Enter</kbd> continuar</div>
+    </div>
+  </div>
+
+  <!-- Q23 -->
+  <div class="slide" data-slide="27" data-type="textarea" data-field="cenario_5" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 22 de 32 &#8212; Cen&#225;rio 4</span>
+      <h2 class="q-label">Pergunta T&#233;cnica</h2>
+      <div class="q-scenario">Uma potencial cliente pergunta: &#8220;Esse procedimento d&#243;i? E se a celulite voltar?&#8221; Voc&#234; n&#227;o &#233; m&#233;dico(a). O que voc&#234; responde?</div>
+      <textarea id="f_cenario_5" placeholder="Escreva sua resposta..."></textarea>
+      <div class="field-error" id="err_cenario_5">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha &#124; <kbd>Enter</kbd> continuar</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5 DIVIDER ===== -->
+  <div class="slide section-divider" data-slide="28" data-type="divider">
+    <div class="slide-inner">
+      <div class="section-number">5</div>
+      <h2 class="section-title">Disponibilidade</h2>
+      <p class="section-subtitle">Log&#237;stica e disponibilidade para a vaga.</p>
+      <button class="btn-next" onclick="nextSlide()" style="margin:1.75rem auto 0;display:inline-flex">Continuar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q24 -->
+  <div class="slide" data-slide="29" data-type="yesno" data-field="horario_comercial" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 23 de 32</span>
+      <h2 class="q-label">Voc&#234; tem disponibilidade para trabalhar em hor&#225;rios comerciais? N&#227;o h&#225; hor&#225;rio fixo, mas a cobran&#231;a &#233; por performance.</h2>
+      <div class="yesno-group">
+        <button class="yesno-btn" data-value="Sim" onclick="selectYesNo(this)">Sim</button>
+        <button class="yesno-btn" data-value="N&#227;o" onclick="selectYesNo(this)">N&#227;o</button>
+      </div>
+      <div class="field-error" id="err_horario_comercial">Selecione uma op&#231;&#227;o</div>
+    </div>
+  </div>
+
+  <!-- Q25 -->
+  <div class="slide" data-slide="30" data-type="select" data-field="mudar_sp" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 24 de 32</span>
+      <h2 class="q-label">Estaria disposto(a) a migrar para trabalho presencial em Alphaville ou centro de S&#227;o Paulo dentro de 6 meses a 1 ano?</h2>
+      <div class="option-group">
+        <button class="option-btn" data-value="Sim, sem problemas" onclick="selectOption(this)"><span class="option-dot"></span>Sim, sem problemas</button>
+        <button class="option-btn" data-value="Sim, dependendo das condi&#231;&#245;es" onclick="selectOption(this)"><span class="option-dot"></span>Sim, dependendo das condi&#231;&#245;es</button>
+        <button class="option-btn" data-value="N&#227;o tenho certeza" onclick="selectOption(this)"><span class="option-dot"></span>N&#227;o tenho certeza</button>
+        <button class="option-btn" data-value="N&#227;o" onclick="selectOption(this)"><span class="option-dot"></span>N&#227;o</button>
+      </div>
+      <div class="field-error" id="err_mudar_sp">Selecione uma op&#231;&#227;o</div>
+    </div>
+  </div>
+
+  <!-- Q26 -->
+  <div class="slide" data-slide="31" data-type="yesno" data-field="computador_internet" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 25 de 32</span>
+      <h2 class="q-label">Voc&#234; tem computador pr&#243;prio e internet est&#225;vel para trabalho remoto?</h2>
+      <div class="yesno-group">
+        <button class="yesno-btn" data-value="Sim" onclick="selectYesNo(this)">Sim</button>
+        <button class="yesno-btn" data-value="N&#227;o" onclick="selectYesNo(this)">N&#227;o</button>
+      </div>
+      <div class="field-error" id="err_computador_internet">Selecione uma op&#231;&#227;o</div>
+    </div>
+  </div>
+
+  <!-- Q27 -->
+  <div class="slide" data-slide="32" data-type="text" data-field="pretensao_salarial" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 26 de 32</span>
+      <h2 class="q-label">Qual sua pretens&#227;o salarial?</h2>
+      <p class="q-sublabel">Contrato PJ. Descreva livremente sua expectativa (fixo + b&#244;nus).</p>
+      <input type="text" id="f_pretensao_salarial" placeholder="Digite sua pretens&#227;o salarial">
+      <div class="field-error" id="err_pretensao_salarial">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      <div class="key-hint"><kbd>Enter</kbd> para continuar</div>
+    </div>
+  </div>
+
+  <!-- Q28 -->
+  <div class="slide" data-slide="33" data-type="select" data-field="quando_comecar" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 27 de 32</span>
+      <h2 class="q-label">Quando poderia come&#231;ar?</h2>
+      <div class="option-group">
+        <button class="option-btn" data-value="Imediatamente" onclick="selectOption(this)"><span class="option-dot"></span>Imediatamente</button>
+        <button class="option-btn" data-value="Em 1 semana" onclick="selectOption(this)"><span class="option-dot"></span>Em 1 semana</button>
+        <button class="option-btn" data-value="Em 2 semanas" onclick="selectOption(this)"><span class="option-dot"></span>Em 2 semanas</button>
+        <button class="option-btn" data-value="Em 1 m&#234;s" onclick="selectOption(this)"><span class="option-dot"></span>Em 1 m&#234;s</button>
+      </div>
+      <div class="field-error" id="err_quando_comecar">Selecione uma op&#231;&#227;o</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6 DIVIDER ===== -->
+  <div class="slide section-divider" data-slide="34" data-type="divider">
+    <div class="slide-inner">
+      <div class="section-number">6</div>
+      <h2 class="section-title">Autoavalia&#231;&#227;o</h2>
+      <p class="section-subtitle">Seja honesto(a). N&#227;o existe resposta certa.</p>
+      <button class="btn-next" onclick="nextSlide()" style="margin:1.75rem auto 0;display:inline-flex">Continuar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q29 -->
+  <div class="slide" data-slide="35" data-type="range" data-field="auto_comunicacao_escrita" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 28 de 32</span>
+      <h2 class="q-label">De 1 a 10, qual sua habilidade de comunica&#231;&#227;o escrita?</h2>
+      <div class="range-wrap">
+        <div class="range-value" id="rv_auto_comunicacao_escrita">5</div>
+        <input type="range" id="f_auto_comunicacao_escrita" min="1" max="10" value="5" oninput="updateRange(this)">
+        <div class="range-labels"><span>1 &#8212; B&#225;sico</span><span>10 &#8212; Excelente</span></div>
+      </div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q30 -->
+  <div class="slide" data-slide="36" data-type="range" data-field="auto_comunicacao_verbal" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 29 de 32</span>
+      <h2 class="q-label">De 1 a 10, qual sua habilidade de comunica&#231;&#227;o verbal?</h2>
+      <div class="range-wrap">
+        <div class="range-value" id="rv_auto_comunicacao_verbal">5</div>
+        <input type="range" id="f_auto_comunicacao_verbal" min="1" max="10" value="5" oninput="updateRange(this)">
+        <div class="range-labels"><span>1 &#8212; B&#225;sico</span><span>10 &#8212; Excelente</span></div>
+      </div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q31 -->
+  <div class="slide" data-slide="37" data-type="range" data-field="auto_organizacao" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 30 de 32</span>
+      <h2 class="q-label">De 1 a 10, qual seu n&#237;vel de organiza&#231;&#227;o?</h2>
+      <div class="range-wrap">
+        <div class="range-value" id="rv_auto_organizacao">5</div>
+        <input type="range" id="f_auto_organizacao" min="1" max="10" value="5" oninput="updateRange(this)">
+        <div class="range-labels"><span>1 &#8212; B&#225;sico</span><span>10 &#8212; Excelente</span></div>
+      </div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q32 -->
+  <div class="slide" data-slide="38" data-type="range" data-field="auto_rejeicao" data-required="true">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 31 de 32</span>
+      <h2 class="q-label">De 1 a 10, qual sua capacidade de lidar com rejei&#231;&#227;o?</h2>
+      <div class="range-wrap">
+        <div class="range-value" id="rv_auto_rejeicao">5</div>
+        <input type="range" id="f_auto_rejeicao" min="1" max="10" value="5" oninput="updateRange(this)">
+        <div class="range-labels"><span>1 &#8212; Dif&#237;cil</span><span>10 &#8212; Lido muito bem</span></div>
+      </div>
+      <button class="btn-next" onclick="nextSlide()">OK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Q33 -->
+  <div class="slide" data-slide="39" data-type="textarea" data-field="porque_vaga" data-required="true" data-maxwords="200">
+    <div class="slide-inner">
+      <span class="q-number">Pergunta 32 de 32</span>
+      <h2 class="q-label">Por que voc&#234; quer essa vaga?</h2>
+      <p class="q-sublabel">M&#225;ximo 200 palavras.</p>
+      <textarea id="f_porque_vaga" placeholder="Escreva sua motiva&#231;&#227;o..." oninput="updateWordCount(this, 200)"></textarea>
+      <div class="word-counter" id="wc_porque_vaga">0 / 200 palavras</div>
+      <div class="field-error" id="err_porque_vaga">Campo obrigat&#243;rio</div>
+      <button class="btn-next" onclick="submitForm()" id="btnSubmit">
+        Enviar Formul&#225;rio
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+      <div class="key-hint"><kbd>Shift</kbd>+<kbd>Enter</kbd> nova linha</div>
+    </div>
+  </div>
+
+  <!-- ===== THANK YOU ===== -->
+  <div class="slide" data-slide="40" data-type="thankyou">
+    <div class="slide-inner" style="text-align:center">
+      <div class="thank-check" style="margin:0 auto 1.5rem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#D1A84B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2 class="thank-title">Formul&#225;rio Enviado!</h2>
+      <p class="thank-desc">
+        Obrigado por se candidatar &#224; vaga de <strong style="color:#D1A84B">SDR ou Social Seller</strong> do Dr. Cleugo Porto.<br><br>
+        Analisaremos suas respostas com cuidado e entraremos em contato pelo <strong>WhatsApp</strong> informado.<br><br>
+        <span style="color:#8F8F8F;font-size:.85rem">Boa sorte!</span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var STORAGE_KEY = 'sdr_cleugo_progress';
+  var saved = null;
+  try { saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY)); } catch(e) {}
+
+  var formData = (saved && saved.formData) ? saved.formData : {};
+  var currentSlide = 0;
+  var slideHistory = [0];
+
+  // Session ID for partial saves
+  if (!formData._session_id) {
+    formData._session_id = Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  }
+  var allSlides = document.querySelectorAll('.slide');
+  var totalQuestions = 33;
+  var progressFill = document.getElementById('progressFill');
+  var btnBack = document.getElementById('btnBack');
+
+  function saveProgress() {
+    try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ formData: formData, slide: currentSlide, history: slideHistory })); } catch(e) {}
+  }
+
+  var _saveTimer = null;
+  function partialSave() {
+    clearTimeout(_saveTimer);
+    _saveTimer = setTimeout(function() {
+      var field = allSlides[currentSlide] ? allSlides[currentSlide].getAttribute('data-field') : '';
+      var payload = Object.assign({}, formData, { _last_field: field || '' });
+      fetch('/api/form/sdr-cleugo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(function() {});
+    }, 500);
+  }
+
+  function getVisibleSlides() {
+    var visible = [];
+    for (var i = 0; i < allSlides.length; i++) {
+      var cond = allSlides[i].getAttribute('data-conditional');
+      if (cond) {
+        var parts = cond.split(':');
+        if (formData[parts[0]] !== parts[1]) continue;
+      }
+      visible.push(i);
+    }
+    return visible;
+  }
+
+  function getNextVisibleSlide(fromIdx) {
+    var visible = getVisibleSlides();
+    for (var i = 0; i < visible.length; i++) {
+      if (visible[i] > fromIdx) return visible[i];
+    }
+    return null;
+  }
+
+  function updateProgress() {
+    var type = allSlides[currentSlide].getAttribute('data-type');
+    if (type === 'welcome') { progressFill.style.width = '0%'; return; }
+    if (type === 'thankyou') { progressFill.style.width = '100%'; return; }
+    var qCount = 0, visible = getVisibleSlides();
+    for (var i = 0; i < visible.length; i++) {
+      if (visible[i] > currentSlide) break;
+      if (allSlides[visible[i]].getAttribute('data-field')) qCount++;
+    }
+    progressFill.style.width = Math.min(100, Math.round((qCount / totalQuestions) * 100)) + '%';
+  }
+
+  function validateSlide(idx) {
+    var slide = allSlides[idx];
+    var field = slide.getAttribute('data-field');
+    var required = slide.getAttribute('data-required') === 'true';
+    var type = slide.getAttribute('data-type');
+    if (!field || !required) return true;
+    var errEl = document.getElementById('err_' + field);
+
+    if (type === 'yesno' || type === 'select') {
+      if (!formData[field]) { if (errEl) errEl.classList.add('visible'); return false; }
+      if (errEl) errEl.classList.remove('visible');
+      return true;
+    }
+    if (type === 'range') {
+      var r = document.getElementById('f_' + field);
+      if (r) formData[field] = r.value;
+      return true;
+    }
+    var input = document.getElementById('f_' + field);
+    if (!input) return true;
+    var val = input.value.trim();
+    if (type === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { if (errEl) errEl.classList.add('visible'); return false; }
+    } else {
+      if (!val) { if (errEl) errEl.classList.add('visible'); return false; }
+    }
+    if (errEl) errEl.classList.remove('visible');
+    formData[field] = val;
+    return true;
+  }
+
+  function collectValue(idx) {
+    var slide = allSlides[idx];
+    var field = slide.getAttribute('data-field');
+    var type = slide.getAttribute('data-type');
+    if (!field || type === 'yesno' || type === 'select') return;
+    if (type === 'range') {
+      var r = document.getElementById('f_' + field);
+      if (r) formData[field] = r.value;
+      return;
+    }
+    var input = document.getElementById('f_' + field);
+    if (input) formData[field] = input.value.trim();
+  }
+
+  function goToSlide(targetIdx) {
+    if (targetIdx === null || targetIdx === currentSlide) return;
+    var forward = targetIdx > currentSlide;
+    allSlides[currentSlide].classList.remove('active');
+    currentSlide = targetIdx;
+    allSlides[currentSlide].classList.add('active');
+    setTimeout(function() {
+      var inp = allSlides[currentSlide].querySelector('input:not([type="file"]),textarea');
+      if (inp) inp.focus();
+    }, 120);
+    updateProgress();
+    btnBack.style.display = (currentSlide > 0 && allSlides[currentSlide].getAttribute('data-type') !== 'thankyou') ? 'flex' : 'none';
+    if (forward) slideHistory.push(currentSlide);
+    saveProgress();
+    if (forward && allSlides[currentSlide].getAttribute('data-type') !== 'thankyou') partialSave();
+  }
+
+  window.nextSlide = function() {
+    collectValue(currentSlide);
+    if (!validateSlide(currentSlide)) return;
+    var next = getNextVisibleSlide(currentSlide);
+    if (next !== null) goToSlide(next);
+  };
+  window.prevSlide = function() {
+    if (slideHistory.length > 1) { slideHistory.pop(); goToSlide(slideHistory[slideHistory.length - 1]); }
+  };
+  btnBack.addEventListener('click', window.prevSlide);
+
+  window.selectYesNo = function(btn) {
+    var btns = btn.parentElement.querySelectorAll('.yesno-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.remove('selected');
+    btn.classList.add('selected');
+    var field = btn.closest('.slide').getAttribute('data-field');
+    formData[field] = btn.getAttribute('data-value');
+    var errEl = document.getElementById('err_' + field);
+    if (errEl) errEl.classList.remove('visible');
+    saveProgress();
+    setTimeout(window.nextSlide, 350);
+  };
+  window.selectOption = function(btn) {
+    var btns = btn.parentElement.querySelectorAll('.option-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.remove('selected');
+    btn.classList.add('selected');
+    var field = btn.closest('.slide').getAttribute('data-field');
+    formData[field] = btn.getAttribute('data-value');
+    var errEl = document.getElementById('err_' + field);
+    if (errEl) errEl.classList.remove('visible');
+    saveProgress();
+    setTimeout(window.nextSlide, 350);
+  };
+  window.updateRange = function(input) {
+    var field = input.id.replace('f_', '');
+    var d = document.getElementById('rv_' + field);
+    if (d) d.textContent = input.value;
+    formData[field] = input.value;
+  };
+  window.updateWordCount = function(textarea, max) {
+    var field = textarea.id.replace('f_', '');
+    var words = textarea.value.trim() ? textarea.value.trim().split(/\s+/).length : 0;
+    var c = document.getElementById('wc_' + field);
+    if (c) { c.textContent = words + ' / ' + max + ' palavras'; c.classList.toggle('over', words > max); }
+  };
+
+  function collectAllRanges() {
+    for (var i = 0; i < allSlides.length; i++) {
+      if (allSlides[i].getAttribute('data-type') === 'range') {
+        var f = allSlides[i].getAttribute('data-field');
+        var inp = document.getElementById('f_' + f);
+        if (inp && !formData[f]) formData[f] = inp.value;
+      }
+    }
+  }
+
+  window.submitForm = function() {
+    collectValue(currentSlide);
+    collectAllRanges();
+    var btn = document.getElementById('btnSubmit');
+    btn.disabled = true;
+    btn.innerHTML = 'Enviando...';
+    formData._submitted_at = new Date().toISOString();
+    formData._final = true;
+    formData._last_field = 'COMPLETO';
+
+    fetch('/api/form/sdr-cleugo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    }).catch(function() {});
+
+    try { sessionStorage.removeItem(STORAGE_KEY); } catch(e) {}
+    setTimeout(function() { goToSlide(allSlides.length - 1); }, 500);
+  };
+
+  document.addEventListener('keydown', function(e) {
+    var type = allSlides[currentSlide] ? allSlides[currentSlide].getAttribute('data-type') : '';
+    if (e.key === 'Enter') {
+      if (type === 'textarea') { if (!e.shiftKey) { e.preventDefault(); window.nextSlide(); } return; }
+      e.preventDefault();
+      if (type === 'yesno' || type === 'select') return;
+      if (currentSlide === allSlides.length - 2) window.submitForm();
+      else window.nextSlide();
+    }
+  });
+
+  var ph = document.getElementById('f_whatsapp');
+  if (ph) ph.addEventListener('input', function() {
+    var v = this.value.replace(/\D/g, '');
+    if (v.length > 11) v = v.slice(0, 11);
+    if (v.length > 6) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+    else if (v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+    else if (v.length > 0) v = '(' + v;
+    this.value = v;
+  });
+
+  function restoreDOMValues() {
+    for (var i = 0; i < allSlides.length; i++) {
+      var f = allSlides[i].getAttribute('data-field');
+      if (!f || !formData[f]) continue;
+      var t = allSlides[i].getAttribute('data-type');
+      if (t === 'yesno' || t === 'select') {
+        var btns = allSlides[i].querySelectorAll('[data-value]');
+        for (var b = 0; b < btns.length; b++) {
+          if (btns[b].getAttribute('data-value') === formData[f]) btns[b].classList.add('selected');
+        }
+      } else if (t === 'range') {
+        var ri = document.getElementById('f_' + f);
+        var rd = document.getElementById('rv_' + f);
+        if (ri) ri.value = formData[f];
+        if (rd) rd.textContent = formData[f];
+      } else {
+        var inp = document.getElementById('f_' + f);
+        if (inp) inp.value = formData[f];
+      }
+    }
+  }
+
+  // Show resume modal or start fresh
+  if (saved && saved.slide > 0) {
+    var overlay = document.getElementById('resumeOverlay');
+    overlay.style.display = 'flex';
+
+    document.getElementById('btnResume').addEventListener('click', function() {
+      overlay.style.display = 'none';
+      restoreDOMValues();
+      slideHistory = saved.history || [0];
+      goToSlide(saved.slide);
+    });
+
+    document.getElementById('btnRestart').addEventListener('click', function() {
+      overlay.style.display = 'none';
+      var sid = formData._session_id;
+      formData = { _session_id: sid };
+      slideHistory = [0];
+      currentSlide = 0;
+      saveProgress();
+    });
+  }
+
+  updateProgress();
+})();
+</script>
+</body>
+</html>

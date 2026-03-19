@@ -37,6 +37,7 @@ const whatsappDBTorre1 = require('./lib/whatsapp-db-torre1');
 const whatsappDBFourcred = require('./lib/whatsapp-db-fourcred');
 const whatsappDBProfHumberto = require('./lib/whatsapp-db-prof-humberto');
 const whatsappDBEricSantos = require('./lib/whatsapp-db-eric');
+const whatsappDBCleugo = require('./lib/whatsapp-db-cleugo');
 const instagramDBProspeccao = require('./lib/instagram-db-prospeccao');
 const accountAnalyzer = require('./lib/account-analyzer');
 const coldOutreach = require('./lib/cold-outreach');
@@ -298,6 +299,38 @@ function handleStevoWebhook(req, res) {
       // Salvar no banco correto
       let clientName = 'unknown';
       try {
+        // PRIORIDADE 1: Roteamento por grupo WhatsApp do cliente (JID do grupo)
+        const CLIENT_GROUP_MAP = {
+          '120363425170331329@g.us': { name: 'cleugo', label: 'Dr. Cleugo', db: whatsappDBCleugo },
+          '120363404006221524@g.us': { name: 'vanessa', label: 'Dra. Vanessa', db: whatsappDBVanessa },
+          '120363420480777983@g.us': { name: 'erico', label: 'Dr. Érico Servano', db: whatsappDBErico },
+          '120363424333842409@g.us': { name: 'humberto', label: 'Dr. Humberto', db: whatsappDBHumberto },
+        };
+
+        const groupRoute = parsed.isGroup && parsed.chatJid ? CLIENT_GROUP_MAP[parsed.chatJid] : null;
+        if (groupRoute) {
+          clientName = groupRoute.name;
+          const targetDb = groupRoute.db || whatsappDB;
+          console.log(`   ✅ → Grupo cliente: ${groupRoute.label} (${parsed.chatJid})`);
+          targetDb.saveMessage(parsed);
+          console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
+
+          broadcastMonitorEvent({
+            client: clientName,
+            timestamp: parsed.timestamp,
+            pushName: parsed.pushName,
+            message: parsed.text?.substring(0, 50) || '[Mensagem]',
+            type: parsed.type,
+            urgencyScore: analysis.urgencyScore,
+            urgencyLevel: analysis.urgencyLevel,
+            hasComplaint: analysis.hasNegativeContent,
+            status: 'saved',
+            groupName: groupRoute.label,
+          });
+          return;  // Já roteado pelo grupo, não precisa continuar
+        }
+
+        // PRIORIDADE 2: Roteamento por instância Stevo (mensagens 1:1 e grupos internos)
         if (isDrErico) {
           clientName = 'erico';
           console.log(`   ✅ → Dr. Erico DB`);
@@ -339,8 +372,15 @@ function handleStevoWebhook(req, res) {
           whatsappDBEricSantos.saveMessage(parsed);
           console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
         } else {
-          clientName = 'general';
-          console.log(`   ✅ → Banco Geral`);
+          // Checar se a mensagem é de um grupo monitorado dinamicamente
+          const monitoredGroup = parsed.chatJid ? whatsappDB.findMonitoredGroupByChatJid(parsed.chatJid) : null;
+          if (monitoredGroup) {
+            clientName = monitoredGroup.client_key;
+            console.log(`   ✅ → Grupo monitorado: ${monitoredGroup.client_name} (${parsed.chatJid})`);
+          } else {
+            clientName = 'general';
+            console.log(`   ✅ → Banco Geral`);
+          }
           whatsappDB.saveMessage(parsed);
           console.log(`   💾 Salvo (urgência: ${analysis.urgencyLevel})`);
         }
@@ -371,6 +411,46 @@ function handleStevoWebhook(req, res) {
 app.post('/webhook/whatsapp', handleStevoWebhook);
 app.post('/webhook', handleStevoWebhook);
 app.post('/webhooks', handleStevoWebhook);
+
+// ============================================================
+// API: Monitored Groups (grupos registrados dinamicamente)
+// ============================================================
+
+// Registrar grupo para monitoramento (chamado pelo Alex após onboarding)
+app.post('/api/monitor/groups', (req, res) => {
+  try {
+    const { groupJid, clientKey, clientName } = req.body;
+    if (!groupJid || !clientKey || !clientName) {
+      return res.status(400).json({ error: 'groupJid, clientKey e clientName são obrigatórios' });
+    }
+    whatsappDB.registerMonitoredGroup(groupJid, clientKey, clientName);
+    console.log(`📡 Grupo registrado para monitoramento: ${clientName} (${groupJid})`);
+    res.json({ success: true, message: `Grupo ${clientName} registrado para monitoramento` });
+  } catch (err) {
+    console.error('Erro ao registrar grupo:', err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Listar grupos monitorados
+app.get('/api/monitor/groups', (req, res) => {
+  try {
+    const groups = whatsappDB.listMonitoredGroups();
+    res.json({ groups, total: groups.length });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Remover grupo do monitoramento
+app.delete('/api/monitor/groups/:groupJid', (req, res) => {
+  try {
+    whatsappDB.removeMonitoredGroup(req.params.groupJid);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 // Catch-all para debug
 app.use((req, res, next) => {
@@ -612,4 +692,46 @@ app.listen(PORT, () => {
   whatsappDBTorre1.initDB();
   whatsappDBFourcred.initDB();
   whatsappDBProfHumberto.initDB();
+  whatsappDBCleugo.initDB();
+
+  // Seed: registrar clientes hardcoded como grupos monitorados (para visibilidade no Hub)
+  const HARDCODED_CLIENTS = [
+    { key: 'dr-erico-servano', name: 'Dr. Erico Servano', instance: 'smv2-10' },
+    { key: 'dr-humberto', name: 'Dr. Humberto', instance: 'smv2-7' },
+    { key: 'dra-gabrielle', name: 'Dra. Gabrielle', instance: 'sm-galo' },
+    { key: 'dra-vanessa-soares', name: 'Dra. Vanessa Soares', instance: 'vanessa-soares' },
+    { key: 'torre-1', name: 'Torre 1', instance: 'torre-1' },
+    { key: 'fourcred', name: 'Fourcred', instance: 'fourcred' },
+    { key: 'prof-humberto', name: 'Prof. Dr. Humberto', instance: 'prof-humberto' },
+    { key: 'eric-santos', name: 'Eric Santos (Syra)', instance: 'smv2-6' },
+  ];
+  for (const c of HARDCODED_CLIENTS) {
+    whatsappDB.registerMonitoredGroup(`instance:${c.instance}`, c.key, c.name);
+  }
+
+  // Grupos WhatsApp reais dos clientes (JIDs mapeados via Stevo API)
+  const CLIENT_WHATSAPP_GROUPS = [
+    { jid: '120363425170331329@g.us', key: 'dr-cleugo', name: 'Dr. Cleugo & Syra Digital' },
+    { jid: '120363404006221524@g.us', key: 'dra-vanessa', name: 'Dra. Vanessa & Syra Digital' },
+    { jid: '120363420480777983@g.us', key: 'dr-erico-servano', name: 'Dr. Érico Servano & Syra Digital' },
+    { jid: '120363424333842409@g.us', key: 'dr-humberto', name: '[IMP] Dr. Humberto & Syra Digital' },
+  ];
+  for (const g of CLIENT_WHATSAPP_GROUPS) {
+    whatsappDB.registerMonitoredGroup(g.jid, g.key, g.name);
+  }
+
+  // Registrar também grupos do CLICKUP_CLIENT_GROUPS (JID real, via env)
+  const clientGroupsEnv = process.env.CLICKUP_CLIENT_GROUPS || '';
+  for (const pair of clientGroupsEnv.split(',').filter(Boolean)) {
+    const [name, jid] = pair.split(':').map(s => s.trim());
+    if (name && jid) {
+      const key = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-');
+      whatsappDB.registerMonitoredGroup(jid, key, name);
+    }
+  }
+
+  // Listar grupos monitorados
+  const monitoredGroups = whatsappDB.listMonitoredGroups();
+  console.log(`📡 Grupos monitorados: ${monitoredGroups.length}`);
+  monitoredGroups.forEach(g => console.log(`   → ${g.client_name} (${g.group_jid})`));
 });

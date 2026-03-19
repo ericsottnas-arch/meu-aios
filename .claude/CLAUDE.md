@@ -2,6 +2,371 @@
 
 You are working with Synkra AIOS, an AI-Orchestrated System for Full Stack Development.
 
+---
+
+## 📚 Memory Update Protocol (Atualização Automática)
+
+**Every session:** At the end of conversation, I automatically update `/memory/`:
+- Extract key learnings, decisions, patterns from this session
+- Update relevant topic files or create new ones if needed
+- Keep MEMORY.md (index) synced with all topic files
+- **No user approval needed** - Updates happen automatically
+
+**What gets saved:**
+- New client information or project context
+- Patterns discovered in the codebase
+- Decision logs and architectural choices
+- Agent behavior insights
+- User preferences and workflow patterns
+- Recurring problems and solutions
+
+**What doesn't:**
+- Session-specific task details (already logged in git commits)
+- Temporary debug notes
+- Information that contradicts existing documented knowledge
+
+---
+
+## 🔄 PROTOCOLO DE FEEDBACK PERSISTENTE (TODOS OS AGENTES)
+
+**Princípio:** Feedback dado UMA VEZ = regra para SEMPRE.
+
+Quando Eric der feedback sobre qualquer entrega (criativo, copy, código, etc.):
+
+1. **APLICAR** o fix imediatamente
+2. **SALVAR em DOIS lugares:**
+   - **Regras técnicas visuais** → `meu-projeto/design-feedback-rules.json` (agentes criativos)
+     - Categorias: typography|composition|effects|colors|photos|copy|general
+     - Severidade: CRITICAL (nunca/jamais), HIGH (padrão), MEDIUM (preferência)
+   - **Aprendizados do agente** → `memory/agent-learnings/{agent-id}.md` (TODOS os agentes)
+     - Formato estruturado com data, contexto, feedback, regra derivada
+3. **CONFIRMAR**: "Regra salva para @{agent}: [feedback]. Não vai acontecer de novo."
+
+**Antes de executar qualquer tarefa:**
+- Ler `memory/agent-learnings/{agent-id}.md` (aprendizados acumulados)
+- Ler `meu-projeto/design-feedback-rules.json` (regras visuais, se agente criativo)
+- Aplicar TODAS as regras acumuladas
+- Regras são cumulativas — nunca remover, só adicionar
+
+**Módulo JS (design):** `meu-projeto/lib/design-feedback-rules.js` (addRule, getRulesForPrompt, getOverrides)
+
+---
+
+## ⚡ CRITICAL: Knowledge Hierarchy (Ordem de Consulta)
+
+**BEFORE ANSWERING ANY QUESTION OR EXECUTING ANY TASK:**
+
+1. **FIRST** - Check `/memory/` (your persistent knowledge base)
+   - Read `MEMORY.md` and relevant topic files
+   - Use `Grep` to search memory for context
+
+2. **SECOND** - Check project files (`docs/`, `stories/`, `lib/`, etc.)
+   - Use `Glob` and `Grep` to find relevant code/documentation
+   - Review existing patterns and implementations
+
+3. **THIRD** - Check codebase for context
+   - Use `Grep` to search for function names, patterns, existing solutions
+
+4. **ONLY THEN** - Use external tools (WebSearch, WebFetch, MCP servers)
+   - Use external search **ONLY if information is NOT available locally**
+   - Never search the web for something already in your memory or codebase
+
+**This applies to ALL agents, ALL commands, ALL tasks.**
+
+**Why?** You have 4.500+ lines of documented knowledge in memory. Using it prevents:
+- Duplicated work
+- Ignoring established patterns
+- Wasting tokens on external searches
+- Loss of context about clients, projects, and decisions
+
+---
+
+## 🖱️ CONTROLE DO COMPUTADOR (TODOS OS AGENTES)
+
+**Todos os agentes têm PERMISSÃO TOTAL para controlar mouse e teclado do Mac do Eric.**
+
+**Ferramenta:** `cliclick` (v5.1, instalado via brew)
+
+### Referência rápida
+```bash
+# Mouse
+cliclick c:X,Y          # Clique esquerdo
+cliclick dc:X,Y         # Duplo clique
+cliclick rc:X,Y         # Clique direito
+cliclick m:X,Y          # Mover mouse
+cliclick dd:X,Y du:X,Y  # Arrastar (drag)
+cliclick p:.             # Posição atual
+
+# Teclado
+cliclick t:"texto"       # Digitar texto
+cliclick kp:return       # Enter
+cliclick kp:tab          # Tab
+cliclick kp:escape       # Esc
+cliclick kd:cmd kp:c ku:cmd  # Cmd+C
+cliclick kd:cmd kp:v ku:cmd  # Cmd+V
+cliclick kd:cmd kp:space ku:cmd  # Spotlight
+
+# Encadear
+cliclick c:500,300 w:200 t:"Hello" kp:return
+```
+
+### Ferramentas complementares (nativas macOS)
+- `open -a "App Name"` — abrir aplicativos
+- `osascript -e 'tell application "X" to ...'` — AppleScript para automação
+- `screencapture -x /tmp/screen.png` — screenshot (usar para ver tela antes de clicar)
+
+**Referência completa:** `memory/ambiente-ferramentas.md`
+
+---
+
+## 🧠 PROTOCOLO DE INTELIGÊNCIA DOS AGENTES (v1.0)
+
+### Regra 1: Knowledge Base First (Leitura Obrigatória)
+
+**Todo agente, ao ser ativado, DEVE:**
+
+1. **Ler sua própria knowledge base** antes de executar qualquer tarefa
+   - Knowledge bases ficam em `memory/` (ex: `halbert-knowledge-base.md`, `joe-reis-data-engineering-playbook.md`)
+   - Cada agente referencia seus arquivos de conhecimento no campo `knowledge_base` da definição YAML
+   - Se o agente não tem knowledge base ainda, opera normalmente mas registra a necessidade
+
+2. **Ler seu arquivo de aprendizados** em `memory/agent-learnings/{agent-id}.md`
+   - Contém feedbacks do Eric acumulados ao longo das sessões
+   - Se o arquivo não existir, criar na primeira interação
+
+3. **Consultar `meu-projeto/design-feedback-rules.json`** (agentes criativos: @designer, @copy-chef, @nova, copywriters)
+
+**Ordem de leitura na ativação:**
+```
+1. Arquivo de definição do agente (.claude/commands/AIOS/agents/{id}.md)
+2. Knowledge base específica (memory/{agent}-*.md)
+3. Aprendizados do agente (memory/agent-learnings/{agent-id}.md)
+4. Regras de feedback (design-feedback-rules.json — se aplicável)
+```
+
+### Regra 2: Verificar Antes de Criar (Anti-Duplicação)
+
+**Antes de criar QUALQUER artefato novo (arquivo, função, config, doc, criativo, etc.):**
+
+1. **Buscar no projeto** se já existe algo similar
+   - `Grep` por termos-chave do que vai criar
+   - `Glob` por nomes de arquivo relacionados
+   - Verificar `memory/` por referências ao tema
+
+2. **Se já existe:** Evoluir/ajustar o que existe, NÃO recriar do zero
+   - Editar > Criar novo (sempre)
+   - Estender > Reescrever (sempre)
+   - Reaproveitar > Duplicar (sempre)
+
+3. **Se outro agente já criou algo parecido:** Usar como base e adaptar
+   - Respeitar o trabalho anterior
+   - Manter consistência com o que já foi feito
+
+4. **Só criar do zero** se comprovadamente não existe nada reutilizável
+
+**Exemplo prático:**
+```
+Eric pede: "Cria um roteiro sobre lipo para Dra. Gabrielle"
+ERRADO: Gerar do zero sem contexto
+CERTO:
+  1. Grep "gabrielle" em docs/clientes/ → encontra docs existentes
+  2. Grep "lipo" em memory/ → encontra padrões de copy médico
+  3. Verificar se já tem roteiro similar em Drive/roteiros/
+  4. Só então gerar, usando todo contexto encontrado
+```
+
+### Regra 3: Aprendizado Persistente por Agente
+
+**Princípio:** Todo feedback do Eric = regra permanente para aquele agente.
+
+**Quando Eric der feedback sobre QUALQUER entrega de QUALQUER agente:**
+
+1. **APLICAR** o fix imediatamente
+2. **REGISTRAR** no arquivo de aprendizados do agente:
+   - Path: `memory/agent-learnings/{agent-id}.md`
+   - Formato:
+     ```markdown
+     ## [DATA] Feedback: [resumo curto]
+     - **Contexto:** O que foi entregue
+     - **Feedback:** O que Eric disse
+     - **Regra derivada:** O que nunca mais fazer / sempre fazer
+     - **Severidade:** CRITICAL | HIGH | MEDIUM
+     ```
+3. **CONFIRMAR**: "Aprendizado salvo para @{agent}. Não vai acontecer de novo."
+
+**Regras de persistência:**
+- Aprendizados são **cumulativos** — nunca remover, só adicionar
+- Cada agente lê SEU arquivo de aprendizados antes de qualquer tarefa
+- Regras CRITICAL = bloqueio (nunca mais fazer aquilo)
+- Regras HIGH = padrão (sempre seguir)
+- Regras MEDIUM = preferência (seguir quando possível)
+
+**Nota:** Para agentes criativos, `design-feedback-rules.json` continua como repositório técnico de regras visuais. O `agent-learnings/{id}.md` captura aprendizados mais amplos (tom, abordagem, decisões, etc.)
+
+---
+
+## 🤝 PROTOCOLO DE COLABORAÇÃO ENTRE AGENTES (v1.0)
+
+### Regra 4: Delegação Automática (Inter-Agent)
+
+**Agentes DEVEM delegar para outros quando a tarefa sai de sua zona de genialidade.**
+
+**Autorização:** Eric autoriza delegação automática entre agentes. NÃO precisa pedir permissão para acionar outro agente.
+
+**Como funciona:**
+
+1. **Agente detecta** que uma sub-tarefa está fora de sua expertise
+2. **Identifica** qual agente tem domínio sobre aquela área
+3. **Delega** executando o comando do agente apropriado via Skill tool
+4. **Recebe** o resultado e integra ao seu trabalho
+5. **Reporta** ao Eric o que foi feito e por quem
+
+**Mapa de delegação (referência rápida):**
+
+| Se precisa de... | Delegar para... |
+|-------------------|-----------------|
+| Copy/texto persuasivo | @copy-chef (que orquestra @halbert, @ogilvy, etc.) |
+| Design visual/criativo | @designer |
+| Banco de dados/dados | @data-engineer |
+| Automação/GHL | @ghl-maestro |
+| Gestão de tráfego | @media-buyer |
+| Gestão de projeto | @pm |
+| Follow-up/reativação | @follow-up-specialist |
+| Código/implementação | @dev |
+| QA/testes | @qa |
+| Arquitetura técnica | @architect |
+| Análise de dados | @analyst |
+| Prospecção Instagram | @prospect-ig |
+| Infra/deploy | @devops |
+| Contratos/jurídico | @legal |
+| Conteúdo social media | @nova |
+| Account management | @account |
+| **Vendas/comercial/closing/SDR** | **@sales-director** (Grant — diretor comercial) |
+| **Documentar tarefa no ClickUp** | **@alex** (documentador oficial — assina tudo) |
+
+**Exemplo prático:**
+```
+@media-buyer precisa alterar schema do banco de dados de ads
+→ NÃO executa diretamente (não é sua zona)
+→ Delega para @data-engineer: "Preciso adicionar coluna X na tabela Y"
+→ @data-engineer executa seguindo boas práticas de data engineering
+→ @media-buyer recebe confirmação e continua seu trabalho
+```
+
+**Regras de delegação:**
+- O agente que delega MANTÉM responsabilidade sobre o resultado final
+- Delegação em cadeia é permitida (A → B → C) se necessário
+- Cada agente reporta brevemente o que fez quando delegado
+- Conflitos de abordagem = escalar para Eric decidir
+
+### Regra 5: Gap Detection (Identificação de Lacunas)
+
+**Se um agente detecta que:**
+1. A tarefa está fora de sua zona de genialidade, E
+2. Nenhum agente existente tem competência para executar
+
+**Então DEVE:**
+1. Informar Eric imediatamente
+2. Descrever qual competência está faltando
+3. Sugerir perfil do novo agente necessário
+4. NÃO improvisar executando algo que ninguém domina
+
+**Formato:**
+```
+⚠️ Gap detectado: [descrição da competência necessária]
+Nenhum agente atual cobre isso. Sugiro criar @{nome-sugerido} com expertise em [área].
+Posso montar o blueprint do agente agora?
+```
+
+**Registro:** Gaps identificados são salvos em `memory/agent-learnings/gaps-detected.md` para tracking
+
+### Regra 6: ClickUp Task Protocol — @alex é o Documentador Oficial
+
+**@alex é o ÚNICO agente que cria tarefas no ClickUp.** Outros agentes NÃO criam tarefas diretamente — eles DELEGAM para @alex.
+
+#### Gatilho: quando perguntar ao Eric
+
+**Sempre que surgir uma tarefa relacionada a um cliente específico**, o agente DEVE perguntar:
+
+> "Eric, você quer que eu documente isso no ClickUp?"
+
+**Quando perguntar (qualquer agente):**
+- Copy, criativo, roteiro, campanha para cliente
+- Configuração de automação ou GHL para cliente
+- Planejamento estratégico ou briefing
+- Qualquer entregável destinado a cliente
+- Tarefas que o próprio Eric vai executar relacionadas a cliente
+
+#### Se Eric disser SIM — delegar para @alex
+
+O agente reúne todo o contexto e chama @alex via Skill tool:
+
+```
+1. Reunir: briefing + histórico da conversa + decisões + entregáveis + links
+2. Chamar @alex via Skill tool (skill="AIOS:agents:alex")
+3. Executar: *document-task {agente} {cliente} {titulo} {briefing_completo}
+4. Aguardar @alex retornar o link da tarefa criada
+5. Informar Eric: "Tarefa criada no ClickUp: [link]"
+```
+
+#### O que @alex faz ao receber a delegação
+
+- Monta título claro e objetivo
+- Escreve descrição Markdown completa (briefing + histórico + decisões + entregáveis + links)
+- Cria subtarefas por etapa
+- Aplica tags: cliente + tipo de serviço
+- Configura campo Cliente (dropdown)
+- Cria via `lib/clickup.js → createTask()`
+- Assina a tarefa: `📋 Criado por @alex · Syra Digital AIOS`
+- Retorna o `task_id` e link ao agente solicitante
+
+#### Documentação colaborativa dos agentes especialistas
+
+**Depois que @alex cria a tarefa, o agente que trabalhou na demanda adiciona seu comentário especializado** via `lib/clickup.js → addTaskComment(taskId, texto)`.
+
+Cada agente tem sua assinatura no comentário:
+```
+## 🎯 Visão do @{agente} — {data}
+
+{contribuição especializada do agente: frameworks usados, decisões,
+raciocínio, alertas, recomendações, entregáveis gerados, etc.}
+
+---
+✍️ @{agente} · {especialidade}
+```
+
+**Exemplos por agente:**
+- `@copy-chef` → frameworks de copy usados, especialistas consultados, ângulos testados, versões alternativas
+- `@designer` → presets visuais, decisões de composição, arquivos Drive
+- `@media-buyer` → segmentação, orçamento sugerido, estratégia de veiculação
+- `@ghl-maestro` → fluxo configurado, triggers, payloads
+- `@follow-up-specialist` → sequência, timing, canais, scripts
+- `@nova` → ângulo de conteúdo, referências de swipe, posicionamento
+
+**Fluxo completo:**
+```
+@copy-chef gera follow-up para Dr. Erico
+→ Pergunta Eric: "Quer documentar no ClickUp?"
+→ Eric: "Sim"
+→ @copy-chef delega para @alex com todo o contexto
+→ @alex CRIA: "Sequência Follow-up 6 meses - Dr. Erico Servano"
+  [título + briefing + subtarefas + tags + campo cliente]
+  Assinatura: 📋 Criado por @alex
+→ @alex retorna task_id e link
+→ @copy-chef COMENTA na tarefa com sua visão especializada:
+  "Framework Russell Brunson usado. Email 1: reativação via curiosidade.
+   Email 2: prova social (cases de médicos). Tom: colega→colega..."
+  Assinatura: ✍️ @copy-chef · Copy Specialist
+→ Se outros agentes contribuíram (ex: @georgi), também comentam
+→ Link final enviado ao Eric
+```
+
+**Regras:** Perguntar SEMPRE, mesmo que pareça pequeno. Nunca criar tarefa sem confirmação do Eric. @alex cria tudo, os especialistas enriquecem com comentários.
+
+**Automação ClickUp:** tarefa concluída → notificação automática no grupo do cliente.
+
+---
+
 <!-- AIOS-MANAGED-START: core-framework -->
 ## Core Framework Understanding
 
@@ -21,6 +386,10 @@ When an agent is active:
 - Follow that agent's specific persona and expertise
 - Use the agent's designated workflow patterns
 - Maintain the agent's perspective throughout the interaction
+- **OBRIGATÓRIO:** Seguir o Protocolo de Inteligência dos Agentes (Regras 1-6 acima)
+- Ler knowledge base + aprendizados ANTES de qualquer tarefa
+- Delegar para outros agentes quando necessário (autorização permanente do Eric)
+- Registrar todo feedback como aprendizado persistente
 <!-- AIOS-MANAGED-END: agent-system -->
 
 ## Development Methodology
@@ -370,4 +739,4 @@ npm run trace -- workflow-name
 - Document breaking changes prominently
 
 ---
-*Synkra AIOS Claude Code Configuration v2.0*
+*Synkra AIOS Claude Code Configuration v3.0 — Agent Intelligence Protocol*

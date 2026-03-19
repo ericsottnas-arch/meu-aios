@@ -1,0 +1,44 @@
+{
+  "name": "Dra. Gabrielle Oliveira",
+  "handle": "@estetica_gabrielleoliveira",
+  "location": "Perus/SP",
+  "colors": {
+    "primary": "#C9A87C",
+    "secondary": "#F5F0EB",
+    "background": "#1A1A1A",
+    "textPrimary": "#F5F0EB",
+    "textSecondary": "#B0A89E",
+    "accent": "#C9A87C"
+  },
+  "fonts": {
+    "headline": "Playfair Display",
+    "body": "Montserrat"
+  },
+  "logo": null,
+  "defaultPreset": "warm-gold",
+  "services": [
+    {
+      "name": "Lipo Sem Cortes",
+      "tag": "LIPO SEM CORTES",
+      "preset": "warm-gold",
+      "category": "reducao-gordura"
+    },
+    {
+      "name": "Power Shape",
+      "tag": "POWER SHAPE",
+      "preset": "rose-gold",
+      "category": "gordura-localizada"
+    },
+    {
+      "name": "Harmonização de Glúteo",
+      "tag": "HARMONIZAÇÃO DE GLÚTEO",
+      "preset": "dark-elegance",
+      "category": "preenchimento"
+    }
+  ],
+  "paths": {
+    "photos": "/Users/ericsantos/Library/CloudStorage/GoogleDrive-ericsottnas@gmail.com/Meu Drive/Syra Digital/Clientes/Dra Gabrielle/📸 Imagens",
+    "output": "/Users/ericsantos/Library/CloudStorage/GoogleDrive-ericsottnas@gmail.com/Meu Drive/Syra Digital/Clientes/Dra Gabrielle/🎨 Criativos"
+  },
+  "brand": "DRA. GABRIELLE OLIVEIRA"
+}

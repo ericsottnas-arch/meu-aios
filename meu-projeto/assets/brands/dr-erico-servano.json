@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Erico Servano",
+  "brandName": "SERVANO Advogados Associados",
+  "handle": "@dr.ericoservano",
+  "colors": {
+    "primary": "#E8DCC8",
+    "accent": "#B8956A",
+    "dark": "#151515",
+    "light": "#FFFFFF",
+    "textOnDark": "#E8DCC8",
+    "textOnLight": "#1A1A1A"
+  },
+  "fonts": {
+    "headline": "Playfair Display",
+    "body": "Inter"
+  },
+  "style": "premium-classic-law",
+  "pattern": "Cruz/estrela abstrata — pattern repetitivo da marca",
+  "logos": {
+    "full-dark": "/assets/logos/dr-erico-servano/full-dark.png",
+    "full-light": "/assets/logos/dr-erico-servano/full-light.png",
+    "symbol": "/assets/logos/dr-erico-servano/symbol.png",
+    "monogram": "/assets/logos/dr-erico-servano/monogram.png"
+  },
+  "usage": {
+    "dos": [
+      "Usar cores cream/gold sobre fundo escuro",
+      "Manter espaçamento generoso ao redor do logo",
+      "Usar tipografia serif para headlines",
+      "Aplicar pattern como textura de fundo sutil"
+    ],
+    "donts": [
+      "Nunca distorcer proporções do logo",
+      "Evitar fundos coloridos vibrantes",
+      "Não usar fontes casuais ou handwritten",
+      "Nunca reduzir logo abaixo de 40px de altura"
+    ]
+  }
+}

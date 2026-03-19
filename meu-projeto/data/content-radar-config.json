@@ -1,0 +1,35 @@
+{
+  "profiles": [
+    { "username": "alfredosoares", "category": "marketing-b2b" },
+    { "username": "ohenriquecedor", "category": "marketing-b2b" },
+    { "username": "matutamatheus", "category": "vendas-comercial" },
+    { "username": "rodvincenzi", "category": "vendas-comercial" },
+    { "username": "togaborges", "category": "marketing-digital" },
+    { "username": "iaborges_", "category": "marketing-digital" }
+  ],
+  "niche_queries": [
+    "marketing para clinicas esteticas tendencias 2026",
+    "follow-up comercial clinicas medicas resultados",
+    "captacao pacientes estetica estrategia digital",
+    "inteligencia artificial clinicas medicas automacao",
+    "cases marketing medico resultados faturamento",
+    "gestao financeira clinicas esteticas lucro",
+    "redes sociais medicos dentistas estrategia"
+  ],
+  "trending_sources": [
+    "negocios empreendedorismo brasil tendencias",
+    "inteligencia artificial impacto pequenas empresas",
+    "marketing digital resultados cases 2026",
+    "tecnologia saude estetica inovacao"
+  ],
+  "schedule": {
+    "profile_watcher": "0 8,18 * * *",
+    "niche_scanner": "0 10 * * *",
+    "trending_radar": "0 12 * * *"
+  },
+  "thresholds": {
+    "min_relevance_score": 7,
+    "min_engagement_rate": 2.0,
+    "max_notifications_per_day": 10
+  }
+}

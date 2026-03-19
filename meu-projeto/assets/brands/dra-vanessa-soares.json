@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Vanessa Soares",
+  "brandName": "Dra. Vanessa Soares — Dermatologia & Estética",
+  "handle": "@dra.vanessasoares.bh",
+  "colors": {
+    "primary": "#1E3A3A",
+    "accent": "#C4A96A",
+    "accentAlt": "#D4A520",
+    "light": "#FFFFFF",
+    "textOnDark": "#FFFFFF",
+    "textOnLight": "#1E3A3A"
+  },
+  "fonts": {
+    "headline": "Inter",
+    "body": "Inter"
+  },
+  "style": "premium-medical-aesthetic",
+  "pattern": null,
+  "logos": {
+    "full-dark": "/assets/logos/dra-vanessa-soares/full-dark.png",
+    "full-light": "/assets/logos/dra-vanessa-soares/full-light.png",
+    "symbol": "/assets/logos/dra-vanessa-soares/symbol.png"
+  },
+  "usage": {
+    "dos": [
+      "Usar dourado como cor de destaque",
+      "Fundo teal escuro como cor principal",
+      "Manter elegância e sofisticação",
+      "Usar tipografia sans-serif geométrica"
+    ],
+    "donts": [
+      "Nunca usar cores vibrantes ou neon",
+      "Evitar layouts poluídos ou cluttered",
+      "Não usar fontes decorativas",
+      "Nunca usar o símbolo diamante em tamanho menor que 24px"
+    ]
+  }
+}

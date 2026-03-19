@@ -27,3 +27,20 @@ Thumbs.db
 .aios-core/local/
 .claude/settings.local.json
 .aios/install-log.txt
+
+# Databases (não compartilhar - cada máquina tem o seu)
+*.db
+*.db-shm
+*.db-wal
+
+# State files locais
+.aios/scribe-watcher-state.json
+.aios/swipe-pending-state.json
+
+# Temp files
+.carousel-temp/
+*.png
+*.mp4
+
+# Claude Code local
+.claude/projects/

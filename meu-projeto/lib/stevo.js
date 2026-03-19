@@ -203,6 +203,53 @@ async function getGroupInviteLink(groupJid, reset = false) {
   return stevoRequest('POST', '/group/invitelink', { groupJid, reset });
 }
 
+/**
+ * Cria um novo grupo WhatsApp.
+ * @param {string} groupName - Nome do grupo
+ * @param {string[]} participants - Array de números (ex: ['5531999999999'])
+ * @returns {Promise<{groupJid: string}>}
+ */
+async function createGroup(groupName, participants) {
+  return stevoRequest('POST', '/group/create', { groupName, participants });
+}
+
+/**
+ * Define a descrição de um grupo.
+ * @param {string} groupJid - JID do grupo
+ * @param {string} description - Descrição do grupo
+ */
+async function setGroupDescription(groupJid, description) {
+  return stevoRequest('POST', '/group/description', { groupJid, description });
+}
+
+/**
+ * Adiciona ou remove participantes de um grupo.
+ * @param {string} groupJid - JID do grupo
+ * @param {'add'|'remove'} action - Ação
+ * @param {string[]} participants - Array de números
+ */
+async function updateGroupParticipants(groupJid, action, participants) {
+  return stevoRequest('POST', '/group/participant', { groupJid, action, participants });
+}
+
+/**
+ * Altera o nome de um grupo.
+ * @param {string} groupJid - JID do grupo
+ * @param {string} name - Novo nome
+ */
+async function setGroupName(groupJid, name) {
+  return stevoRequest('POST', '/group/name', { groupJid, name });
+}
+
+/**
+ * Define a foto de um grupo (base64).
+ * @param {string} groupJid - JID do grupo
+ * @param {string} imageBase64 - Imagem em base64
+ */
+async function setGroupPhoto(groupJid, imageBase64) {
+  return stevoRequest('POST', '/group/photo', { groupJid, image: imageBase64 });
+}
+
 // ============================================================
 // Instância
 // ============================================================
@@ -241,6 +288,11 @@ module.exports = {
   listGroups,
   getGroupInfo,
   getGroupInviteLink,
+  createGroup,
+  setGroupDescription,
+  updateGroupParticipants,
+  setGroupName,
+  setGroupPhoto,
   // Instância
   getInstanceStatus,
   getInstanceProfile,

@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — {{clientName}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+/* ===== SYRA VISION THEME (warm amber/brown from Lovable) ===== */
+:root {
+  --background: hsl(20, 10%, 8%);
+  --foreground: hsl(50, 50%, 94%);
+  --card: hsl(20, 8%, 12%);
+  --card-foreground: hsl(50, 50%, 94%);
+  --primary: hsl(32, 43%, 47%);
+  --primary-light: hsl(32, 50%, 60%);
+  --primary-dark: hsl(32, 40%, 35%);
+  --secondary: hsl(20, 8%, 18%);
+  --muted: hsl(20, 8%, 15%);
+  --muted-foreground: hsl(50, 20%, 60%);
+  --border: hsl(32, 20%, 25%);
+  --border-subtle: hsl(32, 15%, 20%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --chart-1: hsl(32, 43%, 47%);
+  --chart-2: hsl(32, 43%, 37%);
+  --chart-3: hsl(32, 43%, 57%);
+  --chart-4: hsl(50, 50%, 94%);
+  --chart-5: hsl(20, 8%, 25%);
+  --green: hsl(142, 71%, 45%);
+  --red: hsl(0, 72%, 51%);
+  --amber: hsl(32, 43%, 47%);
+  --gradient-gold: linear-gradient(135deg, hsl(32, 50%, 55%) 0%, hsl(32, 43%, 47%) 50%, hsl(32, 40%, 35%) 100%);
+  --shadow-card: 0 4px 30px -8px hsl(0 0% 0% / 0.5);
+  --shadow-gold: 0 4px 20px -4px hsl(32 43% 47% / 0.3);
+  --radius: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: var(--primary); text-decoration: none; }
+
+/* ===== SIDEBAR LAYOUT ===== */
+.app-layout { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 260px; min-height: 100vh; background: hsl(20, 10%, 6%);
+  border-right: 1px solid var(--border-subtle); padding: 24px 16px;
+  display: flex; flex-direction: column; position: fixed; top: 0; left: 0; z-index: 50;
+}
+.sidebar-brand { display: flex; align-items: center; gap: 12px; padding: 0 8px 24px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 24px; }
+.sidebar-brand-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--gradient-gold); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; color: var(--background); }
+.sidebar-brand-text { font-weight: 600; font-size: 15px; color: var(--foreground); }
+.sidebar-brand-sub { font-size: 11px; color: var(--muted-foreground); }
+
+.sidebar-nav { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.nav-item {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+  border-radius: var(--radius); color: var(--muted-foreground); font-size: 14px;
+  font-weight: 500; cursor: pointer; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left;
+}
+.nav-item:hover { color: var(--foreground); background: var(--muted); }
+.nav-item.active { color: var(--primary); background: hsl(32, 43%, 47%, 0.1); }
+.nav-item.active::before { content: ''; width: 3px; height: 20px; background: var(--primary); border-radius: 2px; margin-right: -4px; }
+.nav-item i { width: 20px; height: 20px; flex-shrink: 0; }
+
+.sidebar-footer { padding-top: 16px; border-top: 1px solid var(--border-subtle); }
+.sidebar-footer a { display: flex; align-items: center; gap: 8px; color: var(--muted-foreground); font-size: 13px; padding: 8px 12px; border-radius: var(--radius); transition: all 0.2s; }
+.sidebar-footer a:hover { color: var(--foreground); background: var(--muted); }
+
+/* ===== MAIN CONTENT ===== */
+.main-content { flex: 1; margin-left: 260px; padding: 32px 40px; min-width: 0; overflow-x: hidden; }
+
+/* ===== PAGE HEADER ===== */
+.page-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 32px; }
+.page-header h1 { font-size: 28px; font-weight: 700; color: var(--foreground); }
+.page-header p { font-size: 15px; color: var(--muted-foreground); margin-top: 4px; }
+.header-controls { display: flex; align-items: center; gap: 8px; }
+
+/* ===== DATE RANGE PICKER ===== */
+.date-picker { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 14px; }
+.date-picker input { background: transparent; border: none; color: var(--foreground); font-family: 'Poppins', sans-serif; font-size: 13px; width: 120px; outline: none; }
+.date-picker span { color: var(--muted-foreground); font-size: 13px; }
+
+/* ===== STAT CARDS ===== */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.stat-card {
+  position: relative; background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-card);
+  overflow: hidden; transition: all 0.2s; min-width: 0;
+}
+.stat-card::before {
+  content: ''; position: absolute; inset: 0; opacity: 0;
+  background: var(--gradient-gold); transition: opacity 0.3s; border-radius: var(--radius); pointer-events: none;
+}
+.stat-card:hover::before { opacity: 0.05; }
+.stat-card-clickable { cursor: pointer; }
+.stat-card-clickable.active { box-shadow: 0 0 0 2px var(--primary); }
+
+.stat-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.stat-card-title { font-size: 14px; font-weight: 500; color: var(--muted-foreground); }
+.stat-card-icon { width: 20px; height: 20px; color: var(--muted-foreground); }
+.stat-card-value { font-size: 28px; font-weight: 700; color: var(--foreground); margin-bottom: 4px; }
+.stat-card-subtitle { font-size: 13px; color: var(--muted-foreground); }
+.stat-card-trend { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; margin-top: 6px; }
+.trend-up { color: var(--green); }
+.trend-down { color: var(--red); }
+.trend-neutral { color: var(--muted-foreground); }
+.trend-up-inverted { color: var(--red); }
+.trend-down-inverted { color: var(--green); }
+
+/* ===== SECTION CARDS ===== */
+.page-section { min-width: 0; overflow-x: hidden; }
+.section-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; box-shadow: var(--shadow-card); margin-bottom: 24px;
+}
+.section-card h3 { font-size: 18px; font-weight: 600; color: var(--foreground); margin-bottom: 4px; }
+.section-card .subtitle { font-size: 14px; color: var(--muted-foreground); margin-bottom: 20px; }
+
+/* ===== CHARTS ===== */
+.charts-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+.charts-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+.chart-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-card); min-width: 0; overflow: hidden; }
+.chart-box h3 { font-size: 18px; font-weight: 600; color: var(--foreground); margin-bottom: 16px; }
+.chart-wrap { position: relative; height: 260px; }
+
+/* ===== TABLES ===== */
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.data-table thead th {
+  text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 600;
+  color: var(--muted-foreground); text-transform: uppercase; letter-spacing: 0.5px;
+  background: hsl(20, 8%, 18%, 0.5); border-bottom: 1px solid var(--border);
+}
+.data-table thead th.sortable {
+  cursor: pointer; user-select: none; transition: color 0.15s;
+}
+.data-table thead th.sortable:hover { color: var(--foreground); }
+.data-table thead th.sortable::after {
+  content: '↕'; margin-left: 4px; font-size: 10px; opacity: 0.3;
+}
+.data-table thead th.sortable.asc::after { content: '↑'; opacity: 0.8; color: var(--primary); }
+.data-table thead th.sortable.desc::after { content: '↓'; opacity: 0.8; color: var(--primary); }
+.data-table thead th.sortable.asc,
+.data-table thead th.sortable.desc { color: var(--primary); }
+
+/* Filter select (tag/source) */
+.filter-select {
+  padding: 6px 12px; border-radius: 7px; font-size: 13px; font-weight: 500;
+  background: var(--card); border: 1px solid var(--border); color: var(--muted-foreground);
+  font-family: 'Poppins', sans-serif; cursor: pointer; outline: none;
+  transition: all 0.15s; appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+  padding-right: 28px; min-width: 100px; max-width: 200px;
+}
+.filter-select:hover { border-color: var(--primary); color: var(--foreground); }
+.filter-select:focus { border-color: var(--primary); }
+.filter-select option { background: var(--card); color: var(--foreground); }
+.data-table tbody td { padding: 12px 16px; border-bottom: 1px solid hsl(32, 20%, 25%, 0.5); color: var(--muted-foreground); transition: all 0.2s; }
+.data-table tbody tr:hover td { background: hsl(20, 8%, 18%, 0.3); color: var(--foreground); }
+.data-table .text-right { text-align: right; }
+.data-table .text-primary { color: var(--foreground); font-weight: 500; }
+.data-table tfoot td { font-weight: 600; background: hsl(20, 8%, 15%, 0.3); border-top: 2px solid var(--border); }
+
+/* ===== INVESTMENT CARDS ===== */
+.invest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.invest-card { padding: 20px; border-radius: var(--radius); background: hsl(20, 8%, 15%, 0.3); border: 1px solid var(--border); }
+.invest-card.highlight { background: hsl(32, 43%, 47%, 0.1); border-color: hsl(32, 43%, 47%, 0.2); }
+.invest-card .label { font-size: 14px; color: var(--muted-foreground); }
+.invest-card .value { font-size: 24px; font-weight: 700; color: var(--foreground); margin-top: 4px; }
+.invest-card.highlight .value { color: var(--primary); }
+.invest-card .meta { font-size: 12px; color: var(--muted-foreground); margin-top: 4px; }
+
+/* ===== ROI SUMMARY ===== */
+.roi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.roi-card { text-align: center; padding: 20px; border-radius: var(--radius); background: hsl(20, 8%, 15%, 0.3); }
+.roi-card .label { font-size: 14px; color: var(--muted-foreground); margin-bottom: 8px; }
+.roi-card .value { font-size: 24px; font-weight: 700; color: var(--foreground); }
+.roi-card .value.positive { color: var(--green); }
+.roi-card .value.negative { color: var(--red); }
+.roi-card.positive-bg { background: hsl(142, 71%, 45%, 0.1); }
+.roi-card.negative-bg { background: hsl(0, 72%, 51%, 0.1); }
+
+/* ===== STAGE DOT ===== */
+.stage-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; flex-shrink: 0; }
+
+/* ===== STATUS BADGES ===== */
+.status-badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.status-badge.open { background: hsl(32, 43%, 47%, 0.2); color: hsl(32, 50%, 60%); }
+.status-badge.won { background: hsl(142, 71%, 45%, 0.2); color: hsl(142, 71%, 55%); }
+.status-badge.lost { background: hsl(0, 72%, 51%, 0.2); color: hsl(0, 72%, 61%); }
+.status-badge.active { background: hsl(142, 71%, 45%, 0.2); color: hsl(142, 71%, 55%); }
+.status-badge.paused { background: hsl(50, 20%, 60%, 0.15); color: var(--muted-foreground); }
+
+/* ===== WINNER CARDS ===== */
+.winners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+.winner-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; position: relative; box-shadow: var(--shadow-card); min-width: 0; overflow: hidden; word-break: break-word; }
+.winner-rank { position: absolute; top: 16px; right: 16px; font-size: 32px; font-weight: 800; color: var(--primary); opacity: 0.2; }
+.winner-name { font-size: 14px; font-weight: 600; color: var(--foreground); margin-bottom: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 40px; }
+.winner-metrics { display: flex; gap: 16px; font-size: 13px; color: var(--muted-foreground); }
+.winner-metric-val { color: var(--foreground); font-weight: 600; }
+.winner-badges { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+.winner-badge { display: inline-flex; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; background: hsl(32, 43%, 47%, 0.15); color: var(--primary); }
+
+/* ===== FILTER BUTTONS ===== */
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-btn {
+  padding: 6px 14px; border-radius: var(--radius); font-size: 13px; font-weight: 500;
+  background: transparent; border: 1px solid var(--border); color: var(--muted-foreground);
+  cursor: pointer; transition: all 0.2s; font-family: 'Poppins', sans-serif;
+}
+.filter-btn:hover { color: var(--foreground); border-color: var(--primary); }
+.filter-btn.active { background: var(--primary); color: var(--background); border-color: var(--primary); }
+
+/* ===== LOADING / EMPTY ===== */
+.loading-state, .empty-state { text-align: center; padding: 60px 20px; color: var(--muted-foreground); }
+.spinner { width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 12px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.page-section { display: none; animation: fadeIn 0.4s ease; }
+.page-section.active { display: block; }
+
+/* ===== LEAD SCORING ===== */
+.tier-badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.tier-hot { background: hsl(0, 62%, 30%); color: #fca5a5; }
+.tier-warm { background: hsl(32, 60%, 30%); color: #fcd34d; }
+.tier-cold { background: hsl(210, 50%, 30%); color: #93c5fd; }
+.dim-bar { height: 8px; border-radius: 4px; background: var(--muted); overflow: hidden; min-width: 60px; }
+.dim-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+.dim-bar-fill.d1 { background: hsl(32, 43%, 47%); }
+.dim-bar-fill.d2 { background: hsl(142, 71%, 45%); }
+.dim-bar-fill.d3 { background: hsl(210, 70%, 55%); }
+.dim-bar-fill.d4 { background: hsl(280, 60%, 55%); }
+.dim-bar-fill.d5 { background: hsl(50, 80%, 50%); }
+.dim-bar-fill.d6 { background: hsl(0, 70%, 55%); }
+.scoring-dist-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.scoring-dist-label { width: 50px; font-size: 13px; color: var(--muted-foreground); text-align: right; }
+.scoring-dist-track { flex: 1; height: 28px; background: var(--muted); border-radius: 6px; overflow: hidden; position: relative; }
+.scoring-dist-fill { height: 100%; border-radius: 6px; transition: width 0.6s ease; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-size: 11px; font-weight: 600; color: var(--foreground); min-width: 28px; }
+.scoring-dim-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.scoring-dim-name { width: 130px; font-size: 13px; color: var(--muted-foreground); }
+.scoring-dim-value { width: 40px; font-size: 13px; font-weight: 600; text-align: right; }
+.btn-recalculate { background: var(--primary); color: var(--background); border: none; padding: 8px 20px; border-radius: var(--radius); font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-recalculate:hover { opacity: 0.85; }
+.btn-recalculate:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ===== DATE FILTER — PREMIUM COMPONENT ===== */
+.date-filter-bar {
+  display: flex; align-items: center; gap: 0; margin-bottom: 28px;
+  padding: 4px; background: hsl(20, 10%, 10%); border: 1px solid var(--border-subtle);
+  border-radius: 10px; position: relative; flex-wrap: wrap; width: fit-content; margin-left: auto;
+}
+.date-filter-bar .df-presets {
+  display: flex; align-items: center; gap: 0; position: relative; flex-shrink: 0;
+}
+.date-filter-bar .df-preset {
+  padding: 7px 12px; border-radius: 7px; font-size: 13px; font-weight: 500;
+  background: transparent; border: none; color: var(--muted-foreground);
+  cursor: pointer; transition: all 0.2s ease; font-family: 'Poppins', sans-serif;
+  position: relative; z-index: 1; white-space: nowrap;
+}
+.date-filter-bar .df-preset:hover { color: var(--foreground); }
+.date-filter-bar .df-preset.active { color: var(--foreground); }
+/* Animated pill behind active preset */
+.date-filter-bar .df-pill {
+  position: absolute; top: 0; height: 100%;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 7px; transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px hsl(0 0% 0% / 0.3); z-index: 0; pointer-events: none;
+}
+
+/* Right section: divider + custom + label + sync */
+.date-filter-bar .df-right {
+  display: flex; align-items: center; gap: 4px; margin-left: auto; flex-shrink: 0;
+}
+
+/* Divider */
+.date-filter-bar .df-divider {
+  width: 1px; height: 20px; background: var(--border-subtle); flex-shrink: 0; margin: 0 4px;
+}
+
+/* Custom range trigger */
+.date-filter-bar .df-range-trigger {
+  display: flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 7px;
+  font-size: 13px; font-weight: 500; background: transparent; border: none;
+  color: var(--muted-foreground); cursor: pointer; transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif; position: relative; z-index: 1; white-space: nowrap;
+}
+.date-filter-bar .df-range-trigger:hover { color: var(--foreground); }
+.date-filter-bar .df-range-trigger.active { color: var(--foreground); }
+.date-filter-bar .df-range-trigger i { width: 15px; height: 15px; flex-shrink: 0; }
+.date-filter-bar .df-range-trigger .df-trigger-label { display: inline; }
+
+/* Range label (shows "1 mar — 10 mar" inline) */
+.df-range-label {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 10px; border-radius: 7px; font-size: 11px; font-weight: 500;
+  background: hsl(32, 43%, 47%, 0.1); color: var(--primary); border: 1px solid hsl(32, 43%, 47%, 0.15);
+  white-space: nowrap; position: relative; z-index: 1;
+}
+.df-range-label i { width: 12px; height: 12px; opacity: 0.7; }
+
+/* Dropdown popover for custom dates */
+.df-popover {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 100;
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px; box-shadow: 0 16px 48px -8px hsl(0 0% 0% / 0.5), 0 0 0 1px hsl(32 20% 25% / 0.3);
+  display: none; width: 300px; max-width: calc(100vw - 32px);
+  animation: dfPopoverIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.df-popover.open { display: block; }
+@keyframes dfPopoverIn {
+  from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.df-popover-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
+}
+.df-popover-title { font-size: 14px; font-weight: 600; color: var(--foreground); }
+.df-popover-close {
+  width: 28px; height: 28px; border-radius: 6px; border: none; background: transparent;
+  color: var(--muted-foreground); cursor: pointer; display: flex; align-items: center;
+  justify-content: center; transition: all 0.15s;
+}
+.df-popover-close:hover { background: var(--muted); color: var(--foreground); }
+.df-popover-close i { width: 16px; height: 16px; }
+
+.df-popover-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.df-popover-row label {
+  font-size: 12px; font-weight: 500; color: var(--muted-foreground);
+  text-transform: uppercase; letter-spacing: 0.5px; width: 32px; flex-shrink: 0;
+}
+.df-popover-row input[type="date"] {
+  flex: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+  background: hsl(20, 10%, 8%); color: var(--foreground); font-family: 'Poppins', sans-serif;
+  font-size: 13px; outline: none; transition: border-color 0.2s; min-width: 0;
+}
+.df-popover-row input[type="date"]:focus { border-color: var(--primary); }
+.df-popover-row input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7) sepia(0.3) hue-rotate(350deg);
+}
+.df-popover-shortcuts {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.df-shortcut {
+  padding: 5px 10px; border-radius: 6px; font-size: 12px; font-weight: 500;
+  background: hsl(20, 8%, 15%); border: 1px solid transparent; color: var(--muted-foreground);
+  cursor: pointer; transition: all 0.15s; font-family: 'Poppins', sans-serif;
+}
+.df-shortcut:hover { color: var(--foreground); border-color: var(--border); }
+.df-shortcut.active { background: hsl(32, 43%, 47%, 0.15); color: var(--primary); border-color: hsl(32, 43%, 47%, 0.25); }
+
+.df-popover-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+.df-btn-cancel {
+  padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500;
+  background: transparent; border: 1px solid var(--border); color: var(--muted-foreground);
+  cursor: pointer; font-family: 'Poppins', sans-serif; transition: all 0.15s;
+}
+.df-btn-cancel:hover { color: var(--foreground); border-color: var(--foreground); }
+.df-btn-apply {
+  padding: 8px 20px; border-radius: 8px; font-size: 13px; font-weight: 600;
+  background: var(--gradient-gold); border: none; color: var(--background);
+  cursor: pointer; font-family: 'Poppins', sans-serif; transition: all 0.15s;
+  box-shadow: var(--shadow-gold);
+}
+.df-btn-apply:hover { filter: brightness(1.1); }
+
+/* Sync badge — premium */
+.df-sync-badge {
+  display: none; align-items: center; gap: 5px; padding: 5px 10px;
+  border-radius: 7px; font-size: 11px; color: var(--muted-foreground);
+  background: hsl(142, 71%, 45%, 0.06); border: 1px solid hsl(142, 71%, 45%, 0.1);
+  white-space: nowrap; position: relative; z-index: 1;
+}
+.df-sync-badge i { width: 12px; height: 12px; color: hsl(142, 71%, 45%); }
+.df-sync-badge.visible { display: inline-flex; }
+
+/* Mobile date filter */
+.mobile-date-filter {
+  display: none; padding: 8px 16px; gap: 4px; overflow-x: auto;
+  border-bottom: 1px solid var(--border-subtle); background: hsl(20, 10%, 6%);
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.mobile-date-filter::-webkit-scrollbar { display: none; }
+.mobile-date-filter .df-preset {
+  padding: 6px 14px; border-radius: 7px; font-size: 12px; font-weight: 500;
+  background: transparent; border: 1px solid var(--border-subtle); color: var(--muted-foreground);
+  cursor: pointer; transition: all 0.2s; font-family: 'Poppins', sans-serif; white-space: nowrap;
+  flex-shrink: 0;
+}
+.mobile-date-filter .df-preset:hover { color: var(--foreground); }
+.mobile-date-filter .df-preset.active { background: var(--primary); color: var(--background); border-color: var(--primary); }
+
+/* ===== RESPONSIVE — DATE FILTER ===== */
+/* Laptop / smaller desktop (sidebar visible, less main space) */
+@media (max-width: 1500px) {
+  .date-filter-bar .df-range-trigger .df-trigger-label { display: none; }
+  .df-sync-badge span { display: none; }
+  .df-sync-badge { padding: 5px 7px; }
+  .main-content { padding: 24px 24px; }
+}
+/* Laptop compact: 4-col grids → 2-col */
+@media (max-width: 1400px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .charts-grid-3 { grid-template-columns: 1fr 1fr; }
+  .winners-grid { grid-template-columns: repeat(2, 1fr); }
+  .invest-grid { grid-template-columns: repeat(2, 1fr); }
+  .roi-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-card-value { font-size: 24px; }
+}
+/* Tablet (sidebar hidden, filter still in main) */
+@media (max-width: 1100px) {
+  .date-filter-bar { display: none; }
+  .mobile-date-filter { display: flex !important; }
+}
+
+/* Remove old sidebar filter */
+.date-filter-section { display: none; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .sidebar { display: none; }
+  .main-content { margin-left: 0; padding: 24px 20px; }
+  /* Show mobile nav */
+  .mobile-nav { display: flex !important; }
+}
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .charts-grid-2, .charts-grid-3 { grid-template-columns: 1fr; }
+  .invest-grid, .roi-grid { grid-template-columns: repeat(2, 1fr); }
+  .winners-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .roi-grid, .invest-grid { grid-template-columns: 1fr; }
+}
+
+/* Mobile Nav (hidden on desktop) */
+.mobile-nav {
+  display: none; background: var(--card); border-bottom: 1px solid var(--border);
+  padding: 8px 16px; gap: 4px; overflow-x: auto; position: sticky; top: 0; z-index: 40;
+}
+.mobile-nav button {
+  padding: 8px 14px; border: none; background: transparent; color: var(--muted-foreground);
+  font-size: 13px; font-weight: 500; border-radius: var(--radius); cursor: pointer;
+  white-space: nowrap; font-family: 'Poppins', sans-serif;
+}
+.mobile-nav button.active { background: hsl(32, 43%, 47%, 0.1); color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="app-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon">SV</div>
+      <div>
+        <div class="sidebar-brand-text">Syra Vision</div>
+        <div class="sidebar-brand-sub">{{clientName}}</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-page="principal"><i data-lucide="layout-dashboard"></i> Visão Geral</button>
+      <button class="nav-item" data-page="campanhas"><i data-lucide="megaphone"></i> Tráfego Pago</button>
+      <button class="nav-item" data-page="criativos"><i data-lucide="image"></i> Criativos</button>
+      <button class="nav-item" data-page="publicos"><i data-lucide="users"></i> Públicos</button>
+      <button class="nav-item" data-page="oportunidades"><i data-lucide="target"></i> Oportunidades</button>
+      <button class="nav-item" data-page="comercial"><i data-lucide="message-square"></i> Comercial</button>
+      <button class="nav-item" data-page="crossref"><i data-lucide="git-compare"></i> CRM x Ads</button>
+      <button class="nav-item" data-page="scoring"><i data-lucide="gauge"></i> Lead Scoring</button>
+    </nav>
+    <div id="sync-badge-sidebar" style="padding:12px 20px;font-size:11px;color:var(--muted-foreground);display:none">
+      <i data-lucide="database" style="width:12px;height:12px;display:inline-block;vertical-align:middle;margin-right:4px"></i>
+      <span id="sync-badge-sidebar-text"></span>
+    </div>
+    <div class="sidebar-footer">
+      <a href="/"><i data-lucide="arrow-left" style="width:16px;height:16px"></i> Voltar ao Hub</a>
+    </div>
+  </aside>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav">
+    <button class="active" data-page="principal">Principal</button>
+    <button data-page="campanhas">Campanhas</button>
+    <button data-page="criativos">Criativos</button>
+    <button data-page="publicos">Públicos</button>
+    <button data-page="oportunidades">Oportunidades</button>
+    <button data-page="comercial">Comercial</button>
+    <button data-page="crossref">CRM x Ads</button>
+    <button data-page="scoring">Scoring</button>
+  </div>
+  <div class="mobile-date-filter" id="mobile-date-filter">
+    <button class="df-preset" data-days="7">7d</button>
+    <button class="df-preset" data-days="14">14d</button>
+    <button class="df-preset active" data-days="30">30d</button>
+    <button class="df-preset" data-days="90">90d</button>
+    <button class="df-preset" data-days="all">Tudo</button>
+  </div>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <!-- Premium Date Filter Bar -->
+    <div class="date-filter-bar" id="date-filter-bar">
+      <div class="df-pill" id="df-pill"></div>
+      <button class="df-preset" data-days="7">7d</button>
+      <button class="df-preset" data-days="14">14d</button>
+      <button class="df-preset active" data-days="30">30d</button>
+      <button class="df-preset" data-days="90">90d</button>
+      <button class="df-preset" data-days="all">Tudo</button>
+      <span class="df-divider"></span>
+      <button class="df-range-trigger" id="df-range-trigger">
+        <i data-lucide="calendar-range"></i>
+        <span>Personalizado</span>
+      </button>
+      <div class="df-range-label" id="df-range-label" style="display:none">
+        <i data-lucide="calendar-days"></i>
+        <span id="df-range-text"></span>
+      </div>
+      <div class="df-sync-badge" id="df-sync-badge">
+        <i data-lucide="check-circle-2"></i>
+        <span id="df-sync-text"></span>
+      </div>
+      <!-- Custom Date Popover -->
+      <div class="df-popover" id="df-popover">
+        <div class="df-popover-header">
+          <span class="df-popover-title">Período personalizado</span>
+          <button class="df-popover-close" onclick="closeDatePopover()"><i data-lucide="x"></i></button>
+        </div>
+        <div class="df-popover-shortcuts">
+          <button class="df-shortcut" data-start="7">Última semana</button>
+          <button class="df-shortcut" data-start="30">Último mês</button>
+          <button class="df-shortcut" data-start="90">Últimos 3 meses</button>
+          <button class="df-shortcut" data-start="mtd">Mês atual</button>
+          <button class="df-shortcut" data-start="ytd">Ano atual</button>
+        </div>
+        <div class="df-popover-row">
+          <label>De</label>
+          <input type="date" id="df-date-start" />
+        </div>
+        <div class="df-popover-row">
+          <label>Até</label>
+          <input type="date" id="df-date-end" />
+        </div>
+        <div class="df-popover-actions">
+          <button class="df-btn-cancel" onclick="closeDatePopover()">Cancelar</button>
+          <button class="df-btn-apply" onclick="applyCustomDate()">Aplicar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-section active" id="page-principal"></div>
+    <div class="page-section" id="page-campanhas"></div>
+    <div class="page-section" id="page-criativos"></div>
+    <div class="page-section" id="page-publicos"></div>
+    <div class="page-section" id="page-oportunidades"></div>
+    <div class="page-section" id="page-comercial"></div>
+    <div class="page-section" id="page-crossref"></div>
+    <div class="page-section" id="page-scoring"></div>
+  </main>
+</div>
+
+<script>
+// ============================================================
+// CONFIG & STATE
+// ============================================================
+var CLIENT_ID = '{{clientId}}';
+var CLIENT_NAME = '{{clientName}}';
+var STATE = { adsData: null, crmData: null, oppsData: null, crossrefData: null, charts: {}, dateFilter: { days: 30, start: null, end: null } };
+
+var MONTHLY_FIXED_COSTS = { assessoria: 3597, hospedagem: 147, get total() { return this.assessoria + this.hospedagem; } };
+
+// ============================================================
+// DATE FILTER — PREMIUM
+// ============================================================
+function getDateRange() {
+  var f = STATE.dateFilter;
+  if (f.start && f.end) return { start: f.start, end: f.end };
+  if (f.days === 'all') return { start: null, end: null };
+  var end = new Date();
+  var start = new Date();
+  start.setDate(start.getDate() - (f.days || 30));
+  return { start: start.toISOString().split('T')[0], end: end.toISOString().split('T')[0] };
+}
+
+function fmtDateShort(dateStr) {
+  if (!dateStr) return '';
+  var d = new Date(dateStr + 'T12:00:00');
+  return d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short' }).replace('.', '');
+}
+
+function updateRangeLabel() {
+  var range = getDateRange();
+  var label = document.getElementById('df-range-label');
+  var text = document.getElementById('df-range-text');
+  if (range.start && range.end) {
+    text.textContent = fmtDateShort(range.start) + ' — ' + fmtDateShort(range.end);
+    label.style.display = 'inline-flex';
+  } else {
+    label.style.display = 'none';
+  }
+}
+
+function movePill(btn) {
+  var pill = document.getElementById('df-pill');
+  if (!pill || !btn) return;
+  var bar = document.getElementById('date-filter-bar');
+  var barRect = bar.getBoundingClientRect();
+  var btnRect = btn.getBoundingClientRect();
+  pill.style.left = (btnRect.left - barRect.left) + 'px';
+  pill.style.width = btnRect.width + 'px';
+}
+
+function setDateFilter(days, skipLoad) {
+  STATE.dateFilter = { days: days, start: null, end: null };
+  // Update presets (desktop + mobile)
+  document.querySelectorAll('.df-preset').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.days === String(days));
+  });
+  // Move pill to active button
+  var activeBtn = document.querySelector('#date-filter-bar .df-preset.active');
+  if (activeBtn) movePill(activeBtn);
+  // Update range trigger
+  var trigger = document.getElementById('df-range-trigger');
+  if (trigger) trigger.classList.toggle('active', days === 'custom');
+  // Close popover
+  closeDatePopover();
+  // Update range label
+  updateRangeLabel();
+  if (!skipLoad) loadAllData();
+}
+
+function openDatePopover() {
+  var pop = document.getElementById('df-popover');
+  pop.classList.add('open');
+  // Set current dates
+  var range = getDateRange();
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementById('df-date-start').value = range.start || '';
+  document.getElementById('df-date-end').value = range.end || today;
+  // Highlight matching shortcut
+  document.querySelectorAll('.df-shortcut').forEach(function(b) { b.classList.remove('active'); });
+}
+
+function closeDatePopover() {
+  var pop = document.getElementById('df-popover');
+  if (pop) pop.classList.remove('open');
+}
+
+function applyCustomDate() {
+  var start = document.getElementById('df-date-start').value;
+  var end = document.getElementById('df-date-end').value;
+  if (!start || !end) return;
+  if (start > end) { var tmp = start; start = end; end = tmp; }
+  STATE.dateFilter = { days: 'custom', start: start, end: end };
+  // Deactivate presets, activate custom trigger
+  document.querySelectorAll('.df-preset').forEach(function(b) { b.classList.remove('active'); });
+  var trigger = document.getElementById('df-range-trigger');
+  if (trigger) trigger.classList.add('active');
+  // Hide pill
+  var pill = document.getElementById('df-pill');
+  if (pill) pill.style.width = '0px';
+  closeDatePopover();
+  updateRangeLabel();
+  loadAllData();
+}
+
+// Bind preset buttons
+document.querySelectorAll('.df-preset').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var days = this.dataset.days;
+    setDateFilter(days === 'all' ? days : Number(days));
+  });
+});
+
+// Bind range trigger
+document.getElementById('df-range-trigger').addEventListener('click', function(e) {
+  e.stopPropagation();
+  var pop = document.getElementById('df-popover');
+  pop.classList.contains('open') ? closeDatePopover() : openDatePopover();
+});
+
+// Bind popover shortcuts
+document.querySelectorAll('.df-shortcut').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var key = this.dataset.start;
+    var end = new Date();
+    var start = new Date();
+    if (key === 'mtd') { start.setDate(1); }
+    else if (key === 'ytd') { start.setMonth(0, 1); }
+    else { start.setDate(start.getDate() - Number(key)); }
+    document.getElementById('df-date-start').value = start.toISOString().split('T')[0];
+    document.getElementById('df-date-end').value = end.toISOString().split('T')[0];
+    document.querySelectorAll('.df-shortcut').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+  });
+});
+
+// Close popover on outside click
+document.addEventListener('click', function(e) {
+  var pop = document.getElementById('df-popover');
+  var trigger = document.getElementById('df-range-trigger');
+  if (pop && pop.classList.contains('open') && !pop.contains(e.target) && e.target !== trigger && !trigger.contains(e.target)) {
+    closeDatePopover();
+  }
+});
+
+// Initialize pill position on load
+requestAnimationFrame(function() {
+  var activeBtn = document.querySelector('#date-filter-bar .df-preset.active');
+  if (activeBtn) movePill(activeBtn);
+  updateRangeLabel();
+});
+
+var STAGE_COLORS = [
+  'hsl(32, 43%, 47%)', 'hsl(32, 43%, 37%)', 'hsl(32, 43%, 57%)',
+  'hsl(50, 50%, 94%)', 'hsl(20, 8%, 40%)', 'hsl(32, 60%, 55%)',
+  'hsl(32, 30%, 50%)', 'hsl(20, 15%, 45%)', 'hsl(142, 76%, 36%)'
+];
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function navigateTo(page) {
+  document.querySelectorAll('.nav-item, .mobile-nav button').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.page-section').forEach(function(s) { s.classList.remove('active'); });
+  document.querySelectorAll('[data-page="'+page+'"]').forEach(function(b) { b.classList.add('active'); });
+  var el = document.getElementById('page-'+page);
+  if (el) { el.classList.add('active'); }
+  // Lazy load
+  if (page === 'oportunidades' && !STATE.oppsData) loadOpportunities();
+  if (page === 'scoring' && !STATE.scoringData) loadLeadScores();
+}
+document.querySelectorAll('[data-page]').forEach(function(btn) {
+  btn.addEventListener('click', function() { navigateTo(this.dataset.page); });
+});
+
+// ============================================================
+// FORMATTERS
+// ============================================================
+function fmt(v) { return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v || 0); }
+function fmtShort(v) {
+  if (!v && v !== 0) return 'R$0';
+  if (v >= 1000000) return 'R$' + (v/1000000).toFixed(1) + 'M';
+  if (v >= 1000) return 'R$' + (v/1000).toFixed(1) + 'K';
+  return 'R$' + Math.round(v);
+}
+function fmtPct(v) { return (v||0).toFixed(2) + '%'; }
+function fmtPctSigned(v) { return (v >= 0 ? '+' : '') + v.toFixed(1) + '%'; }
+function fmtN(v) { return new Intl.NumberFormat('pt-BR').format(v || 0); }
+function fmtDate(d) { if (!d) return ''; var p = d.split('-'); return p.length === 3 ? p[2]+'/'+p[1] : d; }
+
+// ============================================================
+// STAT CARD BUILDER
+// ============================================================
+function statCard(title, value, subtitle, opts) {
+  opts = opts || {};
+  var trendHtml = '';
+  if (opts.trend) {
+    var t = opts.trend;
+    var cls = t.isPositive ? (t.invertColors ? 'trend-up-inverted' : 'trend-up') : (t.invertColors ? 'trend-down-inverted' : 'trend-down');
+    if (t.isNeutral) cls = 'trend-neutral';
+    var arrow = t.isPositive ? '↑' : '↓';
+    var display = '';
+    if (t.isCurrency) display = (t.value >= 0 ? '+' : '') + fmt(t.value);
+    else if (t.isAbsolute) display = (t.value >= 0 ? '+' : '') + fmtN(t.value);
+    else if (t.isDecimal) display = (t.value >= 0 ? '+' : '') + t.value.toFixed(2);
+    else display = arrow + ' ' + Math.abs(t.value).toFixed(0) + '%';
+    trendHtml = '<div class="stat-card-trend ' + cls + '">' + display + ' vs período anterior</div>';
+  }
+  var clickClass = opts.clickable ? ' stat-card-clickable' + (opts.active ? ' active' : '') : '';
+  var clickAttr = opts.onClick ? ' onclick="' + opts.onClick + '"' : '';
+  var iconHtml = opts.icon ? '<i data-lucide="' + opts.icon + '" class="stat-card-icon"></i>' : '';
+
+  return '<div class="stat-card' + clickClass + '"' + clickAttr + '>' +
+    '<div class="stat-card-header"><span class="stat-card-title">' + title + '</span>' + iconHtml + '</div>' +
+    '<div class="stat-card-value">' + value + '</div>' +
+    (subtitle ? '<div class="stat-card-subtitle">' + subtitle + '</div>' : '') +
+    trendHtml + '</div>';
+}
+
+// ============================================================
+// CHART DEFAULTS
+// ============================================================
+Chart.defaults.color = 'hsl(50, 20%, 60%)';
+Chart.defaults.borderColor = 'hsl(32, 20%, 25%)';
+Chart.defaults.font.family = 'Poppins';
+Chart.defaults.font.size = 12;
+Chart.defaults.plugins.legend.display = false;
+Chart.defaults.plugins.tooltip.backgroundColor = 'hsl(20, 8%, 12%)';
+Chart.defaults.plugins.tooltip.borderColor = 'hsl(32, 20%, 25%)';
+Chart.defaults.plugins.tooltip.borderWidth = 1;
+Chart.defaults.plugins.tooltip.cornerRadius = 8;
+Chart.defaults.plugins.tooltip.titleColor = 'hsl(50, 50%, 94%)';
+Chart.defaults.plugins.tooltip.bodyColor = 'hsl(32, 43%, 60%)';
+Chart.defaults.plugins.tooltip.padding = 10;
+
+function destroyChart(id) { if (STATE.charts[id]) { STATE.charts[id].destroy(); delete STATE.charts[id]; } }
+
+function createLineChart(canvasId, labels, data, color, yFmt) {
+  destroyChart(canvasId);
+  var ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  STATE.charts[canvasId] = new Chart(ctx, {
+    type: 'line',
+    data: { labels: labels, datasets: [{ data: data, borderColor: color, backgroundColor: 'transparent', fill: false, tension: 0.3, pointRadius: 3, pointHoverRadius: 6, borderWidth: 2, pointBackgroundColor: color }] },
+    options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { callback: yFmt || function(v){return v;} }, grid: { color: 'hsl(32,20%,20%)' } }, x: { grid: { display: false } } } }
+  });
+}
+
+function createBarChart(canvasId, labels, data, color, yFmt) {
+  destroyChart(canvasId);
+  var ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  STATE.charts[canvasId] = new Chart(ctx, {
+    type: 'bar',
+    data: { labels: labels, datasets: [{ data: data, backgroundColor: color || 'hsl(32,43%,57%)', borderRadius: 4, maxBarThickness: 40 }] },
+    options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { callback: yFmt || function(v){return v;} }, grid: { color: 'hsl(32,20%,20%)' } }, x: { grid: { display: false } } } }
+  });
+}
+
+function createHorizontalBarChart(canvasId, labels, data, colors) {
+  destroyChart(canvasId);
+  var ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  STATE.charts[canvasId] = new Chart(ctx, {
+    type: 'bar',
+    data: { labels: labels, datasets: [{ data: data, backgroundColor: colors || 'hsl(32,43%,47%)', borderRadius: 4, maxBarThickness: 28 }] },
+    options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', scales: { x: { grid: { color: 'hsl(32,20%,20%)' } }, y: { grid: { display: false } } } }
+  });
+}
+
+function createDoughnutChart(canvasId, labels, data, colors) {
+  destroyChart(canvasId);
+  var ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  STATE.charts[canvasId] = new Chart(ctx, {
+    type: 'doughnut',
+    data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderWidth: 0, cutout: '60%' }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { color: 'hsl(50,20%,60%)', padding: 16, usePointStyle: true } } } }
+  });
+}
+
+function createAreaChart(canvasId, labels, data, color) {
+  destroyChart(canvasId);
+  var ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  STATE.charts[canvasId] = new Chart(ctx, {
+    type: 'line',
+    data: { labels: labels, datasets: [{ data: data, borderColor: color, backgroundColor: 'transparent', fill: false, tension: 0.3, pointRadius: 2, borderWidth: 2, pointBackgroundColor: color }] },
+    options: { responsive: true, maintainAspectRatio: false, scales: { y: { grid: { color: 'hsl(32,20%,20%)' } }, x: { grid: { display: false } } } }
+  });
+}
+
+// ============================================================
+// DATA LOADING
+// ============================================================
+function showLoading(id) { document.getElementById(id).innerHTML = '<div class="loading-state"><div class="spinner"></div><span>Carregando dados...</span></div>'; }
+function showEmpty(id, msg) { document.getElementById(id).innerHTML = '<div class="empty-state"><p>' + (msg||'Sem dados disponíveis') + '</p></div>'; }
+
+// Normalize Celo ads response into flat campaigns array
+function normalizeAdsData(raw) {
+  if (!raw || raw.error) return { campaigns: [], error: raw && raw.error };
+  var campaigns = [];
+  var all = (raw.active || []).concat(raw.paused || []);
+  all.forEach(function(c) {
+    var m = c.metrics || {};
+    campaigns.push({
+      campaign: c.name || 'Sem nome',
+      campaignName: c.name || 'Sem nome',
+      campaignId: c.id,
+      campaignStatus: c.status || 'PAUSED',
+      spend: m.spend || 0,
+      clicks: m.clicks || 0,
+      linkClicks: m.clicks || 0,
+      impressions: m.impressions || 0,
+      leads: m.conversions || 0,
+      messagingConversations: 0,
+      reach: m.reach || 0,
+      frequency: m.frequency || 0,
+      ctr: m.ctr || 0,
+      cpc: m.cpc || 0,
+      cpm: m.cpm || 0,
+      costPerResult: m.costPerResult || 0,
+      status: c.status || 'PAUSED'
+    });
+  });
+  return {
+    campaigns: campaigns,
+    health: raw.health, pacing: raw.pacing, benchmarks: raw.benchmarks,
+    dailyInsights: raw.dailyInsights || null,
+    adSummaries: raw.adSummaries || null,
+    adsetSummaries: raw.adsetSummaries || null,
+    lastSync: raw.lastSync || null,
+    source: raw.source || 'live'
+  };
+}
+
+// Extract CRM fields with correct paths
+function normalizeCrmData(raw) {
+  if (!raw || !raw.available) return null;
+  var stages = (raw.pipeline && raw.pipeline.stages) || [];
+  var conversions = raw.conversions || {};
+  var campaignPerf = raw.campaignPerformance || [];
+  var leads = (raw.recentLeads && raw.recentLeads.leads) || [];
+  var leadsTotal = (raw.recentLeads && raw.recentLeads.total) || leads.length;
+  // Derive wonValue from campaignPerformance (sum all wonValue fields)
+  var wonValueFromPerf = campaignPerf.reduce(function(s, c) { return s + (c.wonValue || 0); }, 0);
+  var wonCountFromPerf = campaignPerf.reduce(function(s, c) { return s + (c.won || 0); }, 0);
+  var lostCountFromPerf = campaignPerf.reduce(function(s, c) { return s + (c.lost || 0); }, 0);
+  return {
+    stages: stages,
+    pipelineName: (raw.pipeline && raw.pipeline.pipelineName) || 'Pipeline',
+    totalOpen: (raw.pipeline && raw.pipeline.totalOpen) || 0,
+    conversions: {
+      totalWon: conversions.totalWon || wonCountFromPerf,
+      totalLost: conversions.totalLost || lostCountFromPerf,
+      totalWonValue: wonValueFromPerf,
+      won30d: conversions.won30d || 0,
+      lost30d: conversions.lost30d || 0,
+      wonValue30d: conversions.wonValue30d || 0,
+      conversionRate: conversions.conversionRate || 0
+    },
+    campaignPerformance: campaignPerf,
+    recentLeads: leads,
+    recentLeadsTotal: leadsTotal
+  };
+}
+
+async function loadAllData() {
+  showLoading('page-principal');
+  // Load ads and CRM independently — one can fail without breaking the other
+  var adsRaw = null, crmRaw = null;
+  try {
+    var range = getDateRange();
+    var adsUrl = '/api/media/client/' + CLIENT_ID;
+    if (range.start && range.end) adsUrl += '?start=' + range.start + '&end=' + range.end;
+    var r = await fetch(adsUrl);
+    if (r.ok) { adsRaw = await r.json(); }
+    else {
+      try { var errBody = await r.json(); adsRaw = { error: errBody.error || 'HTTP ' + r.status }; }
+      catch(e2) { adsRaw = { error: 'Token Meta expirado ou Celo indisponível (HTTP ' + r.status + ')' }; }
+    }
+  } catch(e) { adsRaw = { error: e.message }; }
+
+  try {
+    crmRaw = await fetch('/api/media/client/' + CLIENT_ID + '/crm').then(function(r){return r.json();});
+  } catch(e) { console.error('CRM load error:', e); }
+
+  STATE.adsData = normalizeAdsData(adsRaw);
+  STATE.crmData = normalizeCrmData(crmRaw);
+
+  if (!STATE.adsData.campaigns.length && !STATE.crmData) {
+    showEmpty('page-principal', 'Sem dados disponíveis. Verifique as integrações.');
+    return;
+  }
+
+  // Mostrar badge de sincronização
+  if (STATE.adsData.lastSync) {
+    var rawSync = STATE.adsData.lastSync;
+    if (rawSync && typeof rawSync === 'string' && !rawSync.endsWith('Z') && !rawSync.includes('+')) rawSync += 'Z';
+    var syncDate = new Date(rawSync);
+    var spTz = { timeZone: 'America/Sao_Paulo' };
+    var syncText = syncDate.toLocaleDateString('pt-BR', Object.assign({day:'2-digit',month:'short'}, spTz)) + ' ' + syncDate.toLocaleTimeString('pt-BR', Object.assign({hour:'2-digit',minute:'2-digit'}, spTz));
+    // Inline badge
+    var badge = document.getElementById('df-sync-badge');
+    if (badge) { document.getElementById('df-sync-text').textContent = syncText; badge.classList.add('visible'); }
+    // Sidebar badge
+    var sbBadge = document.getElementById('sync-badge-sidebar');
+    if (sbBadge) { document.getElementById('sync-badge-sidebar-text').textContent = 'Sync: ' + syncText; sbBadge.style.display = 'block'; }
+  }
+  // Update range label
+  updateRangeLabel();
+
+  renderPrincipal();
+  renderCampanhas();
+  renderCriativos();
+  renderPublicos();
+
+  // Always load opportunities (pass date range for server-side filtering from DB)
+  try {
+    var oppsUrl = '/api/media/client/' + CLIENT_ID + '/opportunities';
+    if (range.start && range.end) oppsUrl += '?start=' + range.start + '&end=' + range.end;
+    var oppsRes = await fetch(oppsUrl).then(function(r){return r.json();});
+    STATE.oppsData = oppsRes;
+    STATE.oppsSource = oppsRes.source || 'live';
+  } catch(e) { console.error('Opps load error:', e); }
+
+  renderComercial();
+  if (STATE.oppsData) {
+    renderOportunidades();
+    renderPrincipal(); // Re-render Visão Geral with filtered opps data
+  }
+
+  // Load crossref data (CRM x Ads merged)
+  try {
+    var crossUrl = '/api/media/client/' + CLIENT_ID + '/crossref';
+    if (range.start && range.end) crossUrl += '?start=' + range.start + '&end=' + range.end;
+    var crossRes = await fetch(crossUrl).then(function(r){return r.json();});
+    STATE.crossrefData = crossRes;
+    renderCrossref();
+  } catch(e) { console.error('Crossref load error:', e); }
+}
+
+async function loadOpportunities() {
+  if (STATE.oppsData) { renderOportunidades(); return; }
+  showLoading('page-oportunidades');
+  try {
+    var res = await fetch('/api/media/client/' + CLIENT_ID + '/opportunities').then(function(r){return r.json();});
+    STATE.oppsData = res;
+    renderOportunidades();
+    if (STATE.crmData) renderComercial();
+  } catch(e) {
+    console.error('Opps load error:', e);
+    showEmpty('page-oportunidades', 'Erro ao carregar oportunidades: ' + e.message);
+  }
+}
+
+// ============================================================
+// CALCULATION HELPERS (replicating lib/campaigns.ts logic)
+// ============================================================
+function calcCampaignStats(campaigns, revenue) {
+  if (!campaigns || !campaigns.length) return { totalSpend:0, avgCPC:0, avgCTR:0, avgCPL:0, totalClicks:0, totalImpressions:0, totalLeads:0, totalReach:0, roas:0, revenue:revenue||0, conversionRate:0, costPerImpression:0 };
+  var totalSpend=0, totalClicks=0, totalImpressions=0, totalLeads=0, totalReach=0;
+  campaigns.forEach(function(c) {
+    totalSpend += c.spend || 0;
+    totalClicks += c.linkClicks || c.clicks || 0;
+    totalImpressions += c.impressions || 0;
+    totalLeads += (c.leads || 0) + (c.messagingConversations || 0);
+    totalReach += c.reach || 0;
+  });
+  var rev = revenue || 0;
+  return {
+    totalSpend: totalSpend,
+    avgCPC: totalClicks > 0 ? totalSpend / totalClicks : 0,
+    avgCTR: totalImpressions > 0 ? (totalClicks / totalImpressions) * 100 : 0,
+    avgCPL: totalLeads > 0 ? totalSpend / totalLeads : 0,
+    totalClicks: totalClicks,
+    totalImpressions: totalImpressions,
+    totalLeads: totalLeads,
+    totalReach: totalReach,
+    roas: totalSpend > 0 ? rev / totalSpend : 0,
+    revenue: rev,
+    conversionRate: totalClicks > 0 ? (totalLeads / totalClicks) * 100 : 0,
+    costPerImpression: totalImpressions > 0 ? (totalSpend / totalImpressions) * 1000 : 0
+  };
+}
+
+function getDailyStats(campaigns, dailyInsightsFromDb) {
+  // Se temos dailyInsights do BD, usar direto
+  if (dailyInsightsFromDb && dailyInsightsFromDb.length > 0) {
+    return dailyInsightsFromDb.map(function(d) {
+      return {
+        date: d.date,
+        clicks: d.clicks || 0,
+        spend: d.spend || 0,
+        leads: d.leads || 0,
+        ctr: d.ctr || 0,
+        cpc: d.cpc || 0,
+        conversionRate: d.clicks > 0 ? ((d.leads || 0) / d.clicks) * 100 : 0
+      };
+    });
+  }
+  // Fallback: extrair de campaigns (comportamento original)
+  var map = {};
+  (campaigns||[]).forEach(function(c) {
+    var d = c.date; if (!d) return;
+    if (!map[d]) map[d] = { clicks:0, impressions:0, spend:0, leads:0 };
+    map[d].clicks += c.linkClicks || c.clicks || 0;
+    map[d].impressions += c.impressions || 0;
+    map[d].spend += c.spend || 0;
+    map[d].leads += (c.leads || 0) + (c.messagingConversations || 0);
+  });
+  return Object.keys(map).sort().map(function(d) {
+    var v = map[d];
+    return { date: d, clicks: v.clicks, spend: v.spend, leads: v.leads,
+      ctr: v.impressions > 0 ? (v.clicks / v.impressions) * 100 : 0,
+      cpc: v.clicks > 0 ? v.spend / v.clicks : 0,
+      conversionRate: v.clicks > 0 ? (v.leads / v.clicks) * 100 : 0
+    };
+  });
+}
+
+function getCampaignSummaries(campaigns) {
+  var map = {};
+  (campaigns||[]).forEach(function(c) {
+    var name = c.campaign || c.campaignName || 'Sem nome';
+    if (!map[name]) map[name] = { spend:0, clicks:0, impressions:0, leads:0, reach:0, freq:0, freqN:0, active:false };
+    var m = map[name];
+    m.spend += c.spend || 0;
+    m.clicks += c.linkClicks || c.clicks || 0;
+    m.impressions += c.impressions || 0;
+    m.leads += (c.leads || 0) + (c.messagingConversations || 0);
+    m.reach += c.reach || 0;
+    if (c.frequency > 0) { m.freq += c.frequency; m.freqN++; }
+    if ((c.campaignStatus||'').toUpperCase() === 'ACTIVE') m.active = true;
+  });
+  return Object.keys(map).map(function(name) {
+    var m = map[name];
+    return {
+      campaign: name, status: m.active ? 'active' : 'paused',
+      spend: m.spend, clicks: m.clicks, impressions: m.impressions, leads: m.leads, reach: m.reach,
+      ctr: m.impressions > 0 ? (m.clicks / m.impressions) * 100 : 0,
+      cpc: m.clicks > 0 ? m.spend / m.clicks : 0,
+      cpl: m.leads > 0 ? m.spend / m.leads : 0,
+      frequency: m.freqN > 0 ? m.freq / m.freqN : 0,
+      cpm: m.impressions > 0 ? (m.spend / m.impressions) * 1000 : 0,
+      conversionRate: m.clicks > 0 ? (m.leads / m.clicks) * 100 : 0
+    };
+  }).sort(function(a,b){return b.spend - a.spend;});
+}
+
+function getCreativeSummaries(campaigns) {
+  var map = {};
+  (campaigns||[]).forEach(function(c) {
+    var name = c.adName || c.creative_name; if (!name) return;
+    if (!map[name]) map[name] = { campaign: c.campaign||'', spend:0, clicks:0, impressions:0, leads:0, reach:0, freq:0, freqN:0, active:false, thumb:null };
+    var m = map[name];
+    m.spend += c.spend || 0;
+    m.clicks += c.linkClicks || c.clicks || 0;
+    m.impressions += c.impressions || 0;
+    m.leads += (c.leads || 0);
+    m.reach += c.reach || 0;
+    if (c.frequency > 0) { m.freq += c.frequency; m.freqN++; }
+    if ((c.status||'').toUpperCase() === 'ACTIVE') m.active = true;
+    if (!m.thumb && c.thumbnailUrl) m.thumb = c.thumbnailUrl;
+  });
+  return Object.keys(map).map(function(name) {
+    var m = map[name];
+    return {
+      adName: name, campaign: m.campaign, status: m.active ? 'active' : 'paused',
+      spend: m.spend, clicks: m.clicks, impressions: m.impressions, leads: m.leads, reach: m.reach,
+      ctr: m.impressions > 0 ? (m.clicks / m.impressions) * 100 : 0,
+      cpc: m.clicks > 0 ? m.spend / m.clicks : 0,
+      cpl: m.leads > 0 ? m.spend / m.leads : 0,
+      frequency: m.freqN > 0 ? m.freq / m.freqN : 0,
+      cpm: m.impressions > 0 ? (m.spend / m.impressions) * 1000 : 0,
+      conversionRate: m.clicks > 0 ? (m.leads / m.clicks) * 100 : 0,
+      thumbnailUrl: m.thumb
+    };
+  }).sort(function(a,b){return b.spend - a.spend;});
+}
+
+function getWinningCreatives(summaries) {
+  var withLeads = summaries.filter(function(s){return s.leads > 0;});
+  if (!withLeads.length) {
+    return summaries.filter(function(s){return s.clicks > 0;}).slice(0,3).map(function(s,i){
+      return { adName: s.adName, cpl: s.cpl, leads: s.leads, clicks: s.clicks, score: 3-i, badges: ['Mais Cliques'] };
+    });
+  }
+  var maxLeads = Math.max.apply(null, withLeads.map(function(s){return s.leads;}));
+  var maxClicks = Math.max.apply(null, withLeads.map(function(s){return s.clicks;}));
+  var minCPL = Math.min.apply(null, withLeads.map(function(s){return s.cpl;}));
+  var maxCPL = Math.max.apply(null, withLeads.map(function(s){return s.cpl;}));
+
+  var scored = withLeads.map(function(s) {
+    var cplScore = maxCPL > minCPL ? 1 - ((s.cpl - minCPL) / (maxCPL - minCPL)) : 1;
+    var leadsScore = maxLeads > 0 ? s.leads / maxLeads : 0;
+    var clicksScore = maxClicks > 0 ? s.clicks / maxClicks : 0;
+    return Object.assign({}, s, { score: cplScore * 0.4 + leadsScore * 0.35 + clicksScore * 0.25 });
+  }).sort(function(a,b){return b.score - a.score;});
+
+  var bestCPL = withLeads.reduce(function(m,s){return s.cpl < m.cpl ? s : m;});
+  var bestLeads = withLeads.reduce(function(m,s){return s.leads > m.leads ? s : m;});
+  var bestClicks = summaries.reduce(function(m,s){return s.clicks > m.clicks ? s : m;});
+
+  return scored.slice(0,3).map(function(s) {
+    var badges = [];
+    if (s.adName === bestCPL.adName) badges.push('Menor CPL');
+    if (s.adName === bestLeads.adName) badges.push('Mais Leads');
+    if (s.adName === bestClicks.adName) badges.push('Mais Cliques');
+    return { adName: s.adName, cpl: s.cpl, leads: s.leads, clicks: s.clicks, score: s.score, badges: badges };
+  });
+}
+
+function getAudienceSummaries(campaigns) {
+  var map = {};
+  (campaigns||[]).forEach(function(c) {
+    var name = c.adsetName || c.adset_name; if (!name) return;
+    if (!map[name]) map[name] = { spend:0, clicks:0, impressions:0, leads:0, reach:0, freq:0, freqN:0, active:false };
+    var m = map[name];
+    m.spend += c.spend || 0;
+    m.clicks += c.linkClicks || c.clicks || 0;
+    m.impressions += c.impressions || 0;
+    m.leads += (c.leads || 0);
+    m.reach += c.reach || 0;
+    if (c.frequency > 0) { m.freq += c.frequency; m.freqN++; }
+    if ((c.adsetStatus||'').toUpperCase() === 'ACTIVE') m.active = true;
+  });
+  return Object.keys(map).map(function(name) {
+    var m = map[name];
+    return {
+      adsetName: name, status: m.active ? 'active' : 'paused',
+      spend: m.spend, clicks: m.clicks, impressions: m.impressions, leads: m.leads, reach: m.reach,
+      ctr: m.impressions > 0 ? (m.clicks / m.impressions) * 100 : 0,
+      cpc: m.clicks > 0 ? m.spend / m.clicks : 0,
+      cpl: m.leads > 0 ? m.spend / m.leads : 0,
+      frequency: m.freqN > 0 ? m.freq / m.freqN : 0,
+      cpm: m.impressions > 0 ? (m.spend / m.impressions) * 1000 : 0,
+      conversionRate: m.clicks > 0 ? (m.leads / m.clicks) * 100 : 0
+    };
+  }).sort(function(a,b){return b.spend - a.spend;});
+}
+
+// ============================================================
+// RENDER: PRINCIPAL (Visão Geral)
+// ============================================================
+function renderPrincipal() {
+  var ads = STATE.adsData; var crm = STATE.crmData;
+  if ((!ads || !ads.campaigns.length) && !crm) { showEmpty('page-principal', 'Sem dados disponíveis'); return; }
+
+  var campaigns = (ads && ads.campaigns) || [];
+  var stages = (crm && crm.stages) || [];
+  var conversions = (crm && crm.conversions) || {};
+
+  var wonValue = conversions.totalWonValue || 0;
+  var wonCount = conversions.totalWon || 0;
+  var lostCount = conversions.totalLost || 0;
+  // Open = currently in pipeline stages. Won/Lost already moved out of pipeline.
+  var openOpps = (crm && crm.totalOpen) || stages.reduce(function(s,st){return s + st.count;}, 0);
+  var totalOpps = openOpps + wonCount + lostCount;
+
+  // Override with filtered opps data when available (respects date filter)
+  if (STATE.oppsData && STATE.oppsData.opportunities) {
+    var allOpps = STATE.oppsData.opportunities;
+    var range = getDateRange();
+    var filteredOpps = allOpps;
+    if (range.start && range.end && STATE.oppsSource !== 'db') {
+      filteredOpps = allOpps.filter(function(o) {
+        var d = (o.createdAt || '').substring(0, 10);
+        return d >= range.start && d <= range.end;
+      });
+    }
+    openOpps = filteredOpps.filter(function(o){return o.status === 'open';}).length;
+    wonCount = filteredOpps.filter(function(o){return o.status === 'won';}).length;
+    lostCount = filteredOpps.filter(function(o){return o.status === 'lost';}).length;
+    totalOpps = filteredOpps.length;
+    wonValue = filteredOpps.filter(function(o){return o.status === 'won';}).reduce(function(s,o){return s + (o.monetaryValue || 0);}, 0);
+
+    // BUG 1 FIX: Rebuild stages from filtered opps (not all-time CRM data)
+    if (STATE.oppsData.stages) {
+      var stageMap = {};
+      (STATE.oppsData.stages || []).forEach(function(s) {
+        stageMap[s.id] = { id: s.id, name: s.name, position: s.position, count: 0, totalValue: 0 };
+      });
+      filteredOpps.forEach(function(o) {
+        if (o.pipelineStageId && stageMap[o.pipelineStageId]) {
+          stageMap[o.pipelineStageId].count++;
+          stageMap[o.pipelineStageId].totalValue += (o.monetaryValue || 0);
+        }
+      });
+      stages = Object.values(stageMap).sort(function(a,b){ return (a.position||0) - (b.position||0); });
+    }
+  }
+
+  // BUG 4 FIX: Calculate stats AFTER opps override so wonValue/ROAS is correct
+  var stats = calcCampaignStats(campaigns, wonValue);
+  var periodDays = STATE.dateFilter.days === 'all' ? 180 : (STATE.dateFilter.days === 'custom' ? (function() {
+    var s = new Date(STATE.dateFilter.start), e = new Date(STATE.dateFilter.end);
+    return Math.max(1, Math.round((e - s) / 86400000));
+  })() : (STATE.dateFilter.days || 30));
+  var monthlyRatio = periodDays / 30;
+  var fixedCosts = MONTHLY_FIXED_COSTS.total * monthlyRatio;
+  var totalInvestment = stats.totalSpend + fixedCosts;
+  var cpoTotal = totalOpps > 0 ? stats.totalSpend / totalOpps : 0;
+  var cpoWon = wonCount > 0 ? stats.totalSpend / wonCount : 0;
+  var roi = totalInvestment > 0 ? ((wonValue - totalInvestment) / totalInvestment) * 100 : 0;
+  var profit = wonValue - totalInvestment;
+
+  var html = '';
+
+  // Header
+  html += '<div class="page-header"><div><h1>Visão Geral</h1><p>Consolidação de métricas de Comercial e Tráfego Pago</p></div></div>';
+
+  // Warning banner if ads data is unavailable
+  if (!campaigns.length && ads && ads.error) {
+    html += '<div style="background:hsl(32,30%,15%);border:1px solid hsl(32,43%,35%);border-radius:var(--radius);padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:12px">';
+    html += '<i data-lucide="alert-triangle" style="color:var(--primary);width:20px;height:20px;flex-shrink:0"></i>';
+    html += '<div><strong style="color:var(--primary)">Dados de Ads indisponíveis</strong>';
+    html += '<p style="color:var(--muted-foreground);font-size:13px;margin-top:2px">' + ads.error + '. Os KPIs de tráfego pago mostram zero. Renove o token Meta para atualizar.</p>';
+    html += '</div></div>';
+  }
+
+  // Row 1: Main KPIs
+  html += '<div class="stats-grid">';
+  html += statCard('Leads (Tráfego)', fmtN(stats.totalLeads), 'CPL: ' + fmt(stats.avgCPL), { icon: 'users' });
+  html += statCard('Oportunidades', fmtN(totalOpps), wonCount + ' ganhas · ' + openOpps + ' abertas', { icon: 'target' });
+  html += statCard('Investimento Total', fmtShort(totalInvestment), 'Ads: ' + fmtShort(stats.totalSpend) + ' · Fixo: ' + fmtShort(fixedCosts), { icon: 'dollar-sign' });
+  html += statCard('Faturamento (Ganhas)', fmtShort(wonValue), wonCount + ' oportunidades ganhas', { icon: 'trending-up' });
+  html += '</div>';
+
+  // Row 2: Financial KPIs
+  html += '<div class="stats-grid">';
+  html += statCard('CPO Total', fmt(cpoTotal), 'Custo por Oportunidade (todas)', { icon: 'bar-chart-3' });
+  html += statCard('CPO Ganho', fmt(cpoWon), 'Custo por Oportunidade Ganha', { icon: 'target' });
+  html += statCard('ROAS', stats.roas.toFixed(2) + 'x', 'Retorno sobre gasto em Ads', { icon: 'trending-up', trend: stats.roas >= 1 ? { value: (stats.roas-1)*100, isPositive: true } : { value: (1-stats.roas)*100, isPositive: false } });
+  html += statCard('ROI', fmtPctSigned(roi), 'Retorno sobre Investimento Total', { icon: 'percent', trend: { value: Math.abs(roi), isPositive: roi >= 0 } });
+  html += '</div>';
+
+  // Row 3: SaaS Metrics
+  html += '<div class="stats-grid">';
+  var monthlyRevenue = periodDays > 0 ? wonValue * (30 / periodDays) : wonValue;
+  html += statCard('MRR', fmtShort(monthlyRevenue), 'Receita mensal recorrente (projetada de ' + periodDays + 'd)', { icon: 'trending-up' });
+  var annualizationFactor = periodDays > 0 ? 365 / periodDays : 12;
+  html += statCard('ARR', fmtShort(wonValue * annualizationFactor), 'Faturamento projetado anual (' + periodDays + 'd \u2192 365d)', { icon: 'dollar-sign' });
+  var margin = (wonValue > 0 && totalInvestment > 0) ? ((wonValue - totalInvestment) / wonValue) * 100 : 0;
+  html += statCard('Margem de Contribuição', fmtPctSigned(margin), fmtShort(profit) + ' de margem', { icon: 'bar-chart-3' });
+  html += statCard('Churn Rate', '0,0%', 'Sem dados de churn ainda', { icon: 'arrow-down-right' });
+  html += '</div>';
+
+  // CPO by Stage Chart
+  if (stages.length > 0) {
+    html += '<div class="section-card"><h3>Custo por Oportunidade (por Etapa do Funil)</h3>';
+    html += '<p class="subtitle">Gasto total de ' + fmt(stats.totalSpend) + ' dividido pela quantidade em cada etapa</p>';
+    html += '<div style="height:' + Math.max(300, stages.length * 40) + 'px"><canvas id="chart-cpo-stage"></canvas></div></div>';
+
+    // Funnel Details Table
+    html += '<div class="section-card"><h3>Detalhamento por Etapa do Funil</h3>';
+    html += '<div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+    html += '<th>Etapa</th><th class="text-right">Quantidade</th><th class="text-right">CPO</th><th class="text-right">Valor Total</th><th class="text-right">% do Total</th>';
+    html += '</tr></thead><tbody>';
+    var totalStageValue = 0;
+    stages.forEach(function(st, i) {
+      var cpo = st.count > 0 ? stats.totalSpend / st.count : 0;
+      var pct = totalOpps > 0 ? (st.count / totalOpps) * 100 : 0;
+      var val = st.totalValue || 0;
+      totalStageValue += val;
+      html += '<tr><td><span class="stage-dot" style="background:' + STAGE_COLORS[i % STAGE_COLORS.length] + '"></span>' + st.name + '</td>';
+      html += '<td class="text-right text-primary">' + st.count + '</td>';
+      html += '<td class="text-right text-primary">' + fmt(cpo) + '</td>';
+      html += '<td class="text-right text-primary">' + fmt(val) + '</td>';
+      html += '<td class="text-right">' + pct.toFixed(1) + '%</td></tr>';
+    });
+    html += '</tbody><tfoot><tr><td><strong>Total</strong></td>';
+    html += '<td class="text-right"><strong>' + totalOpps + '</strong></td>';
+    html += '<td class="text-right"><strong>' + fmt(cpoTotal) + '</strong></td>';
+    html += '<td class="text-right"><strong>' + fmt(totalStageValue) + '</strong></td>';
+    html += '<td class="text-right"><strong>100%</strong></td></tr></tfoot></table></div></div>';
+  }
+
+  // Investment Breakdown
+  html += '<div class="section-card"><h3>Composição do Investimento</h3>';
+  html += '<div class="invest-grid">';
+  html += '<div class="invest-card"><div class="label">Tráfego Pago</div><div class="value">' + fmt(stats.totalSpend) + '</div>';
+  html += '<div class="meta">' + (totalInvestment > 0 ? ((stats.totalSpend/totalInvestment)*100).toFixed(1) + '% do total' : '0%') + '</div></div>';
+  html += '<div class="invest-card"><div class="label">Custos Fixos (proporcional)</div><div class="value">' + fmt(fixedCosts) + '</div>';
+  html += '<div class="meta">Assessoria + Hospedagem (' + periodDays + ' dias)</div></div>';
+  html += '<div class="invest-card highlight"><div class="label">Investimento Total</div><div class="value">' + fmt(totalInvestment) + '</div>';
+  html += '<div class="meta">Base para cálculo do ROI</div></div>';
+  html += '</div></div>';
+
+  // ROI Summary
+  html += '<div class="section-card"><h3>Resumo Financeiro</h3>';
+  html += '<div class="roi-grid">';
+  html += '<div class="roi-card"><div class="label">Faturamento</div><div class="value">' + fmt(wonValue) + '</div></div>';
+  html += '<div class="roi-card"><div class="label">Investimento</div><div class="value">' + fmt(totalInvestment) + '</div></div>';
+  html += '<div class="roi-card"><div class="label">Lucro/Prejuízo</div><div class="value ' + (profit >= 0 ? 'positive' : 'negative') + '">' + fmt(profit) + '</div></div>';
+  html += '<div class="roi-card ' + (roi >= 0 ? 'positive-bg' : 'negative-bg') + '"><div class="label">ROI</div><div class="value ' + (roi >= 0 ? 'positive' : 'negative') + '">' + (roi >= 0 ? '↑' : '↓') + ' ' + fmtPctSigned(roi) + '</div></div>';
+  html += '</div></div>';
+
+  document.getElementById('page-principal').innerHTML = html;
+  lucide.createIcons();
+
+  // Render CPO chart
+  if (stages.length > 0) {
+    var stageLabels = stages.map(function(s){return s.name;});
+    var stageCPO = stages.map(function(s){return s.count > 0 ? stats.totalSpend / s.count : 0;});
+    var stageClrs = stages.map(function(_,i){return STAGE_COLORS[i % STAGE_COLORS.length];});
+    createHorizontalBarChart('chart-cpo-stage', stageLabels, stageCPO, stageClrs);
+  }
+}
+
+// ============================================================
+// RENDER: CAMPANHAS (Tráfego Pago)
+// ============================================================
+function renderCampanhas() {
+  var ads = STATE.adsData;
+  if (!ads || !ads.campaigns || !ads.campaigns.length) {
+    var msg = ads && ads.error ? 'Token Meta expirado ou erro na API: ' + ads.error : 'Sem dados de campanhas.';
+    showEmpty('page-campanhas', msg);
+    return;
+  }
+
+  var campaigns = ads.campaigns;
+  // BUG 2 FIX: Calculate wonValue from filtered opps for correct ROAS
+  var crmWonValue = 0;
+  if (STATE.oppsData && STATE.oppsData.opportunities) {
+    var range = getDateRange();
+    var opps = STATE.oppsData.opportunities;
+    if (range.start && range.end && STATE.oppsSource !== 'db') {
+      opps = opps.filter(function(o) { var d = (o.createdAt||'').substring(0,10); return d >= range.start && d <= range.end; });
+    }
+    crmWonValue = opps.filter(function(o){return o.status==='won';}).reduce(function(s,o){return s+(o.monetaryValue||0);},0);
+  }
+  var stats = calcCampaignStats(campaigns, crmWonValue);
+  var daily = getDailyStats(campaigns, ads.dailyInsights);
+  var summaries = getCampaignSummaries(campaigns);
+
+  var html = '';
+  html += '<div class="page-header"><div><h1>Tráfego Pago</h1><p>Métricas de campanhas de anúncios</p></div></div>';
+
+  // Row 1: Cost Metrics
+  html += '<div class="stats-grid">';
+  html += statCard('CPL Médio', stats.avgCPL > 0 ? fmt(stats.avgCPL) : '-', 'Custo por lead', { icon: 'target' });
+  html += statCard('CTR Médio', fmtPct(stats.avgCTR), 'Taxa de cliques', { icon: 'percent' });
+  html += statCard('CPC Médio', stats.avgCPC > 0 ? fmt(stats.avgCPC) : '-', 'Custo por clique', { icon: 'mouse-pointer-click' });
+  html += statCard('Valor Gasto', fmt(stats.totalSpend), 'Total investido no período', { icon: 'dollar-sign' });
+  html += '</div>';
+
+  // Row 2: Performance
+  html += '<div class="stats-grid">';
+  html += statCard('ROAS', stats.roas > 0 ? stats.roas.toFixed(2) + 'x' : '-', 'Retorno sobre gasto', { icon: 'trending-up' });
+  html += statCard('Taxa de Conversão', stats.conversionRate > 0 ? fmtPct(stats.conversionRate) : '-', 'Leads / Cliques', { icon: 'zap' });
+  html += statCard('Total de Leads', stats.totalLeads > 0 ? fmtN(stats.totalLeads) : '-', 'Leads gerados', { icon: 'users' });
+  html += statCard('CPM', stats.costPerImpression > 0 ? fmt(stats.costPerImpression) : '-', 'Custo por mil impressões', { icon: 'eye' });
+  html += '</div>';
+
+  // Charts Row 1
+  html += '<div class="charts-grid-3">';
+  html += '<div class="chart-box"><h3>CTR Médio (%)</h3><div class="chart-wrap"><canvas id="chart-ctr"></canvas></div></div>';
+  html += '<div class="chart-box"><h3>CPC Médio (R$)</h3><div class="chart-wrap"><canvas id="chart-cpc"></canvas></div></div>';
+  html += '<div class="chart-box"><h3>Cliques por Dia</h3><div class="chart-wrap"><canvas id="chart-clicks"></canvas></div></div>';
+  html += '</div>';
+
+  // Charts Row 2
+  html += '<div class="charts-grid-3">';
+  html += '<div class="chart-box"><h3>Valor Gasto por Dia</h3><div class="chart-wrap"><canvas id="chart-spend"></canvas></div></div>';
+  html += '<div class="chart-box"><h3>Taxa de Conversão (%)</h3><div class="chart-wrap"><canvas id="chart-conv"></canvas></div></div>';
+  html += '<div class="chart-box"><h3>Leads por Dia</h3><div class="chart-wrap"><canvas id="chart-leads"></canvas></div></div>';
+  html += '</div>';
+
+  // Campaign Summary Table (sortable)
+  var campColMap = {
+    campaign: function(s){return s.campaign;}, status: function(s){return s.status;},
+    spend: function(s){return s.spend;}, clicks: function(s){return s.clicks;},
+    ctr: function(s){return s.ctr;}, cpc: function(s){return s.cpc;},
+    cpl: function(s){return s.cpl;}, leads: function(s){return s.leads;},
+    conv: function(s){return s.conversionRate;}
+  };
+  var sortedSummaries = sortData(summaries, campSort, campColMap);
+  html += '<div class="section-card"><h3>Resumo por Campanha</h3><div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+  html += '<th class="' + sortCls(campSort,'campaign') + '" onclick="toggleCampSort(\'campaign\')">Campanha</th>';
+  html += '<th class="' + sortCls(campSort,'status') + '" onclick="toggleCampSort(\'status\')">Status</th>';
+  html += '<th class="text-right ' + sortCls(campSort,'spend') + '" onclick="toggleCampSort(\'spend\')">Gasto</th>';
+  html += '<th class="text-right ' + sortCls(campSort,'clicks') + '" onclick="toggleCampSort(\'clicks\')">Cliques</th>';
+  html += '<th class="text-right ' + sortCls(campSort,'ctr') + '" onclick="toggleCampSort(\'ctr\')">CTR</th>';
+  html += '<th class="text-right ' + sortCls(campSort,'cpc') + '" onclick="toggleCampSort(\'cpc\')">CPC</th>';
+  html += '<th class="text-right ' + sortCls(campSort,'cpl') + '" onclick="toggleCampSort(\'cpl\')">CPL</th>';
+  html += '<th class="text-right ' + sortCls(campSort,'leads') + '" onclick="toggleCampSort(\'leads\')">Leads</th>';
+  html += '<th class="text-right ' + sortCls(campSort,'conv') + '" onclick="toggleCampSort(\'conv\')">Conv%</th>';
+  html += '</tr></thead><tbody>';
+  sortedSummaries.forEach(function(s) {
+    html += '<tr><td class="text-primary">' + s.campaign + '</td>';
+    html += '<td><span class="status-badge ' + s.status + '">' + (s.status === 'active' ? 'Ativa' : 'Pausada') + '</span></td>';
+    html += '<td class="text-right">' + fmt(s.spend) + '</td>';
+    html += '<td class="text-right">' + fmtN(s.clicks) + '</td>';
+    html += '<td class="text-right">' + fmtPct(s.ctr) + '</td>';
+    html += '<td class="text-right">' + fmt(s.cpc) + '</td>';
+    html += '<td class="text-right">' + (s.cpl > 0 ? fmt(s.cpl) : '-') + '</td>';
+    html += '<td class="text-right">' + s.leads + '</td>';
+    html += '<td class="text-right">' + fmtPct(s.conversionRate) + '</td></tr>';
+  });
+  html += '</tbody></table></div></div>';
+
+  document.getElementById('page-campanhas').innerHTML = html;
+  lucide.createIcons();
+
+  // Render charts
+  var labels = daily.map(function(d){return fmtDate(d.date);});
+  createLineChart('chart-ctr', labels, daily.map(function(d){return d.ctr;}), 'hsl(32,43%,47%)', function(v){return v.toFixed(1)+'%';});
+  createLineChart('chart-cpc', labels, daily.map(function(d){return d.cpc;}), 'hsl(32,43%,37%)', function(v){return 'R$'+v.toFixed(2);});
+  createBarChart('chart-clicks', labels, daily.map(function(d){return d.clicks;}), 'hsl(32,43%,57%)');
+  createBarChart('chart-spend', labels, daily.map(function(d){return d.spend;}), 'hsl(32,43%,57%)', function(v){return 'R$'+v.toFixed(0);});
+  createLineChart('chart-conv', labels, daily.map(function(d){return d.conversionRate;}), 'hsl(32,43%,47%)', function(v){return v.toFixed(1)+'%';});
+  createBarChart('chart-leads', labels, daily.map(function(d){return d.leads;}), 'hsl(32,43%,57%)');
+}
+
+// ============================================================
+// RENDER: CRIATIVOS
+// ============================================================
+function renderCriativos() {
+  var ads = STATE.adsData;
+  if ((!ads || !ads.campaigns || !ads.campaigns.length) && (!ads || !ads.adSummaries || !ads.adSummaries.length)) {
+    var msg = ads && ads.error ? 'Token Meta expirado ou erro: ' + ads.error : 'Sem dados de criativos. Dados a nível de criativo requerem API de Ad Insights.';
+    showEmpty('page-criativos', msg);
+    return;
+  }
+
+  // Usar adSummaries do BD se disponível, senão extrair de campaigns
+  var summaries = (ads.adSummaries && ads.adSummaries.length > 0) ? ads.adSummaries : getCreativeSummaries(ads.campaigns);
+  var winners = getWinningCreatives(summaries);
+  var totalSpend = summaries.reduce(function(s,c){return s+c.spend;},0);
+  var totalClicks = summaries.reduce(function(s,c){return s+c.clicks;},0);
+  var totalImpressions = summaries.reduce(function(s,c){return s+c.impressions;},0);
+  var totalLeads = summaries.reduce(function(s,c){return s+c.leads;},0);
+
+  var avgCTR = totalImpressions > 0 ? (totalClicks/totalImpressions)*100 : 0;
+  var avgCPC = totalClicks > 0 ? totalSpend/totalClicks : 0;
+  var convRate = totalClicks > 0 ? (totalLeads/totalClicks)*100 : 0;
+  var freqData = summaries.filter(function(s){return s.frequency > 0;});
+  var avgFreq = freqData.length > 0 ? freqData.reduce(function(s,c){return s+c.frequency;},0)/freqData.length : 0;
+
+  var html = '';
+  html += '<div class="page-header"><div><h1>Criativos</h1><p>Performance por criativo de anúncio</p></div></div>';
+
+  // Row 1
+  html += '<div class="stats-grid">';
+  html += statCard('CTR Médio', fmtPct(avgCTR), 'Taxa de cliques', { icon: 'mouse-pointer-click' });
+  html += statCard('CPC Médio', fmt(avgCPC), 'Custo por clique', { icon: 'dollar-sign' });
+  html += statCard('Frequência Média', avgFreq.toFixed(2), 'Vezes que o anúncio foi visto', { icon: 'eye' });
+  html += statCard('Taxa de Conversão', fmtPct(convRate), 'Leads / Cliques', { icon: 'percent' });
+  html += '</div>';
+
+  // Row 2
+  html += '<div class="stats-grid">';
+  html += statCard('Total de Cliques', fmtN(totalClicks), 'Cliques nos criativos', { icon: 'mouse-pointer-click' });
+  html += statCard('Total de Leads', fmtN(totalLeads), 'Leads gerados', { icon: 'users' });
+  html += statCard('ROAS', '-', 'Receita não calculada', { icon: 'trending-up' });
+  html += statCard('Valor Gasto', fmt(totalSpend), 'Total investido no período', { icon: 'target' });
+  html += '</div>';
+
+  // Winning Creatives
+  if (winners.length > 0) {
+    html += '<div class="section-card"><h3>Criativos Vencedores</h3><p class="subtitle">Ranking baseado em CPL (40%), Leads (35%) e Cliques (25%)</p></div>';
+    html += '<div class="winners-grid">';
+    winners.forEach(function(w, i) {
+      html += '<div class="winner-card"><div class="winner-rank">#' + (i+1) + '</div>';
+      html += '<div class="winner-name">' + w.adName + '</div>';
+      html += '<div class="winner-metrics">';
+      html += '<div>CPL <span class="winner-metric-val">' + (w.cpl > 0 ? fmt(w.cpl) : '-') + '</span></div>';
+      html += '<div>Leads <span class="winner-metric-val">' + w.leads + '</span></div>';
+      html += '<div>Cliques <span class="winner-metric-val">' + fmtN(w.clicks) + '</span></div>';
+      html += '</div>';
+      html += '<div class="winner-badges">';
+      w.badges.forEach(function(b) { html += '<span class="winner-badge">' + b + '</span>'; });
+      html += '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  // Creative Table
+  html += '<div class="section-card"><h3>Resumo por Criativo</h3><div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+  html += '<th>Criativo</th><th>Status</th><th class="text-right">Gasto</th><th class="text-right">Cliques</th>';
+  html += '<th class="text-right">CTR</th><th class="text-right">CPC</th><th class="text-right">CPL</th><th class="text-right">Leads</th>';
+  html += '</tr></thead><tbody>';
+  summaries.slice(0,20).forEach(function(s) {
+    html += '<tr><td class="text-primary" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + s.adName + '</td>';
+    html += '<td><span class="status-badge ' + s.status + '">' + (s.status === 'active' ? 'Ativo' : 'Pausado') + '</span></td>';
+    html += '<td class="text-right">' + fmt(s.spend) + '</td><td class="text-right">' + fmtN(s.clicks) + '</td>';
+    html += '<td class="text-right">' + fmtPct(s.ctr) + '</td><td class="text-right">' + fmt(s.cpc) + '</td>';
+    html += '<td class="text-right">' + (s.cpl > 0 ? fmt(s.cpl) : '-') + '</td><td class="text-right">' + s.leads + '</td></tr>';
+  });
+  html += '</tbody></table></div></div>';
+
+  document.getElementById('page-criativos').innerHTML = html;
+  lucide.createIcons();
+}
+
+// ============================================================
+// RENDER: PÚBLICOS
+// ============================================================
+function renderPublicos() {
+  var ads = STATE.adsData;
+  if ((!ads || !ads.campaigns || !ads.campaigns.length) && (!ads || !ads.adsetSummaries || !ads.adsetSummaries.length)) {
+    var msg = ads && ads.error ? 'Token Meta expirado ou erro: ' + ads.error : 'Sem dados de públicos. Dados a nível de público requerem API de AdSet Insights.';
+    showEmpty('page-publicos', msg);
+    return;
+  }
+
+  // Usar adsetSummaries do BD se disponível, senão extrair de campaigns
+  var summaries = (ads.adsetSummaries && ads.adsetSummaries.length > 0) ? ads.adsetSummaries : getAudienceSummaries(ads.campaigns);
+  var totalSpend = summaries.reduce(function(s,c){return s+c.spend;},0);
+  var totalClicks = summaries.reduce(function(s,c){return s+c.clicks;},0);
+  var totalImpressions = summaries.reduce(function(s,c){return s+c.impressions;},0);
+  var totalLeads = summaries.reduce(function(s,c){return s+c.leads;},0);
+
+  var avgCTR = totalImpressions > 0 ? (totalClicks/totalImpressions)*100 : 0;
+  var avgCPC = totalClicks > 0 ? totalSpend/totalClicks : 0;
+  var convRate = totalClicks > 0 ? (totalLeads/totalClicks)*100 : 0;
+  var freqData = summaries.filter(function(s){return s.frequency > 0;});
+  var avgFreq = freqData.length > 0 ? freqData.reduce(function(s,c){return s+c.frequency;},0)/freqData.length : 0;
+
+  // Winning audiences (same scoring as creatives)
+  var withLeads = summaries.filter(function(s){return s.leads > 0;});
+  var winners = [];
+  if (withLeads.length > 0) {
+    var maxL = Math.max.apply(null, withLeads.map(function(s){return s.leads;}));
+    var maxC = Math.max.apply(null, withLeads.map(function(s){return s.clicks;}));
+    var minCPL = Math.min.apply(null, withLeads.map(function(s){return s.cpl;}));
+    var maxCPL = Math.max.apply(null, withLeads.map(function(s){return s.cpl;}));
+    winners = withLeads.map(function(s) {
+      var cplS = maxCPL > minCPL ? 1 - ((s.cpl - minCPL) / (maxCPL - minCPL)) : 1;
+      return Object.assign({}, s, { score: cplS * 0.4 + (maxL>0?s.leads/maxL:0) * 0.35 + (maxC>0?s.clicks/maxC:0) * 0.25 });
+    }).sort(function(a,b){return b.score - a.score;}).slice(0,3);
+  }
+
+  var html = '';
+  html += '<div class="page-header"><div><h1>Públicos</h1><p>Performance por público de anúncio</p></div></div>';
+
+  // Row 1
+  html += '<div class="stats-grid">';
+  html += statCard('CTR Médio', fmtPct(avgCTR), 'Taxa de cliques', { icon: 'mouse-pointer-click' });
+  html += statCard('CPC Médio', fmt(avgCPC), 'Custo por clique', { icon: 'dollar-sign' });
+  html += statCard('Frequência Média', avgFreq.toFixed(2), 'Vezes que o anúncio foi visto', { icon: 'eye' });
+  html += statCard('Taxa de Conversão', fmtPct(convRate), 'Leads / Cliques', { icon: 'percent' });
+  html += '</div>';
+
+  // Row 2
+  html += '<div class="stats-grid">';
+  html += statCard('Total de Cliques', fmtN(totalClicks), 'Cliques nos públicos', { icon: 'mouse-pointer-click' });
+  html += statCard('Total de Leads', fmtN(totalLeads), 'Leads gerados', { icon: 'users' });
+  html += statCard('ROAS', '-', 'Receita não calculada', { icon: 'trending-up' });
+  html += statCard('Valor Gasto', fmt(totalSpend), 'Total investido no período', { icon: 'target' });
+  html += '</div>';
+
+  // Winning Audiences
+  if (winners.length > 0) {
+    html += '<div class="section-card"><h3>Públicos Vencedores</h3><p class="subtitle">Ranking baseado em CPL (40%), Leads (35%) e Cliques (25%)</p></div>';
+    html += '<div class="winners-grid">';
+    winners.forEach(function(w, i) {
+      html += '<div class="winner-card"><div class="winner-rank">#' + (i+1) + '</div>';
+      html += '<div class="winner-name">' + w.adsetName + '</div>';
+      html += '<div class="winner-metrics">';
+      html += '<div>CPL <span class="winner-metric-val">' + (w.cpl > 0 ? fmt(w.cpl) : '-') + '</span></div>';
+      html += '<div>Leads <span class="winner-metric-val">' + w.leads + '</span></div>';
+      html += '<div>Cliques <span class="winner-metric-val">' + fmtN(w.clicks) + '</span></div>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  // Audience Table
+  html += '<div class="section-card"><h3>Resumo por Público</h3><div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+  html += '<th>Público</th><th>Status</th><th class="text-right">Gasto</th><th class="text-right">Cliques</th>';
+  html += '<th class="text-right">CTR</th><th class="text-right">CPC</th><th class="text-right">CPL</th><th class="text-right">Leads</th>';
+  html += '</tr></thead><tbody>';
+  summaries.slice(0,20).forEach(function(s) {
+    html += '<tr><td class="text-primary" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + s.adsetName + '</td>';
+    html += '<td><span class="status-badge ' + (s.status === 'active' ? 'active' : 'paused') + '">' + (s.status === 'active' ? 'Ativo' : 'Pausado') + '</span></td>';
+    html += '<td class="text-right">' + fmt(s.spend) + '</td><td class="text-right">' + fmtN(s.clicks) + '</td>';
+    html += '<td class="text-right">' + fmtPct(s.ctr) + '</td><td class="text-right">' + fmt(s.cpc) + '</td>';
+    html += '<td class="text-right">' + (s.cpl > 0 ? fmt(s.cpl) : '-') + '</td><td class="text-right">' + s.leads + '</td></tr>';
+  });
+  html += '</tbody></table></div></div>';
+
+  document.getElementById('page-publicos').innerHTML = html;
+  lucide.createIcons();
+}
+
+// ============================================================
+// RENDER: OPORTUNIDADES
+// ============================================================
+var oppFilter = 'all';
+var oppTagFilter = '';
+var oppSourceFilter = '';
+var oppSort = { col: '', dir: '' };
+var campSort = { col: '', dir: '' };
+var oppStageFilter = null;
+
+function renderOportunidades() {
+  var data = STATE.oppsData;
+  if (!data || !data.opportunities) { showEmpty('page-oportunidades', 'Sem dados de oportunidades.'); return; }
+
+  var allOpps = data.opportunities || [];
+  var stages = data.stages || [];
+
+  // Apply date filter to opps (client-side only if source is 'live' — DB already filters server-side)
+  var range = getDateRange();
+  var opps = allOpps;
+  if (range.start && range.end && STATE.oppsSource !== 'db') {
+    opps = allOpps.filter(function(o) {
+      var d = (o.createdAt || '').substring(0, 10);
+      return d >= range.start && d <= range.end;
+    });
+  }
+
+  // Calculate stats
+  var total = opps.length;
+  var openOpps = opps.filter(function(o){return o.status === 'open';});
+  var wonOpps = opps.filter(function(o){return o.status === 'won';});
+  var lostOpps = opps.filter(function(o){return o.status === 'lost';});
+  var wonValue = wonOpps.reduce(function(s,o){return s + (o.monetaryValue || 0);}, 0);
+
+  // By date
+  var dateMap = {};
+  opps.forEach(function(o) {
+    var d = (o.createdAt || '').substring(0, 10);
+    if (d) dateMap[d] = (dateMap[d] || 0) + 1;
+  });
+  var byDate = Object.keys(dateMap).sort().map(function(d) { return { date: d, count: dateMap[d] }; });
+
+  // By status
+  var byStatus = [
+    { status: 'Em Aberto', count: openOpps.length, color: 'hsl(32,43%,47%)' },
+    { status: 'Ganhas', count: wonOpps.length, color: 'hsl(142,71%,45%)' },
+    { status: 'Perdidas', count: lostOpps.length, color: 'hsl(0,72%,51%)' }
+  ];
+
+  // By stage
+  var stageMap = {};
+  opps.forEach(function(o) {
+    var sName = o.stageName || o.pipelineStageName || 'Outro';
+    if (!stageMap[sName]) stageMap[sName] = { count: 0, value: 0 };
+    stageMap[sName].count++;
+    stageMap[sName].value += o.monetaryValue || 0;
+  });
+  var byStage = Object.keys(stageMap).map(function(s) { return { stage: s, count: stageMap[s].count, value: stageMap[s].value }; });
+
+  // By source
+  var sourceMap = {};
+  opps.forEach(function(o) {
+    var src = o.source || 'Desconhecido';
+    if (!sourceMap[src]) sourceMap[src] = { count: 0, wonValue: 0 };
+    sourceMap[src].count++;
+    if (o.status === 'won') sourceMap[src].wonValue += o.monetaryValue || 0;
+  });
+  var bySource = Object.keys(sourceMap).map(function(s) { return { source: s, count: sourceMap[s].count, wonValue: sourceMap[s].wonValue }; }).sort(function(a,b){return b.count-a.count;});
+
+  // Collect unique tags and sources for filter dropdowns
+  var allTags = {};
+  var allSources = {};
+  opps.forEach(function(o) {
+    (o.tags || []).forEach(function(t) { allTags[t] = true; });
+    if (o.source) allSources[o.source] = true;
+  });
+  var tagList = Object.keys(allTags).sort();
+  var sourceList = Object.keys(allSources).sort();
+
+  // Filter opps for table
+  var filtered = opps;
+  if (oppFilter === 'open') filtered = openOpps;
+  else if (oppFilter === 'won') filtered = wonOpps;
+  else if (oppFilter === 'lost') filtered = lostOpps;
+
+  // Apply tag filter
+  if (oppTagFilter) {
+    filtered = filtered.filter(function(o) { return (o.tags || []).indexOf(oppTagFilter) >= 0; });
+  }
+  // Apply source filter
+  if (oppSourceFilter) {
+    filtered = filtered.filter(function(o) { return o.source === oppSourceFilter; });
+  }
+
+  var html = '';
+  html += '<div class="page-header"><div><h1>Oportunidades</h1><p>Gestão de pipeline e vendas</p></div></div>';
+
+  // Stat Cards (clickable)
+  html += '<div class="stats-grid">';
+  html += statCard('Total de Oportunidades', fmtN(total), '', { icon: 'target', clickable: true, active: oppFilter==='all', onClick: "setOppFilter('all')" });
+  html += statCard('Em Aberto', fmtN(openOpps.length), '', { icon: 'target', clickable: true, active: oppFilter==='open', onClick: "setOppFilter('open')" });
+  html += statCard('Ganhas', fmtN(wonOpps.length), fmt(wonValue), { icon: 'trending-up', clickable: true, active: oppFilter==='won', onClick: "setOppFilter('won')" });
+  html += statCard('Perdidas', fmtN(lostOpps.length), '', { icon: 'x-circle', clickable: true, active: oppFilter==='lost', onClick: "setOppFilter('lost')" });
+  html += '</div>';
+
+  // Charts: Area + Donut
+  html += '<div class="charts-grid-2">';
+  html += '<div class="chart-box"><h3>Oportunidades por Dia</h3><div class="chart-wrap"><canvas id="chart-opps-date"></canvas></div></div>';
+  html += '<div class="chart-box"><h3>Status das Oportunidades</h3><div class="chart-wrap"><canvas id="chart-opps-status"></canvas></div></div>';
+  html += '</div>';
+
+  // Charts: Stage + Source
+  html += '<div class="charts-grid-2">';
+  html += '<div class="chart-box"><h3>Por Etapa do Pipeline</h3><div class="chart-wrap"><canvas id="chart-opps-stage"></canvas></div></div>';
+  if (bySource.length > 0) {
+    html += '<div class="chart-box"><h3>Por Fonte</h3><div class="chart-wrap"><canvas id="chart-opps-source"></canvas></div></div>';
+  }
+  html += '</div>';
+
+  // Lost Reasons Table
+  if (lostOpps.length > 0) {
+    html += '<div class="section-card"><h3>Motivos de Perda</h3><div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+    html += '<th>Nome</th><th>Contato</th><th>Motivo da Perda</th><th>Data</th>';
+    html += '</tr></thead><tbody>';
+    lostOpps.slice(0, 10).forEach(function(o) {
+      html += '<tr><td class="text-primary">' + (o.name || 'Sem nome') + '</td>';
+      html += '<td>' + (o.contactPhone || '-') + '</td>';
+      html += '<td style="color:hsl(0,72%,61%)">' + (o.lostReason || 'Não informado') + '</td>';
+      html += '<td>' + (o.lastStatusChangeAt || o.createdAt || '').substring(0, 10) + '</td></tr>';
+    });
+    html += '</tbody></table></div></div>';
+  }
+
+  // Sort filtered
+  var oppColMap = {
+    name: function(o){return (o.name||'').toLowerCase();},
+    status: function(o){return o.status;},
+    stage: function(o){return (o.stageName||'');},
+    value: function(o){return o.monetaryValue||0;},
+    source: function(o){return (o.source||'');},
+    date: function(o){return o.createdAt||'';}
+  };
+  var sortedOpps = sortData(filtered, oppSort, oppColMap);
+
+  // Opportunities Table
+  html += '<div class="section-card"><div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap">';
+  html += '<h3>Oportunidades' + (oppFilter !== 'all' ? ' - ' + (oppFilter==='open'?'Em Aberto':oppFilter==='won'?'Ganhas':'Perdidas') : '') + ' (' + filtered.length + ')</h3>';
+  html += '<div class="filter-bar">';
+  ['all','open','won','lost'].forEach(function(f) {
+    var label = f==='all'?'Todas ('+total+')':f==='open'?'Em Aberto ('+openOpps.length+')':f==='won'?'Ganhas ('+wonOpps.length+')':'Perdidas ('+lostOpps.length+')';
+    html += '<button class="filter-btn' + (oppFilter===f?' active':'') + '" onclick="setOppFilter(\''+f+'\')">' + label + '</button>';
+  });
+  // Tag filter
+  if (tagList.length > 0) {
+    html += '<select class="filter-select" onchange="setOppTagFilter(this.value)">';
+    html += '<option value=""' + (!oppTagFilter?' selected':'') + '>Todas as tags</option>';
+    tagList.forEach(function(t) {
+      html += '<option value="'+t+'"' + (oppTagFilter===t?' selected':'') + '>' + t + '</option>';
+    });
+    html += '</select>';
+  }
+  // Source filter
+  if (sourceList.length > 0) {
+    html += '<select class="filter-select" onchange="setOppSourceFilter(this.value)">';
+    html += '<option value=""' + (!oppSourceFilter?' selected':'') + '>Todas as fontes</option>';
+    sourceList.forEach(function(s) {
+      html += '<option value="'+s+'"' + (oppSourceFilter===s?' selected':'') + '>' + s + '</option>';
+    });
+    html += '</select>';
+  }
+  html += '</div></div>';
+
+  html += '<div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+  html += '<th class="' + sortCls(oppSort,'name') + '" onclick="toggleOppSort(\'name\')">Nome</th>';
+  html += '<th>Contato</th>';
+  html += '<th class="' + sortCls(oppSort,'status') + '" onclick="toggleOppSort(\'status\')">Status</th>';
+  html += '<th class="' + sortCls(oppSort,'stage') + '" onclick="toggleOppSort(\'stage\')">Etapa</th>';
+  html += '<th class="text-right ' + sortCls(oppSort,'value') + '" onclick="toggleOppSort(\'value\')">Valor</th>';
+  html += '<th class="' + sortCls(oppSort,'source') + '" onclick="toggleOppSort(\'source\')">Fonte</th>';
+  html += '<th class="' + sortCls(oppSort,'date') + '" onclick="toggleOppSort(\'date\')">Data</th>';
+  html += '</tr></thead><tbody>';
+  if (sortedOpps.length === 0) {
+    html += '<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--muted-foreground)">Nenhuma oportunidade encontrada</td></tr>';
+  } else {
+    sortedOpps.slice(0, 50).forEach(function(o) {
+      var statusCls = o.status === 'open' ? 'open' : o.status === 'won' ? 'won' : 'lost';
+      var statusLabel = o.status === 'open' ? 'Em Aberto' : o.status === 'won' ? 'Ganha' : 'Perdida';
+      var tagsHtml = (o.tags||[]).length > 0 ? '<div style="margin-top:2px">' + (o.tags||[]).map(function(t){return '<span style="font-size:10px;padding:2px 6px;border-radius:4px;background:hsl(32,43%,47%,0.12);color:var(--primary);margin-right:3px">'+t+'</span>';}).join('') + '</div>' : '';
+      html += '<tr><td><div class="text-primary">' + (o.name || 'Sem nome') + '</div>' + tagsHtml + '</td>';
+      html += '<td>' + (o.contactPhone || '-') + '<br><span style="font-size:12px;color:var(--muted-foreground)">' + (o.contactEmail || '') + '</span></td>';
+      html += '<td><span class="status-badge ' + statusCls + '">' + statusLabel + '</span></td>';
+      html += '<td style="color:var(--muted-foreground)">' + (o.stageName || o.pipelineStageName || '-') + '</td>';
+      html += '<td class="text-right text-primary">' + (o.monetaryValue > 0 ? fmt(o.monetaryValue) : '-') + '</td>';
+      html += '<td style="color:var(--muted-foreground)">' + (o.source || '-') + '</td>';
+      html += '<td style="color:var(--muted-foreground)">' + (o.createdAt || '').substring(0, 10) + '</td></tr>';
+    });
+  }
+  html += '</tbody></table></div>';
+  if (sortedOpps.length > 50) html += '<div style="text-align:center;padding:16px;font-size:14px;color:var(--muted-foreground)">Exibindo 50 de ' + sortedOpps.length + ' oportunidades</div>';
+  html += '</div>';
+
+  document.getElementById('page-oportunidades').innerHTML = html;
+  lucide.createIcons();
+
+  // Render charts
+  if (byDate.length > 0) {
+    createAreaChart('chart-opps-date', byDate.map(function(d){return fmtDate(d.date);}), byDate.map(function(d){return d.count;}), 'hsl(32,43%,47%)');
+  }
+  createDoughnutChart('chart-opps-status',
+    byStatus.map(function(s){return s.status;}),
+    byStatus.map(function(s){return s.count;}),
+    byStatus.map(function(s){return s.color;})
+  );
+  if (byStage.length > 0) {
+    createHorizontalBarChart('chart-opps-stage',
+      byStage.map(function(s){return s.stage;}),
+      byStage.map(function(s){return s.count;}),
+      'hsl(32,43%,47%)'
+    );
+  }
+  if (bySource.length > 0) {
+    createHorizontalBarChart('chart-opps-source',
+      bySource.map(function(s){return s.source;}),
+      bySource.map(function(s){return s.count;}),
+      'hsl(32,43%,47%)'
+    );
+  }
+}
+
+function setOppFilter(f) {
+  oppFilter = f;
+  renderOportunidades();
+}
+function setOppTagFilter(v) { oppTagFilter = v; renderOportunidades(); }
+function setOppSourceFilter(v) { oppSourceFilter = v; renderOportunidades(); }
+function toggleOppSort(col) {
+  if (oppSort.col === col) {
+    oppSort.dir = oppSort.dir === 'asc' ? 'desc' : oppSort.dir === 'desc' ? '' : 'asc';
+    if (!oppSort.dir) oppSort.col = '';
+  } else {
+    oppSort.col = col; oppSort.dir = 'asc';
+  }
+  renderOportunidades();
+}
+function toggleCampSort(col) {
+  if (campSort.col === col) {
+    campSort.dir = campSort.dir === 'asc' ? 'desc' : campSort.dir === 'desc' ? '' : 'asc';
+    if (!campSort.dir) campSort.col = '';
+  } else {
+    campSort.col = col; campSort.dir = 'asc';
+  }
+  renderCampanhas();
+}
+function sortData(arr, sortState, colMap) {
+  if (!sortState.col || !sortState.dir) return arr;
+  var getter = colMap[sortState.col];
+  if (!getter) return arr;
+  var sorted = arr.slice().sort(function(a, b) {
+    var va = getter(a), vb = getter(b);
+    if (typeof va === 'string') va = va.toLowerCase();
+    if (typeof vb === 'string') vb = vb.toLowerCase();
+    if (va < vb) return -1;
+    if (va > vb) return 1;
+    return 0;
+  });
+  return sortState.dir === 'desc' ? sorted.reverse() : sorted;
+}
+function sortCls(sortState, col) {
+  if (sortState.col !== col) return 'sortable';
+  return 'sortable ' + sortState.dir;
+}
+
+// ============================================================
+// RENDER: COMERCIAL
+// ============================================================
+// ============================================================
+// CRM x ADS CROSS-REFERENCE
+// ============================================================
+function renderCrossref() {
+  var d = STATE.crossrefData;
+  if (!d || !d.hasData) {
+    var syncHtml = '<div class="empty-state"><p>Sem dados de crossref. Sincronize o CRM e Meta Ads primeiro.</p>';
+    syncHtml += '<button onclick="triggerSync()" style="margin-top:12px;padding:8px 20px;background:var(--primary);color:var(--background);border:none;border-radius:var(--radius);cursor:pointer;font-weight:600">Sincronizar Agora</button></div>';
+    document.getElementById('page-crossref').innerHTML = syncHtml;
+    return;
+  }
+
+  var k = d.kpis || {};
+  var html = '';
+  html += '<div class="page-header"><div><h1>CRM x Ads</h1><p>Cruzamento de dados do funil comercial com investimento em tráfego pago</p></div>';
+  if (d.lastSync) {
+    var syncTs = d.lastSync.at;
+    if (syncTs && !syncTs.endsWith('Z') && !syncTs.includes('+')) syncTs += 'Z';
+    html += '<div style="font-size:11px;color:var(--muted-foreground)"><i data-lucide="database" style="width:12px;height:12px;display:inline;vertical-align:middle"></i> Sync: ' + new Date(syncTs).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }) + '</div>';
+  }
+  html += '</div>';
+
+  // KPI Cards (6)
+  html += '<div class="stats-grid" style="grid-template-columns:repeat(3,1fr)">';
+  html += statCard('Leads no CRM', fmtN(k.totalCrmLeads), 'Total de oportunidades', { icon: 'users' });
+  html += statCard('Ganhos', fmtN(k.won30d), fmt(k.wonValue30d), { icon: 'trophy' });
+  html += statCard('ROAS Real', k.roas ? k.roas.toFixed(2) + 'x' : '0x', 'Faturamento / Gasto Ads', { icon: 'trending-up', trend: k.roas >= 1 ? { value: (k.roas-1)*100, isPositive: true } : null });
+  html += '</div>';
+  html += '<div class="stats-grid" style="grid-template-columns:repeat(3,1fr)">';
+  html += statCard('Taxa Conversão', k.conversionRate + '%', 'Ganhos / (Ganhos + Perdidos)', { icon: 'percent' });
+  html += statCard('Consultas Agendadas', fmtN(k.consultasAgendadas), 'Leads que chegaram à consulta', { icon: 'calendar' });
+  html += statCard('Custo por Consulta', fmt(k.custoConsulta), 'Gasto total / Consultas', { icon: 'dollar-sign' });
+  html += '</div>';
+
+  // Funnel
+  if (d.funnel && d.funnel.length > 0) {
+    var maxCount = Math.max.apply(null, d.funnel.map(function(s){return s.count;})) || 1;
+    html += '<div class="section-card"><h3>Funil do Pipeline — ' + (d.pipelineName || 'Pipeline') + '</h3>';
+    html += '<div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">';
+    d.funnel.forEach(function(s) {
+      var pct = Math.max(5, (s.count / maxCount) * 100);
+      html += '<div style="display:flex;align-items:center;gap:12px">';
+      html += '<span style="min-width:140px;font-size:13px;color:var(--muted-foreground)">' + s.name + '</span>';
+      html += '<div style="flex:1;height:28px;background:var(--muted);border-radius:4px;overflow:hidden;position:relative">';
+      html += '<div style="width:' + pct + '%;height:100%;background:var(--gradient-gold);border-radius:4px;display:flex;align-items:center;padding:0 10px">';
+      html += '<span style="font-size:12px;font-weight:600;color:var(--background)">' + s.count + '</span>';
+      html += '</div></div>';
+      if (s.value > 0) html += '<span style="min-width:90px;text-align:right;font-size:12px;color:var(--muted-foreground)">' + fmt(s.value) + '</span>';
+      html += '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // Campaign ROI Table
+  if (d.campaigns && d.campaigns.length > 0) {
+    html += '<div class="section-card"><h3>Campanhas — ROI Real (Meta Ads x CRM)</h3>';
+    html += '<div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+    html += '<th>Campanha</th><th class="text-right">Gasto</th><th class="text-right">CPL Meta</th>';
+    html += '<th class="text-right">Leads CRM</th><th class="text-right">Open</th><th class="text-right">Won</th><th class="text-right">Lost</th>';
+    html += '<th class="text-right">Faturado</th><th class="text-right">ROAS</th><th class="text-right">Lead Score</th><th class="text-right">Quality</th>';
+    html += '</tr></thead><tbody>';
+    d.campaigns.forEach(function(c) {
+      var matchBadge = c.crmMatched ? '<span style="color:var(--green);font-size:10px" title="Match CRM encontrado">●</span> ' : '';
+      var roasColor = c.roas >= 3 ? 'var(--green)' : c.roas >= 1 ? 'var(--primary)' : 'var(--red)';
+      var qualityColor = c.quality >= 50 ? 'var(--green)' : c.quality >= 20 ? 'var(--primary)' : 'var(--muted-foreground)';
+      html += '<tr>';
+      html += '<td class="text-primary" style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + c.name + '">' + matchBadge + c.name + '</td>';
+      html += '<td class="text-right">' + fmt(c.spend) + '</td>';
+      html += '<td class="text-right">' + fmt(c.cplMeta) + '</td>';
+      html += '<td class="text-right">' + c.crmLeads + '</td>';
+      html += '<td class="text-right">' + c.crmOpen + '</td>';
+      html += '<td class="text-right" style="color:var(--green)">' + c.crmWon + '</td>';
+      html += '<td class="text-right" style="color:var(--red)">' + c.crmLost + '</td>';
+      html += '<td class="text-right">' + fmt(c.crmWonValue) + '</td>';
+      html += '<td class="text-right" style="color:' + roasColor + ';font-weight:600">' + c.roas.toFixed(2) + 'x</td>';
+      // Lead Score badge
+      var lsBadge = '-';
+      if (c.avgLeadScore != null) {
+        var lsColor = c.avgLeadScore >= 70 ? 'var(--green)' : c.avgLeadScore >= 40 ? 'var(--primary)' : 'var(--muted-foreground)';
+        var lsTier = c.avgLeadScore >= 70 ? 'HOT' : c.avgLeadScore >= 40 ? 'WARM' : 'COLD';
+        lsBadge = '<span style="background:' + lsColor + '22;color:' + lsColor + ';padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600">' + c.avgLeadScore + ' ' + lsTier + '</span>';
+      }
+      html += '<td class="text-right">' + lsBadge + '</td>';
+      html += '<td class="text-right" style="color:' + qualityColor + '">' + c.quality + '</td>';
+      html += '</tr>';
+    });
+    html += '</tbody></table></div></div>';
+  }
+
+  // Criativos + Conjuntos side by side
+  var hasAds = d.ads && d.ads.length > 0;
+  var hasAdsets = d.adsets && d.adsets.length > 0;
+  if (hasAds || hasAdsets) {
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">';
+    // Criativos
+    if (hasAds) {
+      html += '<div class="section-card"><h3>Criativos x CRM</h3>';
+      html += '<div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+      html += '<th>Criativo</th><th class="text-right">Gasto</th><th class="text-right">Leads CRM</th><th class="text-right">CPL CRM</th>';
+      html += '</tr></thead><tbody>';
+      d.ads.slice(0, 15).forEach(function(a) {
+        html += '<tr><td class="text-primary" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + a.name + '">' + a.name + '</td>';
+        html += '<td class="text-right">' + fmt(a.spend) + '</td>';
+        html += '<td class="text-right">' + a.crmLeads + '</td>';
+        html += '<td class="text-right">' + (a.cplCrm > 0 ? fmt(a.cplCrm) : '-') + '</td></tr>';
+      });
+      html += '</tbody></table></div></div>';
+    }
+    // Conjuntos
+    if (hasAdsets) {
+      html += '<div class="section-card"><h3>Conjuntos x CRM</h3>';
+      html += '<div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+      html += '<th>Conjunto</th><th class="text-right">Gasto</th><th class="text-right">Leads CRM</th><th class="text-right">CPL CRM</th>';
+      html += '</tr></thead><tbody>';
+      d.adsets.slice(0, 15).forEach(function(a) {
+        html += '<tr><td class="text-primary" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + a.name + '">' + a.name + '</td>';
+        html += '<td class="text-right">' + fmt(a.spend) + '</td>';
+        html += '<td class="text-right">' + a.crmLeads + '</td>';
+        html += '<td class="text-right">' + (a.cplCrm > 0 ? fmt(a.cplCrm) : '-') + '</td></tr>';
+      });
+      html += '</tbody></table></div></div>';
+    }
+    html += '</div>';
+  }
+
+  // Lead Quality by Campaign (stacked bars HOT/WARM/COLD)
+  var campaignsWithScores = (d.campaigns || []).filter(function(c) { return c.tierBreakdown; });
+  if (campaignsWithScores.length > 0) {
+    html += '<div class="section-card"><h3>Qualidade de Leads por Campanha</h3>';
+    html += '<div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">';
+    campaignsWithScores.sort(function(a,b){ return (b.avgLeadScore||0) - (a.avgLeadScore||0); });
+    campaignsWithScores.slice(0, 10).forEach(function(c) {
+      var tb = c.tierBreakdown;
+      var total = tb.hot + tb.warm + tb.cold;
+      if (total === 0) return;
+      var pHot = (tb.hot / total * 100).toFixed(1);
+      var pWarm = (tb.warm / total * 100).toFixed(1);
+      var pCold = (tb.cold / total * 100).toFixed(1);
+      html += '<div style="display:flex;align-items:center;gap:12px">';
+      html += '<span style="min-width:200px;font-size:12px;color:var(--foreground);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + c.name + '">' + c.name + '</span>';
+      html += '<div style="flex:1;height:24px;display:flex;border-radius:4px;overflow:hidden">';
+      if (tb.hot > 0) html += '<div style="width:' + pHot + '%;background:#22c55e;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:600">' + tb.hot + '</div>';
+      if (tb.warm > 0) html += '<div style="width:' + pWarm + '%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:600">' + tb.warm + '</div>';
+      if (tb.cold > 0) html += '<div style="width:' + pCold + '%;background:#64748b;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:600">' + tb.cold + '</div>';
+      html += '</div>';
+      html += '<span style="min-width:50px;text-align:right;font-size:12px;font-weight:600;color:var(--foreground)">' + (c.avgLeadScore || 0) + '</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+    html += '<div style="display:flex;gap:16px;margin-top:12px;font-size:11px;color:var(--muted-foreground)">';
+    html += '<span><span style="display:inline-block;width:10px;height:10px;background:#22c55e;border-radius:2px;margin-right:4px"></span>HOT (70+)</span>';
+    html += '<span><span style="display:inline-block;width:10px;height:10px;background:#f59e0b;border-radius:2px;margin-right:4px"></span>WARM (40-69)</span>';
+    html += '<span><span style="display:inline-block;width:10px;height:10px;background:#64748b;border-radius:2px;margin-right:4px"></span>COLD (&lt;40)</span>';
+    html += '</div></div>';
+  }
+
+  // Rankings (3 columns)
+  var hasQuality = d.qualityRanking && d.qualityRanking.length > 0;
+  var hasEfficient = d.efficientAds && d.efficientAds.length > 0;
+  var hasConsulta = d.consultaCampaigns && d.consultaCampaigns.length > 0;
+  if (hasQuality || hasEfficient || hasConsulta) {
+    html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">';
+    // Quality Ranking
+    html += '<div class="section-card"><h3 style="font-size:14px">Top Qualidade</h3><div style="margin-top:12px">';
+    if (hasQuality) {
+      d.qualityRanking.forEach(function(c, i) {
+        html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border-subtle)">';
+        html += '<span style="font-size:12px;color:var(--primary);font-weight:700;min-width:20px">#' + (i+1) + '</span>';
+        html += '<span style="font-size:12px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + c.name + '">' + c.name + '</span>';
+        html += '<span style="font-size:12px;font-weight:600;color:var(--green)">' + c.quality + '</span></div>';
+      });
+    } else { html += '<p style="font-size:12px;color:var(--muted-foreground)">Sem dados</p>'; }
+    html += '</div></div>';
+
+    // Efficient Ads
+    html += '<div class="section-card"><h3 style="font-size:14px">Criativos + Eficientes</h3><div style="margin-top:12px">';
+    if (hasEfficient) {
+      d.efficientAds.forEach(function(a, i) {
+        html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border-subtle)">';
+        html += '<span style="font-size:12px;color:var(--primary);font-weight:700;min-width:20px">#' + (i+1) + '</span>';
+        html += '<span style="font-size:12px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + a.name + '">' + a.name + '</span>';
+        html += '<span style="font-size:12px;font-weight:600;color:var(--green)">' + fmt(a.cplCrm) + '</span></div>';
+      });
+    } else { html += '<p style="font-size:12px;color:var(--muted-foreground)">Sem dados</p>'; }
+    html += '</div></div>';
+
+    // Consulta Campaigns
+    html += '<div class="section-card"><h3 style="font-size:14px">Geram Consultas</h3><div style="margin-top:12px">';
+    if (hasConsulta) {
+      d.consultaCampaigns.forEach(function(c, i) {
+        html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border-subtle)">';
+        html += '<span style="font-size:12px;color:var(--primary);font-weight:700;min-width:20px">#' + (i+1) + '</span>';
+        html += '<span style="font-size:12px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + c.name + '">' + c.name + '</span>';
+        html += '<span style="font-size:12px;font-weight:600;color:var(--green)">' + c.crmWon + ' ganhas</span></div>';
+      });
+    } else { html += '<p style="font-size:12px;color:var(--muted-foreground)">Sem dados</p>'; }
+    html += '</div></div>';
+    html += '</div>';
+  }
+
+  document.getElementById('page-crossref').innerHTML = html;
+  lucide.createIcons();
+}
+
+function triggerSync() {
+  var btn = event.target;
+  btn.disabled = true;
+  btn.textContent = 'Sincronizando...';
+  fetch('/api/media/client/' + CLIENT_ID + '/sync', { method: 'POST' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      btn.textContent = 'Sync completo!';
+      setTimeout(function() { loadAllData(); }, 1000);
+    })
+    .catch(function(err) {
+      btn.textContent = 'Erro: ' + err.message;
+      btn.disabled = false;
+    });
+}
+
+function renderComercial() {
+  var crm = STATE.crmData;
+  if (!crm) { showEmpty('page-comercial', 'Sem dados comerciais. Verifique a integração GHL.'); return; }
+
+  var recentLeads = crm.recentLeads || [];
+  var campaignPerf = crm.campaignPerformance || [];
+
+  var range = getDateRange();
+  var hasDateFilter = range.start && range.end;
+
+  // Recalculate conversions from opps data (already date-filtered if source=db)
+  var conversions;
+  if (STATE.oppsData && STATE.oppsData.opportunities && STATE.oppsData.opportunities.length > 0) {
+    var oppsForStats = STATE.oppsData.opportunities;
+    // If source is 'live', apply client-side date filter; if 'db', already filtered server-side
+    if (hasDateFilter && STATE.oppsSource !== 'db') {
+      oppsForStats = oppsForStats.filter(function(o) {
+        var d = (o.createdAt || '').substring(0, 10);
+        return d >= range.start && d <= range.end;
+      });
+    }
+    var wonOpps = oppsForStats.filter(function(o) { return o.status === 'won'; });
+    var lostOpps = oppsForStats.filter(function(o) { return o.status === 'lost'; });
+    var openOpps = oppsForStats.filter(function(o) { return o.status === 'open'; });
+    conversions = {
+      totalWon: wonOpps.length,
+      totalLost: lostOpps.length,
+      totalOpen: openOpps.length,
+      totalWonValue: wonOpps.reduce(function(s, o) { return s + (o.monetaryValue || 0); }, 0),
+      total: oppsForStats.length
+    };
+  } else {
+    conversions = crm.conversions || {};
+  }
+
+  // Apply date filter to recent leads
+  if (hasDateFilter) {
+    recentLeads = recentLeads.filter(function(l) {
+      var d = (l.date || l.createdAt || l.dateAdded || '').substring(0, 10);
+      return d >= range.start && d <= range.end;
+    });
+    // Rebuild campaign perf from opps by source
+    var oppsForPerf = STATE.oppsData && STATE.oppsData.opportunities ? STATE.oppsData.opportunities : [];
+    if (STATE.oppsSource !== 'db' && hasDateFilter) {
+      oppsForPerf = oppsForPerf.filter(function(o) {
+        var d = (o.createdAt || '').substring(0, 10);
+        return d >= range.start && d <= range.end;
+      });
+    }
+    if (oppsForPerf.length > 0) {
+      var fOpps = oppsForPerf;
+      // Rebuild campaign perf from filtered opps by source
+      var campMap = {};
+      fOpps.forEach(function(o) {
+        var src = o.source || 'Direto';
+        if (!campMap[src]) campMap[src] = { campaign: src, leads: 0, won: 0, lost: 0, wonValue: 0 };
+        campMap[src].leads++;
+        if (o.status === 'won') { campMap[src].won++; campMap[src].wonValue += (o.monetaryValue || 0); }
+        if (o.status === 'lost') campMap[src].lost++;
+      });
+      var filteredPerf = Object.values(campMap).filter(function(c) { return c.leads > 0; });
+      if (filteredPerf.length > 0) campaignPerf = filteredPerf;
+    }
+  }
+
+  var html = '';
+  html += '<div class="page-header"><div><h1>Comercial</h1><p>Visão de conversões e leads recentes</p></div></div>';
+
+  // KPIs
+  html += '<div class="stats-grid">';
+  html += statCard('Total de Conversões', fmtN(conversions.totalWon || 0), 'Oportunidades ganhas', { icon: 'trophy' });
+  html += statCard('Valor Total Ganho', fmt(conversions.totalWonValue || 0), 'Faturamento de ganhas', { icon: 'dollar-sign' });
+  html += statCard('Leads Recentes', fmtN(recentLeads.length), 'Leads no período', { icon: 'users' });
+  html += statCard('Campanhas com UTM', fmtN(campaignPerf.length), 'Campanhas rastreadas', { icon: 'megaphone' });
+  html += '</div>';
+
+  // Recent Leads Table
+  if (recentLeads.length > 0) {
+    html += '<div class="section-card"><h3>Leads Recentes</h3><div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+    html += '<th>Nome</th><th>Email</th><th>Telefone</th><th>Data</th><th>Fonte</th>';
+    html += '</tr></thead><tbody>';
+    recentLeads.slice(0, 20).forEach(function(l) {
+      html += '<tr><td class="text-primary">' + (l.name || l.contactName || 'Sem nome') + '</td>';
+      html += '<td>' + (l.email || '-') + '</td>';
+      html += '<td>' + (l.phone || '-') + '</td>';
+      html += '<td>' + (l.date || l.createdAt || l.dateAdded || '').substring(0, 10) + '</td>';
+      html += '<td>' + (l.source || l.campaign || '-') + '</td></tr>';
+    });
+    html += '</tbody></table></div></div>';
+  }
+
+  // Campaign Performance (UTM)
+  if (campaignPerf.length > 0) {
+    html += '<div class="section-card"><h3>Performance por Campanha (UTM)</h3><div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+    html += '<th>Campanha</th><th class="text-right">Leads</th><th class="text-right">Ganhas</th><th class="text-right">Perdidas</th><th class="text-right">Valor Ganho</th>';
+    html += '</tr></thead><tbody>';
+    campaignPerf.forEach(function(c) {
+      html += '<tr><td class="text-primary">' + (c.campaign || c.utmCampaign || '-') + '</td>';
+      html += '<td class="text-right">' + (c.leads || 0) + '</td>';
+      html += '<td class="text-right">' + (c.won || 0) + '</td>';
+      html += '<td class="text-right">' + (c.lost || 0) + '</td>';
+      html += '<td class="text-right">' + fmt(c.wonValue || 0) + '</td></tr>';
+    });
+    html += '</tbody></table></div></div>';
+  }
+
+  document.getElementById('page-comercial').innerHTML = html;
+  lucide.createIcons();
+}
+
+// ============================================================
+// LEAD SCORING
+// ============================================================
+function loadLeadScores() {
+  var page = document.getElementById('page-scoring');
+  page.innerHTML = '<div class="loading-state"><div class="spinner"></div><p>Calculando scores...</p></div>';
+
+  Promise.all([
+    fetch('/api/media/client/' + CLIENT_ID + '/lead-scores/summary').then(function(r){return r.json();}),
+    fetch('/api/media/client/' + CLIENT_ID + '/lead-scores/distribution').then(function(r){return r.json();}),
+    fetch('/api/media/client/' + CLIENT_ID + '/lead-scores?limit=100').then(function(r){return r.json();})
+  ]).then(function(results) {
+    var summary = results[0];
+    var distribution = results[1];
+    var leads = results[2];
+    STATE.scoringData = { summary: summary, distribution: distribution, leads: leads.data || [] };
+    renderLeadScoring();
+  }).catch(function(err) {
+    page.innerHTML = '<div class="empty-state"><p>Erro ao carregar lead scores: ' + err.message + '</p><button class="btn-recalculate" onclick="recalculateScores()">Calcular Scores</button></div>';
+  });
+}
+
+function renderLeadScoring() {
+  var d = STATE.scoringData;
+  if (!d) return;
+  var summary = d.summary;
+  var distribution = d.distribution;
+  var leads = d.leads;
+  var html = '';
+
+  // Header
+  html += '<div class="page-header"><div><h1>Lead Scoring</h1><p>Scoring multidimensional: 6 dimensões que avaliam a qualidade de cada lead (0 a 100 pontos)</p></div>';
+  html += '<button class="btn-recalculate" id="btn-recalculate" onclick="recalculateScores()"><i data-lucide="refresh-cw" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px"></i> Recalcular</button></div>';
+
+  // Legenda das dimensões
+  html += '<div class="stat-card" style="margin-bottom:16px"><div class="stat-card-header"><span class="stat-card-title">O que cada dimensão mede</span></div>';
+  html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px 16px;padding:12px 0;font-size:12px">';
+  html += '<div><strong style="color:var(--primary)">D1 — Resultado (0-30)</strong><br>Posição no funil comercial. Won=30, Consulta=22, Follow-up=12-18, Novo=8, Lost=3</div>';
+  html += '<div><strong style="color:var(--primary)">D2 — Engajamento (0-25)</strong><br>Quantidade de mensagens <em>inbound</em> (do lead). Mais respostas = lead mais engajado</div>';
+  html += '<div><strong style="color:var(--primary)">D3 — Velocidade (0-15)</strong><br>Tempo médio de resposta do lead. Responde em &lt;1h = 15pts, &gt;72h = 0pts</div>';
+  html += '<div><strong style="color:var(--primary)">D4 — Recência (0-15)</strong><br>Dias desde última atividade. Hoje = 15pts, &gt;30 dias = 0pts</div>';
+  html += '<div><strong style="color:var(--primary)">D5 — Qual. Campanha (0-10)</strong><br>Performance do anúncio que trouxe o lead (CTR acima da média +5, CPL abaixo +5)</div>';
+  html += '<div><strong style="color:var(--primary)">D6 — Atribuição (0-5)</strong><br>Se tem UTM rastreável (+3) e se o ROAS da campanha é positivo (+2)</div>';
+  html += '</div></div>';
+
+  // KPI cards
+  html += '<div class="stats-grid">';
+  html += statCard('Score Médio', summary.avgScore || 0, 'de 100 pontos', { icon: 'gauge' });
+  html += statCard('Leads HOT', fmtN(summary.byTier ? summary.byTier.hot : 0), 'Score 70+', { icon: 'flame' });
+  html += statCard('Leads WARM', fmtN(summary.byTier ? summary.byTier.warm : 0), 'Score 40-69', { icon: 'thermometer' });
+  html += statCard('Leads COLD', fmtN(summary.byTier ? summary.byTier.cold : 0), 'Score 0-39', { icon: 'snowflake' });
+  html += '</div>';
+
+  // Two-column layout: Distribution + Dimensions
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">';
+
+  // Distribution chart
+  html += '<div class="stat-card"><div class="stat-card-header"><span class="stat-card-title">Distribuição de Scores</span></div><div style="padding:12px 0">';
+  var ranges = distribution.ranges || [];
+  var maxCount = Math.max.apply(null, ranges.map(function(r){return r.count;})) || 1;
+  var distColors = ['hsl(210,50%,45%)', 'hsl(210,50%,55%)', 'hsl(50,80%,50%)', 'hsl(32,60%,50%)', 'hsl(0,62%,45%)'];
+  for (var i = 0; i < ranges.length; i++) {
+    var r = ranges[i];
+    var pct = Math.round(r.count / maxCount * 100);
+    html += '<div class="scoring-dist-bar">';
+    html += '<div class="scoring-dist-label">' + r.label + '</div>';
+    html += '<div class="scoring-dist-track"><div class="scoring-dist-fill" style="width:' + Math.max(pct, 5) + '%;background:' + distColors[i] + '">' + r.count + '</div></div>';
+    html += '</div>';
+  }
+  html += '</div></div>';
+
+  // Dimension averages
+  html += '<div class="stat-card"><div class="stat-card-header"><span class="stat-card-title">Média por Dimensão</span></div><div style="padding:12px 0">';
+  var dims = distribution.avgByDimension || {};
+  var dimNames = [
+    { key: 'd1', name: 'Resultado', max: 30, cls: 'd1' },
+    { key: 'd2', name: 'Engajamento', max: 25, cls: 'd2' },
+    { key: 'd3', name: 'Velocidade', max: 15, cls: 'd3' },
+    { key: 'd4', name: 'Recência', max: 15, cls: 'd4' },
+    { key: 'd5', name: 'Qual. Campanha', max: 10, cls: 'd5' },
+    { key: 'd6', name: 'Atribuição', max: 5, cls: 'd6' },
+  ];
+  for (var j = 0; j < dimNames.length; j++) {
+    var dm = dimNames[j];
+    var val = dims[dm.key] || 0;
+    var pctDim = Math.round(val / dm.max * 100);
+    html += '<div class="scoring-dim-row">';
+    html += '<div class="scoring-dim-name">' + dm.name + '</div>';
+    html += '<div style="flex:1"><div class="dim-bar"><div class="dim-bar-fill ' + dm.cls + '" style="width:' + pctDim + '%"></div></div></div>';
+    html += '<div class="scoring-dim-value">' + val + '/' + dm.max + '</div>';
+    html += '</div>';
+  }
+  html += '</div></div>';
+  html += '</div>'; // end grid
+
+  // Leads table
+  html += '<div class="stat-card"><div class="stat-card-header"><span class="stat-card-title">Leads (' + (leads.length || 0) + ')</span></div>';
+  html += '<div style="overflow-x:auto"><table class="data-table"><thead><tr>';
+  html += '<th>Nome</th><th class="text-right">Score</th><th>Tier</th><th>Status</th><th>Estágio</th>';
+  html += '<th class="text-right" title="Mensagens trocadas (inbound / outbound)" style="cursor:help">Msgs</th>';
+  html += '<th class="text-right" title="D1: Resultado no funil (0-30). Won=30, Consulta=22, Novo=8, Lost=3" style="cursor:help">D1</th>';
+  html += '<th class="text-right" title="D2: Engajamento de mensagens inbound (0-25). Mais respostas = mais pontos" style="cursor:help">D2</th>';
+  html += '<th class="text-right" title="D3: Velocidade de resposta do lead (0-15). <1h=15, >72h=0" style="cursor:help">D3</th>';
+  html += '<th class="text-right" title="D4: Recência - dias desde última atividade (0-15). Hoje=15, >30d=0" style="cursor:help">D4</th>';
+  html += '<th class="text-right" title="D5: Qualidade da campanha que trouxe o lead (0-10)" style="cursor:help">D5</th>';
+  html += '<th class="text-right" title="D6: Atribuição - rastreabilidade UTM e ROAS (0-5)" style="cursor:help">D6</th>';
+  html += '<th>Campanha</th></tr></thead><tbody>';
+
+  var sortedLeads = (leads || []).slice().sort(function(a,b){ return (b.score || 0) - (a.score || 0); });
+  for (var k = 0; k < sortedLeads.length; k++) {
+    var l = sortedLeads[k];
+    var tierCls = l.tier === 'hot' ? 'tier-hot' : l.tier === 'warm' ? 'tier-warm' : 'tier-cold';
+    var tierLabel = (l.tier || 'cold').toUpperCase();
+    var d2Val = l.d2_engagement != null ? l.d2_engagement : (l.dimensions ? l.dimensions.d2 : 0);
+    var d3Val = l.d3_velocity != null ? l.d3_velocity : (l.dimensions ? l.dimensions.d3 : 0);
+    var msgCount = l.message_count || l.messageCount || 0;
+    var inCount = l.inbound_count || l.inboundCount || 0;
+    var outCount = l.outbound_count || l.outboundCount || 0;
+    var noMsgs = (msgCount === 0);
+    var statusStr = (l.status || '-');
+    var statusColor = statusStr === 'won' ? 'color:var(--green);font-weight:600' : statusStr === 'lost' ? 'color:var(--red)' : '';
+    html += '<tr>';
+    html += '<td class="text-primary">' + (l.contact_name || l.contactName || '-') + '</td>';
+    html += '<td class="text-right" style="font-weight:700">' + (l.score || 0) + '</td>';
+    html += '<td><span class="tier-badge ' + tierCls + '">' + tierLabel + '</span></td>';
+    html += '<td style="' + statusColor + '">' + statusStr + '</td>';
+    html += '<td>' + (l.stage_name || l.stageName || '-') + '</td>';
+    // Coluna Msgs: total (inbound/outbound)
+    if (noMsgs) {
+      html += '<td class="text-right" title="Nenhuma conversa encontrada no GHL para este lead" style="color:var(--muted-foreground);cursor:help">—</td>';
+    } else {
+      html += '<td class="text-right" title="' + inCount + ' recebidas / ' + outCount + ' enviadas" style="cursor:help">' + msgCount + ' <span style="font-size:10px;color:var(--muted-foreground)">(' + inCount + '/' + outCount + ')</span></td>';
+    }
+    html += '<td class="text-right">' + (l.d1_engagement != null ? l.d1_engagement : (l.dimensions ? l.dimensions.d1 : 0)) + '</td>';
+    html += '<td class="text-right"' + (noMsgs ? ' title="Sem conversas no GHL — D2 zerado" style="color:var(--muted-foreground)"' : '') + '>' + d2Val + '</td>';
+    html += '<td class="text-right"' + (noMsgs ? ' title="Sem conversas no GHL — D3 zerado" style="color:var(--muted-foreground)"' : '') + '>' + d3Val + '</td>';
+    html += '<td class="text-right">' + (l.d4_recency != null ? l.d4_recency : (l.dimensions ? l.dimensions.d4 : 0)) + '</td>';
+    html += '<td class="text-right">' + (l.d5_targeting != null ? l.d5_targeting : (l.dimensions ? l.dimensions.d5 : 0)) + '</td>';
+    html += '<td class="text-right">' + (l.d6_attribution != null ? l.d6_attribution : (l.dimensions ? l.dimensions.d6 : 0)) + '</td>';
+    html += '<td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + (l.utm_campaign || l.utmCampaign || '-') + '</td>';
+    html += '</tr>';
+  }
+
+  if (sortedLeads.length === 0) {
+    html += '<tr><td colspan="13" style="text-align:center;padding:24px;color:var(--muted-foreground)">Nenhum lead scored. Clique em "Recalcular" para gerar scores.</td></tr>';
+  }
+
+  html += '</tbody></table></div></div>';
+
+  document.getElementById('page-scoring').innerHTML = html;
+  lucide.createIcons();
+}
+
+function recalculateScores() {
+  var btn = document.getElementById('btn-recalculate');
+  if (btn) { btn.disabled = true; btn.textContent = 'Calculando...'; }
+
+  fetch('/api/media/client/' + CLIENT_ID + '/lead-scores/recalculate', { method: 'POST' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.success) {
+        STATE.scoringData = null;
+        loadLeadScores();
+      } else {
+        alert('Erro: ' + (data.error || 'Falha ao recalcular'));
+        if (btn) { btn.disabled = false; btn.textContent = 'Recalcular'; }
+      }
+    })
+    .catch(function(err) {
+      alert('Erro: ' + err.message);
+      if (btn) { btn.disabled = false; btn.textContent = 'Recalcular'; }
+    });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+loadAllData();
+lucide.createIcons();
+</script>
+</body>
+</html>
