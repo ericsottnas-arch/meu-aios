@@ -1,0 +1,314 @@
+# Meeting Transcription
+
+  Meeting started: 19/02/2026, 16:12:14
+  Duration: 60 minutes
+  Participants: Abqueila Antiqueira, Eric Santos
+
+  [View original transcript](https://app.tactiq.io/api/2/u/m/r/ILBXGw7h5N0A5WGY3jYr?o=txt)
+
+    
+
+  
+
+  
+    ## Highlights
+
+    > 27:43 Abqueila Antiqueira: Cobramos cobramos, o que pode ser feito é cobrar, mas tipo assim, a consulta é r$ 1.000 e eu tô falando de um ticket de tratamento que parte de 24 entendeu
+> 29:00 Eric Santos: olha É isso daí é o processo comercial, né? Mas por experiência aqui, por exemplo ticket maior a gente cobra o valor, né dessa consulta online, não tem
+> 55:49 Abqueila Antiqueira: parte esse procedimento e tem um ticket médio do que normalmente a gente fecha
+
+  ## Transcript
+
+  00:00 Abqueila Antiqueira: Tudo joia e você?
+00:00 Eric Santos: E aí tudo bem? Tudo bom bom demais. E aí conseguiu?
+00:06 Abqueila Antiqueira: Maravilha que bom que você é uma pessoa paciente que você já viu que eu não entendo nada de tecnologias, né? Meu negócio é conversar falar pessoal de cliente fechar É isso aí.
+00:19 Eric Santos: Não mas é dessas pessoas aí que gira a máquina sem ela.
+00:22 Abqueila Antiqueira: Ou tem que ser Ultimamente, eu tô assim muito multitarefas, eu quero me concentrar mais nisso, mas a gente vai se adaptando vai organizando e dá tudo certo.
+00:32 Eric Santos: Boa perfeito, ó, deixa eu te passar tá? Esse é um dos encontros que a gente
+00:34 Abqueila Antiqueira: tá
+00:37 Eric Santos: vai ter caso necessário a gente fazer outros a gente vai fazer 10 minutos é
+00:38 Abqueila Antiqueira: perfeito bom
+00:42 Eric Santos: mais para você entender sem apertar ali com o sistema e a gente vai sentindo o
+00:45 Eric Santos: Hi, I'm transcribing this call with my Tactiq AI Extension. https://tactiq.io/r/transcribing
+00:50 Eric Santos: quão como você conseguiu absorver, tá? Você já tinha ouvido falar sobre algum tipo de CRM já usou?
+00:59 Abqueila Antiqueira: Então aqui na clínica há uns dois anos atrás, a gente tentou implementar né? Porque a gente também tem a parte de emagrecimento. Aí eu tinha um pessoal que vende aqui para mim e a gestora de tráfego me falou do como da importância assim, principalmente no aspecto de fazer falou hábito de cliente porque vai entrando muito cliente, às vezes você se perde ali no meio e ela me orientou na época para isso é a gente instalou, mas eu não tinha assim eu não mexia. Na verdade, eu entendi como Era entendi que tem ali os funis o processo e tal, mas eu não cheguei a usar efetivamente. Quem usava era mais a minha equipe assim, eu tinha duas três pessoas trabalhava aqui comigo e usavam na recepção da Clínica e tal.
+01:42 Eric Santos: entendi entendi legal legal não mas
+01:43 Abqueila Antiqueira: E era como mesmo, tá?
+01:46 Eric Santos: Aham legal e na verdade o quesito CRM. Ele é bem simples, tá? E essa ideia para simplificar o seu trabalho. Nada muito complexo. Você baixou ele lá no seu celular.
+02:02 Abqueila Antiqueira: Então na verdade Eric, eu eu até tinha ele aqui, eu tô isso que eu ia te perguntar, por isso que eu perguntei para você, eu vou colocar aqui para saber se eu preciso por exemplo aqui nessa reunião se eu preciso estar com uma tela de computador porque nem computador eu uso nem nada, né? Eu preciso tá com computador aqui para reunião ou não. Pera aí.
+02:23 Eric Santos: É para você utilizar a minha tela aqui.
+02:27 Abqueila Antiqueira: Tá espera então, acho que eu vou precisar que alguém me ajude Nisso porque eu não me preparei para essa parte, eu só peguei o celular.
+02:32 Eric Santos: Não.
+02:37 Abqueila Antiqueira: Pera aí, pera aí só um minutinho pode ser qualquer computador.
+02:43 Eric Santos: Pode mas olha se você conseguir visualizar na tela do seu celular o que eu tô compartilhando já.
+02:50 Abqueila Antiqueira: Ah, eu tô visualizando isso eu tô visualizando.
+02:52 Eric Santos: Você consegue ver normal de boa?
+02:54 Abqueila Antiqueira: Normal, tá?
+02:55 Eric Santos: Então beleza aí, se você precisar vou até dar aqui para as letras ficarem um pouquinho maior.
+03:01 Abqueila Antiqueira: Tá Não beleza, ó, tô vendo aqui normal.
+03:04 Eric Santos: Perfeito perfeito. Vamos lá então o E aí eu entendi esse seu impasse em relação. Poxa no dia a dia não uso muito computador e tá tranquilo, porque a ideia do CRM ele é uma documentação daquilo que está fazendo então vamos supor até hoje, você trabalhou com centenas centenas de pacientes. Só que até o momento você não documentou, né? Então se eu falar para você, ah, pegue 10 vídeos da semana passada. Então pronto para fechar um determinado produto. Quanto tempo você demorar para fazer isso?
+03:36 Abqueila Antiqueira: Muito muito.
+03:40 Eric Santos: Pode fazer ele sei lá duas horinhas uma horinha no dia ali você consegue fazer a documentação daqueles vídeos que você conversou durante o dia.
+03:50 Abqueila Antiqueira: perfeito
+03:50 Eric Santos: O indicado é sempre utilize direto pelo CRM, faça tudo lá. Porque você tá num ambiente só olhando, por isso que tem troca de mensagens lá dentro. Enfim, você faz a pessoa fica tudo mais fácil, né? E aí você não precisa para todo dia para poder fazer essa documentação, mas dá para se adaptar. Então você continua com a sua rotina WhatsApp dia a dia não correria. E aí você só coloca na sua agenda para que todo dia uma hora você vai lá e mova os vídeos que você conversou ali dentro da bike.
+04:23 Abqueila Antiqueira: Tá perfeito
+04:24 Eric Santos: Tá então é bem simples. Ó as conversas que você já tá tendo aí no seu WhatsApp que meu WhatsApp ele já estão aparecendo aqui ó, tem 239, tá? Algum deles também são comentários e games lá do Instagram do Dr. Cléo. Porque por exemplo Boa tarde, tudo bem ele provavelmente. Nem responde ou demora para responder por conta própria aí O importante que você que com essa possibilidade aqui do como responda essa galera para você buscar é ser mais para entender e trazer ele para perto e trazer ele para uma reunião. Não sei como é que funciona o processo de você, tá? Então como que vai funcionar? Então vamos pegar esse exemplo aqui, ó no Instagram desse cara, ele foi lá e mandou um boa tarde, tudo bem, tá? Mas clica aqui.
+05:29 Eric Santos: O pessoal do Instagram, tá? Automaticamente quando você escreveu uma mensagem aqui já vai mandar para ele no nome do Dr. Cleu lá no Instagram dele. Tá. E aí, se for um paciente que vai ter deixa eu dar uma procurada aqui, ó. É que esse cara aqui ele tá tentando realmente oferecer algum tipo de serviço.
+05:50 Abqueila Antiqueira: Com certeza, meu eu já falei para o doutor eu falei Doutor presta atenção todo mundo que chega no seu Instagram falando que seu Instagram é muito bom tendo uma oferta ou querendo uma conversa com você, tá vendendo Doutor. Sai fora aí ele até esses dias me chamou que ele olha aqui o que o cara tá me falando e Era exatamente isso enfim tem o social Seller aqui eu não eu não tô conseguindo fazer isso tá Eric porque assim a demanda para mim especificamente, ela é muito intensa, porque eu tenho que me dividir em muitas coisas a nossa ideia agora com CRM. É depois ter uma pessoa só também para Cuidar dessa parte do Instagram não que eu não vá cuidar claro que eu vou todo mundo que chegar para mim é maravilhoso, mas é importante a gente estruturar porque às vezes quem quer fazer muita coisa.
+06:36 Abqueila Antiqueira: Não faz nada, né? Mas bacana você tá me explicando e por enquanto por enquanto eu não tenho alguém eu alinho e vou respondendo. Sim toda essa parte aí, tá?
+06:48 Eric Santos: Só para você entender, tá? Eu tenho uma assessoria de marketing voltada para profissionais da Saúde médico de harmonização e eu sempre falo aqui. Ah, você identificou um ligeiro com cara de pics vai atrás dele que que ele é o lírico.
+07:06 Abqueila Antiqueira: É isso é isso mesmo. É isso mesmo, é isso?
+07:10 Eric Santos: Então bateu o olho aqui por Insta, faz o seu cérebro ali buscando essa galera lá do insta, porque converte bastante tá?
+07:19 Abqueila Antiqueira: Sim, poxa, com certeza, com certeza. É que eu tô numa demanda Érica assim intensa para dar conta de responder as
+07:22 Eric Santos: show
+07:26 Abqueila Antiqueira: minhas pessoas porque eu faço um atendimento assim bem diferenciado mesmo. Eu acho que esse é o segredo do fechamento desse tipo de produto que o doutor vende. Então eu preciso de mais pessoas na equipe assim capacitadas e um específico só para falar com as pessoas do Instagram para fazer o que você falou a cara de Picos. Vai lá converte uma reunião uma coisa uma chamada de vídeo enfim importante a gente vender.
+07:53 Eric Santos: É mas é isso mesmo. Eu tô dando uma procurada aqui tem bastante que tá só tentando marcar a reunião com ele comercial. Aliciando ele.
+08:06 Abqueila Antiqueira: Sim tem muita gente.
+08:13 Eric Santos: Ó aqui ó, não tem solução aqui foi um conteúdo que Ele publicou, né?
+08:19 Abqueila Antiqueira: tá
+08:20 Eric Santos: E aí ela comentou ó, se você for ver aqui ó, comentou tem tantos tem o
+08:24 Abqueila Antiqueira: Ah entendi, vou colocar para exato Eric, deixa eu até te perguntar porque você
+08:26 Eric Santos: interesse. Entendeu?
+08:33 Abqueila Antiqueira: tá dentro disso, eu queria saber se o CRM tem essa ferramenta você acha válido a gente colocar algumas automações em relação. Eu particularmente sou meio recente em relação automação. Tá mas não sei que se a gente faz de uma forma bacana bem humanizada e isso vira assim, com certeza, mas você acha que vale uma automação dentro do como um ia assim alguma coisa que ajude a gente nessa questão de resposta, principalmente dentro do insta ou você acha que não funciona?
+09:05 Eric Santos: Funciona funciona bastante para um alto volume é como funciona bastante? Só então determinado ponto por exemplo a gente usa aí aqui para poder fazer um agendamento de uma reunião.
+09:19 Abqueila Antiqueira: tá
+09:21 Eric Santos: Então o protocolo por exemplo aquela consulta online presencial para entender o perfil fazer todo aqueles desenhos. Como ele não tem ele tem uma entrevista especial que é nova agora uma Vitor nova, só que tem como a gente fazer umas automações para quando ele chegar a gente caminhar ele para um determinado produto ou que ele tá procurando de fato, entendeu? Já fazer aquela pergunta que você provavelmente já deve ter aí.
+09:55 Abqueila Antiqueira: Tá não perfeito perfeito quero entender tudo para otimizar o máximo para gente.
+10:02 Eric Santos: E aí vamos fazer o seguinte ó, manda você tem que estar no momento sabe perguntas.
+10:11 Abqueila Antiqueira: Tá dando interferência.
+10:16 Eric Santos: aqui mandando um milhão de
+10:24 Abqueila Antiqueira: Ah entendi Ah entendi
+10:25 Eric Santos: Não não ele é que ele tá mandando isso aí aparece para mim também. Você tem algumas perguntas algumas mensagens padrão que você manda.
+10:31 Abqueila Antiqueira: Bom tô você perguntou se eu tenho perguntas, quais perguntas assim? tá Por exemplo hoje quando o líder chega eu que vou manualmente eu tenho uma mensagem introdutória ali de recepção dessa cliente, eu já mando para ela essa mensagem só com o nome dela ali tal bom dia, boa tarde a única diferença depois disso, eu já faço um áudio um pouquinho de 30 a 40 segundos para gerar ele já uma conexão e manda algumas imagens para ela. Então esse é o meu caminho Inicial porque depois disso eu faço um outro áudio bem curtinho ali e já perguntando dela para dar ali aquela.
+11:19 Abqueila Antiqueira: Abrir a porta digamos para eu poder começar a falar do produto saber com a região que ela quer tratar hoje é assim para você ver o trabalho que eu tenho. Ah eu Doutor Lucas Rezende é que eu pedi para ele agora pouco uma foto de paciente modelo. Olha que ele tá mandando 500 mil fotos. Acabou agora a loucura Bom vamos lá. Estava até desconcentrada, tava um barulho aqui eu tentando me concentrar.
+11:42 Abqueila Antiqueira: Então hoje em dia se a gente for pensar é bem arcaico, porque eu tenho uma mensagem sim. Eu tenho ali uma narrativa de venda, eu tenho Digamos um script, né? Um caminho que a gente segue, mas é tudo ali tipo Cola vou encaminhando não é algo matizado que me ajudaria muito se a gente conseguir se colocar tudo isso que eu falo, já inicialmente assim não automação do como para chegar
+12:08 Eric Santos: Legal, me manda essas mensagens então que aí eu consigo colocar elas no fluxo,
+12:09 Abqueila Antiqueira: para mim já um pouquinho mais direcionado a cliente já me falando. Eu quero isso. Eu quero aquilo entendeu? Tanto que a gente tá querendo contratar SDR. Porque só para você entender hoje eu sou atacante zagueiro, então eu saio lá da ponta do campo e chega uma outra para fazer gol. Chego cansado Deva Florida, mas pô sem desistir.
+12:35 Eric Santos: aí eu coloco um fluxo de teste a gente faz o teste juntos.
+12:39 Abqueila Antiqueira: Tá perfeito a única coisa Lucas que eu não é Lucas não perdão que eu não sei se é possível se existe já isso, por exemplo, eu coloco o nome de cada mulher, porque você chamar a pessoa pelo nome. Isso muda muito então te falando de feedback das clientes, tá tanto que meu nível de fechamento assim, por exemplo. Quando eu Qual é a minha maior barreira é agendar consulta que não O problema não é fechar maior barreira agendar consulta.
+13:08 Abqueila Antiqueira: Porque a forma como a gente faz essa cliente já vem tão pronta que agendou consulta é procedimento tipo meu nível ou assim o meu o meu fechamento depois de agendamento de consulta é de 100% praticamente tá? Então é um pouquinho diferente do que normalmente a gente vê no mercado, né? Enfim. Então por que que eu tô te falando isso? Porque eu não sei se a gente se existe a possibilidade da Iah ou do como do sistema já vê ali o nome daquela pessoa e colocar o nome na mensagem, então não sei se isso é possível hoje em dia.
+13:41 Eric Santos: É possível só que nesse caso aqui não é ideal porque ele vai puxar um nome que a pessoa escreveu lá no WhatsApp e acontece de muita gente colocar Deus é fiel, aí colocou emoji, coloca um ponto. E aí vai.
+13:55 Abqueila Antiqueira: Eu tenho várias Deus é fiel várias, eu acho que deve ser deve ser um Mantra do WhatsApp das pessoas eu tenho várias. Deus é fiel, entendo que está falando.
+14:05 Eric Santos: Entendeu?
+14:12 Abqueila Antiqueira: Ou a gente pode pensar de repente numa mensagem, que seja afetuosa que fale boa tarde como eu sempre eu vou te mandar tua mensagem que eu uso aqui, né? E de repente a gente manda umas fotos e aí eu inverto a ordem, aí depois eu mando o áudio enfim, porque eu acho que esse áudio já no começo ele
+14:28 Eric Santos: Mais humanizado possível.
+14:31 Abqueila Antiqueira: Aí isso é fundamental, eu vou te falar uma coisa Lucas é perdão perdão Eric. Hoje eu tenho mais pessoas que eu tô treinando tá para aprender então eu não vou ficar olha o Lucas de novo aqui eu não vou ficar eu tenho mais pessoas meu Deus tem mais pessoas hoje que trabalham comigo, mas eu nunca vou sair da operação de vendas. Ah, você vai? Ser só ainda você só vai treinar eu vou continuar continuar forever assim atendendo as pessoas porque tudo bem no espaço reduzido. Ok mas elas são o meu maior laboratório, entendeu? Tudo que eu valido ou infalível dentro do processo de vendas. Vem desse contato que eu tenho com essas mulheres, então elas falam para mim. Nossa é muito chata aquelas mensagens de falar que vem todo dia, eu até bloqueio isso elas vão falando. Olha só coisas que muitas vezes a gente chega aí ouve. Ai, isso é legal, isso dá certo.
+15:31 Abqueila Antiqueira: Não dá não, eu sei porque ela fala isso para mim, entendeu? Enfim, então eu quero que realmente a gente construa algo muito humanizado para a gente potencializar eu acredito que é uma ferramenta que vai ajudar demais. Eu tava ansiosa por isso mas eu quero que a gente realmente construa essa esses funis aí da maneira mais humanizada possível.
+15:55 Eric Santos: Também formatar tá aí beleza? Então aqui você consegue mandar mensagem lá, né direto para ela para ela poder.
+16:01 Abqueila Antiqueira: Sim, sim, sim sim sim sim. tá
+16:14 Eric Santos: Receber essa mensagem na dm e assim todo dia vai chegar quanto mais conteúdo
+16:16 Abqueila Antiqueira: tá
+16:20 Eric Santos: ele postando mensagens aqui juntamente com as mensagens lá do seu WhatsApp então por exemplo. Aqui eu acho que é um pós procedimento, né alguma coisa tipo.
+16:33 Abqueila Antiqueira: Deixa eu ver precisamos você tomar meu tratamento. Acho que deve ser fiz um exame sobre o abalamento e ficou no meu glúteo, eu acho que é eu ainda não tô acho que ainda não falei com essa pessoa. Foi agora pouco Eliana. Ah sim sim é uma cliente assim super antiga, ela teve problemas de saúde, agora ela tá retomando. Acho que ela deve ter entrado agorinha enquanto a gente está conversando.
+16:56 Eric Santos: Ela mandou mensagem 4:14 é um cliente antigo fez um procedimento recente com
+16:56 Abqueila Antiqueira: porque É então.
+17:04 Eric Santos: vocês.
+17:05 Abqueila Antiqueira: Não ela já fez um procedimento há quase dois três anos é que ela teve problemas de saúde e aí ela precisa retomar o tratamento não problema de saúde pelo tratamento problemas dela lá de saúde e ela foi cuidar e agora ela retoma o tratamento.
+17:22 Eric Santos: E aí tem um você tem um departamento exclusivo que cuida dessa pessoa disso aqui de uma pessoa que é só você.
+17:29 Abqueila Antiqueira: Eu Assim como tá vendo como que é aqui eu que tô cuidando ainda dessa parte então por exemplo Gente ele tá enviando as fotos não é possível.
+17:42 Eric Santos: Deixa eu ver aqui.
+17:45 Abqueila Antiqueira: Tá até engraçado isso, né? Porque pelo amor de Jeová.
+17:48 Eric Santos: Tá chegando muita foto.
+17:51 Abqueila Antiqueira: Muito eu tô até ficando louca aqui, mas enfim, depois eu falo com ele. Ó, vamos lá. Como é que a gente faz aqui tá as clientes que eu cuido. Por enquanto sou eu mesmo que dou a sequência então eu faço pós-venda eu converso com elas. Claro que isso não é o ideal, né Eric porque você veja bem. Você sabe que vender demanda uma energia gigantesca, principalmente o tipo de venda aqui que eu faço que é essa esse contato essa conexão com cliente, então a energia vai mas eu tenho que ter energia para isso para cuidar desses casos antigos ainda.
+18:25 Eric Santos: Nesse caso aqui.
+18:26 Abqueila Antiqueira: Ela é um próximo procedimento porque ela já fez então, a gente nós podemos
+18:32 Eric Santos: A gente consegue mover ela para uma outra pipeline que seria pós é que ela não pode procedimento, né?
+18:46 Abqueila Antiqueira: dividir. Como é que você faria isso posso procedimento você põe em uma aba novos procedimentos em Nova seria isso só para eu entender.
+18:56 Eric Santos: É para você isso organizando por exemplo.
+19:00 Abqueila Antiqueira: Um ótimo ótimo. Ótimo, sabe porque você não imagina para eu me organizar no dia a dia para atender nossos clientes, eu fico buscando lá no meu WhatsApp o dia inteiro é uma loucura.
+19:17 Eric Santos: Deixa eu só ver isso aqui do Lucas, parece que tá dando um erro nessa mensagem que visualiza a mensagem no seu WhatsApp que ele te mandou.
+19:25 Abqueila Antiqueira: Tá, pera aí tem como eu diminuir você aqui, né? Espera.
+19:29 Eric Santos: Só entrar no WhatsApp que vai já aparecer.
+19:33 Abqueila Antiqueira: Ó entrou ai é que tá entrando 500 mil fotos aqui dele muitas.
+19:38 Eric Santos: Tá chegando aí?
+19:41 Abqueila Antiqueira: Tá mas ele já me mandou chover.
+19:48 Eric Santos: por favor
+19:53 Abqueila Antiqueira: mano do céu Espera Jesus Cristo Pronto, acho que entrou tá entrando e tá carregando aqui, mas tá uma loucura. Ótimo, acho que deu agora 70 fotos. Lembrando que tá pronto pronto. Eu acho que agora foi.
+20:15 Eric Santos: Então aqui eu vou fazer tá?
+20:16 Abqueila Antiqueira: Eric acho que agora dá para a gente ter uma reunião tranquila e calma. pronto foi
+20:27 Eric Santos: Eu vou colocar aqui. Ó, deixa eu pensar se eu coloco aqui.
+20:33 Abqueila Antiqueira: tá
+20:34 Eric Santos: Inicialmente, eu vou deixar aqui tá? Mas depois a gente.
+20:38 Abqueila Antiqueira: Mas eu acho que ia ser muito boa essa sua ideia de eu deixar para pessoas que já passaram isso vai me dar até mais leveza na hora de organizar todo o meu cronograma do dia. Ah, agora eu tenho que atender cliente novo. Agora é só pegar aqui quem já é eu acho que vai ser ótimo isso para mim. E aí me liga eu vou movendo essas pessoas para essa aba que você chamou aí de nome diferente que eu ainda não conheço vamos familiarizar.
+21:04 Eric Santos: Essa tela aqui que você tá falando vai.
+21:10 Abqueila Antiqueira: Eu vou movendo esses clientes aí essas clientes é isso?
+21:12 Eric Santos: isso Esse é a documentação precisa fazer uma horinha ali no seu dia no começo vai ficar meio difícil, mas na prática.
+21:23 Abqueila Antiqueira: depois
+21:27 Eric Santos: Então, por exemplo vou fazer com você aqui. Ó, então a gente identificou que essa é uma questão de vamos falar assim próximo procedimento eu vou clicar em apertar. Ela vai cair aqui, ó. Aí eu só venho aqui e movo para os procedimento.
+21:44 Abqueila Antiqueira: Ah legal
+21:45 Eric Santos: Posso fazer isso diretamente aqui, ó. Se eu clicar aqui nessa setinha, ele já vai me dar opção de onde ela tava e clica aqui após procedimento, ela já moveu, beleza? Aí esse aqui é um político que tá nessa etapa agora.
+21:56 Abqueila Antiqueira: tá
+21:58 Eric Santos: Entendeu essa Sandra aqui que tava conversando com
+22:04 Abqueila Antiqueira: Também também após procedimento. Ah mas pera aí, pera aí para ela, eu acho que a gente pode criar assim pós procedimento PM que é paciente modelo porque o doutor quando ele faz os quando ele faz as mentorias a gente da mesma assistência para as pacientes modelo, né? Só é diferente. Eu tenho que ter meio categorizar elas porque aí eu sei
+22:25 Eric Santos: hã
+22:28 Abqueila Antiqueira: que eu tô falando de uma paciente modelo diferente de uma paciente regular do doutor. Que a Eliana no caso lá que a gente pôs é só paciente modelo regular Doutor. Então acho que seria interessante a gente ter esse pós procedimento paciente modelo vai me ajudar muito também.
+22:44 Eric Santos: Então aqui eu coloquei PC para procedimento, tá?
+22:48 Abqueila Antiqueira: tá
+22:50 Eric Santos: Deixa aqui vermelho. Vamos lá voltar nela. Aí vem aqui, ó.
+22:59 Abqueila Antiqueira: tá
+23:00 Eric Santos: Salvo já foi para lá? tá Vamos para o próximo. Essa é a documentação que você vai fazer no seu dia a dia tá então por exemplo.
+23:11 Abqueila Antiqueira: beleza
+23:12 Eric Santos: Só que você precisa fazer uma velocidade tão rápida. Essa aqui é o quê?
+23:17 Abqueila Antiqueira: Essa aí é a nova paciente. Tô conversando com ela agora.
+23:21 Eric Santos: Aí show vamos lá na paciente, o contato já foi realizado já agendou alguma consulta?
+23:26 Abqueila Antiqueira: Com ela, eu tô falando agora e provavelmente eu já vou agendar consulta com ela.
+23:31 Eric Santos: Tchau então vou deixar contato realizado então, o que que eu juro aqui o fruto dessa bike é um processo comercial que você tem eu coloquei algo que a gente
+23:40 Abqueila Antiqueira: tá
+23:41 Eric Santos: funciona da maneira mais simples possível, mas o processo comercial tem toda aquela questão, pô, contato iniciado no primeiro dia se não respondeu em dois ou três dias vai para etapa de falar.
+23:53 Abqueila Antiqueira: Tá é essa etapa, até Deixa eu te perguntar porque eu já vou estruturando tudo na minha mente essa etapa te falou up eu vou montar com você aí dentro do CRM, é isso ou não?
+24:04 Eric Santos: Dá para ser feito também a gente separa eles nessas colunas aqui, então falou
+24:05 Abqueila Antiqueira: é Dos dias por exemplo lá em dois dias, manda essa mensagem em um dia, entendeu? Sabe aquele falou. Ah tem a gente constrói ele dentro do CRM. Como é que funciona essa parte?
+24:23 Eric Santos: up dia 1 e até o dia 9 lá e aí você vai arrastando toda a galera.
+24:29 Abqueila Antiqueira: Ah entendi, pensei que era um pouco diferente não mas ok eu vou te chamando tá? Eu sou uma pessoa que eu vou eu vou tentando sou zero acomodada, não tenho medo do que é novo ao contrário, eu gosto de desafio, mas se eu não entender alguma coisa eu vou te mandar lá Eric.
+24:45 Eric Santos: Mas é mas é isso mesmo, mas é isso mesmo, tem que mandar eu vou estar lá para poder te ajudar, tá? Qualquer horário que você mandar lá eu tô online.
+24:52 Abqueila Antiqueira: Tá joia.
+24:53 Eric Santos: O contato realizado aí vamos supor aqui aqui na minha Assessoria, eu falo olha contato realizado cara, não respondeu ou não conseguiu agendar uma consulta no primeiro dia move ele para falar porque você sabe que você precisa buscar ele falou para poder fazer a marcação, então vou deixar nesse contato realizar
+25:07 Abqueila Antiqueira: A Helena eu acho que mandei mensagem agora à tarde, ela ainda não me
+25:12 Eric Santos: aí por exemplo amanhã se ela não conseguiu ainda marcar uma consulta contigo, você vai mandar ela falar ela vai deixar ele falou lá, você já sabe que esse vídeo que você precisa buscar essa reunião agendar certo. Aí vamos lá para outro só para fixar Helena.
+25:35 Abqueila Antiqueira: respondeu.
+25:37 Eric Santos: Essa daqui são os resultados que você manda, né?
+25:40 Abqueila Antiqueira: Isso, pera aí.
+25:41 Eric Santos: Nossa Sabe que seria muito bom a gente gravar um vídeo com o doutor.
+25:47 Abqueila Antiqueira: tá
+25:47 Eric Santos: De uma pop bem narrada com ele com esses resultados aparecendo na tela ele vai explicando.
+25:57 Abqueila Antiqueira: Ótimo perfeito.
+25:59 Eric Santos: Que já traz mais autoridade que dá uma segunda volta com você ali na reunião. Aí beleza o contato realizado, né? Você já fez. Show então todos esses que eu tô colocando em conta atualizado foi que você já mandou mensagem, né?
+26:17 Abqueila Antiqueira: Sim, porque assim como a gente aqui o que que acontece eu até tive uma reunião com Alexandre e ele falou Keila, tenta marcar a Copa as clientes e sim eu falo de cor falo de ligação, muitas eu falo com ligação, mas assim muitas mulheres não querem tá? Claro que a gente tem que furar essa barreira, mas também a forma como é feito esse tratamento por enquanto ainda. Estou estudando uma maneira para a gente fazer um fechamento numa qual porque depende muito da avaliação do médico, não é um tratamento ele não é vendido assim como um tratamento estético, como é que eu posso te dizer? Ah um tratamento estético a b c. Que que é esse a para uma coisa simples do tratamento estético B para uma coisa moderada e ser uma coisa mais complexa não é assim, ele é um tratamento muito individualizado como a cirurgia plástica. Então não é algo que às vezes na ligação aqui por mais persuasiva por mais que eu mostre todos os benefícios e fica bem.
+27:15 Abqueila Antiqueira: Evidente para todo mundo não é uma coisa que a cliente já vai falar então vou te dar vamos por r$ 5.000, eu vou te dar 10 mil reais, entendeu? Não dá esse atendimento Inicial é realmente para consulta de avaliação. E aí o que eu te disse? A gente trabalha de uma maneira que a hora que a cliente chega Nessa consulta o nosso fechamento sem brincadeira de quase 100% tanto que a gente já participou assim.
+27:41 Abqueila Antiqueira: Oi
+27:42 Eric Santos: Vocês cobram por essa consulta.
+27:43 Abqueila Antiqueira: Cobramos cobramos, o que pode ser feito é cobrar, mas tipo assim, a consulta é r$ 1.000 e eu tô falando de um ticket de tratamento que parte de 24 entendeu
+27:52 Abqueila Antiqueira: assim então só que é como uma cirurgia plástica igual uma cliente de cirurgia plástica. O médico tem que ver ela tem que analisar até essa forma da gente trazer essa personalização é algo muito bacana, porque a cliente a gente sai daquele língua ali ó que existe de procedimento estético ser uma coisa que não vai ter resultado porque muitas clientes que chegam para gente ela já fizeram todos os tratamentos que você imagina, entendeu? E não tiveram resultado, então a gente enfrenta ali várias Barreirinhas que são quebradas, mas a gente precisa trazer ela para essa consulta. Não consegui pensar em um formato já pensei isso junto com doutora até da gente fazer uma Call e fechar diferente da mentoria quando ele tiver vendendo a mentoria e os outros produtos aí a gente tá falando de um outro universo.
+28:43 Abqueila Antiqueira: Mas para cliente final prestação de serviço. Assim a gente ainda não conseguiu pensar em um formato de chegar e falar para essa cliente já pagar. Sei lá 5 mil, entendeu? 10.000. Entendeu, mas a gente vai pensar em um jeito.
+29:00 Eric Santos: olha É isso daí é o processo comercial, né? Mas por experiência aqui, por exemplo ticket maior a gente cobra o valor, né dessa consulta online, não tem
+29:13 Eric Santos: como não é isso tem.
+29:16 Abqueila Antiqueira: Oi sim eu fico na clínica o dia quase o dia todo aí às vezes o doutor fica
+29:17 Eric Santos: E a gente faz essa primeira a gente é muito do fim, né? Se é realmente você vê que ele é muito daquele perfil de Olha, eu sou muito confiado. Eu preciso de um opinião extremamente qualificada do doutor aí logo Doutor e uma pequena um espaço de tempo nessa reunião. E aí eu não sei como que é a rotina dele do dia a dia. na química e com ele Você tá naquilo?
+29:53 Abqueila Antiqueira: fora.
+29:55 Eric Santos: Ele tá livre num dia você chama ele entra na reunião com você, já é o suficiente já trazer aquela autoridade e sai. Aí agora por exemplo. Ah é um perfil que tem extrema necessidade tá com Doutor Ali. Pega o doutor macro reunião com ele reduzido, não tem como reduzido ali você faz essa triagem Inicial ele entra. Faz esse passo que você falou e sai você cuida do fechamento. Entendeu? Agora
+30:25 Abqueila Antiqueira: então
+30:26 Eric Santos: que eu expliquei vou deixar aqui para ela poder fechamento contigo, entendeu?
+30:31 Abqueila Antiqueira: Quando a gente faz online. A consulta tá o atendimento online, a gente faz isso é do jeitinho que você falou eu converso com a cliente e tal e o Dr. Já entra. Já conversa esclarece dúvida normalmente a cliente mandou foto antes. Aí a gente ele já vê ele já fala aquele SS estimativa eu já entro faço com ela fecho já manda link de pagamento aí já fecha o procedimento mesmo e depois ela só vem para fazer mas isso funciona mais.
+30:59 Abqueila Antiqueira: Quando a gente traz assim para um aspecto online, tá quando essa coisa da cliente que a cliente por incrível que pareça para esse tipo de dor e para o tipo de tratamento que a gente cuida a maioria das clientes das nossas clientes, pelo menos são mulheres. Assim que desculpa que eu vou falar estão extremamente detonadas, se eu te mostrar umas fotos, se você entrar nessas fotos aí ver você cai duro, não é? Não é sério, eu tô até falando baixo que tem uma aqui não é aquela coisa ai tem uma celulite. Não não são mulheres que são as vezes deformadas mesmo coxa bumbum. Então são mulheres que têm uma dor interna assim psicológica muito grande então esse contato com o doutor sabe fecho fez para elas é fundamental para fechar entendeu? Por mais que eu chegue valide fale elas entendem o processo tanto que elas chegam aqui produtora da Doutor, fala ele fala Keila você já me manda elas pronta. Porque é só aquela coisa que você falou aquela validação aquele acolhimento, ele tira fotos dela e acabou e a gente fecha então por isso dá para a gente fazer assim de repente consultas online ou a qual com uma participação do doutor dá funciona a gente pode pensar nesse formato e amadurecer essa ideia porque a gente já tem essa experiência para as consultas online, mas tem algumas clientes que elas querem chegar aqui.
+32:24 Abqueila Antiqueira: Tirar a roupa assim não me sentir tira a roupa se entende que eu tô falando do doutor. Vê ali acolher ela tem muitas muitas acho que a maioria eu acho que são 180% das nossas clientes dentro desse perfil.
+32:36 Eric Santos: Perfeito, eu acho que a conversão ainda é 100% não tem como ser maior né? Mas vai continuar a conversão presencial, não tem não ser 100% para isso
+32:44 Abqueila Antiqueira: Não. é
+32:50 Eric Santos: exatamente então se for fazer presencial continua. Presencial também aqui a gente dá essas duas opções ou você marca essa pessoa for próxima no endereço ou ela faz online.
+33:04 Abqueila Antiqueira: Tá bom.
+33:07 Eric Santos: Uma coisa que é a taxa de comparecimento, né? Mas se a pessoa pagou por aquilo ela vai participar.
+33:14 Abqueila Antiqueira: Sim sim, com certeza.
+33:16 Eric Santos: Então beleza, você conseguiu entender essa questão aqui tanto comunicação
+33:17 Abqueila Antiqueira: show
+33:23 Eric Santos: nos vídeos.
+33:24 Abqueila Antiqueira: Consegui entender.
+33:25 Eric Santos: De mover esse aqui ó, por exemplo.
+33:29 Abqueila Antiqueira: tá isso aí, foi uma coisa que eu tava comprando só que eu tava vendo de Anestésico aqui para clínica que acaba entrando tudo no meu no meu telefone, né tanto que depois deixa eu te fazer uma pergunta Lucas dá para a gente colocar outras pessoas dentro desse. outra outros números dentro do CRM
+33:52 Eric Santos: Tá só que aí são logins diferentes, aí tem que ter uma assinatura a mais.
+33:57 Abqueila Antiqueira: Tá eu vou falar isso com doutor depois porque eu vou ter duas ou três pessoas, acho que três pessoas aqui trabalhando comigo, né? E não é que eu quero ficar vendo que elas estão falando não é nada disso, mas é legal também eu dar uma acompanhada ali, né em algumas coisas ver como é que tá, né? É importante. Apesar de que apesar de que ouvir e Mexe eu falo com elas todas Vira
+34:18 Eric Santos: Tem que ter.
+34:22 Abqueila Antiqueira: e Mexe, não. Todo dia eu toda semana e aí como é que tá? Como que estão os líderes? Teve uma que ela tava encaminhando mensagem pronta que a cliente via que era encaminhada eu cheguei e falei queridinha desse jeito, você não vai vender um processo de 25 mil reais porque o cliente que chega aqui é um cliente que tá cheio de receio cheio de dúvida, se eu não tenho o tempo de conversar de me conectar com ele. Você acha que ele vai chegar aqui vai falar assim ó, pega o meu Black. Aqui passa 25 meu aí não vai aí eu já ajustei, mas eu queria também para a gente poder não só ter.
+34:57 Abqueila Antiqueira: Esse controle eu acho que nem é isso até para facilitar para elas. Porque do mesmo jeito que entra muita mensagem para mim também. Entra para elas também tem falou. Ah tem também tem toda essa parte que é importante, né? Mas eu vou falar com doutor se dá para a gente colocar mais um ou dois números aí seriam novas assinaturas Erick só para eu entender.
+35:16 Eric Santos: Exato aí uma nova assinatura é cobrado uma licença adicional em cima dela.
+35:20 Abqueila Antiqueira: Tá bom eu vejo com ele, depois tá joia.
+35:21 Eric Santos: Show aí beleza, entendeu isso aqui. Ó, aí aqui vai da sua escolha, tá? Se você quiser documentar isso o documento assim não se você clicar em rejeitar aqui, ele vai sumir da bike.
+35:34 Abqueila Antiqueira: tá beleza
+35:40 Eric Santos: Uma outra coisa, vamos lá então a gente Entendeu essa questão de mover os índices na pipeline, né? Uma coisa importante, deixa eu pegar MPC aqui só para a gente fazer um teste, tá? Eric consegui fazer agendar consulta a gente foi lá e vendeu para ele se para esse vídeo aqui aí se você quer nele segurar e arrastar para baixo, você vai
+36:03 Abqueila Antiqueira: tá
+36:06 Eric Santos: ver aqui ó ganho perda e lixo que é o rejeitado lá que eu te falei para ganho você vai dar ele como ganha. E esse ele já tá contabilizando como uma vida que você fez. tá Aí por exemplo o mesmo vale para os perdidos. E aí os perdidos a gente vai ter os motivos de perda, né? Eu coloquei alguns aqui. Que é vamos falar assim padrãozão, né em questões de preço questões de qualidade mudança de ideias sem resposta. Fechou com concorrente. Tem algum outro editar ou adicionar aqui é os dois tipos.
+36:49 Abqueila Antiqueira: Já vou te falar aqui normalmente, o que que acontece são clientes, tá? É a parte financeira é número um muitas entendem o valor e aí entra um outro aspecto, né que a gente tem que melhorar o posicionamento do doutor/ gestão de tráfego, tá? Não sou aquele tipo de comercial preguiçoso que quer que o cliente chegue Prontinho não eu sei que existe todo um processo, mas muitas vezes entram aqui pessoas para a gente que realmente não tem condição de investimento. E hoje nós operamos apenas como cartão de crédito não tem crediário aqui tem boleto não tem nada então isso limita um pouco mais né? Então número um clientes que eventualmente não fecham que seriam pedidas temporariamente na Eric. Porque já teve muita cliente que a gente fez plantou a sementinha ali. A cliente foi junto a grana e depois de seis meses oito meses um ano veio e fez o procedimento. Então tem muito aqui tem graças a Deus.
+37:56 Abqueila Antiqueira: encerrar
+37:57 Eric Santos: Eu vou eu vou ter que usar não não não para produzir para produzir conteúdo porque o que você tá falando é o que eu prego aqui. Eu tô todo todo novo cliente que entra que eu falo é quatro a seis meses para você ter resultado porque quem entra hoje não vai comprar de você hoje ou amanhã esquece era para comprar. Daqui uma semana um mês ou seis meses.
+38:20 Abqueila Antiqueira: Exato, olha Eric, eu tenho assim histórias e depois desse projeto. Eu quero muito um dia entrar na rede social para falar para as pessoas que estão vendendo porque tem tanto absurdo sobre vendas e as pessoas elas vão pegando uma noica e não é assim então aquilo voltando que a gente tava falando eu tenho cliente que meu eu já teve cliente que falou comigo de manhã, eu passei para ela expliquei ela entendeu? Falou é isso que eu quero você tem horário hoje à tarde já teve não foram não foi só uma não foram várias, mas isso é a minoria.
+38:52 Abqueila Antiqueira: A maioria das clientes já teve cliente. Poxa, não tenho Realmente esse dinheiro e eu acolho essa cliente também eu falo para ela que no momento ela vai conseguir porque você já vê pelo perfil que não tem os 25 30 mil para investir Ok mas a maioria tá ali naquele grande bolo de pessoas. Em algum momento vão comprar de você não vai comprar às vezes naquele dia tem cliente que eu falei fiz um atendimento Érica assim modéstia parte Impecável em tudo em conexão e esclarecimento responde pergunta fiz todos aqueles mini gatilhos que eu não gosto daqueles gatilhos exagerados, eu acho aquilo espanta a venda na verdade principalmente de certos perfis de cliente, mas enfim e a cliente. Fala queima. Olha eu preciso pensar em relação algumas coisas preciso fazer algumas contas e a gente conversa. Daqui uma semana ok? Ok Claro tem o seu tempo de pensar acolho por dentro. Eu queria já até ela fechasse e aquele momento mas eu mantenho a tranquilidade passa uma semana eu falo para essa cliente ela fala que ele ainda tô pensando aqui, eu ainda tenho que decidir algumas coisas sem problema posso falar com você ou quer marcar outro dia e aí às vezes no outro dia cliente Keila, decidi tô indo você tem horário amanhã, você tem horário daqui um mês você tem horário? Daqui uma semana e tem um cliente.
+40:11 Abqueila Antiqueira: Que Desaparece que eu faço falou. Ah, porque às vezes não faço né? Porque eu tô sem CRM mais fácil e aí depois de um mês ela fala que ele olha eu tô com tudo pronto, eu tava pensando aqui então assim fale para os seus vendedores porque é real na prática e eu falo que também cada cliente que a gente atende. É uma semente que você tá plantando e você não sabe quando aquela semente vai germinar, mas se você fez o trabalho bem feito, ela vai germinar isso não isso se pode não ter a dúvida que vai é só às vezes você não sabe o que tem que exato a gente tenta você sabe você tem os filhos de vendas, mas às vezes o cliente não responde aquele falou. Ah, porque ele não tá pronto ainda, mas se você fez trabalho bem feito na hora certa vai ter resultado e vai ter venda ponto final, é isso.
+40:58 Eric Santos: É isso é o famoso Cid né? Você vai fazendo vai fazendo fazendo uma hora ele vai vir uma hora vai.
+41:04 Abqueila Antiqueira: exato
+41:05 Eric Santos: Então vamos lá bom questão de qualidade é tipo assim comparação, né com o mercado.
+41:14 Abqueila Antiqueira: Na verdade essa questão de qualidade. Você pode até deixar mas dificilmente não tô sendo arrogante não tá o doutor Cleu hoje dentro da área dele. Ele é um dos melhores de coxa não tem igual então eu não tenho esse problema com relação. Como é que eu posso dizer ai a qualidade do outro era melhor essa qualidade foi menor eu não tenho isso aqui não, tá? Pode ficar tranquilo em relação a isso.
+41:41 Eric Santos: E mudou de ideia não quer mais fazer aí não responde clássico.
+41:46 Abqueila Antiqueira: É não responde, eu acho que é o que acho que não responde valor distância, às vezes também tem é bem pouquinho, mas tem tá é bem pouquinho mais tem. Hoje mesmo acho que eu tive umas duas que falaram de distância, mas enfim.
+42:05 Eric Santos: Hoje Vocês não tem gestão de tráfego?
+42:08 Abqueila Antiqueira: A gente tem uma gestão de tráfego que é oscila vou te contar o que que acontece também, você vai identificar e só de cara. Essa moça começou aqui comigo e ela trouxe resultados maravilhosos para gente tá tanto aqui para Clínica quanto para o segmento do doutor? Só que depois ela é muito boa e ela foi crescendo, ela foi trazendo pessoas para equipe. E aí ela foi querendo crescer até e não tem problema. Eu acho que é legal a gente tem que crescer, mas se você não tem estrutura você se lasca você despenca e ela começou a crescer muito sem estrutura, então perceba que hoje ela não até melhorou porque sempre eu falo ó não tá legal esses vídeos esses não estão bem qualificados. Então eu fico nessa troca com ela e eles vão melhorando, mas assim não é ainda aquele tráfego 100% entende? Aquele tráfego de verdade assim não é ainda mas vai sim, mas vai ser mas vai ser.
+43:04 Eric Santos: É o que eu eu venho de agência, né? Eu fui formado.
+43:12 Abqueila Antiqueira: Conheço já vi falar muito já já assisti podcast deles já veio anúncio deles aqui para mim já já.
+43:20 Eric Santos: Eu era Red de marketing lá eu cuidava de tráfego do copo de zap.
+43:26 Abqueila Antiqueira: Sim, sim.
+43:27 Eric Santos: Esse é o Projeto toda essa galera o cuidado direcionava com os clientes não se encontra clientes com diferentes tipos de mercado que você possa imaginar azulzinho até a mulher que tinha um e-commerce de produtos naturais. Tudo e daí, eu fui formado um dos motivos de eu ter saído muito desligada, cara, não consigo olhar para tudo isso que vocês estão falando para mim olhar. Não dá para mim escalar pô, tô ganhando tô ganhando bem para caramba. Tô mas não é inviável para mim é enviado para o cliente, porque às vezes não dá o resultado que deveria dar porque não tem a identificação que deveria ter.
+44:06 Abqueila Antiqueira: exatamente
+44:08 Eric Santos: Sair e aí, eu fui lá e montei essa minha assessoria que é tipo assim, eu limito lá cinco seis clientes. É isso aqui novos saia porque precisa dessa dedicação.
+44:22 Abqueila Antiqueira: exato
+44:23 Eric Santos: Entendeu? E é muito nesse nível, né? E a gente olha para isso até por cliente até por lead. Tá bom, tá com cara difícil foca naquilo não fica tentando olhar para um texto Geral de tudo ali tentando falar com todo mundo porque não dá para deixar qualquer um sem resposta, né? Mas
+44:43 Abqueila Antiqueira: Mas a gente não consegue se não você não faz um bom atendimento, eu sempre falo isso e eu percebo Eric, se você é desse meio eu vou até te falar eu falo é uma máfia de urgência de agência de marketing não são todas mas a maioria Olha o que acontece. Às vezes ele chamavam em um contrato de seis meses um ano. Aí eles falam para você o primeiro mês é para entender o segundo mês é para não sei o quê o terceiro para não sei o quê e não é porque se você for pensar no fundo todo mundo quer o quê vender certo todo mundo agência quer vender todo mundo quer vender. Beleza se eu contrato um cliente não amarra um cliente no contrato de seis meses ele vai me pagar aqueles seis meses. Depois ele vai terminar e eu já vou ter comprado outros clientes de contratos de seis meses e por aí, vai é muito desculpa o tempo que eu vou usar f***. Eu me lasquei várias vezes aqui na clínica. Até aprender a jogada, né? Mas enfim.
+45:35 Eric Santos: É isso é então até um dos motivos tudo é de praxe. Ah, você tem contrato de fidelidade falo não, você pagou esse mês, se você quiser sair no mês que vem, você sai.
+45:44 Abqueila Antiqueira: Sim, sim, sim.
+45:45 Eric Santos: O maior abraço possível.
+45:47 Abqueila Antiqueira: Porque eu entendo na verdade e eu compartilho muito dessa ideia com vocês. Fico muito feliz de ouvir isso de você, porque assim eu falo que eu gosto de ser de verdade em um mundo fictício, mas eu gosto de ser de verdade com os meus defeitos com os meus acertos. Enfim, porque eu acho que é muito mais importante você trabalhar como você falou com poucos clientes. Mas você realmente entregar resultado. E aí todo mundo vai ficar feliz, todo mundo vai prosperar todo mundo vai crescer do que você abraçar o mundo e começar a ter só reclamação, pelo amor de Deus. Acho que eu ia morrer com o negócio desse não dá não dá.
+46:25 Eric Santos: A importância aí se precisar de adicionar um novo aqui, você me fala que a
+46:27 Abqueila Antiqueira: Eu sei porque é isso que rola né? Mas fazer o quê? Vamos embora. Bom me diga próximos passos.
+46:38 Eric Santos: gente fala e adiciona, tá?
+46:40 Abqueila Antiqueira: perfeito
+46:41 Eric Santos: Aí vamos lá é especialista, onde vocês tem só o Cleudo ou mais algum outro doutor.
+46:49 Abqueila Antiqueira: Nessa parte que entra no meu WhatsApp tá esse WhatsApp, ele é direcionado para as questões do Dr. Clio eventualmente eu tenho alguns algumas pessoas aí que às vezes eu falo da parte que envolve o a clínica, né? Então por exemplo, às vezes um outro cliente que me chama ali é para as coisas da Clínica no sentido de emagrecimento de Psicologia. Mas normalmente ou eu dou primeiro atendimento e eu já direcionando para um outro número que tem aqui na clínica. Mas eu tento não misturar eu tenho que deixar esse número só para as coisas realmente do Dr. Cleudo e às vezes entra uma coisa minha ou outra e pessoal porque o meu número pessoal. Ele é americano. E aí eu uso às vezes esse número que esse número era meu aí, depois eu pus Esse número aí com as coisas Doutor que foi tipo isso e ficou né? Não vou mudar vai ficar então às vezes uma coisa em outra tipo. Ah uma conta da Claro ai o banco Santander, às vezes me chama, mas assim.
+47:48 Abqueila Antiqueira: É coisa que entrou eu já pago para não sujarkline, né? Mas ele não é time é só para não sujar ali a minha tela. Porque como é muita coisa entrando então eu vou tirando essas coisas para não. Então um segundo só para eu ver aqui um negócio. Espera aí só um minutinho.
+50:31 Abqueila Antiqueira: Eric sorry cheguei é que aqui meu filho eu tô te falando é 1500 coisas para fazer mas vamos que vamos.
+50:41 Eric Santos: Vamos lá, vamos lá tá então aqui a gente não utiliza então, né? Só ele que vai.
+50:44 Abqueila Antiqueira: É só ele.
+50:47 Eric Santos: Então vou tirar a especialidade, vamos lá tem outros tipos de procedimento, quais são?
+50:55 Abqueila Antiqueira: Ó normalmente é a gente pode colocar bioplastia porque bioplastia é o volume do glúteo, né? Então pode ser bioplastia, eu acho que pode ser aí também. Você pode colocar uma aba de integrativa/ emagrecimento, porque o doutor também faz com pacientes, às vezes ou mulheres ou homem então são clientes que chegam também procurando ele nesse número a gente pode separar.
+51:23 Eric Santos: Tem mais.
+51:25 Abqueila Antiqueira: integrativa é Ou pode ficar só integrativa, tá? Porque normalmente quem vem para integrativa é barra emagrecimento então. E eu acho que pode ser também, deixa eu ver degrassiva bioplastia aí a parte de celulite mesmo. Então na verdade é hoje a gente está atendendo aqui em Atibaia, mas já
+51:54 Eric Santos: tem clínicas em outros locais ou só aí com
+52:06 Abqueila Antiqueira: estamos vendo Alphaville, São Paulo então, se você quiser deixar essas três ícones já Atibaia, Alphaville São Paulo, não sei mas eu acho que seria interessante também a gente ter essa divisão.
+52:22 Eric Santos: São Paulo centro ou São Paulo
+52:24 Abqueila Antiqueira: Não a gente vai atender em Alphaville que o doutor tá vendo e a gente tá vendo na Vila Olímpia em São Paulo, porque você acredita que tem cliente tem cliente que eu falo vem para Atibaia cliente vem tem cliente que Atibaia Alphaville não nem Atibaia, Alphaville é assim, só se for do lado da casa dela tem esse perfil também.
+52:46 Eric Santos: Não, mas é que realmente eu morava em Caieiras. Então E é longe. Tá doido é Atibaia para por exemplo, Vila Olímpia é
+52:50 Abqueila Antiqueira: Eu conheço Caieiras, eu passo por lá quando eu vou para o sítio do meu pai.
+52:59 Eric Santos: longe.
+53:01 Abqueila Antiqueira: Então mas você sabe por exemplo a gente atendia no Itaim Bibi?
+53:06 Eric Santos: Então nessa população mesmo, né, Alphaville.
+53:07 Abqueila Antiqueira: Tem cliente que preferia por exemplo se mora na zona norte assim, dependendo do lugar que mora preferia vir para Atibaia do que ir para o Itaim de tanto trânsito, eles falavam ai a distância é pequena, mas o tempo que eu vou ficar no trânsito é um absurdo. Então prefiro ir para Atibaia, mas eu acho legal a gente que essa triangulação porque aí Não tem escapatória ninguém vai poder falar que a distância.
+53:34 Abqueila Antiqueira: é exatamente
+53:40 Eric Santos: Boa boa então especialidade endereço motivo de perda. Pagamento esses documentos pagamento. Ah 10 vezes no cartão é sinal.
+53:54 Abqueila Antiqueira: Na verdade como que a gente não documenta isso, não sei assim no WhatsApp não na verdade, como que faz eu faço fechamento já passa produtor aí a pessoa que faz nosso financeiro já faz a planilha mensal e também a planilha por procedimento e lá já tem né? Ah foi em 10 vezes em 12 vezes foi um pics tanto tem toda assim, digamos o diagnóstico da negociação a gente tem mas a gente faz isso em planilha separadas, então acho que não precisa ter essa parte aí do pagamento.
+54:27 Eric Santos: Aí tem uma batidinha de arquivo também caso a gente queira anexar alguma coisa tá aí o ponto de contato por exemplo em alguns vídeos aqui ó, vai vir lembra que puxa o nome do WhatsApp dele?
+54:39 Abqueila Antiqueira: tá
+54:40 Eric Santos: E não tiver com nenhum nome eventualmente vai perguntar o nome da pessoa aí você pode atualizando. Esse nome aqui tá ó, se você clicar aqui em cima você consegue atualizar ou
+54:51 Abqueila Antiqueira: tá
+54:51 Eric Santos: você faz ele? Tá aí, beleza? Vamos lá aqui aí só encerrar essa primeira parte.
+54:56 Abqueila Antiqueira: Se eu atualizo se eu atualizo pelo meu WhatsApp já aparece para você, né? Já entra no CRM não entra porque eu sempre atualizo eu odeio aquela coisa de ter sabe, pode ver se você bater ali. Todas as clientes que eu tô falando. Tem o nome dela ser registrado porque deu um monte de número me confunde então eu já vou gravando ali com o nome de cada um. Enfim então.
+55:26 Abqueila Antiqueira: Na verdade eu tenho um ponto de partida, eu tenho uma Estimativa de onde é que
+55:34 Eric Santos: Aqui é importante, tá? É que coloque o valor do procedimento. Então como que funciona vocês tem uma tabela dos valores dos procedimentos, como é que é?
+55:49 Abqueila Antiqueira: parte esse procedimento e tem um ticket médio do que normalmente a gente fecha
+55:55 Abqueila Antiqueira: tá então isso tem que ficar como a exposto ou para o cliente.
+56:01 Eric Santos: Não aqui é só a documentação isso aqui nem vai aparecer para ele porque
+56:04 Abqueila Antiqueira: tá
+56:06 Eric Santos: vamos lá vamos simular aqui, né? Vamos colocar a bioplastia o endereço da clínica de Atibaia. E aqui não tem motivo de pertence a perder mas uma venda aí vamos falar na bioplast médio e o que a gente vai conseguir talvez vender para ela é de sei lá.
+56:22 Abqueila Antiqueira: 24 mil
+56:23 Eric Santos: 24 mil
+56:28 Abqueila Antiqueira: de 20 a 24 mil
+56:30 Eric Santos: Show eu coloquei 24 mil é interessante esse valor que seja exato da venda lá no final, tá? Porque esse aqui ele soma tudo para ver os desânimos quanto de venda que você trouxe e aqui é tudo bom, isso dá tudo preenchido porque você consegue se você tiver uma equipe aí de três pessoas vai saber quanto que a pessoa trouxe de venda quanto a pessoa B ainda não conseguiu vender quanto que ela tem para vender na mesa dá para buscar isso. Enfim esses dados.
+57:02 Eric Santos: Em site para a gente poder buscar tá? E é isso documentar que a venda a
+57:04 Abqueila Antiqueira: É super rapidinho assim eu vi.
+57:07 Eric Santos: especialidade o endereço da clínica e salvou. Esse é o trabalho é que a gente ficou bastante tempo aqui, mas das ações que eu tomei aqui dentro do CRM, não foi? tu Amor, vem tem muita mas muita mais outras funções do dia a dia, mas começa a usar para você também lidar com essas que a gente vai as outras.
+57:35 Abqueila Antiqueira: Tá bom me diz uma coisa, você vai me mandar um login para eu acessar isso.
+57:36 Eric Santos: Sim, eu vou te mandar o login já se você quiser abrir o computador aí.
+57:47 Abqueila Antiqueira: Na verdade Eric eu vou te contar eu preciso providenciar um computador para mim, eu tenho um aqui da Clínica ultralento, mas eu vou usar ele por enquanto por isso que eu te perguntei que se podia ser no iPad que eu tava pensando de comprar um iPad para mim porque o Ipad Hoje ele tem aquela aquele tecladinho lá aquelas coisas, né? Eu tava querendo comprar iPad. Mas você falou que no iPad não dá, né? A mesma coisa que o celular.
+58:10 Eric Santos: Olha no iPad dá é só que você vai ter que entrar ele como um navegador. E aí ele vai ficar nessa mesma visualização que eu te mostrei.
+58:20 Abqueila Antiqueira: na visualização
+58:26 Eric Santos: Essa mesma tela aqui não baixa o aplicativo.
+58:27 Abqueila Antiqueira: Ah entendi não mas aí não tem problema porque no caso eu deixaria o iPad assim para mim e uma aba ali aberta assim desse navegador só para o como entendeu? Porque seria mais prático a minha filha tem Macbook, eu tenho até vontade de comprar um para mim, mas nossa, eu sou zeros a computador eu gosto disso. Eu gosto de conversa. Eu gosto de falar, eu gosto. Então assim eu vou ter esse aparelho aí o iPad no caso o computador só para fazer a coisa do como mesmo só para manter isso tudo. OK? Então tô pensando no iPad, sabia? Mais barato do que também eu comprar um computador agora para mim.
+59:06 Eric Santos: Sim, e aí, como você tá usando correndo para o dia a dia aí para baixo?
+59:13 Abqueila Antiqueira: Exato é uma coisa que eu posso levar entendeu? Que eu falei cheguei aqui deu uma pausa eu vou numa sala, eu já abro um iPad conecto já coloco tudo que tem que colocar acho que para mim a dinâmica do dia a dia vai funcionar melhor, mas enfim se dá Beleza vou correr atrás disso.
+59:28 Eric Santos: ah
+59:28 Abqueila Antiqueira: Mas eu vou abrir um computador aqui, só tem que cortar aqui da clínica amanhã cedinho hoje à tarde já para entrar e para tentar já fazer tudo isso que você me explicou. Tá bom? Pode ficar tranquilo que eu vou ver isso.
+59:42 Eric Santos: E aí você só me manda mensagem me liga caso se tiver algum problema, enfim,
+59:47 Abqueila Antiqueira: Pode deixar, pode deixar, tá bom?
+59:48 Eric Santos: tá me manda essas mensagens que você tem iniciais dessa conversa.
+59:54 Abqueila Antiqueira: Mãe manda eu já mando já pode deixar que eu já encaminho para você, como
+59:55 Eric Santos: tá
+59:59 Abqueila Antiqueira: que eu faço a sequência até da mensagenzinha de texto e tal. Porque aí depois eu só vou mandando áudio, né? Falando com a cliente enfim, mas é isso aí é muito obrigada. Vamos que vamos nessa nova aventura. Porque para mim é desconhecida. Mas vai dar certo.
+01:00:15 Eric Santos: Vai dar certo.
+01:00:16 Abqueila Antiqueira: Valeu, viu? Brigadão, boa tarde para você.
+01:00:19 Eric Santos: Para vocês também, valeu.
+01:00:20 Abqueila Antiqueira: Tchau, tchau.
+  

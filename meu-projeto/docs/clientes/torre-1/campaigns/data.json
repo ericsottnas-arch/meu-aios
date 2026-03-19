@@ -1,0 +1,862 @@
+{
+  "clientId": "torre-1",
+  "clientName": "Torre 1",
+  "exportedAt": "2026-03-19T02:35:19.380Z",
+  "period": "last_7d",
+  "meta": {
+    "campaigns": [
+      {
+        "id": "120237462150940138",
+        "name": "[Syra] WHATSAPP [Mensagens] [CBO]",
+        "status": "PAUSED",
+        "objective": "OUTCOME_ENGAGEMENT",
+        "dailyBudget": 15,
+        "lifetimeBudget": null,
+        "createdTime": "2026-02-05T13:48:10-0300",
+        "dailyInsights": [
+          {
+            "date": "2026-02-05",
+            "impressions": 1,
+            "clicks": 0,
+            "spend": 0,
+            "cpc": 0,
+            "ctr": 0,
+            "cpm": 0,
+            "reach": 1,
+            "frequency": 1,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          }
+        ],
+        "adsets": [
+          {
+            "id": "120237466569710138",
+            "name": "P1 [Todos] [25-65+] [FB+IG+MSG+AN] [PP: LKL - LISTA PROIBIDA] [SÃO PAULO] — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                65
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120237458729880138",
+                  "name": "Semelhante (BR, 2%) - Planilha sem título - Banco de dados.csv"
+                }
+              ],
+              "geo_locations": {
+                "countries": [
+                  "BR"
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              },
+              "publisher_platforms": [
+                "instagram"
+              ],
+              "instagram_positions": [
+                "stream",
+                "profile_reels",
+                "story",
+                "explore",
+                "reels",
+                "explore_home",
+                "profile_feed"
+              ],
+              "device_platforms": [
+                "mobile"
+              ]
+            },
+            "createdTime": "2026-02-05T16:27:06-0300",
+            "startTime": "2026-02-05T16:27:06-0300",
+            "ads": [
+              {
+                "id": "120237466569740138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-02-05T16:27:08-0300",
+                "creativeId": "1215265727377978",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120237466569760138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-02-05T16:27:08-0300",
+                "creativeId": "901265199331461",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120237466569750138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-02-05T16:27:08-0300",
+                "creativeId": "1240862718140790",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120237466569730138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia — Cópia — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-02-05T16:27:08-0300",
+                "creativeId": "1439301754405909",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120237466569720138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-05T16:27:08-0300",
+                "creativeId": "1546788029731166",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "120236458657540138",
+        "name": "SEGUIDORES [Engajamento] [SYRA] [CBO]",
+        "status": "ACTIVE",
+        "objective": "OUTCOME_ENGAGEMENT",
+        "dailyBudget": 7,
+        "lifetimeBudget": null,
+        "createdTime": "2026-01-09T10:56:29-0300",
+        "dailyInsights": [
+          {
+            "date": "2026-01-09",
+            "impressions": 513,
+            "clicks": 9,
+            "spend": 4.75,
+            "cpc": 0.527778,
+            "ctr": 1.754386,
+            "cpm": 9.259259,
+            "reach": 513,
+            "frequency": 1,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-10",
+            "impressions": 725,
+            "clicks": 20,
+            "spend": 6.04,
+            "cpc": 0.302,
+            "ctr": 2.758621,
+            "cpm": 8.331034,
+            "reach": 704,
+            "frequency": 1.02983,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-11",
+            "impressions": 1092,
+            "clicks": 27,
+            "spend": 6.82,
+            "cpc": 0.252593,
+            "ctr": 2.472527,
+            "cpm": 6.245421,
+            "reach": 1059,
+            "frequency": 1.031161,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-12",
+            "impressions": 1015,
+            "clicks": 35,
+            "spend": 7.31,
+            "cpc": 0.208857,
+            "ctr": 3.448276,
+            "cpm": 7.20197,
+            "reach": 966,
+            "frequency": 1.050725,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-13",
+            "impressions": 84,
+            "clicks": 2,
+            "spend": 0.51,
+            "cpc": 0.255,
+            "ctr": 2.380952,
+            "cpm": 6.071429,
+            "reach": 83,
+            "frequency": 1.012048,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-14",
+            "impressions": 1371,
+            "clicks": 24,
+            "spend": 8.28,
+            "cpc": 0.345,
+            "ctr": 1.750547,
+            "cpm": 6.039387,
+            "reach": 1343,
+            "frequency": 1.020849,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-15",
+            "impressions": 1566,
+            "clicks": 24,
+            "spend": 9.17,
+            "cpc": 0.382083,
+            "ctr": 1.532567,
+            "cpm": 5.855683,
+            "reach": 1528,
+            "frequency": 1.024869,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-16",
+            "impressions": 1358,
+            "clicks": 26,
+            "spend": 10.04,
+            "cpc": 0.386154,
+            "ctr": 1.91458,
+            "cpm": 7.393225,
+            "reach": 1299,
+            "frequency": 1.04542,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-17",
+            "impressions": 1287,
+            "clicks": 25,
+            "spend": 6.87,
+            "cpc": 0.2748,
+            "ctr": 1.942502,
+            "cpm": 5.337995,
+            "reach": 1269,
+            "frequency": 1.014184,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-18",
+            "impressions": 1686,
+            "clicks": 29,
+            "spend": 7.28,
+            "cpc": 0.251034,
+            "ctr": 1.720047,
+            "cpm": 4.317912,
+            "reach": 1655,
+            "frequency": 1.018731,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-01-19",
+            "impressions": 377,
+            "clicks": 6,
+            "spend": 2.14,
+            "cpc": 0.356667,
+            "ctr": 1.591512,
+            "cpm": 5.676393,
+            "reach": 374,
+            "frequency": 1.008021,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-02-05",
+            "impressions": 1290,
+            "clicks": 44,
+            "spend": 11.85,
+            "cpc": 0.269318,
+            "ctr": 3.410853,
+            "cpm": 9.186047,
+            "reach": 1269,
+            "frequency": 1.016548,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-02-06",
+            "impressions": 660,
+            "clicks": 27,
+            "spend": 7.5,
+            "cpc": 0.277778,
+            "ctr": 4.090909,
+            "cpm": 11.363636,
+            "reach": 645,
+            "frequency": 1.023256,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          }
+        ],
+        "adsets": [
+          {
+            "id": "120237458263440138",
+            "name": "P2 [Todos] [18 a 65+] [IG] [LKL - LISTA PROIBIDA]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                18,
+                65
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120237458729880138",
+                  "name": "Semelhante (BR, 2%) - Planilha sem título - Banco de dados.csv"
+                }
+              ],
+              "geo_locations": {
+                "countries": [
+                  "BR"
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_relaxation_types": {
+                "lookalike": 0,
+                "custom_audience": 0
+              },
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              },
+              "publisher_platforms": [
+                "instagram"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "profile_reels",
+                "story",
+                "explore",
+                "reels",
+                "explore_home",
+                "profile_feed"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-02-05T11:33:44-0300",
+            "startTime": "2026-02-05T11:33:44-0300",
+            "ads": [
+              {
+                "id": "120237458263470138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-05T11:33:46-0300",
+                "creativeId": "2659940304385235",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120237458263460138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-05T11:33:46-0300",
+                "creativeId": "1594695105052370",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120237458263480138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-05T11:33:46-0300",
+                "creativeId": "807843082292716",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120237458263450138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-05T11:33:46-0300",
+                "creativeId": "2069351863841582",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120237458263430138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-05T11:33:46-0300",
+                "creativeId": "911771124533853",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120236458657550138",
+            "name": "P2 [Todos] [35-55] [IG] [ÁREAS SOBRE SP]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003389760112",
+                      "name": "Marketing de redes sociais (marketing)"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6377407134383",
+                      "name": "Health and wellness creators"
+                    }
+                  ],
+                  "work_positions": [
+                    {
+                      "id": "104023542966767",
+                      "name": "Dental assistant"
+                    },
+                    {
+                      "id": "106483076053821",
+                      "name": "Dental hygienist"
+                    },
+                    {
+                      "id": "108768179146852",
+                      "name": "Dentist"
+                    },
+                    {
+                      "id": "119880341359563",
+                      "name": "dentist"
+                    },
+                    {
+                      "id": "168991743113816",
+                      "name": "Cirurgião Dentista Implantodontista"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.488374,
+                    "longitude": -46.652017,
+                    "radius": 4,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.511624,
+                    "longitude": -46.591275,
+                    "radius": 4,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.513114,
+                    "longitude": -46.699395,
+                    "radius": 4,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.5302,
+                    "longitude": -46.638232,
+                    "radius": 4,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 1,
+                  "geo": 0
+                }
+              },
+              "publisher_platforms": [
+                "instagram"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "profile_reels",
+                "story",
+                "explore",
+                "reels",
+                "explore_home",
+                "profile_feed"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-01-09T10:57:10-0300",
+            "startTime": "2026-01-09T10:57:10-0300",
+            "ads": [
+              {
+                "id": "120237458172510138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-05T11:03:32-0300",
+                "creativeId": "911771124533853",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120236638327590138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-14T16:08:52-0300",
+                "creativeId": "2069351863841582",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120236638322810138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-14T16:08:23-0300",
+                "creativeId": "1594695105052370",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120236458657560138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-09T10:57:11-0300",
+                "creativeId": "807843082292716",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120236465186570138",
+                "name": "C4 [Reels] [Hook: TRATANDO LEADS IGUAL FAST FOOD] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-09T14:28:27-0300",
+                "creativeId": "2659940304385235",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "23849193772700137",
+        "name": "Nova campanha de Curtidas na Página",
+        "status": "PAUSED",
+        "objective": "PAGE_LIKES",
+        "dailyBudget": null,
+        "lifetimeBudget": null,
+        "createdTime": "2022-02-12T19:56:33-0300",
+        "dailyInsights": [],
+        "adsets": [
+          {
+            "id": "23849193772790137",
+            "name": "Novo conjunto de anúncios de Curtidas na Página",
+            "status": "PAUSED",
+            "dailyBudget": 6,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "exclusions": {
+                "interests": [
+                  {
+                    "id": "6003127206524",
+                    "name": "Marketing digital (marketing)"
+                  },
+                  {
+                    "id": "6003386155654",
+                    "name": "Alex Vargas"
+                  },
+                  {
+                    "id": "6003713996153",
+                    "name": "Marketing de afiliados (marketing)"
+                  },
+                  {
+                    "id": "6012293838236",
+                    "name": "Hotmart"
+                  },
+                  {
+                    "id": "6016177159571",
+                    "name": "Viver de Blog"
+                  },
+                  {
+                    "id": "6017485542595",
+                    "name": "Camila Porto"
+                  }
+                ],
+                "behaviors": [
+                  {
+                    "id": "6002764392172",
+                    "name": "Facebook Payments users (90 days)"
+                  }
+                ]
+              },
+              "geo_locations": {
+                "countries": [
+                  "BR"
+                ],
+                "location_types": [
+                  "home"
+                ]
+              },
+              "targeting_optimization": "none"
+            },
+            "createdTime": "2022-02-12T19:56:33-0300",
+            "startTime": "2022-02-12T19:56:33-0300",
+            "ads": [
+              {
+                "id": "23849193772810137",
+                "name": "Novo anúncio de Curtidas na Página",
+                "status": "PAUSED",
+                "createdTime": "2022-02-12T19:56:34-0300",
+                "creativeId": "23849193793220137",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalCampaigns": 3,
+      "activeCampaigns": 1,
+      "totalSpend": 0,
+      "avgCPL": 0,
+      "totalImpressions": 0,
+      "totalClicks": 0
+    }
+  },
+  "googleSheets": {
+    "campaigns": [],
+    "headers": [],
+    "summary": {
+      "totalLeads": 0,
+      "totalSales": 0,
+      "totalRevenue": 0,
+      "avgRoas": 0
+    }
+  },
+  "synthesis": {
+    "topPerformers": [],
+    "opportunities": [],
+    "nextSteps": [
+      "Escalar: SEGUIDORES [Engajamento] [SYRA] [CBO]",
+      "Analisar audiências",
+      "Testar novos criativos"
+    ]
+  }
+}

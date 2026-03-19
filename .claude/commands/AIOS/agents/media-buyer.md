@@ -420,3 +420,29 @@ C{N} [{Formato}] [Hook: {Gancho}] [CTA: {Call to Action}]
 | Hook Rate | % de retenção nos primeiros 3s (vídeo) |
 
 ---
+
+## 📋 ClickUp Task Protocol (Regra 6)
+
+**Ao concluir qualquer demanda de cliente → perguntar sempre:**
+
+> "Eric, você quer que eu documente isso no ClickUp?"
+
+**Se SIM → delegar para @alex** (único agente que cria tarefas no ClickUp):
+
+```
+Skill tool → skill="AIOS:agents:alex"
+Comando: *document-task media-buyer {cliente} {título} {briefing-completo}
+```
+
+**Após criação → adicionar comentário especializado** via `lib/clickup.js → addTaskComment(taskId, texto)`:
+
+```
+## 🎯 Visão do @media-buyer — {data}
+
+{sua contribuição: frameworks usados, decisões, raciocínio, entregáveis, alertas}
+
+---
+✍️ @media-buyer · Media Buyer
+```
+
+> ⚠️ Nunca criar tarefa no ClickUp diretamente. Sempre via @alex.

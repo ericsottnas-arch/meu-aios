@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-25T12:41:25.238905",
+  "lastUpdated": "2026-03-10T02:34:04.762Z",
   "agency": "Syra Digital",
   "clients": {
     "dr-erico-servano": {
@@ -31,7 +31,7 @@
         "adsPlatform": "meta",
         "metaAdAccountId": "act_1397446335381640",
         "metaPageId": "804491499425586",
-        "ghlLocationId": "9VML3WG6LUoz7Eh5fb9U",
+        "ghlLocationId": "MmKHrppeW0M8EQ4M1noj",
         "budget": {
           "monthly": 0,
           "currency": "BRL",
@@ -58,6 +58,12 @@
         "readme": "docs/clientes/dr-erico-servano/README.md",
         "profile": "docs/clientes/dr-erico-servano/profile.md",
         "knowledgeBase": "docs/clientes/dr-erico-servano/knowledge-base/data.json"
+      },
+      "brand": {
+        "configFile": "assets/brands/dr-erico-servano.json",
+        "primaryColor": "#B8956A",
+        "darkColor": "#151515",
+        "style": "premium-classic-law"
       },
       "contentStrategy": {
         "channels": [
@@ -122,6 +128,12 @@
         "readme": "docs/clientes/dra-vanessa-soares/README.md",
         "profile": "docs/clientes/dra-vanessa-soares/profile.md",
         "knowledgeBase": "docs/clientes/dra-vanessa-soares/knowledge-base/data.json"
+      },
+      "brand": {
+        "configFile": "assets/brands/dra-vanessa-soares.json",
+        "primaryColor": "#C4A96A",
+        "darkColor": "#1E3A3A",
+        "style": "premium-medical-aesthetic"
       },
       "contentStrategy": {
         "platforms": [
@@ -270,13 +282,116 @@
         "readme": "docs/clientes/prof-dr-humberto-andrade/README.md",
         "profile": "docs/clientes/prof-dr-humberto-andrade/profile.md"
       }
+    },
+    "dr-teste-simulacao": {
+      "id": "dr-teste-simulacao",
+      "name": "Dr. Teste Simulação",
+      "status": "active",
+      "priority": "standard",
+      "location": "São Paulo, SP",
+      "contact": {
+        "phone": "5511966137112",
+        "instagram": "@drtestesimulacao",
+        "email": "teste@syra.digital"
+      },
+      "specialty": "Teste de Onboarding",
+      "integrations": {
+        "groupJid": "120363425308600341@g.us",
+        "clickupListId": "901326173255",
+        "clickupListUrl": "https://app.clickup.com/901326173255",
+        "driveLink": "https://drive.google.com/drive/folders/1O53ugyHHCEb5goMhTtcinPTT4zWJ8oPG?usp=sharing"
+      },
+      "paths": {
+        "folder": "docs/clientes/dr-teste-simulacao",
+        "readme": "docs/clientes/dr-teste-simulacao/README.md"
+      }
+    },
+    "dr-enio-leite": {
+      "id": "dr-enio-leite",
+      "name": "Dr. Enio Leite",
+      "status": "active",
+      "priority": "standard",
+      "location": "",
+      "contact": {
+        "phone": "5527996566104",
+        "instagram": "https://www.instagram.com/drenioleite/",
+        "email": ""
+      },
+      "specialty": "",
+      "integrations": {
+        "groupJid": "120363408200429131@g.us",
+        "clickupListId": "901326206577",
+        "clickupListUrl": "https://app.clickup.com/901326206577",
+        "driveLink": "https://drive.google.com/drive/folders/1syzn7R8kUK_VfOxyQ1EaGIGzVoBIVCFT?usp=sharing"
+      },
+      "paths": {
+        "folder": "docs/clientes/dr-enio-leite",
+        "readme": "docs/clientes/dr-enio-leite/README.md"
+      }
+    },
+    "dr-cleugo-porto": {
+      "id": "dr-cleugo-porto",
+      "name": "Dr. Cleugo Porto",
+      "type": "B2C Healthcare",
+      "category": "Medical Aesthetic Services",
+      "status": "active",
+      "priority": "standard",
+      "location": "Alphaville, São Paulo",
+      "contact": {
+        "email": "contato@drcleugo.com.br",
+        "phone": "+55 11 4195-5960",
+        "instagram": "@drcleugo",
+        "website": "https://fascinating-dodol-3149ef.netlify.app/"
+      },
+      "specialty": "Celulite, Lipedema, Harmonização Corporal",
+      "targetAudience": [
+        "Mulheres 25-55 anos com celulite/lipedema",
+        "Pacientes high-ticket buscando resultado definitivo",
+        "Médicos interessados em cursos e mentorias"
+      ],
+      "integrations": {
+        "groupJid": "120363425170331329@g.us"
+      },
+      "paths": {
+        "folder": "docs/clientes/dr-cleugo",
+        "profile": "docs/clientes/dr-cleugo/knowledge-base/perfil-profissional.md"
+      },
+      "brand": {
+        "configFile": "assets/brands/dr-cleugo-porto.json",
+        "primaryColor": "#D1A84B",
+        "darkColor": "#020202",
+        "style": "premium-dark-medical-aesthetic"
+      }
+    },
+    "victor-jambeiro-martins": {
+      "id": "victor-jambeiro-martins",
+      "name": "Victor Jambeiro Martins",
+      "status": "active",
+      "priority": "standard",
+      "location": "",
+      "contact": {
+        "phone": "11934722779",
+        "instagram": "@vjmartins03",
+        "email": ""
+      },
+      "specialty": "",
+      "integrations": {
+        "groupJid": "",
+        "clickupListId": "901326261788",
+        "clickupListUrl": "https://app.clickup.com/901326261788",
+        "driveLink": "https://drive.google.com/drive/folders/1MYXvGt9lNLqLHRIZpqCklVFRdejAOGyJ?usp=sharing"
+      },
+      "paths": {
+        "folder": "docs/clientes/victor-jambeiro-martins",
+        "readme": "docs/clientes/victor-jambeiro-martins/README.md"
+      }
     }
   },
   "summary": {
-    "totalClients": 7,
-    "activeClients": 7,
+    "totalClients": 11,
+    "activeClients": 11,
     "premiumClients": 2,
     "growthClients": 1,
-    "standardClients": 3
+    "standardClients": 4
   }
 }

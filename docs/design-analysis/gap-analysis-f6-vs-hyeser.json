@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "reference": "behance_217158243_07.png (Codigo010K — Hyeser)",
+    "ourOutput": "test-composicao-v2/premium-01.png (F6 neon-green)",
+    "analysisDate": "2026-03-09"
+  },
+
+  "gaps": [
+    {
+      "id": "GAP-01",
+      "element": "Glow shape",
+      "severity": "ALTA",
+      "reference": "Glow é uma MASSA IRREGULAR orgânica — como fumaça colorida. Posição: back-left.",
+      "ours": "Glow é um RETÂNGULO nítido centralizado atrás da cabeça. Bordas retas visíveis.",
+      "fix": "Substituir glow retangular por blob orgânico. Usar 2-3 elipses deformadas com blur grande (80-120px), posições assimétricas. Glow não deve ser centralizado — deve vir de um LADO (back-left).",
+      "impact": "ENORME — o retângulo verde é o que mais entrega 'feito por IA'",
+      "css_target": "background: radial-gradient(ellipse 60% 80% at 30% 40%, rgba(0,255,80,0.20) 0%, transparent 70%)"
+    },
+    {
+      "id": "GAP-02",
+      "element": "Person crop/position",
+      "severity": "ALTA",
+      "reference": "Pessoa posicionada à DIREITA, rosto CORTADO pelo edge do canvas. Crop ousado — só metade do rosto. Torso some no preto.",
+      "ours": "Pessoa CENTRALIZADA, rosto inteiro visível, flutuando sobre fundo com espaço nas laterais. Parece passport photo.",
+      "fix": "Layouts mais ousados: offset para direita/esquerda, crop parcial pelo edge. A pessoa não precisa estar 'inteira'. Roupa preta deve fundir com o fundo.",
+      "impact": "ALTO — composição centralizada = amador. Offset + crop = editorial"
+    },
+    {
+      "id": "GAP-03",
+      "element": "Person color grading",
+      "severity": "ALTA",
+      "reference": "Pele DESSATURADA (-40%), levemente esverdeada. Sombras esmagadas (crushed blacks). Contraste ALTO.",
+      "ours": "Pele com cor natural (saturação normal). Contraste baixo. Tons de pele parecem 'crus' — sem tratamento.",
+      "fix": "Aplicar color grading NA FOTO antes de compor: desaturar pele, esmagar blacks, puxar highlights para a cor do preset. Sharp: .modulate({ saturation: 0.6 }).linear(1.3, -15)",
+      "impact": "ALTO — foto sem grade parece colada de outra realidade"
+    },
+    {
+      "id": "GAP-04",
+      "element": "Diagonal light bars",
+      "severity": "MÉDIA",
+      "reference": "3-4 barras de luz DIAGONAIS no quadrante top-left. Cor verde, blur 10-20px, ângulo -35deg. São GROSSAS (40-80px).",
+      "ours": "Temos light rays mas são FINAS e distribuídas uniformemente. Não formam aquele 'lighting de estúdio'.",
+      "fix": "Gerar 3-4 barras grossas (40-80px) com ângulo consistente (-35deg), concentradas no top-left, blur 15px. Estas barras devem parecer LUZ REAL de estúdio, não decoração.",
+      "impact": "MÉDIO — as barras diagonais são signature do Hyeser"
+    },
+    {
+      "id": "GAP-05",
+      "element": "Typography layout",
+      "severity": "MÉDIA",
+      "reference": "Headline LEFT-ALIGNED com palavras-chave em verde e TAMANHOS DIFERENTES. 'SER RASO.' é 30% MAIOR que o resto. Ponto final. Texto sobre/ao lado da pessoa, não separado.",
+      "ours": "Headline CENTRALIZADO, tamanho uniforme, texto separado da pessoa (abaixo). Sem variação de tamanho entre palavras.",
+      "fix": "Permitir left-align. Permitir tamanho variável por palavra (accent words maiores). Texto pode SOBREPOR parcialmente a pessoa (não precisa ficar 'abaixo').",
+      "impact": "MÉDIO — tipografia uniforme = genérica"
+    },
+    {
+      "id": "GAP-06",
+      "element": "Rim light intensity",
+      "severity": "MÉDIA",
+      "reference": "Rim light FORTE e DIRECIONAL — só no lado esquerdo (onde vem a luz). Claramente visível no cabelo e maxilar. É a MESMA direção das barras de luz.",
+      "ours": "Rim light existe mas é fraco e distribuído uniformemente ao redor. Não tem direção consistente com a fonte de luz.",
+      "fix": "Rim light deve ser DIRECIONAL — forte do lado da luz, ausente do lado oposto. Deve ser consistente com a posição do glow. Intensidade 2-3x maior.",
+      "impact": "MÉDIO — rim light genérico não convence"
+    },
+    {
+      "id": "GAP-07",
+      "element": "Background depth/darkness",
+      "severity": "MÉDIA",
+      "reference": "Lado DIREITO do canvas é MUITO mais escuro que o esquerdo. Cria profundidade — a pessoa emerge da escuridão. Gradiente lateral, não radial.",
+      "ours": "Iluminação simétrica. Background tem mesma luminosidade dos dois lados.",
+      "fix": "Adicionar gradiente LATERAL assimétrico — lado oposto à luz deve ser significativamente mais escuro. Cria drama e direcionalidade.",
+      "impact": "MÉDIO — simetria = flat"
+    },
+    {
+      "id": "GAP-08",
+      "element": "Color cast on skin",
+      "severity": "BAIXA (já implementado)",
+      "reference": "Pele com tinge verde visível no lado esquerdo (lado da luz)",
+      "ours": "Color cast implementado nesta sessão — precisa validar intensidade",
+      "fix": "Ajustar distribuição: cor mais forte do LADO DA LUZ, não nas bordas radiais",
+      "impact": "BAIXO — já temos, mas pode melhorar a direcionalidade"
+    },
+    {
+      "id": "GAP-09",
+      "element": "Overall mood/atmosphere",
+      "severity": "ALTA",
+      "reference": "Sente ESCURO, MISTERIOSO, MAGNÉTICO. A pessoa emerge das sombras. Mínimo de elementos — máximo de impacto. Respiro enorme.",
+      "ours": "Sente CLARO demais, muitos elementos gráficos (chevrons, depth panels, setas). Parece 'template' mais que 'arte'.",
+      "fix": "REDUZIR elementos decorativos (chevrons, setas). Escurecer geral. Mais espaço negativo. Less is more.",
+      "impact": "ALTO — a sofisticação está na subtração, não na adição"
+    }
+  ],
+
+  "priorityOrder": [
+    "GAP-01: Glow orgânico (maior entrega visual)",
+    "GAP-03: Color grading na foto (foto parece crua)",
+    "GAP-02: Crop/posição ousada (composição)",
+    "GAP-09: Reduzir elementos / mais escuro",
+    "GAP-07: Gradiente lateral assimétrico",
+    "GAP-05: Tipografia com variação de tamanho",
+    "GAP-06: Rim light direcional",
+    "GAP-04: Barras de luz grossas diagonais",
+    "GAP-08: Color cast direcional (refinamento)"
+  ],
+
+  "quickWins": {
+    "note": "Mudanças que podem ser feitas JÁ com o pipeline atual (overrides ou tweaks rápidos)",
+    "items": [
+      "GAP-03: Adicionar .modulate() + .linear() na foto ANTES do compose → desaturar + crush blacks",
+      "GAP-09: Reduzir opacidade dos chevrons/depth panels de 0.55 para 0.15-0.20",
+      "GAP-07: Adicionar gradiente lateral escuro no background (SVG extra)"
+    ]
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "_meta": {
+    "source": "behance_217158243_07.png (Codigo010K — Hyeser)",
+    "format": "1080x1350 (estimado)",
+    "analysisDate": "2026-03-09",
+    "purpose": "Reverse engineering visual para calibrar pipeline F6"
+  },
+
+  "background": {
+    "baseColor": "#080A08",
+    "temperature": "frio-esverdeado",
+    "texture": {
+      "type": "noise-grain",
+      "intensity": "5-7%",
+      "blendMode": "soft-light",
+      "note": "NÃO é flat. Tem textura orgânica visível em zoom"
+    },
+    "depthLayers": [
+      {
+        "type": "diagonal-light-bars",
+        "position": "top-left",
+        "color": "rgba(0,255,80,0.25)",
+        "angle": "-35deg",
+        "blur": "15px",
+        "note": "Barras de luz DIAGONAIS reais — não são retas, têm variação orgânica"
+      },
+      {
+        "type": "ambient-glow",
+        "position": "center-left (atrás da pessoa)",
+        "color": "rgba(0,255,80,0.18)",
+        "blur": "120px",
+        "shape": "irregular-blob",
+        "note": "Glow não é retângulo — é uma massa irregular orgânica"
+      },
+      {
+        "type": "dark-gradient",
+        "position": "right-50%",
+        "note": "O lado DIREITO é significativamente mais escuro — a pessoa vem do escuro"
+      }
+    ]
+  },
+
+  "person": {
+    "position": {
+      "horizontalAnchor": "right",
+      "faceAt": "55% from left, 35% from top",
+      "bodyExtends": "right edge (CROPPED — metade do rosto cortado)",
+      "css": "position: absolute; right: -10%; top: 5%; width: 65%;"
+    },
+    "crop": {
+      "type": "half-face",
+      "visibleSide": "left-side of face",
+      "cutOff": "right ear/cheek area cropped by canvas edge",
+      "note": "CORTE OUSADO — mostra SÓ metade do rosto. Cria tensão e curiosidade"
+    },
+    "colorGrading": {
+      "skinTone": "dessaturado -40%, levemente esverdeado",
+      "shadows": "crushed — pretos esmagados, sem detalhe em áreas escuras",
+      "highlights": "levemente verde no lado esquerdo do rosto (luz refletida)",
+      "contrast": "alto — midtones estreitos",
+      "css": "filter: saturate(0.6) contrast(1.3); mix-blend-mode: normal;"
+    },
+    "integration": {
+      "feathering": {
+        "bottom": "gradiente suave nos 30% inferiores — dissolve no preto",
+        "left": "SEM hard edge — transição de 40-60px para o background",
+        "right": "corte pelo edge do canvas (sem fade)"
+      },
+      "colorCast": {
+        "present": true,
+        "color": "verde neon rgba(0,255,80,0.15)",
+        "distribution": "mais forte no lado esquerdo do rosto (luz da cena)",
+        "technique": "soft-light overlay mascarado na zona da pessoa",
+        "note": "A PELE tem tom verde. Não é só rim light — a luz da cena TINGE a pele"
+      },
+      "rimLight": {
+        "present": true,
+        "color": "#00FF50",
+        "width": "3-5px nítido + 15px halo",
+        "direction": "vindo da esquerda (backlight)",
+        "visibleOn": "contorno do cabelo lado esquerdo, ombro esquerdo, maxilar",
+        "intensity": "FORTE — claramente visível, não sutil"
+      },
+      "lightWrap": {
+        "present": true,
+        "color": "rgba(0,255,80,0.12)",
+        "width": "20-35px",
+        "blur": "18px",
+        "note": "Bleeding de luz verde NAS BORDAS da pessoa — a luz 'invade' a silhueta"
+      },
+      "shadow": {
+        "dropShadow": false,
+        "contactShadow": false,
+        "note": "NENHUMA sombra projetada. A roupa preta funde diretamente com o fundo"
+      },
+      "clothingFusion": {
+        "technique": "roupa preta do sujeito = mesma luminosidade do fundo",
+        "result": "torso DESAPARECE no fundo — só rosto e cabelo visíveis",
+        "css": "A roupa preta naturalmente faz blend com bg #080A08"
+      }
+    },
+    "eyeDetail": {
+      "rightEye": "íris com reflexo verde neon (color contact ou edit)",
+      "note": "Detalhe INTENCIONAL — olho verde brilhante = ponto focal magnético"
+    }
+  },
+
+  "typography": {
+    "logo": {
+      "text": "C/> CÓD1G010K",
+      "position": "top-left, acima do headline",
+      "font": "Inter ou custom sans-serif",
+      "weight": 700,
+      "size": "~18px equivalente",
+      "color": "#FFFFFF",
+      "opacity": 1.0,
+      "css": "font: 700 18px/1 'Inter'; color: white; letter-spacing: 0.05em; text-transform: uppercase;"
+    },
+    "headline": {
+      "text": "PARA CRESCER\nNO INSTAGRAM,\nVOCÊ PRECISA\nSER RASO.",
+      "position": "left-aligned, center-vertical",
+      "font": "Inter",
+      "weight": 900,
+      "size": "~56px equivalente (em 1080px)",
+      "lineHeight": 1.0,
+      "letterSpacing": "-0.02em",
+      "color": "#FFFFFF",
+      "accentWords": {
+        "CRESCER": { "color": "#00FF66", "weight": 900 },
+        "SER RASO.": { "color": "#00FF66", "weight": 900, "fontSize": "~72px — MAIOR que o resto" }
+      },
+      "punctuation": "PONTO FINAL — transmite assertividade",
+      "alignment": "left",
+      "css": "font: 900 56px/1.0 'Inter'; color: white; letter-spacing: -0.02em; text-align: left; padding-left: 40px;"
+    },
+    "cta": {
+      "text": "TOQUE NO \"SAIBA MAIS\" E ENTENDA\nTUDO SOBRE O CÓDIGO 010K",
+      "position": "bottom-left",
+      "style": "texto simples com aspas em destaque",
+      "font": "Inter",
+      "weight": 500,
+      "size": "~14px equivalente",
+      "color": "rgba(255,255,255,0.75)",
+      "accentWords": {
+        "SAIBA MAIS": { "color": "#00FF66", "fontWeight": 700 }
+      },
+      "css": "font: 500 14px/1.4 'Inter'; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 0.02em;"
+    }
+  },
+
+  "decorativeElements": {
+    "followerBadges": [
+      {
+        "position": "top-right corner",
+        "content": "followers count icon",
+        "style": "glassmorphism card",
+        "css": "background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px 10px;"
+      },
+      {
+        "position": "center-right (near face)",
+        "content": "engagement icon",
+        "note": "Pequenos badges de métricas espalhados — reforçam o tema '10K seguidores'"
+      },
+      {
+        "position": "bottom-right",
+        "content": "10K follower badge",
+        "style": "similar glassmorphism"
+      }
+    ],
+    "note": "Badges de social proof espalhados pelo canvas — 3 no total. Estilo vidro/blur. Isso é EXCLUSIVO do tema dele (follower growth)"
+  },
+
+  "lighting": {
+    "mainLight": {
+      "direction": "back-left (135° approx)",
+      "color": "#00FF50",
+      "type": "glow irregular (NÃO retângulo)",
+      "intensity": "forte — ilumina todo o lado esquerdo"
+    },
+    "fillLight": {
+      "direction": "front-subtle",
+      "color": "branco neutro",
+      "intensity": "sutil — só para revelar features do rosto",
+      "note": "Se não tivesse fill, o rosto seria silhueta. Tem luz frontal MÍNIMA"
+    },
+    "diagonalBars": {
+      "count": "3-4 barras",
+      "angle": "-35deg to -45deg",
+      "color": "rgba(0,255,80,0.2-0.35)",
+      "width": "40-80px cada",
+      "blur": "10-20px",
+      "position": "top-left quadrant",
+      "note": "Estas barras de luz são o SIGNATURE do Hyeser — parecem luzes de estúdio reais"
+    }
+  },
+
+  "colorPalette": {
+    "primary": "#00FF50",
+    "secondary": "#00FF66",
+    "background": "#080A08",
+    "text": "#FFFFFF",
+    "textMuted": "rgba(255,255,255,0.75)",
+    "totalColors": 3,
+    "rule": "MONOCROMATISMO — preto + verde + branco. NADA MAIS"
+  },
+
+  "postProcessing": {
+    "grain": {
+      "intensity": "5-7%",
+      "blend": "soft-light",
+      "note": "Visível em zoom — dá textura de filme"
+    },
+    "vignette": {
+      "intensity": "30-40%",
+      "color": "preto com tinge verde escuro nos cantos",
+      "shape": "oval, mais forte nos cantos"
+    },
+    "colorGrade": {
+      "technique": "lift-gamma-gain com bias verde",
+      "shadows": "preto esverdeado #0A120A",
+      "midtones": "neutro levemente frio",
+      "highlights": "verde claro nas áreas brilhantes"
+    }
+  }
+}

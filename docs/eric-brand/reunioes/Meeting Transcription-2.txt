@@ -1,0 +1,304 @@
+# Meeting Transcription
+
+  Meeting started: 03/03/2026, 14:57:37
+  Duration: 64 minutes
+  Participants: Centro Estetético Rachel Cuimar, Eric Santos, Flavia Rosa, Humberto Andrade, Veronica Marise Lino De Andrade
+
+  [View original transcript](https://app.tactiq.io/api/2/u/m/r/fZfsq7tAj7l5hb7TNuMp?o=txt)
+
+    
+
+  
+
+  
+
+  ## Transcript
+
+  00:00 Eric Santos: Olá, olá!
+00:04 Centro Estetético Rachel Cuimar: Olá boa tarde.
+00:05 Eric Santos: Boa tarde e aí, como é que vocês estão?
+00:12 Centro Estetético Rachel Cuimar: Tudo tranquilo.
+00:13 Eric Santos: a tarde de terça-feira
+00:20 Centro Estetético Rachel Cuimar: é
+00:22 Eric Santos: Essa resposta aí. Como é que tá os livros?
+00:49 Centro Estetético Rachel Cuimar: As coisas acontecendo pelo menos aqui na clínica a gente tá nessa na adaptação ainda, né? A gente tentou entrar pelo pela plataforma e ficou realmente pouco perdido, mas eu sei que foi mais para a gente ver como era tudinho, né? Surgiu algumas dúvidas a dita vai entrar já já também aí ele não vai conseguir entrar agora para o teste, mas aí acho que eu e a tia
+01:19 Eric Santos: Hi, I'm transcribing this call with my Tactiq AI Extension. https://tactiq.io/r/transcribing
+01:21 Centro Estetético Rachel Cuimar: juliana a gente consegue.
+01:23 Eric Santos: Boa é isso.
+01:23 Centro Estetético Rachel Cuimar: Entrar Juliana.
+01:27 Humberto Andrade: Entrar vai entrar.
+01:30 Eric Santos: Boa boa, mas essa deixa eu aceitar o pessoal aqui. Oi Verônica.
+01:42 Veronica Marise Lino De Andrade: Oie tudo bem?
+01:43 Eric Santos: Tudo ótimo e aí, como você tá? Boa tarde.
+01:46 Veronica Marise Lino De Andrade: O joia e você?
+01:47 Eric Santos: Bom demais bom demais prazer, viu?
+01:51 Veronica Marise Lino De Andrade: Prazer é todo meu.
+01:53 Eric Santos: Bom vamos lá como você não conseguiu participar da primeira eu até mandei o link lá no grupo se eu consigo assistir deu certo.
+02:01 Veronica Marise Lino De Andrade: Sim, eu assisti.
+02:01 Eric Santos: Show bom só para você entender toda terça, a gente tá se reunindo aqui esse horário para a gente poder tirar suas dúvidas em relação ao sistema e ensinar vocês mais porque o sistema para quem não utiliza não tem essa prática, ele pode ser um pouco mais complexo nesse início, mas Vai facilitar e vai ficar tudo mais tranquilo, tá? E aí você tem meu WhatsApp? Ele também caso você queira tirar alguma dúvida, tá bom?
+02:27 Veronica Marise Lino De Andrade: Sim, deixa eu só só falar uma coisa aqui é 3:30, eu tenho um compromisso. Aí eu só avisando para você, tá bom? Mas eu vou tentar ficar mais um pouquinho.
+02:35 Eric Santos: Todas as aulas aquelas são gravadas. E aí A gente consegue. Vocês conseguem resistir elas depois? Tá show, vamos lá, ó, primeira coisa tá que eu queria falar com vocês. Como que tá a agenda de vocês diariamente em relação ao horário? Porque eu queria acelerar um pouco mais esse processo com vocês é fazer essas reuniões diariamente pelo menos uns 30 minutos é possível.
+03:14 Centro Estetético Rachel Cuimar: Na verdade, eu não escutei muito bem o que que tu falou?
+03:18 Eric Santos: Se como é que tá a agenda de vocês para vocês participarem dessa reunião,
+03:38 Centro Estetético Rachel Cuimar: Qualquer pergunta Eric.
+03:43 Eric Santos: diariamente pelo menos uns 30 minutos ali porque eu quero acelerar esse processo com vocês. E aí a gente vai entrando ali no horário específico todos os dias para tirando as dúvidas e ajudando vocês nesses pontos.
+03:56 Centro Estetético Rachel Cuimar: Olha, depende muito que as meninas eu acho que é mais tranquilo pela questão de ser Home. Office mas aqui a gente tem que acompanhar agenda dos doutores, entendeu? Aí tem dia que tem cirurgia tem dia que não tem cirurgia tem dia que tem só retorno com o paciente. Então a gente não tá realmente só focado no comercial, a gente tem esse atendimento com o paciente, entendeu? Se o paciente vem fechar o contrato, a gente tem que sentar com ele explicar tudinho, então a gente não tem realmente um horário definido assim certinho.
+04:27 Eric Santos: Faz sentido faz sentido. Bom então, a gente continua com essas das terças mesmo.
+04:34 Centro Estetético Rachel Cuimar: Mas aí a gente poderia ver um outro dia porque no caso dia de segunda e quarta Raquel atende de tarde aí não daria esses dois dias porque o movimento é bem maior com a Raquel, mas com Doutor Humberto, às vezes é mais tranquilo. A gente tenta concentrar a maior parte num dia dois dias e aí daria para a gente colocar pelo menos dois dias na semana.
+04:55 Eric Santos: Boa Legal, então faz o seguinte então depois dessa reunião veja um horário que faz sentido. Um dia e horário fixo para todo mundo se reunir aqui a gente fazendo a mesma coisa, tá? Aí essas essa essa segunda da semana a gente consegue fazer mais rápido para
+05:07 Centro Estetético Rachel Cuimar: perfeito
+05:11 Eric Santos: tirar dúvidas ajudar vocês ali com essas dúvidas mais pertinentes. Deixa eu começar a gravar aqui rapidinho. Mas me contem aí como que foi essa semana em relação aos sistemas conseguiram entrar a gente tá com aquele GAP de que tem que fazer a conexão. E aproveitando que a Verônica tá aqui a gente já vai fazer isso também, mas vocês conseguiram acessar conseguiram visualizar ali, como que tudo funciona deu certo com acesso de todo mundo.
+05:51 Centro Estetético Rachel Cuimar: Olha foi como eu te falei naquela hora, né? Eu tava um pouco confusa que a respeito das mensagens que pareciam tá chegando as mesmas da Flávia para mim, só que depois eu olhei realmente já tava escrito meu nome lá como Administrador né da do lide, só que foi aquela situação que você disse enquanto a gente tiver usando os quatro telefones não adianta a gente eu ficar focada nas mensagens que estão chegando do celular da Flávia. E aí ainda não
+06:16 Eric Santos: Isso isso.
+06:17 Centro Estetético Rachel Cuimar: estou usando o aplicativo.
+06:19 Eric Santos: É isso aí você conseguiu acessar tudo certo, né?
+06:22 Centro Estetético Rachel Cuimar: sim
+06:22 Eric Santos: Só foi eu acho que a Verônica não conseguiu acessar, né?
+06:28 Veronica Marise Lino De Andrade: Sim no caso tem que baixar o aplicativo.
+06:33 Eric Santos: Ah certo, me manda aqui o seu e-mail, por favor do Gmail.
+06:40 Veronica Marise Lino De Andrade: Eu tinha enviado, mas aí eu vou enviar novamente aqui vou te mandar aí, tá bom?
+06:44 Eric Santos: Me manda aqui, por favor.
+06:48 Humberto Andrade: O meu eu também baixei pelo celular, né e deu para ver mais ou menos ali, mas aconteceu a mesma coisa da Di não tá vendo a minha agenda lá, aí eu nem mexo lá nem tô mexendo só tá baixado.
+06:59 Eric Santos: No computador você conseguiu?
+07:04 Humberto Andrade: Eu não tenho Notebook ainda. E tem como acessar fazer tudo pelo celular ou tem que ter um notebook?
+07:12 Eric Santos: Quem tem como assim só que o ideal seria pelo computador, aí depois seria bom. Algum de vocês falar com Humberto para como é que vocês conseguem verificar isso, como é que seria Tá mas o ideal seria pelo computador, você vai ver que na prática aqui do dia a dia 80% que você vai fazer direto pelo pelo computador pela tela. Mas dá para utilizar pelo celular também. Aí só me mandar aqui Verônica que eu já vou gerar o QR code para a gente poder ler aqui e adicionar.
+07:44 Flavia Rosa: Eu vou encaminhar aqui para ti Eric o e-mail dela.
+07:46 Veronica Marise Lino De Andrade: Sim, eu mandei no outro grupo só instante.
+07:50 Eric Santos: o dela
+08:17 Veronica Marise Lino De Andrade: Mandei mandei lá no grupo.
+08:21 Eric Santos: Tô gerando aqui já Ah foi o que vocês tinham mandado da semana passada. Como foi falha minha tá cadastrado?
+09:13 Eric Santos: Deixa eu colocar as punições aqui. Ó Verônica, como a gente Está cadastrando o seu agora vai ter não Não atribuiu alguns vídeos para você ainda, tá? Mas agora já vai começar a atribuir conforme a lista. Deixa eu te mandar aqui o acesso.
+09:48 Flavia Rosa: Era que tira uma dúvida em relação aos líderes, né? Porque no meu celular eu tenho muita conversa, né? Na verdade. Eu tô com muita conversa depois que a gente conseguir. Organizar tudinho eu vou ter que colocar todas essas conversas como proprietário para eu poder quando eles voltarem a mandar mensagem elas ir diretamente para o meu contato.
+10:11 Eric Santos: Sim a gente vai ter que fazer isso. Todos aqueles vídeos que chegaram para você, mas isso é tranquilo é um processo que a gente faz em 30 minutos com todos os dias que chegaram para você todos aqueles que já estão no sistema. Por exemplo, chegaram lá mais ou menos uns 400 litros desde a semana passada. Daí a gente vai lá e troca é 4 é a loucura diariamente respondendo essa pancada de
+10:43 Flavia Rosa: É porque na verdade vai ser o meu contato da Verônica, né?
+10:49 Eric Santos: É até exatamente, até esse vamos falar assim.
+10:50 Flavia Rosa: E aí a Juliana e a Dilma tem que sempre também ficar olhando o celular delas porque tem pessoas que elas conversaram o celular que não vão estar na fila do sistema, né? Porque elas não entraram em contato.
+11:06 Eric Santos: Pelos próximos três meses aí não tem conversas lá que é uma galera vai chamar ainda e vocês vão tendo utilizar até ninguém mais chamar. E aí esses dois números o seu e o da Verônica nesses celulares, ele sempre precisam estar carregados desligados conectado com a internet para não dar nenhum problema na sincronização ali do WhatsApp.
+11:28 Flavia Rosa: Entendi, entendi.
+11:32 Eric Santos: Que eu te mandei lá a senha aí você usa o seu e-mail, aí você acessa esse link aí que eu te mandei coloca o e-mail e senha e aí você vai receber um código lá no seu e-mail. Aí você pode você copia e cola lá para autenticação e ele vai entrar para você. Como você entrou na fila? Agora não vai ter nenhum lei de atribuído para você, mas não tem problema porque ninguém ainda tá usando o sistema para poder atender os vídeos.
+11:56 Eric Santos: tá Eu queria tirar uma dúvida com vocês todos os vídeos de paciente modelo aluno e paciente convencional sem encaminhados para esses quatro números específicos ou para um deles.
+12:15 Flavia Rosa: Não teve uma mudança agora, né? Antes o meu contato que é isso daí atendia paciente modelo São Paulo em Macapá, curso e aluguel meu celular recebia 4 litros. E aí eu pedi para tirar que não tava dando conta e aí eu acho que paciente o modelo tá com a Juliana agora. Se eu não me engano. Juliana tá o paciente o modelo São Paulo a dita com o paciente o modelo São Paulo e acredito que é Verônica. E a Verônica então paciente modelo, São Paulo.
+12:53 Flavia Rosa: O contato da dívida e paciente modelo Macapá acredito que tá só eu e a Regina.
+13:02 Eric Santos: É. O interessante é que agora vai ficar tipo.
+13:02 Flavia Rosa: Não sei se as meninas estão recebendo. Então tá nessa Distribuição e acredito que o curso. Tá com mais não sei quem tá recebendo as coisas na verdade. Não sei se
+13:14 Humberto Andrade: Quanto o meu cai muito pouco quase nada de curso?
+13:19 Veronica Marise Lino De Andrade: Eu recebo.
+13:27 Eric Santos: Vai cair um pouco de caro e daí a gente vai ver uma forma. E aí eu vou precisar ver isso contigo de marketing, né? Para a gente quando a gente cair ele já indicar, né? Qual que ele é se ele é paciente é paciente modelo ou seja. É pela própria mensagem acredito que vocês conseguem identificar isso, né? Pela mensagem de saudação ali que ele manda para vocês.
+13:57 Eric Santos: Oi isso
+14:03 Veronica Marise Lino De Andrade: Perdão é o e-mail, eu coloco o meu e assim eu coloco aquela que você mandou é isso, né, tá?
+14:11 Eric Santos: Aí você salva aí porque aquela sem ela meio complexa. Aí você salva você não tem que lembrar pode falar. É que a conta que tá Humberto Andrade, desculpa o seu nome mesmo é? É que eu sou muito ruim com o nome.
+14:24 Humberto Andrade: Juliana
+14:25 Eric Santos: Juliana Juliana não vou esquecer pode falar. Pode falar Ju, você tinha desmontado para poder falar.
+14:37 Humberto Andrade: Eu estava concordando com você.
+14:41 Eric Santos: Show Show Beleza Ô Verônica aí entra no seu WhatsApp para você ler esse QR. Code aqui, por favor. E daí, eu não sei se a Flávia ou a dica cuida disso, mas avisar o pessoal do marketing ou avisar o Humberto para o pessoal de marketing começar a transacionar essas campanhas para os dois números, tá? E aí quando vocês? Pode falar.
+15:15 Veronica Marise Lino De Andrade: Aí é para ler o QR. Code com o celular dele esse Record tá aí no slide.
+15:20 Eric Santos: Na minha tela isso na minha tela. Você abre lá na como se você fosse conectar o WhatsApp web. Aí quando vocês forem pedir para o berço quando na verdade o pessoal começar a entrar nessas campanhas vocês me avisam tá? Eu vou deixar esse dia como um alerta aqui para mim acompanhando junto com vocês.
+15:44 Flavia Rosa: Eric outra dúvida no caso A gente tem que começar a fazer essa mudança depois que no caso do meu celular tiver tudo Zerado, né? Porque como eu tô respondendo ainda pelo celular então eu quero estar zerando essas mensagens que já estão poucas, eu queria até pedir para o pessoal do marketing. Eu não sei se tu concorda de diminuir um pouco tráfego do meu para ver se eu consigo zerar para a gente começar a fazer essa transição, porque senão nem eu zero e depois começar a chegar as mensagens que é do celular da Verônica para todo mundo atender. E aí vai tá chegando o meu ainda nem zerei. Ou tu acha que não tem?
+16:20 Eric Santos: Olha, deixa eu pensar. Eu queria tipo assim na verdade, não é não vai cortar muito se você zerar ou não. É o jeito que você tá conversando, eles vão ficar com você e os livros que já foram gerados pelas minhas vão ficar com elas. E aí quando eles fizeram essa transição, eles têm que fazer um dia só porque a partir do dia seguinte que cai para cada uma já é dela, entendeu? E aqueles anteriores que você
+16:49 Flavia Rosa: Ah tá, entendi.
+16:50 Eric Santos: conversou é com você e aí vai ser um momento que a gente vai trocar a propriedade lá delas para você dos que você tava conversando e Para ti
+16:55 Flavia Rosa: tá
+16:57 Eric Santos: também. Vai só para você entender. Como é que funciona o sistema entra quatro lentes
+17:01 Humberto Andrade: Deixa eu te perguntar Eric a quantidade de leads vai ser o mesmo para cá.
+17:11 Eric Santos: tem quatro pessoas no meu fluxo de distribuição. Aí ele vai primeiro cair para essa pessoa e depois para essa depois parece depois para essa igualitariamente. Ah caiu três vezes hoje. Não caiu para por exemplo para Ju no final do dia primeiro de amanhã vai cair para você. Entendeu? Eu acho que você vai ter que abrir pelo um pelo computador ou por um por outro celular para você conseguir ler o QR Code.
+18:01 Eric Santos: Ou a gente pode fazer o seguinte, tá? Você tá com a tela do WhatsApp lá conectado ou aberta para ler o QR Code?
+18:11 Veronica Marise Lino De Andrade: Tá sim não sei você tá vendo? Aí eu não sei eu não sei para onde que vai não sei onde que fica.
+18:15 Eric Santos: Ah boa deixa eu deixa eu ver essa tela aqui que ela tá pequena. Deixa eu fixar.
+18:18 Veronica Marise Lino De Andrade: nas configurações
+18:29 Eric Santos: É porque eu não tô conseguindo enxergar muito bem. Embaixo beleza opções aí para mim.
+18:47 Veronica Marise Lino De Andrade: Tá tem conta, privacidade listas conversas notificações, armazenamento e dados acessibilidade idioma ajuda e feedback e convidar contatos.
+19:02 Eric Santos: Tá e você entrou na boa opção. Você já foi em configurações direta?
+19:05 Veronica Marise Lino De Andrade: Já fui nas configurações direto.
+19:08 Eric Santos: Não tem nada de dispositivo conectar dispositivo como?
+19:11 Veronica Marise Lino De Andrade: Então era era para ter mesmo. Aí, eu não sei nesse aparelho aqui, como é que funciona que eu tenho que procurar aqui lista de transmissão comercial.
+19:21 Flavia Rosa: Nos três pontinhos não aparece Verônica.
+19:24 Veronica Marise Lino De Andrade: Vou ver aqui não quando eu vou nos três pontinhos tá gerenciar anúncios lista de transmissão listas dispositivos conectados isso.
+19:35 Eric Santos: boa
+19:36 Veronica Marise Lino De Andrade: Conectar dispositivo.
+19:37 Eric Santos: e isso
+19:42 Veronica Marise Lino De Andrade: Usar dados móveis aí tá pedindo um pin aqui.
+19:42 Eric Santos: Deixa eu voltar.
+19:45 Veronica Marise Lino De Andrade: Que eu não sei qual que é o pin do Humberto, você sabe ou Flávia que é para desbloquear? Para conectar um dispositivo.
+19:54 Eric Santos: Eu acho que é a senha do celular.
+19:57 Veronica Marise Lino De Andrade: Deixa eu ver aqui.
+19:57 Eric Santos: no começo
+20:02 Veronica Marise Lino De Andrade: deixa eu ver se foi
+20:06 Eric Santos: Boa apareceu aí para ler?
+20:09 Veronica Marise Lino De Andrade: Para usar o WhatsApp é web acesse o Web WhatsApp com no seu computador? Aí aqui tá dando para ler o QR Code deixa eu ver aqui, deixa eu tentar.
+20:22 Eric Santos: Tá aí, você vai ter que clicar.
+20:23 Veronica Marise Lino De Andrade: só Aumentar ele aqui. Tá conectando tá falando. Não foi possível conectar o dispositivo tente novamente mais tarde vou tentar de novo.
+20:38 Eric Santos: Então vamos atualizar aqui. Deixa deixa o celular apontado enquanto ele carrega porque às vezes ele parece que leu mas não leu.
+20:49 Veronica Marise Lino De Andrade: Nossa tá pedindo de novo, espera aí só um pouquinho.
+20:51 Eric Santos: Tá bom fique em paz.
+20:55 Veronica Marise Lino De Andrade: Agora vai. Falou de novo não foi possível conectar o dispositivo tente novamente mais tarde. Tô deixando ele já de novo.
+21:09 Eric Santos: Atualizei o código que tentei de novo.
+21:13 Veronica Marise Lino De Andrade: tá Agora tá carregando.
+21:26 Eric Santos: Bom aí ó conectou.
+21:26 Veronica Marise Lino De Andrade: conectando
+21:34 Eric Santos: Boa aqui aqui foi. Deixa eu só. Conectar aqui no sistema rapidinho eu volto com compartilhamento da tela.
+23:53 Eric Santos: Na minha tela. legal Eu só vou trocar o usuário aqui. Para dar ardinâmica para a gente para você ter a mesma visualização que eu vocês vão ver pelo meu que tem várias funções ali aí vai jogar a cabeça. Boa vamos lá tá só recapitulando aqui. As telas que a gente vai mais focar conversas contatos e lista então por exemplo essas aí daqui. Não sei se é um vídeo. Isso é uma conversa convencional. Se vocês forem aqui no canto vai ter todas as opções adicionais desse contato, tá então se eu clicar em detalhes.
+25:08 Eric Santos: Se eu clicar em detalhes vai aparecer aqui para mim, por exemplo, eu entrei no usuário da Dina. E tá que eu esse contato de cuido para ela, tá óbvio que aqui pode estar o contato de Flávia. A transição que a gente vai fazer depois mas simulando aqui que esse seria um vídeo da da Dina já então aqui são a um ambiente que ela vai conversar com os vídeos, tá bom? Ela vai vir aqui vai digitar. Ali o que ela quer e vai mandar o usuário clicando aqui.
+25:37 Eric Santos: Uma coisa Poxa Eric como é que eu vou fazer para trocar o número de São Paulo para o número de Macapá, quando vocês clicarem nessa setinha aqui embaixo, ó, vai estar Umberto uma capa e São Paulo, se vocês forem passar o número. Mouse em cima vai aparecer os dois números tá vendo aí por exemplo. Ah, eu quero conversar com o número de São Paulo, vem aqui e troca trocou quando você mandar mensagem vai mandar uma mensagem pelo DDD de São Paulo com o seu nome.
+26:07 Eric Santos: beleza E daí vocês vão fazer nessa troca?
+26:17 Flavia Rosa: Não entendi Eric no caso. Por que que a gente faria essa troca no caso? Todos os pacientes dos líderes de São Paulo vão estar chegando? Não entendi
+26:28 Eric Santos: Ó, vamos lá, vamos lá, vamos lá o número de São Paulo, vocês vão vocês rodam campanha para São Paulo? Show então por exemplo, esse número aqui é de Macapá, eu acho que é né?
+26:44 Flavia Rosa: Macapá
+26:45 Eric Santos: Show então faz mais sentido mandar pelo de Macapá ou de São Paulo aí se o DDD aqui ó, por exemplo. Deixa eu procurar mais um. amigo de São Paulo Entendeu? E aí quando você mandar ele já salva é para essas conversas.
+27:01 Flavia Rosa: Mas isso seria uma opção ou Obrigatoriamente.
+27:13 Eric Santos: É uma ré é uma regra que a gente fala entre muitas astras em regras de negócio, né? Porque às vezes vocês mandam ou liderando de São Paulo para a pessoa certa de São Paulo, né de São Paulo para não causar estranheza. Mas infere no final das contas. Porque se vocês quiserem por exemplo trabalhar com o número só daria entendeu? Que seria só de São Paulo ou só de Macapá, eu acho que de São Paulo é melhor porque ele é mais vamos falar assim popular conhecido, né? E aí mandarei só no São Paulo, mas vai de vocês, entendeu?
+27:53 Flavia Rosa: Entendi.
+27:54 Eric Santos: Show aí, vamos lá aí vocês trocam aqui aí é a mesma coisa vale para mandar áudio para mandar a figurinha fazer uma tradução então, por exemplo, você cai no meio de lado dos Estados Unidos você clicar aqui nessa opção de configurar a tradução, ele vai fazer essa alta tradução para você. Você vai conversar com ele? Por aí vai tá mas vamos lá uma das coisas que eu queria ver com vocês é sobre a facilidade que vocês vão ter com esse tema com mensagens tá? Então por exemplo, eu vou voltar para o meu usuário aqui.
+28:42 Eric Santos: E aí eu vou configurar e eu vou deixar um dos usuários para vocês para vocês cadastrarem essas mensagens tá sabe aquelas mensagens que são modelos. Que você tem WhatsApp que você coloca o barra e manda vocês tem alguma dessas
+29:00 Flavia Rosa: temos
+29:00 Eric Santos: mensagens aí prontos lá, a gente vai cadastrar elas aqui. Vocês conseguem mandar uma dessas mensagens lá no Whatsapp no grupo? Ou no privado.
+29:14 Flavia Rosa: Tá vou mandar umas aqui.
+29:16 Eric Santos: manda aí E aí eu vou deixar um usuário. Com essa função para ir cadastrando quando vocês quiserem novas mensagens, porque se eu deixar para todo mundo vai ficar de mensagem aí vai todo mundo se perder ali porque elas todas as mensagens se misturam em um bloco só aí uma pessoa só cadastra, ele vai fazer. Nossa organização ali, tá? Ou qualquer coisa.
+29:46 Flavia Rosa: As minhas as minhas Desculpa as minhas estão indo com o nome porque eu já deixo salvo o nome né que não tinha essa opção.
+29:54 Eric Santos: Mas aí a gente consegue trocar a gente coloca o nome do seu usuário aqui, mas pode mandar do jeito que tá eu consigo trocar aqui.
+30:32 Eric Santos: Boa noite, obrigado aqui.
+31:20 Eric Santos: Você consegue manda me manda nesse número aqui. Ó, porque eu não sei porque mas meu outro número tá? Não tá deixando copiar.
+31:33 Flavia Rosa: Oi tá tu quer que eu mande as mensagens para isso, né?
+31:36 Eric Santos: É só encaminhar. antes de transferência Eu vou voltar aqui para tela, olha aí o que que a gente vai fazer, tá? Aqui na área de conversas vai ter essa opção aqui em cima de trechos. Trechos seriam mensagens tá essas mensagens modelo aí você vai clicar em novo trecho adicionar trecho de texto. E aqui ele vai abrir uma simulação para você ver como que essa mensagem ficaria então por exemplo colocar aqui, ó.
+32:25 Eric Santos: de pagamento Aí eu coloquei aqui ó. dados de transferência É isso aqui, né?
+32:38 Flavia Rosa: isso
+32:39 Eric Santos: show Aí no caso aqui não tem uma. A gente não tem uma variável, né? Mas beleza vou deixar assim mesmo. Aí eu consigo também adicionar o documento então por exemplo. Vocês querem mandar? Algum tipo de PDF não sei se vocês mandam aquele PDF pós procedimento sabe? Explicando Quais são os cuidados que a pessoa tem que ter?
+33:09 Flavia Rosa: Mandamos no caso uma paciente de São Paulo, a gente sempre manda o contrato em PDF quando os cuidados pós-operatório.
+33:14 Eric Santos: Boa me manda esse me manda esse esses documentos também que eu vou subir aqui, aí a gente consegue anexar esses documentos para que vocês não precisam sempre ficar carregando aqui dentro do sistema para enviar tá? Aí eu vou aqui eu posso salvar. Beleza, salvou vou vir aqui em conversas de novo. Vou atualizar a página. Amigo lenta porque eu tô compartilhando gravando aí o computador já já frita. Tô com um milhão de Abas aqui aberto que vocês não conseguem ver. Mas vamos lá aí por exemplo nessa conversa aqui, ó, Dani. Aí se eu clicar aqui ó.
+34:03 Eric Santos: Aqui nesse nessa folhinha, se eu clicar aqui em cima vai aparecer ó a mensagem que eu acabei de cadastrar lá, se eu clicar aqui em cima já vai aparecer lá, né usado cadastrais que eu acabei de dar que eu acabei de criar. E aí se eu clicar em enviar vai mandar para ela. Beleza então. Esse é um dos Passos da facilidade do sistema tem então imaginando todas as mensagens cadastradas aqui para a gente poder facilitar o nosso dia, né? Então cadastrar mais uma aqui aquelas de vocês verem também, não dá para cadastrar e-mail e-mail é outra coisa que a gente vai ver lá na frente vai criar essa jornada de dispara por e-mail também. Atualiza sua página aí está vendo pelo computador.
+34:43 Centro Estetético Rachel Cuimar: Eric e onde é que onde é que eu clico para aparecer três? Porque aqui no meu não aparece Aparece assim, ó, pera aí, deixa eu. meu Deus, como é que
+35:02 Eric Santos: Atualizou a página. Vamos lá, eu vou clicar aqui novo, trecho outro. Essa mensagem que vocês vivem.
+35:33 Centro Estetético Rachel Cuimar: Olha aqui só tá a conversa. mano Não tem as outras opções aqui igual ao teu.
+35:38 Eric Santos: Deixa eu ver. Ah não é então aí não vai aparecer para você ainda porque essa opção de administrador aí eu vou liberar ela para um usuário só. Aí fica para você ou para a Flávia? Enfim para quem tem mais facilidade ali para poder fazer esse cadastro das mensagens tá? Mas para você usar. Deixa eu voltar aqui, ó. Que uma vez cadastrado você não precisa se cadastrar de novo, tá aí você vem aqui ó, faz até o teste nesse computador também clica nesse nesse papelzinho aqui, ó. Aí vai mostrar todas as mensagens que a gente cadastrou. A gente em qualquer conversa aí.
+36:23 Eric Santos: Você acredita que apareceu né?
+36:33 Centro Estetético Rachel Cuimar: Aqui o papelzinho onde está escrito trechos aí aparece os dados bancários.
+36:35 Eric Santos: isso Boa a mensagem que a gente acabou de cadastrar.
+36:40 Centro Estetético Rachel Cuimar: Perfeito, obrigado.
+36:41 Eric Santos: Aí vamos lá, vamos adicionar mais uma essas mensagens aqui por todo mundo utiliza uma mensagem igual cada um tem a sua.
+36:52 Flavia Rosa: Normalmente eu faço a mensagem e às vezes eu compartilho a gente vai ou às vezes compartilha com as meninas no caso essa mensagem que eu te mandei de Rinoplastia. É a gente nem tava mais usando vai dependendo né? Conforme vai paciente modelo algo do tipo a gente cria um texto para mandar para um período.
+37:11 Eric Santos: O que que eu acho tá olhando essa mensagem aqui ela tá tipo muito cara de gptzão isso eu mando uma mensagem dessa. Para o meu cliente, tipo assim, eu recebendo vou falar assim, você me coloca no lugar da pessoa, né? Se eu recebo uma mensagem dessa aqui, eu já fecho a página do WhatsApp e já me respondo mais porque tipo muito grande sabe? E aí por exemplo mensagens que são mais grandes procedimento específico é legal a gente gravar um áudio e olha que interessante a gente consegue gravar um áudio vocês me mandam esse áudio que a gente coloca na mesma função aqui do sistema para poder disparar esse áudio, entendeu? Aí manda como se fosse um áudio do WhatsApp.
+37:53 Eric Santos: tá Tem mais algumas outras mensagens que vocês costumam mandar além dessas. A gente cadastrar aqui já para vocês conseguirem utilizar vocês querem me cadastrar. De também se você tiver aí.
+38:29 Centro Estetético Rachel Cuimar: Eu acho que não porque no caso o nome de cada uma já vai aparecer, né? Geralmente a gente clica no nome. Para poder escrever algo com o paciente.
+38:39 Eric Santos: esse mas não tem mensagem pronta aí que tipo às vezes é umas perguntas repetitivas fazem que você já responde com
+38:46 Centro Estetético Rachel Cuimar: Eu quando como a gente está com seleção de paciente modelo, eu tô mandando Um textinho já direto para perguntar se o procedimento seria para pessoa ou para ele mesmo para outra pessoa que tá pesquisando quer que eu te mande esse?
+38:59 Eric Santos: Manda Pode mandar tudo é todas essas coisas que vocês fazem repetidamente todos os dias, tipo a mesma mensagem mesmo explicação dá para a gente colocar aqui, entendeu?
+39:10 Centro Estetético Rachel Cuimar: É porque na verdade vai alternando muito, às vezes eu mando áudio, às vezes eu mando a mensagem depende do dia.
+39:17 Eric Santos: Tá legal, então, eu vou deixar essa aqui, mas fiquem cientes que dá para a
+39:18 Flavia Rosa: E também a gente.
+39:21 Centro Estetético Rachel Cuimar: Entendi.
+39:21 Flavia Rosa: E também a gente trocou de aparelho então as nossas mensagens que estavam salvavam nos outros aparelho. Nem todas foram esse aparelho novo que a gente
+39:26 Centro Estetético Rachel Cuimar: Não vieram.
+39:29 Flavia Rosa: tá.
+39:36 Eric Santos: gente colocar essa função para que todo mundo consiga cadastrar novas mensagens, tá? Fechou, aí, vamos lá, né? Eu queria passar para vocês também. Como que para a gente ir atualizando aqui na prática alguns vídeos que a que a Flávia já atendeu tá então por exemplo, Flávia, eu vou passando por alguns vídeos aqui e a gente vai atualizando status que é meio que eu vou simular, como que seria o dia a dia de vocês como sistema, tá bom? Então, por exemplo eu entrar aqui ó, nós não lidos nessa Dana essa Dana aqui é paciente, ela é o quê? Paciente modelo.
+40:17 Flavia Rosa: Ela já é paciente da Clínica e ela entrou em contato para por conta do desconto.
+40:23 Eric Santos: Ah se vocês fizeram uma campanha, né?
+40:25 Flavia Rosa: e isso
+40:27 Eric Santos: Show. E aí essa campanha ela já tinha comprado uma vez sou tua campanha entra em contato de novo.
+40:34 Flavia Rosa: Isso como esse número que eu uso é um número. Bem antigo então. Independente de lide ou não, ele tem uma quantidade de muito grande, porque pelo menos tem uns três anos que eu tô com a Raquel três anos a esse contato e antes disso já era número da Raquel então. Independente de tráfego mesmo, ele já tem um uma quantidade de mensagem chegando muito grande por conta disso.
+41:00 Eric Santos: Boa top então por exemplo, deixa eu pegar aqui, ó. Você passou o orçamento para ela, né? Esse aqui é o orçamento final né?
+41:07 Flavia Rosa: isso
+41:12 Eric Santos: Tá então vamos lá, deixa eu entrar aqui ó. Em uma dessas oportunidades vão entrar na primeira e já vou fazer o quê? Já vou atualizar aqui, ó, como você passar para ela, você já atualiza o valor da oportunidade já. 1.75 Aí eu vou entrar aqui ó.
+42:13 Eric Santos: No vídeo E aí eu coloco 5715. E 5715 aí atualiza essa é uma prática que vocês vão fazer diariamente passou um orçamento vai lá e atualizo vem aqui ó no cantinho da oportunidade e atualiza para o valor da que vocês passaram do orçamento. Tá bom. Assim que liberar meu cartão você quer usar? tá ela falou que Ela vai pagar hoje vai pagar outro dia como é que ficou?
+43:00 Flavia Rosa: Então na verdade eu não dei segmento porque na hora que ela respondeu já tava do meu intervalo, eu voltei e vim para cá então não Concluir a conversa com ela.
+43:08 Eric Santos: Boa e aí no caso você poderia por exemplo favoritar esse vídeo, né? Para você saber que você precisa dar foco nele ou o que é mais legal, você vem aqui ó e adiciona uma tag. Até que dia que é um livro quente? Porque se você for filtrar as suas conversas, se você for filtrar os seus vídeos vão conseguir focar pelos itens mais quente que eu chegar mais próximo de converter de vocês para vocês terem mais direcionamento daqueles vídeos que estão mais quentes para vocês conseguirem buscar as vendas que estão mais próximas a acontecer pontos que a galera só acima do muro em cima do muro que é uma ligação. Vocês conseguem converter? Aí vocês vão classificando então, por exemplo, eu fui lá coloquei o valor a oportunidade não precisa nem uma tag aqui ó nesse maiszinho e vem nessa opção aqui de detalhes do contato e adicionar uma tag quente, tá? Aí nesse caso. Olha a gente já consegue vir aqui na oportunidade.
+44:07 Eric Santos: Se a gente clicar aqui em cima. mover o link aqui ó nessa fase para oportunidade Se você colocar aquele para oportunidade, tá porque oportunidade significa que você já passou um valor para ele. Ele já tá em cima do muro para poder comprar ou ele vai comprar ou ele não ou ele vai dar como perdido, tá? Então você coloca ele como oportunidade aqui. Aí atualizou Beleza, ele já foi uma oportunidade trabalho com Ezequias, a gente já finalizou né? No quesito de documentação, a gente vai para o próximo, mas isso parece como eu fazendo aqui no passo a passo parece caramba muito complexo muita coisa, mas no dia a dia que vocês foram conversando, vocês vão fazer isso automaticamente que vocês vão registrando automático, tá? Aí por exemplo esse aqui. Essa daqui é um pós procedimento.
+45:09 Flavia Rosa: É de um pós-operatório já ela.
+45:12 Eric Santos: tá aí é que fica com a ou não
+45:19 Flavia Rosa: É nesse caso normalmente é porque eu não sei bem como é que a gente vai fazer porque o acompanhamento dos pacientes de pós-operatório acaba também ficando com a gente assim a gente ver como é que foi o paciente e tal. Inclusive, ela mandou esse áudio aí, né? Aí se ela for querer um retorno essa paciente ela não é daqui. Ela mora em Caiena. Então Possivelmente não é um retorno muito breve aí, se for o caso dela falar eu quero um retorno. Tô indo para Macapá de artistas. Não sei porque eu não ouvi ainda o áudio dela aí seriava encaminhado para Rayane Marcar agenda
+45:53 Eric Santos: Legal, olha legal, olha que interessante o que que a gente consegue fazer, tá?
+45:53 Flavia Rosa: marcar ela na agenda.
+46:02 Eric Santos: A gente vinha aqui ó adicionar, né? Um trecho de que ou melhor tá dá para a gente eu vou colocar na automação e por isso é muito bom essas reuniões para vocês me trazer essas demandas que vocês têm o processo de vocês para a gente puder automatizar isso o que dá para a gente fazer quando vocês vierem aqui, lembra que a gente na última reunião falou sobre quando a gente dá como ganho já cai direto para Zaira que vai fazer o posse procedimento.
+46:30 Eric Santos: Então dá para a gente colocar o quê? Quando a gente vir aqui ó em trocar a página realizar agendamento. Ou a gente pode trocar isso aqui depois da realizar agendamento, por exemplo. A gente já manda uma mensagem Pro Lite falando assim, olha. Estou encaminhando o seu contato para Zaira que é responsável do pós-operatório. Você pode conversar diretamente com ela aí ele manda essa mensagem automática e já manda ou a propriedade desse vídeo para Zaira e mandou notificação para ela.
+47:01 Eric Santos: Entendeu? Porque aí é algo que você não vai lidar, né? Só que você
+47:01 Flavia Rosa: tá
+47:03 Eric Santos: precisa verificar isso de que de fato, você vai lidar com esses vídeos ou se vai ser só ela que vai fazer isso.
+47:10 Flavia Rosa: É porque como a gente está fazendo, né? Eu tô fazendo isso de maneira manual o paciente fechou comigo. Ele é meu paciente. Fechou comigo tal todinho só querendo ou não a gente faz essa acompanhamento de pós-venda, né? E aí o paciente Fala ah, mas eu quero que a doutora me deu uma olhada não sei o quê aí prontamente o papel. Olha você toda agendamento vai entrar em contato com você, aí eu já pego o contato porque o celular da Rayane é um celular novo, né? Então ela não tem muitos contato aí eu compartilho o contato com ela. Eu já coloco paciente tá com tanto tempo porque também a Rayane é uma colaboradora nova. Então ela não conhece ainda bem os procedimentos, né os pacientes e aí eu passo as informações para ela paciente verificar na ficha o último retorno e marcar e aí a Rayane já entra em contato com ele para eu não ficar debatendo agenda porque isso demanda muito tempo da gente a gente acaba perdendo tempo da venda.
+48:01 Eric Santos: Tá. Exatamente exatamente, mas faz sentido para você ter essa automação,
+48:02 Flavia Rosa: Tá sendo dessa forma.
+48:06 Eric Santos: né?
+48:08 Flavia Rosa: sim
+48:08 Eric Santos: Show então eu vou criar e vou deixar ela desativado. Eu crio dela deixar ela bonitinho e Aí eu deixo ela desativada para quando a gente todo mundo vim para um sistema a gente já começar a utilizar ela também.
+48:22 Flavia Rosa: Aí no caso, qual seria a minha dúvida? Assim no caso quando for para Rayane, né? Tá precisava fazer agendamento, só
+48:28 Centro Estetético Rachel Cuimar: outra
+48:31 Flavia Rosa: que se esse paciente vai querer falar com a gente ainda sobre o novo procedimento sobre sei lá uma mudança de alguma coisa, ele vai voltar para fila ou ele quando ele entrar em contato ou ele vai quando ele entrar em contato novamente, ele já cai para o contato da Rayane ou ele volta para o meu ou a Rayane tem uma opção de finalizar agendamento e jogar de volta o paciente para mim.
+48:55 Eric Santos: Isso que acontece se o lixo estiver com ela e eu li de falar assim. Ah, eu quero fazer um novo procedimento. Aí a gente aí ela vai lá e manda esse vídeo de novo para você, tá? Que lá no histórico vai aparecer a última pessoa que tá vendo que tava com esse leite para você. Entendeu? Outra coisa também que dá para a gente fazer é manter Olívia parecendo para
+49:23 Centro Estetético Rachel Cuimar: Exatamente sobre isso porque o paciente depois ele vem buscando outras outras coisas além do agendamento, né? Quer saber como é que tá tendo está tendo alguma promoção alguma coisa assim? E aí eu queria saber se a gente ia ter esse contato de novo com ele.
+49:44 Eric Santos: você, né? E para e para ela também, porque Vocês conseguem ver interação de vocês, né? Querendo ou não criam essa amizade ali com o cliente e se Qualquer coisa vocês conseguir entender enfim ajudar vocês vão ajudar e se ela
+50:03 Centro Estetético Rachel Cuimar: no caso Naquela opção que é o nosso seria atribuído a mim e o outro seria seguindo se ela ficasse só em seguindo e o lide continuasse ela conseguiria mexer para fazer o atendimento dele também.
+50:20 Eric Santos: Quando quando trocar aí esse Lídia vai para ela e aí fica com você também.
+50:21 Centro Estetético Rachel Cuimar: Então acho que é mais tranquilo dessa forma, elas começa a seguir os as pessoas que a gente precisa de agendamento no caso.
+50:35 Eric Santos: Fica aparecendo para as duas. tá Tá aí nesse caso aqui ó pós-operatório com não vou mover ela para lá porque não é o líder aqui, ela vai conseguir responder, mas funcionaria nessa lógica tá bom aí Núbia. Deixa eu pegar aqui. Manda uma foto você mandar um áudio. Aí você passou um valor para ela, né? Provavelmente iniciar áudio e ela falou que tava dentro do orçamento, né? tá
+51:20 Flavia Rosa: Isso mesmo.
+51:23 Eric Santos: É o que que a gente pode fazer é uma coisa. Aqui ó na oportunidade. Ele não tá puxando não, tá? Se esse se acontecer nesses casos vocês me avisam tá? Porque na oportunidade tem que estar com o mesmo nome do contato. Aí vocês me avisam tá bom aí beleza? Que que nesse caso aqui que eu vou fazer eu vou lá entrar na oportunidade. Qual foi o valor que você passou para ela?
+51:54 Flavia Rosa: Aí eu acho que foi uns 4900.
+51:57 Eric Santos: 4 e 900
+52:00 Flavia Rosa: isso
+52:02 Eric Santos: Ou 4.900 a gente procedimento. de oportunidade Aí ó, se vocês forem ver essa é uma Lead que você vai fazer reunião com ela ou não. Tá esse processo.
+52:20 Flavia Rosa: Então no caso a gente tá com esse número muito grande de E aí hoje eu mudei a estratégia, né? Tô falando com o que eu tava seguindo lá o roteirinho da Tati e do
+52:30 Eric Santos: Diógenes
+52:31 Flavia Rosa: Do George, só que tem muita mensagem, então eu coloquei o número X de Lígia para eu responder ontem, eu consegui fazer uma reunião porque a questão que a gente não é só comercial, né? Essa questão que a gente tem aqui em Macapá, né? E como tem muito curioso, eu tô dando uma média de valores, né? Eu pergunto se esse se o valor tá dentro porque tem paciente que tá Como é paciente modelo eles entendem que é de graça, né? Aí eu falei olha a média de valor tá de valor x por valor x está dentro do programação e tal e aí quando o paciente no caso da Núbia diz que está dentro do orçamento. Aí sim no caso dela, eu vou dar segmento.
+53:10 Flavia Rosa: Né da segmento atendimento fazer a reunião todinha no caso dos outros paciente, eu vou colocando como como Lidi frio, né para um outro momento e tal.
+53:18 Eric Santos: Boa então aí o que que você pode fazer? Por exemplo, esse daqui é um litro quente, você já passou orçamento, ela falou que é legal, mas será que ela tomaria essa decisão aqui ou ela precisa de uma reunião aí tarde você entender e por exemplo aqui eu já marcaria ela como quem já tem dois vídeos que conversou com você hoje como quente são os dois itens que você vai focar ali para poder converter eles então aí eu iria aqui na tag, né? Colocaria quente.
+53:44 Eric Santos: Na oportunidade a gente já passou o valor, né aqui e aí, por que que isso é interessante, tá? Se a gente vir aqui em líder. E se vocês clicarem aqui em cima vai ter essas três pipelines. Essa essa telinha com várias colunas tá então você vai clicar em procedimento. Aí se você for vir aqui no cantinho, Ó você vai ver que você já tem todos esses vídeos já somados aqui dentro da oportunidade.
+54:27 Eric Santos: Aí foi agora aí, por exemplo lá você já você já fez a documentação e você sabe se tem 10 mil na mesa para poder fechar. Tá vendo como que fica mais claro e visível para você tipo ajudar Ali pela quantidade de livros que chegam para vocês.
+54:48 Flavia Rosa: Eu achei interessante Érica, porque eu passei hoje para dia para a gente justamente fazer essa triagem dos a gente está fazendo também de maneira manual por uma planilha quente morno. A gente classificou assim, né? Para a gente ver, qual aqueles que a gente vai estar dando mais atenção a gente separar o curioso, né? Mas aí no caso. Como já tem na plataforma, já tira um trabalho a mais que a gente estaria de estar preenchendo a planilha.
+55:18 Eric Santos: Exato e vocês vão ter na plataforma e já direto aqui no chat da conversa. Não precisa nem trocar de arma para abrir uma planilha. Vocês vão fazer isso tudo aqui, né? para a gente já encerrar essa Rafa Brand que
+55:34 Flavia Rosa: O Rafa que só manda resultado ele tirar faz os vídeos depois operatório.
+55:38 Eric Santos: Aí ó, se vocês quiserem, tipo assim para ele sumir daqui vocês marcam a conversa dele. Como como? Aí ele vai subir aqui. Ó, que eu tô vendo todos não lidos todos que você não respondeu ainda ou você respondeu e a pessoa falou de novo que você não mandou uma última mensagem. Então, por exemplo essa Sandra essa Sandra. Ela é o quê?
+56:02 Flavia Rosa: Uma paciente que ela vinha para uma avaliação hoje, mas ela disse que tava doente.
+56:07 Eric Santos: Show nesse caso. Mas você já tinha vendido para ela antes?
+56:16 Flavia Rosa: Para Sandra.
+56:17 Eric Santos: é
+56:18 Flavia Rosa: Não.
+56:19 Eric Santos: Não, ah, ela só fazer uma avaliação presencial, né?
+56:21 Flavia Rosa: Não. É ela foi fazer uma avaliação presencial.
+56:26 Eric Santos: Show ela já pagou para pela avaliação.
+56:29 Flavia Rosa: Não ela vinha para avaliação hoje presencial e normalmente ela paga no quando chega na avaliação.
+56:36 Eric Santos: Mas tem mais ou menos uma média de valor do procedimento que ela vai fazer.
+56:36 Flavia Rosa: no ato é Ah eu acredito que o dela era lift não tenho não tenho certeza, mas acho que o dela era lift.
+56:50 Eric Santos: Mas aí no caso.
+56:50 Flavia Rosa: e é um livro de
+56:53 Eric Santos: Só passar aqui. O valor E aí na tag deixa você acredita que ela é uma tá quente para converter bom se ela vai fazer avaliação não não tá quente.
+57:04 Flavia Rosa: Não. É só que aí não porque no caso como ela vai. Ela falou alguma coisa que ela ia viajar se eu não me engano.
+57:11 Eric Santos: sim
+57:12 Flavia Rosa: E aí ela vai retornar só em abril, então ela vai retornar depois da promoção. Então eu acho que ela vai ficar como não vai ser quente.
+57:21 Eric Santos: Vamos colocar ela firme então e aí outra coisa interessante, ó, Viajarei amanhã. Aí vamos falar assim e todos esses vídeos que te garante que você vai ser lembrada de mandar uma mensagem para mim aqui que você vai fazer. Você vai vir aqui, ó? Em atividades, tá? aqui ó
+57:44 Veronica Marise Lino De Andrade: Licença Rapidão eu vou precisar sair porque eu passei um pouquinho, mas aí eu
+57:48 Eric Santos: Tá bom vai lá.
+57:50 Veronica Marise Lino De Andrade: vou eu vou ter que olhar olhar a aula toda de novo.
+57:55 Eric Santos: Tá eu vou
+57:55 Veronica Marise Lino De Andrade: Eu vou pegar esse final, né da partir de agora.
+57:58 Eric Santos: Fica tranquila quando processar eu mando lá para vocês aí. Vocês conseguem assistir ela? É a gente já tá quase encerrando já também.
+58:06 Veronica Marise Lino De Andrade: Certinho então, mas só te avisando. Tá bom? Obrigada, viu?
+58:11 Eric Santos: Obrigado, viu? Aí ó, por exemplo aqui ele sempre vai gerar essa primeira tarefa para vocês. Aí eu vou explicar para vocês, como é que vai funcionar isso de tarefas diária. Mas essa é para te lembrar que você precisa mandar uma primeira mensagem para esse vídeo, mas vamos lá cadastrar uma nova tarefa que é uma nova tarefa aqui, ó. Enviar. mensagem Ela pediu para retornar em abril, aí vamos vir aqui ó o calendário Márcio colocar aqui na primeira semana de Abril.
+58:48 Eric Santos: As 9 horas né da manhã? E beleza, criei, o que que vai acontecer o sistema vai te avisar no dia 2 esse horário que você precisa mandar uma mensagem para ela. Porque ela pediu para você entrar em contato com ela só em abril, né? Aí você vai conseguir fazer esse processo. Tá ficou vocês ficaram com alguma dúvida?
+59:16 Flavia Rosa: não não mas eu acho que quando a gente for na prática acredito que vai estar surgindo as dúvidas, mas Dá para ver a maioria da dos atalhos aqui do lado, né? Eric? Pelo que eu vi.
+59:30 Eric Santos: É todos aqui, ó aqui ó para você ver todos os detalhes do contato. E aí quando vocês entrarem é bom. Vocês fazerem isso vocês irem função só tomar cuidado para não mandar uma mensagem, né? Mas vocês aí clicando e entendendo como é que funciona, por exemplo aqui em detalhes vai mostrar todos os detalhes do contato do dia o horário que ele entrou. Tem alguns Campos aqui, ó que estão apagados que vocês podem preenchendo também, tá? E aí por exemplo atividade para mostrar as atividades que a gente fez dentro do livro aqui vai mostrar as oportunidades que foram criadas.
+01:00:08 Eric Santos: Aqui em atividades vou mostrar as tarefas então aqui eu consigo agendar uma tarefa para mim não aparece para o cliente, imagina uma tarefa para mim lembrar de algo mandar uma mensagem daqui um tempo fazer determinada função, tá? Aqui é para você deixar uma observação, né? Então por exemplo, ele já gera essa observação automática de que Esse vídeo foi gerado, mas eu consigo adicionar uma observação aqui ódio, por exemplo. Ah ela é. Ela é uma lead. Que ajudou uma. Avaliação é não compareceu por exemplo. Só para me lembrar. Mas eu posso fazer isso mesmo processo lá nas atividades.
+01:00:52 Eric Santos: E aqui vai ter compromissos esse aba de compromisso, a gente vai fazer em outro momento, tá? E aqui também eu consigo todos os arquivos que ela me mandar eu posso salvar então por exemplo comprovante. Eu posso salvar esse comprovante e ele vai aparecer aqui nesse contato para mim. Vocês ficarem rolando a mensagem lá em cima para poder tentar encontrar aí esses pagamentos podem ignorar porque o doutor ele não utiliza essa função aqui, mas você pode ignorar mas todas as funções de detalhes do contato não está aqui, tá?
+01:01:26 Flavia Rosa: Esse pagamento seria para fazer política.
+01:01:29 Eric Santos: Esse pagamento é porque tem uma plataforma que se chama Strike. E aí daria para gerar links de pagamento direto por ela, né? Só e aí, cairia todas as vendas desse vídeo aqui.
+01:01:38 Flavia Rosa: Entendi.
+01:01:44 Eric Santos: Fechou com alguma dúvida?
+01:01:45 Flavia Rosa: Não.
+01:01:47 Eric Santos: Tranquilo, eu sei que às vezes vão aparecer depois né? Mas esse processo que a gente passou.
+01:01:53 Flavia Rosa: sim
+01:01:54 Centro Estetético Rachel Cuimar: Eu esqueci de falar, eu acho que quando for fazer aí a gente vai parecer com as dúvidas.
+01:01:59 Eric Santos: Show a outra coisa caso importante tá é quem consegue ficar com isso de passar para o pessoal do tráfego lá trocar as campanhas pelos dois números de São Paulo e de Macapá.
+01:02:15 Centro Estetético Rachel Cuimar: Mas aí tu já quer que cancele já a partir de hoje?
+01:02:18 Eric Santos: O que que eu ia pedir para vocês? Verifique não não cancela só vem e fica
+01:02:18 Centro Estetético Rachel Cuimar: os outros
+01:02:22 Flavia Rosa: Não é cancelar vai mudando né?
+01:02:23 Eric Santos: com Vai mudando e aí verifica coberto óbvio, né? Se já pode fazer essa transição porque daqui a gente já fez a conexão todos os links que chegarem em São Paulo, Macapá vão cair aqui para vocês. Tá. E aí, só verifiquem com ele? Olha a gente já pode mudar e aí se mudar já pede para o pessoal do tráfico fazer toda essa transição lá. dependendo da quantidade de campanha quando tiver rápido
+01:02:45 Centro Estetético Rachel Cuimar: Aí no caso eu tava olhando aqui, eu já tenho. 40 no livros aí eu vou ter que passar de um por um administrador da Flávia. Então não é isso para poder começar a cair só os meus a partir do momento que eles mudarem lá.
+01:03:02 Eric Santos: Isso mas eu vou fazer esse processo para vocês. Aí, vocês não vão precisar fazer isso. E aí por exemplo encerrou as campanhas lá vai continuar chegando o número de vocês aí no WhatsApp Durante os próximos três meses, aí vocês vão utilizar ele. bom
+01:03:21 Flavia Rosa: certo
+01:03:25 Eric Santos: Aí você só me avisa então, olha é que a gente conversou com Humberto, a gente vai começar a fazer as transições de campanha na sexta-feira. tá
+01:03:36 Flavia Rosa: como eu acho que o doutor tá aqui na clínica, vou já conversar com ele e
+01:03:37 Eric Santos: bom
+01:03:43 Flavia Rosa: Verificar né se a gente já pode estar fazendo essa transição, eu acredito que pediria para o menino do tráfico fazer no sábado. Que aí na segunda-feira já vai estar.
+01:03:55 Eric Santos: Aí pode ser no sábado também, eu vou estar disponível aqui hoje um dia para
+01:03:56 Flavia Rosa: toda ajustada Não a gente fica só de manhã no caso da reunião com a Tati. A gente tá vindo atender e a gente atende. Alguns alguns vídeos assim.
+01:04:19 Eric Santos: a gente ficar em alerta que o dia inteiro. Tá bom.
+01:04:25 Flavia Rosa: Tá ok.
+01:04:26 Eric Santos: Mas é isso tá obrigado pelo tempo de vocês e é outra coisa verifiquem um outro dia da semana dessa aqui para a gente fazer a call de novo.
+  

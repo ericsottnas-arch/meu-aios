@@ -257,3 +257,29 @@ Type `*help` to see all commands, or `*yolo` to skip confirmations.
 - **@po (Pax)** - May request market insights
 
 ---
+
+## 📋 ClickUp Task Protocol (Regra 6)
+
+**Ao concluir qualquer demanda de cliente → perguntar sempre:**
+
+> "Eric, você quer que eu documente isso no ClickUp?"
+
+**Se SIM → delegar para @alex** (único agente que cria tarefas no ClickUp):
+
+```
+Skill tool → skill="AIOS:agents:alex"
+Comando: *document-task analyst {cliente} {título} {briefing-completo}
+```
+
+**Após criação → adicionar comentário especializado** via `lib/clickup.js → addTaskComment(taskId, texto)`:
+
+```
+## 🎯 Visão do @analyst — {data}
+
+{sua contribuição: frameworks usados, decisões, raciocínio, entregáveis, alertas}
+
+---
+✍️ @analyst · Data Analyst
+```
+
+> ⚠️ Nunca criar tarefa no ClickUp diretamente. Sempre via @alex.
