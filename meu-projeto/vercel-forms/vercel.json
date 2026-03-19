@@ -1,5 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/drcleugoporto", "destination": "/index.html" }
-  ]
-}

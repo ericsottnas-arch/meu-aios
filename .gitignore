@@ -1,46 +1,56 @@
 
+# ============================================
+# SYNKRA AIOS - Repo de Contexto Compartilhado
+# Apenas: docs/ memory/ .claude/commands/
+# ============================================
 
-# Environment & Secrets (AIOS)
+# IGNORAR TUDO por padrão
+*
+
+# PERMITIR apenas pastas de contexto
+!.gitignore
+!scripts/
+!scripts/**
+!docs/
+!docs/**
+!memory/
+!memory/**
+!.claude/
+!.claude/commands/
+!.claude/commands/**
+!.claude/CLAUDE.md
+!.aios-core/
+!.aios-core/development/
+!.aios-core/development/agents/
+!.aios-core/development/agents/**
+
+# Dentro de docs, permitir tudo EXCETO binários pesados
+docs/**/*.db
+docs/**/*.db-shm
+docs/**/*.db-wal
+
+# Dentro de meu-projeto, permitir só docs
+!meu-projeto/
+!meu-projeto/docs/
+!meu-projeto/docs/**
+!meu-projeto/data/
+!meu-projeto/data/knowledge-base/
+!meu-projeto/data/knowledge-base/**
+!meu-projeto/design-feedback-rules.json
+!meu-projeto/assets/
+!meu-projeto/assets/brands/
+!meu-projeto/assets/brands/**
+
+# Sempre ignorar
+.DS_Store
+*.log
 .env
-.env.local
-.env.*.local
+.env.*
 *.key
 *.pem
-
-# Dependencies (AIOS)
-node_modules/
-node_modules
-
-# Build & Logs (AIOS)
-dist/
-build/
-*.log
-logs/
-
-# IDE & OS (AIOS)
-.DS_Store
-Thumbs.db
-.idea/
-*.swp
-
-# AIOS Local (AIOS)
-.aios-core/local/
-.claude/settings.local.json
-.aios/install-log.txt
-
-# Databases (não compartilhar - cada máquina tem o seu)
 *.db
 *.db-shm
 *.db-wal
-
-# State files locais
-.aios/scribe-watcher-state.json
-.aios/swipe-pending-state.json
-
-# Temp files
-.carousel-temp/
-*.png
-*.mp4
-
-# Claude Code local
+node_modules/
 .claude/projects/
+.claude/settings.local.json
