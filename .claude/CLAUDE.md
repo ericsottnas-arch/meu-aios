@@ -4,6 +4,77 @@ You are working with Synkra AIOS, an AI-Orchestrated System for Full Stack Devel
 
 ---
 
+## PROTOCOLO PRE-TAREFA — OBRIGATORIO EM TODA SESSAO
+
+**ANTES de iniciar qualquer tarefa, executar SEMPRE esta sequencia:**
+
+### 1. Ler o indice de regras
+`memory/rules/_index.md` — identifica qual arquivo ler para cada tipo de tarefa.
+
+### 2. Ler as regras universais
+`memory/rules/universal.md` — regras criticas que se aplicam a TODA tarefa sem excecao.
+
+### 3. Ler o arquivo de regras do dominio
+Com base no tipo de tarefa identificado no `_index.md`:
+- Copy / texto / roteiro → `memory/rules/copy-escrita.md`
+- Landing page / HTML → `memory/rules/landing-pages.md`
+- Clientes medicos → `memory/rules/clientes-medicos.md`
+- Ads / campanhas → `memory/rules/ads-campanhas.md`
+- Conteudo redes sociais → `memory/rules/conteudo-redes-sociais.md`
+- Comportamento de agentes → `memory/rules/agentes-comportamento.md`
+- Entrega de documentos → `memory/rules/entrega-documentos.md`
+- Desenvolvimento / automacoes → `memory/rules/dev-automacoes.md`
+
+### 4. Ler aprendizados do agente ativo
+`memory/agent-learnings/{agent-id}.md` — feedbacks acumulados do Eric para aquele agente.
+
+**Por que isso e critico:**
+Eric da um feedback UMA VEZ e espera que seja regra para SEMPRE.
+Este sistema garante que as regras sejam consultadas em toda sessao nova,
+independente do agente ativo ou do tipo de tarefa.
+
+---
+
+## PROTOCOLO POS-RESPOSTA — SALVAR APRENDIZADOS EM TEMPO REAL
+
+**AO FINAL DE CADA RESPOSTA**, verificar se o input do Eric continha algo para persistir.
+
+### O que salvar (mesmo sem Eric pedir explicitamente):
+
+| Sinal no input | O que fazer |
+|----------------|-------------|
+| "prefiro assim", "gosto quando", "sempre faz X" | Salvar como preferencia em `memory/agent-learnings/` |
+| "nao faca mais isso", "para de X" | Salvar como regra CRITICAL em `memory/rules/` |
+| "aprovado", "ficou bom", "esse padrao ta certo" | Salvar padrao aprovado no arquivo de dominio relevante |
+| Decisao sobre cliente, stack, abordagem | Salvar em `memory/` no arquivo tematico correto |
+| Correcao de comportamento meu | Salvar imediatamente, nao esperar fim de sessao |
+| Nome/conceito/metodo definido | Salvar no arquivo de dominio relevante |
+
+### Como decidir se salva:
+
+Pergunta rapida antes de fechar a resposta:
+> "Se eu abrir uma nova sessao amanha e nao me lembrar dessa conversa, vou errar por nao saber isso?"
+
+- Se SIM → salvar agora
+- Se NAO → nao precisa
+
+### Onde salvar:
+
+- Regra que vale para todos os agentes → `memory/rules/universal.md` + `memory/agent-learnings/regras-globais.md`
+- Regra especifica de dominio → arquivo correto em `memory/rules/`
+- Aprendizado de agente especifico → `memory/agent-learnings/{agent-id}.md`
+- Informacao de cliente → `docs/clientes/{slug}/` ou `memory/clientes-completo.md`
+- Decisao tecnica/arquitetural → arquivo tematico em `memory/`
+
+### Importante:
+
+- NAO salvar todo input — so o que muda comportamento futuro
+- Salvar de forma CONCISA — uma regra clara, nao um relatorio
+- NUNCA esperar "fim de sessao" para regras criticas — salvar na hora
+- Confirmar para o Eric apenas quando for algo significativo: "Salvei: [regra]. Nao vai esquecer."
+
+---
+
 ## 📚 Memory Update Protocol (Atualização Automática)
 
 **Every session:** At the end of conversation, I automatically update `/memory/`:

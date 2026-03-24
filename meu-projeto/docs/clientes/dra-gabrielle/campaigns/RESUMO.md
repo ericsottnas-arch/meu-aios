@@ -1,11 +1,11 @@
 # Campanhas de Mídia Paga - Dra. Gabrielle
-**Atualizado em:** 18/03/2026, 23:57:27
+**Atualizado em:** 24/03/2026, 20:20:30
 **Período:** Últimos 7 dias
 
 ## Visão Geral
 | Métrica | Valor | Status |
 |---------|-------|--------|
-| Campanhas Ativas | 2/25 | 🟢 |
+| Campanhas Ativas | 2/26 | 🟢 |
 | Gasto Total | R$ 0.00 | 📊 |
 | CPL Médio | R$ 0.00 | 🟢 |
 | Impressões | 0 | 📈 |
@@ -15,7 +15,7 @@
 ### [Syra] Dra Gabrielle - Emagrecimento [Formulário Instantâneo] [CBO]
 - **Status:** 🟢 ACTIVE
 - **Objetivo:** OUTCOME_LEADS
-- **Budget:** R$ 20.00/dia
+- **Budget:** R$ 30.00/dia
 - **Impressões:** 0
 - **Cliques:** 0
 - **CTR:** 0.00%

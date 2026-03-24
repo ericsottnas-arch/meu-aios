@@ -1,16 +1,706 @@
 {
   "clientId": "dra-gabrielle",
   "clientName": "Dra. Gabrielle",
-  "exportedAt": "2026-03-19T02:57:27.461Z",
+  "exportedAt": "2026-03-24T23:20:30.936Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
+      {
+        "id": "120243740011460249",
+        "name": "[Syra] Dra Gabrielle - Emagrecimento [São Paulo] [Formulário Instantâneo] [CBO]",
+        "status": "PAUSED",
+        "objective": "OUTCOME_LEADS",
+        "dailyBudget": 20,
+        "lifetimeBudget": null,
+        "createdTime": "2026-03-19T20:59:21-0300",
+        "dailyInsights": [
+          {
+            "date": "2026-03-20",
+            "impressions": 679,
+            "clicks": 27,
+            "spend": 25.05,
+            "cpc": 0.927778,
+            "ctr": 3.976436,
+            "cpm": 36.892489,
+            "reach": 630,
+            "frequency": 1.077778,
+            "conversions": 2,
+            "costPerResult": 12.525,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-21",
+            "impressions": 374,
+            "clicks": 21,
+            "spend": 17.43,
+            "cpc": 0.83,
+            "ctr": 5.614973,
+            "cpm": 46.604278,
+            "reach": 341,
+            "frequency": 1.096774,
+            "conversions": 2,
+            "costPerResult": 8.715,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-22",
+            "impressions": 448,
+            "clicks": 27,
+            "spend": 19.36,
+            "cpc": 0.717037,
+            "ctr": 6.026786,
+            "cpm": 43.214286,
+            "reach": 409,
+            "frequency": 1.095355,
+            "conversions": 3,
+            "costPerResult": 6.453333,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-23",
+            "impressions": 203,
+            "clicks": 13,
+            "spend": 10.32,
+            "cpc": 0.793846,
+            "ctr": 6.403941,
+            "cpm": 50.837438,
+            "reach": 189,
+            "frequency": 1.074074,
+            "conversions": 2,
+            "costPerResult": 5.16,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-24",
+            "impressions": 48,
+            "clicks": 1,
+            "spend": 1.72,
+            "cpc": 1.72,
+            "ctr": 2.083333,
+            "cpm": 35.833333,
+            "reach": 45,
+            "frequency": 1.066667,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          }
+        ],
+        "adsets": [
+          {
+            "id": "120243740011550249",
+            "name": "[P3] [M] [30-60] [SÃO PAULO] [ABERTO 3KM] [FB+IG]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 60,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "behaviors": [
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                },
+                {
+                  "interests": [
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    },
+                    {
+                      "id": "6004037400009",
+                      "name": "Fast-food (comidas e bebidas)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "name": "Rua Palestra Itália, 500, São Paulo, SP, Brasil",
+                    "address_string": "Rua Palestra Itália, 500, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.52678,
+                    "longitude": -46.681,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Aimberê, 72, São Paulo, SP, Brasil",
+                    "address_string": "Rua Aimberê, 72, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53161,
+                    "longitude": -46.67754,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Diana, 375, São Paulo, SP, Brasil",
+                    "address_string": "Rua Diana, 375, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53183,
+                    "longitude": -46.68016,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Turiassu, 480, São Paulo, SP, Brasil",
+                    "address_string": "Rua Turiassu, 480, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53325,
+                    "longitude": -46.66764,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Turiassu, 519, São Paulo, SP, Brasil",
+                    "address_string": "Rua Turiassu, 519, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53349,
+                    "longitude": -46.66826,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Itapicuru, 722, São Paulo, SP, Brasil",
+                    "address_string": "Rua Itapicuru, 722, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53373,
+                    "longitude": -46.67051,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Óticas Foto Paulo, Avenida Higienópolis, 618, São Paulo, SP, Brasil",
+                    "address_string": "Óticas Foto Paulo, Avenida Higienópolis, 618, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.54271,
+                    "longitude": -46.6576,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.592498,
+                    "longitude": -46.635927,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "address_string": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.6279,
+                    "longitude": -46.73751,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.630249,
+                    "longitude": -46.670901,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "address_string": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.63274,
+                    "longitude": -46.73233,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-03-19T20:59:22-0300",
+            "startTime": "2026-03-19T20:59:22-0300",
+            "ads": [
+              {
+                "id": "120243740011520249",
+                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:24-0300",
+                "creativeId": "949492481415326",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243740011500249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:24-0300",
+                "creativeId": "4384258191829892",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120243740011540249",
+            "name": "[P2] [M] [30-55] [SÃO PAULO] [FB+IG] [RICOS]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "behaviors": [
+                    {
+                      "id": "6002714895372",
+                      "name": "Frequent Travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "name": "Rua Palestra Itália, 500, São Paulo, SP, Brasil",
+                    "address_string": "Rua Palestra Itália, 500, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.52678,
+                    "longitude": -46.681,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Cardoso de Almeida, 472, São Paulo, SP, Brasil",
+                    "address_string": "Rua Cardoso de Almeida, 472, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53531,
+                    "longitude": -46.66647,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Óticas Foto Paulo, Avenida Higienópolis, 618, São Paulo, SP, Brasil",
+                    "address_string": "Óticas Foto Paulo, Avenida Higienópolis, 618, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.54271,
+                    "longitude": -46.6576,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.597272,
+                    "longitude": -46.706471,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "address_string": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.6279,
+                    "longitude": -46.73751,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.628611,
+                    "longitude": -46.736855,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "address_string": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.63274,
+                    "longitude": -46.73233,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-03-19T20:59:22-0300",
+            "startTime": "2026-03-19T20:59:23-0300",
+            "ads": [
+              {
+                "id": "120243740011510249",
+                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:24-0300",
+                "creativeId": "1641389433681255",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243740011470249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:24-0300",
+                "creativeId": "1257737855857412",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120243740011530249",
+            "name": "[P1] [M] [30-55] [SÃO PAULO] [ACADEMIA/PILATES] [FB & IG]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003159020675",
+                      "name": "Pilates (fitness)"
+                    },
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                },
+                {
+                  "behaviors": [
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.376145,
+                    "longitude": -46.74933,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Padre Chico, 335, São Paulo, SP, Brasil",
+                    "address_string": "Rua Padre Chico, 335, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.52977,
+                    "longitude": -46.68268,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Diana, 375, São Paulo, SP, Brasil",
+                    "address_string": "Rua Diana, 375, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53183,
+                    "longitude": -46.68016,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Ministro Godói, 725, São Paulo, SP, Brasil",
+                    "address_string": "Rua Ministro Godói, 725, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.5358,
+                    "longitude": -46.67022,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Tavares Bastos, 61, São Paulo, SP, Brasil",
+                    "address_string": "Rua Tavares Bastos, 61, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53601,
+                    "longitude": -46.68407,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Doutor Homem de Melo, 524, São Paulo, SP, Brasil",
+                    "address_string": "Rua Doutor Homem de Melo, 524, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53615,
+                    "longitude": -46.66971,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Ministro Gastão Mesquita, 709, São Paulo, SP, Brasil",
+                    "address_string": "Rua Ministro Gastão Mesquita, 709, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53756,
+                    "longitude": -46.68181,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Cajaíba, 123, São Paulo, SP, Brasil",
+                    "address_string": "Rua Cajaíba, 123, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53996,
+                    "longitude": -46.68379,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 1,
+                  "geo": 0
+                }
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "facebook_reels_overlay",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "story",
+                "reels",
+                "explore_home"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-03-19T20:59:26-0300",
+            "startTime": "2026-03-19T20:59:26-0300",
+            "ads": [
+              {
+                "id": "120243740011480249",
+                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:28-0300",
+                "creativeId": "2338508789988054",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243740011490249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:28-0300",
+                "creativeId": "1201343532079069",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
+      },
       {
         "id": "120243183154170249",
         "name": "[Syra] Dra Gabrielle - Emagrecimento [Formulário Instantâneo] [CBO]",
         "status": "ACTIVE",
         "objective": "OUTCOME_LEADS",
-        "dailyBudget": 20,
+        "dailyBudget": 30,
         "lifetimeBudget": null,
         "createdTime": "2026-03-10T20:43:46-0300",
         "dailyInsights": [
@@ -149,16 +839,130 @@
           },
           {
             "date": "2026-03-18",
-            "impressions": 808,
+            "impressions": 828,
             "clicks": 19,
-            "spend": 27.76,
-            "cpc": 1.461053,
-            "ctr": 2.351485,
-            "cpm": 34.356436,
-            "reach": 723,
-            "frequency": 1.117566,
+            "spend": 28.8,
+            "cpc": 1.515789,
+            "ctr": 2.294686,
+            "cpm": 34.782609,
+            "reach": 738,
+            "frequency": 1.121951,
             "conversions": 1,
-            "costPerResult": 27.76,
+            "costPerResult": 28.8,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-19",
+            "impressions": 322,
+            "clicks": 21,
+            "spend": 14.15,
+            "cpc": 0.67381,
+            "ctr": 6.521739,
+            "cpm": 43.944099,
+            "reach": 299,
+            "frequency": 1.076923,
+            "conversions": 4,
+            "costPerResult": 3.5375,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-20",
+            "impressions": 472,
+            "clicks": 12,
+            "spend": 11.13,
+            "cpc": 0.9275,
+            "ctr": 2.542373,
+            "cpm": 23.580508,
+            "reach": 439,
+            "frequency": 1.075171,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-21",
+            "impressions": 938,
+            "clicks": 27,
+            "spend": 19.56,
+            "cpc": 0.724444,
+            "ctr": 2.878465,
+            "cpm": 20.852878,
+            "reach": 814,
+            "frequency": 1.152334,
+            "conversions": 1,
+            "costPerResult": 19.56,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-22",
+            "impressions": 1210,
+            "clicks": 33,
+            "spend": 20.96,
+            "cpc": 0.635152,
+            "ctr": 2.727273,
+            "cpm": 17.322314,
+            "reach": 1103,
+            "frequency": 1.097008,
+            "conversions": 2,
+            "costPerResult": 10.48,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-23",
+            "impressions": 541,
+            "clicks": 17,
+            "spend": 9.06,
+            "cpc": 0.532941,
+            "ctr": 3.142329,
+            "cpm": 16.746765,
+            "reach": 506,
+            "frequency": 1.06917,
+            "conversions": 3,
+            "costPerResult": 3.02,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 1,
+            "costPerMessagingConversation": 9.06,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-24",
+            "impressions": 813,
+            "clicks": 33,
+            "spend": 12.27,
+            "cpc": 0.371818,
+            "ctr": 4.059041,
+            "cpm": 15.092251,
+            "reach": 731,
+            "frequency": 1.112175,
+            "conversions": 3,
+            "costPerResult": 4.09,
             "linkClicks": 0,
             "landingPageViews": 0,
             "costPerLandingPageView": 0,
@@ -171,7 +975,7 @@
           {
             "id": "120243496327780249",
             "name": "P8 [M] [28-40] [CAIEIRAS, FRANCO, PERUS, JUNDIAÍ, CAJAMAR] [FB+IG] [RICOS / FIT E FF]",
-            "status": "ACTIVE",
+            "status": "PAUSED",
             "dailyBudget": 0,
             "targeting": {
               "age_max": 40,
@@ -437,7 +1241,7 @@
                 "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
                 "status": "ACTIVE",
                 "createdTime": "2026-03-15T20:32:19-0300",
-                "creativeId": "2413670295804611",
+                "creativeId": "985272410492378",
                 "thumbnailUrl": "",
                 "videoAvgTimeWatched": 0,
                 "videoP25Watched": 0,
@@ -623,46 +1427,6 @@
                     "primary_city_id": 269969,
                     "region_id": 460,
                     "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.597272,
-                    "longitude": -46.706471,
-                    "radius": 4,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "name": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
-                    "address_string": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.6279,
-                    "longitude": -46.73751,
-                    "radius": 1,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.628611,
-                    "longitude": -46.736855,
-                    "radius": 1,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "name": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
-                    "address_string": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.63274,
-                    "longitude": -46.73233,
-                    "radius": 16,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
                   }
                 ],
                 "location_types": [
@@ -684,7 +1448,6 @@
               "instagram_positions": [
                 "stream",
                 "story",
-                "explore",
                 "reels"
               ],
               "device_platforms": [
@@ -696,11 +1459,11 @@
             "startTime": "2026-03-10T20:49:50-0300",
             "ads": [
               {
-                "id": "120243186922660249",
-                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "id": "120243186923880249",
+                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar]",
                 "status": "ACTIVE",
-                "createdTime": "2026-03-10T23:02:55-0300",
-                "creativeId": "2413670295804611",
+                "createdTime": "2026-03-10T23:02:59-0300",
+                "creativeId": "989460183736253",
                 "thumbnailUrl": "",
                 "videoAvgTimeWatched": 0,
                 "videoP25Watched": 0,
@@ -710,11 +1473,11 @@
                 "videoThruplay": 0
               },
               {
-                "id": "120243186923880249",
-                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar]",
+                "id": "120243186922660249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
                 "status": "ACTIVE",
-                "createdTime": "2026-03-10T23:02:59-0300",
-                "creativeId": "989460183736253",
+                "createdTime": "2026-03-10T23:02:55-0300",
+                "creativeId": "2413670295804611",
                 "thumbnailUrl": "",
                 "videoAvgTimeWatched": 0,
                 "videoP25Watched": 0,
@@ -1061,14 +1824,128 @@
           },
           {
             "date": "2026-03-18",
-            "impressions": 676,
-            "clicks": 16,
-            "spend": 5.57,
-            "cpc": 0.348125,
-            "ctr": 2.366864,
-            "cpm": 8.239645,
-            "reach": 617,
-            "frequency": 1.095624,
+            "impressions": 684,
+            "clicks": 17,
+            "spend": 5.71,
+            "cpc": 0.335882,
+            "ctr": 2.48538,
+            "cpm": 8.347953,
+            "reach": 631,
+            "frequency": 1.083994,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-19",
+            "impressions": 881,
+            "clicks": 27,
+            "spend": 6.62,
+            "cpc": 0.245185,
+            "ctr": 3.064699,
+            "cpm": 7.514188,
+            "reach": 828,
+            "frequency": 1.06401,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-20",
+            "impressions": 659,
+            "clicks": 24,
+            "spend": 4.2,
+            "cpc": 0.175,
+            "ctr": 3.641882,
+            "cpm": 6.373293,
+            "reach": 635,
+            "frequency": 1.037795,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-21",
+            "impressions": 831,
+            "clicks": 28,
+            "spend": 5.87,
+            "cpc": 0.209643,
+            "ctr": 3.369434,
+            "cpm": 7.063779,
+            "reach": 785,
+            "frequency": 1.058599,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-22",
+            "impressions": 963,
+            "clicks": 22,
+            "spend": 5.97,
+            "cpc": 0.271364,
+            "ctr": 2.284528,
+            "cpm": 6.199377,
+            "reach": 921,
+            "frequency": 1.045603,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-23",
+            "impressions": 451,
+            "clicks": 9,
+            "spend": 2.56,
+            "cpc": 0.284444,
+            "ctr": 1.995565,
+            "cpm": 5.676275,
+            "reach": 428,
+            "frequency": 1.053738,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-24",
+            "impressions": 619,
+            "clicks": 17,
+            "spend": 4.48,
+            "cpc": 0.263529,
+            "ctr": 2.746365,
+            "cpm": 7.23748,
+            "reach": 600,
+            "frequency": 1.031667,
             "conversions": 0,
             "costPerResult": 0,
             "linkClicks": 0,
@@ -1540,6 +2417,25 @@
             "landingPageViews": 0,
             "costPerLandingPageView": 0,
             "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-21",
+            "impressions": 0,
+            "clicks": 0,
+            "spend": 0,
+            "cpc": 0,
+            "ctr": 0,
+            "cpm": 0,
+            "reach": 0,
+            "frequency": 0,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 1,
             "costPerMessagingConversation": 0,
             "costPerThruplayVideoView": 0
           }
@@ -8680,7 +9576,7 @@
       }
     ],
     "summary": {
-      "totalCampaigns": 25,
+      "totalCampaigns": 26,
       "activeCampaigns": 2,
       "totalSpend": 0,
       "avgCPL": 0,

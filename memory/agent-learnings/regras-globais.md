@@ -30,3 +30,22 @@ Leitura obrigatória na ativação de todo agente.
   - Reescrita da frase sem o conector
 - **Severidade:** CRITICAL
 - **Nunca mais.**
+
+---
+
+## [2026-03-19] PROIBIDO: emojis em títulos de seção ou cards
+
+- **Feedback:** "vc colocou emojis no titulo de como funciona, não pode usar isso"
+- **Regra:** Zero emojis em títulos, headings, stat cards, labels ou qualquer elemento visual de página ou material entregue. Substituir por texto descritivo ou número real.
+- **Aplica a:** Todos os agentes que produzem HTML, copy ou apresentações
+- **Severidade:** CRITICAL
+
+---
+
+## [2026-03-19] Em páginas mobile: não mostrar imagem decorativa na hero
+
+- **Contexto:** LP Dr. Ênio Leite — lipo-de-papada.html
+- **Feedback:** "pode tirar a foto da hero quando a visualização estiver em mobile"
+- **Regra:** Em páginas de captura mobile, a hero não exibe foto. Apenas headline, subhead, formulário e social proof. Fotos na hero ficam só no desktop.
+- **Aplica a:** @ux-design-expert ao construir LPs para clientes médicos
+- **Severidade:** HIGH

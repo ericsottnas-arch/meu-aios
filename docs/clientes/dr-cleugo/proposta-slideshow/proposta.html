@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020202">
+  <title>Eric Santos + Dr. Cleugo Porto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700;1,900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    /* === PALETA: Opcao B (Dr. Cleugo Porto Gold) === */
+    :root {
+      --accent:               #D1A84B;
+      --accent-hover:         #be9540;
+      --accent-dim:           rgba(209, 168, 75, 0.08);
+      --accent-mid:           rgba(209, 168, 75, 0.15);
+      --accent-glow:          rgba(209, 168, 75, 0.20);
+      --accent-border:        rgba(209, 168, 75, 0.25);
+      --accent-border-subtle: rgba(209, 168, 75, 0.12);
+      --text-accent:          #D1A84B;
+      --nav-dot-active:       #D1A84B;
+      --nav-dot-visited:      rgba(209, 168, 75, 0.35);
+      --shadow-accent:        0 0 0 1px rgba(209,168,75,0.25), 0 0 20px rgba(209,168,75,0.12);
+      --bg-base:      #020202;
+      --bg-surface:   #060606;
+      --bg-elevated:  #0f0f0f;
+      --bg-overlay:   #1a1a1a;
+      --text-primary:   #EEEEEE;
+      --text-secondary: #CECECE;
+      --text-muted:     #8F8F8F;
+      --border-faint:   #0e0e0e;
+      --border-subtle:  #1e1a10;
+      --border-base:    #2D1F01;
+      --nav-bg:           rgba(2, 2, 2, 0.90);
+      --nav-dot-inactive: rgba(238, 238, 238, 0.20);
+      --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.70);
+      --ease-fast:  120ms cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-base:  200ms cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-slide: 380ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --r-xs: 3px; --r-sm: 6px; --r-md: 8px;
+      --r-lg: 12px; --r-xl: 16px; --r-full: 9999px;
+    }
+
+    /* === RESET === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    button { font-family: inherit; }
+
+    html, body {
+      height: 100%;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow: hidden;
+    }
+
+    /* === ESTRUTURA PRINCIPAL === */
+    .viewport {
+      display: flex;
+      flex-direction: column;
+      height: 100dvh;
+      overflow: hidden;
+    }
+
+    .slide-area {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* === SLIDES === */
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      /* transform gerenciado pelo JS */
+      transition: opacity var(--ease-slide), transform var(--ease-slide);
+    }
+
+    .slide--active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .slide { transition: opacity 200ms ease !important; transform: none !important; }
+    }
+
+    /* === SLIDE CARD === */
+    .slide-card {
+      width: 100%;
+      max-width: 960px;
+      min-height: 80dvh;
+      padding: 48px 64px 96px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .slide-card { padding: 32px 24px 80px; }
+    }
+
+    /* === TIPOGRAFIA === */
+    .slide-number {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .slide-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    /* === SEPARADORES === */
+    .slide-divider {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 0 0 28px;
+      width: 100%;
+    }
+
+    .slide-divider--accent {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 0 0 28px;
+      width: 100%;
+      position: relative;
+    }
+
+    .slide-divider--accent::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 0;
+      width: 40px; height: 2px;
+      background: var(--accent);
+      border-radius: 1px;
+    }
+
+    /* === BULLETS === */
+    .bullet-list {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .bullet-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 9px;
+    }
+
+    .bullet-list li strong { color: var(--text-primary); font-weight: 600; }
+
+    .bullet-list--sm li { font-size: clamp(13px, 1.8vw, 15px); }
+    .bullet-list--sm li::before { margin-top: 7px; }
+
+    /* === QUOTE BLOCKS === */
+    .quote-block {
+      border-left: 3px solid var(--accent-glow);
+      background: var(--bg-elevated);
+      padding: 16px 24px;
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+      margin-top: 24px;
+    }
+
+    .quote-block--large {
+      border: 1px solid var(--accent-border);
+      background: var(--bg-elevated);
+      padding: 32px 32px 24px;
+      border-radius: var(--r-lg);
+      margin-top: 32px;
+      position: relative;
+    }
+
+    .quote-block--large::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      line-height: 0.6;
+      color: var(--accent-border);
+      position: absolute;
+      top: 24px; left: 24px;
+    }
+
+    .quote-block--large .quote-text { padding-left: 48px; }
+
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .quote-author {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-accent);
+    }
+
+    /* === SLIDE 4: NUMEROS GIGANTES === */
+    .impact-grid {
+      display: flex;
+      align-items: stretch;
+      min-height: 220px;
+    }
+
+    .number-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 32px;
+    }
+
+    .number-block--hoje { opacity: 0.65; }
+
+    .number-label {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(10px, 1.5vw, 12px);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .number-giant {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(40px, 8vw, 80px);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text-secondary);
+    }
+
+    .number-block--potencial .number-giant { color: var(--text-accent); }
+
+    .number-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .number-divider-v {
+      width: 1px;
+      background: var(--border-subtle);
+      align-self: stretch;
+      margin: 16px 0;
+    }
+
+    .number-divider-h { display: none; }
+
+    .impact-footer {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(13px, 1.8vw, 16px);
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.02em;
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .impact-grid { flex-direction: column; }
+      .number-divider-v { display: none; }
+      .number-divider-h { display: block; width: 100%; height: 1px; background: var(--border-subtle); margin: 8px 0; }
+      .number-block { padding: 16px 0; }
+    }
+
+    /* === SLIDE 6: DOIS CARDS === */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .two-col { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    .frente-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--accent-border-subtle);
+      border-radius: var(--r-lg);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color var(--ease-base), box-shadow var(--ease-base);
+    }
+
+    .frente-card:hover {
+      border-color: var(--accent-border);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .card-icon-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border-subtle);
+      border-radius: var(--r-md);
+      margin-bottom: 4px;
+    }
+
+    .card-icon-wrap svg { color: var(--accent); width: 18px; height: 18px; }
+
+    .card-header {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(13px, 1.8vw, 16px);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-accent);
+    }
+
+    .card-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(13px, 1.8vw, 15px);
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: var(--bg-elevated);
+      border: 1px solid var(--accent-border-subtle);
+      border-radius: var(--r-lg);
+      padding: 20px 24px;
+      gap: 6px;
+      transition: border-color var(--ease-base), box-shadow var(--ease-base);
+    }
+
+    .stat-card:hover {
+      border-color: var(--accent-border);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(36px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-accent);
+      line-height: 1;
+    }
+
+    .stat-number--range { font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; }
+
+    .stat-label-primary {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .stat-label-secondary {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .card-note {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-faint);
+    }
+
+    /* === SLIDE 7: TIMELINE === */
+    .timeline {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      padding-top: 24px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 6px; left: 6px; right: 6px;
+      height: 1px;
+      background: var(--border-subtle);
+    }
+
+    .timeline-item { flex: 1; position: relative; }
+
+    .timeline-item::before {
+      content: '';
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg-base);
+      position: absolute;
+      top: 0; left: 0;
+      transform: translateY(-5px);
+    }
+
+    .timeline-content { padding: 24px 16px 0 0; }
+
+    .timeline-period {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .timeline { flex-direction: column; padding-top: 0; padding-left: 24px; }
+      .timeline::before { top: 6px; bottom: 6px; left: 6px; right: auto; width: 1px; height: auto; }
+      .timeline-item::before { left: -24px; top: 4px; transform: none; }
+      .timeline-content { padding: 0 0 28px; }
+    }
+
+    /* === SLIDE 8: TABELA === */
+    .table-wrap { overflow-x: auto; }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .comparison-table thead tr { border-bottom: 1px solid var(--border-base); }
+
+    .comparison-table th {
+      padding: 12px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    .comparison-table th.col-nao { color: var(--text-muted); }
+    .comparison-table th.col-syra { color: var(--text-accent); }
+
+    .th-inner { display: inline-flex; align-items: center; gap: 6px; }
+
+    .comparison-table td {
+      padding: 14px 16px;
+      font-size: clamp(13px, 1.8vw, 15px);
+      line-height: 1.5;
+      border-bottom: 1px solid var(--border-faint);
+      vertical-align: top;
+    }
+
+    .comparison-table td:first-child { color: var(--text-muted); }
+    .comparison-table td:last-child  { color: var(--text-secondary); }
+
+    @media (max-width: 768px) {
+      .comparison-table td, .comparison-table th { padding: 10px; font-size: 13px; }
+    }
+
+    /* === SLIDE 10: CHECKLIST === */
+    .checklist {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(15px, 2vw, 17px);
+      line-height: 1.5;
+    }
+
+    .check-icon { flex-shrink: 0; margin-top: 2px; width: 18px; height: 18px; }
+    .checklist-item--done .check-icon  { color: var(--accent); }
+    .checklist-item--done .item-text   { color: var(--text-secondary); }
+    .checklist-item--pending .check-icon { color: var(--text-muted); }
+    .checklist-item--pending .item-text  { color: var(--text-muted); }
+
+    .date-slot {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border-subtle);
+      border-radius: var(--r-xs);
+      padding: 1px 6px;
+      color: var(--text-accent);
+    }
+
+    .btn-restart {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      padding: 10px 20px;
+      border: 1px solid var(--border-base);
+      border-radius: var(--r-md);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: border-color var(--ease-base), color var(--ease-base);
+    }
+
+    .btn-restart:hover { border-color: var(--accent-border); color: var(--text-accent); }
+
+    /* === SLIDE 1: ABERTURA === */
+    .slide--opening .slide-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100dvh;
+      padding-bottom: 80px;
+    }
+
+    .opening-names {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .opening-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(14px, 2.5vw, 20px);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+    }
+
+    .opening-sep {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--accent);
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .opening-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--accent);
+      margin: 24px auto;
+      opacity: 0.60;
+      border: none;
+    }
+
+    .opening-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 6vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-top: 32px;
+    }
+
+    .opening-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-top: 16px;
+    }
+
+    /* === NAV BAR === */
+    .nav-bar {
+      flex-shrink: 0;
+      width: 100%;
+      height: 64px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-faint);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border-base);
+      border-radius: var(--r-md);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: border-color var(--ease-fast), color var(--ease-fast);
+    }
+
+    .nav-btn:hover { border-color: var(--accent-border); color: var(--text-accent); }
+    .nav-btn:disabled { opacity: 0.30; pointer-events: none; }
+
+    .nav-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-counter {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: none;
+    }
+
+    @media (min-width: 1024px) { .nav-counter { display: block; } }
+
+    .nav-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--nav-dot-inactive);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: width var(--ease-base), height var(--ease-base), background var(--ease-base);
+    }
+
+    .nav-dot--active  { width: 10px; height: 10px; background: var(--nav-dot-active); }
+    .nav-dot--visited { background: var(--nav-dot-visited); }
+  </style>
+</head>
+<body>
+
+<div class="viewport">
+  <div class="slide-area" id="slideArea">
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 1: ABERTURA -->
+    <!-- ============================================================ -->
+    <div class="slide slide--opening" id="slide-1">
+      <div class="slide-card">
+        <div class="opening-names">
+          <span class="opening-name">Eric Santos</span>
+          <span class="opening-sep">+</span>
+          <span class="opening-name">Dr. Cleugo Porto</span>
+        </div>
+        <hr class="opening-divider">
+        <h1 class="opening-title">Risco compartilhado.<br>Crescimento compartilhado.</h1>
+        <p class="opening-subtitle">Proposta de parceria &middot; 2026</p>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 2: O QUE VOCE TEM NA MAO -->
+    <!-- ============================================================ -->
+    <div class="slide" id="slide-2">
+      <div class="slide-card">
+        <span class="slide-number">02</span>
+        <h2 class="slide-title">O que voc&ecirc; tem na m&atilde;o</h2>
+        <hr class="slide-divider slide-divider--accent">
+        <ul class="bullet-list">
+          <li><strong>Dream Incision:</strong> t&eacute;cnica exclusiva. Zero concorrentes reais.</li>
+          <li><strong>Google org&acirc;nico:</strong> voc&ecirc; aparece sem pagar. Seus pares pagam para aparecer quando pesquisam o seu nome.</li>
+          <li><strong>Jaque:</strong> 3 milh&otilde;es de seguidores. J&aacute; fez os procedimentos. Pronta para indicar.</li>
+          <li><strong>Chacur. Hamilton. Fulvio. Charles Esteves.</strong> Colegas que reconhecem o seu trabalho.</li>
+          <li><strong>Capacidade instalada:</strong> 92 procedimentos por m&ecirc;s.</li>
+        </ul>
+        <div class="quote-block">
+          <p class="quote-text">&ldquo;A gente tem a faca e o queijo na m&atilde;o.&rdquo;</p>
+          <span class="quote-author">Dr. Cleugo Porto</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 3: O GARGALO REAL -->
+    <!-- ============================================================ -->
+    <div class="slide" id="slide-3">
+      <div class="slide-card">
+        <span class="slide-number">03</span>
+        <h2 class="slide-title">Por que est&aacute; empacado</h2>
+        <hr class="slide-divider slide-divider--accent">
+        <ul class="bullet-list">
+          <li>Miquela sozinha. Lead tentando contato desde o dia 4, sem resposta.</li>
+          <li>CRM instalado. Sem uso real.</li>
+          <li>Site pronto. Nunca foi ao ar.</li>
+          <li>Google Ads: zero. Concorrente paga para aparecer quando pesquisam o seu nome.</li>
+          <li>Jaque com 3 milh&otilde;es de seguidores. Parada. Porque n&atilde;o h&aacute; estrutura para absorver a demanda.</li>
+        </ul>
+        <div class="quote-block" style="margin-top:24px;">
+          <p style="font-family:'Inter',sans-serif;font-size:clamp(15px,2.2vw,18px);color:var(--text-secondary);line-height:1.6;">
+            <strong style="color:var(--text-primary);">Resultado:</strong> 8 a 12 procedimentos por m&ecirc;s. Capacidade para 92.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 4: O NUMERO QUE DOI -->
+    <!-- ============================================================ -->
+    <div class="slide" id="slide-4">
+      <div class="slide-card">
+        <span class="slide-number">04</span>
+        <h2 class="slide-title">O que fica na mesa todo m&ecirc;s</h2>
+        <hr class="slide-divider slide-divider--accent">
+        <div class="impact-grid">
+          <div class="number-block number-block--hoje">
+            <span class="number-label">Hoje</span>
+            <span class="number-giant">R$360k</span>
+            <span class="number-sub">/m&ecirc;s</span>
+            <span class="number-sub" style="margin-top:12px;">8 a 12 procedimentos</span>
+          </div>
+          <div class="number-divider-v"></div>
+          <div class="number-divider-h"></div>
+          <div class="number-block number-block--potencial">
+            <span class="number-label">Capacidade real</span>
+            <span class="number-giant">R$2,76M</span>
+            <span class="number-sub">/m&ecirc;s</span>
+            <span class="number-sub" style="margin-top:12px;">92 procedimentos</span>
+          </div>
+        </div>
+        <p class="impact-footer">Mesmo ticket. Mesmo m&eacute;dico. Diferen&ccedil;a: estrutura.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 5: JAQUE -->
+    <!-- ============================================================ -->
+    <div class="slide" id="slide-5">
+      <div class="slide-card">
+        <span class="slide-number">05</span>
+        <h2 class="slide-title">O ativo que voc&ecirc; est&aacute; segurando</h2>
+        <hr class="slide-divider slide-divider--accent">
+        <ul class="bullet-list">
+          <li>3 milh&otilde;es de seguidores. Quando ela indica, a agenda bomba.</li>
+          <li>Voc&ecirc; segurou porque sabe que ativar sem estrutura queimaria o maior ativo que voc&ecirc; tem. Essa foi a decis&atilde;o certa.</li>
+          <li>Nossa entrada &eacute; o que permite apertar esse bot&atilde;o com seguran&ccedil;a.</li>
+        </ul>
+        <div class="quote-block">
+          <p class="quote-text">&ldquo;N&atilde;o quero queimar a Jaque sem estrutura.&rdquo;</p>
+          <span class="quote-author">Dr. Cleugo Porto</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 6: COMO A PARCERIA FUNCIONA -->
+    <!-- ============================================================ -->
+    <div class="slide" id="slide-6">
+      <div class="slide-card">
+        <span class="slide-number">06</span>
+        <h2 class="slide-title">Risco compartilhado. N&atilde;o presta&ccedil;&atilde;o de servi&ccedil;o.</h2>
+        <hr class="slide-divider">
+        <div class="two-col">
+
+          <!-- Frente 1 -->
+          <div class="frente-card">
+            <div>
+              <div class="card-icon-wrap">
+                <i data-lucide="stethoscope"></i>
+              </div>
+              <div class="card-header">Opera&ccedil;&atilde;o Cl&iacute;nica</div>
+            </div>
+            <p class="card-desc">Base: R$360k/m&ecirc;s. Tudo acima: dividido.</p>
+            <div class="stat-card">
+              <span class="stat-number">8%</span>
+              <span class="stat-label-primary">do crescimento</span>
+              <span class="stat-label-secondary">acima da base</span>
+            </div>
+            <p class="card-note">Zero crescimento, zero % nosso.</p>
+          </div>
+
+          <!-- Frente 2 -->
+          <div class="frente-card">
+            <div>
+              <div class="card-icon-wrap">
+                <i data-lucide="graduation-cap"></i>
+              </div>
+              <div class="card-header">Academia para M&eacute;dicos</div>
+            </div>
+            <p class="card-desc">Ticket do curso: R$85k por m&eacute;dico.</p>
+            <div class="stat-card">
+              <span class="stat-number stat-number--range">15-20%</span>
+              <span class="stat-label-primary">das vendas</span>
+              <span class="stat-label-secondary">geradas pela estrutura</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 7: O QUE ENTRA EM CAMPO -->
+    <!-- ============================================================ -->
+    <div class="slide" id="slide-7">
+      <div class="slide-card">
+        <span class="slide-number">07</span>
+        <h2 class="slide-title">Execu&ccedil;&atilde;o. N&atilde;o promessa.</h2>
+        <hr class="slide-divider slide-divider--accent">
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-period">Semanas 1 e 2</div>
+              <ul class="bullet-list bullet-list--sm">
+                <li>Site publicado.</li>
+                <li>CRM com fluxos reais de atendimento.</li>
+                <li>Miquela treinada no processo.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-period">Semanas 2 a 4</div>
+              <ul class="bullet-list bullet-list--sm">
+                <li>Google Ads no ar.</li>
+                <li>SDR via WhatsApp.</li>
+                <li>Tr&aacute;fego direcionado para Jaque.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-period">M&ecirc;s 2</div>
+              <ul class="bullet-list bullet-list--sm">
+                <li>Eric em Alphaville, ter a qui.</li>
+                <li>Reuni&otilde;es semanais de pipeline.</li>
+                <li>Follow-up autom&aacute;tico para leads.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 8: O QUE MUDA DESSA VEZ -->
+    <!-- ============================================================ -->
+    <div class="slide" id="slide-8">
+      <div class="slide-card">
+        <span class="slide-number">08</span>
+        <h2 class="slide-title">Por que n&atilde;o &eacute; mais do mesmo</h2>
+        <hr class="slide-divider slide-divider--accent">
+        <div class="table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th class="col-nao">
+                  <span class="th-inner">
+                    <i data-lucide="x-circle" style="width:14px;height:14px;"></i>
+                    O que n&atilde;o funciona
+                  </span>
+                </th>
+                <th class="col-syra">
+                  <span class="th-inner">
+                    <i data-lucide="check-circle" style="width:14px;height:14px;"></i>
+                    O que a Syra faz
+                  </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Campanha entregue. Parceiro some.</td>
+                <td>Parceiro no CRM junto.</td>
+              </tr>
+              <tr>
+                <td>Presen&ccedil;a s&oacute; remota.</td>
+                <td>Eric em Alphaville, ter&ccedil;a a quinta.</td>
+              </tr>
+              <tr>
+                <td>Leads chegam. Ningu&eacute;m atende.</td>
+                <td>SDR dedicado no processo.</td>
+              </tr>
+              <tr>
+                <td>Parceria recua quando cresce.</td>
+                <td>Quanto mais cresce, mais fundo entramos.</td>
+              </tr>
+              <tr>
+                <td>Cobran&ccedil;a mensal sem resultado.</td>
+                <td>Zero crescimento: zero % nosso.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 9: A VISAO QUE VOCE DESCREVEU -->
+    <!-- ============================================================ -->
+    <div class="slide" id="slide-9">
+      <div class="slide-card">
+        <span class="slide-number">09</span>
+        <h2 class="slide-title">A vis&atilde;o que voc&ecirc; descreveu</h2>
+        <hr class="slide-divider slide-divider--accent">
+        <ul class="bullet-list">
+          <li>Voc&ecirc; forma m&eacute;dico com Dream Incision. R$85k por m&eacute;dico.</li>
+          <li>M&eacute;dico formado tem o mesmo problema que voc&ecirc; tinha: vendas e estrutura.</li>
+          <li>Syra est&aacute; l&aacute; para atender esse m&eacute;dico.</li>
+          <li>Voc&ecirc; indica. Syra atende. Voc&ecirc; ganha comiss&atilde;o.</li>
+          <li>Cada m&eacute;dico formado abre duas fontes de receita.</li>
+        </ul>
+        <div class="quote-block--large">
+          <p class="quote-text">&ldquo;Todo mundo pode ganhar muito dinheiro. O meu neg&oacute;cio alimenta outros como o seu, porque todo m&eacute;dico que faz curso comigo tem o mesmo problema: vendas.&rdquo;</p>
+          <span class="quote-author">Dr. Cleugo Porto</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 10: O QUE JA ESTA COMBINADO -->
+    <!-- ============================================================ -->
+    <div class="slide" id="slide-10">
+      <div class="slide-card">
+        <span class="slide-number">10</span>
+        <h2 class="slide-title">O que j&aacute; est&aacute; combinado</h2>
+        <hr class="slide-divider slide-divider--accent">
+        <ul class="checklist">
+          <li class="checklist-item checklist-item--done">
+            <i data-lucide="check" class="check-icon"></i>
+            <span class="item-text">Site: Jorge em comunica&ccedil;&atilde;o com Eric. Confirmado.</span>
+          </li>
+          <li class="checklist-item checklist-item--done">
+            <i data-lucide="check" class="check-icon"></i>
+            <span class="item-text">Jaque: adicionada ao grupo WhatsApp. Treinamento em andamento.</span>
+          </li>
+          <li class="checklist-item checklist-item--done">
+            <i data-lucide="check" class="check-icon"></i>
+            <span class="item-text">Google Ads: configura&ccedil;&atilde;o na semana 1.</span>
+          </li>
+          <li class="checklist-item checklist-item--pending">
+            <i data-lucide="circle" class="check-icon"></i>
+            <span class="item-text">Alphaville: Eric presente a partir de <span class="date-slot">[data]</span>.</span>
+          </li>
+          <li class="checklist-item checklist-item--pending">
+            <i data-lucide="circle" class="check-icon"></i>
+            <span class="item-text">Pr&oacute;xima reuni&atilde;o: <span class="date-slot">[data]</span>. CRM e primeiros KPIs.</span>
+          </li>
+          <li class="checklist-item checklist-item--pending">
+            <i data-lucide="circle" class="check-icon"></i>
+            <span class="item-text">Assinatura do contrato de parceria: <span class="date-slot">[data]</span>.</span>
+          </li>
+        </ul>
+        <button class="btn-restart" id="btnRestart" type="button">
+          <i data-lucide="rotate-ccw" style="width:14px;height:14px;"></i>
+          Voltar ao in&iacute;cio
+        </button>
+      </div>
+    </div>
+
+  </div><!-- .slide-area -->
+
+  <!-- NAV BAR -->
+  <nav class="nav-bar" role="navigation" aria-label="Navega&ccedil;&atilde;o dos slides">
+    <button class="nav-btn" id="btnPrev" type="button" aria-label="Slide anterior" disabled>
+      <i data-lucide="chevron-left" style="width:16px;height:16px;"></i>
+    </button>
+    <div class="nav-center">
+      <span class="nav-counter" id="navCounter" aria-live="polite" aria-atomic="true">1 / 10</span>
+      <div class="nav-dots" id="navDots" role="tablist"></div>
+    </div>
+    <button class="nav-btn" id="btnNext" type="button" aria-label="Pr&oacute;ximo slide">
+      <i data-lucide="chevron-right" style="width:16px;height:16px;"></i>
+    </button>
+  </nav>
+</div><!-- .viewport -->
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var TOTAL = 10;
+  var current = 1;
+  var isAnimating = false;
+  var visited = new Set([1]);
+  var DUR = 380; // ms, coincide com --ease-slide
+
+  /* ------------------------------------------------------------------ */
+  /* Helpers */
+  /* ------------------------------------------------------------------ */
+  function slide(n) { return document.getElementById('slide-' + n); }
+  function dot(n)   { return document.getElementById('navDots').children[n - 1]; }
+
+  function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Init: posiciona todos os slides */
+  /* ------------------------------------------------------------------ */
+  for (var i = 1; i <= TOTAL; i++) {
+    var s = slide(i);
+    if (i === 1) {
+      s.style.transform = 'translateX(0)';
+      s.style.opacity   = '1';
+      s.style.pointerEvents = 'auto';
+      s.classList.add('slide--active');
+    } else {
+      s.style.transform = 'translateX(100%)';
+      s.style.opacity   = '0';
+      s.style.pointerEvents = 'none';
+    }
+    s.style.transition = 'none';
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Dots */
+  /* ------------------------------------------------------------------ */
+  var dotsEl = document.getElementById('navDots');
+  for (var d = 1; d <= TOTAL; d++) {
+    (function (n) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'nav-dot' + (n === 1 ? ' nav-dot--active' : '');
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-label', 'Ir para slide ' + n);
+      btn.setAttribute('aria-selected', n === 1 ? 'true' : 'false');
+      btn.addEventListener('click', function () { goTo(n); });
+      dotsEl.appendChild(btn);
+    }(d));
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* updateUI */
+  /* ------------------------------------------------------------------ */
+  function updateUI() {
+    document.getElementById('navCounter').textContent = current + ' / ' + TOTAL;
+    document.getElementById('btnPrev').disabled = (current === 1);
+    document.getElementById('btnNext').disabled = (current === TOTAL);
+
+    for (var i = 1; i <= TOTAL; i++) {
+      var d = dot(i);
+      d.className = 'nav-dot';
+      d.setAttribute('aria-selected', 'false');
+      if (i === current) {
+        d.classList.add('nav-dot--active');
+        d.setAttribute('aria-selected', 'true');
+      } else if (visited.has(i)) {
+        d.classList.add('nav-dot--visited');
+      }
+    }
+
+    if (history.replaceState) {
+      history.replaceState(null, '', '#slide-' + current);
+    }
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* goTo */
+  /* ------------------------------------------------------------------ */
+  function goTo(target) {
+    if (target === current || isAnimating) return;
+    if (target < 1 || target > TOTAL) return;
+
+    isAnimating = true;
+
+    var from   = current;
+    var dir    = target > from ? 1 : -1;
+    var sFrom  = slide(from);
+    var sTo    = slide(target);
+    var reduced = prefersReducedMotion();
+    var animDur = reduced ? 200 : DUR;
+    var easing  = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+
+    /* Posiciona slide entrante sem animacao */
+    sTo.style.transition  = 'none';
+    sTo.style.transform   = reduced ? 'translateX(0)' : (dir > 0 ? 'translateX(100%)' : 'translateX(-100%)');
+    sTo.style.opacity     = '0';
+    sTo.style.pointerEvents = 'none';
+
+    /* Forca reflow */
+    sTo.offsetHeight;
+
+    /* Ativa transicoes */
+    var t = 'opacity ' + animDur + 'ms ' + easing + ', transform ' + animDur + 'ms ' + easing;
+    sFrom.style.transition = t;
+    sTo.style.transition   = t;
+
+    /* Anima saida */
+    if (!reduced) {
+      sFrom.style.transform = dir > 0 ? 'translateX(-100%)' : 'translateX(100%)';
+    }
+    sFrom.style.opacity = '0';
+
+    /* Anima entrada */
+    sTo.style.transform = 'translateX(0)';
+    sTo.style.opacity   = '1';
+
+    setTimeout(function () {
+      /* Desativa transicao do slide saindo antes de reposicionar */
+      sFrom.style.transition = 'none';
+      sFrom.style.transform  = 'translateX(100%)';
+      sFrom.style.pointerEvents = 'none';
+      sFrom.classList.remove('slide--active');
+
+      /* Consolida slide entrante */
+      sTo.classList.add('slide--active');
+      sTo.style.pointerEvents = 'auto';
+      /* mantém transition ativa para proxima animacao */
+
+      current = target;
+      visited.add(current);
+      updateUI();
+      isAnimating = false;
+    }, animDur + 20);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Controles */
+  /* ------------------------------------------------------------------ */
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  document.getElementById('btnPrev').addEventListener('click', prev);
+  document.getElementById('btnNext').addEventListener('click', next);
+  document.getElementById('btnRestart').addEventListener('click', function () { goTo(1); });
+
+  /* Teclado */
+  document.addEventListener('keydown', function (e) {
+    if (e.target && e.target.matches('button, input, textarea, select, a')) return;
+    switch (e.key) {
+      case 'ArrowRight': case 'ArrowDown': e.preventDefault(); next(); break;
+      case 'ArrowLeft':  case 'ArrowUp':  e.preventDefault(); prev(); break;
+      case ' ':          e.preventDefault(); next(); break;
+      case 'Home':       e.preventDefault(); goTo(1); break;
+      case 'End':        e.preventDefault(); goTo(TOTAL); break;
+    }
+  });
+
+  /* Touch / Swipe */
+  var touchStartX = 0;
+  var touchStartY = 0;
+  var slideArea = document.getElementById('slideArea');
+
+  slideArea.addEventListener('touchstart', function (e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  slideArea.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) next(); else prev();
+    }
+  }, { passive: true });
+
+  /* Hash na URL ao carregar */
+  (function () {
+    var hash  = window.location.hash;
+    var match = hash && hash.match(/slide-(\d+)/);
+    if (match) {
+      var n = parseInt(match[1], 10);
+      if (n >= 2 && n <= TOTAL) {
+        slide(1).style.transition  = 'none';
+        slide(1).style.transform   = 'translateX(100%)';
+        slide(1).style.opacity     = '0';
+        slide(1).style.pointerEvents = 'none';
+        slide(1).classList.remove('slide--active');
+
+        slide(n).style.transition  = 'none';
+        slide(n).style.transform   = 'translateX(0)';
+        slide(n).style.opacity     = '1';
+        slide(n).style.pointerEvents = 'auto';
+        slide(n).classList.add('slide--active');
+
+        current = n;
+        visited.add(n);
+      }
+    }
+  }());
+
+  /* Init Lucide + UI */
+  lucide.createIcons();
+  updateUI();
+
+}());
+</script>
+</body>
+</html>

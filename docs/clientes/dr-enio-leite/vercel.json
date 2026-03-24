@@ -1,0 +1,11 @@
+{
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "framework": null,
+  "routes": [
+    { "src": "/", "dest": "/pagina-captura.html" },
+    { "src": "/lipo-de-papada", "dest": "/lipo-de-papada.html" },
+    { "src": "/rinomodelacao", "dest": "/rinomodelacao.html" },
+    { "src": "/design-system", "dest": "/design-system-visual.html" }
+  ]
+}
