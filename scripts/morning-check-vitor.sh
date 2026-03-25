@@ -1,6 +1,6 @@
 #!/bin/bash
-# morning-check-vitor.sh — Synkra Morning Check
-# Executa todo dia às 8h: puxa atualizações do Eric e gera resumo do dia
+# morning-check-vitor.sh — Synkra Morning Sync
+# Executa todo dia às 9h: puxa e aplica atualizações do Eric automaticamente
 
 REPO_DIR="/c/Users/Victor/meu-aios"
 LOG_FILE="$REPO_DIR/logs/morning-check.log"
@@ -18,10 +18,16 @@ git fetch origin >> "$LOG_FILE" 2>&1
 BEHIND=$(git rev-list HEAD..origin/eric/main --count 2>/dev/null)
 
 if [[ "$BEHIND" -gt 0 ]]; then
-  echo "[$DATE] $BEHIND novo(s) commit(s) do Eric disponível(is) em origin/eric/main." >> "$LOG_FILE"
-  echo "[$DATE] Para puxar: git fetch origin && git merge origin/eric/main" >> "$LOG_FILE"
+  echo "[$DATE] $BEHIND novo(s) commit(s) do Eric encontrado(s). Aplicando merge..." >> "$LOG_FILE"
+  git merge origin/eric/main --no-edit >> "$LOG_FILE" 2>&1
+  if [[ $? -eq 0 ]]; then
+    git push origin vitor/main >> "$LOG_FILE" 2>&1
+    echo "[$DATE] Merge concluído e push realizado." >> "$LOG_FILE"
+  else
+    echo "[$DATE] ERRO: Conflito no merge. Resolução manual necessária." >> "$LOG_FILE"
+  fi
 else
   echo "[$DATE] Nenhuma atualização nova do Eric." >> "$LOG_FILE"
 fi
 
-echo "[$DATE] Morning check concluído." >> "$LOG_FILE"
+echo "[$DATE] Morning sync concluído." >> "$LOG_FILE"
