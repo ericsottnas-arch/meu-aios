@@ -24,10 +24,19 @@
 !.aios-core/development/agents/
 !.aios-core/development/agents/**
 
-# Dentro de docs, permitir tudo EXCETO binários pesados
+# Dentro de docs, ignorar binários pesados
 docs/**/*.db
 docs/**/*.db-shm
 docs/**/*.db-wal
+docs/**/*.jpg
+docs/**/*.jpeg
+docs/**/*.png
+docs/**/*.gif
+docs/**/*.webp
+docs/**/*.mp4
+docs/**/*.mov
+# Ignorar pasta .obsidian do Obsidian
+memory/.obsidian/
 
 # Dentro de meu-projeto, permitir só docs
 !meu-projeto/
