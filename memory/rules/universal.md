@@ -83,14 +83,51 @@ Antes de criar qualquer arquivo, funcao, componente ou documento:
 
 ---
 
-## [CRITICAL] Salvar aprendizados imediatamente
+## [CRITICAL] Salvar aprendizados imediatamente — REGRA MAIS IMPORTANTE DO SISTEMA
 
-Quando Eric der qualquer feedback que gera regra:
-1. Aplicar o fix imediatamente
-2. Salvar em `memory/agent-learnings/{agent-id}.md`
-3. Se for regra universal: tambem salvar aqui em `memory/rules/universal.md`
-4. Confirmar: "Regra salva. Nao vai acontecer de novo."
+> Eric ja reclamou MULTIPLAS VEZES que sessoes passam sem salvar aprendizados.
+> Isso e o problema #1 do AIOS. Se voce nao salvar, o Eric vai repetir o mesmo feedback
+> pra sempre e o sistema nunca evolui. INACEITAVEL.
+
+**O que DEVE acontecer em TODA sessao:**
+
+1. DURANTE a conversa: quando Eric der feedback, corrigir algo, ou tomar decisao:
+   - Salvar IMEDIATAMENTE em `memory/agent-learnings/{agent-id}.md`
+   - Se for regra universal: tambem salvar aqui em `memory/rules/universal.md`
+   - Confirmar: "Regra salva. Nao vai acontecer de novo."
+
+2. AO FINAL de cada interacao (antes de encerrar):
+   - Revisar TUDO que foi discutido na sessao
+   - Perguntar internamente: "O que mudou? O que Eric decidiu? O que nao posso esquecer?"
+   - Salvar cada item relevante no arquivo correto
+   - Se nao houve nada novo: ok, mas a verificacao e OBRIGATORIA
+
+3. SINAIS de que algo precisa ser salvo (mesmo sem Eric pedir):
+   - "prefiro assim", "gosto quando", "sempre faz X" → preferencia
+   - "nao faca mais isso", "para de X" → regra CRITICAL
+   - "aprovado", "ficou bom" → padrao aprovado
+   - Decisao sobre cliente, stack, abordagem → decisao permanente
+   - Correcao de comportamento → salvar NA HORA, nao esperar
+   - Informacao nova sobre cliente → `docs/clientes/` ou `memory/clientes-completo.md`
+
+4. ONDE salvar:
+   - Regra para todos → `memory/rules/universal.md` + `memory/agent-learnings/regras-globais.md`
+   - Regra de dominio → arquivo correto em `memory/rules/`
+   - Aprendizado de agente → `memory/agent-learnings/{agent-id}.md`
+   - Info de cliente → `docs/clientes/{slug}/`
+   - Decisao tecnica → arquivo tematico em `memory/`
+
+**TESTE MENTAL OBRIGATORIO antes de fechar qualquer resposta:**
+> "Se eu abrir uma sessao nova amanha e nao me lembrar dessa conversa,
+> vou errar por nao saber isso?"
+> Se SIM → salvar AGORA, nao depois.
+
+**Historico:** Eric reclamou disso em 2026-03-24 com raiva.
+O sistema tem 40+ arquivos de memoria mas as sessoes nao estao alimentando.
+Isso PRECISA mudar a partir de agora.
+
+- Severidade: CRITICAL (a mais alta do sistema)
 
 ---
 
-Ultima atualizacao: 2026-03-19
+Ultima atualizacao: 2026-03-24

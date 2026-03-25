@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — Syra Digital</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- Lenis -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<!-- SplitType -->
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+
+<style>
+/* ══════════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: auto; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+/* ══════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════ */
+:root {
+  /* Brand */
+  --accent:          #C8FF00;
+  --accent-hover:    #D8FF40;
+  --accent-dim:      rgba(200,255,0,.08);
+  --accent-mid:      rgba(200,255,0,.15);
+  --accent-glow:     rgba(200,255,0,.22);
+  --accent-border:   rgba(200,255,0,.28);
+
+  /* Backgrounds */
+  --bg-base:         #030303;
+  --bg-surface:      #0a0a0a;
+  --bg-elevated:     #101013;
+  --bg-overlay:      #18181d;
+  --bg-card:         #0d0d10;
+  --bg-muted:        #141417;
+
+  /* Borders */
+  --border-faint:    #141417;
+  --border-subtle:   #1e1e23;
+  --border-base:     #27272d;
+  --border-strong:   #35353c;
+
+  /* Text */
+  --text-primary:    #F0F0F5;
+  --text-secondary:  #8F8FA0;
+  --text-muted:      #505060;
+  --text-disabled:   #36363f;
+  --text-on-accent:  #0a0a0a;
+
+  /* Semantic */
+  --success:         #22C55E;
+  --success-bg:      rgba(34,197,94,.10);
+  --warning:         #F59E0B;
+  --warning-bg:      rgba(245,158,11,.10);
+  --danger:          #EF4444;
+  --danger-bg:       rgba(239,68,68,.10);
+  --info:            #60A5FA;
+  --info-bg:         rgba(96,165,250,.10);
+
+  /* Shadows */
+  --shadow-xs:       0 1px 2px rgba(0,0,0,.4);
+  --shadow-sm:       0 2px 6px rgba(0,0,0,.5);
+  --shadow-md:       0 4px 14px rgba(0,0,0,.6);
+  --shadow-lg:       0 8px 28px rgba(0,0,0,.7);
+  --shadow-accent:   0 0 40px rgba(200,255,0,.12);
+
+  /* Spacing scale (4px base) */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;
+  --space-4: 16px;  --space-5: 20px;  --space-6: 24px;
+  --space-8: 32px;  --space-10: 40px; --space-12: 48px;
+  --space-16: 64px; --space-20: 80px; --space-24: 96px;
+
+  /* Radius */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* Fonts */
+  --font-display: 'Bebas Neue', 'Space Grotesk', sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quad: cubic-bezier(0.45, 0, 0.55, 1);
+  --duration-fast:   200ms;
+  --duration-base:   350ms;
+  --duration-slow:   600ms;
+  --duration-xslow:  900ms;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ══════════════════════════════════════════
+   CURSOR CUSTOM
+══════════════════════════════════════════ */
+.cursor-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform .1s ease, width .25s, height .25s;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(200,255,0,.35);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9998;
+  transition: transform .06s linear, width .3s var(--ease-out-expo), height .3s var(--ease-out-expo), border-color .3s;
+}
+.cursor-ring.is-hover {
+  width: 56px; height: 56px;
+  border-color: var(--accent);
+}
+.cursor-ring.is-text {
+  width: 80px; height: 4px;
+  border-radius: 2px;
+  border-color: var(--accent);
+}
+
+/* ══════════════════════════════════════════
+   LOADER
+══════════════════════════════════════════ */
+.loader {
+  position: fixed; inset: 0; z-index: 10000;
+  background: var(--bg-base);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0;
+}
+.loader-wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: .12em;
+  color: var(--text-primary);
+  opacity: 0;
+  line-height: 1;
+}
+.loader-wordmark span {
+  color: var(--accent);
+}
+.loader-tagline {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 14px;
+  opacity: 0;
+}
+.loader-bar {
+  width: 100px; height: 1px;
+  background: var(--border-subtle);
+  margin-top: 32px;
+  position: relative; overflow: hidden;
+}
+.loader-bar-fill {
+  position: absolute; left: 0; top: 0;
+  height: 100%; width: 0;
+  background: var(--accent);
+}
+.loader-counter {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: .1em;
+  color: var(--text-muted);
+  margin-top: 12px;
+  opacity: 0;
+}
+
+/* ══════════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════════ */
+.w {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 6vw, 7rem);
+}
+
+/* Reveal helpers */
+.reveal        { opacity: 0; transform: translateY(32px); }
+.reveal-line   { overflow: hidden; }
+.reveal-line .line { transform: translateY(110%); display: block; }
+
+/* ══════════════════════════════════════════
+   COVER
+══════════════════════════════════════════ */
+.cover {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  background: var(--bg-base);
+  position: relative; overflow: hidden;
+}
+.cover-frame {
+  position: absolute; inset: 20px;
+  border: 1px solid rgba(200,255,0,.06);
+  pointer-events: none; z-index: 1;
+}
+.cover-frame-corner {
+  position: absolute;
+  width: 16px; height: 16px;
+  border-color: rgba(200,255,0,.25);
+  border-style: solid;
+}
+.cover-frame-corner.tl { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+.cover-frame-corner.tr { top: -1px; right: -1px; border-width: 1px 1px 0 0; }
+.cover-frame-corner.bl { bottom: -1px; left: -1px; border-width: 0 0 1px 1px; }
+.cover-frame-corner.br { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+
+.cover-nav {
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(2rem, 6vw, 7rem);
+  display: flex; justify-content: space-between; align-items: center;
+  position: relative; z-index: 2;
+}
+.cover-nav-logo {
+  font-family: var(--font-display);
+  font-size: 22px; letter-spacing: .1em;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.cover-nav-logo span { color: var(--accent); }
+.cover-nav-tag {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: .18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  border: 1px solid var(--border-subtle);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+}
+
+.cover-body {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 0 clamp(2rem, 6vw, 7rem);
+  position: relative; z-index: 2;
+}
+.cover-index {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: .2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex; align-items: center; gap: 14px;
+}
+.cover-index::before {
+  content: '';
+  display: block; width: 32px; height: 1px;
+  background: var(--accent);
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 13vw, 14rem);
+  line-height: .9; letter-spacing: .01em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+.cover-title .accent-word {
+  color: var(--accent);
+  display: block;
+}
+.cover-title .outline-word {
+  -webkit-text-stroke: 1px var(--text-secondary);
+  color: transparent;
+  display: block;
+}
+
+.cover-sub {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem; max-width: 700px;
+}
+.cover-sub-item {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 20px;
+}
+.cover-sub-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: .18em;
+  color: var(--text-muted); text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.cover-sub-text {
+  font-family: var(--font-body);
+  font-size: 14px; line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.cover-footer {
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 6vw, 7rem);
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid var(--border-faint);
+  position: relative; z-index: 2;
+}
+.cover-footer-text {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: .15em;
+  color: var(--text-muted); text-transform: uppercase;
+}
+.cover-dot {
+  width: 8px; height: 8px;
+  background: var(--accent); border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent-glow);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: .7; }
+}
+
+/* Cover noise/grain overlay */
+.cover::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; opacity: .4; z-index: 0;
+}
+
+/* ══════════════════════════════════════════
+   SECTIONS SHARED
+══════════════════════════════════════════ */
+section { padding: clamp(5rem, 10vw, 9rem) 0; }
+section + section { border-top: 1px solid var(--border-faint); }
+
+.section-header {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+.section-index {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: .2em;
+  color: var(--accent); text-transform: uppercase;
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+}
+.section-index::before {
+  content: ''; display: block;
+  width: 24px; height: 1px; background: var(--accent);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1; letter-spacing: .02em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+.section-desc {
+  margin-top: 16px;
+  font-size: 15px; line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 520px;
+}
+
+/* ══════════════════════════════════════════
+   01 — COLOR SYSTEM
+══════════════════════════════════════════ */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+.color-swatch {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  cursor: none;
+  transition: transform var(--duration-base) var(--ease-out-expo),
+              box-shadow var(--duration-base) var(--ease-out-expo);
+}
+.color-swatch:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.color-swatch-preview { height: 80px; }
+.color-swatch-info {
+  padding: 12px 14px;
+  background: var(--bg-card);
+}
+.color-swatch-name {
+  font-family: var(--font-heading);
+  font-size: 12px; font-weight: 600;
+  color: var(--text-primary);
+}
+.color-swatch-value {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.color-group { margin-bottom: 40px; }
+.color-group-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: .18em;
+  color: var(--text-muted); text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* ══════════════════════════════════════════
+   02 — TYPOGRAPHY
+══════════════════════════════════════════ */
+.type-showcase {
+  display: flex; flex-direction: column; gap: 48px;
+}
+.type-item {
+  border-bottom: 1px solid var(--border-faint);
+  padding-bottom: 48px;
+}
+.type-meta {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 20px;
+}
+.type-meta-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: .18em;
+  color: var(--text-muted); text-transform: uppercase;
+}
+.type-meta-spec {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--border-strong);
+}
+
+.type-display-hero {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: .9; letter-spacing: .02em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+.type-display-hero .hl { color: var(--accent); }
+
+.type-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1; text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--text-primary);
+}
+
+.type-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700; line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--text-primary);
+}
+.type-h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600; line-height: 1.2;
+  letter-spacing: -.018em;
+  color: var(--text-primary);
+}
+.type-h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600; line-height: 1.3;
+  letter-spacing: -.01em;
+  color: var(--text-primary);
+}
+.type-body-lg {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 400; line-height: 1.7;
+  color: var(--text-secondary);
+}
+.type-body {
+  font-family: var(--font-body);
+  font-size: 15px; font-weight: 400;
+  line-height: 1.65; color: var(--text-secondary);
+}
+.type-caption {
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 400;
+  line-height: 1.5; color: var(--text-muted);
+}
+.type-mono {
+  font-family: var(--font-mono);
+  font-size: 13px; line-height: 1.6;
+  color: var(--text-secondary);
+}
+.type-label {
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Outline text style */
+.type-outline {
+  -webkit-text-stroke: 1px var(--text-secondary);
+  color: transparent;
+}
+.type-accent { color: var(--accent); }
+
+/* ══════════════════════════════════════════
+   03 — COMPONENTS
+══════════════════════════════════════════ */
+
+/* Buttons */
+.btn-row {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: .02em;
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  border: none; cursor: none;
+  text-decoration: none;
+  transition: all var(--duration-base) var(--ease-out-expo);
+  position: relative; overflow: hidden;
+  white-space: nowrap;
+}
+.btn::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,.05);
+  opacity: 0;
+  transition: opacity var(--duration-fast);
+}
+.btn:hover::before { opacity: 1; }
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 0 28px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border-base);
+  color: var(--text-primary);
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding-left: 0; padding-right: 0;
+}
+.btn-ghost:hover { color: var(--text-primary); }
+
+.btn-dark {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+.btn-dark:hover {
+  border-color: var(--border-base);
+  background: var(--bg-overlay);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: var(--danger-bg);
+  border: 1px solid rgba(239,68,68,.25);
+  color: var(--danger);
+}
+.btn-danger:hover {
+  background: rgba(239,68,68,.18);
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  font-size: 11px; padding: 7px 16px;
+  border-radius: var(--radius-sm);
+}
+.btn-lg {
+  font-size: 15px; padding: 14px 32px;
+  border-radius: var(--radius-lg);
+}
+
+/* Badges */
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+.badge-accent   { background: var(--accent-dim); color: var(--accent); border-color: var(--accent-border); }
+.badge-success  { background: var(--success-bg); color: var(--success); border-color: rgba(34,197,94,.25); }
+.badge-warning  { background: var(--warning-bg); color: var(--warning); border-color: rgba(245,158,11,.25); }
+.badge-danger   { background: var(--danger-bg);  color: var(--danger);  border-color: rgba(239,68,68,.25); }
+.badge-info     { background: var(--info-bg);    color: var(--info);    border-color: rgba(96,165,250,.25); }
+.badge-muted    { background: rgba(80,80,96,.12); color: var(--text-muted); border-color: var(--border-subtle); }
+
+.badge-dot::before {
+  content: '';
+  display: block; width: 5px; height: 5px;
+  border-radius: 50%; background: currentColor;
+}
+
+/* Tags */
+.tag {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  cursor: none;
+  transition: all var(--duration-fast);
+}
+.tag:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Cards */
+.card {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  padding: 24px 28px;
+  transition: border-color var(--duration-base) var(--ease-out-expo),
+              box-shadow var(--duration-base) var(--ease-out-expo),
+              transform var(--duration-base) var(--ease-out-expo);
+  cursor: none;
+}
+.card:hover {
+  border-color: var(--border-base);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.card-accent:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-accent);
+}
+.card-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: .18em;
+  color: var(--text-muted); text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 17px; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 8px;
+  letter-spacing: -.01em;
+}
+.card-desc {
+  font-size: 13px; line-height: 1.6;
+  color: var(--text-secondary);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.card-stat {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.card-stat-value {
+  font-family: var(--font-display);
+  font-size: 3rem; line-height: 1;
+  color: var(--accent);
+  letter-spacing: .02em;
+}
+.card-stat-label {
+  font-family: var(--font-body);
+  font-size: 12px; color: var(--text-muted);
+}
+
+/* Inputs */
+.input-group { display: flex; flex-direction: column; gap: 6px; }
+.input-label {
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: .01em;
+}
+.input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 14px; color: var(--text-primary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 11px 16px;
+  outline: none;
+  transition: border-color var(--duration-fast),
+              box-shadow var(--duration-fast);
+  cursor: text;
+}
+.input::placeholder { color: var(--text-disabled); }
+.input:focus {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+.input:hover:not(:focus) { border-color: var(--border-base); }
+.input-error { border-color: rgba(239,68,68,.4) !important; }
+.input-error:focus { box-shadow: 0 0 0 3px rgba(239,68,68,.1) !important; }
+.input-hint {
+  font-size: 11px; color: var(--text-muted);
+}
+.input-hint.error { color: var(--danger); }
+
+.input-icon-wrap { position: relative; }
+.input-icon-wrap .input { padding-left: 40px; }
+.input-icon {
+  position: absolute; left: 14px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Dividers */
+.divider {
+  height: 1px; background: var(--border-faint);
+  margin: 32px 0;
+}
+.divider-accent {
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+  margin: 32px 0;
+}
+
+/* Code block */
+.code-block {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  font-family: var(--font-mono);
+  font-size: 12px; line-height: 1.7;
+  color: var(--text-secondary);
+  overflow-x: auto;
+}
+.code-block .kw  { color: var(--accent); }
+.code-block .str { color: var(--success); }
+.code-block .cm  { color: var(--text-muted); }
+.code-block .vr  { color: var(--info); }
+
+/* ══════════════════════════════════════════
+   04 — MOTION
+══════════════════════════════════════════ */
+.motion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.motion-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.motion-preview {
+  height: 80px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+.motion-dot {
+  width: 12px; height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.motion-bar {
+  width: 60px; height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  transform-origin: left;
+}
+.motion-card-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: .18em;
+  color: var(--text-muted); text-transform: uppercase;
+}
+.motion-card-title {
+  font-family: var(--font-heading);
+  font-size: 14px; font-weight: 600;
+  color: var(--text-primary);
+}
+.motion-card-spec {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--text-muted);
+}
+
+/* Duration scale */
+.duration-scale {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-top: 20px;
+}
+.duration-item {
+  display: grid; grid-template-columns: 80px 1fr 60px;
+  align-items: center; gap: 16px;
+}
+.duration-label {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: .12em;
+}
+.duration-bar-bg {
+  height: 2px; background: var(--border-subtle);
+  border-radius: 2px; overflow: hidden;
+}
+.duration-bar-fill {
+  height: 100%; background: var(--accent);
+  border-radius: 2px;
+}
+.duration-value {
+  font-family: var(--font-mono);
+  font-size: 10px; color: var(--text-secondary);
+  text-align: right;
+}
+
+/* ══════════════════════════════════════════
+   05 — SPACING
+══════════════════════════════════════════ */
+.spacing-scale { display: flex; flex-direction: column; gap: 8px; }
+.spacing-item {
+  display: grid; grid-template-columns: 60px 1fr 60px;
+  align-items: center; gap: 16px;
+}
+.spacing-label {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--text-muted);
+}
+.spacing-bar-bg {
+  height: 6px; background: var(--bg-elevated);
+  border-radius: 3px; overflow: hidden;
+}
+.spacing-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-mid), var(--accent));
+  border-radius: 3px;
+}
+.spacing-value {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--text-secondary);
+  text-align: right;
+}
+
+/* ══════════════════════════════════════════
+   06 — GRID
+══════════════════════════════════════════ */
+.grid-demo {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
+}
+.grid-col {
+  height: 48px;
+  border-radius: 4px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 9px; color: var(--accent);
+}
+
+/* ══════════════════════════════════════════
+   MARQUEE
+══════════════════════════════════════════ */
+.marquee-wrapper {
+  overflow: hidden; padding: 20px 0;
+  border-top: 1px solid var(--border-faint);
+  border-bottom: 1px solid var(--border-faint);
+  margin: 4rem 0;
+}
+.marquee-track {
+  display: flex; gap: 0;
+  will-change: transform;
+}
+.marquee-item {
+  display: flex; align-items: center; gap: 32px;
+  white-space: nowrap; padding: 0 16px;
+  flex-shrink: 0;
+}
+.marquee-text {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: .05em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+.marquee-text.outline {
+  -webkit-text-stroke: 1px var(--text-muted);
+  color: transparent;
+}
+.marquee-sep {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+.ds-footer {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-top: 1px solid var(--border-faint);
+}
+.ds-footer-inner {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  flex-wrap: wrap; gap: 2rem;
+}
+.ds-footer-brand {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1; letter-spacing: .04em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+.ds-footer-brand span { color: var(--accent); }
+.ds-footer-meta {
+  text-align: right;
+}
+.ds-footer-version {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: .15em;
+  color: var(--text-muted); text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.ds-footer-copy {
+  font-size: 12px; color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════
+   SCROLLBAR
+══════════════════════════════════════════ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-base); border-radius: 2px; }
+
+::selection { background: var(--accent-mid); color: var(--text-primary); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cover-sub { grid-template-columns: 1fr; }
+  .cover-title { font-size: clamp(3.5rem, 18vw, 6rem); }
+  .grid-demo { grid-template-columns: repeat(6, 1fr); }
+  .card-grid { grid-template-columns: 1fr; }
+  body { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-wordmark" id="loaderWordmark">SYRA<span>.</span></div>
+  <div class="loader-tagline" id="loaderTagline">Design System — v1.0</div>
+  <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+  <div class="loader-counter" id="loaderCounter">000</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     COVER
+══════════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-frame">
+    <div class="cover-frame-corner tl"></div>
+    <div class="cover-frame-corner tr"></div>
+    <div class="cover-frame-corner bl"></div>
+    <div class="cover-frame-corner br"></div>
+  </div>
+
+  <nav class="cover-nav">
+    <a href="#" class="cover-nav-logo">SYRA<span>.</span></a>
+    <div class="cover-nav-tag">Design System v1.0</div>
+  </nav>
+
+  <div class="cover-body">
+    <div class="cover-index">01 — SYRA DIGITAL</div>
+
+    <h1 class="cover-title" id="coverTitle">
+      <span>DESIGN</span>
+      <span class="accent-word">SYSTEM</span>
+      <span class="outline-word">2026</span>
+    </h1>
+
+    <div class="cover-sub">
+      <div class="cover-sub-item reveal">
+        <div class="cover-sub-label">Filosofia</div>
+        <div class="cover-sub-text">Sistemas que escalam. Identidade que permanece. Cada token, cada componente construido com intenção.</div>
+      </div>
+      <div class="cover-sub-item reveal">
+        <div class="cover-sub-label">Stack</div>
+        <div class="cover-sub-text">Next.js · Tailwind v4 · GSAP · Lenis · SplitType · Framer Motion</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="cover-footer">
+    <span class="cover-footer-text">Syra Digital — Sao Paulo, BR</span>
+    <div class="cover-dot"></div>
+    <span class="cover-footer-text">2026 ® All rights reserved</span>
+  </footer>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-wrapper">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item">
+      <span class="marquee-text">DESIGN SYSTEM</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text outline">SYRA DIGITAL</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text">COMPONENTS</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text outline">TOKENS</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text">MOTION</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text outline">TYPOGRAPHY</span>
+      <span class="marquee-sep"></span>
+    </div>
+    <div class="marquee-item" aria-hidden="true">
+      <span class="marquee-text">DESIGN SYSTEM</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text outline">SYRA DIGITAL</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text">COMPONENTS</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text outline">TOKENS</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text">MOTION</span>
+      <span class="marquee-sep"></span>
+      <span class="marquee-text outline">TYPOGRAPHY</span>
+      <span class="marquee-sep"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     01 — COLOR SYSTEM
+══════════════════════════════════════ -->
+<section id="colors">
+  <div class="w">
+    <div class="section-header reveal-line">
+      <div class="section-index"><span class="line">01 — CORES</span></div>
+      <h2 class="section-title"><span class="line">COLOR</span><br><span class="line accent-word" style="color:var(--accent)">SYSTEM</span></h2>
+      <p class="section-desc reveal">Paleta construida para contraste maximo, hierarquia clara e consistencia em todos os ambientes de uso.</p>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-label">Brand Accent</div>
+      <div class="color-grid">
+        <div class="color-swatch reveal">
+          <div class="color-swatch-preview" style="background:#C8FF00"></div>
+          <div class="color-swatch-info"><div class="color-swatch-name">Accent</div><div class="color-swatch-value">--accent · #C8FF00</div></div>
+        </div>
+        <div class="color-swatch reveal">
+          <div class="color-swatch-preview" style="background:#D8FF40"></div>
+          <div class="color-swatch-info"><div class="color-swatch-name">Accent Hover</div><div class="color-swatch-value">--accent-hover · #D8FF40</div></div>
+        </div>
+        <div class="color-swatch reveal">
+          <div class="color-swatch-preview" style="background:rgba(200,255,0,.15)"></div>
+          <div class="color-swatch-info"><div class="color-swatch-name">Accent Mid</div><div class="color-swatch-value">--accent-mid · rgba(200,255,0,.15)</div></div>
+        </div>
+        <div class="color-swatch reveal">
+          <div class="color-swatch-preview" style="background:rgba(200,255,0,.08)"></div>
+          <div class="color-swatch-info"><div class="color-swatch-name">Accent Dim</div><div class="color-swatch-value">--accent-dim · rgba(200,255,0,.08)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-label">Backgrounds</div>
+      <div class="color-grid">
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#030303; border-bottom:1px solid #1e1e23;"></div><div class="color-swatch-info"><div class="color-swatch-name">Base</div><div class="color-swatch-value">--bg-base · #030303</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#0a0a0a"></div><div class="color-swatch-info"><div class="color-swatch-name">Surface</div><div class="color-swatch-value">--bg-surface · #0a0a0a</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#101013"></div><div class="color-swatch-info"><div class="color-swatch-name">Elevated</div><div class="color-swatch-value">--bg-elevated · #101013</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#0d0d10"></div><div class="color-swatch-info"><div class="color-swatch-name">Card</div><div class="color-swatch-value">--bg-card · #0d0d10</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#18181d"></div><div class="color-swatch-info"><div class="color-swatch-name">Overlay</div><div class="color-swatch-value">--bg-overlay · #18181d</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#141417"></div><div class="color-swatch-info"><div class="color-swatch-name">Muted</div><div class="color-swatch-value">--bg-muted · #141417</div></div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-label">Text</div>
+      <div class="color-grid">
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#F0F0F5"></div><div class="color-swatch-info"><div class="color-swatch-name">Primary</div><div class="color-swatch-value">--text-primary · #F0F0F5</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#8F8FA0"></div><div class="color-swatch-info"><div class="color-swatch-name">Secondary</div><div class="color-swatch-value">--text-secondary · #8F8FA0</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#505060"></div><div class="color-swatch-info"><div class="color-swatch-name">Muted</div><div class="color-swatch-value">--text-muted · #505060</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#36363f"></div><div class="color-swatch-info"><div class="color-swatch-name">Disabled</div><div class="color-swatch-value">--text-disabled · #36363f</div></div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-label">Semantic</div>
+      <div class="color-grid">
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#22C55E"></div><div class="color-swatch-info"><div class="color-swatch-name">Success</div><div class="color-swatch-value">--success · #22C55E</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#F59E0B"></div><div class="color-swatch-info"><div class="color-swatch-name">Warning</div><div class="color-swatch-value">--warning · #F59E0B</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#EF4444"></div><div class="color-swatch-info"><div class="color-swatch-name">Danger</div><div class="color-swatch-value">--danger · #EF4444</div></div></div>
+        <div class="color-swatch reveal"><div class="color-swatch-preview" style="background:#60A5FA"></div><div class="color-swatch-info"><div class="color-swatch-name">Info</div><div class="color-swatch-value">--info · #60A5FA</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     02 — TYPOGRAPHY
+══════════════════════════════════════ -->
+<section id="typography">
+  <div class="w">
+    <div class="section-header reveal-line">
+      <div class="section-index"><span class="line">02 — TIPOGRAFIA</span></div>
+      <h2 class="section-title"><span class="line">TYPE</span><br><span class="line accent-word" style="color:var(--accent)">SYSTEM</span></h2>
+      <p class="section-desc reveal">Quatro familias com papeis definidos. Bebas Neue para impacto maximo. Space Grotesk para hierarquia. Inter para leiturabilidade. JetBrains para codigo.</p>
+    </div>
+
+    <div class="type-showcase">
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">Display Hero — Bebas Neue</span>
+          <span class="type-meta-spec">clamp(4rem, 10vw, 9rem) · uppercase · ls: .02em</span>
+        </div>
+        <div class="type-display-hero">
+          Syra<span class="hl">.</span><br>Digital
+        </div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">Display — Bebas Neue</span>
+          <span class="type-meta-spec">clamp(2.5rem, 5vw, 4rem) · uppercase</span>
+        </div>
+        <div class="type-display">Resultados que transformam negócios</div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">Display Outline — Bebas Neue</span>
+          <span class="type-meta-spec">-webkit-text-stroke · cor: transparent</span>
+        </div>
+        <div class="type-display type-outline">Design que permanece</div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">H1 — Space Grotesk 700</span>
+          <span class="type-meta-spec">clamp(2rem, 4vw, 3rem) · ls: -.02em</span>
+        </div>
+        <div class="type-h1">Plataforma de gestao inteligente para agencias de marketing</div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">H2 — Space Grotesk 600</span>
+          <span class="type-meta-spec">clamp(1.5rem, 3vw, 2rem) · ls: -.018em</span>
+        </div>
+        <div class="type-h2">Seus clientes, seus resultados, sua operacao</div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">H3 — Space Grotesk 600</span>
+          <span class="type-meta-spec">clamp(1.1rem, 2vw, 1.35rem) · ls: -.01em</span>
+        </div>
+        <div class="type-h3">Gestao de clientes e campanhas em tempo real</div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">Body Large — Inter 400</span>
+          <span class="type-meta-spec">clamp(1rem, 1.5vw, 1.125rem) · lh: 1.7</span>
+        </div>
+        <div class="type-body-lg">O Syra Hub e a central de operacoes da sua agencia. Gerencie clientes, monitore campanhas, acompanhe prospeccao e tome decisoes com dados em tempo real.</div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">Body — Inter 400</span>
+          <span class="type-meta-spec">15px · lh: 1.65</span>
+        </div>
+        <div class="type-body">Cada cliente tem sua propria pagina com historico completo, campanhas ativas, status de onboarding e metricas consolidadas. Tudo em um lugar, sem abas abertas, sem planilhas perdidas.</div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">Caption — Inter 400</span>
+          <span class="type-meta-spec">12px · lh: 1.5 · color: muted</span>
+        </div>
+        <div class="type-caption">Atualizado em tempo real via API GoHighLevel · Ultima sincronizacao ha 2 minutos</div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">Mono — JetBrains Mono 400</span>
+          <span class="type-meta-spec">13px · lh: 1.6</span>
+        </div>
+        <div class="type-mono">const client = await syra.getClient('dr-erico-servano');</div>
+      </div>
+
+      <div class="type-item reveal">
+        <div class="type-meta">
+          <span class="type-meta-label">Label — JetBrains Mono 500</span>
+          <span class="type-meta-spec">10px · ls: .18em · uppercase</span>
+        </div>
+        <div class="type-label">Status do cliente — Ativo Premium</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     03 — COMPONENTS
+══════════════════════════════════════ -->
+<section id="components">
+  <div class="w">
+    <div class="section-header reveal-line">
+      <div class="section-index"><span class="line">03 — COMPONENTES</span></div>
+      <h2 class="section-title"><span class="line">COMPONENT</span><br><span class="line" style="color:var(--accent)">LIBRARY</span></h2>
+      <p class="section-desc reveal">Atomos construidos para composicao. Cada componente segue os tokens, aceita variantes e funciona em qualquer contexto.</p>
+    </div>
+
+    <!-- Buttons -->
+    <div style="margin-bottom:56px">
+      <div class="color-group-label" style="margin-bottom:20px">Buttons</div>
+      <div class="btn-row reveal">
+        <button class="btn btn-primary">Comecar agora</button>
+        <button class="btn btn-outline">Ver planos</button>
+        <button class="btn btn-dark">Saiba mais</button>
+        <button class="btn btn-ghost">Cancelar</button>
+        <button class="btn btn-danger">Excluir conta</button>
+      </div>
+      <div class="btn-row reveal">
+        <button class="btn btn-primary btn-sm">Pequeno</button>
+        <button class="btn btn-primary">Padrao</button>
+        <button class="btn btn-primary btn-lg">Grande</button>
+      </div>
+      <div class="btn-row reveal">
+        <button class="btn btn-primary" disabled style="opacity:.4; pointer-events:none;">Desabilitado</button>
+        <button class="btn btn-outline" style="display:inline-flex; align-items:center; gap:8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Com icone
+        </button>
+        <button class="btn btn-primary" style="display:inline-flex; align-items:center; gap:8px;">
+          Publicar
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div style="margin-bottom:56px">
+      <div class="color-group-label" style="margin-bottom:20px">Badges</div>
+      <div class="badge-row reveal">
+        <span class="badge badge-accent badge-dot">Premium</span>
+        <span class="badge badge-success badge-dot">Ativo</span>
+        <span class="badge badge-warning badge-dot">Onboarding</span>
+        <span class="badge badge-danger badge-dot">Inativo</span>
+        <span class="badge badge-info badge-dot">Prospect</span>
+        <span class="badge badge-muted">Padrao</span>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div style="margin-bottom:56px">
+      <div class="color-group-label" style="margin-bottom:20px">Tags</div>
+      <div class="badge-row reveal">
+        <span class="tag">Meta Ads</span>
+        <span class="tag">Google Ads</span>
+        <span class="tag">Instagram</span>
+        <span class="tag">Estetica</span>
+        <span class="tag">Harmonizacao</span>
+        <span class="tag">Dermatologia</span>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div style="margin-bottom:56px">
+      <div class="color-group-label" style="margin-bottom:20px">Cards</div>
+
+      <div style="margin-bottom:16px">
+        <div class="color-group-label" style="font-size:9px;margin-bottom:8px;">STAT CARDS</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px">
+          <div class="card-stat reveal">
+            <div class="card-stat-value">12</div>
+            <div class="card-stat-label">Clientes ativos</div>
+          </div>
+          <div class="card-stat reveal">
+            <div class="card-stat-value">R$48k</div>
+            <div class="card-stat-label">MRR atual</div>
+          </div>
+          <div class="card-stat reveal">
+            <div class="card-stat-value">94%</div>
+            <div class="card-stat-label">Taxa de retencao</div>
+          </div>
+          <div class="card-stat reveal">
+            <div class="card-stat-value">237</div>
+            <div class="card-stat-label">Leads este mes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card reveal">
+          <div class="card-label">Cliente</div>
+          <div class="card-title">Dr. Erico Servano</div>
+          <div class="card-desc">Direito Harmonizacao Orofacial. Campanha ativa no Meta com ROAS de 4.2x nos ultimos 30 dias.</div>
+          <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge badge-accent badge-dot">Premium</span>
+            <span class="tag" style="font-size:11px;padding:3px 9px">Meta Ads</span>
+          </div>
+        </div>
+        <div class="card card-accent reveal">
+          <div class="card-label">Campanha</div>
+          <div class="card-title">Lipo de Papada — Dr. Enio</div>
+          <div class="card-desc">Landing page com conversao de 8.3%. 142 leads capturados. CPL medio R$34.</div>
+          <div style="margin-top:16px;display:flex;gap:8px">
+            <span class="badge badge-success badge-dot">Ativo</span>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="card-label">Agente</div>
+          <div class="card-title">@copy-chef</div>
+          <div class="card-desc">Orquestra @halbert, @ogilvy, @wiebe, @georgi. Especialista em copy medico e persuasao de alto ticket.</div>
+          <div style="margin-top:16px">
+            <span class="badge badge-info">AI Agent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inputs -->
+    <div>
+      <div class="color-group-label" style="margin-bottom:20px">Inputs</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px">
+        <div class="input-group reveal">
+          <label class="input-label">Nome do cliente</label>
+          <input class="input" type="text" placeholder="Ex: Dr. Erico Servano">
+          <span class="input-hint">Nome completo como aparece no contrato</span>
+        </div>
+        <div class="input-group reveal">
+          <label class="input-label">Email</label>
+          <div class="input-icon-wrap">
+            <svg class="input-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <input class="input" type="email" placeholder="contato@clinica.com">
+          </div>
+        </div>
+        <div class="input-group reveal">
+          <label class="input-label">Budget mensal</label>
+          <input class="input input-error" type="text" value="500">
+          <span class="input-hint error">Budget minimo e R$1.000/mes</span>
+        </div>
+        <div class="input-group reveal">
+          <label class="input-label">Especialidade</label>
+          <input class="input" type="text" placeholder="Ex: Dermatologia estetica" disabled style="opacity:.5">
+          <span class="input-hint">Campo desabilitado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     04 — MOTION
+══════════════════════════════════════ -->
+<section id="motion">
+  <div class="w">
+    <div class="section-header reveal-line">
+      <div class="section-index"><span class="line">04 — ANIMACAO</span></div>
+      <h2 class="section-title"><span class="line">MOTION</span><br><span class="line" style="color:var(--accent)">SYSTEM</span></h2>
+      <p class="section-desc reveal">Cada transicao tem intenção. Easings especificos para cada tipo de movimento. Durações calibradas para naturalidade.</p>
+    </div>
+
+    <!-- Easing showcase -->
+    <div class="motion-grid" style="margin-bottom:48px">
+      <div class="motion-card reveal">
+        <div class="motion-preview" id="motionEaseOutExpo">
+          <div class="motion-dot" id="dotEaseOutExpo"></div>
+        </div>
+        <div class="motion-card-label">Ease Out Expo</div>
+        <div class="motion-card-title">Entradas de elementos</div>
+        <div class="motion-card-spec">cubic-bezier(0.16, 1, 0.3, 1)</div>
+      </div>
+      <div class="motion-card reveal">
+        <div class="motion-preview" id="motionEaseOutQuart">
+          <div class="motion-bar" id="barEaseOutQuart"></div>
+        </div>
+        <div class="motion-card-label">Ease Out Quart</div>
+        <div class="motion-card-title">Expansoes e slides</div>
+        <div class="motion-card-spec">cubic-bezier(0.25, 1, 0.5, 1)</div>
+      </div>
+      <div class="motion-card reveal">
+        <div class="motion-preview" id="motionEaseInOutQuad">
+          <div class="motion-dot" id="dotEaseInOutQuad" style="background:var(--info)"></div>
+        </div>
+        <div class="motion-card-label">Ease In Out Quad</div>
+        <div class="motion-card-title">Transicoes de estado</div>
+        <div class="motion-card-spec">cubic-bezier(0.45, 0, 0.55, 1)</div>
+      </div>
+      <div class="motion-card reveal">
+        <div class="motion-preview" style="gap:8px;flex-direction:column">
+          <div style="width:40px;height:40px;border:1px solid var(--border-base);border-radius:8px;display:flex;align-items:center;justify-content:center;" id="motionScale">
+            <div style="width:16px;height:16px;background:var(--accent);border-radius:3px"></div>
+          </div>
+        </div>
+        <div class="motion-card-label">Scale + Fade</div>
+        <div class="motion-card-title">Hover de cards</div>
+        <div class="motion-card-spec">scale(1.02) + opacity</div>
+      </div>
+    </div>
+
+    <!-- Duration scale -->
+    <div class="reveal">
+      <div class="color-group-label" style="margin-bottom:16px">Duration Scale</div>
+      <div class="duration-scale">
+        <div class="duration-item">
+          <span class="duration-label">Fast</span>
+          <div class="duration-bar-bg"><div class="duration-bar-fill" style="width:10%"></div></div>
+          <span class="duration-value">200ms</span>
+        </div>
+        <div class="duration-item">
+          <span class="duration-label">Base</span>
+          <div class="duration-bar-bg"><div class="duration-bar-fill" style="width:25%"></div></div>
+          <span class="duration-value">350ms</span>
+        </div>
+        <div class="duration-item">
+          <span class="duration-label">Slow</span>
+          <div class="duration-bar-bg"><div class="duration-bar-fill" style="width:45%"></div></div>
+          <span class="duration-value">600ms</span>
+        </div>
+        <div class="duration-item">
+          <span class="duration-label">X-Slow</span>
+          <div class="duration-bar-bg"><div class="duration-bar-fill" style="width:70%"></div></div>
+          <span class="duration-value">900ms</span>
+        </div>
+        <div class="duration-item">
+          <span class="duration-label">Page</span>
+          <div class="duration-bar-bg"><div class="duration-bar-fill" style="width:100%"></div></div>
+          <span class="duration-value">1200ms</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code example -->
+    <div class="reveal" style="margin-top:32px">
+      <div class="color-group-label" style="margin-bottom:12px">Exemplo GSAP</div>
+      <div class="code-block">
+<span class="cm">// Text reveal por linha — padrao Syra</span>
+<span class="kw">const</span> <span class="vr">split</span> = <span class="kw">new</span> SplitType(<span class="str">'.headline'</span>, { types: <span class="str">'lines'</span> });
+
+gsap.from(split.lines, {
+  y: <span class="str">'110%'</span>,
+  opacity: <span class="str">0</span>,
+  duration: <span class="str">0.9</span>,
+  stagger: <span class="str">0.08</span>,
+  ease: <span class="str">'power4.out'</span>,
+  scrollTrigger: {
+    trigger: <span class="str">'.headline'</span>,
+    start: <span class="str">'top 85%'</span>
+  }
+});
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     05 — SPACING
+══════════════════════════════════════ -->
+<section id="spacing">
+  <div class="w">
+    <div class="section-header reveal-line">
+      <div class="section-index"><span class="line">05 — ESPACAMENTO</span></div>
+      <h2 class="section-title"><span class="line">SPACING</span><br><span class="line" style="color:var(--accent)">SCALE</span></h2>
+      <p class="section-desc reveal">Base de 4px. Escala multiplicativa. Todos os espacamentos derivam deste sistema para garantir proporcao em qualquer viewport.</p>
+    </div>
+
+    <div class="spacing-scale reveal">
+      <div class="spacing-item"><span class="spacing-label">--space-1</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:2%"></div></div><span class="spacing-value">4px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-2</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:4%"></div></div><span class="spacing-value">8px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-3</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:6%"></div></div><span class="spacing-value">12px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-4</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:8%"></div></div><span class="spacing-value">16px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-6</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:12%"></div></div><span class="spacing-value">24px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-8</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:16%"></div></div><span class="spacing-value">32px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-10</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:20%"></div></div><span class="spacing-value">40px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-12</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:24%"></div></div><span class="spacing-value">48px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-16</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:32%"></div></div><span class="spacing-value">64px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-20</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:40%"></div></div><span class="spacing-value">80px</span></div>
+      <div class="spacing-item"><span class="spacing-label">--space-24</span><div class="spacing-bar-bg"><div class="spacing-bar-fill" style="width:48%"></div></div><span class="spacing-value">96px</span></div>
+    </div>
+
+    <!-- Radius -->
+    <div style="margin-top:48px" class="reveal">
+      <div class="color-group-label" style="margin-bottom:20px">Border Radius</div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end">
+        <div style="text-align:center">
+          <div style="width:60px;height:60px;background:var(--bg-elevated);border:1px solid var(--border-base);border-radius:6px;margin-bottom:8px"></div>
+          <div class="type-label">sm · 6px</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:60px;height:60px;background:var(--bg-elevated);border:1px solid var(--border-base);border-radius:10px;margin-bottom:8px"></div>
+          <div class="type-label">md · 10px</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:60px;height:60px;background:var(--bg-elevated);border:1px solid var(--border-base);border-radius:16px;margin-bottom:8px"></div>
+          <div class="type-label">lg · 16px</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:60px;height:60px;background:var(--bg-elevated);border:1px solid var(--border-base);border-radius:24px;margin-bottom:8px"></div>
+          <div class="type-label">xl · 24px</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:60px;height:60px;background:var(--bg-elevated);border:1px solid var(--border-base);border-radius:9999px;margin-bottom:8px"></div>
+          <div class="type-label">full</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     06 — GRID
+══════════════════════════════════════ -->
+<section id="grid">
+  <div class="w">
+    <div class="section-header reveal-line">
+      <div class="section-index"><span class="line">06 — GRID</span></div>
+      <h2 class="section-title"><span class="line">GRID</span><br><span class="line" style="color:var(--accent)">SYSTEM</span></h2>
+      <p class="section-desc reveal">12 colunas. Gutter de 24px. Margem fluida com clamp(2rem, 6vw, 7rem). Breakpoints: 768px tablet, 1024px desktop.</p>
+    </div>
+
+    <div class="grid-demo reveal">
+      <div class="grid-col">1</div><div class="grid-col">2</div><div class="grid-col">3</div>
+      <div class="grid-col">4</div><div class="grid-col">5</div><div class="grid-col">6</div>
+      <div class="grid-col">7</div><div class="grid-col">8</div><div class="grid-col">9</div>
+      <div class="grid-col">10</div><div class="grid-col">11</div><div class="grid-col">12</div>
+    </div>
+
+    <div style="margin-top:16px;display:grid;grid-template-columns:repeat(12,1fr);gap:8px" class="reveal">
+      <div style="grid-column:span 8;height:32px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:9px;color:var(--accent)">8 colunas — conteudo principal</div>
+      <div style="grid-column:span 4;height:32px;background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.2);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:9px;color:var(--info)">4 cols — sidebar</div>
+    </div>
+    <div style="margin-top:8px;display:grid;grid-template-columns:repeat(12,1fr);gap:8px" class="reveal">
+      <div style="grid-column:span 6;height:32px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:9px;color:var(--accent)">6 + 6 — dois paineis</div>
+      <div style="grid-column:span 6;height:32px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:9px;color:var(--accent)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="ds-footer">
+  <div class="w">
+    <div class="ds-footer-inner">
+      <div class="ds-footer-brand reveal-line">
+        <div class="line">SYRA<span>.</span></div>
+      </div>
+      <div class="ds-footer-meta reveal">
+        <div class="ds-footer-version">Design System v1.0 · 2026</div>
+        <div class="ds-footer-copy">Syra Digital — Sao Paulo, Brasil</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ══════════════════════════════════════════
+// CURSOR
+// ══════════════════════════════════════════
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mouseX = 0, mouseY = 0;
+let ringX = 0, ringY = 0;
+
+if (window.innerWidth > 768) {
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    gsap.to(dot, { x: mouseX - 3, y: mouseY - 3, duration: 0.1, ease: 'power2.out' });
+  });
+
+  function updateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    gsap.set(ring, { x: ringX - 18, y: ringY - 18 });
+    requestAnimationFrame(updateRing);
+  }
+  updateRing();
+
+  document.querySelectorAll('a, button, .card, .color-swatch, .btn, .tag').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('is-hover'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('is-hover'));
+  });
+  document.querySelectorAll('input, textarea').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('is-text'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('is-text'));
+  });
+}
+
+// ══════════════════════════════════════════
+// LOADER
+// ══════════════════════════════════════════
+const loaderEl = document.getElementById('loader');
+const loaderFill = document.getElementById('loaderFill');
+const loaderCounter = document.getElementById('loaderCounter');
+const loaderWordmark = document.getElementById('loaderWordmark');
+const loaderTagline = document.getElementById('loaderTagline');
+
+const tl = gsap.timeline({ onComplete: initPage });
+
+tl.to(loaderWordmark, { opacity: 1, y: 0, duration: .7, ease: 'power4.out' })
+  .to(loaderTagline, { opacity: 1, duration: .5, ease: 'power2.out' }, '-=.4')
+  .to(loaderFill, {
+    width: '100%', duration: 1.4, ease: 'power2.inOut',
+    onUpdate: function() {
+      const p = Math.round(this.progress() * 100);
+      loaderCounter.textContent = String(p).padStart(3, '0');
+    }
+  }, '-=.3')
+  .to(loaderCounter, { opacity: 1, duration: .3 }, '-=1.4')
+  .to(loaderEl, { opacity: 0, duration: .6, ease: 'power2.inOut', delay: .2 })
+  .set(loaderEl, { display: 'none' });
+
+function initPage() {
+  // Lenis
+  const lenis = new Lenis({
+    duration: 1.4,
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true
+  });
+
+  function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.lagSmoothing(0);
+
+  ScrollTrigger.scrollerProxy(document.documentElement, {
+    scrollTop(value) {
+      if (arguments.length) lenis.scrollTo(value);
+      return lenis.scroll;
+    },
+    getBoundingClientRect() {
+      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    }
+  });
+
+  // Cover title reveal
+  const coverTitle = document.getElementById('coverTitle');
+  const coverSplit = new SplitType(coverTitle, { types: 'lines' });
+  coverSplit.lines.forEach(line => {
+    const wrap = document.createElement('div');
+    wrap.style.overflow = 'hidden';
+    line.parentNode.insertBefore(wrap, line);
+    wrap.appendChild(line);
+  });
+  gsap.from(coverSplit.lines, {
+    y: '110%', duration: 1.1, stagger: .06, ease: 'power4.out', delay: .1
+  });
+  gsap.from('.cover-index', { opacity: 0, y: 20, duration: .8, ease: 'power3.out', delay: .3 });
+  gsap.from('.cover-nav-logo, .cover-nav-tag', { opacity: 0, y: -16, duration: .8, ease: 'power3.out', stagger: .1, delay: .2 });
+  gsap.from('.cover-footer-text, .cover-dot', { opacity: 0, duration: .8, ease: 'power3.out', stagger: .1, delay: .6 });
+
+  // Reveal sections — lines
+  document.querySelectorAll('.reveal-line').forEach(el => {
+    const lines = el.querySelectorAll('.line');
+    lines.forEach(line => {
+      const wrap = document.createElement('div');
+      wrap.style.overflow = 'hidden';
+      line.parentNode.insertBefore(wrap, line);
+      wrap.appendChild(line);
+    });
+    gsap.from(lines, {
+      y: '110%', duration: 1, stagger: .05, ease: 'power4.out',
+      scrollTrigger: { trigger: el, start: 'top 88%' }
+    });
+  });
+
+  // Reveal elements
+  document.querySelectorAll('.reveal').forEach(el => {
+    gsap.from(el, {
+      opacity: 0, y: 28, duration: .8, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    });
+  });
+
+  // Marquee
+  const track = document.getElementById('marqueeTrack');
+  const trackWidth = track.children[0].offsetWidth;
+  gsap.to(track, {
+    x: -trackWidth, duration: 24, ease: 'none', repeat: -1
+  });
+
+  // Motion card animations (on scroll trigger)
+  ScrollTrigger.create({
+    trigger: '#motion',
+    start: 'top 70%',
+    onEnter: () => {
+      // Dot ease out expo
+      gsap.fromTo('#dotEaseOutExpo',
+        { x: -80 },
+        { x: 80, duration: 1.2, ease: 'expo.out', repeat: -1, repeatDelay: 1, yoyo: true }
+      );
+      // Bar ease out quart
+      gsap.fromTo('#barEaseOutQuart',
+        { scaleX: 0 },
+        { scaleX: 1, duration: 1, ease: 'quart.out', repeat: -1, repeatDelay: .8, yoyo: true }
+      );
+      // Dot ease in out quad
+      gsap.fromTo('#dotEaseInOutQuad',
+        { x: -60, opacity: .3 },
+        { x: 60, opacity: 1, duration: 1, ease: 'quad.inOut', repeat: -1, repeatDelay: .6, yoyo: true }
+      );
+      // Scale
+      gsap.to('#motionScale', {
+        scale: 1.15, duration: .8, ease: 'power2.inOut',
+        repeat: -1, yoyo: true, repeatDelay: .4
+      });
+    },
+    once: true
+  });
+}
+
+// Cover reveals (immediate, pre-lenis)
+gsap.from('.cover-frame-corner', { opacity: 0, scale: .5, duration: 1, stagger: .1, ease: 'power3.out', delay: .5 });
+</script>
+</body>
+</html>

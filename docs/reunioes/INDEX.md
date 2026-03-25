@@ -1,7 +1,7 @@
 # Índice de Transcrições de Reuniões
 
 > Gerado e mantido automaticamente pelo @scribe
-> Total de reuniões transcritas: 24
+> Total de reuniões transcritas: 25
 
 ---
 
@@ -18,6 +18,7 @@
 
 | # | Data | Nome da Gravação | Cliente (estimado) | Status |
 |---|------|-------------------|-------------------|--------|
+| 2026-03-24 | Desconhecido | venda | 154MB | [2026-03-24-desconhecido.md](./2026-03-24-desconhecido.md) |
 | 2026-03-18 | Dr. Tarley Fonseca | venda | 110MB | [2026-03-18-dr-tarley-fonseca.md](./2026-03-18-dr-tarley-fonseca.md) |
 | 2026-03-18 | Dra. Monica Andrade | ATENCAO: arquivo mislabeled — reuniao e com Dr. Tarley | — | Ver 2026-03-18-dr-tarley-fonseca.md |
 | 2025-10-01 | Thiago | acompanhamento | 307MB | [2025-10-01-thiago.md](./2025-10-01-thiago.md) |
