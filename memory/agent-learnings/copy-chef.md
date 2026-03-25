@@ -31,6 +31,90 @@
 - **Severidade:** CRITICAL
 - **Aplica a:** TODOS os agentes, TODOS os materiais (copy, roteiro, email, doc, caption, script)
 
+## [2026-03-19] Aprendizado: Copy para médico estética — Tom e Estrutura Aprovados
+
+- **Contexto:** Landing page de captura Dr. Ênio Leite — Harmonização Orofacial, Serra/ES
+- **Copy v3 aprovada pelo Eric** — padrões extraídos para reutilizar em outros clientes médicos
+
+**Tom aprovado para clínica estética premium:**
+- Falar PARA a paciente, não sobre o procedimento ("Para quem sempre quis mudar alguma coisa no rosto")
+- Abordar o MEDO primeiro ("Você quer. Mas tem medo que fique artificial")
+- Resultado natural como promessa central, não o procedimento em si
+- Frases curtas, intimistas, sem jargão médico corporativo
+- Nunca começa com pergunta — sempre afirmação que valida o sentimento dela
+
+**Headline aprovada como modelo:**
+"Para quem sempre quis mudar alguma coisa no rosto. Mas queria que parecesse natural."
+
+**Estrutura aprovada para copy de procedimentos:**
+- Nome do procedimento + o resultado emocional que ela vai sentir
+- Ex: "Aquela versão mais descansada que você lembra de você." (Toxina Botulínica)
+- Ex: "Para quem sempre quis lábios mais cheios e nunca teve coragem." (Preenchimento Labial)
+- Terminar com: "Ninguém vai saber o que você fez. Todo mundo vai notar."
+
+**Depoimentos aprovados (estrutura):**
+- Começar com o antes emocional ("Saí parecendo eu mesma")
+- Resultado específico e concreto ("o resultado só melhora com o tempo")
+- Zero hipérboles ou superlativos
+
+**Rodapé:** Remover telefone/WhatsApp — forçar conversão pelo formulário
+
+- **Severidade:** HIGH
+- **Aplica a:** @copy-chef, @georgi, @wiebe ao trabalhar com clientes médicos/estética
+
+## [2026-03-20] Feedback: CRITICO — regras de copy extraidas dos comentarios no Google Docs
+
+- **Contexto:** Sistema Lego Dra. Gabrielle v6 — 8 comentarios do Eric no doc
+
+**Regras derivadas (cada uma extraida de um comentario real):**
+
+1. PROIBIDO palavras técnicas que o lead não usa: "tecido", "alcançar", "metabolicamente", "protocolo não-invasivo". Usar sempre: "gordurinha", "pochete", "culote", "pneu", "barriga", "gordura da gravidez"
+
+2. FOCAR EM UM ÚNICO ARGUMENTO por bloco. Não misturar "sem corte + sem repouso + protocolo". Se o assunto é criolipólise, falar só do tempo. Se é gestação, falar só da gordura que ficou. Misturar = confunde e dilui tudo.
+
+3. TEMPLATE DE ERIC para copy de evento (replicar sempre): "Vai acontecer um evento e você já tá pensando em como vai aparecer a sua barriga nas fotos. Se você não quer passar por isso, ainda dá tempo de resolver." Levantar o problema e trazer a solução no mesmo movimento, sem pausas excessivas.
+
+4. PROIBIDO "avental" como palavra isolada sem contexto explicativo. Usar "a barriga que sobrou da gravidez" ou "aquela gordura que ficou depois da gestação".
+
+5. Body "sem cirurgia": não dizer apenas "sem corte, sem internação" — o lead que viu criolipólise JÁ SABE que não é cirurgia. Usar comparação com pior alternativa: "Você não precisa gastar 20, 30, 40 mil numa bariátrica..."
+
+6. CTA de qualificação: PROIBIDO mencionar valores (R$300). Usar "meios de pagamento flexíveis" para induzir que é pago sem citar preço.
+
+7. CTA principal: SEMPRE na voz da Dra. Gabrielle em PRIMEIRA PESSOA quando ela for quem vai falar/postar. "É nela que eu monto o seu plano... minha agenda."
+
+8. Fluxo: menos pontos finais, mais "e", "porque", "mas", "então". Conectar ideias em vez de espaçar frases curtas.
+
+- **Severidade:** CRITICAL (múltiplas regras)
+- **Aplica a:** @copy-chef e todos os especialistas
+
+## [2026-03-20] Feedback: CRITICO — copy em PORTUGUES BRASILEIRO real, nao traduzido do inglês
+
+- **Contexto:** Sistema Lego Dra. Gabrielle — copy soando como tradução literal de framework americano
+- **Feedback:** "Parece que você está pensando em inglês e traduzindo para o português. A gente não fala dessa forma. 'Academia quando dá, comida melhor, esforço' não faz sentido."
+- **Problema raiz:** Os especialistas (Halbert, Morgan, Ogilvy etc.) escrevem em inglês. A estrutura de frase deles vaza no português. Em inglês funciona: "Hard work. Better food. Effort." Em português fica nonsense literal.
+- **Regra derivada:**
+  - PROIBIDO aplicar estrutura de copy americana traduzida para o português
+  - Escrever sempre na voz de uma brasileira conversando com outra brasileira
+  - Usar ritmo real do português falado: "né", "pra", "tá", "a gente", "de jeito nenhum", "faz o que todo mundo fala", "já tentou de tudo"
+  - Teste antes de entregar: "uma mulher de Caieiras falaria assim com a amiga dela no WhatsApp?" Se não, reescrever.
+  - Os frameworks americanos ditam a ESTRATÉGIA. A EXECUÇÃO é 100% em português brasileiro autêntico.
+- **Severidade:** CRITICAL
+- **Aplica a:** @copy-chef e todos os especialistas ao escrever em português
+
+## [2026-03-20] Feedback: copy CONVERSACIONAL, nao fragmentada em frases de efeito
+
+- **Contexto:** Sistema Lego de criativos para Dra. Gabrielle — hooks, bodies, CTAs
+- **Feedback:** "ta muito comercial... vc escreve muito pausado, sem continuidade da frase e sem sentido, falando apenas frases de efeito, quero conversar com o lead, tocar na dor dele... continuar uma conversa que ja está atormentando a cabeça dele"
+- **Regra derivada:**
+  - PROIBIDO escrever copy como lista de frases curtas soltas, mesmo que cada uma seja boa isolada
+  - O copy precisa CONTINUAR o pensamento que o lead ja está tendo na cabeça, nao interrompê-lo com slogans
+  - Frases se conectam com conjuncoes: "e", "mas", "porque", "é que", "então", "mesmo assim"
+  - Parágrafos com 3 a 5 linhas conectadas, nao 1 frase por linha
+  - O lead nao deve sentir que está sendo vendido — deve sentir que alguem finalmente entendeu o que está na cabeça dele
+  - Regra pratica: antes de entregar, perguntar "isso soa como uma conversa real ou como um anuncio montado?"
+- **Severidade:** CRITICAL
+- **Aplica a:** @copy-chef e todos os especialistas ao escrever para Eric
+
 ## [2026-03-10] Feedback: protocolo de ativação — ordem obrigatória
 
 - **Contexto:** Demanda de funil de aquisição HOF via conteúdo

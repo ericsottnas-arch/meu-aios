@@ -1,7 +1,7 @@
 # Índice de Transcrições de Reuniões
 
 > Gerado e mantido automaticamente pelo @scribe
-> Total de reuniões transcritas: 23
+> Total de reuniões transcritas: 24
 
 ---
 
@@ -18,10 +18,12 @@
 
 | # | Data | Nome da Gravação | Cliente (estimado) | Status |
 |---|------|-------------------|-------------------|--------|
+| 2026-03-18 | Dr. Tarley Fonseca | venda | 110MB | [2026-03-18-dr-tarley-fonseca.md](./2026-03-18-dr-tarley-fonseca.md) |
+| 2026-03-18 | Dra. Monica Andrade | ATENCAO: arquivo mislabeled — reuniao e com Dr. Tarley | — | Ver 2026-03-18-dr-tarley-fonseca.md |
 | 2025-10-01 | Thiago | acompanhamento | 307MB | [2025-10-01-thiago.md](./2025-10-01-thiago.md) |
 | 2025-10-01 | Thiago | acompanhamento | 307MB | [2025-10-01-thiago.md](./2025-10-01-thiago.md) |
 | 2025-12-04 | Daniel | venda | 258MB | [2025-12-04-daniel.md](./2025-12-04-daniel.md) |
-| 2026-03-12 | Dr. Cleugo Porto | venda | 707MB | [2026-03-12-dr-cleugo-porto.md](./2026-03-12-dr-cleugo-porto.md) |
+| 2026-03-12 | Dr. Cleugo Porto | parceria estratégica | 707MB | [2026-03-12-dr-cleugo-porto.md](./2026-03-12-dr-cleugo-porto.md) — Inteligência completa: [inteligencia-reuniao-2026-03-12.md](../clientes/dr-cleugo/knowledge-base/inteligencia-reuniao-2026-03-12.md) |
 | 2025-12-04 | Desconhecido | venda | 258MB | [2025-12-04-desconhecido.md](./2025-12-04-desconhecido.md) |
 | 2026-03-12 | ? | acompanhamento | 255MB | [2026-03-12-desconhecido.md](./2026-03-12-desconhecido.md) |
 | 2025-06-30 | Dr. Romynick | venda | 244MB | [2025-06-30-dr-romynick.md](./2025-06-30-dr-romynick.md) |

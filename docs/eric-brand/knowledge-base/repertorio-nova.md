@@ -1301,3 +1301,77 @@ Antes da análise, é necessário filtrar o ruído. Das 18 conversas, **nem toda
 > *"O que mais vendo é drenagem"*
 > *"Já vai começar uma moça mês que vem pq não estou tendo horário"*
 > *"faço
+
+---
+
+## 🗓️ Análise de Campo — 19 de março de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads Inbound @byericsantos
+
+> **Fonte:** 36 mensagens reais via WhatsApp | 18 contatos | Setor: saúde e estética brasileira
+> **Finalidade:** Repertório da agente de conteúdo Nova para criação de posts e estratégias para @byericsantos
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- **Mensagem padrão copy-paste:** Múltiplos contatos usaram exatamente a mesma frase de abertura — *"Olá! Tenho interesse e queria mais informações, por favor."* (aparece em 4 mensagens de contatos diferentes). Isso indica que vieram por anúncio com botão de WhatsApp ou link direto, **sem leitura prévia do conteúdo**. O interesse existe, mas é superficial no primeiro toque.
+- **Chegam com dúvidas geográficas logo de início:** Vera pergunta *"A clínica fica em Macapá?"* antes de qualquer outra coisa. Milena confirma: *"Meu ddd é de Belém, mas estou morando em Macapá."* Localização é filtro primário — o lead qualifica o negócio antes de se qualificar.
+
+### Como demonstram interesse real
+- **Empilham perguntas em sequência** sem esperar resposta: Vera enviou 5 mensagens separadas cobrindo duração do procedimento, localização, promoção e tipos de técnica. Isso indica alto interesse e baixa paciência.
+- **Declaram intenção direta e emocional:** *"Quero muito ser paciente modelo nariz! ☺️"* (Tania) — interesse com carga emocional, não apenas racional.
+- **Confirmam presença física:** *"Amanhã vou pessoalmente até a clínica"* (Neize) — sinal de comprometimento concreto.
+
+### Como hesitam
+- **Postergam sem romper:** Pam mantém o canal aberto mas adia sistematicamente: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"*, *"Sim eu vou ti falando"*. Não some — sinaliza que quer, mas não está pronta.
+- **Condicionam a decisão:** Cleide só fecha se houver condições específicas: *"Só farei se for conjugado com a reposição de minhas sobrancelhas."* Não é objeção — é negociação de escopo.
+- **Perguntam sobre custo antes de entender o produto:** *"Terei que pagar a avaliação?"* (Pilar) — o preço da entrada é barreira antes mesmo de conhecer a solução.
+
+### Como somem
+- Sem padrão verbal de saída — simplesmente param de responder após receberem informações (inferido pela natureza das mensagens sem continuidade).
+- Contatos como *"Desconhecido"* enviam mensagem genérica e não se identificam, sugerindo abandono passivo.
+
+### Como voltam
+- Reengajam quando há gatilho externo (promoção, procedimento novo, paciente modelo) — Tania e Tania/suelymonteiro repetem a mensagem padrão, sugerindo remarketing ou novo anúncio que reativou interesse.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas / contexto
+> *"Sou úma senhora aposentada"* — HILDA MARIA
+> Autodescrição que funciona como filtro de preço e como pedido implícito de atenção especial.
+
+> *"Meu ddd é de Belém, mas estou morando em Macapá"*  — Milena
+> Justificativa de contexto antes de perguntar — como se precisasse se explicar para merecer atendimento.
+
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"* — Leandra
+> Profissional que tem expertise técnica mas está começando o negócio próprio — gap entre conhecimento e gestão.
+
+> *"Muitas coisas preciso fazer um catálogo, sou Esteticista facial e corporal, faço uns 30 procedimentos"* — Leandra
+> Sobrecarga de serviços sem posicionamento claro — dor típica do profissional de estética sem estratégia.
+
+### Como falam de dinheiro/preço
+> *"Terei que pagar a avaliação?"* — Pilar
+> Objeção ao custo de entrada, não ao produto principal.
+
+> *"Meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200"* — Leandra
+> Profissional que já identifica o comportamento do próprio cliente mas não sabe como escalar isso.
+
+> *"Fechar contratos de 3,5k a 5k por mês não é sorte, é método"* — Giovanne *(spam, mas revela o ambiente mental do mercado)*
+
+### Como expressam insegurança ou desconfiança
+> *"Essa promoção vai até quando?"* — Vera
+> Urgência disfarçada de ceticismo — quer saber se tem tempo ou se é pressão falsa.
+
+> *"Como funciona a questão de ser paciente modelo?"* — Milena
+> Interesse real mascarado por necessidade de entender as regras antes de se expor.
+
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — Cleide
+> Controle como forma de gerenciar insegurança — precisa sentir que tem poder na decisão.
+
+### Como demonstram interesse real
+> *"Quero muito ser paciente modelo nariz! ☺️"* —

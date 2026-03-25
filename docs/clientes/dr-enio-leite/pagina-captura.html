@@ -6,6 +6,8 @@
   <title>Dr. Ênio Leite · Harmonização Orofacial · Serra, ES</title>
   <meta name="description" content="Para quem sempre quis mudar alguma coisa no rosto. Mas queria que parecesse natural.">
 
+  <link rel="icon" type="image/png" href="logo-monograma.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -76,45 +78,6 @@
     }
     .cursor-hover .cursor-ring { width: 64px; height: 64px; border-color: var(--gold); }
 
-    /* LOADER */
-    #loader {
-      position: fixed; inset: 0;
-      background: var(--ink);
-      z-index: 9000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-    .loader-name {
-      font-family: var(--fd);
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
-      font-style: italic;
-      color: var(--gold);
-      letter-spacing: .02em;
-      opacity: 0;
-    }
-    .loader-bar-wrap {
-      width: clamp(200px, 40vw, 360px);
-      height: 1px;
-      background: rgba(255,255,255,.1);
-      position: relative;
-      overflow: hidden;
-    }
-    .loader-bar {
-      position: absolute; inset: 0;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-    }
-    .loader-counter {
-      font-family: var(--fb);
-      font-size: var(--sm);
-      color: var(--mid);
-      letter-spacing: .15em;
-      font-weight: 300;
-    }
 
     /* NAV */
     nav {
@@ -238,13 +201,12 @@
       grid-template-columns: 1fr 1fr;
       position: relative;
       overflow: hidden;
-      padding-top: 5rem;
     }
     .hero-content {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 1.5rem var(--cpx) 1.5rem max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
+      justify-content: flex-start;
+      padding: clamp(5rem, 9vh, 6.5rem) var(--cpx) 1.5rem max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
       position: relative;
       z-index: 2;
       overflow: hidden;
@@ -356,13 +318,11 @@
     .hero-photo img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: center top;
-      -webkit-mask-image:
-        linear-gradient(to right, transparent 0%, black 30%, black 100%),
-        linear-gradient(to bottom, black 60%, transparent 100%);
-      mask-image:
-        linear-gradient(to right, transparent 0%, black 30%, black 100%),
-        linear-gradient(to bottom, black 60%, transparent 100%);
-      -webkit-mask-composite: source-in;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%),
+                          linear-gradient(to top,   transparent 0%, black 20%);
+      mask-image: linear-gradient(to right, transparent 0%, black 25%),
+                  linear-gradient(to top,   transparent 0%, black 20%);
+      -webkit-mask-composite: destination-in;
       mask-composite: intersect;
     }
 
@@ -400,6 +360,46 @@
       to   { transform: translateX(-50%); }
     }
 
+    /* FOTO MOBILE (entre ticker e resultados) */
+    .mobile-dr-photo {
+      display: none;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+    .mobile-dr-photo img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    }
+    .mobile-dr-photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem var(--cpx);
+      background: linear-gradient(to top, rgba(21,18,13,1) 0%, transparent 100%);
+    }
+    .mobile-dr-photo-caption p {
+      font-family: var(--fd);
+      font-style: italic;
+      font-size: var(--h3);
+      color: var(--cream);
+      line-height: 1.3;
+    }
+    .mobile-dr-photo-caption span {
+      display: block;
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .375rem;
+    }
+
     /* ANTES E DEPOIS */
     #resultados {
       padding: var(--spyl) 0;
@@ -418,8 +418,11 @@
       overflow: hidden;
       background: var(--parch);
       cursor: col-resize;
+      user-select: none;
+      -webkit-user-select: none;
     }
     .ba-after, .ba-before { position: absolute; inset: 0; }
+    .ba-after img, .ba-before img { user-select: none; -webkit-user-select: none; pointer-events: none; -webkit-user-drag: none; }
     .ba-after {
       background: linear-gradient(135deg, var(--parch) 0%, var(--cream-dk) 100%);
       display: flex; align-items: center; justify-content: center;
@@ -561,9 +564,17 @@
       aspect-ratio: 3/4;
       background: var(--parch);
       position: relative;
-      overflow: hidden;
+      overflow: visible;
     }
-    .sobre-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .sobre-photo img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
+    .sobre-photo::before {
+      content: ''; position: absolute; inset: -20px; z-index: 0;
+      border: 1px solid rgba(192,139,81,.25); pointer-events: none;
+    }
+    .sobre-photo::after {
+      content: ''; position: absolute; inset: 16px; z-index: 2;
+      border: 1px solid rgba(192,139,81,.1); pointer-events: none;
+    }
     .sobre-photo-placeholder {
       width: 100%; height: 100%;
       display: flex; align-items: center; justify-content: center;
@@ -619,42 +630,67 @@
       gap: 1.5rem;
     }
     .dep-card {
-      background: rgba(247,244,239,.05);
+      background: rgba(247,244,239,.03);
       border: 1px solid rgba(247,244,239,.08);
       overflow: hidden;
     }
-    .dep-video {
+
+    /* FACADE — thumbnail real, clique abre Instagram */
+    .dep-facade {
       aspect-ratio: 9/16;
-      background: rgba(247,244,239,.06);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .dep-video-placeholder {
+      background-size: cover;
+      background-position: center top;
+      background-color: #1c1810;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: .75rem;
-      text-align: center;
-      padding: 1.5rem;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      cursor: pointer;
     }
-    .dep-play {
-      width: 56px; height: 56px;
+    .dep-facade-overlay {
+      position: absolute; inset: 0;
+      background: rgba(21,18,13,.42);
+      transition: background .4s;
+    }
+    .dep-facade:hover .dep-facade-overlay { background: rgba(21,18,13,.25); }
+    .dep-facade-play {
+      position: relative; z-index: 1;
+      width: 64px; height: 64px;
       border-radius: 50%;
-      border: 1.5px solid rgba(192,139,81,.5);
+      border: 1.5px solid rgba(247,244,239,.7);
       display: flex; align-items: center; justify-content: center;
+      transition: background .3s, transform .3s, border-color .3s;
+      backdrop-filter: blur(4px);
     }
-    .dep-play::after {
+    .dep-facade:hover .dep-facade-play {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: scale(1.1);
+    }
+    .dep-facade-play::after {
       content: '';
       border-style: solid;
-      border-width: 8px 0 8px 16px;
-      border-color: transparent transparent transparent var(--gold);
-      margin-left: 3px;
+      border-width: 10px 0 10px 20px;
+      border-color: transparent transparent transparent rgba(247,244,239,.9);
+      margin-left: 5px;
+      transition: border-color .3s;
     }
-    .dep-video-placeholder span {
-      font-family: var(--fd);
-      font-style: italic;
-      font-size: var(--sm);
-      color: rgba(247,244,239,.3);
+    .dep-facade:hover .dep-facade-play::after {
+      border-color: transparent transparent transparent var(--cream);
     }
+    .dep-facade-handle {
+      position: relative; z-index: 1;
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 500;
+      letter-spacing: .06em;
+      color: rgba(247,244,239,.75);
+    }
+
     .dep-quote {
       padding: 1.25rem 1.5rem;
       font-family: var(--fd);
@@ -750,6 +786,104 @@
     }
     .faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.5rem; }
 
+    /* CLINICA */
+    #clinica {
+      padding: var(--spyl) 0;
+      background: var(--cream);
+    }
+    .clinica-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .clinica-fotos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 2px;
+    }
+    .clinica-foto {
+      background: var(--parch);
+      overflow: hidden;
+      position: relative;
+    }
+    .clinica-foto:first-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/7;
+    }
+    .clinica-foto:not(:first-child) {
+      aspect-ratio: 4/3;
+    }
+    .clinica-foto img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s cubic-bezier(.16,1,.3,1);
+    }
+    .clinica-foto:hover img { transform: scale(1.04); }
+    .clinica-foto-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--fd);
+      font-style: italic;
+      color: var(--mid);
+      font-size: var(--sm);
+      opacity: .5;
+      min-height: 160px;
+    }
+    .clinica-mapa {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .clinica-mapa-frame {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border: none;
+      display: block;
+      filter: grayscale(20%) contrast(1.05);
+    }
+    .clinica-endereco {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .clinica-endereco p {
+      font-size: var(--base);
+      color: var(--ink-lt);
+      line-height: 1.6;
+    }
+    .clinica-endereco strong {
+      display: block;
+      font-family: var(--fd);
+      font-size: var(--h3);
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .25rem;
+    }
+    .clinica-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: var(--xs);
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .5rem;
+    }
+    .clinica-tag::before {
+      content: '';
+      width: 20px; height: 1px;
+      background: var(--gold);
+    }
+
+    @media (max-width: 900px) {
+      .clinica-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
     /* FOOTER */
     footer {
       background: var(--ink);
@@ -844,23 +978,71 @@
     }
     .modal-form { display: flex; flex-direction: column; gap: 1rem; }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE — 900px */
     @media (max-width: 900px) {
-      #hero { grid-template-columns: 1fr; height: auto; max-height: none; min-height: 100svh; }
-      .hero-photo { height: 40vw; max-height: 280px; order: -1; }
-      .hero-content { padding: 1.5rem var(--cpx) 3rem; }
-      .ba-grid { grid-template-columns: 1fr 1fr; }
-      .svc-grid { grid-template-columns: 1fr 1fr; }
-      .sobre-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .dep-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      /* HERO: foto oculta, content ocupa tudo */
+      #hero {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: none;
+        min-height: 100svh;
+      }
+      .hero-photo { display: none; }
+      .hero-content {
+        padding: clamp(5rem, 9vh, 6rem) var(--cpx) 3rem;
+        z-index: 1;
+      }
+      .hero-ghost { font-size: clamp(5rem, 18vw, 8rem); }
+
+      /* Foto mobile entre ticker e resultados */
+      .mobile-dr-photo { display: block; }
+
+      /* GRIDS */
+      .ba-grid       { grid-template-columns: 1fr 1fr; }
+      .svc-grid      { grid-template-columns: 1fr 1fr; }
+      .dep-grid      { grid-template-columns: 1fr 1fr; }
+      .sobre-grid    { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-grid   { grid-template-columns: 1fr; gap: 2rem; }
+
+      /* SOBRE: foto menor no mobile */
+      .sobre-photo   { aspect-ratio: 4/3; overflow: hidden; }
+      .sobre-photo::before, .sobre-photo::after { display: none; }
+
+      /* NAV */
+      .nav-logo-img  { height: 28px; }
+
+      /* BA sliders: menos altura em tablet */
+      .ba-container  { aspect-ratio: 4/5; }
     }
+
+    /* RESPONSIVE — 560px */
     @media (max-width: 560px) {
-      .ba-grid { grid-template-columns: 1fr; }
+      .ba-grid  { grid-template-columns: 1fr; }
       .svc-grid { grid-template-columns: 1fr; }
+      .dep-grid { grid-template-columns: 1fr; }
+
+      /* BA: proporção quadrada no mobile */
+      .ba-container { aspect-ratio: 1/1; }
+
+      /* Hero form: inputs lado a lado nome + tel */
+      .hero-form { max-width: 100%; }
+
+      /* Ticker: texto menor */
+      .ticker-item { font-size: .6875rem; letter-spacing: .12em; }
+
+      /* Cursor off */
       .cursor-dot, .cursor-ring { display: none; }
       body { cursor: auto; }
+
+      /* Nav CTA oculto */
       nav .nav-cta { display: none; }
+
+      /* Footer bottom: stack */
+      .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+
+      /* Depoimentos: facade menor no mobile */
+      .dep-facade { aspect-ratio: 4/3; }
     }
   </style>
 </head>
@@ -870,19 +1052,10 @@
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
 
-  <!-- Loader -->
-  <div id="loader">
-    <div class="loader-name">Dr. Enio Leite</div>
-    <div class="loader-bar-wrap">
-      <div class="loader-bar" id="loader-bar"></div>
-    </div>
-    <div class="loader-counter" id="loader-counter">0%</div>
-  </div>
-
   <!-- Nav -->
   <nav id="nav">
     <a href="#hero" class="nav-logo">
-      <img src="logo-horizontal.png" alt="Dr. Enio Leite" class="nav-logo-img">
+      <img src="logo-horizontal.png" alt="Dr. Ênio Leite" class="nav-logo-img">
     </a>
     <a href="#" class="nav-cta" id="nav-cta-btn">
       <span>Agendar consulta</span>
@@ -895,9 +1068,9 @@
     <div class="hero-ghost" aria-hidden="true">NATURAL</div>
 
     <div class="hero-content">
-      <div class="hero-label">DR. ENIO LEITE &middot; HARMONIZACAO OROFACIAL &middot; SERRA, ES</div>
+      <div class="hero-label">DR. ÊNIO LEITE &middot; HARMONIZAÇÃO OROFACIAL &middot; SERRA, ES</div>
 
-      <h1 class="hero-headline">O resultado que&nbsp;ninguem percebe.<br>Mas todo mundo nota.</h1>
+      <h1 class="hero-headline">O resultado que&nbsp;ninguém percebe.<br>Mas todo mundo nota.</h1>
 
       <p class="hero-sub">Para quem sempre quis mudar alguma coisa no rosto. Mas queria que parecesse natural.</p>
 
@@ -906,12 +1079,12 @@
         <input type="text" class="form-input" placeholder="Seu nome" id="hero-nome" autocomplete="name">
         <input type="tel" class="form-input" placeholder="WhatsApp" id="hero-tel" autocomplete="tel">
         <select class="form-input" id="hero-proc">
-          <option value="" disabled selected>O que voce quer melhorar?</option>
-          <option value="Toxina Botulinica">Toxina Botulinica</option>
+          <option value="" disabled selected>O que você quer melhorar?</option>
+          <option value="Toxina Botulínica">Toxina Botulínica</option>
           <option value="Preenchimento Labial">Preenchimento Labial</option>
-          <option value="Bioestimuladores de Colageno">Bioestimuladores de Colageno</option>
-          <option value="Fios de Sustentacao">Fios de Sustentacao</option>
-          <option value="Rinomodelacao">Rinomodelacao</option>
+          <option value="Bioestimuladores de Colágeno">Bioestimuladores de Colágeno</option>
+          <option value="Fios de Sustentação">Fios de Sustentação</option>
+          <option value="Rinomodelação">Rinomodelação</option>
           <option value="Lipo de Papada">Lipo de Papada</option>
           <option value="Consulta geral">Nao sei ainda / Consulta geral</option>
         </select>
@@ -923,21 +1096,21 @@
 
       <div class="hero-social-proof">
         <div class="avatar-stack">
-          <div class="avatar"></div>
-          <div class="avatar"></div>
-          <div class="avatar"></div>
-          <div class="avatar"></div>
-          <div class="avatar"></div>
+          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/23.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/17.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/55.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
         </div>
         <div class="proof-text">
           <strong>&#11088; 4.9 &middot; mais de 500 pacientes atendidos</strong>
-          Serra e regiao
+          Serra e região
         </div>
       </div>
     </div>
 
     <div class="hero-photo">
-      <img src="dr-enio-hero.png" alt="Dr. Enio Leite" class="hero-photo-img">
+      <img src="dr-enio-hero.png" alt="Dr. Ênio Leite" class="hero-photo-img">
     </div>
   </section>
 
@@ -945,15 +1118,15 @@
   <div class="ticker" aria-hidden="true">
     <div class="ticker-inner">
       <span class="ticker-item">RESULTADO NATURAL<span class="ticker-dot"></span></span>
-      <span class="ticker-item">HARMONIZACAO OROFACIAL<span class="ticker-dot"></span></span>
+      <span class="ticker-item">HARMONIZAÇÃO OROFACIAL<span class="ticker-dot"></span></span>
       <span class="ticker-item">SERRA, ES<span class="ticker-dot"></span></span>
       <span class="ticker-item">MAIS DE 500 PACIENTES<span class="ticker-dot"></span></span>
-      <span class="ticker-item">DR. ENIO LEITE<span class="ticker-dot"></span></span>
+      <span class="ticker-item">DR. ÊNIO LEITE<span class="ticker-dot"></span></span>
       <span class="ticker-item">RESULTADO NATURAL<span class="ticker-dot"></span></span>
-      <span class="ticker-item">HARMONIZACAO OROFACIAL<span class="ticker-dot"></span></span>
+      <span class="ticker-item">HARMONIZAÇÃO OROFACIAL<span class="ticker-dot"></span></span>
       <span class="ticker-item">SERRA, ES<span class="ticker-dot"></span></span>
       <span class="ticker-item">MAIS DE 500 PACIENTES<span class="ticker-dot"></span></span>
-      <span class="ticker-item">DR. ENIO LEITE<span class="ticker-dot"></span></span>
+      <span class="ticker-item">DR. ÊNIO LEITE<span class="ticker-dot"></span></span>
     </div>
   </div>
 
@@ -961,47 +1134,53 @@
   <section id="resultados">
     <div class="container">
       <span class="section-label reveal">RESULTADOS</span>
-      <h2 class="reveal reveal-d1" style="font-family:var(--fd);font-size:var(--h1);font-weight:700;color:var(--ink);margin-bottom:.75rem;">Veja o que e possivel.</h2>
+      <h2 class="reveal reveal-d1" style="font-family:var(--fd);font-size:var(--h1);font-weight:700;color:var(--ink);margin-bottom:.75rem;">Veja o que é possível.</h2>
       <p class="reveal reveal-d2" style="font-size:var(--lg);color:var(--mid);max-width:48ch;">Casos reais. Cada resultado, pensado para aquele rosto.</p>
     </div>
 
     <div class="ba-grid">
       <div class="ba-container">
-        <div class="ba-after"><div class="ba-placeholder-text">Depois</div></div>
-        <div class="ba-before"><div class="ba-placeholder-text">Antes</div></div>
+        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="ba-handle"></div>
-        <div class="ba-label">Toxina Botulinica</div>
+        <div class="ba-label">Toxina Botulínica</div>
       </div>
       <div class="ba-container">
-        <div class="ba-after"><div class="ba-placeholder-text">Depois</div></div>
-        <div class="ba-before"><div class="ba-placeholder-text">Antes</div></div>
+        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="ba-handle"></div>
         <div class="ba-label">Preenchimento Labial</div>
       </div>
       <div class="ba-container">
-        <div class="ba-after"><div class="ba-placeholder-text">Depois</div></div>
-        <div class="ba-before"><div class="ba-placeholder-text">Antes</div></div>
+        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="ba-handle"></div>
         <div class="ba-label">Bioestimuladores</div>
       </div>
       <div class="ba-container">
-        <div class="ba-after"><div class="ba-placeholder-text">Depois</div></div>
-        <div class="ba-before"><div class="ba-placeholder-text">Antes</div></div>
+        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="ba-handle"></div>
-        <div class="ba-label">Fios de Sustentacao</div>
+        <div class="ba-label">Fios de Sustentação</div>
       </div>
       <div class="ba-container">
-        <div class="ba-after"><div class="ba-placeholder-text">Depois</div></div>
-        <div class="ba-before"><div class="ba-placeholder-text">Antes</div></div>
+        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="ba-handle"></div>
-        <div class="ba-label">Rinomodelacao</div>
+        <div class="ba-label">Rinomodelação</div>
       </div>
       <div class="ba-container">
-        <div class="ba-after"><div class="ba-placeholder-text">Depois</div></div>
-        <div class="ba-before"><div class="ba-placeholder-text">Antes</div></div>
+        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
         <div class="ba-handle"></div>
         <div class="ba-label">Lipo de Papada</div>
       </div>
+    </div>
+    <div style="text-align:center;padding:3rem var(--cpx) 0;">
+      <button class="btn btn-gold reveal reveal-d1 open-modal" style="margin:0 auto;">
+        <span>Quero um resultado assim</span>
+        <span class="btn-arrow">&#8599;</span>
+      </button>
     </div>
   </section>
 
@@ -1010,39 +1189,45 @@
     <div class="svc-ghost" aria-hidden="true">CUIDADO</div>
     <div class="container">
       <span class="section-label reveal">O QUE FAZEMOS</span>
-      <h2 class="reveal reveal-d1" style="font-family:var(--fd);font-size:var(--h1);font-weight:700;color:var(--ink);">Escolha o que faz sentido pra voce.</h2>
+      <h2 class="reveal reveal-d1" style="font-family:var(--fd);font-size:var(--h1);font-weight:700;color:var(--ink);">Escolha o que faz sentido pra você.</h2>
     </div>
     <div class="svc-grid">
       <div class="svc-card reveal">
         <span class="svc-num">01</span>
-        <h3 class="svc-name">Toxina Botulinica</h3>
-        <p class="svc-desc">Aquela versao mais descansada que voce lembra de voce. As linhas de expressao somem. A testa relaxa. O rosto fica jovem de um jeito que parece natural.</p>
+        <h3 class="svc-name">Toxina Botulínica</h3>
+        <p class="svc-desc">Aquela versão mais descansada que você lembra de você. As linhas de expressão somem. A testa relaxa. O rosto fica jovem de um jeito que parece natural.</p>
       </div>
       <div class="svc-card reveal reveal-d1">
         <span class="svc-num">02</span>
         <h3 class="svc-name">Preenchimento Labial</h3>
-        <p class="svc-desc">Para quem sempre quis labios mais cheios e nunca teve coragem. Feito no tamanho certo pro seu rosto. Ninguem vai saber o que voce fez. Todo mundo vai notar.</p>
+        <p class="svc-desc">Para quem sempre quis lábios mais cheios e nunca teve coragem. Feito no tamanho certo pro seu rosto. Ninguém vai saber o que você fez. Todo mundo vai notar.</p>
       </div>
       <div class="svc-card reveal reveal-d2">
         <span class="svc-num">03</span>
-        <h3 class="svc-name">Bioestimuladores de Colageno</h3>
-        <p class="svc-desc">A pele que voce tinha antes. Mais firme, mais jovem. A propria pele comeca a se recuperar, e o resultado so melhora.</p>
+        <h3 class="svc-name">Bioestimuladores de Colágeno</h3>
+        <p class="svc-desc">A pele que você tinha antes. Mais firme, mais jovem. A própria pele começa a se recuperar, e o resultado só melhora.</p>
       </div>
       <div class="svc-card reveal">
         <span class="svc-num">04</span>
-        <h3 class="svc-name">Fios de Sustentacao</h3>
-        <p class="svc-desc">Aquele contorno definido que voce sempre quis. Sem cirurgia, sem corte. O rosto volta a ter o lugar que sempre deveria ter tido.</p>
+        <h3 class="svc-name">Fios de Sustentação</h3>
+        <p class="svc-desc">Aquele contorno definido que você sempre quis. Sem cirurgia, sem corte. O rosto volta a ter o lugar que sempre deveria ter tido.</p>
       </div>
       <div class="svc-card reveal reveal-d1">
         <span class="svc-num">05</span>
-        <h3 class="svc-name">Rinomodelacao</h3>
-        <p class="svc-desc">Aquele nariz que voce sempre quis ver no espelho. Sem cirurgia. Resultado imediato.</p>
+        <h3 class="svc-name">Rinomodelação</h3>
+        <p class="svc-desc">Aquele nariz que você sempre quis ver no espelho. Sem cirurgia. Resultado imediato.</p>
       </div>
       <div class="svc-card reveal reveal-d2">
         <span class="svc-num">06</span>
         <h3 class="svc-name">Lipo de Papada</h3>
         <p class="svc-desc">Aquele contorno embaixo do queixo que some nas fotos. Definido de vez, de um jeito que muda o rosto inteiro.</p>
       </div>
+    </div>
+    <div style="text-align:center;padding:3rem var(--cpx) 0;position:relative;z-index:1;">
+      <button class="btn btn-gold reveal reveal-d1 open-modal" style="margin:0 auto;">
+        <span>Agendar minha consulta</span>
+        <span class="btn-arrow">&#8599;</span>
+      </button>
     </div>
   </section>
 
@@ -1051,19 +1236,25 @@
     <div class="container">
       <div class="sobre-grid">
         <div class="sobre-photo reveal">
-          <img src="dr-enio-about.png" alt="Dr. Enio Leite" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          <img src="dr-enio-about.png" alt="Dr. Ênio Leite" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
         </div>
         <div class="sobre-content">
           <span class="section-label reveal">O ESPECIALISTA</span>
-          <h2 class="reveal reveal-d1">Dr. Enio Leite</h2>
-          <p class="reveal reveal-d2" style="font-family:var(--fd);font-size:var(--h3);font-style:italic;color:var(--mid);margin-bottom:1.5rem;">Cirurgiao Dentista · Especialista em Harmonizacao Orofacial</p>
-          <p class="reveal reveal-d3">Tem coisas na nossa aparencia que nos incomodam ha anos. O Dr. Enio Leite entende isso.</p>
-          <p class="reveal" style="transition-delay:.4s;margin-top:1rem;">Com mais de 8 anos dedicados a harmonizacao facial, ele cuida de cada detalhe para que o resultado faca sentido pra voce. Cada rosto e tratado do jeito que merece.</p>
+          <h2 class="reveal reveal-d1">Dr. Ênio Leite</h2>
+          <p class="reveal reveal-d2" style="font-family:var(--fd);font-size:var(--h3);font-style:italic;color:var(--mid);margin-bottom:1.5rem;">Cirurgião Dentista · Especialista em Harmonização Orofacial</p>
+          <p class="reveal reveal-d3">Tem coisas na nossa aparência que nos incomodam há anos. O Dr. Ênio Leite entende isso.</p>
+          <p class="reveal" style="transition-delay:.4s;margin-top:1rem;">Com mais de 8 anos dedicados a harmonização facial, ele cuida de cada detalhe para que o resultado faça sentido pra você. Cada rosto é tratado do jeito que merece.</p>
           <div class="credentials" style="margin-top:2rem;">
-            <div class="cred-item reveal" style="transition-delay:.5s">Cirurgiao Dentista · CRO/ES 7394</div>
-            <div class="cred-item reveal" style="transition-delay:.6s">Especialista em Harmonizacao Orofacial · EPAO 1575</div>
-            <div class="cred-item reveal" style="transition-delay:.7s">Referencia em Vitoria, ES</div>
-            <div class="cred-item reveal" style="transition-delay:.8s">Foco em Lipo de Papada e Rinomodelacao Estruturada</div>
+            <div class="cred-item reveal" style="transition-delay:.5s">Cirurgião Dentista · CRO/ES 7394</div>
+            <div class="cred-item reveal" style="transition-delay:.6s">Especialista em Harmonização Orofacial · EPAO 1575</div>
+            <div class="cred-item reveal" style="transition-delay:.7s">Referência em Vitoria, ES</div>
+            <div class="cred-item reveal" style="transition-delay:.8s">Foco em Lipo de Papada e Rinomodelação Estruturada</div>
+          </div>
+          <div style="margin-top:2.5rem;">
+            <button class="btn btn-gold reveal open-modal" style="transition-delay:.9s;">
+              <span>Agendar com Dr. Ênio</span>
+              <span class="btn-arrow">&#8599;</span>
+            </button>
           </div>
         </div>
       </div>
@@ -1077,32 +1268,35 @@
       <h2 class="reveal reveal-d1">Quem foi, voltou diferente.</h2>
       <div class="dep-grid">
         <div class="dep-card reveal">
-          <div class="dep-video">
-            <div class="dep-video-placeholder">
-              <div class="dep-play"></div>
-              <span>@drenioleite</span>
-            </div>
+          <div class="dep-facade" data-yt="9rENaneS7sQ" style="background-image:url('thumb-dep-1.jpg');" onclick="playYt(this)">
+            <div class="dep-facade-overlay"></div>
+            <div class="dep-facade-play"></div>
+            <span class="dep-facade-handle">@drenioleite</span>
           </div>
-          <p class="dep-quote">"O resultado ficou tao natural que ninguem acreditou que eu tinha feito alguma coisa."</p>
+          <p class="dep-quote">"O resultado ficou tão natural que ninguém acreditou que eu tinha feito alguma coisa."</p>
         </div>
         <div class="dep-card reveal reveal-d1">
-          <div class="dep-video">
-            <div class="dep-video-placeholder">
-              <div class="dep-play"></div>
-              <span>@drenioleite</span>
-            </div>
+          <div class="dep-facade" data-yt="ksYrP20AyFI" style="background-image:url('thumb-dep-2.jpg');" onclick="playYt(this)">
+            <div class="dep-facade-overlay"></div>
+            <div class="dep-facade-play"></div>
+            <span class="dep-facade-handle">@drenioleite</span>
           </div>
-          <p class="dep-quote">"Eu tinha medo de parecer diferente. Sai parecendo eu mesma, so que descansada."</p>
+          <p class="dep-quote">"Eu tinha medo de parecer diferente. Saí parecendo eu mesma, só que descansada."</p>
         </div>
         <div class="dep-card reveal reveal-d2">
-          <div class="dep-video">
-            <div class="dep-video-placeholder">
-              <div class="dep-play"></div>
-              <span>@drenioleite</span>
-            </div>
+          <div class="dep-facade" data-yt="CP-oVcOdp_I" style="background-image:url('thumb-dep-3.jpg');" onclick="playYt(this)">
+            <div class="dep-facade-overlay"></div>
+            <div class="dep-facade-play"></div>
+            <span class="dep-facade-handle">@drenioleite</span>
           </div>
-          <p class="dep-quote">"Voltei no mesmo dia pro trabalho. Ninguem percebeu nada. Todo mundo falou que eu estava bem."</p>
+          <p class="dep-quote">"Voltei no mesmo dia pro trabalho. Ninguém percebeu nada. Todo mundo falou que eu estava bem."</p>
         </div>
+      </div>
+      <div style="text-align:center;margin-top:3rem;">
+        <button class="btn btn-gold reveal reveal-d3 open-modal" style="margin:0 auto;">
+          <span>Quero meu resultado</span>
+          <span class="btn-arrow">&#8599;</span>
+        </button>
       </div>
     </div>
   </section>
@@ -1112,7 +1306,7 @@
     <div class="cta-ghost" aria-hidden="true">AGENDE</div>
     <div class="container" style="text-align:center;position:relative;z-index:1;">
       <h2 class="reveal">Pronto para dar esse passo?</h2>
-      <p class="reveal reveal-d1">A consulta e o comeco. Voce vem, conta o que te incomoda, e a gente traca o melhor caminho pra voce.</p>
+      <p class="reveal reveal-d1">A consulta é o começo. Você vem, conta o que te incomoda, e a gente traça o melhor caminho pra você.</p>
       <button class="btn btn-gold reveal reveal-d2" id="cta-btn" style="margin:0 auto;">
         <span>Quero agendar minha consulta</span>
         <span class="btn-arrow">&#8599;</span>
@@ -1131,7 +1325,7 @@
           Vou ficar exagerada?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Com certeza nao. Aqui o foco e no resultado natural. Voce vai sair diferente, mas de um jeito que vai parecer que sempre foi assim.</div>
+        <div class="faq-a">Com certeza não. Aqui o foco é no resultado natural. Você vai sair diferente, mas de um jeito que vai parecer que sempre foi assim.</div>
       </div>
 
       <div class="faq-item reveal reveal-d1">
@@ -1139,7 +1333,7 @@
           Vai doer?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Nao. Os procedimentos sao feitos com anestesia local. O desconforto e minimo. A maioria das pessoas volta pras atividades normais no mesmo dia.</div>
+        <div class="faq-a">Nao. Os procedimentos são feitos com anestesia local. O desconforto é mínimo. A maioria das pessoas volta pras atividades normais no mesmo dia.</div>
       </div>
 
       <div class="faq-item reveal reveal-d2">
@@ -1147,7 +1341,7 @@
           Quanto tempo dura o resultado?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Depende do que for feito. Na consulta, o Dr. Enio explica tudo com calma, incluindo o que esperar e quando voltar.</div>
+        <div class="faq-a">Depende do que for feito. Na consulta, o Dr. Ênio explica tudo com calma, incluindo o que esperar e quando voltar.</div>
       </div>
 
       <div class="faq-item reveal">
@@ -1155,7 +1349,7 @@
           Preciso fazer mais de um procedimento?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Nao necessariamente. A consulta define o que faz sentido pro seu caso. Nada e indicado sem necessidade.</div>
+        <div class="faq-a">Não necessariamente. A consulta define o que faz sentido pro seu caso. Nada e indicado sem necessidade.</div>
       </div>
 
       <div class="faq-item reveal reveal-d1">
@@ -1163,7 +1357,61 @@
           A consulta tem custo?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Sim. O valor e informado pela nossa equipe no primeiro contato.</div>
+        <div class="faq-a">Sim. O valor é informado pela nossa equipe no primeiro contato.</div>
+      </div>
+      <div style="margin-top:3rem;">
+        <button class="btn btn-gold reveal open-modal">
+          <span>Agendar consulta agora</span>
+          <span class="btn-arrow">&#8599;</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINICA -->
+  <section id="clinica">
+    <div class="container">
+      <span class="section-label reveal">A CLINICA</span>
+      <h2 class="reveal reveal-d1" style="font-family:var(--fd);font-size:var(--h1);font-weight:700;color:var(--ink);">Um ambiente feito para você se sentir segura.</h2>
+
+      <div class="clinica-grid">
+
+        <!-- Fotos -->
+        <div class="clinica-fotos">
+          <div class="clinica-foto">
+            <div class="clinica-foto-placeholder">foto clinica principal</div>
+          </div>
+          <div class="clinica-foto">
+            <div class="clinica-foto-placeholder">foto sala</div>
+          </div>
+          <div class="clinica-foto">
+            <div class="clinica-foto-placeholder">foto detalhe</div>
+          </div>
+        </div>
+
+        <!-- Mapa + endereco -->
+        <div class="clinica-mapa reveal reveal-d1">
+          <iframe
+            class="clinica-mapa-frame"
+            src="https://maps.google.com/maps?q=Shopping+Mestre+%C3%81lvaro,+Serra,+ES,+Brasil&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização Dr. Ênio Leite"
+          ></iframe>
+
+          <div class="clinica-endereco">
+            <span class="clinica-tag">Como chegar</span>
+            <strong>Shopping Mestre Álvaro</strong>
+            <p>Torre B, Sala 701<br>Serra, ES</p>
+          </div>
+
+          <button class="btn btn-gold reveal open-modal" style="align-self:flex-start;">
+            <span>Agendar consulta</span>
+            <span class="btn-arrow">&#8599;</span>
+          </button>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1173,25 +1421,26 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img src="logo-monograma.png" alt="Dr. Enio Leite" style="height:48px;opacity:.85;margin-bottom:.75rem;display:block;">
-          <p class="footer-tagline">"O resultado que ninguem percebe. Mas todo mundo nota."</p>
+          <img src="logo-monograma.png" alt="Dr. Ênio Leite" style="height:48px;opacity:.85;margin-bottom:.75rem;display:block;">
+          <p class="footer-tagline">"O resultado que ninguém percebe. Mas todo mundo nota."</p>
         </div>
         <div class="footer-col">
-          <h4>Localizacao</h4>
-          <p>Shopping Mestre Alvaro</p>
+          <h4>Localização</h4>
+          <p>Shopping Mestre Álvaro</p>
           <p>Torre B, Sala 701</p>
           <p>Serra, ES</p>
         </div>
         <div class="footer-col">
           <h4>Contato</h4>
-          <a href="tel:+5527995053536">(27) 99505-3536</a>
-          <a href="https://wa.me/5527996566104" target="_blank" rel="noopener">WhatsApp</a>
           <a href="https://instagram.com/drenioleite" target="_blank" rel="noopener">@drenioleite</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Dr. Enio Leite. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Dr. Ênio Leite. Todos os direitos reservados.</p>
         <p>CRO/ES 7394 &middot; EPAO 1575</p>
+      </div>
+      <div style="text-align:center;padding-top:1.25rem;">
+        <a href="https://syradigital.com" target="_blank" rel="noopener" style="font-size:.6875rem;color:rgba(130,121,110,.3);text-decoration:none;letter-spacing:.08em;">feito por Syra Digital</a>
       </div>
     </div>
   </footer>
@@ -1205,12 +1454,12 @@
         <input type="text" class="form-input" placeholder="Seu nome" id="modal-nome" autocomplete="name">
         <input type="tel" class="form-input" placeholder="WhatsApp" id="modal-tel" autocomplete="tel">
         <select class="form-input" id="modal-proc">
-          <option value="" disabled selected>O que voce quer melhorar?</option>
-          <option value="Toxina Botulinica">Toxina Botulinica</option>
+          <option value="" disabled selected>O que você quer melhorar?</option>
+          <option value="Toxina Botulínica">Toxina Botulínica</option>
           <option value="Preenchimento Labial">Preenchimento Labial</option>
-          <option value="Bioestimuladores de Colageno">Bioestimuladores de Colageno</option>
-          <option value="Fios de Sustentacao">Fios de Sustentacao</option>
-          <option value="Rinomodelacao">Rinomodelacao</option>
+          <option value="Bioestimuladores de Colágeno">Bioestimuladores de Colágeno</option>
+          <option value="Fios de Sustentação">Fios de Sustentação</option>
+          <option value="Rinomodelação">Rinomodelação</option>
           <option value="Lipo de Papada">Lipo de Papada</option>
           <option value="Consulta geral">Nao sei ainda / Consulta geral</option>
         </select>
@@ -1252,31 +1501,8 @@
       el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
     });
 
-    // LOADER
+    // GSAP + SCROLL
     gsap.registerPlugin(ScrollTrigger);
-
-    const loaderTl = gsap.timeline({
-      onComplete: () => {
-        gsap.to('#loader', {
-          yPercent: -100,
-          duration: 0.9,
-          ease: 'power3.inOut',
-          onComplete: () => { document.getElementById('loader').style.display = 'none'; }
-        });
-      }
-    });
-
-    loaderTl
-      .to('.loader-name', { opacity: 1, duration: 0.6, ease: 'power2.out' })
-      .to('.loader-bar', {
-        scaleX: 1,
-        duration: 1.4,
-        ease: 'power2.inOut',
-        onUpdate: function() {
-          document.getElementById('loader-counter').textContent = Math.round(this.progress() * 100) + '%';
-        }
-      }, 0.3)
-      .to('.loader-name', { opacity: 0, duration: 0.3, ease: 'power2.in' }, '+=0.2');
 
     // LENIS
     const lenis = new Lenis({
@@ -1296,12 +1522,11 @@
     }, { passive: true });
 
     // HERO ENTRANCE
-    const heroDelay = 2.0;
-    gsap.to('.hero-label',        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: heroDelay });
-    gsap.to('.hero-headline',     { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out', delay: heroDelay + 0.2 });
-    gsap.to('.hero-sub',          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: heroDelay + 0.4 });
-    gsap.to('.hero-form',         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: heroDelay + 0.6 });
-    gsap.to('.hero-social-proof', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: heroDelay + 0.8 });
+    gsap.to('.hero-label',        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.1 });
+    gsap.to('.hero-headline',     { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out', delay: 0.3 });
+    gsap.to('.hero-sub',          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.5 });
+    gsap.to('.hero-form',         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.7 });
+    gsap.to('.hero-social-proof', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.9 });
 
     // SCROLL REVEALS
     function initReveal() {
@@ -1352,8 +1577,10 @@
         before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
       };
 
-      handle.addEventListener('mousedown',  () => dragging = true);
-      handle.addEventListener('touchstart', () => dragging = true, { passive: true });
+      handle.addEventListener('mousedown',  e => { e.preventDefault(); dragging = true; });
+      container.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; });
+      handle.addEventListener('touchstart', e => { dragging = true; }, { passive: true });
+      container.addEventListener('selectstart', e => e.preventDefault());
       document.addEventListener('mousemove', onMove);
       document.addEventListener('touchmove', onMove, { passive: true });
       document.addEventListener('mouseup',  () => dragging = false);
@@ -1377,6 +1604,7 @@
 
     document.getElementById('cta-btn').addEventListener('click', openModal);
     document.getElementById('nav-cta-btn').addEventListener('click', e => { e.preventDefault(); openModal(); });
+    document.querySelectorAll('.open-modal').forEach(btn => btn.addEventListener('click', openModal));
     document.getElementById('modal-close').addEventListener('click', closeModal);
     overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
@@ -1401,6 +1629,21 @@
 
     document.getElementById('hero-submit').addEventListener('click', () => submit('hero-nome', 'hero-tel', 'hero-proc'));
     document.getElementById('modal-submit').addEventListener('click', () => submit('modal-nome', 'modal-tel', 'modal-proc'));
+
+    // YOUTUBE FACADE — play on click
+    function playYt(facade) {
+      const id = facade.dataset.yt;
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&controls=0&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1';
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      facade.innerHTML = '';
+      facade.appendChild(iframe);
+      facade.style.cursor = 'default';
+      facade.onclick = null;
+    }
+
   </script>
 </body>
 </html>

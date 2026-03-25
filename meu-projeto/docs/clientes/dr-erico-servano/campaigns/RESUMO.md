@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Dr Erico Servano
-**Atualizado em:** 18/03/2026, 23:35:18
+**Atualizado em:** 24/03/2026, 20:20:30
 **Período:** Últimos 7 dias
 
 ## Visão Geral
