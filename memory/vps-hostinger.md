@@ -52,5 +52,8 @@ servanoadvogados.syradigital.com {
 ## DNS (Cloudflare)
 - Dominio: syradigital.com gerenciado no Cloudflare
 - Conta: ericsottnas@gmail.com
+- Zone ID syradigital.com: dd4548df15f74e61dad01160ca58abfa
+- API Key (Global): salva em meu-projeto/.env como CLOUDFLARE_API_KEY
 - Para Caddy gerar HTTPS proprio: usar DNS Only (nuvem cinza, proxy OFF)
 - Se usar proxy Cloudflare: Caddy nao consegue gerar cert
+- **Kiwify area membros:** www.syradigital.com → CNAME club.kiwify.com (proxied: false)

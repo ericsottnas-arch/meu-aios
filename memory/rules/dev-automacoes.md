@@ -97,4 +97,45 @@ Docs: `memory/ambiente-ferramentas.md`
 
 ---
 
-Ultima atualizacao: 2026-03-19
+## [HIGH] Automacao de Browser sem Screenshots — Hierarquia de Abordagens
+
+**Problema:** O fluxo cliclick + screencapture e lento e ineficiente (screenshot loop).
+
+**Solucao recomendada por caso de uso:**
+
+### Caso 1: Controle de navegador (web)
+Usar Playwright MCP (ja instalado em `~/.claude.json`):
+- Modo padrao usa accessibility tree, NAO screenshots
+- `browser_snapshot` retorna refs de elementos (ex: `e21`, `button-123`)
+- `browser_click({ref: "button-123"})` clica sem screenshot
+- Para desativar imagens: adicionar `--image-responses=omit` nos args do MCP
+- Config otima: `"args": ["-y", "@playwright/mcp@latest", "--image-responses=omit"]`
+
+### Caso 2: Automacao longa / token-eficiente (Claude Code)
+Usar Playwright CLI (`@playwright/cli`) — 4x menos tokens que MCP:
+- Snapshots salvos em YAML no disco, nao na janela de contexto
+- Instalar: `npm install -g @playwright/cli@latest`
+- Uso: `playwright-cli snapshot` → gera YAML → ler seletivamente
+- Referencia: https://testcollab.com/blog/playwright-cli
+
+### Caso 3: Controle de apps nativos macOS (fora do navegador)
+Usar macos-automator-mcp (steipete) ou macos-ui-automation-mcp (mb-dev):
+- Ambos usam Accessibility API do macOS, sem screenshot
+- `steipete`: npx @steipete/macos-automator-mcp@latest (200+ scripts prontos)
+- `mb-dev`: find_elements, click_by_accessibility_id (JSONPath queries)
+- Requer permissao de Acessibilidade para o app pai (Terminal/Claude Code)
+
+### Quando usar cliclick (fallback):
+- Elementos sem accessibility ID (canvas, apps nao-acessiveis)
+- Acoes que exigem coordenadas absolutas
+- Combinacao com screencapture apenas quando necessario
+
+**Token comparison (MCP vs CLI):**
+- MCP: ~114.000 tokens por tarefa
+- CLI: ~27.000 tokens por tarefa (4x mais eficiente)
+- MCP degrada apos ~15 steps por acumulo de contexto
+- CLI suporta workflows de 50+ steps estavelmente
+
+---
+
+Ultima atualizacao: 2026-03-25

@@ -1,7 +1,7 @@
 {
   "clientId": "dr-erico-servano",
   "clientName": "Dr Erico Servano",
-  "exportedAt": "2026-03-25T10:47:57.151Z",
+  "exportedAt": "2026-03-26T01:09:44.102Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -396,40 +396,40 @@
           },
           {
             "date": "2026-03-24",
-            "impressions": 3790,
+            "impressions": 3816,
             "clicks": 72,
-            "spend": 62.29,
-            "cpc": 0.865139,
-            "ctr": 1.899736,
-            "cpm": 16.435356,
-            "reach": 3416,
-            "frequency": 1.109485,
+            "spend": 63.77,
+            "cpc": 0.885694,
+            "ctr": 1.886792,
+            "cpm": 16.711216,
+            "reach": 3438,
+            "frequency": 1.109948,
             "conversions": 1,
-            "costPerResult": 62.29,
+            "costPerResult": 63.77,
             "linkClicks": 0,
             "landingPageViews": 0,
             "costPerLandingPageView": 0,
             "messagingConversations": 5,
-            "costPerMessagingConversation": 12.458,
+            "costPerMessagingConversation": 12.754,
             "costPerThruplayVideoView": 0
           },
           {
             "date": "2026-03-25",
-            "impressions": 646,
-            "clicks": 8,
-            "spend": 9.98,
-            "cpc": 1.2475,
-            "ctr": 1.23839,
-            "cpm": 15.448916,
-            "reach": 588,
-            "frequency": 1.098639,
-            "conversions": 0,
-            "costPerResult": 0,
+            "impressions": 2868,
+            "clicks": 50,
+            "spend": 50.99,
+            "cpc": 1.0198,
+            "ctr": 1.743375,
+            "cpm": 17.77894,
+            "reach": 2433,
+            "frequency": 1.178792,
+            "conversions": 1,
+            "costPerResult": 50.99,
             "linkClicks": 0,
             "landingPageViews": 0,
             "costPerLandingPageView": 0,
-            "messagingConversations": 0,
-            "costPerMessagingConversation": 0,
+            "messagingConversations": 3,
+            "costPerMessagingConversation": 16.996667,
             "costPerThruplayVideoView": 0
           }
         ],
@@ -438,7 +438,7 @@
             "id": "120245473490680204",
             "name": "P14 [Todos] [30-50] [Int:EMPRESÁRIO E PROPRIETÁRIO e Cor:PROFISSIONAL DA SAUDE] [BRASIL]",
             "status": "ACTIVE",
-            "dailyBudget": 15,
+            "dailyBudget": 25,
             "targeting": {
               "age_max": 65,
               "age_min": 18,
@@ -946,6 +946,34 @@
             "startTime": "2026-03-04T12:34:45-0300",
             "ads": [
               {
+                "id": "120245561518020204",
+                "name": "C14 [Estático] [Hook: RECEBEU UMA NOTIFICAÇÃO DO CONSELHO? relogio] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-25T20:49:36-0300",
+                "creativeId": "1568813754210043",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245561383270204",
+                "name": "C14 [Estático] [Hook: RECEBEU UMA NOTIFICAÇÃO DO CONSELHO?] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-25T20:43:41-0300",
+                "creativeId": "942381004816137",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
                 "id": "120244703477630204",
                 "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
                 "status": "ACTIVE",
@@ -992,7 +1020,7 @@
           {
             "id": "120244703451780204",
             "name": "P11 [Todos] [30-50] [PP: SEMELHANTE 1%] [BRASIL]",
-            "status": "ACTIVE",
+            "status": "PAUSED",
             "dailyBudget": 20,
             "targeting": {
               "age_max": 65,
@@ -2229,14 +2257,14 @@
           },
           {
             "date": "2026-03-25",
-            "impressions": 47,
-            "clicks": 1,
-            "spend": 1.64,
-            "cpc": 1.64,
-            "ctr": 2.12766,
-            "cpm": 34.893617,
-            "reach": 44,
-            "frequency": 1.068182,
+            "impressions": 344,
+            "clicks": 7,
+            "spend": 13.01,
+            "cpc": 1.858571,
+            "ctr": 2.034884,
+            "cpm": 37.819767,
+            "reach": 300,
+            "frequency": 1.146667,
             "conversions": 0,
             "costPerResult": 0,
             "linkClicks": 0,
@@ -3721,14 +3749,14 @@
           },
           {
             "date": "2026-03-25",
-            "impressions": 205,
-            "clicks": 10,
-            "spend": 1.9,
-            "cpc": 0.19,
-            "ctr": 4.878049,
-            "cpm": 9.268293,
-            "reach": 197,
-            "frequency": 1.040609,
+            "impressions": 921,
+            "clicks": 52,
+            "spend": 8.42,
+            "cpc": 0.161923,
+            "ctr": 5.646037,
+            "cpm": 9.142237,
+            "reach": 861,
+            "frequency": 1.069686,
             "conversions": 0,
             "costPerResult": 0,
             "linkClicks": 0,
@@ -4386,127 +4414,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120242892785160204",
-            "name": "00 - INTERESSES",
-            "status": "ACTIVE",
-            "dailyBudget": 32,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "custom_audiences": [
-                {
-                  "id": "120241095046710204",
-                  "name": "Semelhante (BR, 1%) - leads.csv"
-                },
-                {
-                  "id": "120241095047650204",
-                  "name": "Semelhante (BR, 1% to 3%) - leads.csv"
-                },
-                {
-                  "id": "120241693019860204",
-                  "name": "Semelhante (BR, 3% to 6%) - ENVIARAM MENSAGEM"
-                }
-              ],
-              "geo_locations": {
-                "cities": [
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "243550",
-                    "name": "Balneário Camboriú",
-                    "radius": 40,
-                    "region": "Santa Catarina",
-                    "region_id": "459"
-                  },
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "244661",
-                    "name": "Belo Horizonte",
-                    "radius": 40,
-                    "region": "Minas Gerais",
-                    "region_id": "449"
-                  },
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "250457",
-                    "name": "Curitiba",
-                    "radius": 40,
-                    "region": "Paraná",
-                    "region_id": "452"
-                  },
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "267027",
-                    "name": "Rio de Janeiro",
-                    "radius": 40,
-                    "region": "Rio de Janeiro (state)",
-                    "region_id": "454"
-                  },
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "269969",
-                    "name": "São Paulo",
-                    "radius": 40,
-                    "region": "São Paulo (state)",
-                    "region_id": "460"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 1,
-                "individual_setting": {
-                  "geo": 1
-                }
-              }
-            },
-            "createdTime": "2026-01-16T19:44:59-0300",
-            "startTime": "2026-01-16T19:44:59-0300",
-            "ads": [
-              {
-                "id": "120242892785150204",
-                "name": "AD01",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-16T19:45:01-0300",
-                "creativeId": "1398054095237941",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120242893069930204",
-                "name": "AD02",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-16T19:45:01-0300",
-                "creativeId": "1199948892115734",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120242750445380204",
