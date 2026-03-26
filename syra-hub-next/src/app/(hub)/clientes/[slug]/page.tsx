@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { StatusBadge } from '@/components/ui/status-badge'
+import { IntegrationPanels } from '@/components/clients/integration-panels'
 import type { Client } from '@/lib/supabase/types'
 
 interface PageProps {
@@ -70,6 +71,9 @@ export default async function ClientDetailPage({ params }: PageProps) {
           </div>
         </div>
       </div>
+
+      {/* Live Integration Panels */}
+      <IntegrationPanels slug={slug} />
 
       {/* Cards grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

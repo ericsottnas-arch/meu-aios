@@ -29,6 +29,15 @@ export interface Client {
   updated_at: string
 }
 
+export interface ClientIntegration {
+  id: string
+  client_id: string
+  platform: 'ghl' | 'meta' | 'google_ads'
+  config: Record<string, unknown>
+  created_at: string
+  updated_at: string
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -41,6 +50,11 @@ export interface Database {
         Row: Client
         Insert: Omit<Client, 'created_at' | 'updated_at'>
         Update: Partial<Omit<Client, 'id'>>
+      }
+      client_integrations: {
+        Row: ClientIntegration
+        Insert: Omit<ClientIntegration, 'id' | 'created_at' | 'updated_at'>
+        Update: Partial<Omit<ClientIntegration, 'id'>>
       }
     }
   }
