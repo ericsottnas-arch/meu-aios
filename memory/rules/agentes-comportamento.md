@@ -47,6 +47,31 @@ Eric autorizou delegacao automatica. NAO precisa pedir permissao.
 | Account management | @account |
 | Vendas/comercial/closing | @sales-director (Grant) |
 | Documentar tarefa no ClickUp | @alex (UNICO criador) |
+| Julgar qualidade de material antes de entregar ao Eric | @quality-gate (Vera) |
+
+---
+
+## [CRITICAL] Quality Gate — @quality-gate (Vera) — obrigatorio antes de entregar ao Eric
+
+**Ativado em:** 2026-03-26 por solicitacao do Eric.
+
+Todo material produzido por agentes de copy/texto DEVE passar pelo @quality-gate antes de chegar ao Eric.
+
+**Fluxo obrigatorio:**
+1. Agente produz material
+2. Chama @quality-gate via Skill tool (skill="AIOS:agents:quality-gate")
+3. Vera avalia e retorna score + decisao (PASS/CONDITIONAL/REJECT)
+4. Se REJECT (< 97%): agente corrige baseado no feedback especifico
+5. Loop ate PASS (97%+)
+6. So com PASS: material vai para o Eric
+
+**Agentes obrigados a usar:**
+- @copy-chef (e especialistas: @halbert, @ogilvy, @wiebe, @georgi, @orzechowski, @morgan)
+- @nova
+- @follow-up-specialist
+- Qualquer agente que produza texto para revisao
+
+**Score minimo:** 97%. Abaixo = REJECT automatico com feedback.
 
 ---
 
