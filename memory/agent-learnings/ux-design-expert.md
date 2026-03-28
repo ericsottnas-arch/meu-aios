@@ -61,6 +61,15 @@
 
 ---
 
+## [2026-03-27] Feedback: Não tentar substituir ferramenta recomendada com código
+
+- **Contexto:** Eric pediu logos para JurisTrack. Recomendei Freepik/Looka como caminho certo, mas mesmo assim tentei gerar via SVG.
+- **Feedback:** "se eu tinha feito essa recomendação antes pq vc ainda tentou gerar pelo svg?"
+- **Regra derivada:** Quando recomendar uma ferramenta externa como melhor opção para uma tarefa (logo, imagem, ilustração), NÃO tentar fazer a mesma coisa via código. Seguir a própria recomendação. Código SVG não substitui ferramenta de design para logos profissionais.
+- **Severidade:** HIGH
+
+---
+
 ## Severidade das Regras
 - **Before/after slider sem user-select:** CRITICAL (problema visual óbvio ao usar)
 - **Stack de animações aprovada:** HIGH (usar sempre para páginas premium)

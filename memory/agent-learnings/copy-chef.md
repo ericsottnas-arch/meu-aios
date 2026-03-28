@@ -189,6 +189,16 @@
 
 ---
 
+## [2026-03-27] Regra derivada: denuncia anonima ao CRO — PROIBIDO usar como argumento
+
+- **Contexto:** Sequencia WhatsApp Dr. Erico Servano v3 — feedback Brenda Alves (advogada do escritorio)
+- **Regra:** PROIBIDO mencionar "denuncia anonima" ao CRO como argumento de medo em copy para o escritorio Servano. Na realidade, denuncia anonima ao CRO é tecnicamente ilegal. O escritorio questiona esse tipo de denuncia na justica e por muitas vezes a anula. Usar como argumento cria contradicao com a propria estrategia do cliente.
+- **Substituto:** Usar "concorrente, colega, foto nas redes sociais" como exemplos de origem de processo.
+- **Aplica a:** qualquer copy juridica para escritorios de advocacia que atuam com defesa de profissionais de saude
+- **Severidade:** CRITICAL
+
+---
+
 ## [2026-03-10] Feedback: protocolo de ativação — ordem obrigatória
 
 - **Contexto:** Demanda de funil de aquisição HOF via conteúdo

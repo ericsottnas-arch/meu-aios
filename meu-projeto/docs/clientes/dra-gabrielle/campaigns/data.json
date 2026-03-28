@@ -1,7 +1,7 @@
 {
   "clientId": "dra-gabrielle",
   "clientName": "Dra. Gabrielle",
-  "exportedAt": "2026-03-27T10:47:29.545Z",
+  "exportedAt": "2026-03-28T10:58:07.265Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -991,14 +991,14 @@
           },
           {
             "date": "2026-03-26",
-            "impressions": 1232,
+            "impressions": 1234,
             "clicks": 31,
             "spend": 18.83,
             "cpc": 0.607419,
-            "ctr": 2.516234,
-            "cpm": 15.284091,
-            "reach": 1147,
-            "frequency": 1.074106,
+            "ctr": 2.512156,
+            "cpm": 15.259319,
+            "reach": 1148,
+            "frequency": 1.074913,
             "conversions": 0,
             "costPerResult": 0,
             "linkClicks": 0,
@@ -1010,16 +1010,35 @@
           },
           {
             "date": "2026-03-27",
-            "impressions": 389,
-            "clicks": 10,
-            "spend": 8.39,
-            "cpc": 0.839,
-            "ctr": 2.570694,
-            "cpm": 21.568123,
-            "reach": 315,
-            "frequency": 1.234921,
+            "impressions": 2534,
+            "clicks": 69,
+            "spend": 52.37,
+            "cpc": 0.758986,
+            "ctr": 2.722968,
+            "cpm": 20.66693,
+            "reach": 1746,
+            "frequency": 1.451317,
+            "conversions": 8,
+            "costPerResult": 6.54625,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 1,
+            "costPerMessagingConversation": 52.37,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-28",
+            "impressions": 594,
+            "clicks": 11,
+            "spend": 11.37,
+            "cpc": 1.033636,
+            "ctr": 1.851852,
+            "cpm": 19.141414,
+            "reach": 517,
+            "frequency": 1.148936,
             "conversions": 1,
-            "costPerResult": 8.39,
+            "costPerResult": 11.37,
             "linkClicks": 0,
             "landingPageViews": 0,
             "costPerLandingPageView": 0,
@@ -2428,14 +2447,33 @@
           },
           {
             "date": "2026-03-27",
-            "impressions": 102,
-            "clicks": 1,
-            "spend": 0.76,
-            "cpc": 0.76,
-            "ctr": 0.980392,
-            "cpm": 7.45098,
-            "reach": 97,
-            "frequency": 1.051546,
+            "impressions": 1483,
+            "clicks": 40,
+            "spend": 10.4,
+            "cpc": 0.26,
+            "ctr": 2.697235,
+            "cpm": 7.012812,
+            "reach": 1414,
+            "frequency": 1.048798,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-28",
+            "impressions": 175,
+            "clicks": 7,
+            "spend": 1.54,
+            "cpc": 0.22,
+            "ctr": 4,
+            "cpm": 8.8,
+            "reach": 170,
+            "frequency": 1.029412,
             "conversions": 0,
             "costPerResult": 0,
             "linkClicks": 0,
@@ -6095,7 +6133,139 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120232400126440249",
+            "name": "CJ - 00 (CAIEIRAS 5KM/ ABERTO/25-45/MULHERES)",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "110969782256951",
+                    "name": "Laranjeiras (Caieiras)",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3644444444,
+                    "longitude": -46.7408333333,
+                    "radius": 6,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 0,
+                  "geo": 0
+                }
+              }
+            },
+            "createdTime": "2025-09-11T14:07:35-0300",
+            "startTime": "2025-09-11T14:07:35-0300",
+            "ads": [
+              {
+                "id": "120232400341520249",
+                "name": "VÍDEO - PÓS OPERATÓRIO",
+                "status": "ACTIVE",
+                "createdTime": "2025-09-11T14:07:37-0300",
+                "creativeId": "1276202803716917",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120232399992990249",
+            "name": "CJ - 01 (CAIEIRAS 5KM/ ABERTO/25-45/MULHERES)",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 7,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-09-11T14:07:53-0300",
+            "startTime": "2025-09-11T14:07:53-0300",
+            "ads": [
+              {
+                "id": "120232400232610249",
+                "name": "VIDEO - CREMES MILAGROSOS — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2025-09-11T14:07:55-0300",
+                "creativeId": "1124271743139357",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120231724757910249",
@@ -6354,7 +6524,115 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120231724758100249",
+            "name": "CONFIGURAÇÃO ATUAL",
+            "status": "ACTIVE",
+            "dailyBudget": 28,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 7,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-08-29T08:12:12-0300",
+            "startTime": "2025-08-29T08:12:12-0300",
+            "ads": [
+              {
+                "id": "120231891101660249",
+                "name": "VIDEO -  PÓS OPEÁTORIO",
+                "status": "ACTIVE",
+                "createdTime": "2025-09-01T12:42:15-0300",
+                "creativeId": "731945253172170",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120231727951290249",
+                "name": "VIDEO - CREMES MILAGROSOS — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-29T08:12:13-0300",
+                "creativeId": "4487874978106053",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120231891110600249",
+                "name": "VÍDEO - PASSO A PASSO",
+                "status": "ACTIVE",
+                "createdTime": "2025-09-01T12:42:15-0300",
+                "creativeId": "769820875650124",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120231891101670249",
+                "name": "VIDEO - CREMES MILAGROSOS — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2025-09-01T12:42:05-0300",
+                "creativeId": "1968789647220251",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120231333815990249",
@@ -6537,7 +6815,79 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120231333816310249",
+            "name": "MULHER - SAÚDE - 26D - CAIEIRAS",
+            "status": "ACTIVE",
+            "dailyBudget": 30,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 25,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-08-21T14:55:19-0300",
+            "startTime": "2025-08-21T14:55:19-0300",
+            "ads": [
+              {
+                "id": "120231333816580249",
+                "name": "VIDEO - CREMES MILAGROSOS",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-21T14:55:21-0300",
+                "creativeId": "1129163692471663",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120230656430680249",
@@ -6682,7 +7032,383 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120230657325270249",
+            "name": "04 - [Laranjeiras 5km] - [10$] (Mulheres) — Cópia",
+            "status": "PAUSED",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:46:02-0300",
+            "startTime": "2025-08-08T10:46:02-0300",
+            "ads": [
+              {
+                "id": "120230657325230249",
+                "name": "VD004 - SAIR DISSO",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:46:04-0300",
+                "creativeId": "1532755074767917",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120230657325260249",
+            "name": "03 - [Laranjeiras 5km] - [10$] (Mulheres) — Cópia",
+            "status": "PAUSED",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:46:02-0300",
+            "startTime": "2025-08-08T10:46:02-0300",
+            "ads": [
+              {
+                "id": "120230657325300249",
+                "name": "VD003 - Perder de 5 a 7kg",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:46:04-0300",
+                "creativeId": "1271394374478350",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120230657325250249",
+            "name": "02 - [Laranjeiras 5km] - [10$] (Mulheres) — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:46:06-0300",
+            "startTime": "2025-08-08T10:46:07-0300",
+            "ads": [
+              {
+                "id": "120230657325290249",
+                "name": "VD002 - Cremes milagrosos",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:46:08-0300",
+                "creativeId": "1094516089304317",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120230657325240249",
+            "name": "01 - [Laranjeiras 5km] - [10$] (Mulheres)",
+            "status": "PAUSED",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:46:06-0300",
+            "startTime": "2025-08-08T10:46:07-0300",
+            "ads": [
+              {
+                "id": "120230657325280249",
+                "name": "VD001 - Janela",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:46:08-0300",
+                "creativeId": "1145040407671778",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120230656430960249",
+            "name": "05 - [Laranjeiras 5km] - [10$] (Mulheres)",
+            "status": "PAUSED",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:45:50-0300",
+            "startTime": "2025-08-08T10:45:50-0300",
+            "ads": [
+              {
+                "id": "120230656430970249",
+                "name": "VD005 - Diferença disso e isso",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:45:52-0300",
+                "creativeId": "2141997682975461",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120229772020200249",
@@ -7036,7 +7762,71 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120229835629310249",
+            "name": "CONFIGURAÇÃO PADRÃO (INVEST 30$)",
+            "status": "ACTIVE",
+            "dailyBudget": 30,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.370578,
+                    "longitude": -46.73725,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 1,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-07-27T13:20:01-0300",
+            "startTime": "2025-07-27T13:20:02-0300",
+            "ads": [
+              {
+                "id": "120229835629300249",
+                "name": "VD11 - PACIENTE ERIKA",
+                "status": "ACTIVE",
+                "createdTime": "2025-07-27T13:20:03-0300",
+                "creativeId": "792041376544317",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120228932116390249",
@@ -7181,7 +7971,268 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120228933521130249",
+            "name": "MESMAS CONFIGURAÇÕES DOS ANTERIORES — 4",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-07-11T19:31:30-0300",
+            "startTime": "2025-07-11T19:31:30-0300",
+            "ads": [
+              {
+                "id": "120228933521120249",
+                "name": "VIDEO - (SAIR DISSOXISSO)",
+                "status": "PAUSED",
+                "createdTime": "2025-07-11T19:31:31-0300",
+                "creativeId": "1291127429256591",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120228933393100249",
+            "name": "MESMAS CONFIGURAÇÕES DOS ANTERIORES — 3",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-07-11T19:31:46-0300",
+            "startTime": "2025-07-11T19:31:46-0300",
+            "ads": [
+              {
+                "id": "120228933393090249",
+                "name": "VIDEO - (SAIR DISSOXISSO)",
+                "status": "PAUSED",
+                "createdTime": "2025-07-11T19:31:48-0300",
+                "creativeId": "1252665076357582",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120228933172030249",
+            "name": "MESMAS CONFIGURAÇÕES DOS ANTERIORES — 2",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-07-11T19:31:46-0300",
+            "startTime": "2025-07-11T19:31:46-0300",
+            "ads": [
+              {
+                "id": "120228933172020249",
+                "name": "VIDEO - (ROUPAS LARGAS)",
+                "status": "PAUSED",
+                "createdTime": "2025-07-11T19:31:48-0300",
+                "creativeId": "637309755383196",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120228932116400249",
+            "name": "MESMAS CONFIGURAÇÕES DOS ANTERIORES",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-07-11T19:31:46-0300",
+            "startTime": "2025-07-11T19:31:46-0300",
+            "ads": [
+              {
+                "id": "120228932116430249",
+                "name": "VIDEO - (JESSICA)",
+                "status": "PAUSED",
+                "createdTime": "2025-07-11T19:31:48-0300",
+                "creativeId": "1067289671650076",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120228693907080249",
@@ -7288,7 +8339,138 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120228693907100249",
+            "name": "CJ04 ESCALADOS - LOCALIZAÇÃO (CAIEIRAS 5KM) - INTE (ABERTO) GÊNERO (FEMÊA). — Cópia",
+            "status": "PAUSED",
+            "dailyBudget": 90,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 25,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 1,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-07-08T12:10:22-0300",
+            "startTime": "2025-07-08T12:10:22-0300",
+            "ads": [
+              {
+                "id": "120228693907090249",
+                "name": "VD04 -  CIENTIFICAMENTE COMPROVADO — Cópia — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2025-07-08T12:10:23-0300",
+                "creativeId": "4177257462510580",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120228693907070249",
+            "name": "CJ02 TESTE- LOCALIZAÇÃO (CAIEIRAS 5KM) - INTE (ABERTO) GÊNERO (FEMÊA).",
+            "status": "ACTIVE",
+            "dailyBudget": 90,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 25,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 1,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-07-09T11:09:29-0300",
+            "startTime": "2025-07-09T11:09:29-0300",
+            "ads": [
+              {
+                "id": "120228693907110249",
+                "name": "VD02 -  PERDER DE 5A7",
+                "status": "PAUSED",
+                "createdTime": "2025-07-09T11:09:33-0300",
+                "creativeId": "1433849258036237",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120228281753050249",
@@ -7414,7 +8596,138 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120228282245160249",
+            "name": "CJ02 TESTE- LOCALIZAÇÃO (CAIEIRAS 5KM) - INTE (ABERTO) GÊNERO (FEMÊA).",
+            "status": "ACTIVE",
+            "dailyBudget": 18,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 25,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 1,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-07-01T14:18:04-0300",
+            "startTime": "2025-07-01T14:18:04-0300",
+            "ads": [
+              {
+                "id": "120228282245170249",
+                "name": "VD02 -  PERDER DE 5A7",
+                "status": "PAUSED",
+                "createdTime": "2025-07-01T14:18:06-0300",
+                "creativeId": "1783468652582056",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120228282209770249",
+            "name": "CJ04 ESCALADOS - LOCALIZAÇÃO (CAIEIRAS 5KM) - INTE (ABERTO) GÊNERO (FEMÊA). — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 18,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 25,
+              "age_range": [
+                25,
+                45
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 1,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-07-01T14:18:04-0300",
+            "startTime": "2025-07-01T14:18:04-0300",
+            "ads": [
+              {
+                "id": "120228282209790249",
+                "name": "VD04 -  CIENTIFICAMENTE COMPROVADO — Cópia — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2025-07-01T14:18:06-0300",
+                "creativeId": "4177257462510580",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120227193294220249",
