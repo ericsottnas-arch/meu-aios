@@ -1,7 +1,11 @@
 {
   "clientId": "dra-vanessa-soares",
   "clientName": "Dra. Vanessa Soares",
+<<<<<<< HEAD
   "exportedAt": "2026-03-24T23:20:31.066Z",
+=======
+  "exportedAt": "2026-03-26T11:43:01.233Z",
+>>>>>>> origin/eric/main
   "period": "last_7d",
   "meta": {
     "campaigns": [

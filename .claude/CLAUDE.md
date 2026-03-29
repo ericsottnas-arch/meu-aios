@@ -4,6 +4,123 @@ You are working with Synkra AIOS, an AI-Orchestrated System for Full Stack Devel
 
 ---
 
+## !!!! ALERTA MAXIMO: PROBLEMA #1 DO SISTEMA !!!!
+
+> **Eric ja reclamou MULTIPLAS VEZES que sessoes passam sem salvar aprendizados.**
+> **Isso e INACEITAVEL e a falha mais grave do AIOS.**
+>
+> TODA sessao DEVE salvar o que foi aprendido. NAO e opcional.
+> Se voce nao salvar, Eric vai repetir o mesmo feedback infinitamente.
+> Leia `memory/rules/universal.md` secao "Salvar aprendizados" com atencao TOTAL.
+>
+> DURANTE a conversa: salvar na hora que o feedback vier.
+> AO FINAL: revisar tudo e salvar o que faltou.
+> TESTE: "Se amanha eu nao lembrar, vou errar?" Se sim, SALVAR AGORA.
+
+---
+
+## PROTOCOLO PRE-TAREFA — OBRIGATORIO EM TODA SESSAO
+
+**ANTES de iniciar qualquer tarefa, executar SEMPRE esta sequencia:**
+
+### 1. Ler o indice de regras
+`memory/rules/_index.md` — identifica qual arquivo ler para cada tipo de tarefa.
+
+### 2. Ler as regras universais
+`memory/rules/universal.md` — regras criticas que se aplicam a TODA tarefa sem excecao.
+
+### 3. Ler o arquivo de regras do dominio
+Com base no tipo de tarefa identificado no `_index.md`:
+- Copy / texto / roteiro → `memory/rules/copy-escrita.md`
+- Landing page / HTML → `memory/rules/landing-pages.md`
+- Clientes medicos → `memory/rules/clientes-medicos.md`
+- Ads / campanhas → `memory/rules/ads-campanhas.md`
+- Conteudo redes sociais → `memory/rules/conteudo-redes-sociais.md`
+- Comportamento de agentes → `memory/rules/agentes-comportamento.md`
+- Entrega de documentos → `memory/rules/entrega-documentos.md`
+- Desenvolvimento / automacoes → `memory/rules/dev-automacoes.md`
+
+### 4. Ler aprendizados do agente ativo
+`memory/agent-learnings/{agent-id}.md` — feedbacks acumulados do Eric para aquele agente.
+
+**Por que isso e critico:**
+Eric da um feedback UMA VEZ e espera que seja regra para SEMPRE.
+Este sistema garante que as regras sejam consultadas em toda sessao nova,
+independente do agente ativo ou do tipo de tarefa.
+
+---
+
+## PROTOCOLO POS-RESPOSTA — CAPTURA TOTAL (vai MUITO alem de regras tecnicas)
+
+> **PRINCIPIO:** Cada conversa com Eric e uma oportunidade de conhecer ele MELHOR.
+> Nao e so sobre "salvar feedback tecnico". E sobre aprender QUEM ele e.
+> Como pensa, como fala, como decide, o que valoriza, o que detesta.
+> O objetivo: que cada sessao nova seja MELHOR que a anterior porque sabe mais sobre ele.
+
+**EM TODA RESPOSTA**, verificar se o input do Eric continha QUALQUER coisa para persistir.
+
+### CAMADA 1: Regras e feedbacks tecnicos (ja existia)
+
+| Sinal no input | O que fazer |
+|----------------|-------------|
+| "prefiro assim", "gosto quando", "sempre faz X" | Salvar como preferencia em `memory/agent-learnings/` |
+| "nao faca mais isso", "para de X" | Salvar como regra CRITICAL em `memory/rules/` |
+| "aprovado", "ficou bom", "esse padrao ta certo" | Salvar padrao aprovado no arquivo de dominio relevante |
+| Decisao sobre cliente, stack, abordagem | Salvar em `memory/` no arquivo tematico correto |
+| Correcao de comportamento meu | Salvar imediatamente, nao esperar fim de sessao |
+| Nome/conceito/metodo definido | Salvar no arquivo de dominio relevante |
+
+### CAMADA 2: Perfil do Eric como pessoa (NOVO — captura continua)
+
+| O que observar | Onde salvar |
+|----------------|------------|
+| Expressao nova que ele usa ("ta me deixando puto") | `memory/eric-santos-profile.md` secao "Como ele FALA" |
+| Como ele reagiu a algo (aprovou, rejeitou, irritou) | `memory/eric-comportamentos-detalhado.md` |
+| Decisao rapida que mostra como ele pensa | `memory/eric-santos-profile.md` secao "Como ele PENSA" |
+| Algo que ele valoriza ("gosto de simplicidade") | `memory/eric-santos-profile.md` secao "O que AGRADA" |
+| Algo que ele detesta (repetiu erro, ficou bravo) | `memory/eric-santos-profile.md` secao "O que IRRITA" |
+| Tom de voz numa mensagem especifica | `memory/eric-santos-profile.md` secao "Como ele FALA" |
+| Info pessoal ou profissional nova | `memory/eric-santos-profile.md` secao relevante |
+| Jeito de se comunicar com cliente/prospect | `memory/eric-santos-profile.md` secao "Como PROSPECTA" |
+| Padrao de trabalho (horario, ritmo, prioridades) | `memory/eric-comportamentos-detalhado.md` |
+
+### CAMADA 3: Contexto estrategico
+
+| O que observar | Onde salvar |
+|----------------|------------|
+| Mudanca de estrategia de negocio | `memory/` arquivo tematico |
+| Novo cliente ou mudanca de status | `memory/clientes-completo.md` + `docs/clientes/` |
+| Insight de mercado que ele mencionou | `memory/` arquivo tematico |
+| Referencia a pessoa, ferramenta, metodo novo | `memory/` arquivo tematico |
+
+### Como decidir se salva:
+
+Pergunta rapida antes de fechar a resposta:
+> "Se eu abrir uma sessao nova amanha com ZERO contexto dessa conversa:
+> 1. Vou errar por nao saber uma REGRA? → salvar em rules/
+> 2. Vou perder contexto sobre o ERIC? → salvar no perfil
+> 3. Vou perder contexto sobre CLIENTE/NEGOCIO? → salvar em docs/ ou memory/
+> Se QUALQUER das 3 for sim → SALVAR AGORA."
+
+### Onde salvar:
+
+- Regra que vale para todos os agentes → `memory/rules/universal.md` + `memory/agent-learnings/regras-globais.md`
+- Regra especifica de dominio → arquivo correto em `memory/rules/`
+- Aprendizado de agente especifico → `memory/agent-learnings/{agent-id}.md`
+- Informacao de cliente → `docs/clientes/{slug}/` ou `memory/clientes-completo.md`
+- Decisao tecnica/arquitetural → arquivo tematico em `memory/`
+- **NOVO: Perfil do Eric** → `memory/eric-santos-profile.md`
+- **NOVO: Comportamentos** → `memory/eric-comportamentos-detalhado.md`
+
+### Importante:
+
+- NAO salvar todo input — so o que muda comportamento futuro
+- Salvar de forma CONCISA — uma regra clara, nao um relatorio
+- NUNCA esperar "fim de sessao" para regras criticas — salvar na hora
+- Confirmar para o Eric apenas quando for algo significativo: "Salvei: [regra]. Nao vai esquecer."
+
+---
+
 ## 📚 Memory Update Protocol (Atualização Automática)
 
 **Every session:** At the end of conversation, I automatically update `/memory/`:

@@ -1,7 +1,11 @@
 {
   "clientId": "torre-1",
   "clientName": "Torre 1",
+<<<<<<< HEAD
   "exportedAt": "2026-03-24T23:20:30.916Z",
+=======
+  "exportedAt": "2026-03-26T11:43:01.201Z",
+>>>>>>> origin/eric/main
   "period": "last_7d",
   "meta": {
     "campaigns": [

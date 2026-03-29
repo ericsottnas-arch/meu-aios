@@ -4,6 +4,38 @@
 > Leitura OBRIGATORIA antes de qualquer tarefa.
 > Regras sao cumulativas — nunca remover, so adicionar.
 
+### [2026-03-25] Feedback: Dashboard inflava leads (auditoria completa Servano)
+- **Contexto:** Auditoria comparando dashboard servanoadvogados.syradigital.com com Meta Ads UI, Google Ads e GHL
+- **Feedback:** "dashboard ta mostrando 143 leads e só no meta tem 50 e por volta de 4 no google, n faz sentido esse numero"
+- **Regra derivada:** Ao auditar dashboard vs plataformas, verificar o código fonte do frontend para entender como as métricas são calculadas. Bug era: `totalLeads` somava `leads + messagingConversations` — conversas WhatsApp NÃO são form leads. Corrigido para usar só `leads`.
+- **Severidade:** CRITICAL
+
+### [2026-03-25] Aprendizado: Auditoria de dashboard — usar cliclick + osascript
+- **Contexto:** Tentei usar Playwright MCP para acessar Meta Ads mas abriu browser anônimo sem sessão logada
+- **Feedback:** Eric disse "usa nesse que já está aberto" — preferência clara por usar o Chrome existente com sessões ativas
+- **Regra derivada:** Para auditar plataformas (Meta Ads, Google Ads, GHL) SEMPRE usar `cliclick` + `screencapture` + `osascript` para controlar o Chrome já aberto. NUNCA abrir Playwright browser separado para plataformas que exigem login. Usar `osascript` para executar JavaScript diretamente no Chrome ativo quando precisar interagir com elementos.
+- **Severidade:** HIGH
+
+### [2026-03-25] Aprendizado: Meta Ads API level=ad pode inflar leads por atribuição multi-anúncio
+- **Contexto:** Investigando discrepância de leads entre API e UI
+- **Regra derivada:** Ao comparar leads da API (level=ad) com UI do Meta Ads: a UI deduplica por campanha, a API pode contar o mesmo lead em múltiplos anúncios via attribution window (7d click + 1d view). Para métricas de LEADS no dashboard, sempre comparar com o level=campaign da UI, não com a soma bruta level=ad.
+- **Severidade:** HIGH
+
+### [2026-03-25] Aprendizado: gviz endpoint corrompido — usar export?format=csv&gid=
+- **Contexto:** Google Ads mostrava R$0 no dashboard apesar de ter dados no Sheet
+- **Regra derivada:** NUNCA usar `gviz/tq?tqx=out:csv` para dados brutos de Sheets. Causa headers corrompidos (`"spend 29.65 44.45"` em vez de `"spend"`). Sempre usar `export?format=csv&gid={NUM}`. Para descobrir GIDs: Sheets API com `sheets.spreadsheets.get`.
+- **Severidade:** HIGH
+
+### [2026-03-25] Aprendizado: StatCard tooltips — prop tooltip opcional
+- **Contexto:** Eric pediu popup pequeno ao passar mouse no ícone de cada indicador
+- **Regra derivada:** StatCard tem prop `tooltip?: string`. Quando presente, o ícone vira TooltipTrigger com cursor-help. Todos os StatCards do Principal.tsx e Campanhas.tsx têm tooltips explicando o cálculo.
+- **Severidade:** MEDIUM
+
+### [2026-03-25] Aprendizado: Pipeline stages devem sempre mostrar todas as etapas
+- **Contexto:** Dashboard omitia etapas sem oportunidades no período
+- **Regra derivada:** Em `calculateOpportunityStats`, pré-popular o stageMap com todos os STAGE_ORDER antes de iterar oportunidades. Isso garante que etapas com 0 apareçam no gráfico e tabela.
+- **Severidade:** MEDIUM
+
 ---
 
 ## Regras Ativas

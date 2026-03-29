@@ -238,6 +238,20 @@ commands:
     visibility: [full, quick, key]
     description: 'Generate client briefing with WhatsApp insights'
 
+  # Autonomous Judge Mode
+  - name: watch-queue
+    args: '[column-name]'
+    visibility: [full, quick, key]
+    description: 'Poleia coluna do ClickUp (default: Fila Agentes) e inicia loop autonomo'
+  - name: judge
+    args: '{task-id} {agent-id} {output-path}'
+    visibility: [full, quick]
+    description: 'Avalia output de um agente contra o briefing da tarefa (score 0-100)'
+  - name: autonomous-loop
+    args: '[max-tasks]'
+    visibility: [full, quick, key]
+    description: 'Loop completo: pega tarefa → delega agente → avalia → move coluna → repete'
+
   # Utilities
   - name: session-info
     visibility: [full]
@@ -304,6 +318,68 @@ dependencies:
   data:
     - technical-preferences.md
 
+judge_criteria:
+  copy:
+    min_score: 75
+    checks:
+      - cumpre objetivo declarado no briefing
+      - tom correto para o cliente especifico
+      - CTA presente e especifico (nao generico)
+      - proibido em-dash (travessao) em qualquer trecho
+      - entregue em Google Docs (nao no chat)
+      - sem promessas de resultado garantido (regra medica)
+      - linguagem adequada ao ICP do cliente
+  landing_page:
+    min_score: 75
+    checks:
+      - mobile-first (verificar responsividade)
+      - design tokens Syra aplicados
+      - CTA visivel acima do fold
+      - sem animacoes que travam no mobile
+      - slider funcional se houver
+      - copy alinhada com identidade do cliente
+  campanha_ads:
+    min_score: 75
+    checks:
+      - criativo e copy alinhados entre si
+      - segmentacao correta para o ICP
+      - orcamento dentro do planejado
+      - CTA claro no criativo
+      - formato correto por plataforma (Meta/Instagram)
+  roteiro_video:
+    min_score: 75
+    checks:
+      - gancho nos primeiros 3 segundos
+      - dados reais (nao genericos)
+      - CTA palpavel no final
+      - linguagem oral (nao texto)
+      - duracao adequada ao formato
+  automacao_ghl:
+    min_score: 75
+    checks:
+      - trigger correto configurado
+      - payload em PascalCase (Stevo)
+      - sem subscribe vazio
+      - fluxo testado com caso de erro
+      - documentacao do fluxo incluida
+
+judge_iteration_rules:
+  max_retries: 3
+  feedback_format: |
+    Score: {score}/100
+    Criterios reprovados:
+    - {criterio_1}: {motivo}
+    - {criterio_2}: {motivo}
+    Acao necessaria: {instrucao_especifica}
+  on_approval: mover para coluna "Para Avaliar" + notificar Eric no Telegram
+  on_exhaustion: mover para "Escalado Eric" + enviar historico das 3 tentativas
+
+clickup_columns:
+  queue: "Fila Agentes"
+  in_progress: "Em Execucao"
+  review: "Para Avaliar"
+  escalated: "Escalado Eric"
+
 autoClaude:
   version: '3.0'
   migratedAt: '2026-01-29T02:24:23.141Z'
@@ -312,7 +388,7 @@ autoClaude:
     canAssess: false
     canResearch: false
     canWrite: true
-    canCritique: false
+    canCritique: true
 ```
 
 ---
@@ -456,6 +532,55 @@ Query client conversations captured from WhatsApp and analyze engagement pattern
 - **@account (Nico)** - Captures and saves WhatsApp messages
 - **@po** - Uses WhatsApp insights for backlog prioritization
 - **@celo** - Leverages conversation history for client brief
+
+---
+
+## 🤖 Autonomous Judge Mode
+
+O @pm opera como juiz autonomo no loop de execucao de tarefas. Ele le a fila do ClickUp, delega para o agente correto, avalia o output e decide se aprova ou manda refazer.
+
+### Comandos
+
+- `*watch-queue [coluna]` - Inicia monitoramento da coluna (default: "Fila Agentes")
+- `*judge {task-id} {agent-id} {output}` - Avalia output contra briefing (retorna score 0-100)
+- `*autonomous-loop [max-tarefas]` - Loop completo sem interrupcao
+
+### Fluxo
+
+```
+"Fila Agentes" (ClickUp)
+        |
+@pm le briefing + tipo de tarefa
+        |
+Delega para agente correto (via ExecutorAssignment)
+        |
+Agente executa
+        |
+@pm avalia (judge_criteria por tipo)
+        |
+Score >= 75 → move "Para Avaliar" + notifica Telegram
+Score <  75 → feedback especifico → agente refaz (max 3x)
+3 tentativas sem sucesso → move "Escalado Eric" + historico completo
+```
+
+### Criterios por tipo de tarefa
+
+| Tipo | Score minimo | Criterios principais |
+|------|-------------|---------------------|
+| `copy` | 75 | briefing + tom + CTA + sem em-dash + Google Docs |
+| `landing_page` | 75 | mobile-first + design tokens + CTA acima fold |
+| `campanha_ads` | 75 | criativo+copy alinhados + segmentacao + formato |
+| `roteiro_video` | 75 | gancho 3s + dados reais + CTA palpavel |
+| `automacao_ghl` | 75 | trigger + PascalCase + teste de erro |
+
+### Colunas ClickUp
+
+| Coluna | Significado |
+|--------|-------------|
+| `Fila Agentes` | Tarefas prontas para execucao autonoma |
+| `Em Execucao` | Agente trabalhando agora |
+| `Para Avaliar` | Aprovado pelo @pm, aguarda Eric |
+| `Escalado Eric` | 3 tentativas sem sucesso, Eric decide |
 
 ---
 

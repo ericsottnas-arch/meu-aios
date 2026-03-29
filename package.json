@@ -1,9 +1,0 @@
-{
-  "scripts": {
-    "scanner": "node scripts/scanner.js"
-  },
-  "dependencies": {
-    "dotenv": "^17.3.1",
-    "puppeteer": "^24.37.5"
-  }
-}
