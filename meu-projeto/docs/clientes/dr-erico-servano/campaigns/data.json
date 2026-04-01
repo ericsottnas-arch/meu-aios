@@ -1,10 +1,60 @@
 {
   "clientId": "dr-erico-servano",
   "clientName": "Dr Erico Servano",
-  "exportedAt": "2026-03-28T10:57:45.947Z",
+  "exportedAt": "2026-04-01T11:05:49.074Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
+      {
+        "id": "120245952608920204",
+        "name": "[Syra] Aquecimento e Construção de Público [Vídeo Views] [ABO]",
+        "status": "ACTIVE",
+        "objective": "OUTCOME_ENGAGEMENT",
+        "dailyBudget": null,
+        "lifetimeBudget": null,
+        "createdTime": "2026-03-31T14:06:21-0300",
+        "dailyInsights": [
+          {
+            "date": "2026-03-31",
+            "impressions": 1205,
+            "clicks": 11,
+            "spend": 11.65,
+            "cpc": 1.059091,
+            "ctr": 0.912863,
+            "cpm": 9.66805,
+            "reach": 1053,
+            "frequency": 1.144349,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-01",
+            "impressions": 738,
+            "clicks": 1,
+            "spend": 6.68,
+            "cpc": 6.68,
+            "ctr": 0.135501,
+            "cpm": 9.051491,
+            "reach": 681,
+            "frequency": 1.0837,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          }
+        ],
+        "adsets": []
+      },
       {
         "id": "120244701890430204",
         "name": "[Syra] [Formulário Instantâneo] [ABO]",
@@ -453,1083 +503,120 @@
           },
           {
             "date": "2026-03-27",
-            "impressions": 1689,
+            "impressions": 1691,
             "clicks": 45,
-            "spend": 85.01,
-            "cpc": 1.889111,
-            "ctr": 2.664298,
-            "cpm": 50.331557,
-            "reach": 1472,
-            "frequency": 1.147418,
+            "spend": 85.05,
+            "cpc": 1.89,
+            "ctr": 2.661147,
+            "cpm": 50.295683,
+            "reach": 1474,
+            "frequency": 1.147218,
             "conversions": 5,
-            "costPerResult": 17.002,
+            "costPerResult": 17.01,
             "linkClicks": 0,
             "landingPageViews": 2,
-            "costPerLandingPageView": 42.505,
+            "costPerLandingPageView": 42.525,
             "messagingConversations": 1,
-            "costPerMessagingConversation": 85.01,
+            "costPerMessagingConversation": 85.05,
             "costPerThruplayVideoView": 0
           },
           {
             "date": "2026-03-28",
-            "impressions": 312,
-            "clicks": 10,
-            "spend": 19.51,
-            "cpc": 1.951,
-            "ctr": 3.205128,
-            "cpm": 62.532051,
-            "reach": 299,
-            "frequency": 1.043478,
-            "conversions": 0,
-            "costPerResult": 0,
+            "impressions": 1267,
+            "clicks": 35,
+            "spend": 70.65,
+            "cpc": 2.018571,
+            "ctr": 2.762431,
+            "cpm": 55.761642,
+            "reach": 1124,
+            "frequency": 1.127224,
+            "conversions": 1,
+            "costPerResult": 70.65,
             "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
+            "landingPageViews": 1,
+            "costPerLandingPageView": 70.65,
+            "messagingConversations": 3,
+            "costPerMessagingConversation": 23.55,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-29",
+            "impressions": 3118,
+            "clicks": 121,
+            "spend": 121.99,
+            "cpc": 1.008182,
+            "ctr": 3.880693,
+            "cpm": 39.124439,
+            "reach": 2557,
+            "frequency": 1.219398,
+            "conversions": 8,
+            "costPerResult": 15.24875,
+            "linkClicks": 0,
+            "landingPageViews": 4,
+            "costPerLandingPageView": 30.4975,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-30",
+            "impressions": 2956,
+            "clicks": 112,
+            "spend": 96.63,
+            "cpc": 0.862768,
+            "ctr": 3.788904,
+            "cpm": 32.689445,
+            "reach": 2531,
+            "frequency": 1.167918,
+            "conversions": 6,
+            "costPerResult": 16.105,
+            "linkClicks": 0,
+            "landingPageViews": 1,
+            "costPerLandingPageView": 96.63,
+            "messagingConversations": 1,
+            "costPerMessagingConversation": 96.63,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-31",
+            "impressions": 2669,
+            "clicks": 124,
+            "spend": 89.71,
+            "cpc": 0.723468,
+            "ctr": 4.645935,
+            "cpm": 33.61184,
+            "reach": 2186,
+            "frequency": 1.220952,
+            "conversions": 5,
+            "costPerResult": 17.942,
+            "linkClicks": 0,
+            "landingPageViews": 4,
+            "costPerLandingPageView": 22.4275,
+            "messagingConversations": 1,
+            "costPerMessagingConversation": 89.71,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-01",
+            "impressions": 564,
+            "clicks": 29,
+            "spend": 18.16,
+            "cpc": 0.626207,
+            "ctr": 5.141844,
+            "cpm": 32.198582,
+            "reach": 513,
+            "frequency": 1.099415,
+            "conversions": 4,
+            "costPerResult": 4.54,
+            "linkClicks": 0,
+            "landingPageViews": 1,
+            "costPerLandingPageView": 18.16,
             "messagingConversations": 0,
             "costPerMessagingConversation": 0,
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120245605442000204",
-            "name": "P13 [Todos] [30-55] [LLK1% Mensagem, Thruplay, Post] [Brasil] — Cópia",
-            "status": "ACTIVE",
-            "dailyBudget": 15,
-            "targeting": {
-              "age_max": 55,
-              "age_min": 30,
-              "custom_audiences": [
-                {
-                  "id": "120245604913230204",
-                  "name": "Semelhante (BR, 1%) - 30 dias ThruPlay Video View"
-                },
-                {
-                  "id": "120245604961770204",
-                  "name": "Semelhante (BR, 1%) - 120 dias enviaram mensagem"
-                },
-                {
-                  "id": "120245604974330204",
-                  "name": "Semelhante (BR, 1%) - 90 dias interagiu post"
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 0,
-                  "gender": 1
-                }
-              },
-              "publisher_platforms": [
-                "facebook",
-                "instagram"
-              ],
-              "facebook_positions": [
-                "feed",
-                "facebook_reels",
-                "facebook_reels_overlay",
-                "notification",
-                "instream_video",
-                "story",
-                "search"
-              ],
-              "instagram_positions": [
-                "stream",
-                "ig_search",
-                "story",
-                "explore",
-                "reels",
-                "explore_home"
-              ],
-              "device_platforms": [
-                "mobile",
-                "desktop"
-              ]
-            },
-            "createdTime": "2026-03-26T21:36:31-0300",
-            "startTime": "2026-03-26T21:36:31-0300",
-            "ads": [
-              {
-                "id": "120245605442050204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T21:36:32-0300",
-                "creativeId": "956216920429063",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245605442040204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T21:36:32-0300",
-                "creativeId": "920156107583188",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245605442010204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T21:36:32-0300",
-                "creativeId": "1348678033689667",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245605442020204",
-                "name": "C14 [Estático] [Hook: RECEBEU UMA NOTIFICAÇÃO DO CONSELHO? relogio] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T21:36:32-0300",
-                "creativeId": "799628292754777",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120245604984950204",
-            "name": "P12 [Todos] [30-55] [Int: Cirurgião Dentista] [PP: 30 dias ThruPlay Video View] [Brasil]",
-            "status": "ACTIVE",
-            "dailyBudget": 20,
-            "targeting": {
-              "age_max": 55,
-              "age_min": 30,
-              "custom_audiences": [
-                {
-                  "id": "120245604897650204",
-                  "name": "30 dias ThruPlay Video View"
-                }
-              ],
-              "flexible_spec": [
-                {
-                  "work_positions": [
-                    {
-                      "id": "1438793726412614",
-                      "name": "Oral and Maxillofacial Surgeon (OMS)"
-                    },
-                    {
-                      "id": "1602108970021969",
-                      "name": "Dental Surgery Doctor (DDS)"
-                    },
-                    {
-                      "id": "168991743113816",
-                      "name": "Cirurgião Dentista Implantodontista"
-                    }
-                  ]
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED"
-              ],
-              "targeting_relaxation_types": {
-                "lookalike": 0,
-                "custom_audience": 1
-              },
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 0,
-                  "gender": 1
-                }
-              },
-              "publisher_platforms": [
-                "facebook",
-                "instagram"
-              ],
-              "facebook_positions": [
-                "feed",
-                "facebook_reels",
-                "facebook_reels_overlay",
-                "right_hand_column",
-                "notification",
-                "instream_video",
-                "story",
-                "search"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "explore",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile",
-                "desktop"
-              ]
-            },
-            "createdTime": "2026-03-26T21:03:20-0300",
-            "startTime": "2026-03-26T21:03:20-0300",
-            "ads": [
-              {
-                "id": "120245604984980204",
-                "name": "C14 [Estático] [Hook: RECEBEU UMA NOTIFICAÇÃO DO CONSELHO?] [CTA: Saiba Mais]",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T21:03:21-0300",
-                "creativeId": "1475422370854877",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604984960204",
-                "name": "C14 [Estático] [Hook: RECEBEU UMA NOTIFICAÇÃO DO CONSELHO? relogio] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T21:03:21-0300",
-                "creativeId": "4303213093340979",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604985000204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T21:03:21-0300",
-                "creativeId": "1645979809773872",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604984990204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T21:03:21-0300",
-                "creativeId": "1422163222544266",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604984970204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T21:03:21-0300",
-                "creativeId": "1318425617005602",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120245473490680204",
-            "name": "P14 [Todos] [30-50] [Int:EMPRESÁRIO E PROPRIETÁRIO e Cor:PROFISSIONAL DA SAUDE] [BRASIL]",
-            "status": "PAUSED",
-            "dailyBudget": 25,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                30,
-                40
-              ],
-              "flexible_spec": [
-                {
-                  "work_positions": [
-                    {
-                      "id": "108611555829523",
-                      "name": "Empresário"
-                    },
-                    {
-                      "id": "110722838955052",
-                      "name": "Proprietário"
-                    },
-                    {
-                      "id": "143595762334879",
-                      "name": "Dono"
-                    },
-                    {
-                      "id": "151785081542575",
-                      "name": "Proprietário(a)"
-                    },
-                    {
-                      "id": "168991743113816",
-                      "name": "Cirurgião Dentista Implantodontista"
-                    }
-                  ]
-                },
-                {
-                  "work_positions": [
-                    {
-                      "id": "108543032509786",
-                      "name": "Profissional da área da saúde"
-                    }
-                  ]
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2026-03-23T15:09:05-0300",
-            "startTime": "2026-03-23T15:09:05-0300",
-            "ads": [
-              {
-                "id": "120245473490700204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-23T15:09:06-0300",
-                "creativeId": "894747486655129",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245473490690204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-23T15:09:06-0300",
-                "creativeId": "1472066630949401",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245473490710204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-23T15:09:06-0300",
-                "creativeId": "929176346478746",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120245203034310204",
-            "name": "P13 [Todos] [30-55] [FB+IG] [Int: DENTISTA, ODONTO] [BRASIL]",
-            "status": "PAUSED",
-            "dailyBudget": 15,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                30,
-                55
-              ],
-              "flexible_spec": [
-                {
-                  "work_employers": [
-                    {
-                      "id": "113484241997037",
-                      "name": "consultorio odontologico"
-                    },
-                    {
-                      "id": "138294119674129",
-                      "name": "Consultório Odontológico"
-                    },
-                    {
-                      "id": "242924955910010",
-                      "name": "Consultório Odontológico"
-                    },
-                    {
-                      "id": "431859193533123",
-                      "name": "Clínica de Odontologia Integrada"
-                    }
-                  ],
-                  "work_positions": [
-                    {
-                      "id": "108768179146852",
-                      "name": "Dentist"
-                    },
-                    {
-                      "id": "117785311602404",
-                      "name": "Dentist/Orthodontist"
-                    },
-                    {
-                      "id": "119880341359563",
-                      "name": "dentist"
-                    }
-                  ]
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              },
-              "publisher_platforms": [
-                "facebook",
-                "instagram"
-              ],
-              "facebook_positions": [
-                "feed",
-                "facebook_reels",
-                "facebook_reels_overlay",
-                "right_hand_column",
-                "notification",
-                "instream_video",
-                "story",
-                "search"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "explore",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile",
-                "desktop"
-              ]
-            },
-            "createdTime": "2026-03-16T11:52:16-0300",
-            "startTime": "2026-03-16T11:52:16-0300",
-            "ads": [
-              {
-                "id": "120245203034340204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-16T11:52:17-0300",
-                "creativeId": "928732989908858",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245203034320204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-16T11:52:17-0300",
-                "creativeId": "1634829827519443",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245203034330204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-16T11:52:17-0300",
-                "creativeId": "1664740264945339",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120244922785450204",
-            "name": "P12 [Todos] [25-55] [IG] [PP: Semelhante 1% + Int: High Value + Travelers] [BRASIL]",
-            "status": "PAUSED",
-            "dailyBudget": 20,
-            "targeting": {
-              "age_max": 55,
-              "age_min": 25,
-              "custom_audiences": [
-                {
-                  "id": "120241095046710204",
-                  "name": "Semelhante (BR, 1%) - leads.csv"
-                }
-              ],
-              "flexible_spec": [
-                {
-                  "behaviors": [
-                    {
-                      "id": "6022788483583",
-                      "name": "Frequent international travelers"
-                    },
-                    {
-                      "id": "6046096201583",
-                      "name": "People who prefer high-value goods in Brazil"
-                    }
-                  ]
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "geo": 0
-                }
-              },
-              "publisher_platforms": [
-                "instagram"
-              ],
-              "instagram_positions": [
-                "stream",
-                "ig_search",
-                "story",
-                "explore",
-                "reels",
-                "explore_home",
-                "profile_feed"
-              ],
-              "device_platforms": [
-                "mobile",
-                "desktop"
-              ]
-            },
-            "createdTime": "2026-03-10T14:20:38-0300",
-            "startTime": "2026-03-10T14:20:38-0300",
-            "ads": [
-              {
-                "id": "120244922806760204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-10T14:21:15-0300",
-                "creativeId": "929176346478746",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244922804400204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-10T14:21:08-0300",
-                "creativeId": "894747486655129",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244922800470204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-10T14:20:51-0300",
-                "creativeId": "1472066630949401",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120244703588100204",
-            "name": "P10 [Todos] [30-40] [FB+IG+MSG+AN] [SP NOBRE]",
-            "status": "PAUSED",
-            "dailyBudget": 20,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                30,
-                40
-              ],
-              "geo_locations": {
-                "custom_locations": [
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.526299,
-                    "longitude": -46.706906,
-                    "radius": 5,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.592474,
-                    "longitude": -46.674853,
-                    "radius": 5,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2026-03-04T12:34:45-0300",
-            "startTime": "2026-03-04T12:34:45-0300",
-            "ads": [
-              {
-                "id": "120244703588120204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2026-03-04T12:34:47-0300",
-                "creativeId": "1472066630949401",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244703588130204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2026-03-04T12:34:47-0300",
-                "creativeId": "920547374049446",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244703588110204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-04T12:37:44-0300",
-                "creativeId": "2836303216706708",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120244703477610204",
-            "name": "P9 [Todos] [30-50] [FB+IG+MSG+AN] [Int: CIRURGIÃO, EMPRESÁRIO E PROPRIETÁRIO] [BRASIL]",
-            "status": "ACTIVE",
-            "dailyBudget": 45,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                30,
-                40
-              ],
-              "flexible_spec": [
-                {
-                  "work_positions": [
-                    {
-                      "id": "108611555829523",
-                      "name": "Empresário"
-                    },
-                    {
-                      "id": "151785081542575",
-                      "name": "Proprietário(a)"
-                    },
-                    {
-                      "id": "168991743113816",
-                      "name": "Cirurgião Dentista Implantodontista"
-                    }
-                  ]
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2026-03-04T12:34:45-0300",
-            "startTime": "2026-03-04T12:34:45-0300",
-            "ads": [
-              {
-                "id": "120244703477640204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2026-03-04T12:34:47-0300",
-                "creativeId": "4513244388951571",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244703477630204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-04T12:34:47-0300",
-                "creativeId": "1455160803061651",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245561383270204",
-                "name": "C14 [Estático] [Hook: RECEBEU UMA NOTIFICAÇÃO DO CONSELHO?] [CTA: Saiba Mais]",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-25T20:43:41-0300",
-                "creativeId": "980055697790609",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245561518020204",
-                "name": "C14 [Estático] [Hook: RECEBEU UMA NOTIFICAÇÃO DO CONSELHO? relogio] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-25T20:49:36-0300",
-                "creativeId": "26282104411417229",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244703477620204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-04T12:37:44-0300",
-                "creativeId": "1503161351384899",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120244703451780204",
-            "name": "P11 [Todos] [30-50] [PP: SEMELHANTE 1%] [BRASIL]",
-            "status": "PAUSED",
-            "dailyBudget": 20,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                30,
-                50
-              ],
-              "custom_audiences": [
-                {
-                  "id": "120241095046710204",
-                  "name": "Semelhante (BR, 1%) - leads.csv"
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2026-03-04T12:38:41-0300",
-            "startTime": "2026-03-04T12:38:42-0300",
-            "ads": [
-              {
-                "id": "120244703451790204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2026-03-04T12:38:45-0300",
-                "creativeId": "786350767393657",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244703451770204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-04T12:38:45-0300",
-                "creativeId": "2055684908340850",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244703451800204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-04T12:38:45-0300",
-                "creativeId": "1450231636757116",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120244701890450204",
-            "name": "P8 [Todos] [ADVANTAGE+] [30-50] [TODOS POSICIONAMENTOS] [PP: semelhante 1% lista proibida] [BRASIL]",
-            "status": "PAUSED",
-            "dailyBudget": 20,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                30,
-                50
-              ],
-              "custom_audiences": [
-                {
-                  "id": "120244069857380204",
-                  "name": "Semelhante (BR, 1%) - lista proibida - Banco de dados.csv"
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2026-03-04T12:37:43-0300",
-            "startTime": "2026-03-04T12:37:44-0300",
-            "ads": [
-              {
-                "id": "120244703376440204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-04T12:37:45-0300",
-                "creativeId": "1703144750652987",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244703376430204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-04T12:37:45-0300",
-                "creativeId": "1598471044747199",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244703376450204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-04T12:37:45-0300",
-                "creativeId": "1991361488474933",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120244387366780204",
@@ -1655,119 +742,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120244387366790204",
-            "name": "P7 [Todos] [30-45] [FB+IG+MSG+AN] [Int: Pessoas que preferem produtos de valor alto no Brasil - Retornou de viagens há 1 semana - Viajantes internacionais frequentes - Cirurgião Dentista Implantodontista] [SP, BH, GO]",
-            "status": "ACTIVE",
-            "dailyBudget": 0,
-            "targeting": {
-              "age_max": 45,
-              "age_min": 30,
-              "flexible_spec": [
-                {
-                  "behaviors": [
-                    {
-                      "id": "6008261969983",
-                      "name": "Returned from travels 1 week ago"
-                    },
-                    {
-                      "id": "6022788483583",
-                      "name": "Frequent international travelers"
-                    },
-                    {
-                      "id": "6046096201583",
-                      "name": "People who prefer high-value goods in Brazil"
-                    }
-                  ],
-                  "work_positions": [
-                    {
-                      "id": "168991743113816",
-                      "name": "Cirurgião Dentista Implantodontista"
-                    }
-                  ]
-                }
-              ],
-              "geo_locations": {
-                "cities": [
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "244661",
-                    "name": "Belo Horizonte",
-                    "radius": 40,
-                    "region": "Minas Gerais",
-                    "region_id": "449"
-                  },
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "254063",
-                    "name": "Goiânia",
-                    "radius": 40,
-                    "region": "Goiás",
-                    "region_id": "462"
-                  }
-                ],
-                "regions": [
-                  {
-                    "key": "460",
-                    "name": "São Paulo (state)",
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 0,
-                  "gender": 1,
-                  "geo": 0
-                }
-              }
-            },
-            "createdTime": "2026-02-25T14:56:45-0300",
-            "startTime": "2026-02-25T14:56:45-0300",
-            "ads": [
-              {
-                "id": "120244387515810204",
-                "name": "C7 [Estático] [Hook: ELA SE BLINDOU ANTES DE REBER UMA MULTA] [CTA: Saiba Mais] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-02-25T14:59:33-0300",
-                "creativeId": "3844161742557638",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244387636740204",
-                "name": "C7 [Estático] [Hook: ELA SE BLINDOU ANTES DE REBER UMA MULTA] [CTA: Saiba Mais] — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-02-25T14:56:46-0300",
-                "creativeId": "947790530922282",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120243510129130204",
@@ -2653,204 +1628,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120243510129400204",
-            "name": "P5 [Todos] [25-60] [FB+IG+MSG+AN] [PP: TODOS ENGAJAMENTO E VDV] [BRASIL]",
-            "status": "ACTIVE",
-            "dailyBudget": 0,
-            "targeting": {
-              "age_max": 60,
-              "age_min": 25,
-              "custom_audiences": [
-                {
-                  "id": "120241692977060204",
-                  "name": "ENVIARAM MENSAGEM"
-                },
-                {
-                  "id": "120242608079420204",
-                  "name": "[VISITARAM PERFIL] [365 DIAS]"
-                },
-                {
-                  "id": "120242608246590204",
-                  "name": "[PAGEVIEW] [180D]"
-                },
-                {
-                  "id": "120242614512430204",
-                  "name": "[ENGAJARAM] [365D]"
-                },
-                {
-                  "id": "120242717592710204",
-                  "name": "[ENGAJARAM POST OU ANUNCIO] [365D]"
-                },
-                {
-                  "id": "120243195533270204",
-                  "name": "VDV - ALL INSTA"
-                },
-                {
-                  "id": "120244388563370204",
-                  "name": "[THRUPLAYS] 50% CONTEÚDO INSTAGRAM"
-                },
-                {
-                  "id": "120244388596190204",
-                  "name": "[THRUPLAYS] 50% ANÚNCIOS"
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED"
-              ],
-              "targeting_relaxation_types": {
-                "lookalike": 0,
-                "custom_audience": 0
-              },
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "geo": 0
-                }
-              }
-            },
-            "createdTime": "2026-02-04T12:22:35-0300",
-            "startTime": "2026-02-04T12:22:35-0300",
-            "ads": [
-              {
-                "id": "120244921225190204",
-                "name": "C16 [Vídeo] [Hook: AD VALIDADO V3] [CTA: Cadastre-se] — Teste Morno",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-10T13:23:50-0300",
-                "creativeId": "894747486655129",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243510129500204",
-                "name": "C9 [Estático] [Hook: AGORA ELA POSTA ANTES/DEPOIS SEM MEDO] [CTA: Saiba Mais]",
-                "status": "ACTIVE",
-                "createdTime": "2026-02-04T12:22:37-0300",
-                "creativeId": "959314633328071",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243510129540204",
-                "name": "C7 [Estático] [Hook: ELA SE BLINDOU ANTES DE REBER UMA MULTA] [CTA: Saiba Mais]",
-                "status": "ACTIVE",
-                "createdTime": "2026-02-04T12:22:37-0300",
-                "creativeId": "942069381557714",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243510129490204",
-                "name": "C8 [Estático] [Hook: ELA NÃO ESPEROU A NOTIFICAÇÃO CHEGAR] [CTA: Saiba Mais]",
-                "status": "PAUSED",
-                "createdTime": "2026-02-04T12:22:37-0300",
-                "creativeId": "1206706201658518",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243510129530204",
-                "name": "C11 [Estático] [Hook: DERRUBAMOS UMA AÇÃO DE -400K PRA ESSE DR] [CTA: Saiba Mais]",
-                "status": "PAUSED",
-                "createdTime": "2026-02-04T12:22:37-0300",
-                "creativeId": "886062650817612",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243510129430204",
-                "name": "C1 [Vídeo] [Hook: CRIATIVO VALIDADO CTA TROCADO] [CTA: Saiba Mais] — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2026-02-04T12:22:37-0300",
-                "creativeId": "776866414843261",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243510129560204",
-                "name": "C4 [Estático] [Hook: ela não esperou a notificação chegar] [CTA: Saiba Mais]",
-                "status": "PAUSED",
-                "createdTime": "2026-02-04T12:22:37-0300",
-                "creativeId": "1563860164886937",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243510129550204",
-                "name": "C5 [Vídeo] [Hook: Você é profissional de HOF e pode dormir em paz sabendo que tem assessoria juridica] [CTA: Saiba Mais]",
-                "status": "PAUSED",
-                "createdTime": "2026-02-04T12:22:37-0300",
-                "creativeId": "1959068254686192",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243510129510204",
-                "name": "C10 [Estático] [Hook: ELA SE BLINDOU ANTES DA FISCALIZAÇÃO CHEGAR] [CTA: Saiba Mais]",
-                "status": "PAUSED",
-                "createdTime": "2026-02-04T12:22:37-0300",
-                "creativeId": "1281832757335319",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120243269665110204",
@@ -3242,195 +2020,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120243269665180204",
-            "name": "P3 [Todos] [30-50] [PP: Todos semelhantes da lista leads] [SP, BH, RJ, CUR, DF]",
-            "status": "ACTIVE",
-            "dailyBudget": 0,
-            "targeting": {
-              "age_max": 50,
-              "age_min": 30,
-              "custom_audiences": [
-                {
-                  "id": "120241095046710204",
-                  "name": "Semelhante (BR, 1%) - leads.csv"
-                },
-                {
-                  "id": "120241095047650204",
-                  "name": "Semelhante (BR, 1% to 3%) - leads.csv"
-                },
-                {
-                  "id": "120241095047700204",
-                  "name": "Semelhante (BR, 3% to 6%) - leads.csv"
-                },
-                {
-                  "id": "120241095047920204",
-                  "name": "Semelhante (BR, 6% to 10%) - leads.csv"
-                }
-              ],
-              "geo_locations": {
-                "cities": [
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "244661",
-                    "name": "Belo Horizonte",
-                    "radius": 40,
-                    "region": "Minas Gerais",
-                    "region_id": "449"
-                  },
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "245683",
-                    "name": "Brasília",
-                    "radius": 40,
-                    "region": "Federal District",
-                    "region_id": "444"
-                  },
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "250457",
-                    "name": "Curitiba",
-                    "radius": 40,
-                    "region": "Paraná",
-                    "region_id": "452"
-                  }
-                ],
-                "regions": [
-                  {
-                    "key": "454",
-                    "name": "Rio de Janeiro (state)",
-                    "country": "BR"
-                  },
-                  {
-                    "key": "460",
-                    "name": "São Paulo (state)",
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "targeting_optimization": "expansion_all",
-              "targeting_relaxation_types": {
-                "lookalike": 1,
-                "custom_audience": 0
-              },
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "geo": 1
-                }
-              },
-              "publisher_platforms": [
-                "instagram"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "explore",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile",
-                "desktop"
-              ]
-            },
-            "createdTime": "2026-01-28T16:18:13-0300",
-            "startTime": "2026-01-28T16:18:13-0300",
-            "ads": [
-              {
-                "id": "120243269665160204",
-                "name": "C1 [Reels] [Hook: CONSULTÓRIOS ODONTOLÓGICOS NÃO PRECISARÃO MAIS DE EQUIPO] [CTA: Visita ao Perfil] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-28T16:25:53-0300",
-                "creativeId": "3957826837684351",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269665170204",
-                "name": "C2 [Reels] [Hook: 15 anos de cadeia] [CTA: Visita ao Perfil]",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-28T16:25:53-0300",
-                "creativeId": "888645234137514",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269665140204",
-                "name": "C3 [Reels] [Hook: Cirurgião-dentista sem pós em HOF pode fazer lipo de papada?] [CTA: Visita ao Perfil]",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-28T16:25:53-0300",
-                "creativeId": "1993083251625487",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269665150204",
-                "name": "C5 [Reels] [Hook: Muito cuidado com o paciente bonzinho, atenda-o como se estivesse me atendendo!] [CTA: Visita ao Perfil]",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-28T16:25:53-0300",
-                "creativeId": "928825219657188",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269665130204",
-                "name": "C4 [Reels] [Hook: Cirurgias estéticas faciais realizadas por cirurgiões-dentistas.] [CTA: Visita ao Perfil]",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-28T16:25:53-0300",
-                "creativeId": "1700583747321222",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269665120204",
-                "name": "C6 [Reels] [Hook: Cirurgião-dentista, se você fizer uma cirurgia na sua mãe e der errado, ela irá te processar?] [CTA: Visita ao Perfil]",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-28T16:25:53-0300",
-                "creativeId": "1644413486732751",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120243269097920204",
@@ -4165,14 +2755,14 @@
           },
           {
             "date": "2026-03-27",
-            "impressions": 1577,
+            "impressions": 1578,
             "clicks": 95,
             "spend": 13.91,
             "cpc": 0.146421,
-            "ctr": 6.024096,
-            "cpm": 8.820545,
-            "reach": 1497,
-            "frequency": 1.05344,
+            "ctr": 6.020279,
+            "cpm": 8.814956,
+            "reach": 1499,
+            "frequency": 1.052702,
             "conversions": 0,
             "costPerResult": 0,
             "linkClicks": 0,
@@ -4184,14 +2774,90 @@
           },
           {
             "date": "2026-03-28",
-            "impressions": 283,
-            "clicks": 23,
-            "spend": 2.34,
-            "cpc": 0.101739,
-            "ctr": 8.127208,
-            "cpm": 8.268551,
-            "reach": 277,
-            "frequency": 1.021661,
+            "impressions": 1453,
+            "clicks": 86,
+            "spend": 14.66,
+            "cpc": 0.170465,
+            "ctr": 5.918789,
+            "cpm": 10.08947,
+            "reach": 1410,
+            "frequency": 1.030496,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-29",
+            "impressions": 1598,
+            "clicks": 90,
+            "spend": 15.34,
+            "cpc": 0.170444,
+            "ctr": 5.63204,
+            "cpm": 9.599499,
+            "reach": 1558,
+            "frequency": 1.025674,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 1,
+            "costPerLandingPageView": 15.34,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-30",
+            "impressions": 1374,
+            "clicks": 58,
+            "spend": 13.3,
+            "cpc": 0.22931,
+            "ctr": 4.221252,
+            "cpm": 9.679767,
+            "reach": 1280,
+            "frequency": 1.073438,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-03-31",
+            "impressions": 1626,
+            "clicks": 74,
+            "spend": 15.72,
+            "cpc": 0.212432,
+            "ctr": 4.551046,
+            "cpm": 9.667897,
+            "reach": 1493,
+            "frequency": 1.089082,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-01",
+            "impressions": 190,
+            "clicks": 3,
+            "spend": 1.48,
+            "cpc": 0.493333,
+            "ctr": 1.578947,
+            "cpm": 7.789474,
+            "reach": 184,
+            "frequency": 1.032609,
             "conversions": 0,
             "costPerResult": 0,
             "linkClicks": 0,
@@ -4202,430 +2868,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120245604124000204",
-            "name": "P3 [30-55] [IG+FB] [CARGOS] [BRASIL]",
-            "status": "ACTIVE",
-            "dailyBudget": 0,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                30,
-                65
-              ],
-              "flexible_spec": [
-                {
-                  "work_positions": [
-                    {
-                      "id": "108768179146852",
-                      "name": "Dentist"
-                    },
-                    {
-                      "id": "112133152132165",
-                      "name": "Orthodontics"
-                    },
-                    {
-                      "id": "117785311602404",
-                      "name": "Dentist/Orthodontist"
-                    },
-                    {
-                      "id": "119880341359563",
-                      "name": "dentist"
-                    },
-                    {
-                      "id": "1438793726412614",
-                      "name": "Oral and Maxillofacial Surgeon (OMS)"
-                    },
-                    {
-                      "id": "1602108970021969",
-                      "name": "Dental Surgery Doctor (DDS)"
-                    }
-                  ]
-                }
-              ],
-              "geo_locations": {
-                "countries": [
-                  "BR"
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "targeting_automation": {
-                "advantage_audience": 1,
-                "individual_setting": {
-                  "geo": 0
-                }
-              },
-              "publisher_platforms": [
-                "facebook",
-                "instagram"
-              ],
-              "facebook_positions": [
-                "feed",
-                "facebook_reels",
-                "story"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "explore",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile",
-                "desktop"
-              ]
-            },
-            "createdTime": "2026-03-26T20:06:54-0300",
-            "startTime": "2026-03-26T20:06:55-0300",
-            "ads": [
-              {
-                "id": "120245604123960204",
-                "name": "C17 [Reels] [Hook: Otomodelação reconhecida pelo Conselho Federal de Odontologia?] [CTA: Visita ao Perfil]",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T20:06:56-0300",
-                "creativeId": "25884590661237240",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604124030204",
-                "name": "C6 [Reels] [Hook: Cirurgião-dentista, se você fizer uma cirurgia na sua mãe e der errado, ela irá te processar?] [CTA: Visita ao Perfil]",
-                "status": "PAUSED",
-                "createdTime": "2026-03-26T20:06:56-0300",
-                "creativeId": "2147843568953000",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604123970204",
-                "name": "C4 [Reels] [Hook: Cirurgias estéticas faciais realizadas por cirurgiões-dentistas.] [CTA: Visita ao Perfil]",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T20:06:56-0300",
-                "creativeId": "1563055958092467",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604124050204",
-                "name": "C1 [Reels] [Hook: CONSULTÓRIOS ODONTOLÓGICOS NÃO PRECISARÃO MAIS DE EQUIPO] [CTA: Visita ao Perfil] — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2026-03-26T20:06:56-0300",
-                "creativeId": "1857515014959757",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604124020204",
-                "name": "C3 [Reels] [Hook: Cirurgião-dentista sem pós em HOF pode fazer lipo de papada?] [CTA: Visita ao Perfil]",
-                "status": "PAUSED",
-                "createdTime": "2026-03-26T20:06:56-0300",
-                "creativeId": "1273343451598301",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604123990204",
-                "name": "C2 [Reels] [Hook: 15 anos de cadeia] [CTA: Visita ao Perfil]",
-                "status": "PAUSED",
-                "createdTime": "2026-03-26T20:06:56-0300",
-                "creativeId": "784846451032050",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604123980204",
-                "name": "C5 [Reels] [Hook: Muito cuidado com o paciente bonzinho, atenda-o como se estivesse me atendendo!] [CTA: Visita ao Perfil]",
-                "status": "PAUSED",
-                "createdTime": "2026-03-26T20:06:56-0300",
-                "creativeId": "2101521573972419",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604124010204",
-                "name": "C4 [Reels] [Hook: Cirurgias estéticas faciais realizadas por cirurgiões-dentistas.] [CTA: Visita ao Perfil] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-03-26T20:06:56-0300",
-                "creativeId": "908398185321220",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245604124040204",
-                "name": "C4 [Reels] [Hook: Cirurgias estéticas faciais realizadas por cirurgiões-dentistas.] [CTA: Visita ao Perfil] — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2026-03-26T20:06:56-0300",
-                "creativeId": "2683849715305054",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120243269097930204",
-            "name": "P2 [Todos] [18-65+] [IG] [PP: Semelhante leads 1%] [BRASIL]",
-            "status": "ACTIVE",
-            "dailyBudget": 0,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                30,
-                65
-              ],
-              "custom_audiences": [
-                {
-                  "id": "120241095046710204",
-                  "name": "Semelhante (BR, 1%) - leads.csv"
-                },
-                {
-                  "id": "120241095047650204",
-                  "name": "Semelhante (BR, 1% to 3%) - leads.csv"
-                },
-                {
-                  "id": "120241095047700204",
-                  "name": "Semelhante (BR, 3% to 6%) - leads.csv"
-                },
-                {
-                  "id": "120241095047920204",
-                  "name": "Semelhante (BR, 6% to 10%) - leads.csv"
-                }
-              ],
-              "geo_locations": {
-                "cities": [
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "244661",
-                    "name": "Belo Horizonte",
-                    "radius": 40,
-                    "region": "Minas Gerais",
-                    "region_id": "449"
-                  },
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "245683",
-                    "name": "Brasília",
-                    "radius": 40,
-                    "region": "Federal District",
-                    "region_id": "444"
-                  },
-                  {
-                    "country": "BR",
-                    "distance_unit": "kilometer",
-                    "key": "250457",
-                    "name": "Curitiba",
-                    "radius": 40,
-                    "region": "Paraná",
-                    "region_id": "452"
-                  }
-                ],
-                "regions": [
-                  {
-                    "key": "454",
-                    "name": "Rio de Janeiro (state)",
-                    "country": "BR"
-                  },
-                  {
-                    "key": "460",
-                    "name": "São Paulo (state)",
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "targeting_automation": {
-                "advantage_audience": 1,
-                "individual_setting": {
-                  "geo": 1
-                }
-              },
-              "publisher_platforms": [
-                "instagram"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "explore",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile",
-                "desktop"
-              ]
-            },
-            "createdTime": "2026-01-28T16:04:32-0300",
-            "startTime": "2026-01-28T16:04:32-0300",
-            "ads": [
-              {
-                "id": "120244387694590204",
-                "name": "C4 [Reels] [Hook: Cirurgias estéticas faciais realizadas por cirurgiões-dentistas.] [CTA: Visita ao Perfil] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-02-25T15:02:51-0300",
-                "creativeId": "2087851755326586",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120244384049440204",
-                "name": "C4 [Reels] [Hook: Cirurgias estéticas faciais realizadas por cirurgiões-dentistas.] [CTA: Visita ao Perfil] — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2026-02-25T14:20:05-0300",
-                "creativeId": "2461066790980685",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269404990204",
-                "name": "C3 [Reels] [Hook: Cirurgião-dentista sem pós em HOF pode fazer lipo de papada?] [CTA: Visita ao Perfil]",
-                "status": "PAUSED",
-                "createdTime": "2026-01-28T16:05:12-0300",
-                "creativeId": "1306416224581325",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269462190204",
-                "name": "C6 [Reels] [Hook: Cirurgião-dentista, se você fizer uma cirurgia na sua mãe e der errado, ela irá te processar?] [CTA: Visita ao Perfil]",
-                "status": "PAUSED",
-                "createdTime": "2026-01-28T16:04:33-0300",
-                "creativeId": "2751378108545068",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269097940204",
-                "name": "C2 [Reels] [Hook: 15 anos de cadeia] [CTA: Visita ao Perfil]",
-                "status": "PAUSED",
-                "createdTime": "2026-01-28T16:05:12-0300",
-                "creativeId": "1227083938770211",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269422440204",
-                "name": "C5 [Reels] [Hook: Muito cuidado com o paciente bonzinho, atenda-o como se estivesse me atendendo!] [CTA: Visita ao Perfil]",
-                "status": "PAUSED",
-                "createdTime": "2026-01-28T16:05:02-0300",
-                "creativeId": "2291631381357845",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269373430204",
-                "name": "C1 [Reels] [Hook: CONSULTÓRIOS ODONTOLÓGICOS NÃO PRECISARÃO MAIS DE EQUIPO] [CTA: Visita ao Perfil] — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2026-01-28T16:05:12-0300",
-                "creativeId": "1725029975127014",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120243269410430204",
-                "name": "C4 [Reels] [Hook: Cirurgias estéticas faciais realizadas por cirurgiões-dentistas.] [CTA: Visita ao Perfil]",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-28T16:05:12-0300",
-                "creativeId": "1379724380568573",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120242992612760204",
@@ -7477,8 +5720,8 @@
       }
     ],
     "summary": {
-      "totalCampaigns": 16,
-      "activeCampaigns": 2,
+      "totalCampaigns": 17,
+      "activeCampaigns": 3,
       "totalSpend": 0,
       "avgCPL": 0,
       "totalImpressions": 0,
@@ -10299,7 +8542,7 @@
     "topPerformers": [],
     "opportunities": [],
     "nextSteps": [
-      "Escalar: [Syra] [Formulário Instantâneo] [ABO]",
+      "Escalar: [Syra] Aquecimento e Construção de Público [Vídeo Views] [ABO]",
       "Analisar audiências",
       "Testar novos criativos"
     ]

@@ -5,6 +5,14 @@ Leitura obrigatória na ativação de todo agente.
 
 ---
 
+## [2026-03-31] CRÍTICO: Não perguntar confirmação quando a resposta é óbvia
+
+- **Feedback:** "se vc já sabe disso pq vc não fez? isso é um feedback"
+- **Regra:** Se você JÁ SABE qual é a decisão correta (boas práticas, padrão de design/dev, lógica clara), IMPLEMENTE diretamente. Não pergunte "o que acha de X?" ou "posso fazer Y?" quando a resposta óbvia é sim.
+- **Severidade:** CRITICAL
+
+---
+
 ## [2026-03-18] Copy SEMPRE no Google Docs
 
 - **Feedback:** "vc precisa escrever a copy dentro do docs do google pra que eu faça os comentários lá"
