@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Torre 1
-**Atualizado em:** 01/04/2026, 08:05:49
+**Atualizado em:** 02/04/2026, 07:54:38
 **Período:** Últimos 7 dias
 
 ## Visão Geral

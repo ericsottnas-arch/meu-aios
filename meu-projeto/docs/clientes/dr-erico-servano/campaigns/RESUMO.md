@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Dr Erico Servano
-**Atualizado em:** 01/04/2026, 08:05:49
+**Atualizado em:** 02/04/2026, 07:54:38
 **Período:** Últimos 7 dias
 
 ## Visão Geral
@@ -36,10 +36,10 @@
 - **Conversões:** 0
 - **Criado:** 04/03/2026
 
-### [Syra] GERAR TOPO [Vídeo Views] [CBO]
+### [Syra] GERAR TOPO [Visita ao Perfil] [CBO]
 - **Status:** 🟢 ACTIVE
 - **Objetivo:** OUTCOME_ENGAGEMENT
-- **Budget:** R$ 15.00/dia
+- **Budget:** R$ 10.00/dia
 - **Impressões:** 0
 - **Cliques:** 0
 - **CTR:** 0.00%
