@@ -1,1649 +1,2231 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Ênio Leite · Harmonização Orofacial · Serra, ES</title>
-  <meta name="description" content="Para quem sempre quis mudar alguma coisa no rosto. Mas queria que parecesse natural.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Enio Leite · Harmonização Orofacial · Serra, ES</title>
+    <meta name="description" content="Para quem sempre quis mudar alguma coisa no rosto. Mas queria que parecesse natural.">
+    <link rel="icon" type="image/png" href="logo-monograma.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"></noscript>
+    <style>
+        /* TOKENS */
+        :root {
+            --gold: #C08B51;
+            --cream: #F7F4EF;
+            --cream-dk: #EDE8DF;
+            --parch: #E8E0D2;
+            --ink: #15120D;
+            --ink-lt: #3D3630;
+            --mid: #82796E;
+            --fd: 'Cormorant Garamond', Georgia, serif;
+            --fb: 'DM Sans', system-ui, sans-serif;
+            --hero: clamp(2.75rem, 2rem + 5vw, 6rem);
+            --display: clamp(2.25rem, 1.5rem + 4vw, 4.5rem);
+            --h1: clamp(1.875rem, 1.25rem + 3vw, 3.25rem);
+            --h2: clamp(1.5rem, 1rem + 2.5vw, 2.5rem);
+            --h3: clamp(1.25rem, 1rem + 1.25vw, 1.75rem);
+            --lg: clamp(1.0625rem, 0.975rem + 0.4vw, 1.25rem);
+            --base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+            --sm: 0.9375rem;
+            --xs: 0.8125rem;
+            --cmax: 1280px;
+            --cpx: clamp(1.5rem, 5vw, 5rem);
+            --spy: clamp(4rem, 10vw, 8rem);
+            --spyl: clamp(6rem, 14vw, 12rem);
+        }
 
-  <link rel="icon" type="image/png" href="logo-monograma.png">
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+        html {
+            scroll-behavior: auto;
+        }
 
-  <style>
-    /* TOKENS */
-    :root {
-      --gold:     #C08B51;
-      --cream:    #F7F4EF;
-      --cream-dk: #EDE8DF;
-      --parch:    #E8E0D2;
-      --ink:      #15120D;
-      --ink-lt:   #3D3630;
-      --mid:      #82796E;
+        body {
+            font-family: var(--fb);
+            color: var(--ink);
+            background: var(--cream);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            cursor: none;
+        }
 
-      --fd: 'Playfair Display', Georgia, serif;
-      --fb: 'DM Sans', system-ui, sans-serif;
+        /* CUSTOM CURSOR */
+        .cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            transition: width .2s, height .2s;
+        }
 
-      --hero:    clamp(2.75rem, 2rem + 5vw, 6rem);
-      --display: clamp(2.25rem, 1.5rem + 4vw, 4.5rem);
-      --h1:      clamp(1.875rem, 1.25rem + 3vw, 3.25rem);
-      --h2:      clamp(1.5rem, 1rem + 2.5vw, 2.5rem);
-      --h3:      clamp(1.25rem, 1rem + 1.25vw, 1.75rem);
-      --lg:      clamp(1.0625rem, 0.975rem + 0.4vw, 1.25rem);
-      --base:    clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --sm:      0.9375rem;
-      --xs:      0.8125rem;
+        .cursor-ring {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid rgba(192, 139, 81, .5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: width .3s, height .3s, border-color .3s;
+        }
 
-      --cmax: 1280px;
-      --cpx:  clamp(1.5rem, 5vw, 5rem);
-      --spy:  clamp(4rem, 10vw, 8rem);
-      --spyl: clamp(6rem, 14vw, 12rem);
-    }
+        .cursor-hover .cursor-ring {
+            width: 64px;
+            height: 64px;
+            border-color: var(--gold);
+        }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: auto; }
-    body {
-      font-family: var(--fb);
-      color: var(--ink);
-      background: var(--cream);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      cursor: none;
-    }
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.25rem var(--cpx);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background .4s, backdrop-filter .4s, box-shadow .4s;
+        }
 
-    /* CUSTOM CURSOR */
-    .cursor-dot {
-      position: fixed;
-      width: 8px; height: 8px;
-      background: var(--gold);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      mix-blend-mode: difference;
-      transform: translate(-50%, -50%);
-      transition: width .2s, height .2s;
-    }
-    .cursor-ring {
-      position: fixed;
-      width: 40px; height: 40px;
-      border: 1.5px solid rgba(192,139,81,.5);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: width .3s, height .3s, border-color .3s;
-    }
-    .cursor-hover .cursor-ring { width: 64px; height: 64px; border-color: var(--gold); }
+        nav.scrolled {
+            background: rgba(247, 244, 239, .92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(21, 18, 13, .08);
+        }
 
+        .nav-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.25rem var(--cpx);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background .4s, backdrop-filter .4s, box-shadow .4s;
-    }
-    nav.scrolled {
-      background: rgba(247,244,239,.92);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(21,18,13,.08);
-    }
-    .nav-logo { text-decoration: none; display: flex; align-items: center; }
-    .nav-logo-img {
-      height: 36px;
-      width: auto;
-      filter: brightness(0) invert(1);
-      transition: filter .4s;
-    }
-    nav.scrolled .nav-logo-img { filter: brightness(0); }
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .625rem 1.5rem;
-      border-radius: 999px;
-      border: 1.5px solid rgba(247,244,239,.4);
-      color: var(--cream);
-      font-family: var(--fb);
-      font-size: var(--sm);
-      font-weight: 500;
-      letter-spacing: .04em;
-      text-decoration: none;
-      cursor: none;
-      position: relative;
-      overflow: hidden;
-      transition: border-color .3s, color .3s;
-    }
-    nav.scrolled .nav-cta { border-color: rgba(21,18,13,.25); color: var(--ink); }
-    .nav-cta::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .35s cubic-bezier(.16,1,.3,1);
-      border-radius: 999px;
-    }
-    .nav-cta:hover::after { transform: scaleX(1); }
-    .nav-cta span { position: relative; z-index: 1; }
+        .nav-logo-img {
+            height: 36px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: filter .4s;
+        }
 
-    /* LAYOUT */
-    .container {
-      max-width: var(--cmax);
-      margin: 0 auto;
-      padding: 0 var(--cpx);
-    }
-    .section-label {
-      display: inline-block;
-      font-family: var(--fb);
-      font-size: var(--xs);
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-    }
+        nav.scrolled .nav-logo-img {
+            filter: brightness(0);
+        }
 
-    /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(24px); }
-    .reveal.in {
-      opacity: 1; transform: translateY(0);
-      transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
-    }
-    .reveal-d1 { transition-delay: .1s; }
-    .reveal-d2 { transition-delay: .2s; }
-    .reveal-d3 { transition-delay: .3s; }
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .625rem 1.5rem;
+            border-radius: 999px;
+            border: 1.5px solid rgba(247, 244, 239, .4);
+            color: var(--cream);
+            font-family: var(--fb);
+            font-size: var(--sm);
+            font-weight: 500;
+            letter-spacing: .04em;
+            text-decoration: none;
+            cursor: none;
+            position: relative;
+            overflow: hidden;
+            transition: border-color .3s, color .3s;
+        }
 
-    /* BUTTONS */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .625rem;
-      padding: .75rem 1.75rem;
-      border-radius: 999px;
-      font-family: var(--fb);
-      font-size: var(--base);
-      font-weight: 500;
-      letter-spacing: .03em;
-      cursor: none;
-      position: relative;
-      overflow: hidden;
-      transition: color .3s;
-      text-decoration: none;
-      border: none;
-    }
-    .btn-gold { background: var(--gold); color: var(--cream); }
-    .btn-gold::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: #a07240;
-      transform: scaleX(0); transform-origin: left;
-      transition: transform .35s cubic-bezier(.16,1,.3,1);
-      border-radius: 999px;
-    }
-    .btn-gold:hover::after { transform: scaleX(1); }
-    .btn-gold span { position: relative; z-index: 1; }
-    .btn-arrow { display: inline-block; transition: transform .3s cubic-bezier(.16,1,.3,1); }
-    .btn:hover .btn-arrow { transform: rotate(45deg); }
+        nav.scrolled .nav-cta {
+            border-color: rgba(21, 18, 13, .25);
+            color: var(--ink);
+        }
 
-    /* HERO */
-    #hero {
-      height: 100svh;
-      max-height: 100svh;
-      background: var(--ink);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: clamp(5rem, 9vh, 6.5rem) var(--cpx) 1.5rem max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
-      position: relative;
-      z-index: 2;
-      overflow: hidden;
-    }
-    .hero-ghost {
-      position: absolute;
-      bottom: -0.1em;
-      left: max(var(--cpx), calc((100vw - var(--cmax)) / 2));
-      font-family: var(--fd);
-      font-size: clamp(8rem, 20vw, 18rem);
-      font-weight: 900;
-      line-height: 1;
-      color: rgba(247,244,239,.03);
-      pointer-events: none;
-      user-select: none;
-      letter-spacing: -.02em;
-    }
-    .hero-label {
-      font-family: var(--fb);
-      font-size: var(--xs);
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: .875rem;
-      opacity: 0;
-    }
-    .hero-headline {
-      font-family: var(--fd);
-      font-size: clamp(2.25rem, 1.75rem + 3.5vw, 4.5rem);
-      font-weight: 700;
-      line-height: 1.08;
-      color: var(--cream);
-      margin-bottom: .875rem;
-      opacity: 0;
-    }
-    .hero-sub {
-      font-size: var(--base);
-      color: rgba(247,244,239,.65);
-      line-height: 1.55;
-      max-width: 46ch;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-    }
-    .hero-form {
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-      max-width: 420px;
-      opacity: 0;
-    }
-    .hero-form-title {
-      font-family: var(--fd);
-      font-size: var(--h3);
-      font-style: italic;
-      color: var(--cream);
-      margin-bottom: .125rem;
-    }
-    .form-input {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid rgba(247,244,239,.15);
-      padding: .55rem 0;
-      color: var(--cream);
-      font-family: var(--fb);
-      font-size: var(--sm);
-      outline: none;
-      transition: border-color .3s;
-      appearance: none;
-    }
-    .form-input::placeholder { color: rgba(247,244,239,.35); }
-    .form-input:focus { border-color: var(--gold); }
-    .form-input option { background: var(--ink); color: var(--cream); }
-    .hero-social-proof {
-      display: flex;
-      align-items: center;
-      gap: .875rem;
-      margin-top: .875rem;
-      opacity: 0;
-    }
-    .avatar-stack { display: flex; }
-    .avatar {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 2px solid var(--ink);
-      background: var(--cream-dk);
-      margin-left: -10px;
-      overflow: hidden;
-    }
-    .avatar:first-child { margin-left: 0; }
-    .proof-text { font-size: var(--sm); color: rgba(247,244,239,.55); line-height: 1.4; }
-    .proof-text strong { display: block; color: rgba(247,244,239,.85); font-weight: 500; }
+        .nav-cta::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+            border-radius: 999px;
+        }
 
-    /* HERO PHOTO */
-    .hero-photo { position: relative; overflow: hidden; }
-    .hero-photo-placeholder {
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, #1e1a14 0%, #2a2318 100%);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .hero-photo-placeholder span {
-      font-family: var(--fd);
-      font-style: italic;
-      color: var(--mid);
-      font-size: var(--sm);
-      opacity: .5;
-    }
-    .hero-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center top;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%),
-                          linear-gradient(to top,   transparent 0%, black 20%);
-      mask-image: linear-gradient(to right, transparent 0%, black 25%),
-                  linear-gradient(to top,   transparent 0%, black 20%);
-      -webkit-mask-composite: destination-in;
-      mask-composite: intersect;
-    }
+        .nav-cta:hover::after {
+            transform: scaleX(1);
+        }
 
-    /* TICKER */
-    .ticker {
-      background: var(--gold);
-      padding: 1rem 0;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .ticker-inner {
-      display: inline-flex;
-      animation: ticker 28s linear infinite;
-    }
-    .ticker-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 0 2rem;
-      font-family: var(--fb);
-      font-size: var(--sm);
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--cream);
-    }
-    .ticker-dot {
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: rgba(247,244,239,.5);
-      flex-shrink: 0;
-    }
-    @keyframes ticker {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
+        .nav-cta span {
+            position: relative;
+            z-index: 1;
+        }
 
-    /* FOTO MOBILE (entre ticker e resultados) */
-    .mobile-dr-photo {
-      display: none;
-      background: var(--ink);
-      position: relative;
-      overflow: hidden;
-    }
-    .mobile-dr-photo img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-      mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-    }
-    .mobile-dr-photo-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 1.5rem var(--cpx);
-      background: linear-gradient(to top, rgba(21,18,13,1) 0%, transparent 100%);
-    }
-    .mobile-dr-photo-caption p {
-      font-family: var(--fd);
-      font-style: italic;
-      font-size: var(--h3);
-      color: var(--cream);
-      line-height: 1.3;
-    }
-    .mobile-dr-photo-caption span {
-      display: block;
-      font-family: var(--fb);
-      font-size: var(--xs);
-      font-weight: 600;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: .375rem;
-    }
+        /* LAYOUT */
+        .container {
+            max-width: var(--cmax);
+            margin: 0 auto;
+            padding: 0 var(--cpx);
+        }
 
-    /* ANTES E DEPOIS */
-    #resultados {
-      padding: var(--spyl) 0;
-      background: var(--cream);
-    }
-    #resultados .container > * { margin-bottom: 1rem; }
-    .ba-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-top: 3rem;
-    }
-    .ba-container {
-      position: relative;
-      aspect-ratio: 3/4;
-      overflow: hidden;
-      background: var(--parch);
-      cursor: col-resize;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-    .ba-after, .ba-before { position: absolute; inset: 0; }
-    .ba-after img, .ba-before img { user-select: none; -webkit-user-select: none; pointer-events: none; -webkit-user-drag: none; }
-    .ba-after {
-      background: linear-gradient(135deg, var(--parch) 0%, var(--cream-dk) 100%);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .ba-before {
-      background: linear-gradient(135deg, var(--cream-dk) 0%, var(--parch) 100%);
-      clip-path: inset(0 75% 0 0);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .ba-placeholder-text {
-      font-family: var(--fd);
-      font-style: italic;
-      color: var(--mid);
-      font-size: var(--sm);
-      opacity: .5;
-    }
-    .ba-handle {
-      position: absolute;
-      top: 0; bottom: 0;
-      left: 25%;
-      width: 3px;
-      background: var(--gold);
-      cursor: col-resize;
-      z-index: 2;
-    }
-    .ba-handle::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 4px 20px rgba(192,139,81,.4);
-    }
-    .ba-handle::after {
-      content: '\2194';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: .875rem;
-      color: var(--cream);
-      z-index: 1;
-    }
-    .ba-label {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--fb);
-      font-size: var(--xs);
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--ink);
-      background: rgba(247,244,239,.9);
-      padding: .375rem .875rem;
-      white-space: nowrap;
-      z-index: 3;
-    }
+        .section-label {
+            display: inline-block;
+            font-family: var(--fb);
+            font-size: var(--xs);
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
 
-    /* PROCEDIMENTOS */
-    #procedimentos {
-      padding: var(--spyl) 0;
-      background: var(--cream-dk);
-      position: relative;
-      overflow: hidden;
-    }
-    .svc-ghost {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: var(--fd);
-      font-size: clamp(12rem, 30vw, 24rem);
-      font-weight: 900;
-      line-height: 1;
-      color: rgba(21,18,13,.04);
-      pointer-events: none;
-      user-select: none;
-      white-space: nowrap;
-    }
-    .svc-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-top: 3rem;
-      position: relative;
-      z-index: 1;
-    }
-    .svc-card {
-      background: var(--cream);
-      padding: 2.5rem 2rem;
-      position: relative;
-      overflow: hidden;
-      cursor: none;
-      transition: background .3s;
-    }
-    .svc-card:hover { background: var(--ink); }
-    .svc-card:hover .svc-name,
-    .svc-card:hover .svc-desc { color: var(--cream); }
-    .svc-card:hover .svc-num { color: rgba(247,244,239,.15); }
-    .svc-num {
-      font-family: var(--fd);
-      font-size: clamp(4rem, 8vw, 7rem);
-      font-weight: 900;
-      line-height: 1;
-      color: rgba(21,18,13,.06);
-      position: absolute;
-      top: 1rem; right: 1.5rem;
-      transition: color .3s;
-    }
-    .svc-name {
-      font-family: var(--fd);
-      font-size: var(--h3);
-      font-weight: 600;
-      line-height: 1.2;
-      color: var(--ink);
-      margin-bottom: 1rem;
-      position: relative; z-index: 1;
-      transition: color .3s;
-    }
-    .svc-desc {
-      font-size: var(--base);
-      color: var(--ink-lt);
-      line-height: 1.65;
-      position: relative; z-index: 1;
-      transition: color .3s;
-    }
+        /* REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            /* fallback: mostra conteudo apos 2.5s caso GSAP/JS falhe */
+            animation: revealFallback 0.6s ease 2.5s both;
+        }
 
-    /* SOBRE */
-    #sobre { padding: var(--spyl) 0; background: var(--cream); }
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-    .sobre-photo {
-      aspect-ratio: 3/4;
-      background: var(--parch);
-      position: relative;
-      overflow: visible;
-    }
-    .sobre-photo img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
-    .sobre-photo::before {
-      content: ''; position: absolute; inset: -20px; z-index: 0;
-      border: 1px solid rgba(192,139,81,.25); pointer-events: none;
-    }
-    .sobre-photo::after {
-      content: ''; position: absolute; inset: 16px; z-index: 2;
-      border: 1px solid rgba(192,139,81,.1); pointer-events: none;
-    }
-    .sobre-photo-placeholder {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .sobre-photo-placeholder span {
-      font-family: var(--fd);
-      font-style: italic;
-      color: var(--mid);
-      font-size: var(--sm);
-      opacity: .5;
-    }
-    .sobre-content h2 {
-      font-family: var(--fd);
-      font-size: var(--h1);
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--ink);
-      margin-bottom: 1.5rem;
-    }
-    .sobre-content p {
-      font-size: var(--lg);
-      color: var(--ink-lt);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-    .credentials { display: flex; flex-direction: column; gap: .875rem; }
-    .cred-item {
-      border-left: 2px solid var(--gold);
-      padding-left: 1rem;
-      font-size: var(--sm);
-      color: var(--mid);
-      line-height: 1.5;
-    }
+        @keyframes revealFallback {
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    /* DEPOIMENTOS */
-    #depoimentos {
-      padding: var(--spyl) 0;
-      background: var(--ink);
-      position: relative;
-      overflow: hidden;
-    }
-    #depoimentos .section-label { color: var(--gold); }
-    #depoimentos h2 {
-      font-family: var(--fd);
-      font-size: var(--h1);
-      font-weight: 700;
-      color: var(--cream);
-      margin-bottom: 3rem;
-    }
-    .dep-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    .dep-card {
-      background: rgba(247,244,239,.03);
-      border: 1px solid rgba(247,244,239,.08);
-      overflow: hidden;
-    }
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
+            animation: none;
+        }
 
-    /* FACADE — thumbnail real, clique abre Instagram */
-    .dep-facade {
-      aspect-ratio: 9/16;
-      background-size: cover;
-      background-position: center top;
-      background-color: #1c1810;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      position: relative;
-      overflow: hidden;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .dep-facade-overlay {
-      position: absolute; inset: 0;
-      background: rgba(21,18,13,.42);
-      transition: background .4s;
-    }
-    .dep-facade:hover .dep-facade-overlay { background: rgba(21,18,13,.25); }
-    .dep-facade-play {
-      position: relative; z-index: 1;
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(247,244,239,.7);
-      display: flex; align-items: center; justify-content: center;
-      transition: background .3s, transform .3s, border-color .3s;
-      backdrop-filter: blur(4px);
-    }
-    .dep-facade:hover .dep-facade-play {
-      background: var(--gold);
-      border-color: var(--gold);
-      transform: scale(1.1);
-    }
-    .dep-facade-play::after {
-      content: '';
-      border-style: solid;
-      border-width: 10px 0 10px 20px;
-      border-color: transparent transparent transparent rgba(247,244,239,.9);
-      margin-left: 5px;
-      transition: border-color .3s;
-    }
-    .dep-facade:hover .dep-facade-play::after {
-      border-color: transparent transparent transparent var(--cream);
-    }
-    .dep-facade-handle {
-      position: relative; z-index: 1;
-      font-family: var(--fb);
-      font-size: var(--xs);
-      font-weight: 500;
-      letter-spacing: .06em;
-      color: rgba(247,244,239,.75);
-    }
+        .reveal-d1 {
+            transition-delay: .1s;
+        }
 
-    .dep-quote {
-      padding: 1.25rem 1.5rem;
-      font-family: var(--fd);
-      font-style: italic;
-      font-size: var(--base);
-      color: rgba(247,244,239,.65);
-      line-height: 1.6;
-    }
+        .reveal-d2 {
+            transition-delay: .2s;
+        }
 
-    /* CTA FINAL */
-    #cta-final {
-      padding: var(--spyl) 0;
-      background: var(--ink);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-ghost {
-      position: absolute;
-      bottom: -0.1em; left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--fd);
-      font-size: clamp(10rem, 22vw, 20rem);
-      font-weight: 900;
-      line-height: 1;
-      color: rgba(247,244,239,.025);
-      pointer-events: none;
-      user-select: none;
-      white-space: nowrap;
-    }
-    #cta-final h2 {
-      font-family: var(--fd);
-      font-size: var(--h1);
-      font-weight: 700;
-      color: var(--cream);
-      margin-bottom: 1.25rem;
-      position: relative; z-index: 1;
-    }
-    #cta-final p {
-      font-size: var(--lg);
-      color: rgba(247,244,239,.6);
-      max-width: 54ch;
-      margin: 0 auto 2.5rem;
-      line-height: 1.65;
-      position: relative; z-index: 1;
-    }
-    #cta-final .btn { position: relative; z-index: 1; }
+        .reveal-d3 {
+            transition-delay: .3s;
+        }
 
-    /* FAQ */
-    #faq { padding: var(--spyl) 0; background: var(--cream-dk); }
-    #faq h2 {
-      font-family: var(--fd);
-      font-size: var(--h1);
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 2.5rem;
-    }
-    .faq-item { border-bottom: 1px solid var(--parch); }
-    .faq-q {
-      width: 100%;
-      background: none; border: none;
-      text-align: left;
-      padding: 1.5rem 0;
-      font-family: var(--fb);
-      font-size: var(--lg);
-      font-weight: 500;
-      color: var(--ink);
-      cursor: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .faq-icon {
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      border: 1.5px solid var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      color: var(--gold);
-      font-size: 1.25rem;
-      line-height: 1;
-      transition: transform .3s, background .3s;
-    }
-    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--gold); color: var(--cream); }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .4s cubic-bezier(.16,1,.3,1), padding .4s;
-      font-size: var(--base);
-      color: var(--ink-lt);
-      line-height: 1.7;
-    }
-    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.5rem; }
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .625rem;
+            padding: .75rem 1.75rem;
+            border-radius: 999px;
+            font-family: var(--fb);
+            font-size: var(--base);
+            font-weight: 500;
+            letter-spacing: .03em;
+            cursor: none;
+            position: relative;
+            overflow: hidden;
+            transition: color .3s;
+            text-decoration: none;
+            border: none;
+        }
 
-    /* CLINICA */
-    #clinica {
-      padding: var(--spyl) 0;
-      background: var(--cream);
-    }
-    .clinica-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      margin-top: 3rem;
-      align-items: start;
-    }
-    .clinica-fotos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 2px;
-    }
-    .clinica-foto {
-      background: var(--parch);
-      overflow: hidden;
-      position: relative;
-    }
-    .clinica-foto:first-child {
-      grid-column: 1 / -1;
-      aspect-ratio: 16/7;
-    }
-    .clinica-foto:not(:first-child) {
-      aspect-ratio: 4/3;
-    }
-    .clinica-foto img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .6s cubic-bezier(.16,1,.3,1);
-    }
-    .clinica-foto:hover img { transform: scale(1.04); }
-    .clinica-foto-placeholder {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--fd);
-      font-style: italic;
-      color: var(--mid);
-      font-size: var(--sm);
-      opacity: .5;
-      min-height: 160px;
-    }
-    .clinica-mapa {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .clinica-mapa-frame {
-      width: 100%;
-      aspect-ratio: 4/3;
-      border: none;
-      display: block;
-      filter: grayscale(20%) contrast(1.05);
-    }
-    .clinica-endereco {
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-    }
-    .clinica-endereco p {
-      font-size: var(--base);
-      color: var(--ink-lt);
-      line-height: 1.6;
-    }
-    .clinica-endereco strong {
-      display: block;
-      font-family: var(--fd);
-      font-size: var(--h3);
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: .25rem;
-    }
-    .clinica-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      font-size: var(--xs);
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: .5rem;
-    }
-    .clinica-tag::before {
-      content: '';
-      width: 20px; height: 1px;
-      background: var(--gold);
-    }
+        .btn-gold {
+            background: var(--gold);
+            color: var(--cream);
+        }
 
-    @media (max-width: 900px) {
-      .clinica-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
+        .btn-gold::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #a07240;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+            border-radius: 999px;
+        }
 
-    /* FOOTER */
-    footer {
-      background: var(--ink);
-      padding: 4rem 0 2rem;
-      border-top: 1px solid rgba(247,244,239,.06);
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-    .footer-brand {
-      font-family: var(--fd);
-      font-size: 1.375rem;
-      font-style: italic;
-      color: var(--cream);
-    }
-    .footer-tagline {
-      font-size: var(--sm);
-      color: var(--mid);
-      margin-top: .5rem;
-      font-style: italic;
-      line-height: 1.5;
-      max-width: 28ch;
-    }
-    .footer-col h4 {
-      font-family: var(--fb);
-      font-size: var(--xs);
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .footer-col p, .footer-col a {
-      font-size: var(--sm);
-      color: var(--mid);
-      line-height: 1.8;
-      text-decoration: none;
-      display: block;
-    }
-    .footer-col a:hover { color: var(--cream); }
-    .footer-bottom {
-      border-top: 1px solid rgba(247,244,239,.06);
-      padding-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .footer-bottom p { font-size: var(--xs); color: rgba(130,121,110,.5); }
+        .btn-gold:hover::after {
+            transform: scaleX(1);
+        }
 
-    /* MODAL */
-    #modal-overlay {
-      position: fixed; inset: 0;
-      background: rgba(21,18,13,.85);
-      backdrop-filter: blur(12px);
-      z-index: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .4s;
-    }
-    #modal-overlay.active { opacity: 1; pointer-events: all; }
-    .modal {
-      background: var(--ink);
-      width: min(480px, 90vw);
-      padding: 3rem 2.5rem;
-      position: relative;
-      border: 1px solid rgba(247,244,239,.08);
-    }
-    .modal-close {
-      position: absolute;
-      top: 1.25rem; right: 1.25rem;
-      width: 32px; height: 32px;
-      background: none; border: none;
-      color: var(--mid);
-      font-size: 1.5rem;
-      cursor: none;
-      display: flex; align-items: center; justify-content: center;
-      transition: color .3s;
-    }
-    .modal-close:hover { color: var(--cream); }
-    .modal h3 {
-      font-family: var(--fd);
-      font-size: var(--h2);
-      font-style: italic;
-      color: var(--cream);
-      margin-bottom: 1.75rem;
-    }
-    .modal-form { display: flex; flex-direction: column; gap: 1rem; }
+        .btn-gold span {
+            position: relative;
+            z-index: 1;
+        }
 
-    /* RESPONSIVE — 900px */
-    @media (max-width: 900px) {
+        .btn-arrow {
+            display: inline-block;
+            transition: transform .3s cubic-bezier(.16, 1, .3, 1);
+        }
 
-      /* HERO: foto oculta, content ocupa tudo */
-      #hero {
-        grid-template-columns: 1fr;
-        height: auto;
-        max-height: none;
-        min-height: 100svh;
-      }
-      .hero-photo { display: none; }
-      .hero-content {
-        padding: clamp(5rem, 9vh, 6rem) var(--cpx) 3rem;
-        z-index: 1;
-      }
-      .hero-ghost { font-size: clamp(5rem, 18vw, 8rem); }
+        .btn:hover .btn-arrow {
+            transform: rotate(45deg);
+        }
 
-      /* Foto mobile entre ticker e resultados */
-      .mobile-dr-photo { display: block; }
+        /* HERO */
+        #hero {
+            height: 100svh;
+            max-height: 100svh;
+            background: var(--ink);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
 
-      /* GRIDS */
-      .ba-grid       { grid-template-columns: 1fr 1fr; }
-      .svc-grid      { grid-template-columns: 1fr 1fr; }
-      .dep-grid      { grid-template-columns: 1fr 1fr; }
-      .sobre-grid    { grid-template-columns: 1fr; gap: 2.5rem; }
-      .footer-grid   { grid-template-columns: 1fr; gap: 2rem; }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: clamp(5.5rem, 10vh, 7rem) var(--cpx) 1rem max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
 
-      /* SOBRE: foto menor no mobile */
-      .sobre-photo   { aspect-ratio: 4/3; overflow: hidden; }
-      .sobre-photo::before, .sobre-photo::after { display: none; }
+        .hero-ghost {
+            position: absolute;
+            bottom: -0.1em;
+            left: max(var(--cpx), calc((100vw - var(--cmax)) / 2));
+            font-family: var(--fd);
+            font-size: clamp(8rem, 20vw, 18rem);
+            font-weight: 900;
+            line-height: 1;
+            color: rgba(247, 244, 239, .03);
+            pointer-events: none;
+            user-select: none;
+            letter-spacing: -.02em;
+        }
 
-      /* NAV */
-      .nav-logo-img  { height: 28px; }
+        .hero-label {
+            font-family: var(--fb);
+            font-size: var(--xs);
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .875rem;
+        }
 
-      /* BA sliders: menos altura em tablet */
-      .ba-container  { aspect-ratio: 4/5; }
-    }
+        .hero-headline {
+            font-family: var(--fd);
+            font-size: clamp(2.25rem, 1.75rem + 3.5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.08;
+            color: var(--cream);
+            margin-bottom: .875rem;
+        }
 
-    /* RESPONSIVE — 560px */
-    @media (max-width: 560px) {
-      .ba-grid  { grid-template-columns: 1fr; }
-      .svc-grid { grid-template-columns: 1fr; }
-      .dep-grid { grid-template-columns: 1fr; }
+        .hero-sub {
+            font-size: var(--base);
+            color: rgba(247, 244, 239, .65);
+            line-height: 1.55;
+            max-width: 46ch;
+            margin-bottom: 0.625rem;
+        }
 
-      /* BA: proporção quadrada no mobile */
-      .ba-container { aspect-ratio: 1/1; }
+        .hero-form {
+            display: flex;
+            flex-direction: column;
+            gap: .375rem;
+            max-width: 420px;
+        }
 
-      /* Hero form: inputs lado a lado nome + tel */
-      .hero-form { max-width: 100%; }
+        .hero-form-title {
+            font-family: var(--fd);
+            font-size: var(--h3);
+            font-style: italic;
+            color: var(--cream);
+            margin-bottom: 0;
+        }
 
-      /* Ticker: texto menor */
-      .ticker-item { font-size: .6875rem; letter-spacing: .12em; }
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(247, 244, 239, .15);
+            padding: .55rem 0;
+            color: var(--cream);
+            font-family: var(--fb);
+            font-size: var(--sm);
+            outline: none;
+            transition: border-color .3s;
+            appearance: none;
+        }
 
-      /* Cursor off */
-      .cursor-dot, .cursor-ring { display: none; }
-      body { cursor: auto; }
+        .form-input::placeholder {
+            color: rgba(247, 244, 239, .35);
+        }
 
-      /* Nav CTA oculto */
-      nav .nav-cta { display: none; }
+        .form-input:focus {
+            border-color: var(--gold);
+        }
 
-      /* Footer bottom: stack */
-      .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+        .form-input option {
+            background: var(--ink);
+            color: var(--cream);
+        }
 
-      /* Depoimentos: facade menor no mobile */
-      .dep-facade { aspect-ratio: 4/3; }
-    }
-  </style>
+        .hero-social-proof {
+            display: flex;
+            align-items: center;
+            gap: .875rem;
+            margin-top: .875rem;
+        }
+
+        .avatar-stack {
+            display: flex;
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid var(--ink);
+            background: var(--cream-dk);
+            margin-left: -10px;
+            overflow: hidden;
+        }
+
+        .avatar:first-child {
+            margin-left: 0;
+        }
+
+        .proof-text {
+            font-size: var(--sm);
+            color: rgba(247, 244, 239, .55);
+            line-height: 1.4;
+        }
+
+        .proof-text strong {
+            display: block;
+            color: rgba(247, 244, 239, .85);
+            font-weight: 500;
+        }
+
+        /* HERO PHOTO */
+        .hero-photo {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e1a14 0%, #2a2318 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-photo-placeholder span {
+            font-family: var(--fd);
+            font-style: italic;
+            color: var(--mid);
+            font-size: var(--sm);
+            opacity: .5;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%), linear-gradient(to top, transparent 0%, black 20%);
+            mask-image: linear-gradient(to right, transparent 0%, black 25%), linear-gradient(to top, transparent 0%, black 20%);
+            -webkit-mask-composite: destination-in;
+            mask-composite: intersect;
+        }
+
+        /* TICKER */
+        .ticker {
+            background: var(--gold);
+            padding: 1rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-inner {
+            display: inline-flex;
+            animation: ticker 28s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0 2rem;
+            font-family: var(--fb);
+            font-size: var(--sm);
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--cream);
+        }
+
+        .ticker-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(247, 244, 239, .5);
+            flex-shrink: 0;
+        }
+
+        @keyframes ticker {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* FOTO MOBILE */
+        .mobile-dr-photo {
+            display: none;
+            background: var(--ink);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-dr-photo img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+
+        .mobile-dr-photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem var(--cpx);
+            background: linear-gradient(to top, rgba(21, 18, 13, 1) 0%, transparent 100%);
+        }
+
+        .mobile-dr-photo-caption p {
+            font-family: var(--fd);
+            font-style: italic;
+            font-size: var(--h3);
+            color: var(--cream);
+            line-height: 1.3;
+        }
+
+        .mobile-dr-photo-caption span {
+            display: block;
+            font-family: var(--fb);
+            font-size: var(--xs);
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .375rem;
+        }
+
+        /* ANTES E DEPOIS */
+        #resultados {
+            padding: var(--spyl) 0;
+            background: var(--cream);
+        }
+
+        #resultados .container > * {
+            margin-bottom: 1rem;
+        }
+
+        .ba-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 3rem;
+        }
+
+        .ba-container {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: var(--parch);
+            cursor: col-resize;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .ba-after, .ba-before {
+            position: absolute;
+            inset: 0;
+        }
+
+        .ba-after img, .ba-before img {
+            user-select: none;
+            -webkit-user-select: none;
+            pointer-events: none;
+            -webkit-user-drag: none;
+        }
+
+        .ba-after {
+            background: linear-gradient(135deg, var(--parch) 0%, var(--cream-dk) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ba-before {
+            background: linear-gradient(135deg, var(--cream-dk) 0%, var(--parch) 100%);
+            clip-path: inset(0 75% 0 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ba-placeholder-text {
+            font-family: var(--fd);
+            font-style: italic;
+            color: var(--mid);
+            font-size: var(--sm);
+            opacity: .5;
+        }
+
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 25%;
+            width: 3px;
+            background: var(--gold);
+            cursor: col-resize;
+            z-index: 2;
+        }
+
+        .ba-handle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 4px 20px rgba(192, 139, 81, .4);
+        }
+
+        .ba-handle::after {
+            content: '↔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: .875rem;
+            color: var(--cream);
+            z-index: 1;
+        }
+
+        .ba-label {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--fb);
+            font-size: var(--xs);
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            background: rgba(247, 244, 239, .9);
+            padding: .375rem .875rem;
+            white-space: nowrap;
+            z-index: 3;
+        }
+
+        /* PROCEDIMENTOS */
+        #procedimentos {
+            padding: var(--spyl) 0;
+            background: var(--cream-dk);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .svc-ghost {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--fd);
+            font-size: clamp(12rem, 30vw, 24rem);
+            font-weight: 900;
+            line-height: 1;
+            color: rgba(21, 18, 13, .04);
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .svc-card {
+            background: var(--cream);
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            cursor: none;
+            transition: background .3s;
+        }
+
+        .svc-card:hover {
+            background: var(--ink);
+        }
+
+        .svc-card:hover .svc-name, .svc-card:hover .svc-desc {
+            color: var(--cream);
+        }
+
+        .svc-card:hover .svc-num {
+            color: rgba(247, 244, 239, .15);
+        }
+
+        .svc-num {
+            font-family: var(--fd);
+            font-size: clamp(4rem, 8vw, 7rem);
+            font-weight: 900;
+            line-height: 1;
+            color: rgba(21, 18, 13, .06);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            transition: color .3s;
+        }
+
+        .svc-name {
+            font-family: var(--fd);
+            font-size: var(--h3);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--ink);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            transition: color .3s;
+        }
+
+        .svc-desc {
+            font-size: var(--base);
+            color: var(--ink-lt);
+            line-height: 1.65;
+            position: relative;
+            z-index: 1;
+            transition: color .3s;
+        }
+
+        /* SOBRE */
+        #sobre {
+            padding: var(--spyl) 0;
+            background: var(--cream);
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .sobre-photo {
+            aspect-ratio: 3/4;
+            background: var(--parch);
+            position: relative;
+            overflow: visible;
+        }
+
+        .sobre-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sobre-photo::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            z-index: 0;
+            border: 1px solid rgba(192, 139, 81, .25);
+            pointer-events: none;
+        }
+
+        .sobre-photo::after {
+            content: '';
+            position: absolute;
+            inset: 16px;
+            z-index: 2;
+            border: 1px solid rgba(192, 139, 81, .1);
+            pointer-events: none;
+        }
+
+        .sobre-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sobre-photo-placeholder span {
+            font-family: var(--fd);
+            font-style: italic;
+            color: var(--mid);
+            font-size: var(--sm);
+            opacity: .5;
+        }
+
+        .sobre-content h2 {
+            font-family: var(--fd);
+            font-size: var(--h1);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+        }
+
+        .sobre-content p {
+            font-size: var(--lg);
+            color: var(--ink-lt);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .credentials {
+            display: flex;
+            flex-direction: column;
+            gap: .875rem;
+        }
+
+        .cred-item {
+            border-left: 2px solid var(--gold);
+            padding-left: 1rem;
+            font-size: var(--sm);
+            color: var(--mid);
+            line-height: 1.5;
+        }
+
+        /* DEPOIMENTOS */
+        #depoimentos {
+            padding: var(--spyl) 0;
+            background: var(--ink);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #depoimentos .section-label {
+            color: var(--gold);
+        }
+
+        #depoimentos h2 {
+            font-family: var(--fd);
+            font-size: var(--h1);
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 3rem;
+        }
+
+        .dep-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .dep-card {
+            background: rgba(247, 244, 239, .03);
+            border: 1px solid rgba(247, 244, 239, .08);
+            overflow: hidden;
+        }
+
+        .dep-facade {
+            aspect-ratio: 9/16;
+            background-size: cover;
+            background-position: center top;
+            background-color: #1c1810;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .dep-facade-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(21, 18, 13, .42);
+            transition: background .4s;
+        }
+
+        .dep-facade:hover .dep-facade-overlay {
+            background: rgba(21, 18, 13, .25);
+        }
+
+        .dep-facade-play {
+            position: relative;
+            z-index: 1;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(247, 244, 239, .7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .3s, transform .3s, border-color .3s;
+            backdrop-filter: blur(4px);
+        }
+
+        .dep-facade:hover .dep-facade-play {
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .dep-facade-play::after {
+            content: '';
+            border-style: solid;
+            border-width: 10px 0 10px 20px;
+            border-color: transparent transparent transparent rgba(247, 244, 239, .9);
+            margin-left: 5px;
+            transition: border-color .3s;
+        }
+
+        .dep-facade:hover .dep-facade-play::after {
+            border-color: transparent transparent transparent var(--cream);
+        }
+
+        .dep-facade-handle {
+            position: relative;
+            z-index: 1;
+            font-family: var(--fb);
+            font-size: var(--xs);
+            font-weight: 500;
+            letter-spacing: .06em;
+            color: rgba(247, 244, 239, .75);
+        }
+
+        .dep-quote {
+            padding: 1.25rem 1.5rem;
+            font-family: var(--fd);
+            font-style: italic;
+            font-size: var(--base);
+            color: rgba(247, 244, 239, .65);
+            line-height: 1.6;
+        }
+
+        /* CTA FINAL */
+        #cta-final {
+            padding: var(--spyl) 0;
+            background: var(--ink);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-ghost {
+            position: absolute;
+            bottom: -0.1em;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--fd);
+            font-size: clamp(10rem, 22vw, 20rem);
+            font-weight: 900;
+            line-height: 1;
+            color: rgba(247, 244, 239, .025);
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        #cta-final h2 {
+            font-family: var(--fd);
+            font-size: var(--h1);
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        #cta-final p {
+            font-size: var(--lg);
+            color: rgba(247, 244, 239, .6);
+            max-width: 54ch;
+            margin: 0 auto 2.5rem;
+            line-height: 1.65;
+            position: relative;
+            z-index: 1;
+        }
+
+        #cta-final .btn {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* FAQ */
+        #faq {
+            padding: var(--spyl) 0;
+            background: var(--cream-dk);
+        }
+
+        #faq h2 {
+            font-family: var(--fd);
+            font-size: var(--h1);
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--parch);
+        }
+
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1.5rem 0;
+            font-family: var(--fb);
+            font-size: var(--lg);
+            font-weight: 500;
+            color: var(--ink);
+            cursor: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--gold);
+            font-size: 1.25rem;
+            line-height: 1;
+            transition: transform .3s, background .3s;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            background: var(--gold);
+            color: var(--cream);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s cubic-bezier(.16, 1, .3, 1), padding .4s;
+            font-size: var(--base);
+            color: var(--ink-lt);
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 300px;
+            padding-bottom: 1.5rem;
+        }
+
+        /* CLINICA */
+        #clinica {
+            padding: var(--spyl) 0;
+            background: var(--cream);
+        }
+
+        .clinica-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+
+        .clinica-fotos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2px;
+        }
+
+        .clinica-foto {
+            background: var(--parch);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .clinica-foto:first-child {
+            grid-column: 1 / -1;
+            aspect-ratio: 16/7;
+        }
+
+        .clinica-foto:not(:first-child) {
+            aspect-ratio: 4/3;
+        }
+
+        .clinica-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .clinica-foto:hover img {
+            transform: scale(1.04);
+        }
+
+        .clinica-foto-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--fd);
+            font-style: italic;
+            color: var(--mid);
+            font-size: var(--sm);
+            opacity: .5;
+            min-height: 160px;
+        }
+
+        .clinica-mapa {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .clinica-mapa-frame {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border: none;
+            display: block;
+            filter: grayscale(20%) contrast(1.05);
+        }
+
+        .clinica-endereco {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        .clinica-endereco p {
+            font-size: var(--base);
+            color: var(--ink-lt);
+            line-height: 1.6;
+        }
+
+        .clinica-endereco strong {
+            display: block;
+            font-family: var(--fd);
+            font-size: var(--h3);
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: .25rem;
+        }
+
+        .clinica-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: var(--xs);
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .5rem;
+        }
+
+        .clinica-tag::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        @media (max-width: 900px) {
+            .clinica-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--ink);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(247, 244, 239, .06);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            font-family: var(--fd);
+            font-size: 1.375rem;
+            font-style: italic;
+            color: var(--cream);
+        }
+
+        .footer-tagline {
+            font-size: var(--sm);
+            color: var(--mid);
+            margin-top: .5rem;
+            font-style: italic;
+            line-height: 1.5;
+            max-width: 28ch;
+        }
+
+        .footer-col h4 {
+            font-family: var(--fb);
+            font-size: var(--xs);
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: var(--sm);
+            color: var(--mid);
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--cream);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(247, 244, 239, .06);
+            padding-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-bottom p {
+            font-size: var(--xs);
+            color: rgba(130, 121, 110, .5);
+        }
+
+        /* MODAL */
+        #modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(21, 18, 13, .85);
+            backdrop-filter: blur(12px);
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .4s;
+        }
+
+        #modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal {
+            background: var(--ink);
+            width: min(480px, 90vw);
+            padding: 3rem 2.5rem;
+            position: relative;
+            border: 1px solid rgba(247, 244, 239, .08);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            color: var(--mid);
+            font-size: 1.5rem;
+            cursor: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color .3s;
+        }
+
+        .modal-close:hover {
+            color: var(--cream);
+        }
+
+        .modal h3 {
+            font-family: var(--fd);
+            font-size: var(--h2);
+            font-style: italic;
+            color: var(--cream);
+            margin-bottom: 1.75rem;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* RESPONSIVE — 900px */
+        @media (max-width: 900px) {
+            #hero {
+                grid-template-columns: 1fr;
+                height: auto;
+                max-height: none;
+                min-height: 100svh;
+            }
+
+            .hero-photo {
+                display: none;
+            }
+
+            .hero-content {
+                padding: clamp(5.5rem, 13vh, 7rem) var(--cpx) clamp(2rem, 5vh, 3rem);
+                z-index: 1;
+                justify-content: space-between;
+            }
+
+            .hero-label { margin-bottom: 0; }
+            .hero-headline { margin-bottom: 0; }
+            .hero-sub { margin-bottom: 0; font-size: var(--base); line-height: 1.6; }
+            .hero-form { margin-top: 0; gap: 0.75rem; }
+            .hero-form-title { font-size: var(--h3); margin-bottom: 0.25rem; }
+            .hero-social-proof { margin-top: 0; }
+
+            .hero-ghost {
+                font-size: clamp(5rem, 18vw, 8rem);
+            }
+
+            .mobile-dr-photo {
+                display: block;
+            }
+
+            .ba-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .svc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .dep-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .sobre-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sobre-photo {
+                aspect-ratio: 3/4;
+                overflow: hidden;
+            }
+
+            .sobre-photo::before, .sobre-photo::after {
+                display: none;
+            }
+
+            .clinica-foto:first-child {
+                aspect-ratio: 4/3;
+            }
+
+            .nav-logo-img {
+                height: 28px;
+            }
+
+            .ba-container {
+                aspect-ratio: 4/5;
+            }
+        }
+
+        /* RESPONSIVE — 560px */
+        @media (max-width: 560px) {
+            .hero-content { padding: clamp(5rem, 11vh, 6.5rem) var(--cpx) clamp(1.75rem, 4vh, 2.5rem); }
+            .hero-headline { font-size: clamp(1.875rem, 7vw, 2.5rem); }
+            .hero-sub { font-size: .9rem; line-height: 1.5; }
+
+            .ba-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .svc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dep-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ba-container {
+                aspect-ratio: 4/5;
+            }
+
+            .dep-facade {
+                aspect-ratio: 4/3;
+            }
+
+            .hero-form {
+                max-width: 100%;
+            }
+
+            .ticker-item {
+                font-size: .6875rem;
+                letter-spacing: .12em;
+            }
+
+            .cursor-dot, .cursor-ring {
+                display: none;
+            }
+
+            body {
+                cursor: auto;
+            }
+
+            nav .nav-cta {
+                display: none;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: .5rem;
+                text-align: center;
+            }
+
+            .dep-facade {
+                aspect-ratio: 4/3;
+            }
+        }
+    
+        /* PageSpeed: visually hidden labels for accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+        /* PageSpeed: CSS avatars — no external requests */
+        .avatar-css {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--cream, #F7F4EF);
+            flex-shrink: 0;
+        }
+    </style>
+    <link rel="preload" as="image" href="dr-enio-hero.png">
 </head>
 <body>
+    <!-- CURSOR -->
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
 
-  <!-- Cursor -->
-  <div class="cursor-dot" id="cursor-dot"></div>
-  <div class="cursor-ring" id="cursor-ring"></div>
-
-  <!-- Nav -->
-  <nav id="nav">
-    <a href="#hero" class="nav-logo">
-      <img src="logo-horizontal.png" alt="Dr. Ênio Leite" class="nav-logo-img">
-    </a>
-    <a href="#" class="nav-cta" id="nav-cta-btn">
-      <span>Agendar consulta</span>
-      <span class="btn-arrow">&#8599;</span>
-    </a>
-  </nav>
-
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-ghost" aria-hidden="true">NATURAL</div>
-
-    <div class="hero-content">
-      <div class="hero-label">DR. ÊNIO LEITE &middot; HARMONIZAÇÃO OROFACIAL &middot; SERRA, ES</div>
-
-      <h1 class="hero-headline">O resultado que&nbsp;ninguém percebe.<br>Mas todo mundo nota.</h1>
-
-      <p class="hero-sub">Para quem sempre quis mudar alguma coisa no rosto. Mas queria que parecesse natural.</p>
-
-      <div class="hero-form">
-        <div class="hero-form-title">Agende sua consulta</div>
-        <input type="text" class="form-input" placeholder="Seu nome" id="hero-nome" autocomplete="name">
-        <input type="tel" class="form-input" placeholder="WhatsApp" id="hero-tel" autocomplete="tel">
-        <select class="form-input" id="hero-proc">
-          <option value="" disabled selected>O que você quer melhorar?</option>
-          <option value="Toxina Botulínica">Toxina Botulínica</option>
-          <option value="Preenchimento Labial">Preenchimento Labial</option>
-          <option value="Bioestimuladores de Colágeno">Bioestimuladores de Colágeno</option>
-          <option value="Fios de Sustentação">Fios de Sustentação</option>
-          <option value="Rinomodelação">Rinomodelação</option>
-          <option value="Lipo de Papada">Lipo de Papada</option>
-          <option value="Consulta geral">Nao sei ainda / Consulta geral</option>
-        </select>
-        <button class="btn btn-gold" id="hero-submit">
-          <span>Quero agendar</span>
-          <span class="btn-arrow">&#8599;</span>
-        </button>
-      </div>
-
-      <div class="hero-social-proof">
-        <div class="avatar-stack">
-          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
-          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/23.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
-          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
-          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/17.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
-          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/55.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
-        </div>
-        <div class="proof-text">
-          <strong>&#11088; 4.9 &middot; mais de 500 pacientes atendidos</strong>
-          Serra e região
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-photo">
-      <img src="dr-enio-hero.png" alt="Dr. Ênio Leite" class="hero-photo-img">
-    </div>
-  </section>
-
-  <!-- TICKER -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-inner">
-      <span class="ticker-item">RESULTADO NATURAL<span class="ticker-dot"></span></span>
-      <span class="ticker-item">HARMONIZAÇÃO OROFACIAL<span class="ticker-dot"></span></span>
-      <span class="ticker-item">SERRA, ES<span class="ticker-dot"></span></span>
-      <span class="ticker-item">MAIS DE 500 PACIENTES<span class="ticker-dot"></span></span>
-      <span class="ticker-item">DR. ÊNIO LEITE<span class="ticker-dot"></span></span>
-      <span class="ticker-item">RESULTADO NATURAL<span class="ticker-dot"></span></span>
-      <span class="ticker-item">HARMONIZAÇÃO OROFACIAL<span class="ticker-dot"></span></span>
-      <span class="ticker-item">SERRA, ES<span class="ticker-dot"></span></span>
-      <span class="ticker-item">MAIS DE 500 PACIENTES<span class="ticker-dot"></span></span>
-      <span class="ticker-item">DR. ÊNIO LEITE<span class="ticker-dot"></span></span>
-    </div>
-  </div>
-
-  <!-- ANTES E DEPOIS -->
-  <section id="resultados">
-    <div class="container">
-      <span class="section-label reveal">RESULTADOS</span>
-      <h2 class="reveal reveal-d1" style="font-family:var(--fd);font-size:var(--h1);font-weight:700;color:var(--ink);margin-bottom:.75rem;">Veja o que é possível.</h2>
-      <p class="reveal reveal-d2" style="font-size:var(--lg);color:var(--mid);max-width:48ch;">Casos reais. Cada resultado, pensado para aquele rosto.</p>
-    </div>
-
-    <div class="ba-grid">
-      <div class="ba-container">
-        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-handle"></div>
-        <div class="ba-label">Toxina Botulínica</div>
-      </div>
-      <div class="ba-container">
-        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-handle"></div>
-        <div class="ba-label">Preenchimento Labial</div>
-      </div>
-      <div class="ba-container">
-        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-handle"></div>
-        <div class="ba-label">Bioestimuladores</div>
-      </div>
-      <div class="ba-container">
-        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-handle"></div>
-        <div class="ba-label">Fios de Sustentação</div>
-      </div>
-      <div class="ba-container">
-        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-handle"></div>
-        <div class="ba-label">Rinomodelação</div>
-      </div>
-      <div class="ba-container">
-        <div class="ba-after"><img src="depois-demo.jpg" alt="Depois" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-before"><img src="antes-demo.jpg" alt="Antes" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
-        <div class="ba-handle"></div>
-        <div class="ba-label">Lipo de Papada</div>
-      </div>
-    </div>
-    <div style="text-align:center;padding:3rem var(--cpx) 0;">
-      <button class="btn btn-gold reveal reveal-d1 open-modal" style="margin:0 auto;">
-        <span>Quero um resultado assim</span>
-        <span class="btn-arrow">&#8599;</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- PROCEDIMENTOS -->
-  <section id="procedimentos">
-    <div class="svc-ghost" aria-hidden="true">CUIDADO</div>
-    <div class="container">
-      <span class="section-label reveal">O QUE FAZEMOS</span>
-      <h2 class="reveal reveal-d1" style="font-family:var(--fd);font-size:var(--h1);font-weight:700;color:var(--ink);">Escolha o que faz sentido pra você.</h2>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-card reveal">
-        <span class="svc-num">01</span>
-        <h3 class="svc-name">Toxina Botulínica</h3>
-        <p class="svc-desc">Aquela versão mais descansada que você lembra de você. As linhas de expressão somem. A testa relaxa. O rosto fica jovem de um jeito que parece natural.</p>
-      </div>
-      <div class="svc-card reveal reveal-d1">
-        <span class="svc-num">02</span>
-        <h3 class="svc-name">Preenchimento Labial</h3>
-        <p class="svc-desc">Para quem sempre quis lábios mais cheios e nunca teve coragem. Feito no tamanho certo pro seu rosto. Ninguém vai saber o que você fez. Todo mundo vai notar.</p>
-      </div>
-      <div class="svc-card reveal reveal-d2">
-        <span class="svc-num">03</span>
-        <h3 class="svc-name">Bioestimuladores de Colágeno</h3>
-        <p class="svc-desc">A pele que você tinha antes. Mais firme, mais jovem. A própria pele começa a se recuperar, e o resultado só melhora.</p>
-      </div>
-      <div class="svc-card reveal">
-        <span class="svc-num">04</span>
-        <h3 class="svc-name">Fios de Sustentação</h3>
-        <p class="svc-desc">Aquele contorno definido que você sempre quis. Sem cirurgia, sem corte. O rosto volta a ter o lugar que sempre deveria ter tido.</p>
-      </div>
-      <div class="svc-card reveal reveal-d1">
-        <span class="svc-num">05</span>
-        <h3 class="svc-name">Rinomodelação</h3>
-        <p class="svc-desc">Aquele nariz que você sempre quis ver no espelho. Sem cirurgia. Resultado imediato.</p>
-      </div>
-      <div class="svc-card reveal reveal-d2">
-        <span class="svc-num">06</span>
-        <h3 class="svc-name">Lipo de Papada</h3>
-        <p class="svc-desc">Aquele contorno embaixo do queixo que some nas fotos. Definido de vez, de um jeito que muda o rosto inteiro.</p>
-      </div>
-    </div>
-    <div style="text-align:center;padding:3rem var(--cpx) 0;position:relative;z-index:1;">
-      <button class="btn btn-gold reveal reveal-d1 open-modal" style="margin:0 auto;">
-        <span>Agendar minha consulta</span>
-        <span class="btn-arrow">&#8599;</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section id="sobre">
-    <div class="container">
-      <div class="sobre-grid">
-        <div class="sobre-photo reveal">
-          <img src="dr-enio-about.png" alt="Dr. Ênio Leite" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
-        </div>
-        <div class="sobre-content">
-          <span class="section-label reveal">O ESPECIALISTA</span>
-          <h2 class="reveal reveal-d1">Dr. Ênio Leite</h2>
-          <p class="reveal reveal-d2" style="font-family:var(--fd);font-size:var(--h3);font-style:italic;color:var(--mid);margin-bottom:1.5rem;">Cirurgião Dentista · Especialista em Harmonização Orofacial</p>
-          <p class="reveal reveal-d3">Tem coisas na nossa aparência que nos incomodam há anos. O Dr. Ênio Leite entende isso.</p>
-          <p class="reveal" style="transition-delay:.4s;margin-top:1rem;">Com mais de 8 anos dedicados a harmonização facial, ele cuida de cada detalhe para que o resultado faça sentido pra você. Cada rosto é tratado do jeito que merece.</p>
-          <div class="credentials" style="margin-top:2rem;">
-            <div class="cred-item reveal" style="transition-delay:.5s">Cirurgião Dentista · CRO/ES 7394</div>
-            <div class="cred-item reveal" style="transition-delay:.6s">Especialista em Harmonização Orofacial · EPAO 1575</div>
-            <div class="cred-item reveal" style="transition-delay:.7s">Referência em Vitoria, ES</div>
-            <div class="cred-item reveal" style="transition-delay:.8s">Foco em Lipo de Papada e Rinomodelação Estruturada</div>
-          </div>
-          <div style="margin-top:2.5rem;">
-            <button class="btn btn-gold reveal open-modal" style="transition-delay:.9s;">
-              <span>Agendar com Dr. Ênio</span>
-              <span class="btn-arrow">&#8599;</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEPOIMENTOS -->
-  <section id="depoimentos">
-    <div class="container">
-      <span class="section-label reveal">O QUE DIZEM OS PACIENTES</span>
-      <h2 class="reveal reveal-d1">Quem foi, voltou diferente.</h2>
-      <div class="dep-grid">
-        <div class="dep-card reveal">
-          <div class="dep-facade" data-yt="9rENaneS7sQ" style="background-image:url('thumb-dep-1.jpg');" onclick="playYt(this)">
-            <div class="dep-facade-overlay"></div>
-            <div class="dep-facade-play"></div>
-            <span class="dep-facade-handle">@drenioleite</span>
-          </div>
-          <p class="dep-quote">"O resultado ficou tão natural que ninguém acreditou que eu tinha feito alguma coisa."</p>
-        </div>
-        <div class="dep-card reveal reveal-d1">
-          <div class="dep-facade" data-yt="ksYrP20AyFI" style="background-image:url('thumb-dep-2.jpg');" onclick="playYt(this)">
-            <div class="dep-facade-overlay"></div>
-            <div class="dep-facade-play"></div>
-            <span class="dep-facade-handle">@drenioleite</span>
-          </div>
-          <p class="dep-quote">"Eu tinha medo de parecer diferente. Saí parecendo eu mesma, só que descansada."</p>
-        </div>
-        <div class="dep-card reveal reveal-d2">
-          <div class="dep-facade" data-yt="CP-oVcOdp_I" style="background-image:url('thumb-dep-3.jpg');" onclick="playYt(this)">
-            <div class="dep-facade-overlay"></div>
-            <div class="dep-facade-play"></div>
-            <span class="dep-facade-handle">@drenioleite</span>
-          </div>
-          <p class="dep-quote">"Voltei no mesmo dia pro trabalho. Ninguém percebeu nada. Todo mundo falou que eu estava bem."</p>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:3rem;">
-        <button class="btn btn-gold reveal reveal-d3 open-modal" style="margin:0 auto;">
-          <span>Quero meu resultado</span>
-          <span class="btn-arrow">&#8599;</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section id="cta-final">
-    <div class="cta-ghost" aria-hidden="true">AGENDE</div>
-    <div class="container" style="text-align:center;position:relative;z-index:1;">
-      <h2 class="reveal">Pronto para dar esse passo?</h2>
-      <p class="reveal reveal-d1">A consulta é o começo. Você vem, conta o que te incomoda, e a gente traça o melhor caminho pra você.</p>
-      <button class="btn btn-gold reveal reveal-d2" id="cta-btn" style="margin:0 auto;">
-        <span>Quero agendar minha consulta</span>
-        <span class="btn-arrow">&#8599;</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container" style="max-width:760px">
-      <span class="section-label reveal">PERGUNTAS FREQUENTES</span>
-      <h2 class="reveal reveal-d1">Antes de agendar</h2>
-
-      <div class="faq-item reveal">
-        <button class="faq-q">
-          Vou ficar exagerada?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Com certeza não. Aqui o foco é no resultado natural. Você vai sair diferente, mas de um jeito que vai parecer que sempre foi assim.</div>
-      </div>
-
-      <div class="faq-item reveal reveal-d1">
-        <button class="faq-q">
-          Vai doer?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Nao. Os procedimentos são feitos com anestesia local. O desconforto é mínimo. A maioria das pessoas volta pras atividades normais no mesmo dia.</div>
-      </div>
-
-      <div class="faq-item reveal reveal-d2">
-        <button class="faq-q">
-          Quanto tempo dura o resultado?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Depende do que for feito. Na consulta, o Dr. Ênio explica tudo com calma, incluindo o que esperar e quando voltar.</div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q">
-          Preciso fazer mais de um procedimento?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Não necessariamente. A consulta define o que faz sentido pro seu caso. Nada e indicado sem necessidade.</div>
-      </div>
-
-      <div class="faq-item reveal reveal-d1">
-        <button class="faq-q">
-          A consulta tem custo?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">Sim. O valor é informado pela nossa equipe no primeiro contato.</div>
-      </div>
-      <div style="margin-top:3rem;">
-        <button class="btn btn-gold reveal open-modal">
-          <span>Agendar consulta agora</span>
-          <span class="btn-arrow">&#8599;</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLINICA -->
-  <section id="clinica">
-    <div class="container">
-      <span class="section-label reveal">A CLINICA</span>
-      <h2 class="reveal reveal-d1" style="font-family:var(--fd);font-size:var(--h1);font-weight:700;color:var(--ink);">Um ambiente feito para você se sentir segura.</h2>
-
-      <div class="clinica-grid">
-
-        <!-- Fotos -->
-        <div class="clinica-fotos">
-          <div class="clinica-foto">
-            <div class="clinica-foto-placeholder">foto clinica principal</div>
-          </div>
-          <div class="clinica-foto">
-            <div class="clinica-foto-placeholder">foto sala</div>
-          </div>
-          <div class="clinica-foto">
-            <div class="clinica-foto-placeholder">foto detalhe</div>
-          </div>
-        </div>
-
-        <!-- Mapa + endereco -->
-        <div class="clinica-mapa reveal reveal-d1">
-          <iframe
-            class="clinica-mapa-frame"
-            src="https://maps.google.com/maps?q=Shopping+Mestre+%C3%81lvaro,+Serra,+ES,+Brasil&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Localização Dr. Ênio Leite"
-          ></iframe>
-
-          <div class="clinica-endereco">
-            <span class="clinica-tag">Como chegar</span>
-            <strong>Shopping Mestre Álvaro</strong>
-            <p>Torre B, Sala 701<br>Serra, ES</p>
-          </div>
-
-          <button class="btn btn-gold reveal open-modal" style="align-self:flex-start;">
+    <!-- NAV -->
+    <nav id="nav">
+        <a href="#hero" class="nav-logo">
+            <img src="logo-horizontal.png" alt="Dr. Enio Leite" class="nav-logo-img">
+        </a>
+        <a href="#" id="nav-cta-btn" class="nav-cta">
             <span>Agendar consulta</span>
-            <span class="btn-arrow">&#8599;</span>
-          </button>
+            <span class="btn-arrow">↗</span>
+        </a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-ghost">NATURAL</div>
+            
+            <span class="hero-label">DR. ENIO LEITE<br>REFERÊNCIA EM HARMONIZAÇÃO OROFACIAL</span>
+            
+            <h1 class="hero-headline">O resultado que ninguém percebe.<br>Mas todo mundo nota.</h1>
+            
+            <p class="hero-sub">Para quem sempre quis mudar alguma coisa no rosto. Mas queria que parecesse natural.</p>
+            
+            <form class="hero-form">
+                <h3 class="hero-form-title">Agende sua consulta</h3>
+                
+                <label for="hero-nome" style="display: none;">Nome</label>
+                <input type="text" id="hero-nome" class="form-input" placeholder="Seu nome" required>
+                
+                <label for="hero-tel" style="display: none;">WhatsApp</label>
+                <input type="tel" id="hero-tel" class="form-input" placeholder="Seu WhatsApp" required>
+                
+                <label for="hero-proc" style="display: none;">Procedimento</label>
+                <select id="hero-proc" class="form-input" required>
+                    <option value="">O que você quer melhorar?</option>
+                    <option>Toxina Botulínica</option>
+                    <option>Preenchimento Labial</option>
+                    <option>Bioestimuladores de Colágeno</option>
+                    <option>Fios de Sustentação</option>
+                    <option>Rinomodelação</option>
+                    <option>Lipo de Papada</option>
+                    <option>Nao sei ainda / Consulta geral</option>
+                </select>
+                
+                <button type="button" id="hero-submit" class="btn btn-gold">
+                    <span>Quero agendar</span>
+                    <span class="btn-arrow">↗</span>
+                </button>
+            </form>
+            
+            <div class="hero-social-proof">
+                <div class="avatar-stack">
+                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#c9a06b,#8a6742)"></div>
+                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#b8917a,#7d5c4d)"></div>
+                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#a89080,#6e5048)"></div>
+                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#c4a882,#8c6e50)"></div>
+                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#b09070,#7a5c40)"></div>
+                </div>
+            </div>
         </div>
 
-      </div>
+        <div class="hero-photo">
+            <img src="dr-enio-hero.png" alt="Dr. Enio Leite" width="600" height="800" fetchpriority="high">
+        </div>
+    </section>
+
+    <!-- TICKER -->
+    <section class="ticker">
+        <div class="ticker-inner">
+            <div class="ticker-item">RESULTADO NATURAL</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item">HARMONIZAÇÃO OROFACIAL</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item">SERRA, ES</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item">MAIS DE 500 PACIENTES</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item">DR. ENIO LEITE</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item">RESULTADO NATURAL</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item">HARMONIZAÇÃO OROFACIAL</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item">SERRA, ES</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item">MAIS DE 500 PACIENTES</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item">DR. ENIO LEITE</div>
+        </div>
+    </section>
+
+    <!-- MOBILE PHOTO -->
+    <div class="mobile-dr-photo">
+        <img loading="lazy" src="dr-enio-hero.png" alt="Dr. Enio Leite">
+        <div class="mobile-dr-photo-caption">
+            <span>Especialista em Harmonização Orofacial</span>
+            <p>Mais de 8 anos dedicados a resultados naturais.</p>
+        </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <img src="logo-monograma.png" alt="Dr. Ênio Leite" style="height:48px;opacity:.85;margin-bottom:.75rem;display:block;">
-          <p class="footer-tagline">"O resultado que ninguém percebe. Mas todo mundo nota."</p>
+    <!-- RESULTADOS -->
+    <section id="resultados">
+        <div class="container">
+            <span class="section-label reveal">RESULTADOS</span>
+            <h2 class="reveal reveal-d1">Veja o que é possível.</h2>
+            <p class="reveal reveal-d2" style="max-width:60ch; color: var(--ink-lt); margin-bottom: 2rem;">Casos reais. Cada resultado, pensado para aquele rosto.</p>
+
+            <div class="ba-grid">
+                <div class="ba-container reveal reveal-d3">
+                    <div class="ba-after">
+                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                    </div>
+                    <div class="ba-before">
+                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                    </div>
+                    <div class="ba-handle"></div>
+                    <div class="ba-label">Toxina Botulínica</div>
+                </div>
+
+                <div class="ba-container reveal reveal-d3">
+                    <div class="ba-after">
+                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                    </div>
+                    <div class="ba-before">
+                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                    </div>
+                    <div class="ba-handle"></div>
+                    <div class="ba-label">Preenchimento Labial</div>
+                </div>
+
+                <div class="ba-container reveal reveal-d3">
+                    <div class="ba-after">
+                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                    </div>
+                    <div class="ba-before">
+                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                    </div>
+                    <div class="ba-handle"></div>
+                    <div class="ba-label">Bioestimuladores</div>
+                </div>
+
+                <div class="ba-container reveal reveal-d3">
+                    <div class="ba-after">
+                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                    </div>
+                    <div class="ba-before">
+                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                    </div>
+                    <div class="ba-handle"></div>
+                    <div class="ba-label">Fios de Sustentação</div>
+                </div>
+
+                <div class="ba-container reveal reveal-d3">
+                    <div class="ba-after">
+                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                    </div>
+                    <div class="ba-before">
+                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                    </div>
+                    <div class="ba-handle"></div>
+                    <div class="ba-label">Rinomodelação</div>
+                </div>
+
+                <div class="ba-container reveal reveal-d3">
+                    <div class="ba-after">
+                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                    </div>
+                    <div class="ba-before">
+                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                    </div>
+                    <div class="ba-handle"></div>
+                    <div class="ba-label">Lipo de Papada</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-gold open-modal reveal reveal-d3">
+                    <span>Quero um resultado assim</span>
+                    <span class="btn-arrow">↗</span>
+                </button>
+            </div>
         </div>
-        <div class="footer-col">
-          <h4>Localização</h4>
-          <p>Shopping Mestre Álvaro</p>
-          <p>Torre B, Sala 701</p>
-          <p>Serra, ES</p>
+    </section>
+
+    <!-- PROCEDIMENTOS -->
+    <section id="procedimentos">
+        <div class="svc-ghost">CUIDADO</div>
+        <div class="container">
+            <span class="section-label reveal">O QUE FAZEMOS</span>
+            <h2 class="reveal reveal-d1">Escolha o que faz sentido pra você.</h2>
+
+            <div class="svc-grid">
+                <div class="svc-card reveal reveal-d2">
+                    <div class="svc-num">01</div>
+                    <h3 class="svc-name">Toxina Botulínica</h3>
+                    <p class="svc-desc">Aquela versão mais descansada que você lembra de você. As linhas de expressão somem. A testa relaxa. O rosto fica jovem de um jeito que parece natural.</p>
+                </div>
+
+                <div class="svc-card reveal reveal-d2">
+                    <div class="svc-num">02</div>
+                    <h3 class="svc-name">Preenchimento Labial</h3>
+                    <p class="svc-desc">Para quem sempre quis lábios mais cheios e nunca teve coragem. Feito no tamanho certo pro seu rosto. Ninguém vai saber o que você fez. Todo mundo vai notar.</p>
+                </div>
+
+                <div class="svc-card reveal reveal-d2">
+                    <div class="svc-num">03</div>
+                    <h3 class="svc-name">Bioestimuladores de Colágeno</h3>
+                    <p class="svc-desc">A pele que você tinha antes. Mais firme, mais jovem. A própria pele começa a se recuperar, e o resultado só melhora.</p>
+                </div>
+
+                <div class="svc-card reveal reveal-d3">
+                    <div class="svc-num">04</div>
+                    <h3 class="svc-name">Fios de Sustentação</h3>
+                    <p class="svc-desc">Aquele contorno definido que você sempre quis. Sem cirurgia, sem corte. O rosto volta a ter o lugar que sempre deveria ter tido.</p>
+                </div>
+
+                <div class="svc-card reveal reveal-d3">
+                    <div class="svc-num">05</div>
+                    <h3 class="svc-name">Rinomodelação</h3>
+                    <p class="svc-desc">Aquele nariz que você sempre quis ver no espelho. Sem cirurgia. Resultado imediato.</p>
+                </div>
+
+                <div class="svc-card reveal reveal-d3">
+                    <div class="svc-num">06</div>
+                    <h3 class="svc-name">Lipo de Papada</h3>
+                    <p class="svc-desc">Aquele contorno embaixo do queixo que some nas fotos. Definido de vez, de um jeito que muda o rosto inteiro.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-gold open-modal reveal reveal-d3">
+                    <span>Agendar minha consulta</span>
+                    <span class="btn-arrow">↗</span>
+                </button>
+            </div>
         </div>
-        <div class="footer-col">
-          <h4>Contato</h4>
-          <a href="https://instagram.com/drenioleite" target="_blank" rel="noopener">@drenioleite</a>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <div class="container">
+            <div class="sobre-grid">
+                <div class="sobre-photo reveal">
+                    <img loading="lazy" src="dr-enio-about.png" alt="Dr. Enio Leite" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;">
+                </div>
+
+                <div>
+                    <span class="section-label reveal reveal-d1">O ESPECIALISTA</span>
+                    <h2 class="reveal reveal-d2">Dr. Enio Leite</h2>
+                    <p class="reveal reveal-d3" style="font-size: var(--sm); color: var(--mid); margin-bottom: 1.5rem;">Cirurgião Dentista · Especialista em Harmonização Orofacial</p>
+                    
+                    <p class="reveal reveal-d3">8 anos dedicados à harmonização facial em Serra, ES. Mais de 500 pacientes atendidos.</p>
+
+                    <p class="reveal reveal-d3">O Dr. Enio é especialista em resultados que preservam o que é seu, corrigindo o que te incomoda sem exagero. Cada procedimento é planejado individualmente, respeitando as proporções naturais do seu rosto.</p>
+
+                    <div class="credentials">
+                        <div class="cred-item reveal reveal-d3">
+                            Cirurgião Dentista &middot; CRO/ES 7394
+                        </div>
+                        <div class="cred-item reveal reveal-d3">
+                            Especialista em Harmonização Orofacial &middot; EPAO 1575
+                        </div>
+                        <div class="cred-item reveal reveal-d3">
+                            +500 pacientes atendidos em Serra e Grande Vitória
+                        </div>
+                        <div class="cred-item reveal reveal-d3">
+                            Referência em Harmonização Orofacial no Espírito Santo
+                        </div>
+                        <div class="cred-item reveal reveal-d3">
+                            Técnica conservadora com resultado natural
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2.5rem;">
+                        <button class="btn btn-gold open-modal reveal reveal-d3">
+                            <span>Agendar com Dr. Enio</span>
+                            <span class="btn-arrow">↗</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Dr. Ênio Leite. Todos os direitos reservados.</p>
-        <p>CRO/ES 7394 &middot; EPAO 1575</p>
-      </div>
-      <div style="text-align:center;padding-top:1.25rem;">
-        <a href="https://syradigital.com" target="_blank" rel="noopener" style="font-size:.6875rem;color:rgba(130,121,110,.3);text-decoration:none;letter-spacing:.08em;">feito por Syra Digital</a>
-      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+        <div class="container">
+            <span class="section-label reveal">O QUE DIZEM OS PACIENTES</span>
+            <h2 class="reveal reveal-d1">Quem foi, voltou diferente.</h2>
+
+            <div class="dep-grid">
+                <div class="dep-card reveal reveal-d2">
+                    <div class="dep-facade" onclick="playYt(this)" data-yt="9rENaneS7sQ" style="background-image: url('https://img.youtube.com/vi/9rENaneS7sQ/hqdefault.jpg');">
+                        <div class="dep-facade-overlay"></div>
+                        <div class="dep-facade-play"></div>
+                        <div class="dep-facade-handle">@drenioleite</div>
+                    </div>
+                    <div class="dep-quote">&ldquo;O resultado ficou tão natural que ninguém acreditou que eu tinha feito alguma coisa.&rdquo;</div>
+                </div>
+
+                <div class="dep-card reveal reveal-d2">
+                    <div class="dep-facade" onclick="playYt(this)" data-yt="ksYrP20AyFI" style="background-image: url('https://img.youtube.com/vi/ksYrP20AyFI/hqdefault.jpg');">
+                        <div class="dep-facade-overlay"></div>
+                        <div class="dep-facade-play"></div>
+                        <div class="dep-facade-handle">@drenioleite</div>
+                    </div>
+                    <div class="dep-quote">&ldquo;Eu tinha medo de parecer diferente. Saí parecendo eu mesma, só que descansada.&rdquo;</div>
+                </div>
+
+                <div class="dep-card reveal reveal-d2">
+                    <div class="dep-facade" onclick="playYt(this)" data-yt="CP-oVcOdp_I" style="background-image: url('https://img.youtube.com/vi/CP-oVcOdp_I/hqdefault.jpg');">
+                        <div class="dep-facade-overlay"></div>
+                        <div class="dep-facade-play"></div>
+                        <div class="dep-facade-handle">@drenioleite</div>
+                    </div>
+                    <div class="dep-quote">&ldquo;Voltei no mesmo dia pro trabalho. Ninguém percebeu nada. Todo mundo falou que eu estava bem.&rdquo;</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-gold open-modal reveal reveal-d3">
+                    <span>Quero meu resultado</span>
+                    <span class="btn-arrow">↗</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta-final">
+        <div class="cta-ghost">AGENDE</div>
+        <div class="container">
+            <h2 class="reveal reveal-d1">Pronto para dar esse passo?</h2>
+            <p class="reveal reveal-d2">A consulta é o começo. Você vem, conta o que te incomoda, e a gente traça o melhor caminho pra você.</p>
+            <button id="cta-btn" class="btn btn-gold reveal reveal-d3">
+                <span>Quero agendar minha consulta</span>
+                <span class="btn-arrow">↗</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <span class="section-label reveal">PERGUNTAS FREQUENTES</span>
+            <h2 class="reveal reveal-d1">Antes de agendar</h2>
+
+            <div style="max-width: 720px;">
+                <div class="faq-item reveal reveal-d2">
+                    <button class="faq-q">
+                        <span>Vou ficar exagerada?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-a">
+                        Com certeza não. Aqui o foco é no resultado natural. Você vai sair diferente, mas de um jeito que vai parecer que sempre foi assim.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal reveal-d2">
+                    <button class="faq-q">
+                        <span>Vai doer?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-a">
+                        Nao. Os procedimentos são feitos com anestesia local. O desconforto é mínimo. A maioria das pessoas volta pras atividades normais no mesmo dia.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal reveal-d2">
+                    <button class="faq-q">
+                        <span>Quanto tempo dura o resultado?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-a">
+                        Depende do que for feito. Na consulta, o Dr. Enio explica tudo com calma, incluindo o que esperar e quando voltar.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal reveal-d2">
+                    <button class="faq-q">
+                        <span>Preciso fazer mais de um procedimento?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-a">
+                        Não necessariamente. A consulta define o que faz sentido pro seu caso. Nada e indicado sem necessidade.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal reveal-d2">
+                    <button class="faq-q">
+                        <span>A consulta tem custo?</span>
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-a">
+                        Sim. O valor é informado pela nossa equipe no primeiro contato.
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-gold open-modal reveal reveal-d3">
+                    <span>Agendar consulta agora</span>
+                    <span class="btn-arrow">↗</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLÍNICA -->
+    <section id="clinica">
+        <div class="container">
+            <span class="section-label reveal">A CLINICA</span>
+            <h2 class="reveal reveal-d1">Um ambiente feito para você se sentir segura.</h2>
+
+            <div class="clinica-grid">
+                <div class="clinica-fotos">
+                    <div class="clinica-foto reveal">
+                        <img src="https://lh3.googleusercontent.com/d/1rywR8lagtuoh_rHcgE4ZgmKSbGnQLoAV" alt="Recepção Instituto Dr. Enio Leite" loading="lazy">
+                    </div>
+                    <div class="clinica-foto reveal reveal-d1">
+                        <img src="https://lh3.googleusercontent.com/d/1P24jHb25rtOBYKc03oEqTrg46TQ-3h61" alt="Consultório Instituto Dr. Enio Leite" loading="lazy">
+                    </div>
+                    <div class="clinica-foto reveal reveal-d2">
+                        <img src="https://lh3.googleusercontent.com/d/1ORYhgRVHRqVGqw9J9hz5DDbWZqgeXHLr" alt="Recepção Instituto Dr. Enio Leite" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="clinica-mapa">
+                    <div style="reveal">
+                        <iframe src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE" class="clinica-mapa-frame" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="clinica-endereco reveal reveal-d1">
+                        <span class="clinica-tag">Como chegar</span>
+                        <strong>Shopping Mestre Álvaro</strong>
+                        <p>Torre B, Sala 701<br>Serra, ES</p>
+                    </div>
+
+                    <div class="reveal reveal-d2">
+                        <button class="btn btn-gold open-modal">
+                            <span>Agendar consulta</span>
+                            <span class="btn-arrow">↗</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Dr. Enio Leite</div>
+                    <p class="footer-tagline">"O resultado que ninguém percebe. Mas todo mundo nota."</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Localização</h4>
+                    <p>Shopping Mestre Álvaro</p>
+                    <p>Torre B, Sala 701</p>
+                    <p>Serra, ES</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <a href="https://instagram.com/drenioleite" target="_blank">@drenioleite</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Dr. Enio Leite. Todos os direitos reservados.</p>
+                <p>CRO/ES 7394 · EPAO 1575</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(247,244,239,.06);">
+                <a href="https://syradigital.com" style="font-size: var(--xs); color: var(--mid); text-decoration: none;">feito por Syra Digital</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal-overlay">
+        <div class="modal">
+            <button id="modal-close" class="modal-close">✕</button>
+            
+            <h3>Agende sua consulta</h3>
+            
+            <div class="modal-form">
+                <label for="modal-nome" style="display: none;">Nome</label>
+                <input type="text" id="modal-nome" class="form-input" placeholder="Seu nome" required>
+                
+                <label for="modal-tel" style="display: none;">WhatsApp</label>
+                <input type="tel" id="modal-tel" class="form-input" placeholder="Seu WhatsApp" required>
+                
+                <label for="modal-proc" style="display: none;">Procedimento</label>
+                <select id="modal-proc" class="form-input" required>
+                    <option value="">O que você quer melhorar?</option>
+                    <option>Toxina Botulínica</option>
+                    <option>Preenchimento Labial</option>
+                    <option>Bioestimuladores de Colágeno</option>
+                    <option>Fios de Sustentação</option>
+                    <option>Rinomodelação</option>
+                    <option>Lipo de Papada</option>
+                    <option>Nao sei ainda / Consulta geral</option>
+                </select>
+                
+                <button type="button" id="modal-submit" class="btn btn-gold">
+                    <span>Quero agendar</span>
+                    <span class="btn-arrow">↗</span>
+                </button>
+            </div>
+        </div>
     </div>
-  </footer>
 
-  <!-- MODAL -->
-  <div id="modal-overlay">
-    <div class="modal">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <h3>Agende sua consulta</h3>
-      <div class="modal-form">
-        <input type="text" class="form-input" placeholder="Seu nome" id="modal-nome" autocomplete="name">
-        <input type="tel" class="form-input" placeholder="WhatsApp" id="modal-tel" autocomplete="tel">
-        <select class="form-input" id="modal-proc">
-          <option value="" disabled selected>O que você quer melhorar?</option>
-          <option value="Toxina Botulínica">Toxina Botulínica</option>
-          <option value="Preenchimento Labial">Preenchimento Labial</option>
-          <option value="Bioestimuladores de Colágeno">Bioestimuladores de Colágeno</option>
-          <option value="Fios de Sustentação">Fios de Sustentação</option>
-          <option value="Rinomodelação">Rinomodelação</option>
-          <option value="Lipo de Papada">Lipo de Papada</option>
-          <option value="Consulta geral">Nao sei ainda / Consulta geral</option>
-        </select>
-        <button class="btn btn-gold" id="modal-submit">
-          <span>Quero agendar</span>
-          <span class="btn-arrow">&#8599;</span>
-        </button>
-      </div>
-    </div>
-  </div>
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
 
-  <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script>
+        // CURSOR
+        const dot = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+        let mx = 0, my = 0, rx = 0, ry = 0;
 
-  <script>
-    // CURSOR
-    const dot  = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.left = mx + 'px';
-      dot.style.top  = my + 'px';
-    });
-
-    (function rafCursor() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-      requestAnimationFrame(rafCursor);
-    })();
-
-    document.querySelectorAll('a, button, .ba-container, .svc-card').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-
-    // GSAP + SCROLL
-    gsap.registerPlugin(ScrollTrigger);
-
-    // LENIS
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
-
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add(time => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
-
-    // NAV
-    const navEl = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      navEl.classList.toggle('scrolled', window.scrollY > 80);
-    }, { passive: true });
-
-    // HERO ENTRANCE
-    gsap.to('.hero-label',        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.1 });
-    gsap.to('.hero-headline',     { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out', delay: 0.3 });
-    gsap.to('.hero-sub',          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.5 });
-    gsap.to('.hero-form',         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.7 });
-    gsap.to('.hero-social-proof', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.9 });
-
-    // SCROLL REVEALS
-    function initReveal() {
-      document.querySelectorAll('.reveal').forEach(el => {
-        ScrollTrigger.create({
-          trigger: el,
-          start: 'top 88%',
-          onEnter: () => el.classList.add('in'),
-          once: true
+        document.addEventListener('mousemove', e => {
+            mx = e.clientX;
+            my = e.clientY;
+            dot.style.left = mx + 'px';
+            dot.style.top = my + 'px';
         });
-      });
-    }
-    setTimeout(initReveal, 100);
 
-    // BEFORE/AFTER SLIDERS
-    document.querySelectorAll('.ba-container').forEach(container => {
-      const handle = container.querySelector('.ba-handle');
-      const before  = container.querySelector('.ba-before');
-      let dragging  = false;
+        (function rafCursor() {
+            rx += (mx - rx) * 0.12;
+            ry += (my - ry) * 0.12;
+            ring.style.left = rx + 'px';
+            ring.style.top = ry + 'px';
+            requestAnimationFrame(rafCursor);
+        })();
 
-      ScrollTrigger.create({
-        trigger: container,
-        start: 'top 80%',
-        onEnter: () => {
-          gsap.to(handle, {
-            left: '50%',
+        document.querySelectorAll('a, button, .ba-container, .svc-card').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        // GSAP + SCROLL
+        gsap.registerPlugin(ScrollTrigger);
+
+        // LENIS
+        const lenis = new Lenis({
             duration: 1.2,
-            ease: 'power2.inOut',
-            onUpdate: function() {
-              const pct = 25 + this.progress() * 25;
-              before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+            easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+        });
+
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add(time => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+
+        // NAV
+        const navEl = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            navEl.classList.toggle('scrolled', window.scrollY > 80);
+        }, { passive: true });
+
+        // HERO ENTRANCE
+        gsap.from('.hero-label', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.1 });
+        gsap.from('.hero-headline', { opacity: 0, y: 12, duration: 1.0, ease: 'power3.out', delay: 0.3 });
+        gsap.from('.hero-sub', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.5 });
+        gsap.from('.hero-form', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.7 });
+        gsap.from('.hero-social-proof', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.9 });
+
+        // SCROLL REVEALS — IntersectionObserver (sem dependencia de GSAP)
+        (function initReveal() {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('in');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        })();
+
+        // BEFORE/AFTER SLIDERS
+        document.querySelectorAll('.ba-container').forEach(container => {
+            const handle = container.querySelector('.ba-handle');
+            const before = container.querySelector('.ba-before');
+            let dragging = false;
+
+            ScrollTrigger.create({
+                trigger: container,
+                start: 'top 80%',
+                onEnter: () => {
+                    gsap.to(handle, {
+                        left: '50%',
+                        duration: 1.2,
+                        ease: 'power2.inOut',
+                        onUpdate: function() {
+                            const pct = 25 + this.progress() * 25;
+                            before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+                        }
+                    });
+                },
+                once: true
+            });
+
+            const getX = e => {
+                const r = container.getBoundingClientRect();
+                const cx = e.touches ? e.touches[0].clientX : e.clientX;
+                return Math.max(0, Math.min(1, (cx - r.left) / r.width));
+            };
+
+            const onMove = e => {
+                if (!dragging) return;
+                const pct = getX(e) * 100;
+                handle.style.left = pct + '%';
+                before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+            };
+
+            handle.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; });
+            container.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; });
+            handle.addEventListener('touchstart', e => { dragging = true; }, { passive: true });
+            container.addEventListener('selectstart', e => e.preventDefault());
+
+            document.addEventListener('mousemove', onMove);
+            document.addEventListener('touchmove', onMove, { passive: true });
+            document.addEventListener('mouseup', () => dragging = false);
+            document.addEventListener('touchend', () => dragging = false);
+        });
+
+        // FAQ
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-q').addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // MODAL
+        const overlay = document.getElementById('modal-overlay');
+
+        function openModal() {
+            overlay.classList.add('active');
+            lenis.stop();
+        }
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            lenis.start();
+        }
+
+        document.getElementById('cta-btn').addEventListener('click', openModal);
+        document.getElementById('nav-cta-btn').addEventListener('click', e => {
+            e.preventDefault();
+            openModal();
+        });
+        document.querySelectorAll('.open-modal').forEach(btn => btn.addEventListener('click', openModal));
+        document.getElementById('modal-close').addEventListener('click', closeModal);
+        overlay.addEventListener('click', e => {
+            if (e.target === overlay) closeModal();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // UTM — captura na chegada e persiste em sessionStorage
+        (function captureUTMs() {
+            const params = new URLSearchParams(window.location.search);
+            ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k => {
+                if (params.get(k)) sessionStorage.setItem(k, params.get(k));
+            });
+            sessionStorage.setItem('pagina_origem', window.location.href.split('?')[0]);
+        })();
+
+        function getUTMs() {
+            return {
+                utm_source:    sessionStorage.getItem('utm_source')    || '',
+                utm_medium:    sessionStorage.getItem('utm_medium')    || '',
+                utm_campaign:  sessionStorage.getItem('utm_campaign')  || '',
+                utm_content:   sessionStorage.getItem('utm_content')   || '',
+                utm_term:      sessionStorage.getItem('utm_term')      || '',
+                pagina_origem: sessionStorage.getItem('pagina_origem') || window.location.href,
+            };
+        }
+
+        // FORM SUBMIT
+        function showSuccess(formEl) {
+            formEl.innerHTML = '<div style="text-align:center;padding:1.5rem 0"><p style="font-family:var(--fd);font-size:var(--lg);color:var(--gold);margin-bottom:.5rem">✓ Solicitação recebida!</p><p style="color:var(--ink-lt);font-size:var(--sm)">Em breve nossa equipe entrará em contato.</p></div>';
+        }
+
+        function validarTelefone(tel) {
+            const digits = tel.replace(/\D/g, '');
+            return digits.length >= 10 && digits.length <= 13;
+        }
+
+        function submit(nomeId, telId, procId, formEl) {
+            const nome = document.getElementById(nomeId).value.trim();
+            const tel = document.getElementById(telId).value.trim();
+            const proc = document.getElementById(procId);
+            const procLabel = proc.options[proc.selectedIndex]?.text || 'consulta geral';
+
+            if (!nome || !tel) {
+                alert('Preencha seu nome e WhatsApp para continuar.');
+                return;
             }
-          });
-        },
-        once: true
-      });
 
-      const getX = e => {
-        const r = container.getBoundingClientRect();
-        const cx = e.touches ? e.touches[0].clientX : e.clientX;
-        return Math.max(0, Math.min(1, (cx - r.left) / r.width));
-      };
+            if (!validarTelefone(tel)) {
+                alert('Número de WhatsApp inválido. Informe o DDD + número completo. Ex: 27 99999-9999');
+                document.getElementById(telId).focus();
+                return;
+            }
 
-      const onMove = e => {
-        if (!dragging) return;
-        const pct = getX(e) * 100;
-        handle.style.left = pct + '%';
-        before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-      };
+            if (typeof fbq !== 'undefined') fbq('track', 'Lead');
 
-      handle.addEventListener('mousedown',  e => { e.preventDefault(); dragging = true; });
-      container.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; });
-      handle.addEventListener('touchstart', e => { dragging = true; }, { passive: true });
-      container.addEventListener('selectstart', e => e.preventDefault());
-      document.addEventListener('mousemove', onMove);
-      document.addEventListener('touchmove', onMove, { passive: true });
-      document.addEventListener('mouseup',  () => dragging = false);
-      document.addEventListener('touchend', () => dragging = false);
-    });
+            fetch('/api/lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nome, telefone: tel, procedimento: procLabel, utm_campaign: getUTMs().utm_campaign || procLabel.toLowerCase().replace(/ /g,'_'), ...getUTMs() }),
+            }).catch(() => {});
 
-    // FAQ
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.querySelector('.faq-q').addEventListener('click', () => {
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
+            showSuccess(formEl);
+        }
 
-    // MODAL
-    const overlay = document.getElementById('modal-overlay');
+        document.getElementById('hero-submit').addEventListener('click', function() {
+            submit('hero-nome', 'hero-tel', 'hero-proc', this.closest('form') || this.parentElement);
+        });
+        document.getElementById('modal-submit').addEventListener('click', function() {
+            submit('modal-nome', 'modal-tel', 'modal-proc', this.closest('form') || this.parentElement);
+        });
 
-    function openModal()  { overlay.classList.add('active');    lenis.stop();  }
-    function closeModal() { overlay.classList.remove('active'); lenis.start(); }
-
-    document.getElementById('cta-btn').addEventListener('click', openModal);
-    document.getElementById('nav-cta-btn').addEventListener('click', e => { e.preventDefault(); openModal(); });
-    document.querySelectorAll('.open-modal').forEach(btn => btn.addEventListener('click', openModal));
-    document.getElementById('modal-close').addEventListener('click', closeModal);
-    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-    // FORM SUBMIT
-    function submit(nomeId, telId, procId) {
-      const nome = document.getElementById(nomeId).value.trim();
-      const tel  = document.getElementById(telId).value.trim();
-      const proc = document.getElementById(procId);
-      const procLabel = proc.options[proc.selectedIndex]?.text || 'consulta geral';
-
-      if (!nome || !tel) {
-        alert('Preencha seu nome e WhatsApp para continuar.');
-        return;
-      }
-
-      const msg = encodeURIComponent(
-        'Ola, sou ' + nome + '.\nTenho interesse em: ' + procLabel + '.\nGostaria de agendar uma consulta.'
-      );
-      window.open('https://wa.me/5527996566104?text=' + msg, '_blank');
-    }
-
-    document.getElementById('hero-submit').addEventListener('click', () => submit('hero-nome', 'hero-tel', 'hero-proc'));
-    document.getElementById('modal-submit').addEventListener('click', () => submit('modal-nome', 'modal-tel', 'modal-proc'));
-
-    // YOUTUBE FACADE — play on click
-    function playYt(facade) {
-      const id = facade.dataset.yt;
-      const iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&controls=0&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1';
-      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
-      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
-      iframe.allowFullscreen = true;
-      facade.innerHTML = '';
-      facade.appendChild(iframe);
-      facade.style.cursor = 'default';
-      facade.onclick = null;
-    }
-
-  </script>
+        // YOUTUBE FACADE
+        function playYt(facade) {
+            const id = facade.dataset.yt;
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&controls=0&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1';
+            iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+            iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+            iframe.allowFullscreen = true;
+            facade.innerHTML = '';
+            facade.appendChild(iframe);
+            facade.style.cursor = 'default';
+            facade.onclick = null;
+        }
+    </script>
 </body>
 </html>

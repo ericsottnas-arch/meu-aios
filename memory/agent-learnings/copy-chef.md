@@ -232,3 +232,10 @@
 - **Doc Google criado:** https://docs.google.com/document/d/1ISyI841y6R0DBtuxAQmdRhQf3iddnfUza-ca7jzNAs0/edit
 - **Severidade:** HIGH (referencia para proximas demandas PDN)
 
+## [2026-04-02] Feedback CRÍTICO: erros de português em documento entregue ao Eric
+
+- **Contexto:** Doc de perguntas PDN Evento criado por subagente genérico, entregue com erros graves de português (sem acentuação, caracteres errados)
+- **Feedback:** "tem muito erro de portugues isso é inadimissível"
+- **Regra derivada:** NUNCA entregar ou aprovar documento com erros de português. Todo output de subagente DEVE ser revisado pelo Copy-Chef antes de chegar ao Eric. Se o texto não tem acentuação correta, é REJECT automático — não passa pelo quality gate.
+- **Severidade:** CRITICAL
+

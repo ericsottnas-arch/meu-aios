@@ -4,6 +4,24 @@
 
 ---
 
+## [2026-04-02] Regra: ICP da mentoria médica — dor real não é "sair da commodity"
+
+- **Contexto:** Grant montou estratégia para mentoria Dream Incision do Dr. Cleugo e errou o ICP
+- **Feedback:** "a dor não é querer diferenciar o técnico pra sair da commodity — é mais profunda e delicada: o médico que estudou anos e não ganha o que queria, ou o que quer adicionar procedimento novo pra se especializar"
+- **Regra derivada:** Para mentorias médicas high-ticket, a dor do ICP é EMOCIONAL e FINANCEIRA, não técnica. É o gap entre o que o médico sonhou na formação e a realidade que encontrou (plantão exaustivo, baixo retorno, falta de especialização). Não usar framing de "diferenciação de mercado" — usar framing de "você merecia mais e a gente vai te dar esse caminho"
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-02] Regra: Jaque (namorada do Cleugo) não é SDR comercial
+
+- **Contexto:** Grant incluiu Jaque como SDR na estratégia comercial da mentoria
+- **Feedback:** "pode tirar tudo relacionado a ela no comercial — ela é apenas namorada do Cleugo, com milhões de seguidores, pode ajudar em estratégias de divulgação como novo canal"
+- **Regra derivada:** Jaque = contexto de awareness/canal de divulgação APENAS. Nunca posicioná-la como SDR, closer ou peça do processo de vendas. Ela é ativo de mídia orgânica, não equipe comercial.
+- **Severidade:** CRITICAL
+
+---
+
 ## [2026-03-17] Feedback: Scripts muito formais e com traço/dash no texto
 
 - **Contexto:** Grant sugeriu scripts de abertura para @dratatipanato no Instagram
