@@ -5,6 +5,16 @@ Leitura obrigatória na ativação de todo agente.
 
 ---
 
+## [2026-04-03] CRÍTICO: Verificar se fix foi aplicado em produção antes de declarar concluído
+
+- **Feedback:** "ainda está passando muito rápido, porque não foi ajustado antes conforme eu pedi?"
+- **Regra:** Ao aplicar qualquer ajuste visual (velocidade, tamanho, cor, espaçamento), SEMPRE verificar se a mudança está de fato no arquivo servido em produção — não só no arquivo fonte. Fazer `grep` de confirmação no arquivo de produção ANTES de declarar "feito".
+- **Causa do erro:** O arquivo fonte (`design-system-visual.html`) foi atualizado corretamente mas o arquivo em produção pode ter sido sobrescrito por outra operação posterior, revertendo o fix.
+- **Como aplicar:** Após qualquer `sudo cp` para produção, confirmar com `grep` no arquivo destino que o valor correto está lá.
+- **Severidade:** CRITICAL
+
+---
+
 ## [2026-03-31] CRÍTICO: Não perguntar confirmação quando a resposta é óbvia
 
 - **Feedback:** "se vc já sabe disso pq vc não fez? isso é um feedback"
