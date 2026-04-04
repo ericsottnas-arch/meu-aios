@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — Syra Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+/* ═══════════════════════════
+   TOKENS — DARK (padrão)
+═══════════════════════════ */
+:root,
+[data-theme="dark"] {
+  --bg:      #1A1A1A;
+  --bg-s:    #202020;
+  --bg-e:    #272727;
+  --bg-o:    #2F2F2F;
+
+  --bd-f:    rgba(255,255,255,.05);
+  --bd-s:    rgba(255,255,255,.09);
+  --bd-b:    rgba(255,255,255,.14);
+  --bd-st:   rgba(255,255,255,.24);
+
+  --t1:      #F0F0F0;
+  --t2:      #888888;
+  --t3:      #4A4A4A;
+
+  --acid:    #BCFF3A;
+  --acid-h:  #C8FF5A;
+  --acid-dim: rgba(188,255,58,.08);
+  --acid-mid: rgba(188,255,58,.15);
+  --acid-gw:  rgba(188,255,58,.28);
+  --on-acid: #1A1A1A;
+
+  --green:  #22C55E; --green-bg:  rgba(34,197,94,.10);
+  --amber:  #F59E0B; --amber-bg:  rgba(245,158,11,.10);
+  --red:    #EF4444; --red-bg:    rgba(239,68,68,.10);
+  --blue:   #60A5FA; --blue-bg:   rgba(96,165,250,.10);
+
+  --shadow: 0 4px 24px rgba(0,0,0,.35);
+  --shadow-card: 0 2px 12px rgba(0,0,0,.3);
+}
+
+/* ═══════════════════════════
+   TOKENS — LIGHT
+═══════════════════════════ */
+[data-theme="light"] {
+  --bg:      #F0F2F0;
+  --bg-s:    #FFFFFF;
+  --bg-e:    #E8EBE8;
+  --bg-o:    #DDE0DD;
+
+  --bd-f:    rgba(0,0,0,.06);
+  --bd-s:    rgba(0,0,0,.09);
+  --bd-b:    rgba(0,0,0,.13);
+  --bd-st:   rgba(0,0,0,.22);
+
+  --t1:      #111411;
+  --t2:      #5A645A;
+  --t3:      #9AA29A;
+
+  --acid:    #4A9200;
+  --acid-h:  #3E7A00;
+  --acid-dim: rgba(74,146,0,.08);
+  --acid-mid: rgba(74,146,0,.15);
+  --acid-gw:  rgba(74,146,0,.25);
+  --on-acid: #FFFFFF;
+
+  --green:  #16A34A; --green-bg:  rgba(22,163,74,.10);
+  --amber:  #D97706; --amber-bg:  rgba(217,119,6,.10);
+  --red:    #DC2626; --red-bg:    rgba(220,38,38,.10);
+  --blue:   #2563EB; --blue-bg:   rgba(37,99,235,.10);
+
+  --shadow: 0 4px 24px rgba(0,0,0,.08);
+  --shadow-card: 0 2px 8px rgba(0,0,0,.07);
+}
+
+/* ═══════════════════════════
+   BASE
+═══════════════════════════ */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--t1);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.5;
+  transition: background .4s ease, color .4s ease;
+}
+
+a { cursor: none; color: inherit; text-decoration: none; }
+
+/* ═══════════════════════════
+   CURSOR
+═══════════════════════════ */
+.cur-dot {
+  width: 6px; height: 6px; background: var(--acid);
+  border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999;
+  top: 0; left: 0; transform: translate(-50%,-50%);
+  transition: background .4s ease;
+}
+.cur-ring {
+  width: 32px; height: 32px;
+  border: 1.5px solid rgba(188,255,58,.4);
+  border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998;
+  top: 0; left: 0; transform: translate(-50%,-50%);
+  transition: width .3s, height .3s, border-color .3s;
+}
+[data-theme="light"] .cur-ring { border-color: rgba(74,146,0,.4); }
+.cur-ring.on { width: 52px; height: 52px; border-color: var(--acid); }
+
+/* ═══════════════════════════
+   LOADER
+═══════════════════════════ */
+.loader {
+  position: fixed; inset: 0; z-index: 10000;
+  background: #1A1A1A;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.loader-wm {
+  font-size: 15px; font-weight: 700;
+  letter-spacing: .24em; text-transform: uppercase;
+  color: #BCFF3A; opacity: 0;
+}
+.loader-bar {
+  width: 100px; height: 1px;
+  background: rgba(188,255,58,.12);
+  margin-top: 28px; position: relative; overflow: hidden;
+}
+.loader-fill { position: absolute; left:0; top:0; height:100%; background: #BCFF3A; width: 0; }
+.loader-pct { font-size: 14px; font-weight: 400; color: rgba(188,255,58,.4); margin-top: 14px; opacity: 0; }
+
+/* ═══════════════════════════
+   THEME TOGGLE
+═══════════════════════════ */
+.theme-toggle {
+  position: fixed; bottom: 36px; right: 36px; z-index: 1000;
+  display: flex; align-items: center; gap: 0;
+  background: var(--bg-s); border: 1px solid var(--bd-b);
+  border-radius: 999px; padding: 4px;
+  box-shadow: var(--shadow);
+  transition: background .4s ease, border-color .4s ease;
+  cursor: pointer;
+}
+.tt-option {
+  padding: 10px 20px; border-radius: 999px;
+  font-size: 15px; font-weight: 600;
+  color: var(--t3); transition: all .25s ease;
+  display: flex; align-items: center; gap: 8px;
+}
+.tt-option.active {
+  background: var(--acid);
+  color: var(--on-acid);
+}
+.tt-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+
+/* ═══════════════════════════
+   LAYOUT
+═══════════════════════════ */
+.w { max-width: 1440px; margin: 0 auto; padding: 0 clamp(2rem,6vw,6rem); }
+.reveal { opacity: 0; transform: translateY(28px); }
+.rl { overflow: hidden; }
+.rl .line { transform: translateY(110%); display: block; }
+
+/* ═══════════════════════════
+   COVER
+═══════════════════════════ */
+.cover {
+  min-height: 100vh; display: flex; flex-direction: column;
+  background: var(--bg); position: relative; overflow: hidden;
+  transition: background .4s ease;
+}
+.cover-glow {
+  position: absolute; top: -15%; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 600px;
+  background: radial-gradient(ellipse, var(--acid-dim) 0%, transparent 65%);
+  pointer-events: none;
+  transition: background .4s ease;
+}
+.cover-nav {
+  padding: 44px clamp(2rem,6vw,6rem);
+  display: flex; justify-content: space-between; align-items: center;
+  position: relative; z-index: 2;
+}
+.cover-nav-brand {
+  font-size: 18px; font-weight: 800; letter-spacing: -.02em; color: var(--t1);
+  transition: color .4s ease;
+}
+.cover-nav-brand span { color: var(--acid); transition: color .4s ease; }
+.cover-nav-meta { font-size: 15px; font-weight: 400; color: var(--t3); transition: color .4s ease; }
+
+.cover-body {
+  flex: 1; display: flex; flex-direction: column; justify-content: center;
+  padding: 0 clamp(2rem,6vw,6rem); position: relative; z-index: 2;
+}
+.cover-eyebrow {
+  font-size: 16px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--acid); margin-bottom: 40px; display: block; opacity: 0;
+  transition: color .4s ease;
+}
+.cover-h1 {
+  font-size: clamp(5rem, 12vw, 12rem); font-weight: 800;
+  color: var(--t1); letter-spacing: -.04em; display: block; line-height: .9;
+  transition: color .4s ease;
+}
+.cover-h2 {
+  font-size: clamp(4rem, 9vw, 9rem); font-weight: 300;
+  color: var(--acid); letter-spacing: -.04em; display: block; line-height: .9;
+  transition: color .4s ease;
+}
+.cover-sub {
+  font-size: 20px; font-weight: 400; color: var(--t2); max-width: 560px;
+  line-height: 1.65; margin-bottom: 56px; opacity: 0;
+  transition: color .4s ease;
+}
+.cover-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 72px; opacity: 0; }
+.cover-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px; border-radius: 999px;
+  font-size: 16px; font-weight: 500;
+  border: 1px solid var(--bd-b); color: var(--t2);
+  transition: all .2s ease;
+}
+.cover-pill:hover { border-color: var(--acid); color: var(--acid); background: var(--acid-dim); }
+.cover-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--acid); }
+
+.cover-foot {
+  display: flex; gap: 48px; padding-top: 32px;
+  border-top: 1px solid var(--bd-f); opacity: 0;
+  transition: border-color .4s ease;
+}
+.cover-stat-n {
+  font-size: 38px; font-weight: 800; letter-spacing: -.03em;
+  color: var(--t1); display: block; line-height: 1;
+  transition: color .4s ease;
+}
+.cover-stat-n em { font-style: normal; color: var(--acid); transition: color .4s ease; }
+.cover-stat-l { font-size: 16px; font-weight: 400; color: var(--t3); display: block; margin-top: 4px; transition: color .4s ease; }
+
+.cover-scroll {
+  position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 12px; z-index: 2;
+}
+.cover-scroll-line {
+  width: 1px; height: 48px; background: var(--bd-s);
+  position: relative; overflow: hidden;
+}
+.cover-scroll-line::after {
+  content: ''; position: absolute; top: -100%; left: 0;
+  width: 1px; height: 100%; background: var(--acid);
+  animation: sl 2s ease-in-out infinite;
+}
+@keyframes sl { 0%{top:-100%} 60%{top:100%} 100%{top:100%} }
+.cover-scroll-txt { font-size: 13px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--t3); }
+
+/* ═══════════════════════════
+   CHAPTERS
+═══════════════════════════ */
+.chaps {
+  background: var(--bg-s); border-top: 1px solid var(--bd-f); border-bottom: 1px solid var(--bd-f);
+  position: sticky; top: 0; z-index: 50;
+  transition: background .4s ease, border-color .4s ease;
+  backdrop-filter: blur(12px);
+}
+.chaps-inner { display: flex; overflow-x: auto; scrollbar-width: none; }
+.chaps-inner::-webkit-scrollbar { display: none; }
+.ch {
+  flex-shrink: 0; padding: 20px 40px;
+  border-right: 1px solid var(--bd-f); cursor: pointer;
+  transition: background .2s ease, border-color .4s ease;
+}
+.ch:hover { background: var(--bg-e); }
+.ch-n { font-size: 14px; font-weight: 700; color: var(--acid); margin-bottom: 4px; transition: color .4s ease; }
+.ch-t { font-size: 16px; font-weight: 500; color: var(--t3); transition: color .4s ease; }
+
+/* ═══════════════════════════
+   SECTION BASE
+═══════════════════════════ */
+.sec { padding: 140px 0; transition: background .4s ease; }
+.sec-bg  { background: var(--bg); }
+.sec-sf  { background: var(--bg-s); }
+
+.sn {
+  font-size: 16px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--acid); margin-bottom: 20px; display: block; transition: color .4s ease;
+}
+.st {
+  font-size: clamp(2.5rem,5vw,4.5rem); font-weight: 800; color: var(--t1);
+  letter-spacing: -.04em; line-height: .95; margin-bottom: 4px;
+  transition: color .4s ease;
+}
+.st-lt {
+  font-weight: 300; font-size: clamp(2rem,4vw,3.5rem);
+  color: var(--acid); display: block; margin-bottom: 28px;
+  letter-spacing: -.03em; line-height: 1; transition: color .4s ease;
+}
+.sd {
+  font-size: 20px; font-weight: 400; color: var(--t2); max-width: 560px;
+  line-height: 1.65; margin-bottom: 80px; transition: color .4s ease;
+}
+.divl { height: 1px; background: var(--bd-f); margin: 80px 0; transition: background .4s ease; }
+
+/* ═══════════════════════════
+   01 CORES
+═══════════════════════════ */
+.c-hero { display: grid; grid-template-columns: 2.4fr 1fr 1fr; gap: 3px; margin-bottom: 3px; }
+.c-row  { display: flex; gap: 3px; }
+
+.csw {
+  height: 260px; position: relative; overflow: hidden;
+  transition: transform .5s cubic-bezier(.16,1,.3,1);
+}
+.csw:hover { transform: scale(1.02); }
+.csw-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px; }
+.csw-name { font-size: 18px; font-weight: 700; display: block; }
+.csw-hex  { font-size: 15px; font-weight: 400; display: block; margin-top: 4px; opacity: .6; }
+.csw-use  { font-size: 14px; display: block; margin-top: 4px; opacity: .4; }
+.dk .csw-name, .dk .csw-hex, .dk .csw-use { color: #F0F0F0; }
+.lt .csw-name, .lt .csw-hex, .lt .csw-use { color: #111411; }
+
+.chip { flex: 1; height: 80px; display: flex; align-items: flex-end; padding: 12px 16px; transition: transform .4s cubic-bezier(.16,1,.3,1); }
+.chip:hover { transform: translateY(-4px); }
+.chip-l { font-size: 14px; font-weight: 600; line-height: 1.4; }
+.chip.dk .chip-l { color: #F0F0F0; }
+.chip.lt .chip-l { color: #111411; }
+
+/* live palette — muda com o tema */
+.live-swatch-acid { background: var(--acid) !important; transition: background .4s ease; }
+.live-swatch-bg   { background: var(--bg)   !important; transition: background .4s ease; }
+.live-swatch-t1   { background: var(--t1)   !important; transition: background .4s ease; }
+
+/* ═══════════════════════════
+   02 TIPOGRAFIA
+═══════════════════════════ */
+.tp-hero {
+  padding: 100px 0; overflow: hidden;
+  border-top: 1px solid var(--bd-f); border-bottom: 1px solid var(--bd-f);
+  margin-bottom: 80px; position: relative;
+  transition: border-color .4s ease;
+}
+.tp-bg {
+  position: absolute; inset: 0;
+  font-size: clamp(12rem,28vw,30rem); font-weight: 800;
+  color: var(--acid-dim); line-height: .85; letter-spacing: -.06em;
+  pointer-events: none; user-select: none;
+  display: flex; align-items: center; padding: 0 clamp(2rem,6vw,6rem);
+  transition: color .4s ease;
+}
+.tp-content { position: relative; z-index: 1; padding: 0 clamp(2rem,6vw,6rem); }
+.tp-label { font-size: 16px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--acid); margin-bottom: 40px; display: block; transition: color .4s ease; }
+.tp-h { font-size: clamp(5rem,12vw,12rem); font-weight: 800; color: var(--t1); line-height: .9; letter-spacing: -.05em; transition: color .4s ease; }
+.tp-h em { font-style: normal; font-weight: 300; color: var(--acid); transition: color .4s ease; }
+
+.tt { width: 100%; border-collapse: collapse; }
+.tt th { font-size: 15px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--t3); text-align: left; padding: 0 0 20px; border-bottom: 1px solid var(--bd-f); transition: color .4s ease, border-color .4s ease; }
+.tt td { padding: 32px 0; border-bottom: 1px solid var(--bd-f); vertical-align: bottom; transition: border-color .4s ease; }
+.tt td:not(:first-child) { font-size: 15px; font-weight: 400; color: var(--t3); padding-left: 40px; transition: color .4s ease; }
+.tt tr { transition: background .2s ease; }
+.tt tr:hover { background: var(--acid-dim); }
+
+/* ═══════════════════════════
+   03 COMPONENTES
+═══════════════════════════ */
+.comp-g {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  gap: 1px; background: var(--bd-f);
+  border: 1px solid var(--bd-f); border-radius: 14px; overflow: hidden;
+  transition: background .4s ease, border-color .4s ease;
+}
+.comp-c {
+  background: var(--bg-s); padding: 44px 36px;
+  transition: background .2s ease;
+}
+.comp-c:hover { background: var(--bg-e); }
+.comp-c-lbl { font-size: 16px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--t3); margin-bottom: 28px; display: block; transition: color .4s ease; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700;
+  cursor: pointer; border: none; transition: all 160ms cubic-bezier(.4,0,.2,1);
+}
+.btn-p  { background: var(--acid); color: var(--on-acid); }
+.btn-p:hover { background: var(--acid-h); box-shadow: 0 0 28px var(--acid-gw); transform: translateY(-1px); }
+.btn-s  { background: var(--bg-e); color: var(--t1); border: 1px solid var(--bd-b); }
+.btn-s:hover { background: var(--bg-o); border-color: var(--bd-st); transform: translateY(-1px); }
+.btn-g  { background: transparent; color: var(--t2); border: 1px solid var(--bd-s); }
+.btn-g:hover { color: var(--t1); border-color: var(--bd-b); }
+.btn-ao { background: var(--acid-dim); color: var(--acid); border: 1px solid var(--acid-mid); }
+.btn-ao:hover { background: var(--acid-mid); }
+.btn-d  { background: var(--red-bg); color: var(--red); border: 1px solid rgba(239,68,68,.2); }
+.btn-sm { padding: 9px 18px; font-size: 15px; border-radius: 7px; }
+.btn-lg { padding: 16px 32px; font-size: 18px; border-radius: 10px; }
+.btn-grp { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+/* Badges */
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; border-radius: 999px;
+  font-size: 14px; font-weight: 600;
+}
+.badge::before { content:''; width:5px; height:5px; border-radius:50%; background:currentColor; display:block; }
+.b-green { background: var(--green-bg); color: var(--green); }
+.b-acid  { background: var(--acid-dim); color: var(--acid); }
+.b-amber { background: var(--amber-bg); color: var(--amber); }
+.b-red   { background: var(--red-bg); color: var(--red); }
+.b-muted { background: var(--bd-s); color: var(--t3); }
+
+/* Inputs */
+.iw { display: flex; flex-direction: column; gap: 8px; }
+.ilbl { font-size: 15px; font-weight: 600; color: var(--t2); transition: color .4s ease; }
+.inp {
+  background: var(--bg-e); border: 1px solid var(--bd-b);
+  border-radius: 8px; padding: 12px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 400;
+  color: var(--t1); outline: none; transition: all 160ms ease, background .4s ease, color .4s ease; width: 100%;
+}
+.inp::placeholder { color: var(--t3); }
+.inp:focus { border-color: var(--acid); box-shadow: 0 0 0 3px var(--acid-dim); }
+.inp-err { border-color: var(--red); }
+.inp-err:focus { box-shadow: 0 0 0 3px var(--red-bg); }
+.ihint { font-size: 14px; color: var(--t3); transition: color .4s ease; }
+.ihint.err { color: var(--red); }
+
+/* Cards */
+.card {
+  background: var(--bg-e); border: 1px solid var(--bd-s);
+  border-radius: 12px; padding: 28px; box-shadow: var(--shadow-card);
+  transition: all .2s ease;
+}
+.card:hover { border-color: var(--bd-st); }
+.card-a { border-color: var(--acid-mid); }
+.card-a:hover { box-shadow: 0 0 28px var(--acid-dim); }
+.card-lbl { font-size: 15px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--acid); margin-bottom: 12px; display: block; transition: color .4s ease; }
+.card-val { font-size: 2.4rem; font-weight: 800; color: var(--t1); letter-spacing: -.04em; line-height: 1; transition: color .4s ease; }
+.card-sub { font-size: 16px; font-weight: 400; color: var(--t2); margin-top: 8px; transition: color .4s ease; }
+.card-delta { font-size: 15px; font-weight: 600; margin-top: 14px; }
+.delta-up { color: var(--green); }
+.delta-dn { color: var(--red); }
+
+/* Toasts */
+.toast { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; border-radius: 10px; border: 1px solid var(--bd-b); background: var(--bg-e); margin-bottom: 10px; transition: background .4s ease, border-color .4s ease; }
+.t-title { font-size: 16px; font-weight: 700; color: var(--t1); margin-bottom: 3px; transition: color .4s ease; }
+.t-msg   { font-size: 15px; font-weight: 400; color: var(--t2); transition: color .4s ease; }
+.toast.ok  { border-color: var(--green-bg); background: rgba(34,197,94,.04); }
+.toast.wrn { border-color: var(--amber-bg); background: rgba(245,158,11,.04); }
+.toast.err { border-color: var(--red-bg); background: rgba(239,68,68,.04); }
+.toast.nfo { border-color: var(--acid-mid); background: var(--acid-dim); }
+.toast-ico { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+/* Nav */
+.demo-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 56px;
+  background: var(--bg-s); border: 1px solid var(--bd-s); border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: background .4s ease, border-color .4s ease;
+}
+.dnav-brand { font-size: 18px; font-weight: 800; letter-spacing: -.02em; color: var(--t1); transition: color .4s ease; }
+.dnav-brand span { color: var(--acid); transition: color .4s ease; }
+.dnav-links { display: flex; align-items: center; gap: 4px; }
+.dnav-lnk { font-size: 15px; font-weight: 500; color: var(--t2); padding: 7px 14px; border-radius: 7px; transition: all .15s ease; }
+.dnav-lnk:hover { color: var(--t1); background: var(--bg-e); }
+.dnav-lnk.act { color: var(--acid); background: var(--acid-dim); }
+
+/* ═══════════════════════════
+   04 SPLIT — SIDE BY SIDE
+═══════════════════════════ */
+.side-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--bd-f); border-radius: 16px; overflow: hidden;
+}
+.side-dark  { background: #1A1A1A; padding: 72px 56px; }
+.side-light { background: #F0F2F0; padding: 72px 56px; }
+
+.side-tag {
+  font-size: 16px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  margin-bottom: 40px; display: flex; align-items: center; gap: 12px;
+}
+.side-dark  .side-tag { color: rgba(240,240,240,.3); }
+.side-light .side-tag { color: rgba(17,20,17,.3); }
+.side-tag-dot { width: 10px; height: 10px; border-radius: 50%; }
+.side-dark  .side-tag-dot { background: #BCFF3A; }
+.side-light .side-tag-dot { background: #4A9200; }
+
+.sp-card { border-radius: 12px; padding: 32px; }
+.side-dark  .sp-card { background: #272727; border: 1px solid rgba(255,255,255,.1); }
+.side-light .sp-card { background: #FFFFFF; border: 1px solid rgba(0,0,0,.08); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+
+.sp-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; padding: 5px 14px; border-radius: 999px; margin-bottom: 18px; }
+.side-dark  .sp-badge { background: rgba(188,255,58,.1); color: #BCFF3A; }
+.side-light .sp-badge { background: rgba(74,146,0,.10); color: #4A9200; }
+
+.sp-title { font-size: 22px; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; margin-bottom: 12px; }
+.side-dark  .sp-title { color: #F0F0F0; }
+.side-light .sp-title { color: #111411; }
+
+.sp-body { font-size: 17px; font-weight: 400; line-height: 1.65; margin-bottom: 24px; }
+.side-dark  .sp-body { color: rgba(240,240,240,.55); }
+.side-light .sp-body { color: rgba(17,20,17,.55); }
+
+.sp-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-family: 'Plus Jakarta Sans',sans-serif; font-size: 16px; font-weight: 700; transition: all .16s ease; }
+.side-dark  .sp-btn { background: #BCFF3A; color: #1A1A1A; }
+.side-dark  .sp-btn:hover { background: #C8FF5A; }
+.side-light .sp-btn { background: #4A9200; color: #fff; }
+.side-light .sp-btn:hover { filter: brightness(1.08); }
+
+.sp-badges { display: flex; gap: 10px; margin-top: 24px; }
+.side-dark  .sp-badges .badge-g { background: rgba(34,197,94,.10); color: #22C55E; }
+.side-light .sp-badges .badge-g { background: rgba(22,163,74,.10); color: #16A34A; }
+.side-dark  .sp-badges .badge-a { background: rgba(188,255,58,.08); color: #BCFF3A; }
+.side-light .sp-badges .badge-a { background: rgba(74,146,0,.10); color: #4A9200; }
+.side-dark  .sp-badges .badge-m { background: rgba(255,255,255,.06); color: rgba(240,240,240,.35); }
+.side-light .sp-badges .badge-m { background: rgba(0,0,0,.06); color: rgba(17,20,17,.35); }
+.sp-badges span { display: inline-flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 600; padding: 4px 12px; border-radius: 999px; }
+.sp-badges span::before { content:''; width:5px; height:5px; border-radius:50%; background:currentColor; display:block; }
+
+/* ═══════════════════════════
+   05 MOTION
+═══════════════════════════ */
+.motion-g {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: var(--bd-f); border: 1px solid var(--bd-f);
+  border-radius: 14px; overflow: hidden;
+  transition: background .4s ease, border-color .4s ease;
+}
+.motion-c { background: var(--bg-s); padding: 52px 44px; display: flex; flex-direction: column; gap: 28px; transition: background .4s ease; }
+.motion-lbl { font-size: 15px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--t3); transition: color .4s ease; }
+.motion-sw { width: 56px; height: 56px; border-radius: 10px; background: var(--acid); transition: background .4s ease; }
+.motion-val  { font-size: 17px; font-weight: 500; color: var(--acid); line-height: 1.6; transition: color .4s ease; }
+.motion-desc { font-size: 17px; font-weight: 400; color: var(--t2); line-height: 1.6; transition: color .4s ease; }
+
+/* ═══════════════════════════
+   06 TOKENS
+═══════════════════════════ */
+.tok-sec { margin-bottom: 64px; }
+.tok-hd { font-size: 16px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--acid); margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--bd-f); transition: color .4s ease, border-color .4s ease; }
+.tok-tb { width: 100%; border-collapse: collapse; }
+.tok-tb td { padding: 16px 0; border-bottom: 1px solid var(--bd-f); vertical-align: middle; transition: border-color .4s ease; }
+.tok-tb tr:hover td { background: var(--acid-dim); }
+.tok-n { font-size: 16px; font-weight: 700; color: var(--acid); transition: color .4s ease; }
+.tok-sw { width: 52px; padding-right: 16px; }
+.tok-sw div { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--bd-b); transition: border-color .4s ease; }
+.tok-v { font-size: 15px; font-weight: 400; color: var(--t2); padding-left: 16px; transition: color .4s ease; }
+.tok-d { font-size: 15px; font-weight: 400; color: var(--t3); padding-left: 24px; transition: color .4s ease; }
+
+.sp-scale { display: flex; gap: 3px; align-items: flex-end; }
+.sp-unit { text-align: center; }
+.sp-bar { background: var(--acid); margin: 0 auto 10px; min-width: 4px; transition: background .4s ease; }
+.sp-val { font-size: 14px; font-weight: 600; color: var(--t3); transition: color .4s ease; }
+
+.rad-row { display: flex; gap: 24px; align-items: flex-end; flex-wrap: wrap; }
+.rad-item { text-align: center; }
+.rad-sq { width: 56px; height: 56px; background: var(--bg-e); border: 1px solid var(--bd-b); margin: 0 auto 10px; transition: background .4s ease, border-color .4s ease; }
+.rad-lbl { font-size: 14px; font-weight: 600; color: var(--t3); transition: color .4s ease; }
+
+/* ═══════════════════════════
+   FOOTER
+═══════════════════════════ */
+.footer { border-top: 1px solid var(--bd-f); padding: 72px 0; background: var(--bg); transition: background .4s ease, border-color .4s ease; }
+.footer-in { display: flex; justify-content: space-between; align-items: center; }
+.footer-brand { font-size: 36px; font-weight: 800; letter-spacing: -.04em; color: var(--t1); transition: color .4s ease; }
+.footer-brand span { color: var(--acid); transition: color .4s ease; }
+.footer-r { text-align: right; }
+.footer-v { font-size: 18px; font-weight: 700; color: var(--t1); margin-bottom: 6px; transition: color .4s ease; }
+.footer-m { font-size: 16px; font-weight: 400; color: var(--t3); transition: color .4s ease; }
+.footer-m strong { color: var(--acid); font-weight: 700; transition: color .4s ease; }
+</style>
+</head>
+<body>
+
+<!-- CURSORS -->
+<div class="cur-dot" id="cDot"></div>
+<div class="cur-ring" id="cRing"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-wm">Syra Digital</div>
+  <div class="loader-bar"><div class="loader-fill" id="lFill"></div></div>
+  <div class="loader-pct" id="lPct">0%</div>
+</div>
+
+<!-- THEME TOGGLE -->
+<div class="theme-toggle" id="themeToggle">
+  <div class="tt-option active" id="tt-dark">🌑 Dark</div>
+  <div class="tt-option" id="tt-light">☀️ Light</div>
+</div>
+
+<!-- ══ COVER ══ -->
+<section class="cover">
+  <div class="cover-glow"></div>
+  <nav class="cover-nav">
+    <span class="cover-nav-brand">Syra<span>.</span></span>
+    <span class="cover-nav-meta">Design System · v1.0 · 2026</span>
+  </nav>
+  <div class="cover-body">
+    <span class="cover-eyebrow">Brand Identity & Design Tokens</span>
+    <div style="line-height:.9; margin-bottom:48px">
+      <span class="cover-h1 rl"><span class="line">SYRA</span></span>
+      <span class="cover-h2 rl"><span class="line">DIGITAL</span></span>
+    </div>
+    <p class="cover-sub">Sistema visual unificado. Uma linguagem para dashboards, materiais de cliente e comunicação da agência.</p>
+    <div class="cover-pills">
+      <span class="cover-pill"><span class="dot"></span>SaaS</span>
+      <span class="cover-pill"><span class="dot"></span>Assessoria</span>
+      <span class="cover-pill"><span class="dot"></span>Marketing Digital</span>
+      <span class="cover-pill"><span class="dot"></span>Estética Médica</span>
+    </div>
+    <div class="cover-foot">
+      <div>
+        <span class="cover-stat-n">10<em>+</em></span>
+        <span class="cover-stat-l">Clientes ativos</span>
+      </div>
+      <div>
+        <span class="cover-stat-n">R$<em>24k</em></span>
+        <span class="cover-stat-l">MRR atual</span>
+      </div>
+      <div>
+        <span class="cover-stat-n">3<em>x</em></span>
+        <span class="cover-stat-l">Retorno médio</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-scroll">
+    <div class="cover-scroll-line"></div>
+    <span class="cover-scroll-txt">scroll</span>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<nav class="chaps">
+  <div class="chaps-inner">
+    <div class="ch" onclick="go('s01')"><div class="ch-n">01</div><div class="ch-t">Cores</div></div>
+    <div class="ch" onclick="go('s02')"><div class="ch-n">02</div><div class="ch-t">Tipografia</div></div>
+    <div class="ch" onclick="go('s03')"><div class="ch-n">03</div><div class="ch-t">Componentes</div></div>
+    <div class="ch" onclick="go('s04')"><div class="ch-n">04</div><div class="ch-t">Dark & Light</div></div>
+    <div class="ch" onclick="go('s05')"><div class="ch-n">05</div><div class="ch-t">Motion</div></div>
+    <div class="ch" onclick="go('s06')"><div class="ch-n">06</div><div class="ch-t">Tokens</div></div>
+  </div>
+</nav>
+
+<!-- ══ 01 CORES ══ -->
+<section class="sec sec-bg" id="s01">
+  <div class="w">
+    <span class="sn reveal">01 / Cores</span>
+    <div class="st rl"><span class="line">Paleta</span></div>
+    <div class="st-lt rl"><span class="line">Dark & Light</span></div>
+    <p class="sd reveal">Dois modos, uma identidade. Verde ácido é a constante — muda só de intensidade entre dark e light.</p>
+
+    <!-- DARK SWATCHES -->
+    <p class="reveal" style="font-size:16px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--t3); margin-bottom:16px">Dark #1A1A1A</p>
+    <div class="c-hero reveal">
+      <div class="csw lt" style="background:#BCFF3A">
+        <div class="csw-info">
+          <span class="csw-name" style="color:#1A1A1A">Acid Green</span>
+          <span class="csw-hex"  style="color:#1A1A1A">#BCFF3A</span>
+          <span class="csw-use"  style="color:#1A1A1A">Accent — CTAs, destaques</span>
+        </div>
+      </div>
+      <div class="csw dk" style="background:#1A1A1A; border:1px solid rgba(255,255,255,.07)">
+        <div class="csw-info">
+          <span class="csw-name">Charcoal</span>
+          <span class="csw-hex">#1A1A1A</span>
+          <span class="csw-use">Background dark</span>
+        </div>
+      </div>
+      <div class="csw lt" style="background:#F0F0F0">
+        <div class="csw-info">
+          <span class="csw-name" style="color:#1A1A1A">Off-White</span>
+          <span class="csw-hex"  style="color:#1A1A1A">#F0F0F0</span>
+          <span class="csw-use"  style="color:#1A1A1A">Texto principal dark</span>
+        </div>
+      </div>
+    </div>
+    <div class="c-row reveal">
+      <div class="chip dk" style="background:#202020"><span class="chip-l">#202020<br>Surface</span></div>
+      <div class="chip dk" style="background:#272727"><span class="chip-l">#272727<br>Elevated</span></div>
+      <div class="chip dk" style="background:#2F2F2F"><span class="chip-l">#2F2F2F<br>Overlay</span></div>
+      <div class="chip dk" style="background:#888888"><span class="chip-l" style="color:#1A1A1A">#888888<br>Text 2</span></div>
+      <div class="chip dk" style="background:#4A4A4A"><span class="chip-l">#4A4A4A<br>Text 3</span></div>
+    </div>
+
+    <div class="divl" style="margin:56px 0 40px"></div>
+
+    <!-- LIGHT SWATCHES -->
+    <p class="reveal" style="font-size:16px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--t3); margin-bottom:16px">Light #F0F2F0</p>
+    <div class="c-hero reveal">
+      <div class="csw lt" style="background:#4A9200">
+        <div class="csw-info">
+          <span class="csw-name" style="color:#F0F2F0">Acid Green Light</span>
+          <span class="csw-hex"  style="color:#F0F2F0">#4A9200</span>
+          <span class="csw-use"  style="color:#F0F2F0">Accent no light mode</span>
+        </div>
+      </div>
+      <div class="csw lt" style="background:#F0F2F0; border:1px solid rgba(0,0,0,.07)">
+        <div class="csw-info">
+          <span class="csw-name" style="color:#111411">Off-White</span>
+          <span class="csw-hex"  style="color:#111411">#F0F2F0</span>
+          <span class="csw-use"  style="color:#111411">Background light</span>
+        </div>
+      </div>
+      <div class="csw dk" style="background:#111411">
+        <div class="csw-info">
+          <span class="csw-name">Near Black</span>
+          <span class="csw-hex">#111411</span>
+          <span class="csw-use">Texto principal light</span>
+        </div>
+      </div>
+    </div>
+    <div class="c-row reveal">
+      <div class="chip lt" style="background:#FFFFFF; border:1px solid rgba(0,0,0,.07)"><span class="chip-l" style="color:#111411">#FFFFFF<br>Surface</span></div>
+      <div class="chip lt" style="background:#E8EBE8"><span class="chip-l" style="color:#111411">#E8EBE8<br>Elevated</span></div>
+      <div class="chip lt" style="background:#DDE0DD"><span class="chip-l" style="color:#111411">#DDE0DD<br>Overlay</span></div>
+      <div class="chip lt" style="background:#5A645A"><span class="chip-l" style="color:#F0F2F0">#5A645A<br>Text 2</span></div>
+      <div class="chip lt" style="background:#9AA29A"><span class="chip-l" style="color:#111411">#9AA29A<br>Text 3</span></div>
+    </div>
+
+    <div class="divl" style="margin:56px 0 40px"></div>
+
+    <!-- SEMANTIC -->
+    <p class="reveal" style="font-size:16px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--t3); margin-bottom:16px">Cores Semânticas</p>
+    <div class="c-row reveal">
+      <div class="chip lt" style="background:#22C55E"><span class="chip-l" style="color:#111411">#22C55E<br>Success</span></div>
+      <div class="chip lt" style="background:#F59E0B"><span class="chip-l" style="color:#111411">#F59E0B<br>Warning</span></div>
+      <div class="chip dk" style="background:#EF4444"><span class="chip-l">#EF4444<br>Danger</span></div>
+      <div class="chip lt" style="background:#60A5FA"><span class="chip-l" style="color:#111411">#60A5FA<br>Info</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 02 TIPOGRAFIA ══ -->
+<section class="sec sec-sf" id="s02">
+  <div class="w">
+    <span class="sn reveal">02 / Tipografia</span>
+    <div class="tp-hero reveal">
+      <div class="tp-bg">PJ</div>
+      <div class="tp-content">
+        <span class="tp-label">Plus Jakarta Sans — Fonte oficial Syra</span>
+        <div class="tp-h">Plus <em>Jakarta</em></div>
+      </div>
+    </div>
+    <table class="tt reveal">
+      <thead>
+        <tr><th>Amostra</th><th>Peso</th><th>Tamanho</th><th>Uso</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="font-size:clamp(2.2rem,4.5vw,4.5rem); font-weight:800; letter-spacing:-.04em; color:var(--t1)">Display 800</span></td>
+          <td>800</td><td>clamp(4rem,10vw,9rem)</td><td>Heroes, covers</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:clamp(1.6rem,3vw,3rem); font-weight:800; letter-spacing:-.04em; color:var(--t1)">H1 Heading</span></td>
+          <td>800</td><td>clamp(2.5rem,5vw,4.5rem)</td><td>Títulos de seção</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:clamp(1.2rem,2.5vw,2rem); font-weight:700; letter-spacing:-.02em; color:var(--t1)">H2 Subheading</span></td>
+          <td>700</td><td>clamp(1.5rem,3vw,2.5rem)</td><td>Cards, subtítulos</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:20px; font-weight:400; color:var(--t2); line-height:1.65">Body text — legibilidade acima de tudo.</span></td>
+          <td>400</td><td>20px</td><td>Parágrafos, descrições</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:17px; font-weight:400; color:var(--t2)">Small body — suporte, meta, legendas</span></td>
+          <td>400</td><td>17px</td><td>Labels, captions</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:16px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--acid)">UPPERCASE LABEL</span></td>
+          <td>600</td><td>16px + tracking</td><td>Eyebrows, section labels</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══ 03 COMPONENTES ══ -->
+<section class="sec sec-bg" id="s03">
+  <div class="w">
+    <span class="sn reveal">03 / Componentes</span>
+    <div class="st rl"><span class="line">Atoms &</span></div>
+    <div class="st-lt rl"><span class="line">Molecules</span></div>
+    <p class="sd reveal">Todos os componentes respondem ao tema ativo — troque o toggle e veja a mudança ao vivo.</p>
+
+    <div class="comp-g reveal">
+
+      <div class="comp-c">
+        <span class="comp-c-lbl">Buttons</span>
+        <div class="btn-grp" style="flex-direction:column; align-items:flex-start; gap:12px">
+          <button class="btn btn-p">Agendar Reunião →</button>
+          <button class="btn btn-s">Ver Detalhes</button>
+          <button class="btn btn-ao">Explorar Planos</button>
+          <button class="btn btn-g">Cancelar</button>
+          <button class="btn btn-d btn-sm">Remover</button>
+        </div>
+        <div style="margin-top:24px">
+          <button class="btn btn-p btn-lg">Primary Large →</button>
+        </div>
+      </div>
+
+      <div class="comp-c">
+        <span class="comp-c-lbl">Badges</span>
+        <div style="display:flex; flex-wrap:wrap; gap:10px">
+          <span class="badge b-green">Ativo</span>
+          <span class="badge b-acid">Novo</span>
+          <span class="badge b-amber">Em Progresso</span>
+          <span class="badge b-red">Crítico</span>
+          <span class="badge b-muted">Arquivado</span>
+          <span class="badge b-green" style="font-size:16px; padding:6px 16px">Premium</span>
+          <span class="badge b-acid" style="font-size:16px; padding:6px 16px">SaaS</span>
+        </div>
+      </div>
+
+      <div class="comp-c">
+        <span class="comp-c-lbl">Inputs</span>
+        <div style="display:flex; flex-direction:column; gap:20px">
+          <div class="iw">
+            <label class="ilbl">Nome do cliente</label>
+            <input class="inp" type="text" placeholder="Dr. Erico Servano">
+            <span class="ihint">Campo obrigatório</span>
+          </div>
+          <div class="iw">
+            <label class="ilbl">Email</label>
+            <input class="inp inp-err" type="email" value="eric@syra">
+            <span class="ihint err">Email inválido</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-c">
+        <span class="comp-c-lbl">Metric Cards</span>
+        <div style="display:flex; flex-direction:column; gap:12px">
+          <div class="card card-a">
+            <span class="card-lbl">MRR</span>
+            <div class="card-val">R$ 24.8k</div>
+            <div class="card-sub">Receita Recorrente</div>
+            <div class="card-delta delta-up">▲ +12.4% vs mês anterior</div>
+          </div>
+          <div class="card">
+            <span class="card-lbl">Churn</span>
+            <div class="card-val" style="font-size:2rem; color:var(--red)">2.1%</div>
+            <div class="card-delta delta-dn">▼ −0.3% vs meta</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-c">
+        <span class="comp-c-lbl">Feedback</span>
+        <div>
+          <div class="toast nfo"><span class="toast-ico">⚡</span><div><div class="t-title">Campanha publicada</div><div class="t-msg">Dr. Erico · Meta Ads · 3 anúncios</div></div></div>
+          <div class="toast ok"><span class="toast-ico">✓</span><div><div class="t-title">Lead qualificado</div><div class="t-msg">Dra. Vanessa confirmou reunião</div></div></div>
+          <div class="toast wrn"><span class="toast-ico">⚠</span><div><div class="t-title">Budget no limite</div><div class="t-msg">Torre 1 — 82% consumido</div></div></div>
+          <div class="toast err"><span class="toast-ico">✕</span><div><div class="t-title">Webhook falhou</div><div class="t-msg">GHL · Timeout 30s</div></div></div>
+        </div>
+      </div>
+
+      <div class="comp-c">
+        <span class="comp-c-lbl">Navigation</span>
+        <div class="demo-nav" style="margin-bottom:28px">
+          <span class="dnav-brand">Syra<span>.</span></span>
+          <nav class="dnav-links">
+            <a class="dnav-lnk act">Dashboard</a>
+            <a class="dnav-lnk">Clientes</a>
+            <a class="dnav-lnk">Campanhas</a>
+          </nav>
+          <button class="btn btn-p btn-sm">+ Novo</button>
+        </div>
+        <div style="display:flex; gap:8px">
+          <button class="btn btn-s btn-sm">Mês</button>
+          <button class="btn btn-p btn-sm">Semana</button>
+          <button class="btn btn-g btn-sm">Dia</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 DARK & LIGHT SIDE BY SIDE ══ -->
+<section class="sec sec-sf" id="s04">
+  <div class="w">
+    <span class="sn reveal">04 / Temas</span>
+    <div class="st rl"><span class="line">Dark</span></div>
+    <div class="st-lt rl"><span class="line">& Light</span></div>
+    <p class="sd reveal">Os dois modos convivendo. Um token system, duas personalidades.</p>
+
+    <div class="side-split reveal">
+      <div class="side-dark">
+        <div class="side-tag"><div class="side-tag-dot"></div>Dark · #1A1A1A</div>
+        <div class="sp-card">
+          <span class="sp-badge">✦ Novo cliente</span>
+          <div class="sp-title">Campanha aprovada</div>
+          <div class="sp-body">Dra. Gabrielle aprovou a campanha de agosto. 3 criativos prontos para veicular no Meta Ads.</div>
+          <button class="sp-btn">Ver campanha →</button>
+        </div>
+        <div class="sp-badges">
+          <span class="badge-a">SaaS</span>
+          <span class="badge-g">Ativo</span>
+          <span class="badge-m">Trial</span>
+        </div>
+      </div>
+      <div class="side-light">
+        <div class="side-tag"><div class="side-tag-dot"></div>Light · #F0F2F0</div>
+        <div class="sp-card">
+          <span class="sp-badge">✦ Novo cliente</span>
+          <div class="sp-title">Campanha aprovada</div>
+          <div class="sp-body">Dra. Gabrielle aprovou a campanha de agosto. 3 criativos prontos para veicular no Meta Ads.</div>
+          <button class="sp-btn">Ver campanha →</button>
+        </div>
+        <div class="sp-badges">
+          <span class="badge-a">SaaS</span>
+          <span class="badge-g">Ativo</span>
+          <span class="badge-m">Trial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 05 MOTION ══ -->
+<section class="sec sec-bg" id="s05">
+  <div class="w">
+    <span class="sn reveal">05 / Motion</span>
+    <div class="st rl"><span class="line">Easing &</span></div>
+    <div class="st-lt rl"><span class="line">Timing</span></div>
+    <p class="sd reveal">Passe o mouse em cada célula para ver a curva em ação.</p>
+
+    <div class="motion-g reveal">
+      <div class="motion-c" id="mc-a">
+        <span class="motion-lbl">Popout — entradas</span>
+        <div class="motion-sw" id="ms-a"></div>
+        <div class="motion-val">cubic-bezier(.16,1,.3,1) · 600ms</div>
+        <div class="motion-desc">Modais, reveals, drawers. Começa rápido, termina suave.</div>
+      </div>
+      <div class="motion-c" id="mc-b">
+        <span class="motion-lbl">Standard — interações</span>
+        <div class="motion-sw" id="ms-b"></div>
+        <div class="motion-val">cubic-bezier(.4,0,.2,1) · 200ms</div>
+        <div class="motion-desc">Hover, focus, toggle. A curva do dia a dia.</div>
+      </div>
+      <div class="motion-c" id="mc-c">
+        <span class="motion-lbl">Spring — destaques</span>
+        <div class="motion-sw" id="ms-c"></div>
+        <div class="motion-val">cubic-bezier(.34,1.56,.64,1) · 500ms</div>
+        <div class="motion-desc">Notificações, badges, confirmações. O bounce sinaliza sucesso.</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--bd-f); border:1px solid var(--bd-f); border-radius:12px; overflow:hidden; margin-top:60px" class="reveal">
+      <div style="background:var(--bg-s); padding:32px 28px; transition:background .4s ease">
+        <div style="font-size:16px; font-weight:600; text-transform:uppercase; letter-spacing:.12em; color:var(--t3); margin-bottom:12px">Fast</div>
+        <div style="font-size:42px; font-weight:800; letter-spacing:-.04em; color:var(--acid)">120ms</div>
+        <div style="font-size:17px; color:var(--t3); margin-top:8px">Micro-interações</div>
+      </div>
+      <div style="background:var(--bg-s); padding:32px 28px; transition:background .4s ease">
+        <div style="font-size:16px; font-weight:600; text-transform:uppercase; letter-spacing:.12em; color:var(--t3); margin-bottom:12px">Base</div>
+        <div style="font-size:42px; font-weight:800; letter-spacing:-.04em; color:var(--acid)">200ms</div>
+        <div style="font-size:17px; color:var(--t3); margin-top:8px">Hover, focus</div>
+      </div>
+      <div style="background:var(--bg-s); padding:32px 28px; transition:background .4s ease">
+        <div style="font-size:16px; font-weight:600; text-transform:uppercase; letter-spacing:.12em; color:var(--t3); margin-bottom:12px">Slow</div>
+        <div style="font-size:42px; font-weight:800; letter-spacing:-.04em; color:var(--acid)">400ms</div>
+        <div style="font-size:17px; color:var(--t3); margin-top:8px">Reveals, slides</div>
+      </div>
+      <div style="background:var(--bg-s); padding:32px 28px; transition:background .4s ease">
+        <div style="font-size:16px; font-weight:600; text-transform:uppercase; letter-spacing:.12em; color:var(--t3); margin-bottom:12px">Page</div>
+        <div style="font-size:42px; font-weight:800; letter-spacing:-.04em; color:var(--acid)">600ms</div>
+        <div style="font-size:17px; color:var(--t3); margin-top:8px">Transições de rota</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 06 TOKENS ══ -->
+<section class="sec sec-sf" id="s06">
+  <div class="w">
+    <span class="sn reveal">06 / Tokens</span>
+    <div class="st rl"><span class="line">Token</span></div>
+    <div class="st-lt rl"><span class="line">Reference</span></div>
+    <p class="sd reveal">Copie para qualquer dashboard. Um arquivo CSS central — zero duplicação.</p>
+
+    <div class="tok-sec reveal">
+      <div class="tok-hd">Color Tokens — Dark</div>
+      <table class="tok-tb">
+        <tbody>
+          <tr><td class="tok-sw"><div style="background:#1A1A1A; border-color:rgba(255,255,255,.1)"></div></td><td class="tok-n">--bg</td><td class="tok-v">#1A1A1A</td><td class="tok-d">Background dark</td></tr>
+          <tr><td class="tok-sw"><div style="background:#202020"></div></td><td class="tok-n">--bg-s</td><td class="tok-v">#202020</td><td class="tok-d">Surface</td></tr>
+          <tr><td class="tok-sw"><div style="background:#272727"></div></td><td class="tok-n">--bg-e</td><td class="tok-v">#272727</td><td class="tok-d">Elevated</td></tr>
+          <tr><td class="tok-sw"><div style="background:#BCFF3A"></div></td><td class="tok-n">--acid</td><td class="tok-v">#BCFF3A</td><td class="tok-d">Accent dark — CTAs, links</td></tr>
+          <tr><td class="tok-sw"><div style="background:#F0F0F0"></div></td><td class="tok-n">--t1</td><td class="tok-v">#F0F0F0</td><td class="tok-d">Texto primário</td></tr>
+          <tr><td class="tok-sw"><div style="background:#888888"></div></td><td class="tok-n">--t2</td><td class="tok-v">#888888</td><td class="tok-d">Texto secundário</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tok-sec reveal">
+      <div class="tok-hd">Color Tokens — Light</div>
+      <table class="tok-tb">
+        <tbody>
+          <tr><td class="tok-sw"><div style="background:#F0F2F0; border:1px solid rgba(0,0,0,.1)"></div></td><td class="tok-n">--bg</td><td class="tok-v">#F0F2F0</td><td class="tok-d">Background light</td></tr>
+          <tr><td class="tok-sw"><div style="background:#FFFFFF; border:1px solid rgba(0,0,0,.1)"></div></td><td class="tok-n">--bg-s</td><td class="tok-v">#FFFFFF</td><td class="tok-d">Surface</td></tr>
+          <tr><td class="tok-sw"><div style="background:#E8EBE8; border:1px solid rgba(0,0,0,.07)"></div></td><td class="tok-n">--bg-e</td><td class="tok-v">#E8EBE8</td><td class="tok-d">Elevated</td></tr>
+          <tr><td class="tok-sw"><div style="background:#4A9200"></div></td><td class="tok-n">--acid</td><td class="tok-v">#4A9200</td><td class="tok-d">Accent light — CTAs, links</td></tr>
+          <tr><td class="tok-sw"><div style="background:#111411"></div></td><td class="tok-n">--t1</td><td class="tok-v">#111411</td><td class="tok-d">Texto primário</td></tr>
+          <tr><td class="tok-sw"><div style="background:#5A645A"></div></td><td class="tok-n">--t2</td><td class="tok-v">#5A645A</td><td class="tok-d">Texto secundário</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tok-sec reveal">
+      <div class="tok-hd">Typography</div>
+      <table class="tok-tb">
+        <tbody>
+          <tr>
+            <td class="tok-sw"><div style="background:var(--bg-e); display:flex; align-items:center; justify-content:center"><span style="font-size:17px; font-weight:800; color:var(--acid)">Aa</span></div></td>
+            <td class="tok-n">--f</td>
+            <td class="tok-v">'Plus Jakarta Sans'</td>
+            <td class="tok-d">Fonte única · 300 a 800</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tok-sec reveal">
+      <div class="tok-hd">Spacing — base 4px</div>
+      <div class="sp-scale">
+        <div class="sp-unit"><div class="sp-bar" style="height:4px; width:4px"></div><span class="sp-val">4</span></div>
+        <div class="sp-unit" style="margin-left:12px"><div class="sp-bar" style="height:8px; width:8px"></div><span class="sp-val">8</span></div>
+        <div class="sp-unit" style="margin-left:16px"><div class="sp-bar" style="height:12px; width:12px"></div><span class="sp-val">12</span></div>
+        <div class="sp-unit" style="margin-left:20px"><div class="sp-bar" style="height:16px; width:16px"></div><span class="sp-val">16</span></div>
+        <div class="sp-unit" style="margin-left:24px"><div class="sp-bar" style="height:24px; width:24px"></div><span class="sp-val">24</span></div>
+        <div class="sp-unit" style="margin-left:32px"><div class="sp-bar" style="height:32px; width:32px"></div><span class="sp-val">32</span></div>
+        <div class="sp-unit" style="margin-left:40px"><div class="sp-bar" style="height:48px; width:48px"></div><span class="sp-val">48</span></div>
+        <div class="sp-unit" style="margin-left:48px"><div class="sp-bar" style="height:64px; width:64px"></div><span class="sp-val">64</span></div>
+      </div>
+    </div>
+
+    <div class="tok-sec reveal">
+      <div class="tok-hd">Border Radius</div>
+      <div class="rad-row">
+        <div class="rad-item"><div class="rad-sq" style="border-radius:4px"></div><span class="rad-lbl">4px · xs</span></div>
+        <div class="rad-item"><div class="rad-sq" style="border-radius:7px"></div><span class="rad-lbl">7px · sm</span></div>
+        <div class="rad-item"><div class="rad-sq" style="border-radius:10px"></div><span class="rad-lbl">10px · md</span></div>
+        <div class="rad-item"><div class="rad-sq" style="border-radius:14px"></div><span class="rad-lbl">14px · lg</span></div>
+        <div class="rad-item"><div class="rad-sq" style="border-radius:9999px"></div><span class="rad-lbl">999 · pill</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="w">
+    <div class="footer-in reveal">
+      <div class="footer-brand">Syra<span>.</span></div>
+      <div class="footer-r">
+        <div class="footer-v">Design System v1.0</div>
+        <div class="footer-m">Syra Digital · 2026 · <strong>Plus Jakarta Sans</strong></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// LENIS
+const lenis = new Lenis({ lerp: 0.1 });
+function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+requestAnimationFrame(raf);
+
+// GSAP
+gsap.registerPlugin(ScrollTrigger);
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t * 1000));
+gsap.ticker.lagSmoothing(0);
+
+// CURSOR
+const cDot = document.getElementById('cDot');
+const cRing = document.getElementById('cRing');
+let mx=0, my=0, rx=0, ry=0;
+window.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+(function a() {
+  rx += (mx-rx)*.12; ry += (my-ry)*.12;
+  cDot.style.transform  = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
+  cRing.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+  requestAnimationFrame(a);
+})();
+document.querySelectorAll('a,button,.csw,.chip,.comp-c,.motion-c,.ch,.card,.toast').forEach(el => {
+  el.addEventListener('mouseenter', () => cRing.classList.add('on'));
+  el.addEventListener('mouseleave', () => cRing.classList.remove('on'));
+});
+
+// THEME TOGGLE
+const html = document.documentElement;
+const ttDark  = document.getElementById('tt-dark');
+const ttLight = document.getElementById('tt-light');
+
+function setTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  if (theme === 'dark') {
+    ttDark.classList.add('active');
+    ttLight.classList.remove('active');
+  } else {
+    ttLight.classList.add('active');
+    ttDark.classList.remove('active');
+  }
+  ScrollTrigger.refresh();
+}
+
+ttDark.addEventListener('click',  () => setTheme('dark'));
+ttLight.addEventListener('click', () => setTheme('light'));
+
+// LOADER
+const loader = document.getElementById('loader');
+gsap.timeline()
+  .to(loader.querySelector('.loader-wm'),  { opacity:1, duration:.5, ease:'power2.out' })
+  .to(loader.querySelector('.loader-pct'), { opacity:1, duration:.3 }, '-=.2')
+  .to(document.getElementById('lFill'), {
+    width:'100%', duration:1.4, ease:'power2.inOut',
+    onUpdate() { document.getElementById('lPct').textContent = Math.round(this.progress()*100)+'%'; }
+  }, '-=.1')
+  .to(loader, { yPercent:-100, duration:.7, ease:'power3.inOut', delay:.15 })
+  .set(loader, { display:'none' })
+  .call(init);
+
+// HELPER NAV
+function go(id) { lenis.scrollTo(document.getElementById(id), { offset: -80 }); }
+
+function init() {
+  gsap.to('.cover-eyebrow', { opacity:1, duration:.6, ease:'power2.out', delay:.1 });
+
+  document.querySelectorAll('.rl').forEach((el, i) => {
+    new SplitType(el, { types:'lines' });
+    gsap.to(el.querySelectorAll('.line'), {
+      yPercent:0, duration:.9, ease:'power3.out',
+      delay:.2 + i*.1, stagger:.05
+    });
+  });
+
+  gsap.to('.cover-sub',   { opacity:1, duration:.6, ease:'power2.out', delay:.7 });
+  gsap.to('.cover-pills', { opacity:1, duration:.6, ease:'power2.out', delay:.85 });
+  gsap.to('.cover-foot',  { opacity:1, duration:.6, ease:'power2.out', delay:1 });
+
+  gsap.utils.toArray('.reveal').forEach(el => {
+    gsap.fromTo(el,
+      { opacity:0, y:28 },
+      { opacity:1, y:0, duration:.8, ease:'power3.out',
+        scrollTrigger:{ trigger:el, start:'top 88%', toggleActions:'play none none none' }
+      }
+    );
+  });
+
+  gsap.to('.cover-glow', {
+    yPercent:50, ease:'none',
+    scrollTrigger:{ trigger:'.cover', start:'top top', end:'bottom top', scrub:true }
+  });
+
+  // Motion cells
+  [
+    { c:'mc-a', s:'ms-a', to:{ scale:1.2, rotation:10, duration:.6, ease:'expo.out' } },
+    { c:'mc-b', s:'ms-b', to:{ x:40, duration:.3, ease:'power2.inOut' } },
+    { c:'mc-c', s:'ms-c', to:{ scale:1.35, duration:.5, ease:'back.out(2.2)' } },
+  ].forEach(({ c, s, to }) => {
+    const cell = document.getElementById(c);
+    const sw   = document.getElementById(s);
+    cell.addEventListener('mouseenter', () => gsap.to(sw, to));
+    cell.addEventListener('mouseleave', () => gsap.to(sw, { scale:1, rotation:0, x:0, duration:.4, ease:'power2.out' }));
+  });
+}
+</script>
+</body>
+</html>

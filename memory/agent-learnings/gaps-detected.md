@@ -20,4 +20,10 @@
 
 ## Gaps Registrados
 
-_(nenhum gap registrado ainda)_
+### 2026-04-03 Gap: Inteligencia Financeira da Syra Digital
+
+- **Detectado por:** @blueprint (ao mapear o sistema para criar especificacao de novo agente)
+- **Contexto:** Eric pediu criacao de agente financeiro. Verificacao confirmou: zero agente cobria DRE, MRR/ARR da agencia, margem por cliente, breakeven, churn, CAC, projecao de fluxo de caixa da Syra como negocio. O @analyst cobre dados de campanhas dos clientes, nao a saude financeira da propria agencia.
+- **Competencia necessaria:** CFO estrategico que consolide dados espalhados (GHL, Meta Ads spend, contratos, custos de infra) em visao financeira acionavel da Syra Digital.
+- **Agente sugerido:** @cfo (Vera CFO) — Chief Financial Officer da Syra Digital
+- **Status:** CRIADO (@cfo em 2026-04-03)

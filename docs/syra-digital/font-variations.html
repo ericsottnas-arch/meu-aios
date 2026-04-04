@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syra — Variações de Fonte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { background: #080808; color: #F0F0F0; -webkit-font-smoothing: antialiased; }
+
+:root {
+  --acid: #BCFF3A;
+  --acid-dim: rgba(188,255,58,.08);
+  --t1: #F0F0F0;
+  --t2: #909090;
+  --t3: #505050;
+  --border: rgba(255,255,255,.08);
+}
+
+/* HEADER */
+.page-header {
+  padding: 48px 60px 40px;
+  border-bottom: 1px solid var(--border);
+}
+.page-header h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 8px;
+}
+.page-header p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--t2);
+}
+
+/* NAVIGATION */
+.nav-pills {
+  display: flex;
+  gap: 8px;
+  padding: 24px 60px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(8,8,8,.95);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+.pill {
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--t2);
+  cursor: pointer;
+  transition: all .2s ease;
+  text-decoration: none;
+}
+.pill:hover, .pill.active { background: var(--acid); color: #080808; border-color: var(--acid); }
+
+/* VARIATION WRAPPER */
+.variation {
+  min-height: 100vh;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.var-tag {
+  position: absolute;
+  top: 32px; right: 60px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--acid);
+  background: var(--acid-dim);
+  border: 1px solid rgba(188,255,58,.2);
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+/* ═══════════════════════════════
+   VARIAÇÃO A — Bricolage Grotesque + DM Sans
+   Estilo: Editorial, agência criativa, humano
+═══════════════════════════════ */
+#var-a {
+  background: #0A0A0A;
+  padding: 80px 60px 100px;
+  font-family: 'DM Sans', sans-serif;
+}
+#var-a .eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 40px;
+  display: block;
+}
+#var-a .headline {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(5rem, 12vw, 12rem);
+  font-weight: 800;
+  line-height: .88;
+  letter-spacing: -.04em;
+  color: var(--t1);
+  margin-bottom: 40px;
+}
+#var-a .headline em {
+  font-style: normal;
+  color: var(--acid);
+  font-weight: 300;
+}
+#var-a .body-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--t2);
+  max-width: 580px;
+  margin-bottom: 48px;
+}
+#var-a .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--acid);
+  color: #0A0A0A;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  margin-right: 16px;
+}
+#var-a .cta:hover { background: #C8FF5A; transform: translateY(-2px); }
+#var-a .cta-sec {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--t1);
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,.15);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+#var-a .cta-sec:hover { border-color: rgba(255,255,255,.35); }
+#var-a .showcase {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+#var-a .showcase-cell {
+  background: #0F0F0F;
+  padding: 40px 36px;
+}
+#var-a .showcase-cell .num {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: var(--acid);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+#var-a .showcase-cell .label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--t1);
+  margin-bottom: 8px;
+}
+#var-a .showcase-cell .desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--t2);
+  line-height: 1.6;
+}
+#var-a .font-note {
+  margin-top: 60px;
+  padding: 28px 36px;
+  background: var(--acid-dim);
+  border: 1px solid rgba(188,255,58,.15);
+  border-radius: 10px;
+  display: inline-block;
+}
+#var-a .font-note span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--acid);
+  margin-right: 24px;
+}
+
+/* ═══════════════════════════════
+   VARIAÇÃO B — Plus Jakarta Sans
+   Estilo: SaaS moderno, clean, profissional
+═══════════════════════════════ */
+#var-b {
+  background: #080B08;
+  padding: 80px 60px 100px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+#var-b .eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 40px;
+  display: block;
+}
+#var-b .headline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(4.5rem, 10vw, 10rem);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.04em;
+  color: var(--t1);
+  margin-bottom: 40px;
+}
+#var-b .headline em {
+  font-style: normal;
+  color: var(--acid);
+  font-weight: 300;
+}
+#var-b .body-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--t2);
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+#var-b .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--acid);
+  color: #080B08;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  margin-right: 16px;
+}
+#var-b .cta:hover { background: #C8FF5A; transform: translateY(-2px); }
+#var-b .cta-sec {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--t1);
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,.15);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+#var-b .cta-sec:hover { border-color: rgba(255,255,255,.35); }
+#var-b .showcase {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+#var-b .showcase-cell {
+  background: #0D100D;
+  padding: 40px 36px;
+}
+#var-b .showcase-cell .num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: var(--acid);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+#var-b .showcase-cell .label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--t1);
+  margin-bottom: 8px;
+}
+#var-b .showcase-cell .desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: var(--t2);
+  line-height: 1.6;
+}
+#var-b .font-note {
+  margin-top: 60px;
+  padding: 28px 36px;
+  background: var(--acid-dim);
+  border: 1px solid rgba(188,255,58,.15);
+  border-radius: 10px;
+  display: inline-block;
+}
+#var-b .font-note span {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: var(--acid);
+  margin-right: 24px;
+}
+
+/* ═══════════════════════════════
+   VARIAÇÃO C — Outfit (tudo)
+   Estilo: Premium, distinto, marcante
+═══════════════════════════════ */
+#var-c {
+  background: #090909;
+  padding: 80px 60px 100px;
+  font-family: 'Outfit', sans-serif;
+}
+#var-c .eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 40px;
+  display: block;
+}
+#var-c .headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(5rem, 12vw, 12rem);
+  font-weight: 800;
+  line-height: .88;
+  letter-spacing: -.04em;
+  color: var(--t1);
+  margin-bottom: 40px;
+}
+#var-c .headline em {
+  font-style: normal;
+  color: var(--acid);
+  font-weight: 300;
+}
+#var-c .body-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--t2);
+  max-width: 580px;
+  margin-bottom: 48px;
+}
+#var-c .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--acid);
+  color: #090909;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  margin-right: 16px;
+}
+#var-c .cta:hover { background: #C8FF5A; transform: translateY(-2px); }
+#var-c .cta-sec {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--t1);
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border: 1px solid rgba(255,255,255,.15);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+#var-c .cta-sec:hover { border-color: rgba(255,255,255,.35); }
+#var-c .showcase {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+#var-c .showcase-cell {
+  background: #0F0F0F;
+  padding: 40px 36px;
+}
+#var-c .showcase-cell .num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: var(--acid);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+#var-c .showcase-cell .label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--t1);
+  margin-bottom: 8px;
+}
+#var-c .showcase-cell .desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--t2);
+  line-height: 1.6;
+}
+#var-c .font-note {
+  margin-top: 60px;
+  padding: 28px 36px;
+  background: var(--acid-dim);
+  border: 1px solid rgba(188,255,58,.15);
+  border-radius: 10px;
+  display: inline-block;
+}
+#var-c .font-note span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  color: var(--acid);
+  margin-right: 24px;
+}
+
+/* ═══════════════════════════════
+   VARIAÇÃO D — Raleway
+   Estilo: Elegante, sofisticado, agência premium
+═══════════════════════════════ */
+#var-d {
+  background: #0A0A0A;
+  padding: 80px 60px 100px;
+  font-family: 'Raleway', sans-serif;
+}
+#var-d .eyebrow {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 40px;
+  display: block;
+}
+#var-d .headline {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(5rem, 12vw, 12rem);
+  font-weight: 900;
+  line-height: .88;
+  letter-spacing: -.05em;
+  color: var(--t1);
+  margin-bottom: 40px;
+}
+#var-d .headline em {
+  font-style: normal;
+  color: var(--acid);
+  font-weight: 300;
+  letter-spacing: -.02em;
+}
+#var-d .body-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--t2);
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+#var-d .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--acid);
+  color: #0A0A0A;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  margin-right: 16px;
+}
+#var-d .cta:hover { background: #C8FF5A; transform: translateY(-2px); }
+#var-d .cta-sec {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--t1);
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  border: 1px solid rgba(255,255,255,.15);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+#var-d .cta-sec:hover { border-color: rgba(255,255,255,.35); }
+#var-d .showcase {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+#var-d .showcase-cell {
+  background: #0F0F0F;
+  padding: 40px 36px;
+}
+#var-d .showcase-cell .num {
+  font-family: 'Raleway', sans-serif;
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: -.05em;
+  color: var(--acid);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+#var-d .showcase-cell .label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--t1);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+#var-d .showcase-cell .desc {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--t2);
+  line-height: 1.6;
+}
+#var-d .font-note {
+  margin-top: 60px;
+  padding: 28px 36px;
+  background: var(--acid-dim);
+  border: 1px solid rgba(188,255,58,.15);
+  border-radius: 6px;
+  display: inline-block;
+}
+#var-d .font-note span {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  color: var(--acid);
+  margin-right: 24px;
+}
+
+/* DIVIDER */
+.section-divider {
+  padding: 20px 60px;
+  background: var(--acid);
+  text-align: center;
+}
+.section-divider span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #080808;
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Syra Digital — Variações de Fonte</h1>
+  <p>4 direções diferentes. Clique nas pílulas para navegar.</p>
+</div>
+
+<div class="nav-pills">
+  <a href="#var-a" class="pill">A · Bricolage + DM Sans</a>
+  <a href="#var-b" class="pill">B · Plus Jakarta Sans</a>
+  <a href="#var-c" class="pill">C · Outfit</a>
+  <a href="#var-d" class="pill">D · Raleway</a>
+</div>
+
+<!-- ═══ VARIAÇÃO A ═══ -->
+<div class="section-divider"><span>Variação A — Bricolage Grotesque + DM Sans · Editorial, agência criativa</span></div>
+<section class="variation" id="var-a">
+  <span class="var-tag">A</span>
+  <span class="eyebrow">Syra Digital · Assessoria & SaaS</span>
+  <div class="headline">
+    Resultados<br>
+    <em>que ficam.</em>
+  </div>
+  <p class="body-text">Assessoria de marketing digital para médicos e empresas que querem crescer de verdade. Campanhas, automações e estratégia sob um mesmo teto.</p>
+  <div>
+    <button class="cta">Fale com a Syra →</button>
+    <button class="cta-sec">Ver cases</button>
+  </div>
+
+  <div class="showcase">
+    <div class="showcase-cell">
+      <div class="num">10+</div>
+      <div class="label">Clientes ativos</div>
+      <div class="desc">Médicos, clínicas e empresas gerando resultado todo mês.</div>
+    </div>
+    <div class="showcase-cell">
+      <div class="num">R$24k</div>
+      <div class="label">MRR atual</div>
+      <div class="desc">Receita recorrente crescendo mês a mês com previsibilidade.</div>
+    </div>
+    <div class="showcase-cell">
+      <div class="num">3x</div>
+      <div class="label">Retorno médio</div>
+      <div class="desc">Cada real investido volta multiplicado para nossos clientes.</div>
+    </div>
+  </div>
+
+  <div class="font-note">
+    <span>Display: Bricolage Grotesque 800</span>
+    <span>Body: DM Sans 400/500</span>
+    <span>Tamanho base: 20px</span>
+  </div>
+</section>
+
+<!-- ═══ VARIAÇÃO B ═══ -->
+<div class="section-divider"><span>Variação B — Plus Jakarta Sans · SaaS moderno, clean</span></div>
+<section class="variation" id="var-b">
+  <span class="var-tag">B</span>
+  <span class="eyebrow">Syra Digital · Assessoria & SaaS</span>
+  <div class="headline">
+    Resultados<br>
+    <em>que ficam.</em>
+  </div>
+  <p class="body-text">Assessoria de marketing digital para médicos e empresas que querem crescer de verdade. Campanhas, automações e estratégia sob um mesmo teto.</p>
+  <div>
+    <button class="cta">Fale com a Syra →</button>
+    <button class="cta-sec">Ver cases</button>
+  </div>
+
+  <div class="showcase">
+    <div class="showcase-cell">
+      <div class="num">10+</div>
+      <div class="label">Clientes ativos</div>
+      <div class="desc">Médicos, clínicas e empresas gerando resultado todo mês.</div>
+    </div>
+    <div class="showcase-cell">
+      <div class="num">R$24k</div>
+      <div class="label">MRR atual</div>
+      <div class="desc">Receita recorrente crescendo mês a mês com previsibilidade.</div>
+    </div>
+    <div class="showcase-cell">
+      <div class="num">3x</div>
+      <div class="label">Retorno médio</div>
+      <div class="desc">Cada real investido volta multiplicado para nossos clientes.</div>
+    </div>
+  </div>
+
+  <div class="font-note">
+    <span>Display + Body: Plus Jakarta Sans 800/400</span>
+    <span>Tamanho base: 20px</span>
+  </div>
+</section>
+
+<!-- ═══ VARIAÇÃO C ═══ -->
+<div class="section-divider"><span>Variação C — Outfit · Moderno, geométrico suave</span></div>
+<section class="variation" id="var-c">
+  <span class="var-tag">C</span>
+  <span class="eyebrow">Syra Digital · Assessoria & SaaS</span>
+  <div class="headline">
+    Resultados<br>
+    <em>que ficam.</em>
+  </div>
+  <p class="body-text">Assessoria de marketing digital para médicos e empresas que querem crescer de verdade. Campanhas, automações e estratégia sob um mesmo teto.</p>
+  <div>
+    <button class="cta">Fale com a Syra →</button>
+    <button class="cta-sec">Ver cases</button>
+  </div>
+
+  <div class="showcase">
+    <div class="showcase-cell">
+      <div class="num">10+</div>
+      <div class="label">Clientes ativos</div>
+      <div class="desc">Médicos, clínicas e empresas gerando resultado todo mês.</div>
+    </div>
+    <div class="showcase-cell">
+      <div class="num">R$24k</div>
+      <div class="label">MRR atual</div>
+      <div class="desc">Receita recorrente crescendo mês a mês com previsibilidade.</div>
+    </div>
+    <div class="showcase-cell">
+      <div class="num">3x</div>
+      <div class="label">Retorno médio</div>
+      <div class="desc">Cada real investido volta multiplicado para nossos clientes.</div>
+    </div>
+  </div>
+
+  <div class="font-note">
+    <span>Display + Body: Outfit 800/300</span>
+    <span>Tamanho base: 20px</span>
+  </div>
+</section>
+
+<!-- ═══ VARIAÇÃO D ═══ -->
+<div class="section-divider"><span>Variação D — Raleway · Elegante, sofisticado, agência premium</span></div>
+<section class="variation" id="var-d">
+  <span class="var-tag">D</span>
+  <span class="eyebrow">Syra Digital · Assessoria & SaaS</span>
+  <div class="headline">
+    Resultados<br>
+    <em>que ficam.</em>
+  </div>
+  <p class="body-text">Assessoria de marketing digital para médicos e empresas que querem crescer de verdade. Campanhas, automações e estratégia sob um mesmo teto.</p>
+  <div>
+    <button class="cta">Fale com a Syra →</button>
+    <button class="cta-sec">Ver cases</button>
+  </div>
+
+  <div class="showcase">
+    <div class="showcase-cell">
+      <div class="num">10+</div>
+      <div class="label">Clientes ativos</div>
+      <div class="desc">Médicos, clínicas e empresas gerando resultado todo mês.</div>
+    </div>
+    <div class="showcase-cell">
+      <div class="num">R$24k</div>
+      <div class="label">MRR atual</div>
+      <div class="desc">Receita recorrente crescendo mês a mês com previsibilidade.</div>
+    </div>
+    <div class="showcase-cell">
+      <div class="num">3x</div>
+      <div class="label">Retorno médio</div>
+      <div class="desc">Cada real investido volta multiplicado para nossos clientes.</div>
+    </div>
+  </div>
+
+  <div class="font-note">
+    <span>Display + Body: Raleway 900/400</span>
+    <span>Tamanho base: 20px</span>
+  </div>
+</section>
+
+</body>
+</html>
