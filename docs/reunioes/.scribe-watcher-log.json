@@ -1,0 +1,328 @@
+{
+  "runs": [
+    {
+      "startedAt": "2026-04-03T00:00:05.445Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-03T00:00:06.930Z"
+    },
+    {
+      "startedAt": "2026-04-02T22:00:04.978Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T22:00:06.285Z"
+    },
+    {
+      "startedAt": "2026-04-02T20:00:04.226Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "transcriptPath": "/home/synkra/meu-aios/docs/reunioes/2026-04-02-dr-enio-leite.md",
+          "client": {
+            "keywords": [
+              "enio",
+              "ênio",
+              "leite"
+            ],
+            "slug": "dr-enio-leite",
+            "label": "Dr. Enio Leite"
+          },
+          "date": "2026-04-02"
+        }
+      ],
+      "finishedAt": "2026-04-02T20:00:39.903Z"
+    },
+    {
+      "startedAt": "2026-04-02T18:00:04.998Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T18:00:06.318Z"
+    },
+    {
+      "startedAt": "2026-04-02T16:00:05.703Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T16:00:07.066Z"
+    },
+    {
+      "startedAt": "2026-04-02T14:00:02.702Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T14:00:03.881Z"
+    },
+    {
+      "startedAt": "2026-04-02T12:00:04.103Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T12:00:05.152Z"
+    },
+    {
+      "startedAt": "2026-04-02T10:00:02.596Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T10:00:03.446Z"
+    },
+    {
+      "startedAt": "2026-04-02T08:00:03.724Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T08:00:04.566Z"
+    },
+    {
+      "startedAt": "2026-04-02T06:00:01.440Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T06:00:02.350Z"
+    },
+    {
+      "startedAt": "2026-04-02T04:00:04.080Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T04:00:04.866Z"
+    },
+    {
+      "startedAt": "2026-04-02T02:00:05.422Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T02:00:06.708Z"
+    },
+    {
+      "startedAt": "2026-04-02T00:00:05.727Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-02T00:00:06.842Z"
+    },
+    {
+      "startedAt": "2026-04-01T22:00:01.731Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-01T22:00:02.797Z"
+    },
+    {
+      "startedAt": "2026-04-01T20:00:03.417Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-01T20:00:04.369Z"
+    },
+    {
+      "startedAt": "2026-04-01T18:00:03.811Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-01T18:00:04.676Z"
+    },
+    {
+      "startedAt": "2026-04-01T16:00:04.125Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-01T16:00:04.950Z"
+    },
+    {
+      "startedAt": "2026-04-01T14:00:05.279Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-01T14:00:06.611Z"
+    },
+    {
+      "startedAt": "2026-04-01T12:00:04.625Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-01T12:00:05.662Z"
+    },
+    {
+      "startedAt": "2026-04-01T10:00:03.811Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-01T10:00:04.831Z"
+    },
+    {
+      "startedAt": "2026-04-01T08:00:04.533Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 0,
+      "results": [],
+      "finishedAt": "2026-04-01T08:00:05.519Z"
+    },
+    {
+      "startedAt": "2026-04-01T06:00:02.294Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 1,
+      "failed": 0,
+      "results": [
+        {
+          "success": true,
+          "transcriptPath": "/home/synkra/meu-aios/docs/reunioes/2026-03-31-keila.md",
+          "client": {
+            "keywords": [
+              "queila",
+              "keila",
+              "abqueila"
+            ],
+            "slug": "keila",
+            "label": "Keila"
+          },
+          "date": "2026-03-31"
+        }
+      ],
+      "finishedAt": "2026-04-01T06:39:07.690Z"
+    },
+    {
+      "startedAt": "2026-04-01T04:00:04.048Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 0,
+      "failed": 1,
+      "results": [
+        {
+          "success": false,
+          "error": "429 {\"error\":{\"message\":\"Rate limit reached for model `whisper-large-v3` in organization `org_01khc85m6kex8r945et7afxyhk` service tier `on_demand` on seconds of audio per day (ASPD): Limit 28800, Used 27772, Requested 2944. Please try again in 1h35m48s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"seconds\",\"code\":\"rate_limit_exceeded\"}}",
+          "filename": "Queila - 2026/03/31 17:35 GMT-03:00 - Recording"
+        }
+      ],
+      "finishedAt": "2026-04-01T04:30:38.531Z"
+    },
+    {
+      "startedAt": "2026-03-31T23:19:43.378Z",
+      "trigger": "startup",
+      "status": "success",
+      "processed": 4,
+      "failed": 7,
+      "results": [
+        {
+          "success": true,
+          "transcriptPath": "/home/synkra/meu-aios/docs/reunioes/2025-11-24-desconhecido.md",
+          "client": {
+            "slug": "desconhecido",
+            "label": "Desconhecido"
+          },
+          "date": "2025-11-24"
+        },
+        {
+          "success": true,
+          "transcriptPath": "/home/synkra/meu-aios/docs/reunioes/2026-03-05-desconhecido-2.md",
+          "client": {
+            "slug": "desconhecido",
+            "label": "Desconhecido"
+          },
+          "date": "2026-03-05"
+        },
+        {
+          "success": false,
+          "error": "The \"path\" argument must be of type string or an instance of Buffer or URL. Received an instance of Object",
+          "filename": "qmu-exkp-vbb (2026-03-05 10:09 GMT-3)"
+        },
+        {
+          "success": false,
+          "error": "The \"path\" argument must be of type string or an instance of Buffer or URL. Received an instance of Object",
+          "filename": "smv-uzed-zdk (2026-03-05 15:57 GMT-3)"
+        },
+        {
+          "success": false,
+          "error": "The \"path\" argument must be of type string or an instance of Buffer or URL. Received an instance of Object",
+          "filename": "rps-mgpn-bzx (2026-03-11 13:56 GMT-3)"
+        },
+        {
+          "success": false,
+          "error": "The \"path\" argument must be of type string or an instance of Buffer or URL. Received an instance of Object",
+          "filename": "ufm-oohw-rrw (2026-03-11 16:00 GMT-3)"
+        },
+        {
+          "success": false,
+          "error": "The \"path\" argument must be of type string or an instance of Buffer or URL. Received an instance of Object",
+          "filename": "kjs-ymka-dhh (2026-03-18 18:03 GMT-3)"
+        },
+        {
+          "success": true,
+          "transcriptPath": "/home/synkra/meu-aios/docs/reunioes/2026-03-24-desconhecido-2.md",
+          "client": {
+            "slug": "desconhecido",
+            "label": "Desconhecido"
+          },
+          "date": "2026-03-24"
+        },
+        {
+          "success": true,
+          "transcriptPath": "/home/synkra/meu-aios/docs/reunioes/2026-03-26-desconhecido.md",
+          "client": {
+            "slug": "desconhecido",
+            "label": "Desconhecido"
+          },
+          "date": "2026-03-26"
+        },
+        {
+          "success": false,
+          "error": "429 {\"error\":{\"message\":\"Rate limit reached for model `whisper-large-v3` in organization `org_01khc85m6kex8r945et7afxyhk` service tier `on_demand` on seconds of audio per hour (ASPH): Limit 7200, Used 6238, Requested 2426. Please try again in 12m12s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"seconds\",\"code\":\"rate_limit_exceeded\"}}",
+          "filename": "Abqueila Dr Cleugo  - 2026/03/26 14:30 GMT-03:00 - Recording"
+        },
+        {
+          "success": false,
+          "error": "The \"path\" argument must be of type string or an instance of Buffer or URL. Received an instance of Object",
+          "filename": "Queila - 2026/03/31 17:35 GMT-03:00 - Recording"
+        }
+      ],
+      "finishedAt": "2026-03-31T23:29:04.015Z"
+    }
+  ]
+}

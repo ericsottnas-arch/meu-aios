@@ -143,5 +143,22 @@ Isso PRECISA mudar a partir de agora.
 
 ---
 
+<<<<<<< HEAD
 Ultima atualizacao: 2026-03-24
+>>>>>>> origin/eric/main
+=======
+---
+
+## [CRITICAL] Playwright — Execucao autonoma sem confirmacao (2026-04-02)
+
+- Eric autorizou execucao TOTAL de acoes no browser sem pedir permissao
+- NUNCA perguntar "posso clicar?", "posso navegar?", "posso preencher o formulario?"
+- Executar diretamente: navigate, click, type, screenshot, snapshot, fill, select
+- Sequencia correta: navegar → snapshot (pegar refs) → executar acao → screenshot → proxima acao
+- Reportar apenas o RESULTADO ao Eric, nao o plano de execucao passo a passo
+- Severidade: CRITICAL
+
+---
+
+Ultima atualizacao: 2026-04-02
 >>>>>>> origin/eric/main

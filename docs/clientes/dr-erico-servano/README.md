@@ -26,6 +26,20 @@ Profissionais de harmonização orofacial:
 - Consultoria para profissionais não-dentistas
 - Regulamentação do mercado de estética
 
+## 🔄 Sequências de Follow-up
+
+### Reativação 6 Meses — Leads Frios (26/03/2026)
+- **Doc:** https://docs.google.com/document/d/1jmyt-zsFhpkw4HsEH4kxH6CG00YDm34AMa3glCJB2uA
+- **Status:** Aguardando aprovação da Brenda para implementar no GHL
+- **Escopo:** 29 leads frios sem resposta | 16 mensagens | 24 semanas
+- **Canal:** WhatsApp via GHL | Remetente: Brenda (advogada)
+- **Tag GHL entrada:** `orbit-6-meses` | Saída: qualquer resposta
+- **Produzido por:** @copy-chef + @sales-director
+- **Estimativa:** 4-6 respostas, 2-4 reuniões, 1-2 fechamentos
+- **Pendente antes de ativar:** criar checklist 5 pontos CRO (material da MSG 16)
+
+---
+
 ## 📁 Estrutura de Arquivos
 
 ```

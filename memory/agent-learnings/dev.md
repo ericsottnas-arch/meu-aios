@@ -25,6 +25,13 @@
 - **Metodo rapido (AppleScript + JS):** Em vez de screenshot-click-screenshot (lento), usar `osascript` para executar JavaScript direto no Chrome: `tell application "Google Chrome" to tell active tab of front window to execute javascript "..."`. Sem screenshots, resposta instantanea. Usar cliclick APENAS para digitacao em campos React que resistem a `nativeInputValueSetter`
 - **Cloudflare via browser:** Logar com "Continue with Google" (AppleScript JS click), navegar direto para URL do DNS com account ID no path
 
+## 2026-03-31 Feedback: NAO abrir browser sem ser pedido
+
+- **Contexto:** Abri o dashboard local com Playwright para verificar visualmente a implementacao do tab Comercial
+- **Feedback:** "pq vc abriu esse dash local?" (tom de questionamento — nao pediu isso)
+- **Regra derivada:** NUNCA abrir browser/Playwright para verificar implementacao por conta propria. Apenas quando Eric pedir explicitamente. Verificacao visual = responsabilidade do Eric.
+- **Severidade:** HIGH
+
 ## 2026-03-24 Feedback: Salvar TUDO na memoria sem esperar
 
 - **Contexto:** Sessao inteira de deploy VPS + dashboard sem salvar na memoria

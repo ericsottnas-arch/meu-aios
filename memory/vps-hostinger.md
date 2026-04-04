@@ -17,6 +17,7 @@
 |-----|------|-------|-----|---------|
 | syra-hub | `/root/apps/syra-hub` | 3000 | sim | hub.syradigital.com |
 | servano-dashboard | `/root/apps/servano-dashboard` | static | nao | servanoadvogados.syradigital.com |
+| clickup-agent | `/root/apps/meu-projeto` | 3010 | sim (id=1) | agent.syradigital.com |
 
 ## Caddyfile Atual
 ```
@@ -28,6 +29,16 @@ servanoadvogados.syradigital.com {
     root * /root/apps/servano-dashboard
     file_server
     try_files {path} /index.html
+}
+
+drenio.syradigital.com {
+    root * /root/apps/dr-enio-leite
+    [rewrites...]
+    file_server
+}
+
+agent.syradigital.com {
+    reverse_proxy localhost:3010
 }
 ```
 

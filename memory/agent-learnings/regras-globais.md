@@ -5,6 +5,14 @@ Leitura obrigatória na ativação de todo agente.
 
 ---
 
+## [2026-03-31] CRÍTICO: Não perguntar confirmação quando a resposta é óbvia
+
+- **Feedback:** "se vc já sabe disso pq vc não fez? isso é um feedback"
+- **Regra:** Se você JÁ SABE qual é a decisão correta (boas práticas, padrão de design/dev, lógica clara), IMPLEMENTE diretamente. Não pergunte "o que acha de X?" ou "posso fazer Y?" quando a resposta óbvia é sim.
+- **Severidade:** CRITICAL
+
+---
+
 ## [2026-03-18] Copy SEMPRE no Google Docs
 
 - **Feedback:** "vc precisa escrever a copy dentro do docs do google pra que eu faça os comentários lá"
@@ -51,6 +59,35 @@ Leitura obrigatória na ativação de todo agente.
 - **Severidade:** HIGH
 <<<<<<< HEAD
 =======
+
+---
+
+## [2026-03-26] CRITICAL: Funis qualificatorios — copy deve tocar na dor e avançar o lead
+
+- **Contexto:** Tres funis PDN Vendas entregues no chat (erro duplo)
+- **Feedback:** "texto errado e sem acento, travessao proibido, frases sem clareza que nao avancam o lead"
+- **Regras derivadas:**
+  1. PROIBIDO entregar copy de funis no chat. SEMPRE no Google Docs (regra ja existia — violada)
+  2. Perguntas de quiz qualificatorio devem fazer o lead pensar "putz, eu preciso disso" — nao podem ser genericas
+  3. Cada pergunta deve tocar em uma dor real e fazer o lead refletir sobre a consequencia de nao agir
+  4. As perguntas nao sao apenas para segmentar — sao para criar urgencia e consciencia de problema
+  5. Chamar @copy-chef + @sales-director ANTES de escrever funis de qualificacao
+  6. Acentuacao correta em TUDO — verificar antes de entregar
+- **Severidade:** CRITICAL
+- **Aplica a:** Todos os agentes ao produzir funis, quizzes, formularios de qualificacao
+
+## [2026-03-26] CRITICAL: Quality Gate obrigatorio antes de qualquer entrega ao Eric
+
+- **Contexto:** Eric pediu sistema de producao, analise e refacao para garantir qualidade
+- **Feedback:** "eu preciso que voce crie um sistema de producao, analise e refacao... quality gate... 97% de qualidade"
+- **Regra:** TODO material produzido por qualquer agente DEVE passar pelo @quality-gate (Vera) antes de chegar ao Eric
+- **Como ativar:** Skill tool com skill="AIOS:agents:quality-gate" antes de entregar qualquer copy
+- **Score minimo:** 97% para PASS. Abaixo = REJECT + feedback + loop de iteracao ate atingir
+- **Agentes obrigados:** @copy-chef, @nova, @follow-up-specialist, @scribe e qualquer agente que produza texto para revisao
+- **Rubrica:** 10 dimensoes com pesos — Voz Eric (1.5), Headline (1.5), Conversacional (1.2), Perguntas (1.5), PT-BR (1.0), Especificidade (1.0), Estrutura (1.0), CTA/Resultados (1.0), Adequacao (1.0), Sem banidos (1.3)
+- **Arquivo do agente:** `.claude/commands/AIOS/agents/quality-gate.md`
+- **Severidade:** CRITICAL
+- **Aplica a:** TODOS os agentes que entregam material para revisao do Eric
 
 ---
 

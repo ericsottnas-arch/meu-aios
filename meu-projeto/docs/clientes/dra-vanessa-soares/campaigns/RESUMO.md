@@ -1,8 +1,12 @@
 # Campanhas de Mídia Paga - Dra. Vanessa Soares
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Atualizado em:** 24/03/2026, 20:20:31
 =======
 **Atualizado em:** 26/03/2026, 08:43:01
+>>>>>>> origin/eric/main
+=======
+**Atualizado em:** 02/04/2026, 07:54:38
 >>>>>>> origin/eric/main
 **Período:** Últimos 7 dias
 

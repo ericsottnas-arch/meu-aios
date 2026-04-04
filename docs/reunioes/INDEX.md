@@ -79,3 +79,15 @@
 
 | Data | Cliente | Tipo | Duração | Arquivo |
 |------|---------|------|---------|---------|
+| 2025-11-24 | Desconhecido | [2025-11-24-desconhecido.md](./2025-11-24-desconhecido.md) | ✅ Transcrito | pendente |
+| 2026-03-05 | Desconhecido | [2026-03-05-desconhecido-2.md](./2026-03-05-desconhecido-2.md) | ✅ Transcrito | pendente |
+| 2026-03-24 | Desconhecido | [2026-03-24-desconhecido-2.md](./2026-03-24-desconhecido-2.md) | ✅ Transcrito | pendente |
+| 2026-03-26 | Desconhecido | [2026-03-26-desconhecido.md](./2026-03-26-desconhecido.md) | ✅ Transcrito | pendente |
+| 2026-03-05 | Desconhecido | [2026-03-05-desconhecido-3.md](./2026-03-05-desconhecido-3.md) | ✅ Transcrito | pendente |
+| 2026-03-05 | Desconhecido | [2026-03-05-desconhecido-4.md](./2026-03-05-desconhecido-4.md) | ✅ Transcrito | pendente |
+| 2026-03-11 | Desconhecido | [2026-03-11-desconhecido.md](./2026-03-11-desconhecido.md) | ✅ Transcrito | pendente |
+| 2026-03-11 | Desconhecido | [2026-03-11-desconhecido-2.md](./2026-03-11-desconhecido-2.md) | ✅ Transcrito | pendente |
+| 2026-03-18 | Desconhecido | [2026-03-18-desconhecido.md](./2026-03-18-desconhecido.md) | ✅ Transcrito | pendente |
+| 2026-03-26 | Keila | [2026-03-26-keila.md](./2026-03-26-keila.md) | ✅ Transcrito | pendente |
+| 2026-03-31 | Keila | [2026-03-31-keila.md](./2026-03-31-keila.md) | ✅ Transcrito | pendente |
+| 2026-04-02 | Dr. Enio Leite | [2026-04-02-dr-enio-leite.md](./2026-04-02-dr-enio-leite.md) | ✅ Transcrito | pendente |
