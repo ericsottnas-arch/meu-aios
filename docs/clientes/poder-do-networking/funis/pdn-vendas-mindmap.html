@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDN Vendas — Raio-X Comercial — Mapa do Funil</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0f0f0f; font-family: 'Inter', sans-serif; }
+    #mindmap { display: block; width: 100vw; height: 100vh; }
+    .markmap-node circle { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <svg id="mindmap"></svg>
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
+  <script>
+    window.markmap = { autoLoader: { manual: true } };
+  </script>
+
+  <div class="markmap" style="display:none">
+    <script type="text/template">
+---
+markmap:
+  colorFreezeLevel: 2
+  duration: 500
+  maxWidth: 340
+  initialExpandLevel: 3
+---
+
+# 🔺 PDN Vendas — Raio-X Comercial
+
+## 🎯 Objetivo do Funil
+- Capturar leads B2B qualificados (donos e líderes comerciais)
+- Diagnosticar o gargalo comercial via quiz
+- Segmentar por faturamento e dor principal
+- Entregar resultado personalizado + oferta PDN Vendas
+
+## 🏷️ Identidade
+- Design: **branco/preto, minimalista**
+- Logo: **PDN VENDAS EXPERIENCE** (dourado + verde)
+- URL: `inlead.digital/pdn-vendas`
+- Plataforma: **INLEAD**
+- Produto: **Bruno Avelar**
+
+## 🧲 Etapa 0 — Landing / Hook
+- **Headline:** "Quanto dinheiro seu comercial está deixando na mesa todo mês?"
+- **Subtext:** "Em 5 perguntas, você sabe EXATAMENTE o que está travando seu comercial e o que falta para ter um time que VENDE sem você."
+- **CTA:** Quero descobrir meu gargalo
+- Tipo: **Pergunta financeira** — ativa interesse imediato
+
+## ✅ Etapa 1 — Qualificação (Porta de Entrada)
+- **Pergunta:** "Você é dono(a) de empresa ou lidera um time comercial?"
+- ✅ Sim, sou dono(a) de empresa → **Lead ICP**
+- ✅ Sim, lidero um time comercial → **Lead ICP**
+- ❌ Ainda não, mas quero empreender → **Fora do ICP — desqualificado**
+
+## 💰 Etapa 2 — Segmentação por Faturamento
+- **Pergunta:** "Qual é o faturamento mensal atual do seu negócio?"
+- 🔵 Até R$30 mil → **Micro** — follow-up entrada
+- 🟡 De R$30 mil a R$100 mil → **Sweet spot** — follow-up principal
+- 🟠 De R$100 mil a R$500 mil → **Médio porte** — oferta premium
+- 🔴 Acima de R$500 mil → **Enterprise** — abordagem consultiva
+
+## 🩺 Etapa 3 — Diagnóstico da Dor (Pain Point)
+- **Pergunta:** "Qual é o seu maior desafio comercial hoje?"
+- 🔴 **Dono-dependente:** "Tenho vendedores mas acabo assumindo as vendas eu mesmo"
+- 🟠 **Sem processo:** "Não tenho processo definido: cada vendedor faz do seu jeito"
+- 🟡 **Baixa conversão:** "Invisto em leads mas a conversão continua baixa"
+- ⚪ **Outros desafios...** → segmento genérico (pergunta aberta no WPP)
+
+## ⚡ Etapa 4 — Agitação (PAS — Problem-Agitate-Solve)
+- **Pergunta:** "O que acontece se você não resolver isso nos próximos 90 dias?"
+- Continuo dependendo de mim para vender e não consigo crescer
+- Perco vendedores e não sei como substituir
+- Meu concorrente toma o mercado que deveria ser meu
+- Meu faturamento vai continuar estagnado ou cair
+- **Função:** Eleva urgência antes da captura do lead
+
+## 📋 Etapa 5 — Captura de Lead
+- **Headline:** "Seu Raio-X está pronto. Onde eu mando o resultado?"
+- Campo: Nome completo
+- Campo: WhatsApp com DDD
+- Campo: E-mail
+- **CTA:** QUERO VER O RESULTADO
+
+## 📊 Etapa 6 — Resultado + Oferta (pós-submit)
+- Página de resultado personalizado por respostas
+- Diagnóstico do gargalo identificado
+- Oferta: **PDN Vendas Experience**
+- ⚠️ Ainda não mapeada — verificar página real
+
+## 🔄 Fluxos GHL por Segmento (Etapa 3)
+
+### 🔴 Dono-dependente
+- Tag: `pdn-dono-dependente`
+- Mensagem: Como montar processo sem depender do dono
+- SDR foco: Autonomia do time comercial
+
+### 🟠 Sem processo
+- Tag: `pdn-sem-processo`
+- Mensagem: Playbook comercial + scripts
+- SDR foco: Padronização de abordagem
+
+### 🟡 Baixa conversão
+- Tag: `pdn-baixa-conversao`
+- Mensagem: Qualificação de leads + treinamento
+- SDR foco: Taxa de fechamento e funil de vendas
+
+### ⚪ Outros desafios
+- Tag: `pdn-generico`
+- Sequência padrão + pergunta aberta no WhatsApp
+
+## 📈 KPIs de Referência
+- **Opt-in (frio):** meta 40%+ | alerta < 25%
+- **Opt-in (morno):** meta 60%+ | alerta < 40%
+- **Qualificação E1:** meta > 80% ICP
+- **Conclusão do quiz:** meta > 70%
+- **Email open rate:** meta 30%+
+
+## 💡 Pontos Fortes do Funil
+- Hook financeiro: pergunta que dói em qualquer dono
+- Sequência lógica: qualifica → segmenta → diagnostica → agita → captura
+- Opções do quiz espelham a linguagem real do lead
+- CTA da captura reforça valor da isca ("Raio-X pronto")
+
+## ⚠️ Oportunidades de Melhoria
+- Q4 (agitação) deveria acionar follow-up diferente por resposta no GHL
+- "Outros desafios..." não qualifica — verificar condicional de saída
+- Sem prova social na landing (Bruno não aparece antes do quiz)
+- Página de resultado não mapeada — verificar se tem oferta clara
+- Considerar adicionar vídeo de Bruno antes da captura (VSL curto)
+    </script>
+  </div>
+
+  <script>
+    const { autoLoader } = window.markmap;
+    autoLoader.onReady = () => {
+      autoLoader.renderAll();
+    };
+    autoLoader.loadAll();
+  </script>
+</body>
+</html>

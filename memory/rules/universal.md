@@ -132,15 +132,17 @@ Isso PRECISA mudar a partir de agora.
 
 ---
 
-## [CRITICAL] Playwright — Execucao autonoma sem confirmacao (2026-04-02)
+## [CRITICAL] Playwright — Apenas em modo autonomo ou com permissao explicita (atualizado 2026-04-06)
 
-- Eric autorizou execucao TOTAL de acoes no browser sem pedir permissao
-- NUNCA perguntar "posso clicar?", "posso navegar?", "posso preencher o formulario?"
-- Executar diretamente: navigate, click, type, screenshot, snapshot, fill, select
-- Sequencia correta: navegar → snapshot (pegar refs) → executar acao → screenshot → proxima acao
-- Reportar apenas o RESULTADO ao Eric, nao o plano de execucao passo a passo
+- PROIBIDO usar Playwright enquanto Eric esta usando o computador
+- Playwright abre janela de browser e interrompe o que Eric esta fazendo — isso e inaceitavel
+- SO usar Playwright quando:
+  1. Eric rodar `/trabalhe-para-mim` (modo autonomo 100%)
+  2. Eric disser explicitamente "pode abrir o browser", "pode usar playwright", "vc tem permissao"
+- Se precisar mapear/analisar URLs durante conversa normal: pedir permissao primeiro ou usar WebFetch
+- Historico: Eric reclamou em 2026-04-06 que playwright abriu enquanto ele estava no computador
 - Severidade: CRITICAL
 
 ---
 
-Ultima atualizacao: 2026-04-02
+Ultima atualizacao: 2026-04-06

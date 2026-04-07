@@ -132,6 +132,7 @@ Eric autoriza delegacao automatica entre agentes. NAO precisa pedir permissao.
 | Gestao de projeto | @pm |
 | Follow-up/reativacao | @follow-up-specialist |
 | Codigo/implementacao | @dev |
+| Funis / Value Ladder / campanha completa | @brunson |
 | QA/testes | @qa |
 | Arquitetura tecnica | @architect |
 | Analise de dados | @analyst |

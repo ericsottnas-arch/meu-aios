@@ -46,6 +46,10 @@ Tags GHL:
 - "assessoria" = MRR (recorrente)
 - "consulta" e "pacote de documentos" = receita nao-recorrente
 
+CHURN / CORRECOES (abr/2026):
+- Fourcred: CHURN confirmado em abr/2026 — remover do MRR
+- Torre 1: NUNCA foi cliente — nao contar em nenhuma metrica de MRR ou base de clientes
+
 Spreadsheet Dr. Erico: `1Br8Fg23cMKwLEjP8dbsz2DRIjwPoRSNoDu47SoX2FW0`
 
 ---
@@ -127,6 +131,51 @@ Total empresa Porto: R$2.590,12
 
 Porto *0335 (Erika adicional): 100% pessoal (~R$2.662)
 Porto *133 (Sebastiana): pessoal (~R$1.537)
+
+---
+
+## PLANO DE METAS 2026 — Syra Digital
+
+> Fonte: Planilha `1IzE-43Ww40ypbmSRtmz9E4ZJ2XAu-00r8MC95Zd44fQ`
+> Titulo: "Syra Digital — Metas 2026 (R$120k)"
+> Meta anual: R$120.000 MRR ate dezembro/2026
+> Salvo em: 2026-04-06
+
+### Progressao Mensal de MRR
+
+| Mes | MRR Alvo | Crescimento | Clientes Ativos | Ticket Medio | Novos | PJ | Acao-Chave |
+|-----|----------|-------------|-----------------|--------------|-------|----|------------|
+| Abril (base) | R$14.400 | R$0 | 6 | R$2.400 | 0 | 0 | Fechar prospects em onboarding |
+| Maio | R$25.000 | +R$10.600 | 9 | R$3.000 | 3 | 0 | Fechar 2-3 do onboarding + reajustar ticket |
+| Junho | R$38.000 | +R$13.000 | 12 | R$3.500 | 3 | 1 | 3 clientes novos + contratar 1 PJ (trafego) |
+| Julho | R$52.000 | +R$14.000 | 14 | R$4.000 | 3 | 2 | 3 clientes + 2 PJ (copy/design) |
+| Agosto | R$66.000 | +R$14.000 | 16 | R$4.300 | 3 | 2 | 3 clientes + ajuste de processos |
+| Setembro | R$80.000 | +R$14.000 | 18 | R$4.700 | 3 | 2 | 2-3 clientes + upsell nos atuais |
+| Outubro | R$95.000 | +R$15.000 | 20 | R$5.000 | 3 | 3 | 2-3 clientes + 3 PJ (CS/account) |
+| Novembro | R$108.000 | +R$13.000 | 22 | R$5.000 | 2 | 3 | Consolidar + fechar pipeline de dezembro |
+| Dezembro | R$120.000 | +R$12.000 | 24 | R$5.200 | 2 | 3 | META BATIDA |
+
+### Financeiro Estimado com R$120k Faturamento
+
+| Item | Valor | % Fat. |
+|------|-------|--------|
+| Faturamento bruto | R$120.000 | 100% |
+| (-) Impostos Simples (~7%) | -R$8.400 | 7% |
+| (-) Custos fixos ferramentas | -R$2.815 | 2,30% |
+| (-) Equipe PJ (3 pessoas) | -R$16.500 | 13,80% |
+| (-) Reserva de caixa (20%) | -R$24.000 | 20% |
+| **Lucro liquido** | **R$68.285** | **56,90%** |
+
+### KPIs de Controle Mensais
+
+| KPI | Meta |
+|-----|------|
+| Novos clientes fechados/mes | 2-3 |
+| Churn maximo aceitavel | 0-1/mes |
+| Ticket medio contratos novos (mai) | R$3.000 |
+| Ticket medio contratos novos (dez) | R$5.500+ |
+| Reunioes de prospeccao/semana | 5+ |
+| Taxa de fechamento minima | 30%+ |
 
 ---
 
