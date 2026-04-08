@@ -276,8 +276,7 @@
 
         /* HERO */
         #hero {
-            height: 100svh;
-            max-height: 100svh;
+            min-height: 100svh;
             background: var(--ink);
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -292,7 +291,7 @@
             padding: clamp(5.5rem, 10vh, 7rem) var(--cpx) 1rem max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
             position: relative;
             z-index: 2;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .hero-ghost {
@@ -1318,6 +1317,7 @@
                 height: auto;
                 max-height: none;
                 min-height: 100svh;
+                overflow-y: auto;
             }
 
             .hero-photo {
@@ -1473,6 +1473,20 @@
         }
     </style>
     <link rel="preload" as="image" href="dr-enio-hero.png">
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1298862062159814');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1298862062159814&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- Fim Meta Pixel -->
 </head>
 <body>
     <!-- CURSOR -->
