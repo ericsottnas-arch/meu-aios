@@ -40,3 +40,72 @@
 - `Chamou WhatsApp` (ID: 0411a012) — gatilho: Contato Criado + Cliente Respondeu (SMS)
 
 **Severidade:** HIGH
+
+---
+
+## [2026-04-08] Config: Dr. Humberto Andrade — GHL Location, Users e Stevo
+
+**Location ID:** `uOdD33rlNeQtBc3CatYL`
+**Company ID:** `kt6Z1sbZOMLrD8vPrWzR`
+**Token PIT:** `pit-f38f236c-373f-48b3-9d1e-940043df2656`
+
+**Usuarios GHL:**
+| Nome | ID | Papel |
+|------|-----|-------|
+| Flavia Sarraff | `B0gkXItNyfhJgUZgBDfF` | Vendedora - dona do numero DDD 96 (Macapa) |
+| Veronica Marise | `od66JGJ9el9wZg7R3ves` | Vendedora - dona do numero DDD 11 (SP) |
+| Ardina | `ATW63K2pGMsgZpUZXysr` | Vendedora (nao deveria ter leads) |
+| July | `HEMrRXCfuyYX0OlYHLD0` | Vendedora (nao deveria ter leads) |
+| Simone | `fnLKSe8X9TRS9evtqnCL` | Vendedora (nao deveria ter leads) |
+| Zaya | `tvRjuPMCaPWWmTVFBkXJ` | Vendedora (nao deveria ter leads) |
+| Tatiane | `rEPM0twkMSyjmg9BplNr` | Vendedora (nao deveria ter leads) |
+| Eric | `T4BmTsa7QYsDBmZmyVkk` | Admin |
+| Dr Humberto | `5ZqvI8xX8oe4bBLjIZho` | Dono |
+
+**Stevo Instances:**
+- `dddmacapa` -> DDD 96 (Macapa) -> Flavia
+- `dddsaopaulo` -> DDD 11 (SP) -> Veronica
+
+**Severidade:** HIGH
+
+---
+
+## [2026-04-08] Aprendizado: Identificacao de origem Stevo via URL (nao conteudo da foto)
+
+**Contexto:** Redistribuicao de ~2.300 leads entre Flavia e Veronica no GHL do Dr. Humberto
+**Descoberta:** O Stevo armazena fotos de perfil e attachments com o nome da instancia na URL:
+- URL contem `dddmacapa` -> lead veio pelo numero de Macapa (Flavia)
+- URL contem `dddsaopaulo` -> lead veio pelo numero de SP (Veronica)
+
+**3 metodos de identificacao (em ordem de confiabilidade):**
+1. `profilePhoto` do contato - URL contem nome da instancia Stevo
+2. `attachments` nas mensagens da conversa - URLs de midia tambem contem
+3. DDD do telefone do lead - fallback (96=Flavia, 11=Veronica)
+
+**NOTA:** `createdBy.sourceId` e `conversationProviderId` sao IGUAIS para ambas instancias - nao servem para diferenciar.
+
+**Severidade:** CRITICAL
+
+---
+
+## [2026-04-08] Aprendizado: Paginacao GHL instavel durante mudancas
+
+**Contexto:** Scripts de varredura completa perdiam contatos entre paginas
+**Problema:** A API de contatos do GHL usa `startAfterId` para paginacao. Quando dados mudam durante a varredura (leads novos, assignedTo alterado), contatos podem ser pulados.
+**Solucao:** Em vez de varrer TODOS os contatos, buscar diretamente por usuario com `assignedTo={userId}`. Isso garante que nenhum contato do usuario seja perdido.
+**Severidade:** HIGH
+
+---
+
+## [2026-04-08] Resultado: Redistribuicao Dr. Humberto - 2.112 leads corrigidos
+
+**Execucao em 3 rodadas:**
+- Rodada 1: 1.334 atualizados (via profilePhoto + mensagens Stevo)
+- Rodada 2: 598 atualizados (via DDD do telefone)
+- Rodada 3: 180 atualizados (busca direta por usuario)
+- **Total: ~2.112 contatos redistribuidos**
+
+**Restantes (~146):** DDDs de outras regioes (61, 68, 77, 79, 83, 91, internacionais), numeros Meta Ads Privacy, contatos sem telefone - nao identificaveis automaticamente.
+
+**Scripts criados:** `scripts/ghl-reassign-leads.js` (principal), `/tmp/ghl-ddd-reassign.js`, `/tmp/ghl-audit.js`, `/tmp/ghl-fix-by-user.js`
+**Severidade:** INFO

@@ -1,7 +1,7 @@
 {
   "clientId": "dr-erico-servano",
   "clientName": "Dr Erico Servano",
-  "exportedAt": "2026-04-07T10:53:44.312Z",
+  "exportedAt": "2026-04-09T10:51:20.808Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -130,14 +130,14 @@
           },
           {
             "date": "2026-04-06",
-            "impressions": 6663,
+            "impressions": 6664,
             "clicks": 50,
-            "spend": 25.7,
-            "cpc": 0.514,
-            "ctr": 0.750413,
-            "cpm": 3.857121,
-            "reach": 6479,
-            "frequency": 1.028399,
+            "spend": 25.71,
+            "cpc": 0.5142,
+            "ctr": 0.7503,
+            "cpm": 3.858043,
+            "reach": 6486,
+            "frequency": 1.027444,
             "conversions": 0,
             "costPerResult": 0,
             "linkClicks": 0,
@@ -1214,6 +1214,25 @@
             "costPerLandingPageView": 0,
             "messagingConversations": 1,
             "costPerMessagingConversation": 43.21,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-07",
+            "impressions": 0,
+            "clicks": 0,
+            "spend": 0,
+            "cpc": 0,
+            "ctr": 0,
+            "cpm": 0,
+            "reach": 0,
+            "frequency": 0,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 1,
+            "costPerMessagingConversation": 0,
             "costPerThruplayVideoView": 0
           }
         ],
@@ -8832,7 +8851,302 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120242608049190204",
+            "name": "P1 [Todos] [PAGEVIEW] [180D] [18 A 65+] [IG] [Brasil]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                18,
+                65
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120242608246590204",
+                  "name": "[PAGEVIEW] [180D]"
+                }
+              ],
+              "geo_locations": {
+                "countries": [
+                  "BR"
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_relaxation_types": {
+                "lookalike": 0,
+                "custom_audience": 0
+              },
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "geo": 0
+                }
+              },
+              "publisher_platforms": [
+                "instagram"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "story",
+                "explore",
+                "reels",
+                "explore_home",
+                "profile_feed"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-01-07T15:26:59-0300",
+            "startTime": "2026-01-07T15:26:59-0300",
+            "ads": [
+              {
+                "id": "120242691774420204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1] — Cópia — Cópia — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-09T17:50:58-0300",
+                "creativeId": "4321663334784811",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242691774400204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1] — Cópia — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-09T17:50:58-0300",
+                "creativeId": "870478232244048",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242608049160204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1]",
+                "status": "PAUSED",
+                "createdTime": "2026-01-07T15:27:01-0300",
+                "creativeId": "1828291801224877",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242691774410204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1] — Cópia — Cópia — Cópia — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-09T17:50:58-0300",
+                "creativeId": "904013156135279",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242608049150204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-01-07T15:27:01-0300",
+                "creativeId": "887652337248278",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120242608049180204",
+            "name": "P2 [Todos] [Visitaram Perfil 365D][25-55] [IG] [Int: Não] [BRASIL]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                18,
+                65
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120241692977060204",
+                  "name": "ENVIARAM MENSAGEM"
+                },
+                {
+                  "id": "120242608079420204",
+                  "name": "[VISITARAM PERFIL] [365 DIAS]"
+                },
+                {
+                  "id": "120242614512430204",
+                  "name": "[ENGAJARAM] [365D]"
+                }
+              ],
+              "geo_locations": {
+                "countries": [
+                  "BR"
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_relaxation_types": {
+                "lookalike": 0,
+                "custom_audience": 0
+              },
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "geo": 0
+                }
+              },
+              "publisher_platforms": [
+                "instagram"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "story",
+                "explore",
+                "reels",
+                "explore_home",
+                "profile_feed"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-01-07T15:27:06-0300",
+            "startTime": "2026-01-07T15:27:06-0300",
+            "ads": [
+              {
+                "id": "120242691774450204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1] — Cópia — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-09T17:50:58-0300",
+                "creativeId": "870478232244048",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242691774440204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1] — Cópia — Cópia — Cópia — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-09T17:50:58-0300",
+                "creativeId": "904013156135279",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242691774430204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1] — Cópia — Cópia — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-01-09T17:50:58-0300",
+                "creativeId": "4321663334784811",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242608049140204",
+                "name": "C4 [Reels] [Hook: Cirurgias estéticas faciais realizadas por cirurgiões-dentistas.] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-01-07T15:27:07-0300",
+                "creativeId": "25357706177247996",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242608049110204",
+                "name": "C1 [Reels] [Hook: Cirurgias estéticas faciais poderão ser feitas em consultórios odontológicos?]",
+                "status": "PAUSED",
+                "createdTime": "2026-01-07T15:27:07-0300",
+                "creativeId": "4351345385133375",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242608049120204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1]",
+                "status": "PAUSED",
+                "createdTime": "2026-01-07T15:27:07-0300",
+                "creativeId": "1388593332721341",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242608049130204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-01-07T15:27:07-0300",
+                "creativeId": "1523541848877541",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120242595914080204",
