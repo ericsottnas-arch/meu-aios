@@ -2,10 +2,16 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
+  "env": {
+    "GHL_ENIO_LOCATION_ID": "@ghl_enio_location_id",
+    "GHL_ENIO_API_KEY": "@ghl_enio_api_key"
+  },
   "routes": [
+    { "src": "/api/lead", "dest": "/api/lead.js" },
     { "src": "/", "dest": "/pagina-captura.html" },
     { "src": "/lipo-de-papada", "dest": "/lipo-de-papada.html" },
     { "src": "/rinomodelacao", "dest": "/rinomodelacao.html" },
+    { "src": "/harmonizacao-facial", "dest": "/harmonizacao-facial.html" },
     { "src": "/design-system", "dest": "/design-system-visual.html" }
   ]
 }
