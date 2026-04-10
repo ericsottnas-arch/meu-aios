@@ -94,3 +94,19 @@
 - **Severidade:** HIGH
 
 ---
+
+### [2026-04-09] Padrão aprovado: Follow-up WhatsApp Dra. Gabrielle
+- **Contexto:** Sequência de 5 follow-ups para leads que não responderam o áudio inicial
+- **Feedback:** "boa gostei dessas" após ajustes
+- **Padrão validado:**
+  - Step 1: pergunta direta se ouviu o áudio 🎧
+  - Step 2: convite empático pra contar o que incomoda + 💙
+  - Step 3: só o emoji 👀 (quebra padrão, humaniza)
+  - Step 4: "pode falar à vontade, sem julgamento nenhum" + "certinho"
+  - Step 5: fechamento + escassez suave de vaga + "Me chama." + 💙
+- **Regras derivadas:**
+  - NUNCA usar em-dash (—) — Eric rejeitou explicitamente
+  - Público feminino: tom acolhedor, diminutivos (certinho), 💙 no final
+  - Escassez no step final: "Ainda tenho uma vaga essa semana"
+  - CTA curto e direto: "Me chama." "Me conta."
+- **Severidade:** HIGH
