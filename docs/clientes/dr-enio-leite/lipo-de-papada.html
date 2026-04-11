@@ -1214,7 +1214,7 @@
       fetch('/api/lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ nome, telefone: tel, procedimento: 'Lipo de Papada', ...getUTMs() }),
+          body: JSON.stringify({ nome, telefone: tel, procedimento: 'lp-lipopapada', ...getUTMs() }),
       }).catch(() => {});
 
       showSuccess(formEl);

@@ -1,0 +1,9 @@
+{
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "framework": null,
+  "routes": [
+    { "src": "/", "dest": "/design-system-visual.html" },
+    { "src": "/design-system", "dest": "/design-system-visual.html" }
+  ]
+}

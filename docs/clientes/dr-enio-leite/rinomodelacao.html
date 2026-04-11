@@ -2181,7 +2181,7 @@
             fetch('/api/lead', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, telefone: tel, procedimento: 'Rinomodelação', ...getUTMs() }),
+                body: JSON.stringify({ nome, telefone: tel, procedimento: 'lp-rinomodelacao', ...getUTMs() }),
             }).catch(() => {});
 
             showSuccess(formEl);
