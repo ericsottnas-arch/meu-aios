@@ -136,6 +136,7 @@ Eric autoriza delegacao automatica entre agentes. NAO precisa pedir permissao.
 | QA/testes | @qa |
 | Arquitetura tecnica | @architect |
 | Analise de dados | @analyst |
+| BI, dashboards, KPIs, métricas negócio/vendas/marketing | @bi-analyst (Avinash) |
 | Prospeccao Instagram | @prospect-ig |
 | Infra/deploy | @devops |
 | Contratos/juridico | @legal |

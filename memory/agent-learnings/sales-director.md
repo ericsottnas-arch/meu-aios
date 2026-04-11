@@ -99,3 +99,38 @@
 - **Feedback:** "quando mandar mensagem pra mim, manda sem as aspas pq sem querer posso copiar e mandar junto"
 - **Regra derivada:** Scripts de mensagem NUNCA devem vir entre aspas. Apresentar o texto limpo, pronto pra copiar.
 - **Severidade:** CRITICAL
+
+---
+
+## [2026-04-09] Contexto: Dr. Cleugo Porto — atendente Keyla e fluxo comercial
+
+- **Contexto:** Eric pediu mapeamento do atendimento da Keyla (atendente/vendedora do Dr. Cleugo) e criação de script de pré-qualificação baseado nas conversas reais do CRM
+- **Aprendizados do mapeamento:**
+  - Keyla usa muito áudio — funciona para convencer mas não escala quando lead não ouve
+  - A conversa que fecha tem padrão claro: acolher, responder TUDO pacientemente, propor data+horário+formulário
+  - Maior buraco: não qualifica localidade no início (Atibaia vs Alphaville) — vira obstáculo tardio
+  - Follow-up genérico ("tudo bem?") não reativa lead — precisa de gancho (foto nova, aviso de agenda)
+  - Quando lead já disse a região do corpo, NUNCA repetir a pergunta
+  - Sequência de follow-up eficaz: 3 tentativas com progressão — resultado novo / urgência leve / porta aberta
+  - Propor data e horário específicos no fechamento — nunca deixar em aberto com "quando você pode?"
+  - Dream Incision: procedimento por região (glúteos, coxas, abdômen). Usa óxido nitroso para dor. Consulta já serve como avaliação completa.
+  - Unidades: Atibaia (sede) e Alphaville — Elevart Health Clinic, Alameda Xingu, 200, sala 501 — só às quartas
+- **Entrega:** Google Doc criado — https://docs.google.com/document/d/1DyMop7LQRrBVj2qxyx_j6SatzFXvEEMYK1OcY5tJTwo/edit
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-09] Contexto: Dra. Gabrielle Oliveira — atendimento secretaria e padroes de conversao
+
+- **Contexto:** Eric pediu analise completa do atendimento da secretaria Gabrielle (clinica de estetica Caieiras, SP) com base em 203 conversas do CRM (fev a abr/2026)
+- **Dados da clinica:** Lipo Sem Corte + Power Shape. Publico: mulheres Caieiras/Franco da Rocha. Ticket: avaliacao R$50 (abatido) + protocolo de sessoes. Secretaria tambem se chama Gabrielle.
+- **Aprendizados do mapeamento:**
+  - Secretaria tem talento genuino: acolhimento ("minha linda"), perguntas de urgencia, proposta de data especifica no fechamento
+  - Buraco 1: fala preco sem ancorar valor. Regra: resultado/protocolo ANTES do numero
+  - Buraco 2: parcelamento so aparece quando lead ja esta saindo. Regra: mencionar ao primeiro sinal de objecao financeira
+  - Buraco 3: follow-up generico nao reativa. Regra: 3 ganchos diferentes (resultado novo / urgencia leve / porta aberta)
+  - Buraco 4: objecao de academia nao e rebatida. Academia trabalha musculo, Lipo trata gordura localizada. Sao complementares.
+  - Buraco 5: desconto no sinal virou reflexo. Sinal precisa de contexto de valor, nao desconto.
+  - Taxa conversao atual: 2% (4/203). Meta realista pos-ajustes: 6 a 8%
+- **Entrega:** Google Doc criado — https://docs.google.com/document/d/1hU9kePj0jqYohICTeYGT8OLMQqWMx6G2AHVAyHVsibw/edit
+- **Severidade:** HIGH
