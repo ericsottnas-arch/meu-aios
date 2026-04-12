@@ -1,7 +1,7 @@
 {
   "clientId": "dra-gabrielle",
   "clientName": "Dra. Gabrielle",
-  "exportedAt": "2026-04-11T10:56:01.165Z",
+  "exportedAt": "2026-04-12T10:40:58.166Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -1276,16 +1276,16 @@
           },
           {
             "date": "2026-04-10",
-            "impressions": 1658,
+            "impressions": 1664,
             "clicks": 47,
-            "spend": 39.21,
-            "cpc": 0.834255,
-            "ctr": 2.834741,
-            "cpm": 23.648975,
-            "reach": 1368,
-            "frequency": 1.211988,
+            "spend": 39.24,
+            "cpc": 0.834894,
+            "ctr": 2.824519,
+            "cpm": 23.581731,
+            "reach": 1372,
+            "frequency": 1.212828,
             "conversions": 4,
-            "costPerResult": 9.8025,
+            "costPerResult": 9.81,
             "linkClicks": 0,
             "landingPageViews": 0,
             "costPerLandingPageView": 0,
@@ -1295,16 +1295,35 @@
           },
           {
             "date": "2026-04-11",
-            "impressions": 194,
-            "clicks": 6,
-            "spend": 4.83,
-            "cpc": 0.805,
-            "ctr": 3.092784,
-            "cpm": 24.896907,
-            "reach": 178,
-            "frequency": 1.089888,
-            "conversions": 1,
-            "costPerResult": 4.83,
+            "impressions": 1362,
+            "clicks": 22,
+            "spend": 31.87,
+            "cpc": 1.448636,
+            "ctr": 1.615272,
+            "cpm": 23.399413,
+            "reach": 1243,
+            "frequency": 1.095736,
+            "conversions": 3,
+            "costPerResult": 10.623333,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 1,
+            "costPerMessagingConversation": 31.87,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-12",
+            "impressions": 345,
+            "clicks": 9,
+            "spend": 6.91,
+            "cpc": 0.767778,
+            "ctr": 2.608696,
+            "cpm": 20.028986,
+            "reach": 338,
+            "frequency": 1.02071,
+            "conversions": 2,
+            "costPerResult": 3.455,
             "linkClicks": 0,
             "landingPageViews": 0,
             "costPerLandingPageView": 0,
@@ -10515,121 +10534,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120225818873920249",
-            "name": "LOC: Av.Pauliceia [4km] Idade (25-45) - Interesse: Aberto - Orçamento (40$)",
-            "status": "ACTIVE",
-            "dailyBudget": 40,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 25,
-              "age_range": [
-                25,
-                65
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "custom_locations": [
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.35767,
-                    "longitude": -46.733027,
-                    "radius": 1,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.373427,
-                    "longitude": -46.74965,
-                    "radius": 1,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "places": [
-                  {
-                    "key": "692588714146296",
-                    "name": "Laranjeiras Av.pauliceia",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.390471940536,
-                    "longitude": -46.714360226078,
-                    "radius": 3,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 1,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 1
-                }
-              }
-            },
-            "createdTime": "2025-05-23T09:34:27-0300",
-            "startTime": "2025-05-23T09:34:28-0300",
-            "ads": [
-              {
-                "id": "120225819034480249",
-                "name": "VD03 - UGC (JE) — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2025-05-23T09:34:45-0300",
-                "creativeId": "1885243558918908",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120225819034490249",
-                "name": "VD03 - DIETA — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2025-05-23T09:34:47-0300",
-                "creativeId": "2080561062419141",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120225819034470249",
-                "name": "VD01 - UGC (02) LILIANE — Cópia",
-                "status": "PAUSED",
-                "createdTime": "2025-05-23T09:34:29-0300",
-                "creativeId": "2493739004293678",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120224997841160249",
@@ -12129,84 +12034,7 @@
         "dailyBudget": 6.5,
         "lifetimeBudget": null,
         "createdTime": "2023-03-11T12:06:32-0300",
-        "dailyInsights": [
-          {
-            "date": "2023-03-11",
-            "impressions": 3198,
-            "clicks": 0,
-            "spend": 3.22,
-            "cpc": 0,
-            "ctr": 0,
-            "cpm": 1.006879,
-            "reach": 3113,
-            "frequency": 1.027305,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 0,
-            "costPerMessagingConversation": 0,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2023-03-12",
-            "impressions": 7751,
-            "clicks": 7,
-            "spend": 6.92,
-            "cpc": 0.988571,
-            "ctr": 0.090311,
-            "cpm": 0.892788,
-            "reach": 7614,
-            "frequency": 1.017993,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 0,
-            "costPerMessagingConversation": 0,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2023-03-13",
-            "impressions": 6812,
-            "clicks": 9,
-            "spend": 6.68,
-            "cpc": 0.742222,
-            "ctr": 0.13212,
-            "cpm": 0.980622,
-            "reach": 6731,
-            "frequency": 1.012034,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 0,
-            "costPerMessagingConversation": 0,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2023-03-14",
-            "impressions": 2750,
-            "clicks": 0,
-            "spend": 2.82,
-            "cpc": 0,
-            "ctr": 0,
-            "cpm": 1.025455,
-            "reach": 2707,
-            "frequency": 1.015885,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 0,
-            "costPerMessagingConversation": 0,
-            "costPerThruplayVideoView": 0
-          }
-        ],
+        "dailyInsights": [],
         "adsets": []
       }
     ],

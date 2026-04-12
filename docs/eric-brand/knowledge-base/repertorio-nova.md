@@ -1375,3 +1375,70 @@ Antes da análise, é necessário filtrar o ruído. Das 18 conversas, **nem toda
 
 ### Como demonstram interesse real
 > *"Quero muito ser paciente modelo nariz! ☺️"* —
+
+---
+
+## 🗓️ Análise de Campo — 11 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads Inbound WhatsApp
+**Base:** 36 mensagens | 18 contatos | Setor: Saúde & Estética
+**Alimenta:** Repertório da agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- Usam **mensagens automáticas padronizadas** sem personalização: *"Olá! Tenho interesse e queria mais informações, por favor."* — aparece 4 vezes de contatos diferentes, indicando que chegam via anúncio com botão de CTA direto, sem esforço próprio de comunicação.
+- Leads mais qualificados chegam com **perguntas específicas já formuladas** (Vera Gonçalves com 5 perguntas consecutivas; Cleide descrevendo o procedimento pelo nome técnico correto).
+- Leads frios chegam com **mensagens de contexto mínimo**, às vezes nem apresentam nome ou situação.
+
+### Como demonstram interesse real
+- Fazem **múltiplas perguntas em sequência** sem esperar resposta (padrão Vera Gonçalves: 5 mensagens seguidas).
+- Revelam **contexto de vida** espontaneamente: *"Meu ddd é de Belém, mas estou morando em Macapá"* — o lead se esforça para justificar a viabilidade do atendimento.
+- Declaram **intenção de ação concreta**: *"amanhã vou pessoalmente até a clínica"* (Neize), *"Quero muito ser paciente modelo nariz!"* (Tania).
+- Perguntam sobre **condições de acesso reduzido**: *"Como funciona a questão de ser paciente modelo?"* — sinal de interesse com restrição financeira.
+
+### Como hesitam
+- Usam **ambiguidade de agenda como escudo**: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"* — o lead mantém a conversa viva mas adia o compromisso.
+- Colocam **condicionantes antes de fechar**: *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — a compra existe, mas depende de uma condição específica atendida.
+- Perguntam sobre **durabilidade do resultado** antes de avançar: *"A rinoplastia é definitiva né?"*, *"Esse procedimento com fio é definitivo também?"* — hesitação disfarçada de curiosidade técnica.
+
+### Como somem (e como voltam)
+- Somem **sem sinalizar** — simplesmente param de responder após demonstrar interesse (padrão Pam: estava engajada, depois só respostas vagas de cancelamento suave).
+- Voltam com **mensagem padrão de anúncio** — indicando que foram impactados novamente por mídia paga e clicaram de novo (*"Olá! Tenho interesse..."* enviada duas vezes pelo mesmo "Desconhecido").
+- Voltam com **decisão mais madura**: Tania enviou a mensagem genérica do botão E depois uma mensagem emocional própria (*"Quero muito ser paciente modelo nariz! ☺️"*) — o ciclo de nutrição funcionou.
+
+### Comportamentos de mercado B2B (profissionais de saúde/estética como clientes)
+- Esteticistas chegam **com o negócio já rodando** e buscam escalar: *"estou a 14 anos na área"*, *"já tenho bastante cliente, mas nada que não possa melhorar"*.
+- Descrevem o negócio em **detalhes operacionais espontâneos**: volume de procedimentos, parceria com biomédica, contratação de funcionária — contexto rico entregue sem ser pedido.
+- Perguntam sobre **serviços específicos** (assessoria jurídica, catálogo, anúncios) — não chegam perguntando "o que você faz?", chegam com problema já nomeado.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas
+> *"Muitas coisas preciso fazer um catálogo"*
+> *"sou Esteticista facial e corporal faço uns 30 procedimentos"* — sobrecarga de oferta sem organização de apresentação.
+
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo, não contratei ainda"* — relação informal/avulsa com marketing, sem estrutura.
+
+> *"já tenho bastante cliente, mais nada que não possa melhorar"* — consciência de teto de crescimento, mas sem urgência declarada.
+
+> *"Já vai começar uma moça mês que vem pq não estou tendo horário"* — crescimento gerando caos operacional (bom sinal: ela precisa de estrutura).
+
+### Como falam de dinheiro/preço
+> *"meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200"* — ela não fala do próprio preço, fala do ticket do cliente dela.
+
+> *"Terei que pagar a avaliação?"* — primeira barreira financeira declarada, antes de qualquer avanço.
+
+> *"Como funciona a questão de ser paciente modelo?"* — busca por acesso com desconto sem nomear a palavra "desconto".
+
+### Como expressam insegurança ou desconfiança
+> *"A rinoplastia é definitiva né?"* — busca por garantia de permanência antes de investir.
+
+> *"Esse procedimento com fio é definitivo também?"* — padrão de insegurança sobre durabilidade (recorrente em procedimentos estéticos).
+
+> *"A clínica fica em Macap

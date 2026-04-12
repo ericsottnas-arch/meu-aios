@@ -1,7 +1,7 @@
 {
   "clientId": "dr-erico-servano",
   "clientName": "Dr Erico Servano",
-  "exportedAt": "2026-04-11T10:56:01.101Z",
+  "exportedAt": "2026-04-12T10:59:20.628Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -13123,7 +13123,246 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120241569955070204",
+            "name": "P2 [Todos] [35-55] [IG] [Int: Viajantes internacionais frequentes e Pessoas que preferem produtos de alto valor]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "custom_audiences": [
+                {
+                  "id": "120241095046710204",
+                  "name": "Semelhante (BR, 1%) - leads.csv"
+                }
+              ],
+              "flexible_spec": [
+                {
+                  "behaviors": [
+                    {
+                      "id": "6022788483583",
+                      "name": "Frequent international travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    }
+                  ]
+                },
+                {
+                  "work_positions": [
+                    {
+                      "id": "168991743113816",
+                      "name": "Cirurgião Dentista Implantodontista"
+                    }
+                  ]
+                }
+              ],
+              "geo_locations": {
+                "countries": [
+                  "BR"
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_relaxation_types": {
+                "lookalike": 0,
+                "custom_audience": 0
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "instagram"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "story",
+                "explore",
+                "reels",
+                "explore_home",
+                "profile_feed"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2025-12-13T09:43:49-0300",
+            "startTime": "2025-12-13T09:43:49-0300",
+            "ads": [
+              {
+                "id": "120241870990070204",
+                "name": "C2 [Reels] [Hook: Siga e comente “Resolução”.] [V1]",
+                "status": "ACTIVE",
+                "createdTime": "2025-12-18T11:28:28-0300",
+                "creativeId": "851167567491902",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120241871143950204",
+                "name": "C3 [Reels] [Hook: Cirurgião-dentista sem pós em HOF pode fazer lipo de papada?] [V1]",
+                "status": "ACTIVE",
+                "createdTime": "2025-12-18T11:31:59-0300",
+                "creativeId": "4383085578592585",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120241569955100204",
+                "name": "A saga do \"não médico\" não pode solicitar exames",
+                "status": "PAUSED",
+                "createdTime": "2025-12-13T09:43:52-0300",
+                "creativeId": "708287385669979",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120241569955090204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1]",
+                "status": "ACTIVE",
+                "createdTime": "2025-12-13T09:43:52-0300",
+                "creativeId": "778473058537305",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120241569955080204",
+                "name": "C1 [Reels] [Hook: Cirurgias estéticas faciais poderão ser feitas em consultórios odontológicos?]",
+                "status": "PAUSED",
+                "createdTime": "2025-12-13T09:43:55-0300",
+                "creativeId": "1557096632151042",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120241093372040204",
+            "name": "[P1] [INSTAGRAM] [LKL LISTA] [30 A 55]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "custom_audiences": [
+                {
+                  "id": "120241095046710204",
+                  "name": "Semelhante (BR, 1%) - leads.csv"
+                }
+              ],
+              "geo_locations": {
+                "countries": [
+                  "BR"
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_relaxation_types": {
+                "lookalike": 0,
+                "custom_audience": 0
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "instagram"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "story",
+                "explore",
+                "reels",
+                "explore_home",
+                "profile_feed"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2025-12-04T22:20:52-0300",
+            "startTime": "2025-12-04T22:20:53-0300",
+            "ads": [
+              {
+                "id": "120241482419780204",
+                "name": "C1 [Reels] [Hook: Cirurgias estéticas faciais poderão ser feitas em consultórios odontológicos?]",
+                "status": "ACTIVE",
+                "createdTime": "2025-12-11T18:15:54-0300",
+                "creativeId": "1557096632151042",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120241481425620204",
+                "name": "C1 [Reels] [Hook: 15 anos de cadeia por estr nessa situação] [CTA: Saiba Mais] [V1]",
+                "status": "ACTIVE",
+                "createdTime": "2025-12-11T17:38:47-0300",
+                "creativeId": "778473058537305",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120241093372050204",
+                "name": "A saga do \"não médico\" não pode solicitar exames",
+                "status": "PAUSED",
+                "createdTime": "2025-12-04T22:20:54-0300",
+                "creativeId": "708287385669979",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       }
     ],
     "summary": {
