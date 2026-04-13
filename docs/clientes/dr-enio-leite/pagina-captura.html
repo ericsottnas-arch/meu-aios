@@ -2288,16 +2288,15 @@
                     return;
                 }
 
-                if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-
                 const utms = getUTMs();
                 fetch('/api/lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ nome, telefone: tel, procedimento: procLabel, ...utms, utm_campaign: utms.utm_campaign || procLabel.toLowerCase().replace(/ /g,'_') }),
+                    keepalive: true,
                 }).catch(() => {});
 
-                showSuccess(formEl);
+                window.location.href = '/obrigado';
             } catch(e) {
                 console.error('Form submit error:', e);
             }
