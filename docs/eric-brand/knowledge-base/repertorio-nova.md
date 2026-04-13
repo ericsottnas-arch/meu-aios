@@ -1442,3 +1442,74 @@ Antes da análise, é necessário filtrar o ruído. Das 18 conversas, **nem toda
 > *"Esse procedimento com fio é definitivo também?"* — padrão de insegurança sobre durabilidade (recorrente em procedimentos estéticos).
 
 > *"A clínica fica em Macap
+
+---
+
+## 🗓️ Análise de Campo — 12 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads e Clientes Inbound
+**Base:** 36 mensagens · 18 contatos · Canal: WhatsApp · Setor: Saúde & Estética
+**Aplicação:** Repertório da agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- **Mensagem padrão genérica e curta:** Vários leads usam exatamente a mesma frase automática (*"Olá! Tenho interesse e queria mais informações, por favor."*), indicando que vieram de um anúncio com botão de CTA direto para WhatsApp — **eles clicam, mas não sabem exatamente o que perguntar**.
+- **Perguntas isoladas e fragmentadas:** Vera Gonçalves fez 5 perguntas separadas, cada uma em mensagem diferente, sobre localização, prazo, procedimentos distintos — comportamento típico de quem está **em fase de pesquisa ativa**, comparando opções.
+- **Entrada por interesse em ser "paciente modelo":** Tania e Milena Moraes demonstraram interesse nessa modalidade específica — **o desconto é o gatilho de entrada**, não o procedimento em si.
+
+### Como demonstram interesse
+- Fazem perguntas práticas e operacionais: *"Essa promoção vai até quando?"*, *"Terei que pagar a avaliação?"*, *"Quando ela poderia me avaliar?"*
+- Antecipam presença física: *"Amanhã vou pessoalmente até a clínica"* — sinal de comprometimento real.
+- Combinam interesse em múltiplos procedimentos na mesma conversa (Vera, Cleide), sugerindo **intenção de resolver mais de uma coisa de uma vez**.
+
+### Como hesitam
+- Usam o tempo como escudo: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"* — **a agenda é a desculpa mais usada para adiar decisão**.
+- Condicionam a compra: *"Só farei se for conjugado com..."* (Cleide) — impõem exigências antes de fechar.
+- Perguntam sobre definitividade dos procedimentos (*"É definitivo?"*) sem dizer explicitamente que têm medo — **o medo não é dito, é camuflado em pergunta técnica**.
+
+### Como somem
+- Respondem de forma vaga e não comprometida: *"Sim eu vou ti falando"* — clássico "não fecho agora, mas não descarto".
+- Deixam a conversa morrer com respostas que não abrem próximo passo.
+
+### Como voltam
+- Voltam com perguntas novas sobre procedimentos diferentes, como se a conversa anterior não tivesse acontecido.
+- Mandam mensagem direta sinalizando ação concreta (*"Amanhã vou pessoalmente"*) após período de silêncio.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas (ou situação)
+> *"Sou uma senhora aposentada"* — autodefinição que antecipa objeção financeira antes mesmo de ser perguntada.
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"* — profissional que trabalhou para outros e agora tenta construir algo próprio, sem estrutura de marketing.
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo"* — resistência a contratos/recorrência, prefere testar pontualmente.
+> *"Muitas coisas preciso fazer um catálogo, sou esteticista facial e corporal faço uns 30 procedimentos"* — profissional com muita oferta, zero posicionamento claro.
+
+### Como falam de dinheiro/preço
+> *"Meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200"* — conhece o ticket mas não sabe como comunicá-lo.
+> *"Terei que pagar a avaliação?"* — o primeiro movimento é verificar o custo de entrada, não o resultado.
+> *"Fechar contratos de 3,5k a 5k por mês não é sorte, é método"* *(spam recebido)* — ironicamente revela o que **o próprio mercado de marketing promete** como sonho ao público.
+
+### Como expressam insegurança ou desconfiança
+> *"A rinoplastia é definitiva né?"* — busca confirmação para reduzir o risco percebido.
+> *"Esse procedimento com fio é definitivo também?"* — padrão repetido: **definitivo = seguro = posso confiar**.
+> *"Só farei se for conjugado com..."* — cria condição para manter controle da decisão.
+> *"Como funciona a questão de ser paciente modelo?"* — antes de se comprometer, quer entender as "regras do jogo".
+
+### Como demonstram interesse real
+> *"Quero muito ser paciente modelo nariz!"* — afirmação emocional direta, com emoji.
+> *"Amanhã vou pessoalmente até a clínica"* — compromisso físico agendado espontaneamente.
+> *"Quando ela poderia me avaliar?"* — pergunta que pressupõe que já decidiu avaliar, só falta data.
+> *"Blefaroplastia superior com sobrancelhas/castanhares total"* — nível de especificidade que indica pesquisa prévia e decisão quase tomada.
+
+---
+
+## 3. OBJEÇÕES IMPLÍCITAS OU EXPLÍCITAS
+
+| Tipo | Objeção | Como aparece nas mensagens |
+|---|---|---|
+| **Financeira** | *"

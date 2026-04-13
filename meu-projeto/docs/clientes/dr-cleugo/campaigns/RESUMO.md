@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Dr. Cleugo Porto
-**Atualizado em:** 12/04/2026, 07:40:58
+**Atualizado em:** 13/04/2026, 07:55:55
 **Período:** Últimos 7 dias
 
 ## Visão Geral
