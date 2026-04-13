@@ -276,7 +276,6 @@
 
         /* HERO */
         #hero {
-            min-height: 100svh;
             background: var(--ink);
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -287,8 +286,8 @@
         .hero-content {
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            padding: clamp(5.5rem, 10vh, 7rem) var(--cpx) clamp(2.5rem, 5vh, 4rem) max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
+            justify-content: flex-start;
+            padding: clamp(5.5rem, 10vh, 7rem) var(--cpx) clamp(3rem, 6vh, 5rem) max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
             position: relative;
             z-index: 2;
             overflow: visible;
@@ -1312,7 +1311,6 @@
                 grid-template-columns: 1fr;
                 height: auto;
                 max-height: none;
-                min-height: 100svh;
                 overflow-y: auto;
             }
 
