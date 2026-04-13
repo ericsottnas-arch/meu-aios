@@ -16,6 +16,7 @@
         /* TOKENS */
         :root {
             --gold: #C08B51;
+            --gold-text: #7A5A2A;
             --cream: #F7F4EF;
             --cream-dk: #EDE8DF;
             --parch: #E8E0D2;
@@ -186,9 +187,12 @@
             font-weight: 600;
             letter-spacing: .18em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--gold-text);
             margin-bottom: 1.25rem;
         }
+
+        /* Section label on dark backgrounds needs brighter gold */
+        #depoimentos .section-label { color: var(--gold); }
 
         /* REVEAL */
         .reveal {
@@ -479,14 +483,14 @@
             font-weight: 600;
             letter-spacing: .18em;
             text-transform: uppercase;
-            color: var(--cream);
+            color: var(--ink);
         }
 
         .ticker-dot {
             width: 4px;
             height: 4px;
             border-radius: 50%;
-            background: rgba(247, 244, 239, .5);
+            background: rgba(21, 18, 13, .3);
             flex-shrink: 0;
         }
 
@@ -1168,7 +1172,7 @@
             font-weight: 600;
             letter-spacing: .12em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--gold-text);
             margin-bottom: .5rem;
         }
 
@@ -1176,7 +1180,7 @@
             content: '';
             width: 20px;
             height: 1px;
-            background: var(--gold);
+            background: var(--gold-text);
         }
 
         @media (max-width: 900px) {
@@ -1216,7 +1220,7 @@
             max-width: 28ch;
         }
 
-        .footer-col h4 {
+        .footer-col h3 {
             font-family: var(--fb);
             font-size: var(--xs);
             font-weight: 600;
@@ -1490,28 +1494,35 @@
         }
     </style>
     <link rel="preload" as="image" href="dr-enio-hero.webp" type="image/webp">
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wb7c209qlo");
-    </script>
-    <!-- Meta Pixel -->
+    <!-- Microsoft Clarity — deferred 2s após load para não bloquear TTI -->
     <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1298862062159814');
-    fbq('track', 'PageView');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wb7c209qlo");
+        }, 2000);
+    });
+    </script>
+    <!-- Meta Pixel — stub imediato, script deferred para após load -->
+    <script>
+    !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;
+        n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+        window.addEventListener('load',function(){
+            t=b.createElement(e);t.async=!0;t.src=v;
+            s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+        });
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1298862062159814');
+    fbq('track','PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1298862062159814&ev=PageView&noscript=1"
     /></noscript>
-    <!-- Fim Meta Pixel -->
 </head>
 <body>
     <!-- CURSOR -->
@@ -1544,15 +1555,15 @@
             <p class="hero-sub">Para quem sempre quis mudar alguma coisa no rosto. Mas queria que parecesse natural.</p>
             
             <form class="hero-form">
-                <h3 class="hero-form-title">Agende sua consulta</h3>
+                <p class="hero-form-title">Agende sua consulta</p>
                 
-                <label for="hero-nome" style="display: none;">Nome</label>
+                <label for="hero-nome" class="sr-only">Nome</label>
                 <input type="text" id="hero-nome" class="form-input" placeholder="Seu nome" required>
                 
-                <label for="hero-tel" style="display: none;">WhatsApp</label>
+                <label for="hero-tel" class="sr-only">WhatsApp</label>
                 <input type="tel" id="hero-tel" class="form-input" placeholder="Seu WhatsApp" required>
                 
-                <label for="hero-proc" style="display: none;">Procedimento</label>
+                <label for="hero-proc" class="sr-only">Procedimento</label>
                 <select id="hero-proc" class="form-input" required>
                     <option value="">O que te incomoda mais hoje?</option>
                     <option value="Toxina Botulínica">Olhos que parecem cansados</option>
@@ -1572,11 +1583,11 @@
             
             <div class="hero-social-proof">
                 <div class="avatar-stack">
-                    <div class="avatar"><img src="avatars/av1.jpg" alt="" width="72" height="72" loading="eager"></div>
-                    <div class="avatar"><img src="avatars/av2.jpg" alt="" width="72" height="72" loading="eager"></div>
-                    <div class="avatar"><img src="avatars/av3.jpg" alt="" width="72" height="72" loading="eager"></div>
-                    <div class="avatar"><img src="avatars/av4.jpg" alt="" width="72" height="72" loading="eager"></div>
-                    <div class="avatar"><img src="avatars/av5.jpg" alt="" width="72" height="72" loading="eager"></div>
+                    <div class="avatar"><picture><source srcset="avatars/av1.webp" type="image/webp"><img src="avatars/av1.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
+                    <div class="avatar"><picture><source srcset="avatars/av2.webp" type="image/webp"><img src="avatars/av2.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
+                    <div class="avatar"><picture><source srcset="avatars/av3.webp" type="image/webp"><img src="avatars/av3.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
+                    <div class="avatar"><picture><source srcset="avatars/av4.webp" type="image/webp"><img src="avatars/av4.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
+                    <div class="avatar"><picture><source srcset="avatars/av5.webp" type="image/webp"><img src="avatars/av5.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
                 </div>
                 <div class="proof-text">
                     <strong><span style="color:var(--gold)">★★★★★</span> 4.9</strong>
@@ -1657,10 +1668,16 @@
 
                 <div class="ba-container reveal reveal-d2">
                     <div class="ba-after">
-                        <img loading="lazy" src="fotos-procedimentos/lipo-p1-depois.jpg" alt="Depois lipo de papada" width="900" height="1200">
+                        <picture>
+                            <source srcset="fotos-procedimentos/lipo-p1-depois.webp" type="image/webp">
+                            <img loading="lazy" src="fotos-procedimentos/lipo-p1-depois.jpg" alt="Depois lipo de papada" width="900" height="1200">
+                        </picture>
                     </div>
                     <div class="ba-before">
-                        <img loading="lazy" src="fotos-procedimentos/lipo-p1-antes.jpg" alt="Antes lipo de papada" width="900" height="1200">
+                        <picture>
+                            <source srcset="fotos-procedimentos/lipo-p1-antes.webp" type="image/webp">
+                            <img loading="lazy" src="fotos-procedimentos/lipo-p1-antes.jpg" alt="Antes lipo de papada" width="900" height="1200">
+                        </picture>
                     </div>
                     <div class="ba-handle"></div>
                     <div class="ba-label">Lipo de Papada</div>
@@ -1668,10 +1685,16 @@
 
                 <div class="ba-container reveal reveal-d1">
                     <div class="ba-after">
-                        <img loading="lazy" src="fotos-procedimentos/harm-p1-depois.jpg" alt="Depois harmonização facial" width="900" height="1200">
+                        <picture>
+                            <source srcset="fotos-procedimentos/harm-p1-depois.webp" type="image/webp">
+                            <img loading="lazy" src="fotos-procedimentos/harm-p1-depois.jpg" alt="Depois harmonização facial" width="900" height="1200">
+                        </picture>
                     </div>
                     <div class="ba-before">
-                        <img loading="lazy" src="fotos-procedimentos/harm-p1-antes.jpg" alt="Antes harmonização facial" width="900" height="1200">
+                        <picture>
+                            <source srcset="fotos-procedimentos/harm-p1-antes.webp" type="image/webp">
+                            <img loading="lazy" src="fotos-procedimentos/harm-p1-antes.jpg" alt="Antes harmonização facial" width="900" height="1200">
+                        </picture>
                     </div>
                     <div class="ba-handle"></div>
                     <div class="ba-label">Harmonização Facial</div>
@@ -1679,10 +1702,16 @@
 
                 <div class="ba-container reveal reveal-d2">
                     <div class="ba-after">
-                        <img loading="lazy" src="fotos-procedimentos/lift-p1-depois.jpg" alt="Depois mini lifting" width="900" height="1200">
+                        <picture>
+                            <source srcset="fotos-procedimentos/lift-p1-depois.webp" type="image/webp">
+                            <img loading="lazy" src="fotos-procedimentos/lift-p1-depois.jpg" alt="Depois mini lifting" width="900" height="1200">
+                        </picture>
                     </div>
                     <div class="ba-before">
-                        <img loading="lazy" src="fotos-procedimentos/lift-p1-antes.jpg" alt="Antes mini lifting" width="900" height="1200">
+                        <picture>
+                            <source srcset="fotos-procedimentos/lift-p1-antes.webp" type="image/webp">
+                            <img loading="lazy" src="fotos-procedimentos/lift-p1-antes.jpg" alt="Antes mini lifting" width="900" height="1200">
+                        </picture>
                     </div>
                     <div class="ba-handle"></div>
                     <div class="ba-label">Mini Lifting</div>
@@ -1946,7 +1975,7 @@
 
                 <div class="clinica-mapa">
                     <div style="reveal">
-                        <iframe src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE" class="clinica-mapa-frame" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE" class="clinica-mapa-frame" title="Mapa de localização — Instituto Dr. Enio Leite" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
                     <div class="clinica-endereco reveal reveal-d1">
@@ -1976,14 +2005,14 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Localização</h4>
+                    <h3>Localização</h3>
                     <p>Shopping Mestre Álvaro</p>
                     <p>Torre B, Sala 701</p>
                     <p>Serra, ES</p>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Contato</h4>
+                    <h3>Contato</h3>
                     <a href="https://instagram.com/drenioleite" target="_blank">@drenioleite</a>
                 </div>
             </div>
@@ -2007,13 +2036,13 @@
             <h3>Agende sua consulta</h3>
             
             <div class="modal-form">
-                <label for="modal-nome" style="display: none;">Nome</label>
+                <label for="modal-nome" class="sr-only">Nome</label>
                 <input type="text" id="modal-nome" class="form-input" placeholder="Seu nome" required>
                 
-                <label for="modal-tel" style="display: none;">WhatsApp</label>
+                <label for="modal-tel" class="sr-only">WhatsApp</label>
                 <input type="tel" id="modal-tel" class="form-input" placeholder="Seu WhatsApp" required>
                 
-                <label for="modal-proc" style="display: none;">Procedimento</label>
+                <label for="modal-proc" class="sr-only">Procedimento</label>
                 <select id="modal-proc" class="form-input" required>
                     <option value="">O que te incomoda mais hoje?</option>
                     <option value="Toxina Botulínica">Olhos que parecem cansados</option>
@@ -2033,10 +2062,9 @@
         </div>
     </div>
 
-    <!-- SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <!-- SCRIPTS — GSAP carregado com defer para não bloquear TTI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
     <script>
         // CURSOR
@@ -2064,24 +2092,14 @@
             el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
         });
 
-        // GSAP + SCROLL
-        let lenis;
-        try {
-            gsap.registerPlugin(ScrollTrigger);
-
-            // LENIS
-            lenis = new Lenis({
-                duration: 1.2,
-                easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                smoothWheel: true,
-            });
-
-            lenis.on('scroll', ScrollTrigger.update);
-            gsap.ticker.add(time => lenis.raf(time * 1000));
-            gsap.ticker.lagSmoothing(0);
-        } catch(e) {
-            console.warn('[anim] GSAP/Lenis unavailable:', e.message);
-        }
+        // GSAP + SCROLL — inicializado após load (scripts carregam com defer)
+        window.addEventListener('load', function() {
+            try {
+                gsap.registerPlugin(ScrollTrigger);
+            } catch(e) {
+                console.warn('[anim] GSAP unavailable:', e.message);
+            }
+        });
 
         // NAV
         const navEl = document.getElementById('nav');
@@ -2089,14 +2107,8 @@
             navEl.classList.toggle('scrolled', window.scrollY > 80);
         }, { passive: true });
 
-        // HERO ENTRANCE
-        try {
-            gsap.from('.hero-label', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.1 });
-            gsap.from('.hero-headline', { opacity: 0, y: 12, duration: 1.0, ease: 'power3.out', delay: 0.3 });
-            gsap.from('.hero-sub', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.5 });
-            gsap.from('.hero-form', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.7 });
-            gsap.from('.hero-social-proof', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.9 });
-        } catch(e) {}
+        // HERO ENTRANCE — via CSS animation (fallback garantido sem GSAP)
+        // As animações .reveal já têm fallback CSS (revealFallback keyframe)
 
         // SCROLL REVEALS — IntersectionObserver (sem dependencia de GSAP)
         (function initReveal() {
@@ -2117,28 +2129,9 @@
             const before = container.querySelector('.ba-before');
             let dragging = false;
 
-            try {
-                ScrollTrigger.create({
-                    trigger: container,
-                    start: 'top 80%',
-                    onEnter: () => {
-                        gsap.to(handle, {
-                            left: '50%',
-                            duration: 1.2,
-                            ease: 'power2.inOut',
-                            onUpdate: function() {
-                                const pct = 25 + this.progress() * 25;
-                                before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-                            }
-                        });
-                    },
-                    once: true
-                });
-            } catch(e) {
-                // Sem GSAP: posicionar slider no centro diretamente
-                handle.style.left = '50%';
-                before.style.clipPath = 'inset(0 50% 0 0)';
-            }
+            // Posição inicial do slider (sem animação GSAP, que carrega deferred)
+            handle.style.left = '50%';
+            before.style.clipPath = 'inset(0 50% 0 0)';
 
             let touchStartX = 0, touchStartY = 0, directionLocked = null;
 
@@ -2199,12 +2192,12 @@
 
         function openModal() {
             overlay.classList.add('active');
-            if (lenis) lenis.stop();
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             overlay.classList.remove('active');
-            if (lenis) lenis.start();
+            document.body.style.overflow = '';
         }
 
         document.getElementById('cta-btn').addEventListener('click', openModal);
