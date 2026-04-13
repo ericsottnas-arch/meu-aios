@@ -2024,18 +2024,23 @@
         });
 
         // GSAP + SCROLL
-        gsap.registerPlugin(ScrollTrigger);
+        let lenis;
+        try {
+            gsap.registerPlugin(ScrollTrigger);
 
-        // LENIS
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smoothWheel: true,
-        });
+            // LENIS
+            lenis = new Lenis({
+                duration: 1.2,
+                easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smoothWheel: true,
+            });
 
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add(time => lenis.raf(time * 1000));
-        gsap.ticker.lagSmoothing(0);
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add(time => lenis.raf(time * 1000));
+            gsap.ticker.lagSmoothing(0);
+        } catch(e) {
+            console.warn('[anim] GSAP/Lenis unavailable:', e.message);
+        }
 
         // NAV
         const navEl = document.getElementById('nav');
@@ -2044,11 +2049,13 @@
         }, { passive: true });
 
         // HERO ENTRANCE
-        gsap.from('.hero-label', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.1 });
-        gsap.from('.hero-headline', { opacity: 0, y: 12, duration: 1.0, ease: 'power3.out', delay: 0.3 });
-        gsap.from('.hero-sub', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.5 });
-        gsap.from('.hero-form', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.7 });
-        gsap.from('.hero-social-proof', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.9 });
+        try {
+            gsap.from('.hero-label', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.1 });
+            gsap.from('.hero-headline', { opacity: 0, y: 12, duration: 1.0, ease: 'power3.out', delay: 0.3 });
+            gsap.from('.hero-sub', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.5 });
+            gsap.from('.hero-form', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.7 });
+            gsap.from('.hero-social-proof', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.9 });
+        } catch(e) {}
 
         // SCROLL REVEALS — IntersectionObserver (sem dependencia de GSAP)
         (function initReveal() {
@@ -2069,22 +2076,28 @@
             const before = container.querySelector('.ba-before');
             let dragging = false;
 
-            ScrollTrigger.create({
-                trigger: container,
-                start: 'top 80%',
-                onEnter: () => {
-                    gsap.to(handle, {
-                        left: '50%',
-                        duration: 1.2,
-                        ease: 'power2.inOut',
-                        onUpdate: function() {
-                            const pct = 25 + this.progress() * 25;
-                            before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-                        }
-                    });
-                },
-                once: true
-            });
+            try {
+                ScrollTrigger.create({
+                    trigger: container,
+                    start: 'top 80%',
+                    onEnter: () => {
+                        gsap.to(handle, {
+                            left: '50%',
+                            duration: 1.2,
+                            ease: 'power2.inOut',
+                            onUpdate: function() {
+                                const pct = 25 + this.progress() * 25;
+                                before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+                            }
+                        });
+                    },
+                    once: true
+                });
+            } catch(e) {
+                // Sem GSAP: posicionar slider no centro diretamente
+                handle.style.left = '50%';
+                before.style.clipPath = 'inset(0 50% 0 0)';
+            }
 
             const getX = e => {
                 const r = container.getBoundingClientRect();
@@ -2124,12 +2137,12 @@
 
         function openModal() {
             overlay.classList.add('active');
-            lenis.stop();
+            if (lenis) lenis.stop();
         }
 
         function closeModal() {
             overlay.classList.remove('active');
-            lenis.start();
+            if (lenis) lenis.start();
         }
 
         document.getElementById('cta-btn').addEventListener('click', openModal);
