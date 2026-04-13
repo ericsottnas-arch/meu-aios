@@ -285,6 +285,7 @@
             grid-template-columns: 1fr 1fr;
             position: relative;
             overflow: hidden;
+            min-height: 600px;
         }
 
         .hero-content {
@@ -1652,13 +1653,13 @@
                 <div class="ba-container reveal reveal-d1">
                     <div class="ba-after">
                         <picture>
-                            <source srcset="fotos-procedimentos/rino-p1-depois.webp" type="image/webp">
+                            <source srcset="fotos-procedimentos/rino-p1-depois-sm.webp 600w, fotos-procedimentos/rino-p1-depois.webp 700w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
                             <img loading="lazy" src="fotos-procedimentos/rino-p1-depois.jpg" alt="Depois rinomodelação" width="700" height="933">
                         </picture>
                     </div>
                     <div class="ba-before">
                         <picture>
-                            <source srcset="fotos-procedimentos/rino-p1-antes.webp" type="image/webp">
+                            <source srcset="fotos-procedimentos/rino-p1-antes-sm.webp 600w, fotos-procedimentos/rino-p1-antes.webp 700w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
                             <img loading="lazy" src="fotos-procedimentos/rino-p1-antes.jpg" alt="Antes rinomodelação" width="700" height="933">
                         </picture>
                     </div>
@@ -1669,13 +1670,13 @@
                 <div class="ba-container reveal reveal-d2">
                     <div class="ba-after">
                         <picture>
-                            <source srcset="fotos-procedimentos/lipo-p1-depois.webp" type="image/webp">
+                            <source srcset="fotos-procedimentos/lipo-p1-depois-sm.webp 600w, fotos-procedimentos/lipo-p1-depois.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
                             <img loading="lazy" src="fotos-procedimentos/lipo-p1-depois.jpg" alt="Depois lipo de papada" width="900" height="1200">
                         </picture>
                     </div>
                     <div class="ba-before">
                         <picture>
-                            <source srcset="fotos-procedimentos/lipo-p1-antes.webp" type="image/webp">
+                            <source srcset="fotos-procedimentos/lipo-p1-antes-sm.webp 600w, fotos-procedimentos/lipo-p1-antes.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
                             <img loading="lazy" src="fotos-procedimentos/lipo-p1-antes.jpg" alt="Antes lipo de papada" width="900" height="1200">
                         </picture>
                     </div>
@@ -1686,13 +1687,13 @@
                 <div class="ba-container reveal reveal-d1">
                     <div class="ba-after">
                         <picture>
-                            <source srcset="fotos-procedimentos/harm-p1-depois.webp" type="image/webp">
+                            <source srcset="fotos-procedimentos/harm-p1-depois-sm.webp 600w, fotos-procedimentos/harm-p1-depois.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
                             <img loading="lazy" src="fotos-procedimentos/harm-p1-depois.jpg" alt="Depois harmonização facial" width="900" height="1200">
                         </picture>
                     </div>
                     <div class="ba-before">
                         <picture>
-                            <source srcset="fotos-procedimentos/harm-p1-antes.webp" type="image/webp">
+                            <source srcset="fotos-procedimentos/harm-p1-antes-sm.webp 600w, fotos-procedimentos/harm-p1-antes.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
                             <img loading="lazy" src="fotos-procedimentos/harm-p1-antes.jpg" alt="Antes harmonização facial" width="900" height="1200">
                         </picture>
                     </div>
@@ -1703,13 +1704,13 @@
                 <div class="ba-container reveal reveal-d2">
                     <div class="ba-after">
                         <picture>
-                            <source srcset="fotos-procedimentos/lift-p1-depois.webp" type="image/webp">
+                            <source srcset="fotos-procedimentos/lift-p1-depois-sm.webp 600w, fotos-procedimentos/lift-p1-depois.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
                             <img loading="lazy" src="fotos-procedimentos/lift-p1-depois.jpg" alt="Depois mini lifting" width="900" height="1200">
                         </picture>
                     </div>
                     <div class="ba-before">
                         <picture>
-                            <source srcset="fotos-procedimentos/lift-p1-antes.webp" type="image/webp">
+                            <source srcset="fotos-procedimentos/lift-p1-antes-sm.webp 600w, fotos-procedimentos/lift-p1-antes.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
                             <img loading="lazy" src="fotos-procedimentos/lift-p1-antes.jpg" alt="Antes mini lifting" width="900" height="1200">
                         </picture>
                     </div>
@@ -1838,7 +1839,7 @@
 
             <div class="dep-grid">
                 <div class="dep-card reveal reveal-d2">
-                    <div class="dep-facade" onclick="playYt(this)" data-yt="9rENaneS7sQ" style="background-image: url('https://img.youtube.com/vi/9rENaneS7sQ/hqdefault.jpg');">
+                    <div class="dep-facade" onclick="playYt(this)" data-yt="9rENaneS7sQ" data-bg="https://img.youtube.com/vi/9rENaneS7sQ/hqdefault.jpg">
                         <div class="dep-facade-overlay"></div>
                         <div class="dep-facade-play"></div>
                         <div class="dep-facade-handle">@drenioleite</div>
@@ -1847,7 +1848,7 @@
                 </div>
 
                 <div class="dep-card reveal reveal-d2">
-                    <div class="dep-facade" onclick="playYt(this)" data-yt="ksYrP20AyFI" style="background-image: url('https://img.youtube.com/vi/ksYrP20AyFI/hqdefault.jpg');">
+                    <div class="dep-facade" onclick="playYt(this)" data-yt="ksYrP20AyFI" data-bg="https://img.youtube.com/vi/ksYrP20AyFI/hqdefault.jpg">
                         <div class="dep-facade-overlay"></div>
                         <div class="dep-facade-play"></div>
                         <div class="dep-facade-handle">@drenioleite</div>
@@ -1856,7 +1857,7 @@
                 </div>
 
                 <div class="dep-card reveal reveal-d2">
-                    <div class="dep-facade" onclick="playYt(this)" data-yt="CP-oVcOdp_I" style="background-image: url('https://img.youtube.com/vi/CP-oVcOdp_I/hqdefault.jpg');">
+                    <div class="dep-facade" onclick="playYt(this)" data-yt="CP-oVcOdp_I" data-bg="https://img.youtube.com/vi/CP-oVcOdp_I/hqdefault.jpg">
                         <div class="dep-facade-overlay"></div>
                         <div class="dep-facade-play"></div>
                         <div class="dep-facade-handle">@drenioleite</div>
@@ -2177,6 +2178,20 @@
             document.addEventListener('mouseup', () => dragging = false);
             document.addEventListener('touchend', () => { dragging = false; directionLocked = null; });
         });
+
+        // LAZY BACKGROUND IMAGES (thumbnails YouTube)
+        (function lazyBg() {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        const bg = e.target.dataset.bg;
+                        if (bg) e.target.style.backgroundImage = 'url(' + bg + ')';
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { rootMargin: '300px' });
+            document.querySelectorAll('[data-bg]').forEach(el => io.observe(el));
+        })();
 
         // FAQ
         document.querySelectorAll('.faq-item').forEach(item => {
