@@ -2269,10 +2269,11 @@
 
                 if (typeof fbq !== 'undefined') fbq('track', 'Lead');
 
+                const utms = getUTMs();
                 fetch('/api/lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ nome, telefone: tel, procedimento: procLabel, utm_campaign: getUTMs().utm_campaign || procLabel.toLowerCase().replace(/ /g,'_'), ...getUTMs() }),
+                    body: JSON.stringify({ nome, telefone: tel, procedimento: procLabel, ...utms, utm_campaign: utms.utm_campaign || procLabel.toLowerCase().replace(/ /g,'_') }),
                 }).catch(() => {});
 
                 showSuccess(formEl);
