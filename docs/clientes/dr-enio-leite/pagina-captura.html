@@ -549,9 +549,12 @@
 
         .ba-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            margin-top: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .ba-container {
@@ -567,9 +570,16 @@
         .ba-after, .ba-before {
             position: absolute;
             inset: 0;
+            overflow: hidden;
         }
 
         .ba-after img, .ba-before img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
             user-select: none;
             -webkit-user-select: none;
             pointer-events: none;
@@ -577,26 +587,12 @@
         }
 
         .ba-after {
-            background: linear-gradient(135deg, var(--parch) 0%, var(--cream-dk) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: var(--parch);
         }
 
         .ba-before {
-            background: linear-gradient(135deg, var(--cream-dk) 0%, var(--parch) 100%);
+            background: var(--parch);
             clip-path: inset(0 75% 0 0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ba-placeholder-text {
-            font-family: var(--fd);
-            font-style: italic;
-            color: var(--mid);
-            font-size: var(--sm);
-            opacity: .5;
         }
 
         .ba-handle {
@@ -1407,8 +1403,12 @@
                 grid-template-columns: 1fr;
             }
 
+            .ba-grid {
+                grid-template-columns: 1fr;
+            }
+
             .ba-container {
-                aspect-ratio: 4/5;
+                aspect-ratio: 3/4;
             }
 
             .dep-facade {
@@ -1424,6 +1424,16 @@
                 letter-spacing: .12em;
             }
 
+            .cursor-dot, .cursor-ring {
+                display: none;
+            }
+
+            body {
+                cursor: auto;
+            }
+        }
+
+        @media (hover: none) {
             .cursor-dot, .cursor-ring {
                 display: none;
             }
@@ -1472,7 +1482,7 @@
             flex-shrink: 0;
         }
     </style>
-    <link rel="preload" as="image" href="dr-enio-hero.png">
+    <link rel="preload" as="image" href="dr-enio-hero.webp" type="image/webp">
     <!-- Meta Pixel -->
     <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -1496,7 +1506,10 @@
     <!-- NAV -->
     <nav id="nav">
         <a href="#hero" class="nav-logo">
-            <img src="logo-horizontal.png" alt="Dr. Enio Leite" class="nav-logo-img">
+            <picture>
+                <source srcset="logo-horizontal.webp" type="image/webp">
+                <img src="logo-horizontal.png" alt="Dr. Enio Leite" class="nav-logo-img" width="1342" height="305">
+            </picture>
         </a>
         <a href="#" id="nav-cta-btn" class="nav-cta">
             <span>Agendar consulta</span>
@@ -1526,14 +1539,14 @@
                 
                 <label for="hero-proc" style="display: none;">Procedimento</label>
                 <select id="hero-proc" class="form-input" required>
-                    <option value="">O que você quer melhorar?</option>
-                    <option>Toxina Botulínica</option>
-                    <option>Preenchimento Labial</option>
-                    <option>Bioestimuladores de Colágeno</option>
-                    <option>Fios de Sustentação</option>
-                    <option>Rinomodelação</option>
-                    <option>Lipo de Papada</option>
-                    <option>Nao sei ainda / Consulta geral</option>
+                    <option value="">O que te incomoda mais hoje?</option>
+                    <option value="Toxina Botulínica">Olhos que parecem cansados</option>
+                    <option value="Rinomodelação">O formato do meu nariz</option>
+                    <option value="Preenchimento Labial">Lábios sem volume ou definição</option>
+                    <option value="Lipo de Papada">Papada ou contorno do queixo</option>
+                    <option value="Fios de Sustentação">Rosto que perdeu o contorno</option>
+                    <option value="Bioestimuladores de Colágeno">Pele que perdeu a firmeza</option>
+                    <option value="Consulta geral">Ainda não sei, quero uma avaliação</option>
                 </select>
                 
                 <button type="button" id="hero-submit" class="btn btn-gold">
@@ -1554,7 +1567,10 @@
         </div>
 
         <div class="hero-photo">
-            <img src="dr-enio-hero.png" alt="Dr. Enio Leite" width="600" height="800" fetchpriority="high">
+            <picture>
+                <source srcset="dr-enio-hero.webp" type="image/webp">
+                <img src="dr-enio-hero.png" alt="Dr. Enio Leite" width="896" height="1200" fetchpriority="high">
+            </picture>
         </div>
     </section>
 
@@ -1585,7 +1601,10 @@
 
     <!-- MOBILE PHOTO -->
     <div class="mobile-dr-photo">
-        <img loading="lazy" src="dr-enio-hero.png" alt="Dr. Enio Leite">
+        <picture>
+            <source srcset="dr-enio-hero.webp" type="image/webp">
+            <img loading="lazy" src="dr-enio-hero.png" alt="Dr. Enio Leite" width="896" height="1200">
+        </picture>
         <div class="mobile-dr-photo-caption">
             <span>Especialista em Harmonização Orofacial</span>
             <p>Mais de 8 anos dedicados a resultados naturais.</p>
@@ -1600,67 +1619,29 @@
             <p class="reveal reveal-d2" style="max-width:60ch; color: var(--ink-lt); margin-bottom: 2rem;">Casos reais. Cada resultado, pensado para aquele rosto.</p>
 
             <div class="ba-grid">
-                <div class="ba-container reveal reveal-d3">
+                <div class="ba-container reveal reveal-d1">
                     <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                        <picture>
+                            <source srcset="fotos-procedimentos/rino-p1-depois.webp" type="image/webp">
+                            <img loading="lazy" src="fotos-procedimentos/rino-p1-depois.jpg" alt="Depois rinomodelação" width="700" height="933">
+                        </picture>
                     </div>
                     <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
-                    </div>
-                    <div class="ba-handle"></div>
-                    <div class="ba-label">Toxina Botulínica</div>
-                </div>
-
-                <div class="ba-container reveal reveal-d3">
-                    <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
-                    </div>
-                    <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
-                    </div>
-                    <div class="ba-handle"></div>
-                    <div class="ba-label">Preenchimento Labial</div>
-                </div>
-
-                <div class="ba-container reveal reveal-d3">
-                    <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
-                    </div>
-                    <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
-                    </div>
-                    <div class="ba-handle"></div>
-                    <div class="ba-label">Bioestimuladores</div>
-                </div>
-
-                <div class="ba-container reveal reveal-d3">
-                    <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
-                    </div>
-                    <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
-                    </div>
-                    <div class="ba-handle"></div>
-                    <div class="ba-label">Fios de Sustentação</div>
-                </div>
-
-                <div class="ba-container reveal reveal-d3">
-                    <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
-                    </div>
-                    <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                        <picture>
+                            <source srcset="fotos-procedimentos/rino-p1-antes.webp" type="image/webp">
+                            <img loading="lazy" src="fotos-procedimentos/rino-p1-antes.jpg" alt="Antes rinomodelação" width="700" height="933">
+                        </picture>
                     </div>
                     <div class="ba-handle"></div>
                     <div class="ba-label">Rinomodelação</div>
                 </div>
 
-                <div class="ba-container reveal reveal-d3">
+                <div class="ba-container reveal reveal-d2">
                     <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                        <img loading="lazy" src="fotos-procedimentos/lipo-p1-depois.jpg" alt="Depois lipo de papada" width="900" height="1200">
                     </div>
                     <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                        <img loading="lazy" src="fotos-procedimentos/lipo-p1-antes.jpg" alt="Antes lipo de papada" width="900" height="1200">
                     </div>
                     <div class="ba-handle"></div>
                     <div class="ba-label">Lipo de Papada</div>
@@ -1735,7 +1716,10 @@
         <div class="container">
             <div class="sobre-grid">
                 <div class="sobre-photo reveal">
-                    <img loading="lazy" src="dr-enio-about.png" alt="Dr. Enio Leite" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;">
+                    <picture>
+                        <source srcset="dr-enio-about.webp" type="image/webp">
+                        <img loading="lazy" src="dr-enio-about.png" alt="Dr. Enio Leite" width="896" height="1200" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;">
+                    </picture>
                 </div>
 
                 <div>
@@ -1990,14 +1974,14 @@
                 
                 <label for="modal-proc" style="display: none;">Procedimento</label>
                 <select id="modal-proc" class="form-input" required>
-                    <option value="">O que você quer melhorar?</option>
-                    <option>Toxina Botulínica</option>
-                    <option>Preenchimento Labial</option>
-                    <option>Bioestimuladores de Colágeno</option>
-                    <option>Fios de Sustentação</option>
-                    <option>Rinomodelação</option>
-                    <option>Lipo de Papada</option>
-                    <option>Nao sei ainda / Consulta geral</option>
+                    <option value="">O que te incomoda mais hoje?</option>
+                    <option value="Toxina Botulínica">Olhos que parecem cansados</option>
+                    <option value="Rinomodelação">O formato do meu nariz</option>
+                    <option value="Preenchimento Labial">Lábios sem volume ou definição</option>
+                    <option value="Lipo de Papada">Papada ou contorno do queixo</option>
+                    <option value="Fios de Sustentação">Rosto que perdeu o contorno</option>
+                    <option value="Bioestimuladores de Colágeno">Pele que perdeu a firmeza</option>
+                    <option value="Consulta geral">Ainda não sei, quero uma avaliação</option>
                 </select>
                 
                 <button type="button" id="modal-submit" class="btn btn-gold">
@@ -2184,7 +2168,18 @@
 
         // FORM SUBMIT
         function showSuccess(formEl) {
-            formEl.innerHTML = '<div style="text-align:center;padding:1.5rem 0"><p style="font-family:var(--fd);font-size:var(--lg);color:var(--gold);margin-bottom:.5rem">✓ Solicitação recebida!</p><p style="color:var(--ink-lt);font-size:var(--sm)">Em breve nossa equipe entrará em contato.</p></div>';
+            formEl.innerHTML = '<div style="text-align:center;padding:1.5rem 0"><p style="font-family:var(--fd);font-size:var(--lg);color:var(--gold);margin-bottom:.5rem">✓ Solicitação recebida!</p><p style="color:var(--cream);font-size:var(--sm)">Em breve nossa equipe entrará em contato.</p></div>';
+        }
+
+        function showError(formEl, msg) {
+            const existing = formEl.querySelector('.form-error-msg');
+            if (existing) existing.remove();
+            const el = document.createElement('p');
+            el.className = 'form-error-msg';
+            el.style.cssText = 'color:#e07a6a;font-size:var(--xs);padding:.25rem .75rem;margin-top:-.25rem;';
+            el.textContent = msg;
+            const btn = formEl.querySelector('button');
+            if (btn) formEl.insertBefore(el, btn);
         }
 
         function validarTelefone(tel) {
@@ -2193,31 +2188,35 @@
         }
 
         function submit(nomeId, telId, procId, formEl) {
-            const nome = document.getElementById(nomeId).value.trim();
-            const tel = document.getElementById(telId).value.trim();
-            const proc = document.getElementById(procId);
-            const procLabel = proc.options[proc.selectedIndex]?.text || 'consulta geral';
+            try {
+                const nome = document.getElementById(nomeId).value.trim();
+                const tel = document.getElementById(telId).value.trim();
+                const proc = document.getElementById(procId);
+                const procLabel = proc ? (proc.options[proc.selectedIndex]?.text || 'consulta geral') : 'consulta geral';
 
-            if (!nome || !tel) {
-                alert('Preencha seu nome e WhatsApp para continuar.');
-                return;
+                if (!nome || !tel) {
+                    showError(formEl, 'Preencha seu nome e WhatsApp para continuar.');
+                    return;
+                }
+
+                if (!validarTelefone(tel)) {
+                    showError(formEl, 'Informe o DDD + número completo. Ex: 27 99999-9999');
+                    document.getElementById(telId).focus();
+                    return;
+                }
+
+                if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+
+                fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome, telefone: tel, procedimento: procLabel, utm_campaign: getUTMs().utm_campaign || procLabel.toLowerCase().replace(/ /g,'_'), ...getUTMs() }),
+                }).catch(() => {});
+
+                showSuccess(formEl);
+            } catch(e) {
+                console.error('Form submit error:', e);
             }
-
-            if (!validarTelefone(tel)) {
-                alert('Número de WhatsApp inválido. Informe o DDD + número completo. Ex: 27 99999-9999');
-                document.getElementById(telId).focus();
-                return;
-            }
-
-            if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-
-            fetch('/api/lead', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, telefone: tel, procedimento: procLabel, utm_campaign: getUTMs().utm_campaign || procLabel.toLowerCase().replace(/ /g,'_'), ...getUTMs() }),
-            }).catch(() => {});
-
-            showSuccess(formEl);
         }
 
         document.getElementById('hero-submit').addEventListener('click', function() {
