@@ -2127,6 +2127,8 @@
                 before.style.clipPath = 'inset(0 50% 0 0)';
             }
 
+            let touchStartX = 0, touchStartY = 0, directionLocked = null;
+
             const getX = e => {
                 const r = container.getBoundingClientRect();
                 const cx = e.touches ? e.touches[0].clientX : e.clientX;
@@ -2142,18 +2144,32 @@
 
             handle.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; });
             container.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; });
-            handle.addEventListener('touchstart', e => { dragging = true; }, { passive: true });
-            container.addEventListener('touchstart', e => { dragging = true; }, { passive: true });
             container.addEventListener('selectstart', e => e.preventDefault());
 
-            document.addEventListener('mousemove', onMove);
-            document.addEventListener('touchmove', e => {
-                if (!dragging) return;
-                e.preventDefault();
-                onMove(e);
+            container.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                directionLocked = null;
+            }, { passive: true });
+
+            container.addEventListener('touchmove', e => {
+                if (directionLocked === 'vertical') return;
+                const dx = Math.abs(e.touches[0].clientX - touchStartX);
+                const dy = Math.abs(e.touches[0].clientY - touchStartY);
+                if (directionLocked === null) {
+                    if (dx < 5 && dy < 5) return;
+                    directionLocked = dx > dy ? 'horizontal' : 'vertical';
+                }
+                if (directionLocked === 'horizontal') {
+                    dragging = true;
+                    e.preventDefault();
+                    onMove(e);
+                }
             }, { passive: false });
+
+            document.addEventListener('mousemove', onMove);
             document.addEventListener('mouseup', () => dragging = false);
-            document.addEventListener('touchend', () => dragging = false);
+            document.addEventListener('touchend', () => { dragging = false; directionLocked = null; });
         });
 
         // FAQ
