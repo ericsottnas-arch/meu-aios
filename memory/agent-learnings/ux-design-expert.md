@@ -91,3 +91,15 @@
 - **Before/after slider sem user-select:** CRITICAL (problema visual óbvio ao usar)
 - **Stack de animações aprovada:** HIGH (usar sempre para páginas premium)
 - **Auditoria de gramática:** HIGH (sempre fazer antes de entregar)
+
+---
+
+## [2026-04-13] Logo com texto incorporado — não duplicar
+
+**Contexto:** Design system Dra. Vanessa Soares — substituição de SVG placeholder por logo real PNG.
+
+**Erro cometido:** Logo PNG `-03.png` já contém "DRA. VANESSA SOARES" baked in. O HTML tinha um elemento `cover-brand-name` com o mesmo texto, causando nome duplicado no cover.
+
+**Regra derivada:** Antes de inserir um logo real em qualquer posição, verificar VISUALMENTE se o PNG já contém o nome/texto da marca. Se sim, remover qualquer elemento HTML que duplique essa informação.
+
+**Severidade:** HIGH

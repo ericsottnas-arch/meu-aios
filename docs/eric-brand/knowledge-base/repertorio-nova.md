@@ -1513,3 +1513,67 @@ Antes da análise, é necessário filtrar o ruído. Das 18 conversas, **nem toda
 | Tipo | Objeção | Como aparece nas mensagens |
 |---|---|---|
 | **Financeira** | *"
+
+---
+
+## 🗓️ Análise de Campo — 13 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads e Clientes Inbound
+### Base: 36 mensagens reais via WhatsApp | Setor: Saúde & Estética Brasileira
+### Aplicação: Repertório da Agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- **Mensagem curta e direta**, muitas vezes sem contexto: *"Olá! Tenho interesse e queria mais informações, por favor."* — aparece 4 vezes de contatos diferentes, sugerindo que chegam via anúncio com CTA padronizado e não elaboram espontaneamente.
+- **Chegam com dúvida localizada**, não com clareza sobre o serviço completo: perguntam sobre localização, prazo da promoção, se é definitivo — uma coisa de cada vez.
+- Profissionais da área (esteticistas, biomédicas) chegam **descrevendo o próprio negócio** antes de perguntar qualquer coisa — como Leandra, que explica toda a estrutura do consultório antes de sinalizar interesse.
+
+### Como demonstram interesse
+- Fazem perguntas **em sequência**, não tudo de uma vez: Vera enviou 5 mensagens separadas sobre procedimentos diferentes.
+- Mencionam **intenção de ir presencialmente**: *"amanhã vou pessoalmente até a clínica"* — sinal de aquecimento real.
+- Perguntam sobre **paciente modelo**, o que indica interesse com restrição financeira ou desejo de testar antes de pagar valor cheio.
+
+### Como hesitam
+- Dão desculpas de tempo: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"* — Pam some com justificativas suaves, sem encerrar o contato.
+- Condicionam a compra: *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — Cleide impõe condições antes de qualquer avanço.
+- Perguntam se a avaliação é paga antes de qualquer outra coisa — barreira de entrada mesmo no primeiro passo.
+
+### Como somem
+- Ficam em modo *"vou te avisando"* sem dar próximo passo concreto: *"Sim eu vou ti falando"*.
+- Não encerram a conversa, mas **param de responder após receber informação** (padrão Desconhecido — enviou a mesma mensagem duas vezes, provavelmente de fluxos diferentes, sem seguir adiante).
+
+### Como voltam
+- Voltam com pergunta nova, como se a conversa anterior não tivesse acontecido.
+- Reaparecem após ver nova oferta ou promoção (padrão Tania — voltou com *"Quero muito ser paciente modelo nariz!"* após provavelmente ver conteúdo novo).
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas / situação
+- *"Sou úma senhora aposentada"* — identidade antes da dor; buscam se qualificar socialmente antes de perguntar preço.
+- *"Meu ddd é de Belém, mas estou morando em Macapá"* — explicam contexto geográfico como forma de verificar se têm acesso ao serviço.
+- *"Estou a 14 anos na área e 1 ano e pouco pra mim"* — profissional que acabou de abrir o próprio negócio, ainda insegura com gestão e marketing.
+- *"Muitas coisas preciso fazer um catálogo sou Esteticista facial e corporal faço uns 30 procedimentos"* — caos de oferta, sem posicionamento claro.
+- *"Nada que não possa melhorar"* — reconhece que precisa de ajuda, mas de forma defensiva/minimizadora.
+
+### Como falam de dinheiro / preço
+- *"1 sessão de criolipólise por 1200, quando alugo a máquina"* — fala de ticket alto com orgulho, sinalizando que já tem maturidade comercial.
+- *"Terei que pagar a avaliação?"* — primeira pergunta é sobre custo, antes de qualquer pergunta sobre o serviço.
+- *"Fechar contratos de 3,5k a 5k por mês não é sorte, é método"* — linguagem de guru de vendas infiltrada na caixa de entrada (ruído, mas revela o vocabulário do ecossistema).
+
+### Como expressam insegurança ou desconfiança
+- *"Voce deve te mamdado mensagem pra pessoa erada"* — confusão com o contato, possível descuido no disparo ou lead frio.
+- *"A clínica fica em Macapá?"* — antes de qualquer interesse no procedimento, verifica se o serviço existe na sua realidade geográfica.
+- *"Essa promoção vai até quando?"* — urgência artificial que o lead testa para entender se é real ou pressão de vendas.
+- *"Só farei se for conjugado com…"* — negociação com condição, desconfiança de que o resultado isolado não será suficiente.
+
+### Como demonstram interesse real
+- *"Quero muito ser paciente modelo nariz! ☺️"* — emoção explícita + procedimento específico = intenção clara.
+- *"Amanhã vou pessoalmente até a clínica"* — compromisso de ação física no curto prazo.
+- *"Como funciona a questão de ser paciente modelo?"* — pergunta sobre mecanismo de acesso = lead qualificado com restrição financeira.
+- *"Quando ela poderia me avaliar?"* — pergunta de agendamento = fundo de funil.

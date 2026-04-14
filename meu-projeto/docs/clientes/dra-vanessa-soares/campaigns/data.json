@@ -1,7 +1,7 @@
 {
   "clientId": "dra-vanessa-soares",
   "clientName": "Dra. Vanessa Soares",
-  "exportedAt": "2026-04-13T10:55:55.123Z",
+  "exportedAt": "2026-04-14T10:43:27.758Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -1902,7 +1902,7 @@
       {
         "id": "120233278624320377",
         "name": "[HARMONIZAÇÃO MASCULINA] [SYRA] [WHATSAPP]",
-        "status": "PAUSED",
+        "status": "ACTIVE",
         "objective": "OUTCOME_ENGAGEMENT",
         "dailyBudget": null,
         "lifetimeBudget": null,
@@ -2990,6 +2990,44 @@
             "messagingConversations": 1,
             "costPerMessagingConversation": 8.44,
             "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-13",
+            "impressions": 933,
+            "clicks": 12,
+            "spend": 19.63,
+            "cpc": 1.635833,
+            "ctr": 1.286174,
+            "cpm": 21.039657,
+            "reach": 706,
+            "frequency": 1.32153,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 4,
+            "costPerMessagingConversation": 4.9075,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-14",
+            "impressions": 107,
+            "clicks": 0,
+            "spend": 2.49,
+            "cpc": 0,
+            "ctr": 0,
+            "cpm": 23.271028,
+            "reach": 95,
+            "frequency": 1.126316,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
           }
         ],
         "adsets": [
@@ -3416,7 +3454,7 @@
     ],
     "summary": {
       "totalCampaigns": 5,
-      "activeCampaigns": 0,
+      "activeCampaigns": 1,
       "totalSpend": 0,
       "avgCPL": 0,
       "totalImpressions": 0,
@@ -3437,7 +3475,7 @@
     "topPerformers": [],
     "opportunities": [],
     "nextSteps": [
-      "Ativar campanhas pausadas",
+      "Escalar: [HARMONIZAÇÃO MASCULINA] [SYRA] [WHATSAPP]",
       "Analisar audiências",
       "Testar novos criativos"
     ]
