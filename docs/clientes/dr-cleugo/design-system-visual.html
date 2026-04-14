@@ -195,8 +195,8 @@ a, [data-hover] { cursor:none; }
 .svc-ink .svc-italic { color:var(--gold); }
 
 /* ══ 04.5 BEFORE/AFTER ══ */
-.ba-container { position:relative; overflow:hidden; aspect-ratio:16/9; max-width:900px; margin:0 auto; cursor:ew-resize; user-select:none; }
-.ba-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.ba-container { position:relative; overflow:hidden; aspect-ratio:16/9; max-width:900px; margin:0 auto; cursor:ew-resize; user-select:none; -webkit-user-select:none; }
+.ba-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; -webkit-user-drag:none; }
 .ba-before { clip-path:inset(0 50% 0 0); z-index:1; }
 .ba-slider { position:absolute; top:0; bottom:0; left:50%; width:3px; background:var(--cream); z-index:3; transform:translateX(-50%); }
 .ba-handle { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:48px; height:48px; border-radius:50%; background:var(--cream); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgba(0,0,0,.2); z-index:4; }
@@ -611,11 +611,15 @@ a, [data-hover] { cursor:none; }
     <span class="st-i reveal">slider interativo</span>
     <p class="sd reveal">Componente para apresentar resultados dos pacientes. Arraste o slider para comparar. Touch-friendly em mobile.</p>
     <div class="ba-container reveal" id="ba-slider">
-      <div style="position:absolute;inset:0;z-index:0;">
-        <img class="ba-img" src="/design-system/ba-depois.jpg" alt="Resultado depois Dream Incision" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;">
+      <!-- DEPOIS (camada base) -->
+      <div style="position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,#2a1f0e 0%,#C08B51 60%,#f0e6d0 100%);display:flex;align-items:center;justify-content:flex-end;padding-right:10%;">
+        <span style="font-family:var(--fd);font-style:italic;font-size:clamp(2rem,5vw,4rem);color:rgba(255,255,255,.12);letter-spacing:-0.02em;">resultado</span>
+        <!-- Substituir por: <img class="ba-img" src="/design-system/ba-depois.jpg" alt="Resultado depois" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"> -->
       </div>
-      <div class="ba-before" style="position:absolute;inset:0;z-index:1;">
-        <img class="ba-img" src="/design-system/ba-antes.jpg" alt="Antes tratamento celulite" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;">
+      <!-- ANTES (camada com clip-path) -->
+      <div class="ba-before" style="position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,#1a1410 0%,#4a3728 60%,#8a6a50 100%);display:flex;align-items:center;justify-content:flex-start;padding-left:10%;">
+        <span style="font-family:var(--fd);font-style:italic;font-size:clamp(2rem,5vw,4rem);color:rgba(255,255,255,.08);letter-spacing:-0.02em;">antes</span>
+        <!-- Substituir por: <img class="ba-img" src="/design-system/ba-antes.jpg" alt="Antes" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"> -->
       </div>
       <div class="ba-slider" id="ba-line">
         <div class="ba-handle">
@@ -936,20 +940,23 @@ function initAnimations() {
   const c = document.getElementById('ba-slider');
   const line = document.getElementById('ba-line');
   if (!c || !line) return;
-  const before = c.querySelector('[style*="clip-path"]');
+  const before = c.querySelector('.ba-before');
   let dragging = false, pos = 50;
+
+  c.addEventListener('selectstart', e => e.preventDefault());
+
   function update(x) {
     const r = c.getBoundingClientRect();
     pos = Math.min(100, Math.max(0, ((x - r.left) / r.width) * 100));
     line.style.left = pos + '%';
-    if (before) before.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
+    before.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
   }
-  c.addEventListener('mousedown', e => { dragging = true; update(e.clientX); });
-  window.addEventListener('mouseup', () => dragging = false);
+  c.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; update(e.clientX); });
+  window.addEventListener('mouseup', () => { dragging = false; });
   window.addEventListener('mousemove', e => { if (dragging) update(e.clientX); });
   c.addEventListener('touchstart', e => { dragging = true; update(e.touches[0].clientX); }, { passive: true });
-  window.addEventListener('touchend', () => dragging = false);
-  window.addEventListener('touchmove', e => { if (dragging) update(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchend', () => { dragging = false; });
+  window.addEventListener('touchmove', e => { if (dragging) { e.preventDefault(); update(e.touches[0].clientX); } }, { passive: false });
 })();
 
 // ══ CURVE SCROLL ══
