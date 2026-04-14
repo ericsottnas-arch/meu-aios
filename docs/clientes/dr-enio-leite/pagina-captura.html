@@ -1566,7 +1566,7 @@
                 
                 <label for="hero-proc" class="sr-only">Procedimento</label>
                 <select id="hero-proc" class="form-input" required>
-                    <option value="">O que te incomoda mais hoje?</option>
+                    <option value="" disabled selected>O que te incomoda mais hoje?</option>
                     <option value="Toxina Botulínica">Olhos que parecem cansados</option>
                     <option value="Rinomodelação">O formato do meu nariz</option>
                     <option value="Preenchimento Labial">Lábios sem volume ou definição</option>
@@ -2045,7 +2045,7 @@
                 
                 <label for="modal-proc" class="sr-only">Procedimento</label>
                 <select id="modal-proc" class="form-input" required>
-                    <option value="">O que te incomoda mais hoje?</option>
+                    <option value="" disabled selected>O que te incomoda mais hoje?</option>
                     <option value="Toxina Botulínica">Olhos que parecem cansados</option>
                     <option value="Rinomodelação">O formato do meu nariz</option>
                     <option value="Preenchimento Labial">Lábios sem volume ou definição</option>
@@ -2279,6 +2279,12 @@
 
                 if (!nome || !tel) {
                     showError(formEl, 'Preencha seu nome e WhatsApp para continuar.');
+                    return;
+                }
+
+                if (proc && !proc.value) {
+                    showError(formEl, 'Selecione o que mais te incomoda hoje para continuar.');
+                    proc.focus();
                     return;
                 }
 
