@@ -1577,3 +1577,74 @@ Antes da análise, é necessário filtrar o ruído. Das 18 conversas, **nem toda
 - *"Amanhã vou pessoalmente até a clínica"* — compromisso de ação física no curto prazo.
 - *"Como funciona a questão de ser paciente modelo?"* — pergunta sobre mecanismo de acesso = lead qualificado com restrição financeira.
 - *"Quando ela poderia me avaliar?"* — pergunta de agendamento = fundo de funil.
+
+---
+
+## 🗓️ Análise de Campo — 14 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads Inbound WhatsApp
+> **Base:** 36 mensagens | 18 contatos | Setor: Saúde & Estética | Contexto: @byericsantos
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### 🔵 Como entram em contato
+- **Mensagem genérica e curta como porta de entrada:** vários leads usam exatamente a mesma frase padrão *"Olá! Tenho interesse e queria mais informações, por favor."* — o que indica que vieram de um anúncio com CTA direto, mas **chegam sem intenção qualificada clara**. Precisam ser aquecidos após o primeiro contato.
+- **Chegam com dúvida geográfica antes de qualquer outra coisa:** Vera e Milena perguntam sobre localização antes de perguntar preço ou procedimento. A barreira logística é o primeiro filtro mental do lead.
+
+### 🟡 Como demonstram interesse real
+- **Fazem múltiplas perguntas em sequência, sem esperar resposta:** Vera enviou 5 mensagens diferentes sobre procedimentos distintos (fio, rinoplastia, prazo da promoção). Esse comportamento indica lead **quente em modo de pesquisa ativa** — está comparando opções.
+- **Usam linguagem emocional + aspiracional:** *"Quero muito ser paciente modelo nariz! ☺️"* — o desejo já está formado, falta apenas a estrutura (condição financeira ou coragem) para avançar.
+- **Profissionais do setor chegam com contexto detalhado:** Leandra chegou descrevendo seu negócio, seus procedimentos, sua parceria com biomédica e seu volume de atendimentos. Isso é um lead **que quer ser compreendido antes de ser vendido.**
+
+### 🔴 Como hesitam e somem
+- **Usam "falta de tempo" como escudo:** *"Ainda to sem tempo pra gente conversar"* / *"Sim hoje foi pesado"* — Pam demonstra desejo de continuar o contato, mas usa a rotina como barreira. Esse lead não sumiu: **está postergando com culpa.**
+- **Condicionam a decisão a fatores externos:** *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — Cleide não está recusando, está negociando internamente antes de negociar com a clínica.
+- **Chegam e não se identificam:** "Desconhecido" enviou a mensagem padrão duas vezes. Provavelmente erro ou ansiedade. Lead existe, mas **o fluxo de captura não coletou dados mínimos.**
+
+### 🟢 Como voltam
+- **Com compromisso concreto de presença física:** *"Bom dia, amanhã vou pessoalmente até a clínica"* — Neize não perguntou mais nada. A decisão já foi tomada internamente. O conteúdo ou o atendimento anterior já fez o trabalho.
+- **Com perguntas sobre o modelo de acesso (paciente modelo):** Milena e Tania perguntam sobre paciente modelo — esse é o comportamento de quem **quer o resultado mas está testando se consegue encaixar financeiramente.**
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### 💬 Como descrevem seus problemas / contexto
+> *"Sou uma senhora aposentada"*
+— Sinaliza limitação financeira de forma indireta, sem dizer "não tenho dinheiro".
+
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"*
+— Profissional que priorizou o cliente por anos e agora está tentando construir algo próprio. Carrega culpa e urgência ao mesmo tempo.
+
+> *"Muitas coisas [para fazer], preciso fazer um catálogo, sou Esteticista facial e corporal, faço uns 30 procedimentos"*
+— Sobrecarga de oferta sem organização de comunicação. Esse é o problema central que o @byericsantos resolve.
+
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo, não contratei ainda"*
+— Resistência ao comprometimento com serviço recorrente. Prefere testar pontualmente.
+
+### 💬 Como falam de dinheiro/preço
+> *"Meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200"*
+— Não fala do próprio preço, fala do que o *cliente dela* aceita pagar. Forma indireta de validar o próprio posicionamento.
+
+> *"Terei que pagar a avaliação?"*
+— Objeção financeira disfarçada de dúvida operacional.
+
+> *"Como funciona a questão de ser paciente modelo?"*
+— Tradução: "existe um jeito de pagar menos ou não pagar?"
+
+### 💬 Como expressam insegurança ou desconfiança
+> *"A rinoplastia é definitiva né?"*
+— Busca de confirmação de segurança antes de qualquer outra informação.
+
+> *"Esse procedimento com fio é definitivo também?"*
+— O medo do resultado temporário (= dinheiro jogado fora) paralisa a decisão.
+
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas"*
+— Insegurança de deixar o resultado pela metade. Controla o que pode para reduzir o risco percebido.
+
+### 💬 Como demonstram interesse real
+> *"Quero muito ser paciente modelo nariz! ☺️"*
+— Desejo declarado, com emoção. Lead quente.
