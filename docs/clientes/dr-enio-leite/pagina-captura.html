@@ -16,6 +16,7 @@
         /* TOKENS */
         :root {
             --gold: #C08B51;
+            --gold-text: #7A5A2A;
             --cream: #F7F4EF;
             --cream-dk: #EDE8DF;
             --parch: #E8E0D2;
@@ -35,7 +36,7 @@
             --xs: 0.8125rem;
             --cmax: 1280px;
             --cpx: clamp(1.5rem, 5vw, 5rem);
-            --spy: clamp(4rem, 10vw, 8rem);
+            --spy: clamp(3rem, 7vw, 5rem);
             --spyl: clamp(6rem, 14vw, 12rem);
         }
 
@@ -186,9 +187,12 @@
             font-weight: 600;
             letter-spacing: .18em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--gold-text);
             margin-bottom: 1.25rem;
         }
+
+        /* Section label on dark backgrounds needs brighter gold */
+        #depoimentos .section-label { color: var(--gold); }
 
         /* REVEAL */
         .reveal {
@@ -276,19 +280,19 @@
 
         /* HERO */
         #hero {
-            min-height: 100svh;
             background: var(--ink);
             display: grid;
             grid-template-columns: 1fr 1fr;
             position: relative;
             overflow: hidden;
+            min-height: 600px;
         }
 
         .hero-content {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            padding: clamp(5.5rem, 10vh, 7rem) var(--cpx) 1rem max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
+            padding: clamp(5.5rem, 10vh, 7rem) var(--cpx) clamp(3rem, 6vh, 5rem) max(var(--cpx), calc((100vw - var(--cmax)) / 2 + var(--cpx)));
             position: relative;
             z-index: 2;
             overflow: visible;
@@ -396,6 +400,15 @@
             background: var(--cream-dk);
             margin-left: -10px;
             overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
         }
 
         .avatar:first-child {
@@ -471,14 +484,14 @@
             font-weight: 600;
             letter-spacing: .18em;
             text-transform: uppercase;
-            color: var(--cream);
+            color: var(--ink);
         }
 
         .ticker-dot {
             width: 4px;
             height: 4px;
             border-radius: 50%;
-            background: rgba(247, 244, 239, .5);
+            background: rgba(21, 18, 13, .3);
             flex-shrink: 0;
         }
 
@@ -539,7 +552,7 @@
 
         /* ANTES E DEPOIS */
         #resultados {
-            padding: var(--spyl) 0;
+            padding: var(--spy) 0;
             background: var(--cream);
         }
 
@@ -549,9 +562,12 @@
 
         .ba-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            margin-top: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .ba-container {
@@ -567,9 +583,16 @@
         .ba-after, .ba-before {
             position: absolute;
             inset: 0;
+            overflow: hidden;
         }
 
         .ba-after img, .ba-before img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
             user-select: none;
             -webkit-user-select: none;
             pointer-events: none;
@@ -577,26 +600,12 @@
         }
 
         .ba-after {
-            background: linear-gradient(135deg, var(--parch) 0%, var(--cream-dk) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: var(--parch);
         }
 
         .ba-before {
-            background: linear-gradient(135deg, var(--cream-dk) 0%, var(--parch) 100%);
+            background: var(--parch);
             clip-path: inset(0 75% 0 0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ba-placeholder-text {
-            font-family: var(--fd);
-            font-style: italic;
-            color: var(--mid);
-            font-size: var(--sm);
-            opacity: .5;
         }
 
         .ba-handle {
@@ -653,7 +662,7 @@
 
         /* PROCEDIMENTOS */
         #procedimentos {
-            padding: var(--spyl) 0;
+            padding: var(--spy) 0;
             background: var(--cream-dk);
             position: relative;
             overflow: hidden;
@@ -739,7 +748,7 @@
 
         /* SOBRE */
         #sobre {
-            padding: var(--spyl) 0;
+            padding: var(--spy) 0;
             background: var(--cream);
         }
 
@@ -825,13 +834,13 @@
             border-left: 2px solid var(--gold);
             padding-left: 1rem;
             font-size: var(--sm);
-            color: var(--mid);
+            color: var(--ink-lt);
             line-height: 1.5;
         }
 
         /* DEPOIMENTOS */
         #depoimentos {
-            padding: var(--spyl) 0;
+            padding: var(--spy) 0;
             background: var(--ink);
             position: relative;
             overflow: hidden;
@@ -942,7 +951,7 @@
 
         /* CTA FINAL */
         #cta-final {
-            padding: var(--spyl) 0;
+            padding: clamp(2.5rem, 6vw, 4rem) 0;
             background: var(--ink);
             text-align: center;
             position: relative;
@@ -991,7 +1000,7 @@
 
         /* FAQ */
         #faq {
-            padding: var(--spyl) 0;
+            padding: var(--spy) 0;
             background: var(--cream-dk);
         }
 
@@ -1061,7 +1070,7 @@
 
         /* CLINICA */
         #clinica {
-            padding: var(--spyl) 0;
+            padding: var(--spy) 0;
             background: var(--cream);
         }
 
@@ -1164,7 +1173,7 @@
             font-weight: 600;
             letter-spacing: .12em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--gold-text);
             margin-bottom: .5rem;
         }
 
@@ -1172,7 +1181,7 @@
             content: '';
             width: 20px;
             height: 1px;
-            background: var(--gold);
+            background: var(--gold-text);
         }
 
         @media (max-width: 900px) {
@@ -1205,14 +1214,14 @@
 
         .footer-tagline {
             font-size: var(--sm);
-            color: var(--mid);
+            color: rgba(247, 244, 239, .65);
             margin-top: .5rem;
             font-style: italic;
             line-height: 1.5;
             max-width: 28ch;
         }
 
-        .footer-col h4 {
+        .footer-col h3 {
             font-family: var(--fb);
             font-size: var(--xs);
             font-weight: 600;
@@ -1224,7 +1233,7 @@
 
         .footer-col p, .footer-col a {
             font-size: var(--sm);
-            color: var(--mid);
+            color: rgba(247, 244, 239, .6);
             line-height: 1.8;
             text-decoration: none;
             display: block;
@@ -1244,7 +1253,7 @@
 
         .footer-bottom p {
             font-size: var(--xs);
-            color: rgba(130, 121, 110, .5);
+            color: rgba(247, 244, 239, .5);
         }
 
         /* MODAL */
@@ -1316,7 +1325,6 @@
                 grid-template-columns: 1fr;
                 height: auto;
                 max-height: none;
-                min-height: 100svh;
                 overflow-y: auto;
             }
 
@@ -1342,7 +1350,7 @@
             }
 
             .mobile-dr-photo {
-                display: block;
+                display: none;
             }
 
             .ba-grid {
@@ -1407,8 +1415,12 @@
                 grid-template-columns: 1fr;
             }
 
+            .ba-grid {
+                grid-template-columns: 1fr;
+            }
+
             .ba-container {
-                aspect-ratio: 4/5;
+                aspect-ratio: 3/4;
             }
 
             .dep-facade {
@@ -1424,6 +1436,16 @@
                 letter-spacing: .12em;
             }
 
+            .cursor-dot, .cursor-ring {
+                display: none;
+            }
+
+            body {
+                cursor: auto;
+            }
+        }
+
+        @media (hover: none) {
             .cursor-dot, .cursor-ring {
                 display: none;
             }
@@ -1472,21 +1494,36 @@
             flex-shrink: 0;
         }
     </style>
-    <link rel="preload" as="image" href="dr-enio-hero.png">
-    <!-- Meta Pixel -->
+    <link rel="preload" as="image" href="dr-enio-hero.webp" type="image/webp">
+    <!-- Microsoft Clarity — deferred 2s após load para não bloquear TTI -->
     <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1298862062159814');
-    fbq('track', 'PageView');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wb7c209qlo");
+        }, 2000);
+    });
+    </script>
+    <!-- Meta Pixel — stub imediato, script deferred para após load -->
+    <script>
+    !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;
+        n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+        window.addEventListener('load',function(){
+            t=b.createElement(e);t.async=!0;t.src=v;
+            s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+        });
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1298862062159814');
+    fbq('track','PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1298862062159814&ev=PageView&noscript=1"
     /></noscript>
-    <!-- Fim Meta Pixel -->
 </head>
 <body>
     <!-- CURSOR -->
@@ -1496,7 +1533,10 @@
     <!-- NAV -->
     <nav id="nav">
         <a href="#hero" class="nav-logo">
-            <img src="logo-horizontal.png" alt="Dr. Enio Leite" class="nav-logo-img">
+            <picture>
+                <source srcset="logo-horizontal.webp" type="image/webp">
+                <img src="logo-horizontal.png" alt="Dr. Enio Leite" class="nav-logo-img" width="1342" height="305">
+            </picture>
         </a>
         <a href="#" id="nav-cta-btn" class="nav-cta">
             <span>Agendar consulta</span>
@@ -1516,24 +1556,24 @@
             <p class="hero-sub">Para quem sempre quis mudar alguma coisa no rosto. Mas queria que parecesse natural.</p>
             
             <form class="hero-form">
-                <h3 class="hero-form-title">Agende sua consulta</h3>
+                <p class="hero-form-title">Agende sua consulta</p>
                 
-                <label for="hero-nome" style="display: none;">Nome</label>
+                <label for="hero-nome" class="sr-only">Nome</label>
                 <input type="text" id="hero-nome" class="form-input" placeholder="Seu nome" required>
                 
-                <label for="hero-tel" style="display: none;">WhatsApp</label>
+                <label for="hero-tel" class="sr-only">WhatsApp</label>
                 <input type="tel" id="hero-tel" class="form-input" placeholder="Seu WhatsApp" required>
                 
-                <label for="hero-proc" style="display: none;">Procedimento</label>
+                <label for="hero-proc" class="sr-only">Procedimento</label>
                 <select id="hero-proc" class="form-input" required>
-                    <option value="">O que você quer melhorar?</option>
-                    <option>Toxina Botulínica</option>
-                    <option>Preenchimento Labial</option>
-                    <option>Bioestimuladores de Colágeno</option>
-                    <option>Fios de Sustentação</option>
-                    <option>Rinomodelação</option>
-                    <option>Lipo de Papada</option>
-                    <option>Nao sei ainda / Consulta geral</option>
+                    <option value="" disabled selected>O que te incomoda mais hoje?</option>
+                    <option value="Toxina Botulínica">Olhos que parecem cansados</option>
+                    <option value="Rinomodelação">O formato do meu nariz</option>
+                    <option value="Preenchimento Labial">Lábios sem volume ou definição</option>
+                    <option value="Lipo de Papada">Papada ou contorno do queixo</option>
+                    <option value="Fios de Sustentação">Rosto que perdeu o contorno</option>
+                    <option value="Bioestimuladores de Colágeno">Pele que perdeu a firmeza</option>
+                    <option value="Consulta geral">Ainda não sei, quero uma avaliação</option>
                 </select>
                 
                 <button type="button" id="hero-submit" class="btn btn-gold">
@@ -1544,17 +1584,24 @@
             
             <div class="hero-social-proof">
                 <div class="avatar-stack">
-                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#c9a06b,#8a6742)"></div>
-                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#b8917a,#7d5c4d)"></div>
-                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#a89080,#6e5048)"></div>
-                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#c4a882,#8c6e50)"></div>
-                    <div class="avatar avatar-css" aria-hidden="true" style="background:linear-gradient(135deg,#b09070,#7a5c40)"></div>
+                    <div class="avatar"><picture><source srcset="avatars/av1.webp" type="image/webp"><img src="avatars/av1.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
+                    <div class="avatar"><picture><source srcset="avatars/av2.webp" type="image/webp"><img src="avatars/av2.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
+                    <div class="avatar"><picture><source srcset="avatars/av3.webp" type="image/webp"><img src="avatars/av3.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
+                    <div class="avatar"><picture><source srcset="avatars/av4.webp" type="image/webp"><img src="avatars/av4.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
+                    <div class="avatar"><picture><source srcset="avatars/av5.webp" type="image/webp"><img src="avatars/av5.jpg" alt="" width="72" height="72" loading="eager"></picture></div>
+                </div>
+                <div class="proof-text">
+                    <strong><span style="color:var(--gold)">★★★★★</span> 4.9</strong>
+                    +500 pacientes atendidos
                 </div>
             </div>
         </div>
 
         <div class="hero-photo">
-            <img src="dr-enio-hero.png" alt="Dr. Enio Leite" width="600" height="800" fetchpriority="high">
+            <picture>
+                <source srcset="dr-enio-hero.webp" type="image/webp">
+                <img src="dr-enio-hero.png" alt="Dr. Enio Leite" width="896" height="1200" fetchpriority="high">
+            </picture>
         </div>
     </section>
 
@@ -1585,7 +1632,10 @@
 
     <!-- MOBILE PHOTO -->
     <div class="mobile-dr-photo">
-        <img loading="lazy" src="dr-enio-hero.png" alt="Dr. Enio Leite">
+        <picture>
+            <source srcset="dr-enio-hero.webp" type="image/webp">
+            <img loading="lazy" src="dr-enio-hero.png" alt="Dr. Enio Leite" width="896" height="1200">
+        </picture>
         <div class="mobile-dr-photo-caption">
             <span>Especialista em Harmonização Orofacial</span>
             <p>Mais de 8 anos dedicados a resultados naturais.</p>
@@ -1600,70 +1650,72 @@
             <p class="reveal reveal-d2" style="max-width:60ch; color: var(--ink-lt); margin-bottom: 2rem;">Casos reais. Cada resultado, pensado para aquele rosto.</p>
 
             <div class="ba-grid">
-                <div class="ba-container reveal reveal-d3">
+                <div class="ba-container reveal reveal-d1">
                     <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                        <picture>
+                            <source srcset="fotos-procedimentos/rino-p1-depois-sm.webp 600w, fotos-procedimentos/rino-p1-depois.webp 700w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
+                            <img loading="lazy" src="fotos-procedimentos/rino-p1-depois.jpg" alt="Depois rinomodelação" width="700" height="933">
+                        </picture>
                     </div>
                     <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
-                    </div>
-                    <div class="ba-handle"></div>
-                    <div class="ba-label">Toxina Botulínica</div>
-                </div>
-
-                <div class="ba-container reveal reveal-d3">
-                    <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
-                    </div>
-                    <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
-                    </div>
-                    <div class="ba-handle"></div>
-                    <div class="ba-label">Preenchimento Labial</div>
-                </div>
-
-                <div class="ba-container reveal reveal-d3">
-                    <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
-                    </div>
-                    <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
-                    </div>
-                    <div class="ba-handle"></div>
-                    <div class="ba-label">Bioestimuladores</div>
-                </div>
-
-                <div class="ba-container reveal reveal-d3">
-                    <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
-                    </div>
-                    <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
-                    </div>
-                    <div class="ba-handle"></div>
-                    <div class="ba-label">Fios de Sustentação</div>
-                </div>
-
-                <div class="ba-container reveal reveal-d3">
-                    <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
-                    </div>
-                    <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                        <picture>
+                            <source srcset="fotos-procedimentos/rino-p1-antes-sm.webp 600w, fotos-procedimentos/rino-p1-antes.webp 700w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
+                            <img loading="lazy" src="fotos-procedimentos/rino-p1-antes.jpg" alt="Antes rinomodelação" width="700" height="933">
+                        </picture>
                     </div>
                     <div class="ba-handle"></div>
                     <div class="ba-label">Rinomodelação</div>
                 </div>
 
-                <div class="ba-container reveal reveal-d3">
+                <div class="ba-container reveal reveal-d2">
                     <div class="ba-after">
-                        <img loading="lazy" src="depois-demo.jpg" alt="Depois">
+                        <picture>
+                            <source srcset="fotos-procedimentos/lipo-p1-depois-sm.webp 600w, fotos-procedimentos/lipo-p1-depois.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
+                            <img loading="lazy" src="fotos-procedimentos/lipo-p1-depois.jpg" alt="Depois lipo de papada" width="900" height="1200">
+                        </picture>
                     </div>
                     <div class="ba-before">
-                        <img loading="lazy" src="antes-demo.jpg" alt="Antes">
+                        <picture>
+                            <source srcset="fotos-procedimentos/lipo-p1-antes-sm.webp 600w, fotos-procedimentos/lipo-p1-antes.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
+                            <img loading="lazy" src="fotos-procedimentos/lipo-p1-antes.jpg" alt="Antes lipo de papada" width="900" height="1200">
+                        </picture>
                     </div>
                     <div class="ba-handle"></div>
                     <div class="ba-label">Lipo de Papada</div>
+                </div>
+
+                <div class="ba-container reveal reveal-d1">
+                    <div class="ba-after">
+                        <picture>
+                            <source srcset="fotos-procedimentos/harm-p1-depois-sm.webp 600w, fotos-procedimentos/harm-p1-depois.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
+                            <img loading="lazy" src="fotos-procedimentos/harm-p1-depois.jpg" alt="Depois harmonização facial" width="900" height="1200">
+                        </picture>
+                    </div>
+                    <div class="ba-before">
+                        <picture>
+                            <source srcset="fotos-procedimentos/harm-p1-antes-sm.webp 600w, fotos-procedimentos/harm-p1-antes.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
+                            <img loading="lazy" src="fotos-procedimentos/harm-p1-antes.jpg" alt="Antes harmonização facial" width="900" height="1200">
+                        </picture>
+                    </div>
+                    <div class="ba-handle"></div>
+                    <div class="ba-label">Harmonização Facial</div>
+                </div>
+
+                <div class="ba-container reveal reveal-d2">
+                    <div class="ba-after">
+                        <picture>
+                            <source srcset="fotos-procedimentos/lift-p1-depois-sm.webp 600w, fotos-procedimentos/lift-p1-depois.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
+                            <img loading="lazy" src="fotos-procedimentos/lift-p1-depois.jpg" alt="Depois mini lifting" width="900" height="1200">
+                        </picture>
+                    </div>
+                    <div class="ba-before">
+                        <picture>
+                            <source srcset="fotos-procedimentos/lift-p1-antes-sm.webp 600w, fotos-procedimentos/lift-p1-antes.webp 900w" type="image/webp" sizes="(max-width:560px) calc(100vw - 3rem),(max-width:900px) calc(50vw - 2rem),430px">
+                            <img loading="lazy" src="fotos-procedimentos/lift-p1-antes.jpg" alt="Antes mini lifting" width="900" height="1200">
+                        </picture>
+                    </div>
+                    <div class="ba-handle"></div>
+                    <div class="ba-label">Mini Lifting</div>
                 </div>
             </div>
 
@@ -1735,13 +1787,16 @@
         <div class="container">
             <div class="sobre-grid">
                 <div class="sobre-photo reveal">
-                    <img loading="lazy" src="dr-enio-about.png" alt="Dr. Enio Leite" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;">
+                    <picture>
+                        <source srcset="dr-enio-about.webp" type="image/webp">
+                        <img loading="lazy" src="dr-enio-about.png" alt="Dr. Enio Leite" width="896" height="1200" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;">
+                    </picture>
                 </div>
 
                 <div>
                     <span class="section-label reveal reveal-d1">O ESPECIALISTA</span>
                     <h2 class="reveal reveal-d2">Dr. Enio Leite</h2>
-                    <p class="reveal reveal-d3" style="font-size: var(--sm); color: var(--mid); margin-bottom: 1.5rem;">Cirurgião Dentista · Especialista em Harmonização Orofacial</p>
+                    <p class="reveal reveal-d3" style="font-size: var(--sm); color: var(--ink-lt); margin-bottom: 1.5rem;">Cirurgião Dentista · Especialista em Harmonização Orofacial</p>
                     
                     <p class="reveal reveal-d3">8 anos dedicados à harmonização facial em Serra, ES. Mais de 500 pacientes atendidos.</p>
 
@@ -1784,7 +1839,7 @@
 
             <div class="dep-grid">
                 <div class="dep-card reveal reveal-d2">
-                    <div class="dep-facade" onclick="playYt(this)" data-yt="9rENaneS7sQ" style="background-image: url('https://img.youtube.com/vi/9rENaneS7sQ/hqdefault.jpg');">
+                    <div class="dep-facade" onclick="playYt(this)" data-yt="9rENaneS7sQ" data-bg="https://img.youtube.com/vi/9rENaneS7sQ/hqdefault.jpg">
                         <div class="dep-facade-overlay"></div>
                         <div class="dep-facade-play"></div>
                         <div class="dep-facade-handle">@drenioleite</div>
@@ -1793,7 +1848,7 @@
                 </div>
 
                 <div class="dep-card reveal reveal-d2">
-                    <div class="dep-facade" onclick="playYt(this)" data-yt="ksYrP20AyFI" style="background-image: url('https://img.youtube.com/vi/ksYrP20AyFI/hqdefault.jpg');">
+                    <div class="dep-facade" onclick="playYt(this)" data-yt="ksYrP20AyFI" data-bg="https://img.youtube.com/vi/ksYrP20AyFI/hqdefault.jpg">
                         <div class="dep-facade-overlay"></div>
                         <div class="dep-facade-play"></div>
                         <div class="dep-facade-handle">@drenioleite</div>
@@ -1802,7 +1857,7 @@
                 </div>
 
                 <div class="dep-card reveal reveal-d2">
-                    <div class="dep-facade" onclick="playYt(this)" data-yt="CP-oVcOdp_I" style="background-image: url('https://img.youtube.com/vi/CP-oVcOdp_I/hqdefault.jpg');">
+                    <div class="dep-facade" onclick="playYt(this)" data-yt="CP-oVcOdp_I" data-bg="https://img.youtube.com/vi/CP-oVcOdp_I/hqdefault.jpg">
                         <div class="dep-facade-overlay"></div>
                         <div class="dep-facade-play"></div>
                         <div class="dep-facade-handle">@drenioleite</div>
@@ -1839,7 +1894,7 @@
             <span class="section-label reveal">PERGUNTAS FREQUENTES</span>
             <h2 class="reveal reveal-d1">Antes de agendar</h2>
 
-            <div style="max-width: 720px;">
+            <div style="max-width: 720px; margin-left: auto; margin-right: auto;">
                 <div class="faq-item reveal reveal-d2">
                     <button class="faq-q">
                         <span>Vou ficar exagerada?</span>
@@ -1921,7 +1976,7 @@
 
                 <div class="clinica-mapa">
                     <div style="reveal">
-                        <iframe src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE" class="clinica-mapa-frame" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE" class="clinica-mapa-frame" title="Mapa de localização — Instituto Dr. Enio Leite" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
                     <div class="clinica-endereco reveal reveal-d1">
@@ -1951,14 +2006,14 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Localização</h4>
+                    <h3>Localização</h3>
                     <p>Shopping Mestre Álvaro</p>
                     <p>Torre B, Sala 701</p>
                     <p>Serra, ES</p>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Contato</h4>
+                    <h3>Contato</h3>
                     <a href="https://instagram.com/drenioleite" target="_blank">@drenioleite</a>
                 </div>
             </div>
@@ -1969,7 +2024,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(247,244,239,.06);">
-                <a href="https://syradigital.com" style="font-size: var(--xs); color: var(--mid); text-decoration: none;">feito por Syra Digital</a>
+                <a href="https://syradigital.com" style="font-size: var(--xs); color: rgba(247, 244, 239, .5); text-decoration: none;">feito por Syra Digital</a>
             </div>
         </div>
     </footer>
@@ -1982,22 +2037,22 @@
             <h3>Agende sua consulta</h3>
             
             <div class="modal-form">
-                <label for="modal-nome" style="display: none;">Nome</label>
+                <label for="modal-nome" class="sr-only">Nome</label>
                 <input type="text" id="modal-nome" class="form-input" placeholder="Seu nome" required>
                 
-                <label for="modal-tel" style="display: none;">WhatsApp</label>
+                <label for="modal-tel" class="sr-only">WhatsApp</label>
                 <input type="tel" id="modal-tel" class="form-input" placeholder="Seu WhatsApp" required>
                 
-                <label for="modal-proc" style="display: none;">Procedimento</label>
+                <label for="modal-proc" class="sr-only">Procedimento</label>
                 <select id="modal-proc" class="form-input" required>
-                    <option value="">O que você quer melhorar?</option>
-                    <option>Toxina Botulínica</option>
-                    <option>Preenchimento Labial</option>
-                    <option>Bioestimuladores de Colágeno</option>
-                    <option>Fios de Sustentação</option>
-                    <option>Rinomodelação</option>
-                    <option>Lipo de Papada</option>
-                    <option>Nao sei ainda / Consulta geral</option>
+                    <option value="" disabled selected>O que te incomoda mais hoje?</option>
+                    <option value="Toxina Botulínica">Olhos que parecem cansados</option>
+                    <option value="Rinomodelação">O formato do meu nariz</option>
+                    <option value="Preenchimento Labial">Lábios sem volume ou definição</option>
+                    <option value="Lipo de Papada">Papada ou contorno do queixo</option>
+                    <option value="Fios de Sustentação">Rosto que perdeu o contorno</option>
+                    <option value="Bioestimuladores de Colágeno">Pele que perdeu a firmeza</option>
+                    <option value="Consulta geral">Ainda não sei, quero uma avaliação</option>
                 </select>
                 
                 <button type="button" id="modal-submit" class="btn btn-gold">
@@ -2008,10 +2063,9 @@
         </div>
     </div>
 
-    <!-- SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <!-- SCRIPTS — GSAP carregado com defer para não bloquear TTI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
     <script>
         // CURSOR
@@ -2039,19 +2093,14 @@
             el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
         });
 
-        // GSAP + SCROLL
-        gsap.registerPlugin(ScrollTrigger);
-
-        // LENIS
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smoothWheel: true,
+        // GSAP + SCROLL — inicializado após load (scripts carregam com defer)
+        window.addEventListener('load', function() {
+            try {
+                gsap.registerPlugin(ScrollTrigger);
+            } catch(e) {
+                console.warn('[anim] GSAP unavailable:', e.message);
+            }
         });
-
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add(time => lenis.raf(time * 1000));
-        gsap.ticker.lagSmoothing(0);
 
         // NAV
         const navEl = document.getElementById('nav');
@@ -2059,12 +2108,8 @@
             navEl.classList.toggle('scrolled', window.scrollY > 80);
         }, { passive: true });
 
-        // HERO ENTRANCE
-        gsap.from('.hero-label', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.1 });
-        gsap.from('.hero-headline', { opacity: 0, y: 12, duration: 1.0, ease: 'power3.out', delay: 0.3 });
-        gsap.from('.hero-sub', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.5 });
-        gsap.from('.hero-form', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.7 });
-        gsap.from('.hero-social-proof', { opacity: 0, y: 12, duration: 0.8, ease: 'power3.out', delay: 0.9 });
+        // HERO ENTRANCE — via CSS animation (fallback garantido sem GSAP)
+        // As animações .reveal já têm fallback CSS (revealFallback keyframe)
 
         // SCROLL REVEALS — IntersectionObserver (sem dependencia de GSAP)
         (function initReveal() {
@@ -2085,22 +2130,11 @@
             const before = container.querySelector('.ba-before');
             let dragging = false;
 
-            ScrollTrigger.create({
-                trigger: container,
-                start: 'top 80%',
-                onEnter: () => {
-                    gsap.to(handle, {
-                        left: '50%',
-                        duration: 1.2,
-                        ease: 'power2.inOut',
-                        onUpdate: function() {
-                            const pct = 25 + this.progress() * 25;
-                            before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-                        }
-                    });
-                },
-                once: true
-            });
+            // Posição inicial do slider (sem animação GSAP, que carrega deferred)
+            handle.style.left = '50%';
+            before.style.clipPath = 'inset(0 50% 0 0)';
+
+            let touchStartX = 0, touchStartY = 0, directionLocked = null;
 
             const getX = e => {
                 const r = container.getBoundingClientRect();
@@ -2117,14 +2151,47 @@
 
             handle.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; });
             container.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; });
-            handle.addEventListener('touchstart', e => { dragging = true; }, { passive: true });
             container.addEventListener('selectstart', e => e.preventDefault());
 
+            container.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                directionLocked = null;
+            }, { passive: true });
+
+            container.addEventListener('touchmove', e => {
+                if (directionLocked === 'vertical') return;
+                const dx = Math.abs(e.touches[0].clientX - touchStartX);
+                const dy = Math.abs(e.touches[0].clientY - touchStartY);
+                if (directionLocked === null) {
+                    if (dx < 5 && dy < 5) return;
+                    directionLocked = dx > dy ? 'horizontal' : 'vertical';
+                }
+                if (directionLocked === 'horizontal') {
+                    dragging = true;
+                    e.preventDefault();
+                    onMove(e);
+                }
+            }, { passive: false });
+
             document.addEventListener('mousemove', onMove);
-            document.addEventListener('touchmove', onMove, { passive: true });
             document.addEventListener('mouseup', () => dragging = false);
-            document.addEventListener('touchend', () => dragging = false);
+            document.addEventListener('touchend', () => { dragging = false; directionLocked = null; });
         });
+
+        // LAZY BACKGROUND IMAGES (thumbnails YouTube)
+        (function lazyBg() {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        const bg = e.target.dataset.bg;
+                        if (bg) e.target.style.backgroundImage = 'url(' + bg + ')';
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { rootMargin: '300px' });
+            document.querySelectorAll('[data-bg]').forEach(el => io.observe(el));
+        })();
 
         // FAQ
         document.querySelectorAll('.faq-item').forEach(item => {
@@ -2140,12 +2207,12 @@
 
         function openModal() {
             overlay.classList.add('active');
-            lenis.stop();
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             overlay.classList.remove('active');
-            lenis.start();
+            document.body.style.overflow = '';
         }
 
         document.getElementById('cta-btn').addEventListener('click', openModal);
@@ -2184,7 +2251,18 @@
 
         // FORM SUBMIT
         function showSuccess(formEl) {
-            formEl.innerHTML = '<div style="text-align:center;padding:1.5rem 0"><p style="font-family:var(--fd);font-size:var(--lg);color:var(--gold);margin-bottom:.5rem">✓ Solicitação recebida!</p><p style="color:var(--ink-lt);font-size:var(--sm)">Em breve nossa equipe entrará em contato.</p></div>';
+            formEl.innerHTML = '<div style="text-align:center;padding:1.5rem 0"><p style="font-family:var(--fd);font-size:var(--lg);color:var(--gold);margin-bottom:.5rem">✓ Solicitação recebida!</p><p style="color:var(--cream);font-size:var(--sm)">Em breve nossa equipe entrará em contato.</p></div>';
+        }
+
+        function showError(formEl, msg) {
+            const existing = formEl.querySelector('.form-error-msg');
+            if (existing) existing.remove();
+            const el = document.createElement('p');
+            el.className = 'form-error-msg';
+            el.style.cssText = 'color:#e07a6a;font-size:var(--xs);padding:.25rem .75rem;margin-top:-.25rem;';
+            el.textContent = msg;
+            const btn = formEl.querySelector('button');
+            if (btn) formEl.insertBefore(el, btn);
         }
 
         function validarTelefone(tel) {
@@ -2193,31 +2271,41 @@
         }
 
         function submit(nomeId, telId, procId, formEl) {
-            const nome = document.getElementById(nomeId).value.trim();
-            const tel = document.getElementById(telId).value.trim();
-            const proc = document.getElementById(procId);
-            const procLabel = proc.options[proc.selectedIndex]?.text || 'consulta geral';
+            try {
+                const nome = document.getElementById(nomeId).value.trim();
+                const tel = document.getElementById(telId).value.trim();
+                const proc = document.getElementById(procId);
+                const procLabel = proc ? (proc.options[proc.selectedIndex]?.text || 'consulta geral') : 'consulta geral';
 
-            if (!nome || !tel) {
-                alert('Preencha seu nome e WhatsApp para continuar.');
-                return;
+                if (!nome || !tel) {
+                    showError(formEl, 'Preencha seu nome e WhatsApp para continuar.');
+                    return;
+                }
+
+                if (proc && !proc.value) {
+                    showError(formEl, 'Selecione o que mais te incomoda hoje para continuar.');
+                    proc.focus();
+                    return;
+                }
+
+                if (!validarTelefone(tel)) {
+                    showError(formEl, 'Informe o DDD + número completo. Ex: 27 99999-9999');
+                    document.getElementById(telId).focus();
+                    return;
+                }
+
+                const utms = getUTMs();
+                fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome, telefone: tel, procedimento: procLabel, ...utms, utm_campaign: utms.utm_campaign || procLabel.toLowerCase().replace(/ /g,'_') }),
+                    keepalive: true,
+                }).catch(() => {});
+
+                window.location.href = '/obrigado';
+            } catch(e) {
+                console.error('Form submit error:', e);
             }
-
-            if (!validarTelefone(tel)) {
-                alert('Número de WhatsApp inválido. Informe o DDD + número completo. Ex: 27 99999-9999');
-                document.getElementById(telId).focus();
-                return;
-            }
-
-            if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-
-            fetch('/api/lead', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, telefone: tel, procedimento: procLabel, utm_campaign: getUTMs().utm_campaign || procLabel.toLowerCase().replace(/ /g,'_'), ...getUTMs() }),
-            }).catch(() => {});
-
-            showSuccess(formEl);
         }
 
         document.getElementById('hero-submit').addEventListener('click', function() {
