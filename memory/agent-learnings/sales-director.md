@@ -134,3 +134,83 @@
   - Taxa conversao atual: 2% (4/203). Meta realista pos-ajustes: 6 a 8%
 - **Entrega:** Google Doc criado — https://docs.google.com/document/d/1hU9kePj0jqYohICTeYGT8OLMQqWMx6G2AHVAyHVsibw/edit
 - **Severidade:** HIGH
+
+---
+
+## [2026-04-16] Analise: Leide Lopes Conceicao (Dra. Gabrielle) + padroes recorrentes
+
+- **Contexto:** Eric pediu analise completa de conversa individual da lead Leide (Maria Leide), telefone (11) 91185-4424, da clinica Dra. Gabrielle. 5 dias de conversa (11-16/abr).
+- **Aprendizados da analise:**
+  - Confirmacao dos 4/5 buracos ja mapeados nas 203 conversas: preco sem ancoragem, parcelamento tardio, follow-up generico, pressao emocional antes de resolver objecao pratica
+  - Novo padrao identificado: "confronto de compromisso" (dizer pra lead que ela concordou com tudo mas nao marca) gera evasao, nao acao. Lead se sente culpada e evita a conversa
+  - Quando lead menciona produto caseiro (creme Inude), usar como ancora de comparacao: "voce ja gasta X por mes com creme, uma sessao custa Y e resolve de verdade"
+  - Excesso de audios sequenciais (6 em 35 min) sobrecarrega lead que trabalha e tem pouco tempo. Limitar a 2 audios seguidos no maximo
+  - Tecnica de "pagamento por sessao" precisa aparecer no PRIMEIRO sinal de preocupacao financeira, nao como ultimo recurso
+  - Prova social localizada (mencionar pacientes de Perus/Caieiras) gera identificacao imediata e reduz barreira
+  - Score de fechamento: 35%. Sobe pra 50-55% se clinica corrigir abordagem. Cai pra 15% se continuar pressionando
+  - Perfil da lead: compradora emocional com limitacao financeira real. Quer, mas precisa sentir que o compromisso financeiro e controlavel
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-16] Analise: 7 leads stage Oportunidade (Dra. Gabrielle) + ranking + padroes consolidados
+
+- **Contexto:** Eric pediu analise completa das 7 leads no stage "Oportunidade" da Dra. Gabrielle. Pipeline Comercial, procedimentos Lipo Sem Corte + Power Shape, Caieiras/SP.
+- **Aprendizados da analise:**
+  - Ranking por probabilidade: Elita (70%) > Jaqueline (55%) > Denise (45%) > Juh (40%) > Leide (35%) > Luana (20%) > Priscila (15%)
+  - 5 padroes consolidados da Gabriele (secretaria): (1) esconde preco quando lead pergunta, (2) parcelamento aparece tarde, (3) follow-up generico, (4) pressao antes de resolver objecao, (5) desconto no sinal como reflexo
+  - Lead que pergunta preco 3x e insiste NAO e tire-kicker, e compradora que precisa encaixar no orcamento. Esconder valor gera desconfianca
+  - "Confronto de compromisso" (cobrar que lead concordou mas nao marcou) confirmado como padrao que gera evasao em multiplas leads (Leide, Denise)
+  - Leads de Franco da Rocha sao cluster geografico relevante (Elita + Jaqueline): se uma fechar e gostar, potencializa a outra
+  - Desconto no sinal (R$40 vs R$50) nao resolve barreira financeira real. Contextualizar que sinal desconta do procedimento e mais eficaz
+  - Receita potencial top 3 ajustada por probabilidade: R$3.285 a R$7.550
+  - Agenda de acoes montada ate 01/05 com data e horario especifico por lead
+- **Entrega:** Google Doc: https://docs.google.com/document/d/1eO_iprzCGWBm5X5dxiHDXq1Uu_KMGP5hIRehwQYDsW8/edit
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-16] Analise: 20 leads stage "Lead Conectado" (Dra. Gabrielle) + follow-ups prontos
+
+- **Contexto:** Eric pediu analise das 20 conversas mais recentes no stage "Lead Conectado" da Dra. Gabrielle (81 leads totais). Leads que interagiram mas nao avancaram para Oportunidade.
+- **Aprendizados da analise:**
+  - 6 padroes de travamento identificados: (1) perguntou preco/nao obteve 35%, (2) agendou/nao pagou sinal 15%, (3) follow-up generico 60%, (4) impedimento real 20%, (5) conversa morreu sem conexao 20%, (6) desalinhamento de servico 5%
+  - Classificacao: 5 quentes (Valquiria, Andrea Braz, Fabiane Toledo, Tatiana Roberto, Nayame), 9 mornas, 6 frias
+  - "Ainda esta ai?" aparece em 60% das conversas como follow-up e tem taxa de reativacao proxima de zero
+  - Pedir Pix imediatamente apos confirmacao de agendamento gera abandono (Valquiria, Fabiane, Mariza)
+  - Leads que mandam audio longo sao as mais qualificadas (Andrea Braz, Abilene): audio longo = investimento emocional alto
+  - Lead que pede ligacao e recebe "e presencial" sente que a clinica nao quer se adaptar a ela (Andrea Braz)
+  - Quando clinica cancela consulta e nao compensa, lead esfria irreversivelmente (Fabiane: clinica cancelou por falta de energia)
+  - 7 erros consolidados da secretaria: esconder preco, Pix imediato, "ainda esta ai?", pressao emocional antes de objecao pratica, excesso de audios, recusar ligacao, nao redirecionar servico
+  - 5 modelos de follow-up generico criados: resultado novo, depoimento paciente, transparencia de valor, porta aberta, urgencia suave
+  - Receita potencial top 5 quentes: R$2.800 a R$4.200 (4 sessoes a R$350 ajustado por probabilidade)
+  - Plano de acao montado com datas especificas ate primeira semana de maio
+- **Entrega:** Google Doc: https://docs.google.com/document/d/1cTe97ah_6XiT_zEYSlbCfua2Z2cY8k-oVpZkEN-ExEg/edit
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-16] Processo: Cadencia de Prospeccao Instagram 14 Dias (multi-canal)
+
+- **Contexto:** Eric pediu processo formal de prospeccao com pipeline por ACAO (nao por status), cadencia de 14 dias, e expansao multi-canal no dia 8
+- **Aprendizados e decisoes:**
+  - Pipeline GHL deve ser por ACAO (cada estagio = 1 acao clara pra fazer em lote), nao por STATUS
+  - Estagios cadencia: DM Enviada (dia 1) → Comentar Post (dia 3) → Reagir Story (dia 5) → DM Valor multi-canal (dia 8) → Porta Aberta (dia 14)
+  - Pesquisar e Aquecer ficam FORA do GHL porque integracao Instagram so cria contato quando DM e enviada
+  - Dia 8 e multi-canal: Instagram (oferta completa) + Email ("garanti que voce veja") + WhatsApp (toque curto apontando pro IG)
+  - Eric NAO oferece edicao de video. Syra e Growth Performance: trafego, dash, landing page, criativo, comercial, script
+  - Ofertas de valor dia 8: metodo assinado/posicionamento, angulo de anuncio, benchmark do nicho, diagnostico rapido de perfil/link
+  - 30-60 dias de cadencia e muito longo pro Eric. Cadencia compacta de 14 dias e o ideal
+  - Se nao respondeu em 14 dias: Arquivo 30d (nao 60-90). Revisitar com 1 toque unico
+  - Volume minimo: 5-8 aberturas/dia
+- **Entrega:** Google Doc: https://docs.google.com/document/d/1TON2vsOqJmd9-bYgnRwC1TA8vFzZaMWd_ffDhSnRM7s/edit
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-16] Feedback: Escrever com acentuação correta
+
+- **Contexto:** Grant escreveu todo o processo e respostas sem acentos (nao, voce, acao, etc.)
+- **Feedback:** "você tá escrevendo tudo sem acento"
+- **Regra derivada:** SEMPRE escrever com acentuação correta em português. "não", "você", "ação", "próximo", etc. Tanto no chat quanto em documentos.
+- **Severidade:** CRITICAL

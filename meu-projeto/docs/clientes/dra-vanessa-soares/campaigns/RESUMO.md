@@ -1,34 +1,24 @@
 # Campanhas de Mídia Paga - Dra. Vanessa Soares
-**Atualizado em:** 15/04/2026, 07:55:14
+**Atualizado em:** 17/04/2026, 07:45:01
 **Período:** Últimos 7 dias
 
 ## Visão Geral
 | Métrica | Valor | Status |
 |---------|-------|--------|
-| Campanhas Ativas | 1/5 | 🟢 |
+| Campanhas Ativas | 0/5 | 🟢 |
 | Gasto Total | R$ 0.00 | 📊 |
 | CPL Médio | R$ 0.00 | 🟢 |
 | Impressões | 0 | 📈 |
 | Cliques | 0 | 🔗 |
 
 ## Campanhas Ativas
-### [HARMONIZAÇÃO MASCULINA] [SYRA] [WHATSAPP]
-- **Status:** 🟢 ACTIVE
-- **Objetivo:** OUTCOME_ENGAGEMENT
-- **Budget:** R$ N/A/dia
-- **Impressões:** 0
-- **Cliques:** 0
-- **CTR:** 0.00%
-- **Gasto:** R$ 0.00
-- **CPL:** R$ 0.00
-- **Conversões:** 0
-- **Criado:** 11/11/2025
+Nenhuma campanha ativa.
 
 ## Oportunidades de Otimização
 Nenhuma oportunidade identificada.
 
 ## Próximas Ações
-- [ ] Escalar: [HARMONIZAÇÃO MASCULINA] [SYRA] [WHATSAPP]
+- [ ] Ativar campanhas pausadas
 - [ ] Analisar audiências
 - [ ] Testar novos criativos
 

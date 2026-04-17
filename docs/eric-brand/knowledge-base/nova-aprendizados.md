@@ -237,4 +237,49 @@ Regra gerada: **Quando criar conteúdo com templates/scripts, priorizar QUALIDAD
 
 ---
 
+### [16/04/2026] FEEDBACK #6 — LEGENDAS: USAR A VOZ LITERAL DO ERIC
+
+**Conteudo:** Legenda para Reel sobre follow-up com leads que disseram "vou fechar depois"
+
+**#1 — LEGENDA = FALA DO ERIC ORGANIZADA, NÃO COPY CRIADA DO ZERO**
+O que nao gostou: Primeira versao tinha tom de "copy de agencia" com dados estatisticos (80%, 70%), frases como "o concorrente aparece", reframes construidos. Nao parecia o Eric falando.
+Sugestao do Eric: Ele mesmo ditou a legenda inteira com a voz dele, e pediu pra eu organizar pra formato de leitura no Instagram.
+Regra gerada: **Quando Eric ditar ou descrever o conteudo da legenda, usar a fala dele como base literal.** O trabalho da Nova e ORGANIZAR a fala do Eric pra formato de leitura (paragrafos, pontuacao, fluidez), nao reescrever com voz de copywriter. A legenda final precisa soar como o Eric falando, nao como alguem escrevendo sobre o que o Eric disse.
+- **Severidade:** CRITICAL
+
+**#2 — ESTRUTURA DE LEGENDA QUE FUNCIONA (padrão Eric)**
+Regra gerada: A estrutura natural do Eric pra legendas educativas e:
+1. **Hook de correcao:** abre negando um comportamento errado ("Nao quer dizer que o lead falou X que voce deve Y")
+2. **Diagnostico leve:** explica o erro sem bater ("Esse e o grande erro que algumas clinicas cometem")
+3. **Solucao pratica com exemplos:** mostra O QUE FAZER com cenarios reais e dialogos simulados
+4. **Dialogo simulado:** recria a conversa com o lead pra mostrar como aplicar na pratica
+5. **Principio fechador:** frase curta que resume a filosofia ("Cliente de clinica nao e pressionado. E confianca.")
+6. **CTA organico:** salva/manda pra equipe
+- **Severidade:** HIGH
+
+**#3 — DADOS ESTATISTICOS NAO SAO OBRIGATORIOS**
+O que nao gostou: Primeira versao forcou "80% dos pacientes fecham entre o 5o e o 10o contato" pra preencher o criterio de "dado concreto". Ficou artificial.
+Regra gerada: **Dado concreto NAO precisa ser estatistica.** Quando o conteudo e pratico/educativo, os "dados" sao os EXEMPLOS REAIS: o cenario do casamento, o audio da doutora, a ligacao pro lead. Isso e concreto. Nao forcar percentuais quando o conteudo ja tem substancia pratica.
+- **Severidade:** HIGH
+
+**#4 — DIALOGOS SIMULADOS = OURO**
+Regra gerada: Eric usa dialogos simulados como ferramenta de ensino. Ex: "A pessoa diz 'quero fazer por conta de um casamento'. Voce vai la e puxa esse assunto..." Isso MOSTRA como fazer em vez de DIZER o que fazer. Sempre que o conteudo ensinar uma tatica de comunicacao, incluir o dialogo simulado como Eric faz.
+- **Severidade:** HIGH
+
+---
+
+### [16/04/2026] FEEDBACK #7 — HOOK DE VIDEO: FALA DO PACIENTE > FRASE DE COPY
+
+**Conteudo:** Titulo/hook visual para Reel sobre follow-up com leads
+
+**O que aconteceu:** Nova sugeriu 5 opcoes de hook no estilo copy (reframe, curiosidade, clickbait). Eric ignorou todas e usou a fala literal do paciente: 🤦 Paciente: "so consigo semana que vem.."
+
+**Motivo:** A fala do paciente gera identificacao IMEDIATA. Quem tem comercial de clinica ouve isso todo dia. Nao precisa de reframe ou provocacao, o cenario ja e o hook.
+
+**Regra gerada:** Para hooks de video (titulo nos primeiros 5s), priorizar a FALA LITERAL do paciente/lead em formato de citacao. Formato: [emoji] Paciente: "[frase que o ICP ouve todo dia]". Isso funciona porque: (1) identificacao instantanea, (2) o viewer pensa "isso acontece comigo", (3) gera curiosidade sobre o que fazer. Reservar hooks de copy (reframe, provocacao) pra quando nao tem uma fala real do paciente pra usar.
+
+- **Severidade:** HIGH
+
+---
+
 *Atualizado pela Nova a cada feedback recebido.*

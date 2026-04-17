@@ -158,3 +158,37 @@ Para acesso: coordenar com @media-buyer (Celo) antes de qualquer análise.
 - @devops (Gage): deploy na VPS e configuração Caddy/DNS
 - @bi-analyst (Avinash): define o que medir, audita, e lidera arquitetura
 - **Severidade:** HIGH
+
+---
+
+### [2026-04-16] Dashboard Syra Digital (Agencia) criado
+
+- **Contexto:** Eric pediu dashboard para a agencia, similar aos dashboards de clientes, mas adaptado para pipeline de prospeccao/vendas
+- **O que foi feito:**
+  1. Google Sheet criada: `1YhNggN18IecxJ0BllMO_D2IqSjwqF0xs2j-oP5TaZxw` (pasta Syra Digital/02. Comercial/)
+  2. Tab "Oportunidades" populada com 71 opps de ambos pipelines via GHL API
+  3. Tab "Conversas" criada (GID 2045759476) - a ser populada futuramente
+  4. Syra Digital adicionada ao `celo-clients.json` como `syra-digital` com `isAgency: true`
+  5. Dashboard frontend criado em `/dashboards/syra-agency/` (React + TypeScript + Recharts)
+  6. 4 paginas: Visao Geral, Prospeccao (funil), Comercial (funil), Oportunidades (tabela)
+  7. Build OK (913KB JS, 64KB CSS)
+
+- **Dados reais encontrados (2026-04-16):**
+  - Pipeline Prospeccao: 20 open, 1 won (Dr. Cleugo), 11 lost. Win Rate: 8.3%
+  - Pipeline Marketing: 5 open (todos desqualificados), 11 won, 21 lost. Win Rate: 34.4%
+  - Receita fechada Marketing: R$15.805 (Servano R$3.200, Gabrielle R$2.500, Vanessa R$2.500, Humberto R$1.394, Bruna R$3.000, Raissa R$2.000, etc)
+  - TODOS os monetaryValues no pipeline Prospeccao = R$0 (ninguem setou valores)
+
+- **GHL Config Syra Digital:**
+  - Location: MmKHrppeW0M8EQ4M1noj
+  - Pipeline Prospeccao: ePZNBwhee24q2yDE91pJ
+  - Pipeline Marketing: AG9Kfmu2HOp8WsGOsOq4
+
+- **Pendente:**
+  - Deploy na VPS (precisa de @devops/Gage)
+  - Sync automatico (integrar com dashboard-syncer existente)
+  - Popular tab Conversas
+  - Corrigir monetaryValues = 0 no pipeline Prospeccao
+  - Dominio: sugestao syra.syradigital.com ou dash.syradigital.com
+
+- **Severidade:** HIGH
