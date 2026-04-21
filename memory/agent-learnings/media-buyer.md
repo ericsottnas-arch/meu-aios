@@ -95,6 +95,108 @@
 
 ---
 
+### [2026-04-20] Estado das campanhas Dra. Gabrielle — fim de semana (19-20/abr/2026)
+
+**Campanhas ativas:**
+- `[Syra] Dra Gabrielle - Emagrecimento [Formulário Instantâneo] [CBO]` — campanha principal, foco em emagrecimento/corpo
+- `[Syra] Emagrecimento Retargeting Morno [Formulário Instantâneo] [CBO]` — retargeting de engajamento
+
+**Métricas consolidadas (sáb+dom):**
+- Spend total: R$31.87 (~R$16/dia)
+- Impressões: 1.302 | Reach: ~1.143 | Clicks: 20 | CTR: ~1.54%
+- Leads (formulário Meta/SP timezone): **0** no sábado e domingo
+- Lead aparente "de sábado" no dashboard: é lead de Keite.fernandes (23:57 SP sexta 18/abr = 02:57 UTC sábado 19/abr)
+- Conversas WhatsApp: 1 (via P2 retargeting profundo, R$1.50/conversa)
+
+**INSIGHT CRÍTICO — Discrepância de timezone:**
+- Meta Ads API usa timezone da conta = America/Sao_Paulo (UTC-3)
+- Dashboard Supabase armazena em UTC
+- Lead de 23:57 SP (sexta) = 02:57 UTC (sábado) → aparece como "sábado" no dashboard, mas Meta mostra como "sexta"
+- Esta discrepância afeta a leitura de performance do fim de semana
+- SEMPRE confirmar com a API da Meta usando SP timezone ao discutir leads "de sábado/domingo"
+
+**Adsets ativos:**
+- P5 [M][30-55][Caieiras, Franco, Perus, Jundiaí, Cajamar][FB+IG] — R$17.49, CTR 1.40%, CPM R$27.24 → 0 leads
+- P10 [M][30-55][Caieiras, Franco, Perus][LLK 1% Engaja/DM/Save] — R$5.41, CTR 1.15%, CPM R$20.65 → 0 leads
+- P1 [M][25-65][Engajamento Amplo] Retargeting — R$7.27, CTR 2.25%, CPM R$23.38 → 0 leads
+- P2 [M][25-65][Engajamento Profundo] Retargeting — R$1.50, CTR 0%, CPM R$18.75 → 1 conversa
+
+**Performance dos criativos (fim de semana):**
+- **C8 [Variação Body2] = VENCEDOR** — R$19.95 spend (63% do total)
+  - P5: CTR 2.64%, CPM R$34.30, Hold Rate 53%, Completion 49%
+  - P10: CTR 1.23%, CPM R$20.58, Hold Rate 23%, Completion 15%
+  - Retargeting P1: CTR 2.48%, CPM R$24.21, Hold Rate 46%, Completion 35%
+- **C7 [Variação barriga]** — R$8.02, CTR 0.59%, Hold Rate 32%, Completion 30% (fraco)
+- **C6 [Você vai ter um evento]** — R$2.69 total, distribuído em micro-orçamentos
+- **C4 [Você Faz Academia]** — R$0.49, sem conversão, algoritmo rejeitando
+- **C5 [Eu Descobri Procedimento Estético]** — R$0.05, praticamente zerado
+- **AD9 [Resultados Reais]** — R$0.01, 1 conversa WhatsApp no retargeting profundo
+
+**Diagnósticos críticos:**
+- Budget R$16/dia = muito baixo vs R$100/dia mencionado na auditoria de 17/abr. Campanhas podem ser novas e ainda em aprendizado
+- 0 leads = possível campanha nova ainda buildando pixel events, ou problema no formulário
+- C8 Body2 domina o spend do algoritmo em múltiplos adsets — criativo validado para escala
+- Campanha de retargeting recebe apenas R$8.92/2d = praticamente sem budget para trabalhar
+- P2 Engajamento Profundo gerou 1 conversa WhatsApp com R$1.50 — custo excelente, mas volume ínfimo
+
+**Nota importante:** As campanhas de "Emagrecimento" são DIFERENTES das campanhas de "Captacao Geral" documentadas na auditoria de 17/abr. Campanhas novas criadas provavelmente após a auditoria.
+
+**Otimizações executadas em 20/abr/2026:**
+- Pausados C4 (4 adsets), C5 (3 adsets), C7 (2 adsets) = 9 ads pausados
+- Budget rebalanceado: R$35→R$30 principal | R$15→R$20 retargeting (total mantido R$50/dia)
+- Criativos ativos restantes: C6, C8 Body2 (vencedor), AD9 Resultados Reais
+- Exclusão de leads convertidos: PENDENTE — requer aceitar TOS de Custom Audience em business.facebook.com
+
+**Budget Dra. Gabrielle — abril/2026:**
+- Orçamento mensal: R$1.500
+- Gasto até 20/abr: R$693,77
+- Saldo restante: R$806,23
+- Projeção 10 dias (R$50/dia): R$500
+- Margem: R$306
+
+**Performance abril:**
+- 77 leads | CPL R$9,01 | 4,3 leads/dia | meta: 5/dia
+
+- **Severidade:** HIGH
+
+---
+
+### [2026-04-20] Auditoria completa Dr. Humberto Andrade — Meta Ads + GHL
+
+**Conta Meta Ads:** act_445142030338909 — Humberto Andrade - Goiânia
+**Saldo:** R$75,99 (CRITICO — menos de 2 dias de spend)
+
+**Campanhas ativas (4):**
+- `[Syra] Conteudo Topo [Video Views] [ABO]` — R$100,81 | brand awareness
+- `[Syra] Paciente Modelo Frio [Formulario] [ABO] — Copia` — R$283,77 | 104 leads | CPL R$2,73
+- `[Syra] Retargeting Procedimento Morno [Formulario] [CBO]` — R$269,66 | 80 leads | CPL R$3,37 | Freq 3,07 ⚠️
+- `[Syra] Procedimento Publico Frio [Formulario] [ABO]` — R$686,05 | 244 leads | CPL R$2,81
+
+**Total ultimos 30 dias:** Spend R$1.340,29 | 428 leads | CPL R$3,13
+
+**Adsets criticos:**
+- P6 SP Pinheiros/Itaim: CPL R$12,58 (4x acima da meta) — PAUSAR
+- P1 LLK Todos Procedimentos Amapa: CPL R$2,03 — MELHOR, escalar
+- P1 Retargeting Engajamento Amplo: Freq 3,06, fadiga iminente
+
+**Criativos top:**
+- C1 Video Blefaroplastia no retargeting: CPL R$1,50 — VENCEDOR
+- C7 Estatico no retargeting: CPL R$7,42 — FRACO para retargeting, pausar no adset
+- C7 Estatico no frio: CPL ~R$1,79 — BOM
+- Otoplastia C1 Video: CPL R$1,76
+
+**GHL Funil PROCEDIMENTO — Abril 2026:**
+- 276 oportunidades | Lead recebido: 257 (93%) | Ganhos: 3 | Receita: R$46.707,50
+- Ticket medio: R$15.569 | 193 leads Meta, 83 organico
+- CRITICO: 0 conversoes das campanhas pagas. Gargalo e no comercial, nao nas campanhas.
+- 257 leads sem qualquer contato — protocolo de follow-up urgente
+
+**Doc de auditoria:** https://docs.google.com/document/d/1r89gebotZOXr6TWaNvAH66ZgeWqSOztBwGb8l44K6NQ/edit
+
+**Severidade:** CRITICAL (saldo) + HIGH (gargalo comercial)
+
+---
+
 ### [2026-04-09] Padrão aprovado: Follow-up WhatsApp Dra. Gabrielle
 - **Contexto:** Sequência de 5 follow-ups para leads que não responderam o áudio inicial
 - **Feedback:** "boa gostei dessas" após ajustes
