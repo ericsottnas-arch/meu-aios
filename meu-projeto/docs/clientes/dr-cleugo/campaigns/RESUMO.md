@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Dr. Cleugo Porto
-**Atualizado em:** 17/04/2026, 07:45:01
+**Atualizado em:** 22/04/2026, 07:58:30
 **Período:** Últimos 7 dias
 
 ## Visão Geral
@@ -15,7 +15,7 @@
 ### [Syra] Emagrecimento Retargeting Morno [Formulário Instantâneo] [CBO]
 - **Status:** 🟢 ACTIVE
 - **Objetivo:** OUTCOME_LEADS
-- **Budget:** R$ 15.00/dia
+- **Budget:** R$ 20.00/dia
 - **Impressões:** 0
 - **Cliques:** 0
 - **CTR:** 0.00%
@@ -27,7 +27,7 @@
 ### [Syra] Dra Gabrielle - Emagrecimento [Formulário Instantâneo] [CBO]
 - **Status:** 🟢 ACTIVE
 - **Objetivo:** OUTCOME_LEADS
-- **Budget:** R$ 35.00/dia
+- **Budget:** R$ 30.00/dia
 - **Impressões:** 0
 - **Cliques:** 0
 - **CTR:** 0.00%

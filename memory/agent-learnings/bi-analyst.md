@@ -161,6 +161,48 @@ Para acesso: coordenar com @media-buyer (Celo) antes de qualquer análise.
 
 ---
 
+### [2026-04-20] PROCESSO PADRAO: Organizacao de Planilhas de Dashboard no Google Drive
+
+- **Contexto:** Eric pediu para organizar todas as planilhas de dashboard nas pastas dos clientes e estabelecer como processo padrao
+- **O que foi feito:**
+  1. Criada pasta "📊 Dashboard" dentro de cada pasta de cliente em `Syra Digital/01. Clientes/`
+  2. Movidas todas as planilhas de dashboard para a respectiva pasta
+  3. Compartilhadas pastas e planilhas com os dois usuarios padrao
+
+- **Mapeamento de pastas criadas:**
+
+| Cliente | Folder ID Dashboard | Spreadsheet ID | Nome Planilha |
+|---------|---------------------|----------------|---------------|
+| Dr Erico Servano | `1kSDsFly5ZdvlGKiADSulKg6VT2nuzQkL` | `1Br8Fg23cMKwLEjP8dbsz2DRIjwPoRSNoDu47SoX2FW0` | BD_SERVANO |
+| Dra Gabrielle | `1gJcTlXc_ZrcbLYGHWR6tpux_8eHHyTnI` | `1EtgCOs2DuucNJVh-mGWmJ-RQk9chHfrw2QKuy7Z9dlU` | Dashboard - Dra. Gabrielle Oliveira |
+| Dr Enio Leite | `1j-nn2Jb91H5VoeipFdpiDbOzIxVxKyco` | `1QxAB4HFOINWWWiyXB_B0f63VDv3aEzjkvW7IhES5Qsg` | Dashboard Dr. Enio Leite - Syra Digital |
+| Dr Cleugo | `1f257qi_xPYUwvM5-Su1-zyIW6zCCtLyp` | `1wQI46mhN1kkUuGQDH7XbdF9dEksJSUZ9XbYQeZ5CrAc` | Dashboard Dr. Cleugo Porto - Dados |
+| Syra Digital | `1WO0IZ0Q4feSaer2Pocb0yc60rsDnS1Ca` | `1YhNggN18IecxJ0BllMO_D2IqSjwqF0xs2j-oP5TaZxw` | Dashboard Syra Digital - Pipeline Comercial |
+
+- **PROCESSO PADRAO para novos dashboards (REGRA PERMANENTE):**
+  1. Criar planilha no Google Sheets
+  2. Mover para `Syra Digital/01. Clientes/{Nome Cliente}/📊 Dashboard/`
+  3. Adicionar SEMPRE dois usuarios como editores:
+     - `mktsyra@gmail.com` (senha: Syra@123)
+     - `ericsottnas@gmail.com` (senha: ghpxtw73)
+  4. Registrar spreadsheetId no `celo-clients.json`
+  5. Atualizar tabela acima com novo mapeamento
+
+- **Como compartilhar via codigo (referencia):**
+  ```js
+  const { getDriveApi } = require('./lib/drive-access');
+  const drive = await getDriveApi();
+  await drive.permissions.create({
+    fileId: spreadsheetId,
+    requestBody: { role: 'writer', type: 'user', emailAddress: 'mktsyra@gmail.com' },
+    sendNotificationEmail: false,
+  });
+  ```
+
+- **Severidade:** HIGH (processo padrao permanente)
+
+---
+
 ### [2026-04-16] Dashboard Syra Digital (Agencia) criado
 
 - **Contexto:** Eric pediu dashboard para a agencia, similar aos dashboards de clientes, mas adaptado para pipeline de prospeccao/vendas
@@ -190,5 +232,79 @@ Para acesso: coordenar com @media-buyer (Celo) antes de qualquer análise.
   - Popular tab Conversas
   - Corrigir monetaryValues = 0 no pipeline Prospeccao
   - Dominio: sugestao syra.syradigital.com ou dash.syradigital.com
+
+- **Severidade:** HIGH
+
+---
+
+### [2026-04-20] REGRA CRITICA: Identidade Visual dos Dashboards = Syra Digital
+
+- **Contexto:** Eric reclamou que a identidade visual antiga (gold #C9A87C, Poppins) voltava a cada deploy. Pediu pra aplicar a identidade Syra Digital em TODOS os dashboards.
+- **Feedback exato:** "as cores as fontes e tudo mais, nao ta na identidade visual da syra"
+
+**REGRA PERMANENTE - Dashboards Syra Digital devem seguir:**
+
+| Elemento | Valor | NAO usar |
+|----------|-------|----------|
+| Accent/Primary | `#BCFF3A` (lime) / HSL `78 100% 61%` | #C9A87C (gold antigo) |
+| Background | `#0A0A0A` ultra-dark / HSL `0 0% 4%` | #1A1209 (warm dark antigo) |
+| Card BG | `#0D0D0D` / HSL `0 0% 5%` | tons warm |
+| Border | HSL `240 3% 14%` (neutro frio) | tons warm/gold |
+| Font | `Plus Jakarta Sans` (300-800) | Poppins |
+| Logo | "S" verde #BCFF3A + "Syra Digital" + nome cliente | "G" dourado |
+| Hover cards | glow lime sutil | glow gold |
+| Footer | "Syra Digital - {Cliente}" | nome do cliente sozinho |
+| Border radius | `rounded-xl` (0.75rem) | `rounded-lg` |
+
+**Fontes de verdade do design system:**
+- `docs/banco-dados-geral/syra-design-system.md` (spec escrita)
+- `docs/syra-digital/design-system-visual.html` (referencia visual)
+- `memory/agent-learnings/ux-design-expert.md` (feedbacks do Eric sobre fontes)
+
+**Google Fonts URL:**
+```
+https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap
+```
+
+- **Severidade:** CRITICAL (Eric reclamou multiplas vezes)
+
+---
+
+### [2026-04-20] Setup completo - Dashboard Dr. Humberto Andrade
+
+**O que foi feito nesta sessao:**
+- Dashboard copiado de `/dashboards/gabrielle/` para `/dashboards/humberto/`
+- Google Sheet criada: `1AsrleT9tPS8vO5TMcZtcYyV5Ol1GAbpgH8B2rdqalco`
+- Pasta Drive: `HR Andrade/📊 Dashboard/` (folder ID: `1Ag63CptQvLO6FLy6tIYg9CG5yBIMoUmQ`)
+- Compartilhada com mktsyra@gmail.com e ericsottnas@gmail.com
+- Google Ads removido completamente (cliente so usa Meta)
+- Custos fixos: R$4.400 assessoria + R$447 CRM = R$4.847/mes
+- Login/Auth apontando para aba "Usuarios" da propria sheet
+- Build OK (1.1MB JS, 73KB CSS)
+
+**Config tecnica Dr. Humberto:**
+- `metaAdAccountId`: `act_445142030338909`
+- `ghlLocationId`: `uOdD33rlNeQtBc3CatYL`
+- `ghlToken`: `pit-768454e1-6fec-4dce-9280-a654c6de43f6` (ativo em 2026-04-20)
+- Supabase project: `bfmpbjidnkbhusuziebn` (mesmo da Gabrielle)
+- Sem Google Ads
+- Pipeline principal: PROCEDIMENTO `Z0BXCFpuHdqcc6SRCTVr` (Lead recebido → Avaliacao → Ganho)
+- Pipeline educacional: `Ee57TpYar78ClcfsI42M`
+- Pipeline agendamentos: `AxRa3RdvCZERldsNfPag`
+
+**GIDs da planilha Humberto:**
+- Campanhas (Meta Ads): `0` (aba principal/Pagina1 renomeada)
+- Oportunidades: `915548098`
+- Conversas: `1832034742`
+- Meta (sync): `1963286093`
+- Usuarios (login): `271501945`
+
+**Pendente:**
+- Renovar token GHL e buscar pipeline ID
+- Deploy na VPS (precisa de @devops/Gage)
+- Configurar sync automatico (integrar com dashboard-syncer)
+- Configurar Supabase edge function validate-login separada para Humberto (ou criar novo projeto Supabase)
+- Dominio: sugestao humberto.syradigital.com
+- Popular dados iniciais via Meta Ads API + GHL API
 
 - **Severidade:** HIGH

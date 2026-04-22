@@ -28,3 +28,19 @@ So criar a tarefa DEPOIS de ter essas duas informacoes (ou Eric dizer "sem assig
 3. So entao chamar createTask/createTaskInList com os campos preenchidos
 
 **Severidade:** HIGH — obrigatorio em toda criacao de tarefa.
+
+## [2026-04-20] Fix: Bot aceitando "falei na mensagem" como nome de cliente
+
+**Contexto:** Eric mandou "criar tarefa ajustes no dashboard da dra gabrielle pra hoje". O Groq AI nao detectou "Dra. Gabrielle" como cliente (detected_client = null). Bot perguntou "pra qual cliente?". Eric respondeu "falei na mensagem" e o bot usou isso LITERALMENTE como nome do cliente.
+
+**Causa raiz (dupla):**
+1. `askClient()` nao tinha fallback local — se o Groq falhasse na deteccao, ia direto perguntar sem tentar buscar no texto original
+2. `handleTextDuringConversation` no step `awaiting_client` aceitava qualquer texto como cliente sem validar se fazia sentido
+
+**Fix aplicado:**
+1. `askClient()`: Adicionado fallback local que faz fuzzy match do `originalText` contra `CLIENT_OPTIONS` por palavras significativas (ignorando "dr"/"dra") antes de perguntar ao usuario
+2. `awaiting_client` handler: Adicionada deteccao de meta-respostas ("falei na mensagem", "ja disse", "ta na mensagem" etc.) que re-analisa o texto original em vez de aceitar literalmente
+
+**Arquivo:** `alex-agent-server.js` — funcoes `askClient()` e `handleTextDuringConversation`
+
+**Severidade:** CRITICAL — nunca mais aceitar texto nao-cliente como nome de cliente.

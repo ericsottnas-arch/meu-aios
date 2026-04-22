@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Dra. Vanessa Soares
-**Atualizado em:** 17/04/2026, 07:45:01
+**Atualizado em:** 22/04/2026, 07:59:14
 **Período:** Últimos 7 dias
 
 ## Visão Geral

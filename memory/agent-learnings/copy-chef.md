@@ -259,6 +259,14 @@
 - **Severidade:** CRITICAL
 - **Aplica a:** @copy-chef e qualquer agente que produza copy de produto/evento/cliente
 
+## [2026-04-17] Feedback CRITICO: Dr. Humberto Andrade NAO oferece avaliacao gratuita
+
+- **Contexto:** Roteiros de retargeting para procedimentos faciais do Dr. Humberto Andrade
+- **Feedback:** "NAO EXISTE AVALIACAO GRATUITA, PRA NINGUEM"
+- **Regra derivada:** PROIBIDO usar "avaliacao gratuita", "sem custo", "gratis" ou qualquer variacao em material do Dr. Humberto Andrade. Ele cobra pela consulta. CTA deve ser "me chama pra agendar", "agendar avaliacao" (sem "gratuita"), "fale com o Dr. Humberto".
+- **Severidade:** CRITICAL
+- **Aplica a:** @copy-chef e qualquer agente que produza material para Dr. Humberto Andrade
+
 ## [2026-04-02] Feedback CRÍTICO: erros de português em documento entregue ao Eric
 
 - **Contexto:** Doc de perguntas PDN Evento criado por subagente genérico, entregue com erros graves de português (sem acentuação, caracteres errados)

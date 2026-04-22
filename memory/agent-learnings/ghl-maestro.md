@@ -47,7 +47,7 @@
 
 **Location ID:** `uOdD33rlNeQtBc3CatYL`
 **Company ID:** `kt6Z1sbZOMLrD8vPrWzR`
-**Token PIT:** `pit-f38f236c-373f-48b3-9d1e-940043df2656`
+**Token PIT:** `pit-768454e1-6fec-4dce-9280-a654c6de43f6` (atualizado 2026-04-20, token anterior expirou)
 
 **Usuarios GHL:**
 | Nome | ID | Papel |
