@@ -1,6 +1,19 @@
 # Dr. Cleugo Porto Coelho Junior — Perfil Profissional
 
-> Documentação compilada em 2026-03-12 | Fonte: pesquisa web + reuniões internas
+> Documentação compilada em 2026-03-12 | Atualizado em 2026-04-22
+
+---
+
+## ⚡ Dados Operacionais (Syra Digital)
+
+| Campo | Valor |
+|-------|-------|
+| **Locais de atendimento** | Alphaville e Atibaia |
+| **Produto principal** | Celulite — coxa e bunda |
+| **Verba mensal de mídia** | R$3.000/mês |
+| **Ticket médio** | R$25.000 a R$40.000 |
+| **Conta Meta Ads** | act_944253477334195 |
+| **GHL Location ID** | 5pupAX6pAY1tiF01b2qo |
 
 ---
 
