@@ -65,6 +65,21 @@
 
 ---
 
+### [2026-04-22] Deploy do dashboard Syra Agency — diretório correto
+
+- **Dashboard:** `dashboard.syradigital.com` — dashboard interno da agência (prospecção, pipeline comercial)
+- **Codebase:** `/Users/ericsantos/meu-aios/dashboards/syra-agency/`
+- **Diretório de deploy NO VPS:** `/root/apps/syra-agency/` (Caddyfile aponta para este path)
+- **NUNCA deployar em:** `/var/www/syra-agency-dashboard/` (não é servido pela Caddy)
+- **Comando correto:** `rsync -az --delete dist/ root@187.77.252.12:/root/apps/syra-agency/`
+- **Google Sheet:** `1YhNggN18IecxJ0BllMO_D2IqSjwqF0xs2j-oP5TaZxw`
+  - Tab `Oportunidades` (GID 0): PM2 `dashboard-sync-server` gerencia — NÃO usar para syra-agency dashboard
+  - Tab `ProspDash` (GID `1996122908`): exclusivo para o syra-agency dashboard
+- **Script de sync:** `meu-projeto/scripts/sync-syra-agency-sheet.js` → escreve em `ProspDash`
+- **Severidade:** CRITICAL
+
+---
+
 ## Dashboards de Clientes — Referência Técnica
 
 | Cliente | URL | Codebase | Sheet ID | Status |
@@ -226,12 +241,16 @@ Para acesso: coordenar com @media-buyer (Celo) antes de qualquer análise.
   - Pipeline Prospeccao: ePZNBwhee24q2yDE91pJ
   - Pipeline Marketing: AG9Kfmu2HOp8WsGOsOq4
 
-- **Pendente:**
-  - Deploy na VPS (precisa de @devops/Gage)
+- **Deploy concluido (2026-04-22):**
+  - URL: https://dashboard.syradigital.com
+  - VPS: /root/apps/syra-agency (static SPA)
+  - DNS: A record syra.syradigital.com → 187.77.252.12 (proxy OFF)
+  - Caddy: bloco adicionado com file_server + try_files
+
+- **Ainda pendente:**
   - Sync automatico (integrar com dashboard-syncer existente)
   - Popular tab Conversas
   - Corrigir monetaryValues = 0 no pipeline Prospeccao
-  - Dominio: sugestao syra.syradigital.com ou dash.syradigital.com
 
 - **Severidade:** HIGH
 

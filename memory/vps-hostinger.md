@@ -18,6 +18,7 @@
 | syra-hub | `/root/apps/syra-hub` | 3000 | sim | hub.syradigital.com |
 | servano-dashboard | `/root/apps/servano-dashboard` | static | nao | servanoadvogados.syradigital.com |
 | clickup-agent | `/root/apps/meu-projeto` | 3010 | sim (id=1) | agent.syradigital.com |
+| syra-agency-dashboard | `/root/apps/syra-agency` | static | nao | dashboard.syradigital.com |
 
 ## Caddyfile Atual
 ```

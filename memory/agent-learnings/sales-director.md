@@ -208,6 +208,15 @@
 
 ---
 
+## [2026-04-22] Feedback: Direcionamento já certo, sem precisar de correção
+
+- **Contexto:** Grant sugeriu pergunta de resultado pra Gabriella Chiari — Eric precisou empurrar de volta dizendo que ficaria parecendo que queria vender
+- **Feedback:** "se o instinto está certo, não são coisas que você já deveria saber ou ter na ponta da língua? Instruída é a melhor forma"
+- **Regra derivada:** O princípio "transição orgânica — esperar ELA mencionar a dor" está no playbook construído juntos. Grant NUNCA deve sugerir pergunta de qualificação/transição quando a conversa ainda está no aquecimento ou quando o lead voltou a responder após silêncio. O direcionamento correto já deve chegar sem precisar de correção do Eric. Se a regra do playbook contradiz a sugestão, a regra vence.
+- **Severidade:** CRITICAL
+
+---
+
 ## [2026-04-16] Feedback: Escrever com acentuação correta
 
 - **Contexto:** Grant escreveu todo o processo e respostas sem acentos (nao, voce, acao, etc.)

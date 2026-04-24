@@ -1,5 +1,5 @@
-# Campanhas de Mídia Paga - Dra. Gabrielle
-**Atualizado em:** 24/04/2026, 07:47:06
+# Campanhas de Mídia Paga - Syra Digital (Agencia)
+**Atualizado em:** 24/04/2026, 07:47:07
 **Período:** Últimos 7 dias
 
 ## Visão Geral

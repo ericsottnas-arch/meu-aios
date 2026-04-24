@@ -1,58 +1,70 @@
-# Campanhas de Mídia Paga - Dr. Enio Leite
+# Campanhas de Mídia Paga - Dr. Humberto Andrade
 **Atualizado em:** 24/04/2026, 07:47:07
 **Período:** Últimos 7 dias
 
 ## Visão Geral
 | Métrica | Valor | Status |
 |---------|-------|--------|
-| Campanhas Ativas | 3/5 | 🟢 |
+| Campanhas Ativas | 4/100 | 🟢 |
 | Gasto Total | R$ 0.00 | 📊 |
 | CPL Médio | R$ 0.00 | 🟢 |
 | Impressões | 0 | 📈 |
 | Cliques | 0 | 🔗 |
 
 ## Campanhas Ativas
-### [Syra] Retargeting Geral [Form Nativo] [CBO]
+### [Syra] Conteúdo Topo [Video Views] [ABO]
+- **Status:** 🟢 ACTIVE
+- **Objetivo:** OUTCOME_AWARENESS
+- **Budget:** R$ N/A/dia
+- **Impressões:** 0
+- **Cliques:** 0
+- **CTR:** 0.00%
+- **Gasto:** R$ 0.00
+- **CPL:** R$ 0.00
+- **Conversões:** 0
+- **Criado:** 16/04/2026
+
+### [Syra] Paciente Modelo Publico Frio [Formulário Instantâneo] [ABO] — Cópia
 - **Status:** 🟢 ACTIVE
 - **Objetivo:** OUTCOME_LEADS
-- **Budget:** R$ 30.00/dia
+- **Budget:** R$ N/A/dia
 - **Impressões:** 0
 - **Cliques:** 0
 - **CTR:** 0.00%
 - **Gasto:** R$ 0.00
 - **CPL:** R$ 0.00
 - **Conversões:** 0
-- **Criado:** 13/04/2026
+- **Criado:** 14/04/2026
 
-### [Syra] Captação Fria [Página HOF] [CBO]
+### [Syra] Retargeting Procedimento Publico Morno [Formulário Instantâneo] [CBO]
 - **Status:** 🟢 ACTIVE
 - **Objetivo:** OUTCOME_LEADS
-- **Budget:** R$ 30.00/dia
+- **Budget:** R$ 50.00/dia
 - **Impressões:** 0
 - **Cliques:** 0
 - **CTR:** 0.00%
 - **Gasto:** R$ 0.00
 - **CPL:** R$ 0.00
 - **Conversões:** 0
-- **Criado:** 13/04/2026
+- **Criado:** 14/04/2026
 
-### [Syra] Topo Frio [Vídeo Views] [CBO]
+### [Syra] Procedimento Publico Frio [Formulário Instantâneo] [ABO]
 - **Status:** 🟢 ACTIVE
-- **Objetivo:** OUTCOME_ENGAGEMENT
-- **Budget:** R$ 20.00/dia
+- **Objetivo:** OUTCOME_LEADS
+- **Budget:** R$ N/A/dia
 - **Impressões:** 0
 - **Cliques:** 0
 - **CTR:** 0.00%
 - **Gasto:** R$ 0.00
 - **CPL:** R$ 0.00
 - **Conversões:** 0
-- **Criado:** 13/04/2026
+- **Criado:** 14/04/2026
 
 ## Oportunidades de Otimização
 Nenhuma oportunidade identificada.
 
 ## Próximas Ações
-- [ ] Escalar: [Syra] Retargeting Geral [Form Nativo] [CBO]
+- [ ] Escalar: [Syra] Conteúdo Topo [Video Views] [ABO]
 - [ ] Analisar audiências
 - [ ] Testar novos criativos
 

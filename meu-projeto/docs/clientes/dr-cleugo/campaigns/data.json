@@ -1,7 +1,7 @@
 {
   "clientId": "dr-cleugo",
   "clientName": "Dr. Cleugo Porto",
-  "exportedAt": "2026-04-22T10:58:30.649Z",
+  "exportedAt": "2026-04-24T10:47:06.673Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -10,7 +10,7 @@
         "name": "[Syra] Emagrecimento Retargeting Morno [Formulário Instantâneo] [CBO]",
         "status": "ACTIVE",
         "objective": "OUTCOME_LEADS",
-        "dailyBudget": 20,
+        "dailyBudget": 30,
         "lifetimeBudget": null,
         "createdTime": "2026-04-15T18:10:04-0300",
         "dailyInsights": [
@@ -146,9 +146,490 @@
             "messagingConversations": 0,
             "costPerMessagingConversation": 0,
             "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-22",
+            "impressions": 473,
+            "clicks": 11,
+            "spend": 9.82,
+            "cpc": 0.892727,
+            "ctr": 2.325581,
+            "cpm": 20.761099,
+            "reach": 402,
+            "frequency": 1.176617,
+            "conversions": 2,
+            "costPerResult": 4.91,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-23",
+            "impressions": 559,
+            "clicks": 12,
+            "spend": 13.74,
+            "cpc": 1.145,
+            "ctr": 2.146691,
+            "cpm": 24.579606,
+            "reach": 444,
+            "frequency": 1.259009,
+            "conversions": 1,
+            "costPerResult": 13.74,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 2,
+            "costPerMessagingConversation": 6.87,
+            "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120245734879710249",
+            "name": "P2 [M] [25-65] [Engajamento Profundo]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 25,
+              "excluded_custom_audiences": [
+                {
+                  "id": "120245734771910249",
+                  "name": "ENVIARAM FORMULÁRIO"
+                }
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120245733139700249",
+                  "name": "[Syra] Seguidores"
+                },
+                {
+                  "id": "120245733226830249",
+                  "name": "[Syra] Interação Conta 365d5x"
+                },
+                {
+                  "id": "120245733265270249",
+                  "name": "[Syra} Engajados 90d2x"
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.1864,
+                    "longitude": -46.8842,
+                    "radius": 8,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3217,
+                    "longitude": -46.7276,
+                    "radius": 8,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3615,
+                    "longitude": -46.8775,
+                    "radius": 8,
+                    "primary_city_id": 246681,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3638,
+                    "longitude": -46.7399,
+                    "radius": 8,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.4165,
+                    "longitude": -46.7494,
+                    "radius": 8,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_relaxation_types": {
+                "lookalike": 0,
+                "custom_audience": 0
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-04-15T18:12:43-0300",
+            "startTime": "2026-04-15T18:12:43-0300",
+            "ads": [
+              {
+                "id": "120245734879700249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:12:45-0300",
+                "creativeId": "1636611404047125",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734879720249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:12:45-0300",
+                "creativeId": "2396518927476877",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734879690249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:12:45-0300",
+                "creativeId": "1621071619017872",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734879730249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:12:45-0300",
+                "creativeId": "1623860258921697",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734879680249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:12:45-0300",
+                "creativeId": "1292622499457089",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734879750249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:12:45-0300",
+                "creativeId": "2413670295804611",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734879740249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:12:45-0300",
+                "creativeId": "26741156088821499",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120245734861820249",
+            "name": "P1 [M] [25-65] [Engajamento Amplo]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 25,
+              "excluded_custom_audiences": [
+                {
+                  "id": "120245734771910249",
+                  "name": "ENVIARAM FORMULÁRIO"
+                }
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120245733226830249",
+                  "name": "[Syra] Interação Conta 365d5x"
+                },
+                {
+                  "id": "120245734523860249",
+                  "name": "VV 3sg"
+                },
+                {
+                  "id": "120245734575780249",
+                  "name": "VV ThruPlay"
+                },
+                {
+                  "id": "120245734724230249",
+                  "name": "[Syra] Visitantes 90d"
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.1864,
+                    "longitude": -46.8842,
+                    "radius": 5,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3217,
+                    "longitude": -46.7276,
+                    "radius": 8,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3615,
+                    "longitude": -46.8775,
+                    "radius": 5,
+                    "primary_city_id": 246681,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3638,
+                    "longitude": -46.7399,
+                    "radius": 8,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.4165,
+                    "longitude": -46.7494,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_relaxation_types": {
+                "lookalike": 0,
+                "custom_audience": 0
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-04-15T18:10:05-0300",
+            "startTime": "2026-04-15T18:10:05-0300",
+            "ads": [
+              {
+                "id": "120246324701280249",
+                "name": "[POST INSTA] Atenção! Leve em consideração essas duas coisas quando for fazer sua criolipólise.",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T12:21:59-0300",
+                "creativeId": "1872037296824816",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734861780249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:10:07-0300",
+                "creativeId": "1636611404047125",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734861840249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:10:07-0300",
+                "creativeId": "1623860258921697",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734861850249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:10:07-0300",
+                "creativeId": "2396518927476877",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734861830249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:10:07-0300",
+                "creativeId": "1621071619017872",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734861790249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:10:07-0300",
+                "creativeId": "26741156088821499",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734861800249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:10:07-0300",
+                "creativeId": "2413670295804611",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734861810249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:10:07-0300",
+                "creativeId": "1292622499457089",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120245734151500249",
@@ -159,7 +640,224 @@
         "lifetimeBudget": null,
         "createdTime": "2026-04-15T18:06:39-0300",
         "dailyInsights": [],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120245734151580249",
+            "name": "P1 [M] [25-65] [Engajamento Amplo]",
+            "status": "ACTIVE",
+            "dailyBudget": 15,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 25,
+              "excluded_custom_audiences": [
+                {
+                  "id": "120245734771910249",
+                  "name": "ENVIARAM FORMULÁRIO"
+                }
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120245733226830249",
+                  "name": "[Syra] Interação Conta 365d5x"
+                },
+                {
+                  "id": "120245734523860249",
+                  "name": "VV 3sg"
+                },
+                {
+                  "id": "120245734575780249",
+                  "name": "VV ThruPlay"
+                },
+                {
+                  "id": "120245734724230249",
+                  "name": "[Syra] Visitantes 90d"
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.1864,
+                    "longitude": -46.8842,
+                    "radius": 5,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3217,
+                    "longitude": -46.7276,
+                    "radius": 8,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3615,
+                    "longitude": -46.8775,
+                    "radius": 5,
+                    "primary_city_id": 246681,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3638,
+                    "longitude": -46.7399,
+                    "radius": 8,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.4165,
+                    "longitude": -46.7494,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_relaxation_types": {
+                "lookalike": 0,
+                "custom_audience": 0
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-04-15T18:06:39-0300",
+            "startTime": "2026-04-15T18:06:40-0300",
+            "ads": [
+              {
+                "id": "120245734151650249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:06:41-0300",
+                "creativeId": "1623860258921697",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734151770249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:06:41-0300",
+                "creativeId": "26741156088821499",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734151760249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:06:41-0300",
+                "creativeId": "2396518927476877",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734151780249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:06:41-0300",
+                "creativeId": "1636611404047125",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734151540249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:06:41-0300",
+                "creativeId": "1292622499457089",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734151750249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:06:41-0300",
+                "creativeId": "2413670295804611",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245734151740249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:06:41-0300",
+                "creativeId": "1621071619017872",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120243740011460249",
@@ -266,14 +964,597 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120243740011550249",
+            "name": "[P3] [M] [30-60] [SÃO PAULO] [ABERTO 3KM] [FB+IG]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 60,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "behaviors": [
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                },
+                {
+                  "interests": [
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    },
+                    {
+                      "id": "6004037400009",
+                      "name": "Fast-food (comidas e bebidas)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "name": "Rua Palestra Itália, 500, São Paulo, SP, Brasil",
+                    "address_string": "Rua Palestra Itália, 500, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.52678,
+                    "longitude": -46.681,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Aimberê, 72, São Paulo, SP, Brasil",
+                    "address_string": "Rua Aimberê, 72, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53161,
+                    "longitude": -46.67754,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Diana, 375, São Paulo, SP, Brasil",
+                    "address_string": "Rua Diana, 375, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53183,
+                    "longitude": -46.68016,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Turiassu, 480, São Paulo, SP, Brasil",
+                    "address_string": "Rua Turiassu, 480, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53325,
+                    "longitude": -46.66764,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Turiassu, 519, São Paulo, SP, Brasil",
+                    "address_string": "Rua Turiassu, 519, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53349,
+                    "longitude": -46.66826,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Itapicuru, 722, São Paulo, SP, Brasil",
+                    "address_string": "Rua Itapicuru, 722, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53373,
+                    "longitude": -46.67051,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Óticas Foto Paulo, Avenida Higienópolis, 618, São Paulo, SP, Brasil",
+                    "address_string": "Óticas Foto Paulo, Avenida Higienópolis, 618, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.54271,
+                    "longitude": -46.6576,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.592498,
+                    "longitude": -46.635927,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "address_string": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.6279,
+                    "longitude": -46.73751,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.630249,
+                    "longitude": -46.670901,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "address_string": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.63274,
+                    "longitude": -46.73233,
+                    "radius": 3,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-03-19T20:59:22-0300",
+            "startTime": "2026-03-19T20:59:22-0300",
+            "ads": [
+              {
+                "id": "120243740011520249",
+                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:24-0300",
+                "creativeId": "949492481415326",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243740011500249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:24-0300",
+                "creativeId": "4384258191829892",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120243740011540249",
+            "name": "[P2] [M] [30-55] [SÃO PAULO] [FB+IG] [RICOS]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "behaviors": [
+                    {
+                      "id": "6002714895372",
+                      "name": "Frequent Travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "name": "Rua Palestra Itália, 500, São Paulo, SP, Brasil",
+                    "address_string": "Rua Palestra Itália, 500, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.52678,
+                    "longitude": -46.681,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Cardoso de Almeida, 472, São Paulo, SP, Brasil",
+                    "address_string": "Rua Cardoso de Almeida, 472, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53531,
+                    "longitude": -46.66647,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Óticas Foto Paulo, Avenida Higienópolis, 618, São Paulo, SP, Brasil",
+                    "address_string": "Óticas Foto Paulo, Avenida Higienópolis, 618, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.54271,
+                    "longitude": -46.6576,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.597272,
+                    "longitude": -46.706471,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "address_string": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.6279,
+                    "longitude": -46.73751,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.628611,
+                    "longitude": -46.736855,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "address_string": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.63274,
+                    "longitude": -46.73233,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-03-19T20:59:22-0300",
+            "startTime": "2026-03-19T20:59:23-0300",
+            "ads": [
+              {
+                "id": "120243740011510249",
+                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:24-0300",
+                "creativeId": "1641389433681255",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243740011470249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:24-0300",
+                "creativeId": "1257737855857412",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120243740011530249",
+            "name": "[P1] [M] [30-55] [SÃO PAULO] [ACADEMIA/PILATES] [FB & IG]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003159020675",
+                      "name": "Pilates (fitness)"
+                    },
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                },
+                {
+                  "behaviors": [
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.376145,
+                    "longitude": -46.74933,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Padre Chico, 335, São Paulo, SP, Brasil",
+                    "address_string": "Rua Padre Chico, 335, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.52977,
+                    "longitude": -46.68268,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Diana, 375, São Paulo, SP, Brasil",
+                    "address_string": "Rua Diana, 375, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53183,
+                    "longitude": -46.68016,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Ministro Godói, 725, São Paulo, SP, Brasil",
+                    "address_string": "Rua Ministro Godói, 725, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.5358,
+                    "longitude": -46.67022,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Tavares Bastos, 61, São Paulo, SP, Brasil",
+                    "address_string": "Rua Tavares Bastos, 61, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53601,
+                    "longitude": -46.68407,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Doutor Homem de Melo, 524, São Paulo, SP, Brasil",
+                    "address_string": "Rua Doutor Homem de Melo, 524, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53615,
+                    "longitude": -46.66971,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Ministro Gastão Mesquita, 709, São Paulo, SP, Brasil",
+                    "address_string": "Rua Ministro Gastão Mesquita, 709, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53756,
+                    "longitude": -46.68181,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Cajaíba, 123, São Paulo, SP, Brasil",
+                    "address_string": "Rua Cajaíba, 123, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.53996,
+                    "longitude": -46.68379,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 1,
+                  "geo": 0
+                }
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "facebook_reels_overlay",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "story",
+                "reels",
+                "explore_home"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-03-19T20:59:26-0300",
+            "startTime": "2026-03-19T20:59:26-0300",
+            "ads": [
+              {
+                "id": "120243740011480249",
+                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:28-0300",
+                "creativeId": "2338508789988054",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243740011490249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-19T20:59:28-0300",
+                "creativeId": "1201343532079069",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120243183154170249",
         "name": "[Syra] Dra Gabrielle - Emagrecimento [Formulário Instantâneo] [CBO]",
         "status": "ACTIVE",
         "objective": "OUTCOME_LEADS",
-        "dailyBudget": 30,
+        "dailyBudget": 50,
         "lifetimeBudget": null,
         "createdTime": "2026-03-10T20:43:46-0300",
         "dailyInsights": [
@@ -1074,9 +2355,2222 @@
             "messagingConversations": 0,
             "costPerMessagingConversation": 0,
             "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-22",
+            "impressions": 659,
+            "clicks": 6,
+            "spend": 12.14,
+            "cpc": 2.023333,
+            "ctr": 0.91047,
+            "cpm": 18.421851,
+            "reach": 612,
+            "frequency": 1.076797,
+            "conversions": 1,
+            "costPerResult": 12.14,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-23",
+            "impressions": 368,
+            "clicks": 3,
+            "spend": 8.23,
+            "cpc": 2.743333,
+            "ctr": 0.815217,
+            "cpm": 22.36413,
+            "reach": 341,
+            "frequency": 1.079179,
+            "conversions": 1,
+            "costPerResult": 8.23,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120246322261580249",
+            "name": "P12 [M] [30-55] [CAIEIRAS, FRANCO, PERUS] [FB+IG] [PP: LLK1% Conectados/Oportunidade]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "excluded_custom_audiences": [
+                {
+                  "id": "120245734771910249",
+                  "name": "ENVIARAM FORMULÁRIO"
+                }
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120246321394560249",
+                  "name": "Semelhante (1%) - Leads Conectados - Oportunidade_22/04"
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3217,
+                    "longitude": -46.7276,
+                    "radius": 8,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3638,
+                    "longitude": -46.7399,
+                    "radius": 8,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.4165,
+                    "longitude": -46.7494,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "facebook_reels_overlay",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "story",
+                "reels",
+                "explore_home"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-04-22T11:01:15-0300",
+            "startTime": "2026-04-22T11:01:15-0300",
+            "ads": [
+              {
+                "id": "120246324580850249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais] 2 — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:55:23-0300",
+                "creativeId": "737076822826242",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246324580870249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais] 2 — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:55:23-0300",
+                "creativeId": "1324901986123246",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246324580860249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais] — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:55:23-0300",
+                "creativeId": "1627458811869926",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261680249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "988871490463298",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261690249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "2406860473141456",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261590249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1329330715918669",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261630249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1996520801260756",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261620249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1930114087618415",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261670249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "2020006415562986",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261760249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "921800817290864",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261700249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "4383146995303780",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261750249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1283180169920086",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261660249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "926183680193952",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261710249",
+                "name": "C10 [Estático] [Feed 4x5] [Hook: Roupa Larga] [CTA: Cadastre-se]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1288048129956050",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261770249",
+                "name": "C10 [Estático] [Stories 9x16] [Hook: Roupa Larga] [CTA: Cadastre-se]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1383710756849894",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261640249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1600117874609767",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261800249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1260370292963282",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261730249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1474346314198406",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261610249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1764052114975053",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261720249",
+                "name": "C11 [Estático] [Stories 9x16] [Hook: Espelho] [CTA: Saiba Mais] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "845351421216733",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261650249",
+                "name": "C11 [Estático] [Feed 4x5] [Hook: Espelho] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "2331954114209825",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261600249",
+                "name": "C11 [Estático] [Stories 9x16] [Hook: Espelho] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "4506529896284979",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261790249",
+                "name": "C11 [Estático] [Feed 4x5] [Hook: Espelho] [CTA: Saiba Mais] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "2383909472110449",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261740249",
+                "name": "C10 [Estático] [Feed 4x5] [Hook: Roupa Larga] [CTA: Cadastre-se] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "1324153353104254",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246322261780249",
+                "name": "C10 [Estático] [Stories 9x16] [Hook: Roupa Larga] [CTA: Cadastre-se] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T11:01:17-0300",
+                "creativeId": "2169717763851829",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120246321649670249",
+            "name": "P11 [M] [30-55] [CAIEIRAS, FRANCO, PERUS] [FB+IG] [PP: LLK1% MQL]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "excluded_custom_audiences": [
+                {
+                  "id": "120245734771910249",
+                  "name": "ENVIARAM FORMULÁRIO"
+                }
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120246321122100249",
+                  "name": "Semelhante (1%) - LEADS MQL - 22/04"
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3217,
+                    "longitude": -46.7276,
+                    "radius": 8,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3638,
+                    "longitude": -46.7399,
+                    "radius": 8,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.4165,
+                    "longitude": -46.7494,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "facebook_reels_overlay",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "story",
+                "reels",
+                "explore_home"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-04-22T10:53:49-0300",
+            "startTime": "2026-04-22T10:53:49-0300",
+            "ads": [
+              {
+                "id": "120246321741870249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "2406860473141456",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246324582020249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais] 2 — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:55:23-0300",
+                "creativeId": "737076822826242",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246324582030249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais] — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:55:23-0300",
+                "creativeId": "1627458811869926",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246324582220249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais] 2 — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:55:23-0300",
+                "creativeId": "1324901986123246",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649660249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "4383146995303780",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741850249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "988871490463298",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649610249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "1996520801260756",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741880249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "921800817290864",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649680249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "1329330715918669",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741860249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "1930114087618415",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649650249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "2020006415562986",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741910249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "1283180169920086",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741900249",
+                "name": "C10 [Estático] [Feed 4x5] [Hook: Roupa Larga] [CTA: Cadastre-se] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "1324153353104254",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741840249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "1474346314198406",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649600249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "1600117874609767",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649590249",
+                "name": "C11 [Estático] [Stories 9x16] [Hook: Espelho] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "4506529896284979",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649620249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "926183680193952",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741930249",
+                "name": "C11 [Estático] [Feed 4x5] [Hook: Espelho] [CTA: Saiba Mais] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "2383909472110449",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649640249",
+                "name": "C10 [Estático] [Feed 4x5] [Hook: Roupa Larga] [CTA: Cadastre-se]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "1288048129956050",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649630249",
+                "name": "C11 [Estático] [Feed 4x5] [Hook: Espelho] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "2331954114209825",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649580249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "1260370292963282",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741920249",
+                "name": "C11 [Estático] [Stories 9x16] [Hook: Espelho] [CTA: Saiba Mais] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "845351421216733",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741830249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "1764052114975053",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321741890249",
+                "name": "C10 [Estático] [Stories 9x16] [Hook: Roupa Larga] [CTA: Cadastre-se] — Cópia",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T10:55:30-0300",
+                "creativeId": "2169717763851829",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246321649690249",
+                "name": "C10 [Estático] [Stories 9x16] [Hook: Roupa Larga] [CTA: Cadastre-se]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-22T10:53:51-0300",
+                "creativeId": "1383710756849894",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120245733793050249",
+            "name": "P10 [M] [30-55] [CAIEIRAS, FRANCO, PERUS] [FB+IG] [PP: LLK1% Engaja/DM/Save]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "excluded_custom_audiences": [
+                {
+                  "id": "120245734771910249",
+                  "name": "ENVIARAM FORMULÁRIO"
+                }
+              ],
+              "custom_audiences": [
+                {
+                  "id": "120245733274580249",
+                  "name": "Semelhante (BR, 1%) - [Syra} Engajados 90d2x"
+                },
+                {
+                  "id": "120245733312170249",
+                  "name": "Semelhante (BR, 1%) - [Syra] DM 180d"
+                },
+                {
+                  "id": "120245733685870249",
+                  "name": "Semelhante (BR, 1%) - [Syra] Salvaram Post"
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3217,
+                    "longitude": -46.7276,
+                    "radius": 8,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3638,
+                    "longitude": -46.7399,
+                    "radius": 8,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.4165,
+                    "longitude": -46.7494,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "ig_search",
+                "story",
+                "reels",
+                "explore_home"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-04-15T17:42:03-0300",
+            "startTime": "2026-04-15T17:42:03-0300",
+            "ads": [
+              {
+                "id": "120246324580880249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais] 2 — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:55:23-0300",
+                "creativeId": "737076822826242",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246324580890249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais] 2 — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:55:23-0300",
+                "creativeId": "1324901986123246",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246324580900249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais] — Cópia — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:55:23-0300",
+                "creativeId": "1627458811869926",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245733793110249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T17:42:05-0300",
+                "creativeId": "1283180169920086",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245733793080249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T17:42:05-0300",
+                "creativeId": "1930114087618415",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245737239310249",
+                "name": "C10 [Estático] [Stories 9x16] [Hook: Roupa Larga] [CTA: Cadastre-se]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:49:45-0300",
+                "creativeId": "4380856492197808",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245737238750249",
+                "name": "C10 [Estático] [Feed 4x5] [Hook: Roupa Larga] [CTA: Cadastre-se]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T18:49:42-0300",
+                "creativeId": "943305331884704",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245733793070249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T17:42:05-0300",
+                "creativeId": "921800817290864",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245733793060249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T17:42:05-0300",
+                "creativeId": "2406860473141456",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245733793120249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T17:42:05-0300",
+                "creativeId": "988871490463298",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245733793090249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T17:42:05-0300",
+                "creativeId": "1764052114975053",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245733793100249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-15T17:42:05-0300",
+                "creativeId": "1474346314198406",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245737240520249",
+                "name": "C11 [Estático] [Stories 9x16] [Hook: Espelho] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:49:51-0300",
+                "creativeId": "3430358917119233",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245737239930249",
+                "name": "C11 [Estático] [Feed 4x5] [Hook: Espelho] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:49:48-0300",
+                "creativeId": "970619345404391",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120244210967340249",
+            "name": "P9 [M] [30-45] [CAIEIRAS, FRANCO, PERUS] [FB+IG]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003602103420",
+                      "name": "PLUS SIZE"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6022788483583",
+                      "name": "Frequent international travelers"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    },
+                    {
+                      "id": "6110813675983",
+                      "name": "People in Brazil who prefer mid and high-value goods"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.322345,
+                    "longitude": -46.588713,
+                    "radius": 2,
+                    "primary_city_id": 258786,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.324108,
+                    "longitude": -46.717962,
+                    "radius": 8,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.340787,
+                    "longitude": -46.659695,
+                    "radius": 5,
+                    "primary_city_id": 258786,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.34509,
+                    "longitude": -46.751092,
+                    "radius": 8,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3638,
+                    "longitude": -46.7399,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.376176,
+                    "longitude": -46.748794,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.408276,
+                    "longitude": -46.749032,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "places": [
+                  {
+                    "key": "197557263620492",
+                    "name": "Alpes De Caieiras",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.373612115177,
+                    "longitude": -46.673121023259,
+                    "radius": 2,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-03-27T02:01:13-0300",
+            "startTime": "2026-03-27T02:01:13-0300",
+            "ads": [
+              {
+                "id": "120244210967350249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-03-27T02:01:14-0300",
+                "creativeId": "1623860258921697",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244210967320249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-27T02:01:14-0300",
+                "creativeId": "1636611404047125",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244210967330249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-27T02:01:14-0300",
+                "creativeId": "2396518927476877",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244210967290249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-27T02:01:14-0300",
+                "creativeId": "26741156088821499",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244210967280249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-27T02:01:14-0300",
+                "creativeId": "2413670295804611",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244210967300249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-27T02:01:14-0300",
+                "creativeId": "1621071619017872",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244210967310249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-27T02:01:14-0300",
+                "creativeId": "1292622499457089",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120243496327780249",
+            "name": "P8 [M] [28-40] [CAIEIRAS, FRANCO, PERUS, JUNDIAÍ, CAJAMAR] [FB+IG] [RICOS / FIT E FF]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 40,
+              "age_min": 28,
+              "flexible_spec": [
+                {
+                  "behaviors": [
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                },
+                {
+                  "interests": [
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    },
+                    {
+                      "id": "6004037400009",
+                      "name": "Fast-food (comidas e bebidas)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.1864,
+                    "longitude": -46.8842,
+                    "radius": 5,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3217,
+                    "longitude": -46.7276,
+                    "radius": 8,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3615,
+                    "longitude": -46.8775,
+                    "radius": 5,
+                    "primary_city_id": 246681,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3638,
+                    "longitude": -46.7399,
+                    "radius": 8,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.4165,
+                    "longitude": -46.7494,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Aureliano Guimarães, São Paulo, São Paulo (state), Brasil",
+                    "address_string": "Rua Aureliano Guimarães, São Paulo, São Paulo (state), Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.62869,
+                    "longitude": -46.73743,
+                    "radius": 1,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "address_string": "Rua Itajara, São Paulo, São Paulo (state), Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.63274,
+                    "longitude": -46.73233,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-03-15T20:44:34-0300",
+            "startTime": "2026-03-15T20:44:34-0300",
+            "ads": [
+              {
+                "id": "120243496327760249",
+                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-15T20:44:36-0300",
+                "creativeId": "989460183736253",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243496327770249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-15T20:44:36-0300",
+                "creativeId": "2413670295804611",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120243494919000249",
+            "name": "[P7] [M] [30-55] [CAIERAS] [FB & IG] [POS+ON]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "behaviors": [
+                    {
+                      "id": "6022788483583",
+                      "name": "Frequent international travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -22.877658,
+                    "longitude": -47.036347,
+                    "radius": 5,
+                    "primary_city_id": 247071,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Dom Pedro I, 119, Caieiras, SP, Brasil",
+                    "address_string": "Rua Dom Pedro I, 119, Caieiras, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.34684,
+                    "longitude": -46.74873,
+                    "radius": 1,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Dona Ambrosina do Carmo Buonaguide, 70, Caieiras, SP, Brasil",
+                    "address_string": "Rua Dona Ambrosina do Carmo Buonaguide, 70, Caieiras, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36114,
+                    "longitude": -46.7451,
+                    "radius": 1,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Avenida Doutor Armando Pinto Lot Cresciuma, 101, Caieiras, SP, Brasil",
+                    "address_string": "Avenida Doutor Armando Pinto Lot Cresciuma, 101, Caieiras, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36198,
+                    "longitude": -46.74514,
+                    "radius": 1,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Guadalajara, 129, Caieiras, SP, Brasil",
+                    "address_string": "Rua Guadalajara, 129, Caieiras, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36275,
+                    "longitude": -46.74555,
+                    "radius": 1,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Avenida dos Estudantes, 165, Caieiras, SP, Brasil",
+                    "address_string": "Avenida dos Estudantes, 165, Caieiras, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36368,
+                    "longitude": -46.74574,
+                    "radius": 1,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Guadalajara Jd Sto Antonio, Caieiras, SP, Brasil",
+                    "address_string": "Rua Guadalajara Jd Sto Antonio, Caieiras, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36471,
+                    "longitude": -46.74253,
+                    "radius": 1,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Avenida Doutor Olindo Dartora, 205, Caieiras, SP, Brasil",
+                    "address_string": "Avenida Doutor Olindo Dartora, 205, Caieiras, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36579,
+                    "longitude": -46.73881,
+                    "radius": 1,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Johannes Ludwis Nauer, 37, Caieiras, SP, Brasil",
+                    "address_string": "Rua Johannes Ludwis Nauer, 37, Caieiras, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36896,
+                    "longitude": -46.75311,
+                    "radius": 1,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Avenida Prefeito Donald Savazoni, 713, Caieiras, SP, Brasil",
+                    "address_string": "Avenida Prefeito Donald Savazoni, 713, Caieiras, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.37568,
+                    "longitude": -46.75287,
+                    "radius": 1,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 1,
+                  "geo": 0
+                }
+              }
+            },
+            "createdTime": "2026-03-15T20:30:37-0300",
+            "startTime": "2026-03-15T20:30:37-0300",
+            "ads": [
+              {
+                "id": "120243496303350249",
+                "name": "AD03 [Vídeo] [Hook: PowerShape] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-15T20:32:19-0300",
+                "creativeId": "989460183736253",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243496303340249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-15T20:32:19-0300",
+                "creativeId": "985272410492378",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120243243508230249",
+            "name": "P6 [M] [30-55] [GRANDE SP - NOBRES] [FB+IG] [OPT: LEAD_GENERATION]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.4906,
+                    "longitude": -46.8399,
+                    "radius": 5,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.5614,
+                    "longitude": -46.6549,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.5663,
+                    "longitude": -46.6919,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.5836,
+                    "longitude": -46.6742,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.596,
+                    "longitude": -46.6842,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.5968,
+                    "longitude": -46.6623,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.6082,
+                    "longitude": -46.7187,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "explore",
+                "reels"
+              ]
+            },
+            "createdTime": "2026-03-11T15:51:14-0300",
+            "startTime": "2026-03-11T15:51:14-0300",
+            "ads": []
+          },
+          {
+            "id": "120243183218800249",
+            "name": "P5 [M] [30-55] [CAIEIRAS, FRANCO, PERUS, JUNDIAÍ, CAJAMAR] [FB+IG] [OPT: LEAD_GENERATION]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "excluded_custom_audiences": [
+                {
+                  "id": "120245734771910249",
+                  "name": "ENVIARAM FORMULÁRIO"
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.1864,
+                    "longitude": -46.8842,
+                    "radius": 5,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3217,
+                    "longitude": -46.7276,
+                    "radius": 8,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3615,
+                    "longitude": -46.8775,
+                    "radius": 5,
+                    "primary_city_id": 246681,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3638,
+                    "longitude": -46.7399,
+                    "radius": 8,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.4165,
+                    "longitude": -46.7494,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "story"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile",
+                "desktop"
+              ]
+            },
+            "createdTime": "2026-03-10T20:49:50-0300",
+            "startTime": "2026-03-10T20:49:50-0300",
+            "ads": [
+              {
+                "id": "120246324402650249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:50:26-0300",
+                "creativeId": "1627458811869926",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246324360970249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais] 2",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:46:37-0300",
+                "creativeId": "737076822826242",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120246323732140249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais] 2",
+                "status": "ACTIVE",
+                "createdTime": "2026-04-22T11:37:40-0300",
+                "creativeId": "1324901986123246",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244210278660249",
+                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-03-27T01:34:46-0300",
+                "creativeId": "26741156088821499",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244210594940249",
+                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-27T01:39:19-0300",
+                "creativeId": "1623860258921697",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244209869450249",
+                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-03-27T01:32:53-0300",
+                "creativeId": "2396518927476877",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244210541540249",
+                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-03-27T01:37:23-0300",
+                "creativeId": "1636611404047125",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120244209003950249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-27T01:29:36-0300",
+                "creativeId": "2413670295804611",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243186922660249",
+                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
+                "status": "PAUSED",
+                "createdTime": "2026-03-10T23:02:55-0300",
+                "creativeId": "1292622499457089",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245737241910249",
+                "name": "C11 [Estático] [Feed 4x5] [Hook: Espelho] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:49:58-0300",
+                "creativeId": "970619345404391",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243186923880249",
+                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-03-10T23:02:59-0300",
+                "creativeId": "1621071619017872",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245737241120249",
+                "name": "C10 [Estático] [Stories 9x16] [Hook: Roupa Larga] [CTA: Cadastre-se]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:49:55-0300",
+                "creativeId": "4380856492197808",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245737242290249",
+                "name": "C11 [Estático] [Stories 9x16] [Hook: Espelho] [CTA: Saiba Mais]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:50:00-0300",
+                "creativeId": "3430358917119233",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120245737240880249",
+                "name": "C10 [Estático] [Feed 4x5] [Hook: Roupa Larga] [CTA: Cadastre-se]",
+                "status": "PAUSED",
+                "createdTime": "2026-04-15T18:49:53-0300",
+                "creativeId": "943305331884704",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120242484578140249",
@@ -1848,7 +5342,137 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120242484578150249",
+            "name": "P1 [Mulheres] [18-65+] [FB+IG+MSG+AN] [CAIEIRAS, FRANCO DA ROCHA E PERUS]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.188763,
+                    "longitude": -46.879137,
+                    "radius": 5,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.275812,
+                    "longitude": -46.743181,
+                    "radius": 5,
+                    "primary_city_id": 253488,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.329876,
+                    "longitude": -46.732194,
+                    "radius": 5,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.364097,
+                    "longitude": -46.742653,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.411039,
+                    "longitude": -46.751435,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "address_string": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.6279,
+                    "longitude": -46.73751,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "geo": 0
+                }
+              }
+            },
+            "createdTime": "2026-02-27T00:14:37-0300",
+            "startTime": "2026-02-27T00:14:37-0300",
+            "ads": [
+              {
+                "id": "120242484578130249",
+                "name": "C1 [Estático] [CTA: Visita ao Perfil]",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-27T00:14:42-0300",
+                "creativeId": "1932037644064693",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484701790249",
+                "name": "C2 [Estático] [CTA: Visita ao Perfil]",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-27T00:14:37-0300",
+                "creativeId": "1427562392188242",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243013295770249",
+                "name": "C3 [VIDEO] [CTA: LIPO SEM CORTE]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-07T19:24:26-0300",
+                "creativeId": "1368771531963559",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120242484503360249",
@@ -2202,7 +5826,877 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120243177272410249",
+            "name": "P4 [M] [27-45] [NORTE SP] [FB+IG] [Int: Fitness+Chocolate] [OPT: CONVERSATIONS] [WHATSAPP]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 27,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003133978408",
+                      "name": "Chocolate (comidas e bebidas)"
+                    },
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6002714895372",
+                      "name": "Frequent Travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.123045,
+                    "longitude": -46.565316,
+                    "radius": 5,
+                    "primary_city_id": 242981,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.207568,
+                    "longitude": -46.85096,
+                    "radius": 10,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.318627,
+                    "longitude": -46.581795,
+                    "radius": 5,
+                    "primary_city_id": 258786,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36445,
+                    "longitude": -46.747395,
+                    "radius": 10,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.51084,
+                    "longitude": -46.8762,
+                    "radius": 10,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ]
+            },
+            "createdTime": "2026-03-10T17:42:54-0300",
+            "startTime": "2026-03-10T17:42:54-0300",
+            "ads": [
+              {
+                "id": "120243177274130249",
+                "name": "AD9 - RESULTADOS",
+                "status": "PAUSED",
+                "createdTime": "2026-03-10T17:42:58-0300",
+                "creativeId": "949504824266506",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243177274930249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "PAUSED",
+                "createdTime": "2026-03-10T17:43:05-0300",
+                "creativeId": "954198100613921",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243177275910249",
+                "name": "C3 [Estático] [Hook: lipo sem corte]",
+                "status": "PAUSED",
+                "createdTime": "2026-03-10T17:43:11-0300",
+                "creativeId": "1592941568630863",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120243128490670249",
+            "name": "[P3] [M] [27-45] [NORTE SP] [FB & IG] [INTERESSES]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 27,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003133978408",
+                      "name": "Chocolate (comidas e bebidas)"
+                    },
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6002714895372",
+                      "name": "Frequent Travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.123045,
+                    "longitude": -46.565316,
+                    "radius": 5,
+                    "primary_city_id": 242981,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.207568,
+                    "longitude": -46.85096,
+                    "radius": 10,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.318627,
+                    "longitude": -46.581795,
+                    "radius": 5,
+                    "primary_city_id": 258786,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36445,
+                    "longitude": -46.747395,
+                    "radius": 10,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.51084,
+                    "longitude": -46.8762,
+                    "radius": 10,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "user_age_unknown": true,
+              "publisher_platforms": [
+                "facebook",
+                "instagram",
+                "whatsapp"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ],
+              "whatsapp_positions": [
+                "status"
+              ]
+            },
+            "createdTime": "2026-03-10T00:22:54-0300",
+            "startTime": "2026-03-10T00:22:54-0300",
+            "ads": [
+              {
+                "id": "120243128490690249",
+                "name": "AD9 - RESULTADOS",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-10T00:22:56-0300",
+                "creativeId": "949504824266506",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243128490660249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-10T00:22:56-0300",
+                "creativeId": "954198100613921",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243128490680249",
+                "name": "C3 [Estático] [Hook: lipo sem corte]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-10T00:22:56-0300",
+                "creativeId": "1592941568630863",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120242484503480249",
+            "name": "[P2] [M] [30-55] [NORTE SP] [FB & IG] [INTERESSES]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003133978408",
+                      "name": "Chocolate (comidas e bebidas)"
+                    },
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6002714895372",
+                      "name": "Frequent Travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.123045,
+                    "longitude": -46.565316,
+                    "radius": 5,
+                    "primary_city_id": 242981,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.207568,
+                    "longitude": -46.85096,
+                    "radius": 10,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.318627,
+                    "longitude": -46.581795,
+                    "radius": 5,
+                    "primary_city_id": 258786,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36445,
+                    "longitude": -46.747395,
+                    "radius": 10,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.51084,
+                    "longitude": -46.8762,
+                    "radius": 10,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "user_age_unknown": true,
+              "publisher_platforms": [
+                "facebook",
+                "instagram",
+                "whatsapp"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "explore",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ],
+              "whatsapp_positions": [
+                "status"
+              ]
+            },
+            "createdTime": "2026-02-26T23:54:49-0300",
+            "startTime": "2026-02-26T23:54:49-0300",
+            "ads": [
+              {
+                "id": "120242484503430249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "PAUSED",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "957069717211666",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243127237570249",
+                "name": "C3 [Estático] [Hook: lipo sem corte]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-10T00:18:49-0300",
+                "creativeId": "2610217189381360",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503410249",
+                "name": "AD9 - RESULTADOS",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "1609217623613862",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120242484503470249",
+            "name": "[P2] [M] [30-55] [CAIEIRAS E REGIÃO] [FB & IG]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                30,
+                55
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.187804,
+                    "longitude": -46.885213,
+                    "radius": 5,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.314859,
+                    "longitude": -46.733529,
+                    "radius": 5,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.363418,
+                    "longitude": -46.745982,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 1,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              },
+              "user_age_unknown": true,
+              "publisher_platforms": [
+                "facebook",
+                "instagram",
+                "whatsapp"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "explore",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ],
+              "whatsapp_positions": [
+                "status"
+              ]
+            },
+            "createdTime": "2026-02-26T23:54:49-0300",
+            "startTime": "2026-02-26T23:54:50-0300",
+            "ads": [
+              {
+                "id": "120242484503400249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "1610103383630183",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503420249",
+                "name": "AD5 - POWERSHAPE - CLICA NO LINK ME SEGUE NO INSTA",
+                "status": "PAUSED",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "811344368664856",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503390249",
+                "name": "AD9 - RESULTADOS",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "2087420852048868",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503380249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "931221122636412",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120242484503370249",
+            "name": "[P1] [M] [30-55] [GRANDE SP - REGIÕES NOBRES] [FB & IG]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.458503,
+                    "longitude": -46.826837,
+                    "radius": 2,
+                    "primary_city_id": 268284,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.471257,
+                    "longitude": -46.857908,
+                    "radius": 2,
+                    "primary_city_id": 268284,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.486066,
+                    "longitude": -46.699979,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.489521,
+                    "longitude": -46.808469,
+                    "radius": 2,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.494109,
+                    "longitude": -46.835592,
+                    "radius": 2,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.496462,
+                    "longitude": -46.712682,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.499754,
+                    "longitude": -46.787183,
+                    "radius": 2,
+                    "primary_city_id": 261985,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.507093,
+                    "longitude": -46.86571,
+                    "radius": 2,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.542252,
+                    "longitude": -46.714056,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.563023,
+                    "longitude": -46.692255,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.592582,
+                    "longitude": -46.676822,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.593703,
+                    "longitude": -46.702039,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ],
+                "neighborhoods": [
+                  {
+                    "key": "2779832",
+                    "country": "BR",
+                    "name": "Itaim",
+                    "region": "São Paulo (state)",
+                    "region_id": "460"
+                  }
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "user_age_unknown": true,
+              "publisher_platforms": [
+                "facebook",
+                "instagram",
+                "whatsapp"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "explore",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ],
+              "whatsapp_positions": [
+                "status"
+              ]
+            },
+            "createdTime": "2026-02-26T23:54:49-0300",
+            "startTime": "2026-02-26T23:54:50-0300",
+            "ads": [
+              {
+                "id": "120242484503450249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "1636659297360841",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503440249",
+                "name": "AD5 - POWERSHAPE - CLICA NO LINK ME SEGUE NO INSTA",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "2240372040081868",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503460249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "890286357340912",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120238443020240249",
@@ -2366,7 +6860,232 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120238443020310249",
+            "name": "[P1] [M] [30-55] [GRANDE SP - REGIÕES NOBRES] [FB & IG]",
+            "status": "ACTIVE",
+            "dailyBudget": 15,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                30,
+                55
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.458503,
+                    "longitude": -46.826837,
+                    "radius": 2,
+                    "primary_city_id": 268284,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.471257,
+                    "longitude": -46.857908,
+                    "radius": 2,
+                    "primary_city_id": 268284,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.486066,
+                    "longitude": -46.699979,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.489521,
+                    "longitude": -46.808469,
+                    "radius": 2,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.494109,
+                    "longitude": -46.835592,
+                    "radius": 2,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.496462,
+                    "longitude": -46.712682,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.499754,
+                    "longitude": -46.787183,
+                    "radius": 2,
+                    "primary_city_id": 261985,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.507093,
+                    "longitude": -46.86571,
+                    "radius": 2,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.542252,
+                    "longitude": -46.714056,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.563023,
+                    "longitude": -46.692255,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.592582,
+                    "longitude": -46.676822,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.593703,
+                    "longitude": -46.702039,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ],
+                "neighborhoods": [
+                  {
+                    "key": "2779832",
+                    "country": "BR",
+                    "name": "Itaim",
+                    "region": "São Paulo (state)",
+                    "region_id": "460"
+                  }
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 0
+                }
+              },
+              "user_age_unknown": false,
+              "publisher_platforms": [
+                "facebook",
+                "instagram",
+                "whatsapp"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "explore",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ],
+              "whatsapp_positions": [
+                "status"
+              ]
+            },
+            "createdTime": "2025-12-08T09:41:30-0300",
+            "startTime": "2025-12-08T09:41:30-0300",
+            "ads": [
+              {
+                "id": "120238443020250249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2025-12-08T09:41:32-0300",
+                "creativeId": "25657168073887936",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120238443020260249",
+                "name": "AD5 - POWERSHAPE - CLICA NO LINK ME SEGUE NO INSTA",
+                "status": "ACTIVE",
+                "createdTime": "2025-12-08T09:41:31-0300",
+                "creativeId": "1509256593682653",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120238443020270249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "ACTIVE",
+                "createdTime": "2025-12-08T09:41:31-0300",
+                "creativeId": "1531651234788239",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120237951836320249",
