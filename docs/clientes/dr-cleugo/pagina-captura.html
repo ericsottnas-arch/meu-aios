@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Dream Incision: o tratamento que libera os nós internos da celulite e estimula o seu próprio colágeno. Dr. Cleugo Porto, referência nacional em celulite.">
+  <title>Dream Incision | Dr. Cleugo Porto</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="images/img-2969-20-281-29.jpeg">
+
+  <!-- Google Fonts (preload) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
+  </noscript>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Meta Pixel — CELULITE DR CLEUGO (1030009936870928) -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1030009936870928');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+      content_name: 'Dream Incision — Celulite',
+      content_category: 'Medicina Estetica',
+      content_ids: ['dream-incision-celulite'],
+      content_type: 'product'
+    });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1030009936870928&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    /* ==============================
+       RESET & BASE
+    ============================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --background: #020202;
+      --card: #060606;
+      --muted: #121212;
+      --gold: #D1A84B;
+      --gold-fg: #020202;
+      --foreground: #EEEEEE;
+      --muted-fg: #8F8F8F;
+      --border: #2D1F01;
+      --secondary: #0B0B0B;
+      --secondary-fg: #CECECE;
+      --whatsapp: #25D366;
+
+      --fd: 'Cormorant Garamond', Georgia, serif;
+      --fb: 'DM Sans', system-ui, sans-serif;
+
+      --hero:    clamp(2.75rem, 2rem + 5vw, 5.5rem);
+      --display: clamp(2rem, 1.5rem + 4vw, 4rem);
+      --h2:      clamp(1.5rem, 1rem + 2.5vw, 2.5rem);
+      --h3:      clamp(1.25rem, 1rem + 1.25vw, 1.75rem);
+      --lg:      clamp(1.0625rem, 0.975rem + 0.4vw, 1.25rem);
+      --base:    clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --sm:      0.9375rem;
+      --xs:      0.8125rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--background);
+      color: var(--foreground);
+      font-family: var(--fb);
+      font-size: var(--base);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+    }
+
+    /* ==============================
+       HEADER
+    ============================== */
+    #site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.125rem 0;
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    #site-header.scrolled {
+      background: rgba(2,2,2,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(209,168,75,0.1);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      font-family: var(--fb);
+      font-size: var(--sm);
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--foreground);
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--gold-fg);
+      padding: 0.625rem 1.25rem;
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      border-radius: 2px;
+    }
+
+    .header-cta:hover { opacity: 0.88; }
+
+    /* ==============================
+       HERO
+    ============================== */
+    #hero {
+      padding-top: clamp(5rem, 10vw, 8rem);
+      padding-bottom: clamp(3rem, 6vw, 5rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at top right, rgba(209,168,75,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 5rem);
+      align-items: center;
+    }
+
+    .hero-content { z-index: 1; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(209,168,75,0.08);
+      border: 1px solid rgba(209,168,75,0.2);
+      padding: 0.375rem 0.875rem;
+      border-radius: 100px;
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .badge-dot {
+      width: 7px; height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .badge-dot::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      background: rgba(209,168,75,0.4);
+      border-radius: 50%;
+      animation: ping 1.5s ease-in-out infinite;
+    }
+
+    @keyframes ping {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.8); opacity: 0; }
+    }
+
+    .hero-headline {
+      font-family: var(--fd);
+      font-size: var(--hero);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--foreground);
+    }
+
+    .hero-line2 {
+      font-family: var(--fd);
+      font-size: var(--display);
+      font-weight: 300;
+      font-style: italic;
+      opacity: 0.8;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-sub {
+      font-family: var(--fb);
+      font-size: var(--lg);
+      opacity: 0.8;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+      max-width: 520px;
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      font-family: var(--fb);
+      font-size: var(--sm);
+      color: var(--muted-fg);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-stat strong {
+      color: var(--foreground);
+      font-weight: 500;
+    }
+
+    .hero-stat-sep {
+      width: 4px; height: 4px;
+      background: rgba(209,168,75,0.4);
+      border-radius: 50%;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--gold-fg);
+      padding: 1.25rem 2.25rem;
+      font-family: var(--fb);
+      font-size: var(--sm);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      border-radius: 3px;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .btn-gold:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .btn-note {
+      font-family: var(--fb);
+      font-size: var(--xs);
+      opacity: 0.6;
+      margin-top: 0.75rem;
+      text-align: center;
+      max-width: 420px;
+    }
+
+    /* Hero Photo */
+    .hero-photo-wrap {
+      position: relative;
+      overflow: visible;
+    }
+
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      border: 1px solid rgba(209,168,75,0.25);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(209,168,75,0.1);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-photo-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: clamp(400px, 55vw, 660px);
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 2px;
+    }
+
+    /* ==============================
+       FORM (reutilizado)
+    ============================== */
+    .form-section {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+
+    .form-card {
+      background: var(--card);
+      border: 1px solid rgba(209,168,75,0.12);
+      border-radius: 6px;
+      padding: clamp(2rem, 4vw, 3rem);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-card h3 {
+      font-family: var(--fd);
+      font-size: var(--h3);
+      font-weight: 500;
+      margin-bottom: 1.75rem;
+      line-height: 1.25;
+    }
+
+    .form-group {
+      margin-bottom: 1.125rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted-fg);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(209,168,75,0.15);
+      color: var(--foreground);
+      font-family: var(--fb);
+      font-size: var(--base);
+      padding: 0.875rem 1rem;
+      border-radius: 3px;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238F8F8F' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.875rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: #121212;
+      color: var(--foreground);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: rgba(209,168,75,0.45);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .form-group input::placeholder { color: rgba(255,255,255,0.25); }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--gold-fg);
+      padding: 1.125rem 2rem;
+      font-family: var(--fb);
+      font-size: var(--sm);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      border-radius: 3px;
+      margin-top: 0.375rem;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .form-privacy {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.875rem;
+      font-size: var(--xs);
+      opacity: 0.6;
+      color: var(--muted-fg);
+    }
+
+    .form-privacy svg { flex-shrink: 0; color: var(--gold); opacity: 0.7; }
+
+    .avatar-stack {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .avatar-stack .avatars {
+      display: flex;
+    }
+
+    .avatar-stack .avatars img {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--card);
+      object-fit: cover;
+      margin-left: -8px;
+    }
+
+    .avatar-stack .avatars img:first-child { margin-left: 0; }
+
+    .avatar-stack .stack-text {
+      font-size: var(--xs);
+      color: var(--muted-fg);
+    }
+
+    .form-error {
+      background: rgba(220,50,50,0.1);
+      border: 1px solid rgba(220,50,50,0.3);
+      color: #ff6b6b;
+      padding: 0.75rem 1rem;
+      border-radius: 3px;
+      font-size: var(--xs);
+      margin-top: 0.75rem;
+      display: none;
+    }
+
+    /* ==============================
+       SECTION LABELS + HEADINGS
+    ============================== */
+    .section-label {
+      display: inline-block;
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.875rem;
+    }
+
+    .section-headline {
+      font-family: var(--fd);
+      font-size: var(--h2);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ==============================
+       SECTION: PROBLEMA
+    ============================== */
+    #problema {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+
+    .problema-inner {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+
+    .problema-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .problema-card {
+      background: var(--card);
+      border: 1px solid rgba(209,168,75,0.1);
+      border-radius: 6px;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+    }
+
+    .problema-card .card-icon {
+      color: rgba(209,168,75,0.5);
+      margin-bottom: 0.875rem;
+    }
+
+    .problema-card h4 {
+      font-family: var(--fb);
+      font-size: var(--sm);
+      font-weight: 600;
+      margin-bottom: 0.375rem;
+      color: var(--foreground);
+    }
+
+    .problema-card p {
+      font-size: var(--sm);
+      color: var(--muted-fg);
+    }
+
+    .problema-transition {
+      font-size: var(--lg);
+      line-height: 1.7;
+      color: var(--secondary-fg);
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* ==============================
+       SECTION: DREAM INCISION
+    ============================== */
+    #solucao {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      background: #030303;
+      background-image: radial-gradient(ellipse at bottom left, rgba(209,168,75,0.05) 0%, transparent 70%);
+      position: relative;
+    }
+
+    .solucao-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .dream-incision-name {
+      font-family: var(--fd);
+      font-size: var(--display);
+      font-weight: 400;
+      color: var(--gold);
+      text-align: center;
+      display: block;
+      margin-bottom: 0.75rem;
+      line-height: 1.1;
+    }
+
+    .solucao-sub {
+      font-size: var(--lg);
+      color: var(--secondary-fg);
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 3rem;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      left: calc(16.66% + 1rem);
+      right: calc(16.66% + 1rem);
+      height: 1px;
+      background: linear-gradient(to right, rgba(209,168,75,0.3), rgba(209,168,75,0.1));
+    }
+
+    .timeline-step {
+      text-align: center;
+      padding: 0 0.5rem;
+    }
+
+    .timeline-number {
+      font-family: var(--fd);
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-title {
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--foreground);
+      display: block;
+      margin-bottom: 0.625rem;
+    }
+
+    .timeline-desc {
+      font-size: var(--sm);
+      color: var(--muted-fg);
+      line-height: 1.65;
+    }
+
+    .solucao-destaque {
+      background: rgba(209,168,75,0.08);
+      border: 1px solid rgba(209,168,75,0.2);
+      border-radius: 4px;
+      padding: 2rem 2.5rem;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+    }
+
+    .solucao-destaque p {
+      font-family: var(--fd);
+      font-style: italic;
+      font-size: var(--h3);
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--foreground);
+    }
+
+    /* ==============================
+       SECTION: AUTORIDADE
+    ============================== */
+    #autoridade {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+
+    .autoridade-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .autoridade-photo {
+      position: relative;
+      overflow: visible;
+    }
+
+    .autoridade-photo::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      border: 1px solid rgba(209,168,75,0.25);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .autoridade-photo::after {
+      content: '';
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(209,168,75,0.1);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .autoridade-photo img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: clamp(380px, 45vw, 580px);
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 2px;
+    }
+
+    .autoridade-content {}
+
+    .dr-name {
+      font-family: var(--fd);
+      font-size: var(--display);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .dr-specialty {
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .dr-bio {
+      font-size: var(--base);
+      color: var(--secondary-fg);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .dr-quote {
+      font-family: var(--fd);
+      font-style: italic;
+      font-size: var(--h3);
+      color: rgba(209,168,75,0.8);
+      line-height: 1.3;
+      margin-bottom: 2rem;
+      border-left: 2px solid rgba(209,168,75,0.3);
+      padding-left: 1.25rem;
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(209,168,75,0.1);
+      border-bottom: 1px solid rgba(209,168,75,0.1);
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      font-family: var(--fd);
+      font-size: clamp(1.25rem, 4vw, 2.5rem);
+      font-weight: 600;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      word-break: break-word;
+    }
+
+    .stat-label {
+      font-size: var(--xs);
+      color: var(--muted-fg);
+      line-height: 1.3;
+      margin-top: 0.25rem;
+    }
+
+    .credenciais {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    .credenciais li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      font-size: var(--sm);
+      color: var(--secondary-fg);
+      line-height: 1.5;
+    }
+
+    .credenciais li svg {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.175rem;
+    }
+
+    /* ==============================
+       SECTION: BEFORE/AFTER (Placeholder)
+    ============================== */
+    #resultados {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      background: #030303;
+    }
+
+    .resultados-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    /* SUBSTITUIR POR SLIDER BEFORE/AFTER REAL — Dr. Cleugo deve fornecer fotos */
+    .ba-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+
+      /* Before/After anti-selection fixes obrigatórios */
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .ba-card {
+      background: var(--card);
+      border: 1px solid rgba(209,168,75,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .ba-placeholder {
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .ba-placeholder svg {
+      color: rgba(209,168,75,0.3);
+    }
+
+    .ba-placeholder span {
+      font-size: var(--xs);
+      color: var(--muted-fg);
+    }
+
+    .ba-labels {
+      display: flex;
+    }
+
+    .ba-label {
+      flex: 1;
+      text-align: center;
+      padding: 0.4rem;
+      font-size: var(--xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ba-label-antes {
+      background: rgba(255,255,255,0.05);
+      color: var(--muted-fg);
+    }
+
+    .ba-label-depois {
+      background: rgba(209,168,75,0.12);
+      color: var(--gold);
+    }
+
+    .ba-footer {
+      text-align: center;
+    }
+
+    .ba-nota {
+      font-size: var(--xs);
+      color: var(--muted-fg);
+      margin-bottom: 1rem;
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: 1px solid rgba(209,168,75,0.25);
+      color: var(--gold);
+      padding: 0.75rem 1.5rem;
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background 0.2s;
+    }
+
+    .btn-ghost:hover { background: rgba(209,168,75,0.08); }
+
+    /* ==============================
+       SECTION: DEPOIMENTOS
+    ============================== */
+    #depoimentos {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+
+    .depoimentos-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .dep-card {
+      background: var(--card);
+      border: 1px solid rgba(209,168,75,0.1);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+
+    .dep-header {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      margin-bottom: 1.125rem;
+    }
+
+    .dep-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .dep-meta {}
+    .dep-name {
+      font-size: var(--sm);
+      font-weight: 600;
+      color: var(--foreground);
+    }
+
+    .dep-city {
+      font-size: var(--xs);
+      color: var(--muted-fg);
+    }
+
+    .dep-quote {
+      font-family: var(--fd);
+      font-style: italic;
+      font-size: var(--h3);
+      line-height: 1.35;
+      margin-bottom: 0.875rem;
+      color: var(--foreground);
+    }
+
+    .dep-text {
+      font-size: var(--sm);
+      color: var(--secondary-fg);
+      line-height: 1.7;
+    }
+
+    .dep-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    /* ==============================
+       SECTION: INDICAÇÃO
+    ============================== */
+    #indicacao {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      background: #030303;
+    }
+
+    .indicacao-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: var(--base);
+      color: var(--secondary-fg);
+      line-height: 1.5;
+    }
+
+    .checklist li svg {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.175rem;
+    }
+
+    .indicacao-nota {
+      font-size: var(--sm);
+      color: var(--muted-fg);
+      line-height: 1.6;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.03);
+      border-left: 2px solid rgba(209,168,75,0.2);
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* ==============================
+       SECTION: FAQ (Accordion)
+    ============================== */
+    #faq {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+
+    .faq-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid rgba(209,168,75,0.1);
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.375rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      color: var(--foreground);
+      font-family: var(--fb);
+      font-size: var(--base);
+      font-weight: 500;
+    }
+
+    .accordion-chevron {
+      flex-shrink: 0;
+      color: var(--gold);
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.open .accordion-chevron {
+      transform: rotate(180deg);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .accordion-item.open .accordion-body {
+      max-height: 500px;
+    }
+
+    .accordion-body-inner {
+      padding-bottom: 1.375rem;
+      font-size: var(--sm);
+      color: var(--secondary-fg);
+      line-height: 1.75;
+    }
+
+    /* ==============================
+       SECTION: CTA FINAL / FORM 2
+    ============================== */
+    #cta-final {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      background: var(--background);
+      background-image: radial-gradient(ellipse at center, rgba(209,168,75,0.06) 0%, transparent 70%);
+    }
+
+    .cta-final-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-final-header .section-headline {
+      font-size: var(--display);
+    }
+
+    .cta-final-header .sub {
+      font-size: var(--lg);
+      color: var(--secondary-fg);
+      max-width: 560px;
+      margin: 0 auto 1rem;
+    }
+
+    .clinicas {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    .clinica-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--sm);
+      color: var(--muted-fg);
+    }
+
+    .clinica-item svg { color: rgba(209,168,75,0.5); }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    #footer {
+      padding: 2rem 0;
+      border-top: 1px solid rgba(209,168,75,0.1);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.875rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--fb);
+      font-size: var(--xs);
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted-fg);
+    }
+
+    .footer-sep {
+      width: 40px;
+      height: 1px;
+      background: rgba(209,168,75,0.1);
+    }
+
+    .footer-legal {
+      font-size: var(--xs);
+      color: var(--muted-fg);
+      opacity: 0.7;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    /* ==============================
+       FLOATING ELEMENTS
+    ============================== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 90;
+      width: 56px; height: 56px;
+      background: var(--whatsapp);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { color: white; }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      z-index: 90;
+      width: 44px; height: 44px;
+      background: rgba(209,168,75,0.1);
+      border: 1px solid rgba(209,168,75,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-top svg { color: var(--gold); }
+
+    /* ==============================
+       REVEAL ANIMATIONS
+    ============================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo-wrap {
+        display: none;
+      }
+
+      .autoridade-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .autoridade-photo {
+        overflow: hidden;
+      }
+
+      .autoridade-photo::before,
+      .autoridade-photo::after {
+        display: none;
+      }
+
+      .autoridade-photo img {
+        position: relative;
+        z-index: 1;
+        height: 340px;
+      }
+
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+
+      .problema-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before { display: none; }
+
+      .ba-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .depoimentos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .clinicas {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .hero-stat-sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==============================
+       HEADER
+  ============================== -->
+  <header id="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <span class="header-logo">Dr. Cleugo Porto</span>
+        <a href="#form1" class="header-cta">Quero ser avaliada</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Texto -->
+        <div class="hero-content">
+          <div class="badge reveal" id="hero-badge">
+            <span class="badge-dot"></span>
+            Medicina Estética Integrativa
+          </div>
+
+          <h1 class="hero-headline reveal" id="hero-h1">
+            Você merece usar biquíni sem pensar na celulite.
+          </h1>
+
+          <p class="hero-line2 reveal" id="hero-line2">
+            E existe um tratamento que entrega isso de verdade.
+          </p>
+
+          <p class="hero-sub reveal" id="hero-sub">
+            A Dream Incision libera os nós internos que criam as covinhas e estimula o seu próprio colágeno para firmar a pele por dentro. O resultado não desaparece porque a causa foi tratada.
+          </p>
+
+          <div class="hero-stats reveal" id="hero-stats">
+            <span class="hero-stat"><strong>5.000+</strong>&nbsp;pacientes tratadas</span>
+            <span class="hero-stat-sep"></span>
+            <span class="hero-stat"><strong>Referência nacional</strong>&nbsp;em celulite</span>
+          </div>
+
+          <div class="reveal" id="hero-cta">
+            <a href="#form1" class="btn-gold">Quero entender como funciona para mim</a>
+            <p class="btn-note">Sem compromisso. Você conversa primeiro, entende se faz sentido, e decide com calma.</p>
+          </div>
+        </div>
+
+        <!-- Foto (oculta no mobile) -->
+        <div class="hero-photo-wrap">
+          <img src="images/dsc02250.jpg" alt="Dr. Cleugo Porto, Medicina Estética Integrativa">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FORMULÁRIO #1
+  ============================== -->
+  <section class="form-section" id="form1">
+    <div class="container">
+      <div class="form-card reveal">
+        <h3>Verifique se você tem indicação para o Dream Incision</h3>
+
+        <form id="lead-form-1" novalidate>
+          <div class="form-group">
+            <label for="nome1">Nome completo</label>
+            <input type="text" id="nome1" name="nome" placeholder="Seu nome completo" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tel1">WhatsApp</label>
+            <input type="tel" id="tel1" name="telefone" placeholder="(11) 99999-9999" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cidade1">Cidade</label>
+            <select id="cidade1" name="cidade" required>
+              <option value="" disabled selected>Selecione sua cidade</option>
+              <option value="Alphaville, SP">Alphaville, SP</option>
+              <option value="Atibaia, SP">Atibaia, SP</option>
+              <option value="Outra (aceito me deslocar)">Outra (aceito me deslocar)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit">Quero ser avaliada</button>
+          <div class="form-error" id="err1"></div>
+        </form>
+
+        <div class="form-privacy">
+          <i data-lucide="shield" style="width:14px;height:14px;"></i>
+          Seus dados estão protegidos. Não enviamos spam.
+        </div>
+
+        <div class="avatar-stack">
+          <div class="avatars">
+            <img src="https://randomuser.me/api/portraits/women/31.jpg" alt="">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+            <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+          </div>
+          <span class="stack-text">127 mulheres avaliadas este mês</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SEÇÃO: PROBLEMA
+  ============================== -->
+  <section id="problema">
+    <div class="container">
+      <div class="problema-inner reveal">
+        <span class="section-label">Por que você já desistiu antes</span>
+        <h2 class="section-headline">Porque creme, drenagem e laser tratam a superfície. A celulite não mora lá.</h2>
+      </div>
+
+      <div class="problema-cards">
+        <div class="problema-card reveal">
+          <div class="card-icon">
+            <i data-lucide="x-circle" style="width:32px;height:32px;"></i>
+          </div>
+          <h4>Cremes e tratamentos tópicos</h4>
+          <p>Não chegam onde o problema está.</p>
+        </div>
+
+        <div class="problema-card reveal">
+          <div class="card-icon">
+            <i data-lucide="x-circle" style="width:32px;height:32px;"></i>
+          </div>
+          <h4>Drenagem linfática</h4>
+          <p>Alivia. Não resolve.</p>
+        </div>
+
+        <div class="problema-card reveal">
+          <div class="card-icon">
+            <i data-lucide="x-circle" style="width:32px;height:32px;"></i>
+          </div>
+          <h4>Laser e radiofrequência</h4>
+          <p>Aquece a pele. Não libera os septos.</p>
+        </div>
+      </div>
+
+      <p class="problema-transition reveal">
+        A celulite grau 2 e grau 3 é causada por septos fibrosos: fios internos que puxam a pele de dentro para baixo e criam as covinhas. Enquanto esses fios estiverem lá, nada na superfície vai resolver. É exatamente isso que a Dream Incision trata.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SEÇÃO: DREAM INCISION (SOLUÇÃO)
+  ============================== -->
+  <section id="solucao">
+    <div class="container">
+      <div class="solucao-header reveal">
+        <span class="section-label">A técnica exclusiva</span>
+        <span class="dream-incision-name">Dream Incision</span>
+      </div>
+
+      <p class="solucao-sub reveal">
+        A celulite desaparece quando liberamos o que a prende embaixo da pele.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-step reveal">
+          <span class="timeline-number">01</span>
+          <span class="timeline-title">Subcisão Profunda</span>
+          <p class="timeline-desc">A Dream Incision vai exatamente até onde os septos estão e os libera. A pele para de ser puxada para baixo.</p>
+        </div>
+
+        <div class="timeline-step reveal">
+          <span class="timeline-number">02</span>
+          <span class="timeline-title">Bioestimulação de Colágeno</span>
+          <p class="timeline-desc">O próprio colágeno do seu corpo começa a ser produzido para firmar a pele de dentro para fora. Natural. Sem volume artificial.</p>
+        </div>
+
+        <div class="timeline-step reveal">
+          <span class="timeline-number">03</span>
+          <span class="timeline-title">Protocolo Integrativo</span>
+          <p class="timeline-desc">Nutrologia e equilíbrio hormonal sustentam o resultado. O corpo todo trabalha junto.</p>
+        </div>
+      </div>
+
+      <div class="solucao-destaque reveal">
+        <p>&ldquo;Os septos liberados não se reformam. O resultado é definitivo.&rdquo;</p>
+      </div>
+
+      <div style="text-align:center;">
+        <div class="badge reveal" style="display:inline-flex;">
+          <span class="badge-dot"></span>
+          Técnica Exclusiva Dr. Cleugo Porto
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SEÇÃO: AUTORIDADE
+  ============================== -->
+  <section id="autoridade">
+    <div class="container">
+      <div class="autoridade-grid">
+
+        <!-- Foto -->
+        <div class="autoridade-photo reveal">
+          <img src="images/dsc02243.jpg" alt="Dr. Cleugo Porto">
+        </div>
+
+        <!-- Conteúdo -->
+        <div class="autoridade-content">
+          <span class="section-label reveal">Quem faz o procedimento</span>
+
+          <h2 class="dr-name reveal">Dr. Cleugo Porto</h2>
+          <p class="dr-specialty reveal">Médico Integrativo &middot; CRM 129662</p>
+
+          <p class="dr-bio reveal">
+            O Dr. Cleugo não chegou à Dream Incision por acidente. São mais de 12 anos dedicados exclusivamente a entender e tratar a celulite, com uma perspectiva que vai além da superfície da pele.
+          </p>
+
+          <blockquote class="dr-quote reveal">
+            &ldquo;A celulite é reflexo de desequilíbrios internos. Tratar apenas a superfície não resolve.&rdquo;
+          </blockquote>
+
+          <div class="stats-bar">
+            <div class="stat-item reveal">
+              <span class="stat-number" data-count="5000">0</span>
+              <span class="stat-label">pacientes tratadas</span>
+            </div>
+            <div class="stat-item reveal">
+              <span class="stat-number" data-count="12">0</span>
+              <span class="stat-label">anos dedicados à celulite</span>
+            </div>
+            <div class="stat-item reveal">
+              <span class="stat-number" data-count="200">0</span>
+              <span class="stat-label">médicos formados</span>
+            </div>
+            <div class="stat-item reveal">
+              <span class="stat-number" data-count="3">0</span>
+              <span class="stat-label">coberturas em TV aberta</span>
+            </div>
+          </div>
+
+          <ul class="credenciais reveal">
+            <li>
+              <i data-lucide="check" style="width:16px;height:16px;"></i>
+              Cobertura em TV SBT ao vivo, Globo e UOL
+            </li>
+            <li>
+              <i data-lucide="check" style="width:16px;height:16px;"></i>
+              Criador do método Dream Incision, ensinado para médicos em todo o Brasil
+            </li>
+            <li>
+              <i data-lucide="check" style="width:16px;height:16px;"></i>
+              Charles Esteves, maior referência em cirurgia vascular do Brasil, é um dos médicos formados por ele
+            </li>
+            <li>
+              <i data-lucide="check" style="width:16px;height:16px;"></i>
+              Filiado à World Society of Anti-Aging Medicine (França)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SEÇÃO: BEFORE/AFTER (Placeholder)
+       SUBSTITUIR POR SLIDER BEFORE/AFTER REAL — Dr. Cleugo deve fornecer fotos
+  ============================== -->
+  <section id="resultados">
+    <div class="container">
+      <div class="resultados-header reveal">
+        <span class="section-label">Resultados reais</span>
+        <h2 class="section-headline">Assim ficam as pacientes depois do Dream Incision.</h2>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-card reveal">
+          <div class="ba-placeholder">
+            <img src="images/resultado-bunda.jpg" alt="Antes e depois celulite bunda" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="ba-labels">
+            <span class="ba-label ba-label-antes">Antes</span>
+            <span class="ba-label ba-label-depois">Depois</span>
+          </div>
+        </div>
+
+        <div class="ba-card reveal">
+          <div class="ba-placeholder">
+            <img src="images/resultado-coxas.jpg" alt="Antes e depois celulite coxas" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="ba-labels">
+            <span class="ba-label ba-label-antes">Antes</span>
+            <span class="ba-label ba-label-depois">Depois</span>
+          </div>
+        </div>
+
+        <div class="ba-card reveal">
+          <div class="ba-placeholder">
+            <i data-lucide="image" style="width:40px;height:40px;"></i>
+            <span>Foto será inserida pelo Dr. Cleugo</span>
+          </div>
+          <div class="ba-labels">
+            <span class="ba-label ba-label-antes">Antes</span>
+            <span class="ba-label ba-label-depois">Depois</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ba-footer reveal">
+        <p class="ba-nota">Resultados individuais podem variar. Procedimento realizado pelo Dr. Cleugo Porto CRM 129662.</p>
+        <a href="https://www.instagram.com/drcleugo" target="_blank" rel="noopener" class="btn-ghost">
+          <i data-lucide="instagram" style="width:14px;height:14px;"></i>
+          Ver mais resultados no Instagram @drcleugo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SEÇÃO: DEPOIMENTOS
+  ============================== -->
+  <section id="depoimentos">
+    <div class="container">
+      <div class="depoimentos-header reveal">
+        <span class="section-label">O que as pacientes dizem</span>
+      </div>
+
+      <div class="depoimentos-grid">
+        <div class="dep-card reveal">
+          <div class="dep-header">
+            <img class="dep-avatar" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Fernanda">
+            <div class="dep-meta">
+              <p class="dep-name">Fernanda, 38 anos</p>
+              <p class="dep-city">Alphaville, SP</p>
+            </div>
+          </div>
+          <p class="dep-quote">&ldquo;Fui para o litoral e usei biquíni pela primeira vez em quatro anos.&rdquo;</p>
+          <p class="dep-text">Eu tinha parado de ir à piscina com as minhas filhas. Ficava dentro do canguru, dentro da toalha, inventando desculpa. Depois de dois meses do tratamento com o Dr. Cleugo, fui para o litoral e usei biquíni pela primeira vez em quatro anos. Não foi dramático. Simplesmente me senti livre para ir.</p>
+        </div>
+
+        <div class="dep-card reveal">
+          <div class="dep-header">
+            <img class="dep-avatar" src="https://randomuser.me/api/portraits/women/22.jpg" alt="Carla">
+            <div class="dep-meta">
+              <p class="dep-name">Carla, 45 anos</p>
+              <p class="dep-city">Atibaia, SP</p>
+            </div>
+          </div>
+          <p class="dep-quote">&ldquo;A pele mudou de um jeito que os outros tratamentos nunca chegaram perto.&rdquo;</p>
+          <p class="dep-text">Já tinha feito quatro procedimentos diferentes antes. Cada um prometia resultado definitivo. Quando ouvi isso de novo, na consulta com o Dr. Cleugo, eu já estava desconfiada. Mas ele explicou a diferença de uma forma que fez sentido. Três meses depois eu entendi. A pele mudou de um jeito que os outros tratamentos nunca chegaram perto.</p>
+        </div>
+
+        <div class="dep-card reveal">
+          <div class="dep-header">
+            <img class="dep-avatar" src="https://randomuser.me/api/portraits/women/55.jpg" alt="Renata">
+            <div class="dep-meta">
+              <p class="dep-name">Renata, 33 anos</p>
+              <p class="dep-city">São Paulo, SP</p>
+            </div>
+          </div>
+          <p class="dep-quote">&ldquo;Minha cunhada me perguntou se eu estava malhando mais.&rdquo;</p>
+          <p class="dep-text">O que me convenceu foi ele dizer que o resultado é natural porque vem do meu próprio colágeno. Tinha medo de ficar com aquele aspecto artificial. Não ficou. Minha cunhada me perguntou se eu estava malhando mais. Não malho nada diferente. A pele é que ficou outra.</p>
+        </div>
+      </div>
+
+      <div class="dep-footer reveal">
+        <div class="avatar-stack" style="justify-content:center;">
+          <div class="avatars">
+            <img src="https://randomuser.me/api/portraits/women/31.jpg" alt="">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+            <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+          </div>
+          <span class="stack-text">Mais de 500 mulheres já fizeram o procedimento</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SEÇÃO: INDICAÇÃO
+  ============================== -->
+  <section id="indicacao">
+    <div class="container">
+      <div class="indicacao-inner">
+        <span class="section-label reveal">Indicação clínica</span>
+        <h2 class="section-headline reveal">O Dream Incision tem indicação para você se:</h2>
+
+        <ul class="checklist">
+          <li class="reveal">
+            <i data-lucide="check-circle-2" style="width:20px;height:20px;"></i>
+            Tem celulite grau 2 ou 3 nas coxas ou glúteos
+          </li>
+          <li class="reveal">
+            <i data-lucide="check-circle-2" style="width:20px;height:20px;"></i>
+            Já tentou outros tratamentos sem resultado definitivo
+          </li>
+          <li class="reveal">
+            <i data-lucide="check-circle-2" style="width:20px;height:20px;"></i>
+            Busca resultado duradouro, não manutenção mensal
+          </li>
+          <li class="reveal">
+            <i data-lucide="check-circle-2" style="width:20px;height:20px;"></i>
+            Não está grávida ou amamentando
+          </li>
+          <li class="reveal">
+            <i data-lucide="check-circle-2" style="width:20px;height:20px;"></i>
+            Tem disponibilidade para o protocolo completo
+          </li>
+          <li class="reveal">
+            <i data-lucide="check-circle-2" style="width:20px;height:20px;"></i>
+            Mora ou pode se deslocar para Alphaville ou Atibaia
+          </li>
+        </ul>
+
+        <p class="indicacao-nota reveal">
+          A avaliação definitiva é feita pelo Dr. Cleugo em consulta. O formulário abaixo é o primeiro passo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SEÇÃO: FAQ
+  ============================== -->
+  <section id="faq">
+    <div class="container">
+      <div class="faq-inner">
+        <div class="faq-header reveal">
+          <span class="section-label">Dúvidas frequentes</span>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-trigger" aria-expanded="false">
+            Dói? Como é o procedimento na prática?
+            <i data-lucide="chevron-down" class="accordion-chevron" style="width:20px;height:20px;"></i>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              O procedimento é realizado com anestesia local, então a sensação durante é mínima. Após, é normal sentir um leve desconforto por alguns dias, similar a uma dor muscular. A maioria das pacientes retoma as atividades normais em 48 horas. O Dr. Cleugo acompanha cada etapa da recuperação de perto.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-trigger" aria-expanded="false">
+            Tenho medo de ficar com aspecto artificial. Como fica?
+            <i data-lucide="chevron-down" class="accordion-chevron" style="width:20px;height:20px;"></i>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              O resultado é completamente natural porque o próprio corpo é quem produz o colágeno. Não há preenchimento, silicone ou substância artificial. A pele melhora de dentro para fora. O que as pacientes relatam é que parece que a pele "ficou diferente", não que foi feito alguma coisa. O aspecto é de pele saudável, não de procedimento estético.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-trigger" aria-expanded="false">
+            Em quanto tempo eu vejo o resultado?
+            <i data-lucide="chevron-down" class="accordion-chevron" style="width:20px;height:20px;"></i>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              Os primeiros resultados visíveis começam entre 4 e 8 semanas após o procedimento, quando o colágeno começa a ser produzido. O resultado completo se consolida entre 3 e 6 meses. Como o processo é biológico e gradual, a melhora é progressiva e o resultado final é mais natural do que procedimentos que agem imediatamente.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-trigger" aria-expanded="false">
+            Qualquer pessoa pode fazer? Tenho celulite há muitos anos.
+            <i data-lucide="chevron-down" class="accordion-chevron" style="width:20px;height:20px;"></i>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              O tempo que você tem celulite não interfere na indicação. O que determina se o procedimento é indicado para você é o grau da celulite, sua saúde geral e seus objetivos. A avaliação com o Dr. Cleugo é exatamente para isso: entender o seu caso específico e confirmar a indicação. Mulheres com celulite de longa data conseguem excelentes resultados com a Dream Incision.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FORMULÁRIO #2 + CTA FINAL
+  ============================== -->
+  <section id="cta-final">
+    <div class="container">
+      <div class="cta-final-header reveal">
+        <span class="section-label">Avaliação gratuita</span>
+        <h2 class="section-headline">O primeiro passo é a avaliação. Ela custa zero.</h2>
+        <p class="sub">Preencha abaixo e nossa equipe entra em contato para agendar sua consulta de avaliação.</p>
+      </div>
+
+      <div class="form-card reveal">
+        <h3>Garanta sua avaliação gratuita</h3>
+
+        <form id="lead-form-2" novalidate>
+          <div class="form-group">
+            <label for="nome2">Nome completo</label>
+            <input type="text" id="nome2" name="nome" placeholder="Seu nome completo" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tel2">WhatsApp</label>
+            <input type="tel" id="tel2" name="telefone" placeholder="(11) 99999-9999" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cidade2">Cidade</label>
+            <select id="cidade2" name="cidade" required>
+              <option value="" disabled selected>Selecione sua cidade</option>
+              <option value="Alphaville, SP">Alphaville, SP</option>
+              <option value="Atibaia, SP">Atibaia, SP</option>
+              <option value="Outra (aceito me deslocar)">Outra (aceito me deslocar)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit">Quero ser avaliada</button>
+          <div class="form-error" id="err2"></div>
+        </form>
+
+        <div class="form-privacy">
+          <i data-lucide="shield" style="width:14px;height:14px;"></i>
+          Seus dados estão protegidos. Não enviamos spam.
+        </div>
+
+        <div class="clinicas">
+          <div class="clinica-item">
+            <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
+            <span>Alphaville, SP</span>
+          </div>
+          <div class="clinica-item">
+            <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
+            <span>Atibaia, SP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Dr. Cleugo Porto</span>
+        <div class="footer-sep"></div>
+        <p class="footer-legal">
+          Procedimentos realizados exclusivamente pelo Dr. Cleugo Porto CRM 129662. Resultados individuais podem variar.
+        </p>
+        <p class="footer-legal">
+          &copy; 2026 Dr. Cleugo Porto. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Flutuante -->
+  <a href="https://wa.me/551141955960" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp da clínica">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+    <i data-lucide="chevron-up" style="width:20px;height:20px;"></i>
+  </button>
+
+  <!-- ==============================
+       SCRIPTS
+  ============================== -->
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    // ==============================
+    // INICIALIZAR LUCIDE ICONS
+    // ==============================
+    lucide.createIcons();
+
+    // ==============================
+    // LENIS SMOOTH SCROLL
+    // ==============================
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // ==============================
+    // HEADER SCROLL
+    // ==============================
+    const header = document.getElementById('site-header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      lastScroll = scrollY;
+    }, { passive: true });
+
+    // ==============================
+    // SCROLL TO TOP BUTTON
+    // ==============================
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    scrollTopBtn.addEventListener('click', () => {
+      lenis.scrollTo(0, { duration: 1.2 });
+    });
+
+    // ==============================
+    // GSAP SCROLLTRIGGER — REVEAL
+    // ==============================
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animações hero (sequenciais)
+    const heroSequence = ['#hero-badge', '#hero-h1', '#hero-line2', '#hero-sub', '#hero-stats', '#hero-cta'];
+    heroSequence.forEach((sel, i) => {
+      const el = document.querySelector(sel);
+      if (!el) return;
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.85,
+        ease: 'power2.out',
+        delay: 0.2 + (i * 0.12)
+      });
+    });
+
+    // Reveal geral com ScrollTrigger
+    gsap.utils.toArray('.reveal').forEach((el) => {
+      // Pular os que já foram animados no hero
+      if (heroSequence.some(s => el.id && s.includes(el.id))) return;
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 88%',
+        onEnter: () => {
+          gsap.to(el, {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: 'power2.out'
+          });
+        },
+        once: true
+      });
+    });
+
+    // Stagger em grupos de cards
+    ['#problema .problema-cards', '#depoimentos .depoimentos-grid', '#solucao .timeline'].forEach(sel => {
+      const container = document.querySelector(sel);
+      if (!container) return;
+      const children = container.querySelectorAll('.reveal');
+
+      ScrollTrigger.create({
+        trigger: container,
+        start: 'top 88%',
+        onEnter: () => {
+          gsap.to(children, {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: 'power2.out',
+            stagger: 0.1
+          });
+        },
+        once: true
+      });
+    });
+
+    // Counter animation nos stats
+    gsap.utils.toArray('[data-count]').forEach((el) => {
+      const target = parseInt(el.getAttribute('data-count'));
+      const suffix = target >= 1000 ? '+' : target > 100 ? '+' : '';
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 85%',
+        onEnter: () => {
+          let obj = { val: 0 };
+          gsap.to(obj, {
+            val: target,
+            duration: 1.5,
+            ease: 'power2.out',
+            onUpdate: () => {
+              el.textContent = Math.round(obj.val).toLocaleString('pt-BR') + suffix;
+            }
+          });
+        },
+        once: true
+      });
+    });
+
+    // ==============================
+    // ACCORDION FAQ
+    // ==============================
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.accordion-item');
+        const isOpen = item.classList.contains('open');
+
+        // Fechar todos
+        document.querySelectorAll('.accordion-item.open').forEach(openItem => {
+          openItem.classList.remove('open');
+          openItem.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+        });
+
+        // Abrir o clicado se estava fechado
+        if (!isOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ==============================
+    // UTM CAPTURE
+    // ==============================
+    function captureUTMs() {
+      const params = new URLSearchParams(window.location.search);
+      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      utmKeys.forEach(key => {
+        const val = params.get(key);
+        if (val) sessionStorage.setItem(key, val);
+      });
+    }
+
+    function getUTMs() {
+      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      const utms = {};
+      utmKeys.forEach(key => {
+        utms[key] = sessionStorage.getItem(key) || '';
+      });
+      return utms;
+    }
+
+    captureUTMs();
+
+    // ==============================
+    // MÁSCARA WHATSAPP
+    // ==============================
+    function maskPhone(input) {
+      input.addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '');
+        if (v.length > 11) v = v.slice(0, 11);
+
+        if (v.length <= 2) {
+          e.target.value = v.length ? '(' + v : '';
+        } else if (v.length <= 7) {
+          e.target.value = '(' + v.slice(0,2) + ') ' + v.slice(2);
+        } else {
+          e.target.value = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+        }
+      });
+    }
+
+    maskPhone(document.getElementById('tel1'));
+    maskPhone(document.getElementById('tel2'));
+
+    // ==============================
+    // FORM VALIDATION + SUBMIT
+    // ==============================
+    function getDigits(str) {
+      return str.replace(/\D/g, '');
+    }
+
+    function validateForm(nomeId, telId, cidadeId) {
+      const nome = document.getElementById(nomeId).value.trim();
+      const tel = document.getElementById(telId).value.trim();
+      const cidade = document.getElementById(cidadeId).value;
+
+      if (!nome || nome.length < 3) return 'Por favor, informe seu nome completo.';
+      const digits = getDigits(tel);
+      if (!digits || digits.length < 10 || digits.length > 13) return 'Por favor, informe um WhatsApp válido.';
+      if (!cidade) return 'Por favor, selecione sua cidade.';
+      return null;
+    }
+
+    async function submitLead(formId, nomeId, telId, cidadeId, errId) {
+      const form = document.getElementById(formId);
+      const errEl = document.getElementById(errId);
+      const btn = form.querySelector('.btn-submit');
+
+      const error = validateForm(nomeId, telId, cidadeId);
+      if (error) {
+        errEl.textContent = error;
+        errEl.style.display = 'block';
+        return;
+      }
+
+      errEl.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      const nome = document.getElementById(nomeId).value.trim();
+      const telefone = getDigits(document.getElementById(telId).value);
+      const cidade = document.getElementById(cidadeId).value;
+      const utms = getUTMs();
+
+      try {
+        const res = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nome,
+            telefone,
+            cidade,
+            pagina_origem: window.location.href,
+            ...utms
+          })
+        });
+
+        if (res.ok) {
+          // Meta Pixel — Lead event
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', {
+              content_name: 'Dream Incision — Celulite',
+              content_category: 'Medicina Estetica',
+              value: 0,
+              currency: 'BRL'
+            });
+          }
+          window.location.href = '/obrigado';
+        } else {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || 'Erro desconhecido');
+        }
+      } catch (e) {
+        errEl.textContent = 'Ocorreu um erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.';
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Quero ser avaliada';
+      }
+    }
+
+    document.getElementById('lead-form-1').addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitLead('lead-form-1', 'nome1', 'tel1', 'cidade1', 'err1');
+    });
+
+    document.getElementById('lead-form-2').addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitLead('lead-form-2', 'nome2', 'tel2', 'cidade2', 'err2');
+    });
+
+    // ==============================
+    // SMOOTH SCROLL PARA ÂNCORAS
+    // ==============================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          lenis.scrollTo(target, { offset: -80, duration: 1.2 });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
