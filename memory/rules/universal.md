@@ -145,4 +145,33 @@ Isso PRECISA mudar a partir de agora.
 
 ---
 
-Ultima atualizacao: 2026-04-06
+## [CRITICAL] Banco de Copies Eric Santos — salvar TODA copy que Eric escrever
+
+> Eric pediu explicitamente em 2026-04-24. Ele mesmo reconheceu que o sistema
+> nao tem disciplina em manter processos. Esta regra existe pra resolver isso.
+
+**O que fazer:**
+- Quando Eric compartilhar uma copy que ELE ESCREVEU (nao gerada por agente):
+  1. Salvar na integra em `docs/eric-brand/knowledge-base/copies-eric/{tipo}/`
+  2. Atualizar o INDEX.md com a nova entrada
+  3. Confirmar: "Copy salva no banco. #{numero}"
+
+**Quando consultar:**
+- ANTES de escrever qualquer copy para Eric ou @byericsantos
+- Ler as 3-5 copies mais parecidas por tipo/tema
+- Usar como referencia direta de tom, ritmo, vocabulario
+- No quality gate: "parece uma copy que o Eric escreveu?" comparando com copies REAIS
+
+**Tipos aceitos:** caption/, ad/, roteiro/, email/, sequencia/, post/
+**Nomenclatura:** {YYYY-MM-DD}_{tema-curto}.md
+
+**Na ativacao do @copy-chef:**
+- Passo obrigatorio: ler INDEX.md e confirmar quantas copies estao no banco
+- Se banco vazio ou desatualizado: alertar Eric
+
+- Severidade: CRITICAL
+- Aplica a: @copy-chef, @nova, @halbert, @georgi, @wiebe, @morgan, @orzechowski, @ogilvy
+
+---
+
+Ultima atualizacao: 2026-04-24

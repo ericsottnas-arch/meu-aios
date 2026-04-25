@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Dra. Gabrielle
-**Atualizado em:** 24/04/2026, 07:47:06
+**Atualizado em:** 25/04/2026, 06:42:17
 **Período:** Últimos 7 dias
 
 ## Visão Geral

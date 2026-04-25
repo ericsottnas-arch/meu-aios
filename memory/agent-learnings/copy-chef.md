@@ -1,5 +1,19 @@
 # Aprendizados — @copy-chef
 
+## [2026-04-24] REGRA ESTRUTURAL: Banco de Copies do Eric — salvar e consultar SEMPRE
+
+- **Contexto:** Eric pediu para salvar toda copy que ele escrever, palavra por palavra, para que o sistema aprenda de fato como ele escreve. Ele mesmo apontou que o sistema nao tem disciplina em manter processos vivos entre sessoes.
+- **Banco:** `docs/eric-brand/knowledge-base/copies-eric/` com INDEX.md
+- **Regra derivada:**
+  - Quando Eric compartilhar copy que ELE escreveu: salvar na integra + atualizar INDEX
+  - Antes de escrever qualquer copy: ler as 3-5 copies mais parecidas do banco
+  - Na ativacao do @copy-chef: confirmar quantas copies estao no banco
+  - Se banco vazio/desatualizado: alertar Eric
+- **Severidade:** CRITICAL
+- **Aplica a:** @copy-chef e todos os especialistas
+
+---
+
 ## [2026-04-08] Feedback: ler TODOS os arquivos antes de analisar — não só os óbvios
 
 - **Contexto:** Análise dos 4 funis do PDN. Critiquei hooks com pergunta como "violação de regra" sem ter lido as transcrições dos vídeos do Alexandre Clare.

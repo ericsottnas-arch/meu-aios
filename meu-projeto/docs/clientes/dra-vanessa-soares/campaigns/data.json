@@ -1,7 +1,7 @@
 {
   "clientId": "dra-vanessa-soares",
   "clientName": "Dra. Vanessa Soares",
-  "exportedAt": "2026-04-24T10:47:06.687Z",
+  "exportedAt": "2026-04-25T10:34:59.429Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -789,64 +789,7 @@
             },
             "createdTime": "2026-01-22T00:28:47-0300",
             "startTime": "2026-01-22T00:28:47-0300",
-            "ads": [
-              {
-                "id": "120236578543350377",
-                "name": "[AD13] [CARROSEL CRIANÇAS]",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-22T00:39:59-0300",
-                "creativeId": "33497490453228635",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120236578512330377",
-                "name": "[AD12] [A/D caso de otomodelação sem cortes]",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-22T00:31:51-0300",
-                "creativeId": "3072116109662441",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120236578469680377",
-                "name": "[AD11] [A/D vídeo antes ela não amarrava o cabelo] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-22T00:28:49-0300",
-                "creativeId": "1365507038597717",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120236578720600377",
-                "name": "[AD9] [A/D rapaz cabeludinho]",
-                "status": "ACTIVE",
-                "createdTime": "2026-01-22T00:44:39-0300",
-                "creativeId": "2163221080878047",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
+            "ads": []
           }
         ]
       },

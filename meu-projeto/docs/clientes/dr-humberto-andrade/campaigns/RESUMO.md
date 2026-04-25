@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Dr. Humberto Andrade
-**Atualizado em:** 24/04/2026, 07:47:07
+**Atualizado em:** 25/04/2026, 08:00:05
 **Período:** Últimos 7 dias
 
 ## Visão Geral

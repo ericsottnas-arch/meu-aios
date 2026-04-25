@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Syra Digital (Agencia)
-**Atualizado em:** 24/04/2026, 07:47:07
+**Atualizado em:** 25/04/2026, 07:58:49
 **Período:** Últimos 7 dias
 
 ## Visão Geral

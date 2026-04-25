@@ -109,4 +109,17 @@ Resumo:
 
 ---
 
-Ultima atualizacao: 2026-03-19
+## [CRITICAL] Banco de Copies Eric Santos — consulta obrigatoria
+
+Antes de escrever qualquer copy:
+1. Ler `docs/eric-brand/knowledge-base/copies-eric/INDEX.md`
+2. Abrir as 3-5 copies mais parecidas por tipo/tema
+3. Usar como referencia direta (nao inspiracao vaga)
+4. No quality gate: comparar com copies reais do Eric
+
+Quando Eric compartilhar copy que ELE escreveu: salvar imediatamente no banco.
+Ver detalhes completos: [[universal]]
+
+---
+
+Ultima atualizacao: 2026-04-24
