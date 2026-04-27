@@ -1,7 +1,7 @@
 {
   "clientId": "dra-gabrielle",
   "clientName": "Dra. Gabrielle",
-  "exportedAt": "2026-04-25T09:42:17.448Z",
+  "exportedAt": "2026-04-27T10:59:54.894Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -197,6 +197,44 @@
             "frequency": 1.212355,
             "conversions": 0,
             "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-25",
+            "impressions": 447,
+            "clicks": 3,
+            "spend": 13.94,
+            "cpc": 4.646667,
+            "ctr": 0.671141,
+            "cpm": 31.185682,
+            "reach": 396,
+            "frequency": 1.128788,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-26",
+            "impressions": 392,
+            "clicks": 4,
+            "spend": 11.82,
+            "cpc": 2.955,
+            "ctr": 1.020408,
+            "cpm": 30.153061,
+            "reach": 315,
+            "frequency": 1.244444,
+            "conversions": 1,
+            "costPerResult": 11.82,
             "linkClicks": 0,
             "landingPageViews": 0,
             "costPerLandingPageView": 0,
@@ -659,224 +697,7 @@
         "lifetimeBudget": null,
         "createdTime": "2026-04-15T18:06:39-0300",
         "dailyInsights": [],
-        "adsets": [
-          {
-            "id": "120245734151580249",
-            "name": "P1 [M] [25-65] [Engajamento Amplo]",
-            "status": "ACTIVE",
-            "dailyBudget": 15,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 25,
-              "excluded_custom_audiences": [
-                {
-                  "id": "120245734771910249",
-                  "name": "ENVIARAM FORMULÁRIO"
-                }
-              ],
-              "custom_audiences": [
-                {
-                  "id": "120245733226830249",
-                  "name": "[Syra] Interação Conta 365d5x"
-                },
-                {
-                  "id": "120245734523860249",
-                  "name": "VV 3sg"
-                },
-                {
-                  "id": "120245734575780249",
-                  "name": "VV ThruPlay"
-                },
-                {
-                  "id": "120245734724230249",
-                  "name": "[Syra] Visitantes 90d"
-                }
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "custom_locations": [
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.1864,
-                    "longitude": -46.8842,
-                    "radius": 5,
-                    "primary_city_id": 257242,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3217,
-                    "longitude": -46.7276,
-                    "radius": 8,
-                    "primary_city_id": 253504,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3615,
-                    "longitude": -46.8775,
-                    "radius": 5,
-                    "primary_city_id": 246681,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3638,
-                    "longitude": -46.7399,
-                    "radius": 8,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.4165,
-                    "longitude": -46.7494,
-                    "radius": 5,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "targeting_relaxation_types": {
-                "lookalike": 0,
-                "custom_audience": 0
-              },
-              "targeting_automation": {
-                "advantage_audience": 0
-              },
-              "publisher_platforms": [
-                "facebook",
-                "instagram"
-              ],
-              "facebook_positions": [
-                "feed",
-                "story"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile",
-                "desktop"
-              ]
-            },
-            "createdTime": "2026-04-15T18:06:39-0300",
-            "startTime": "2026-04-15T18:06:40-0300",
-            "ads": [
-              {
-                "id": "120245734151650249",
-                "name": "C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]",
-                "status": "PAUSED",
-                "createdTime": "2026-04-15T18:06:41-0300",
-                "creativeId": "1623860258921697",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245734151770249",
-                "name": "C6 [Vídeo] [Hook: Você vai ter um evento ] [CTA: Saiba Mais]",
-                "status": "ACTIVE",
-                "createdTime": "2026-04-15T18:06:41-0300",
-                "creativeId": "26741156088821499",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245734151760249",
-                "name": "C5 [Hook: Eu Descobri Um Procedimento Estético ] [CTA: Saiba Mais]",
-                "status": "ACTIVE",
-                "createdTime": "2026-04-15T18:06:41-0300",
-                "creativeId": "2396518927476877",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245734151780249",
-                "name": "C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]",
-                "status": "ACTIVE",
-                "createdTime": "2026-04-15T18:06:41-0300",
-                "creativeId": "1636611404047125",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245734151540249",
-                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar]",
-                "status": "ACTIVE",
-                "createdTime": "2026-04-15T18:06:41-0300",
-                "creativeId": "1292622499457089",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245734151750249",
-                "name": "AD9 [Vídeo] [Hook: Resultados Reais] [CTA: Agendar] — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2026-04-15T18:06:41-0300",
-                "creativeId": "2413670295804611",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120245734151740249",
-                "name": "C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]",
-                "status": "ACTIVE",
-                "createdTime": "2026-04-15T18:06:41-0300",
-                "creativeId": "1621071619017872",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120243740011460249",
@@ -1848,6 +1669,44 @@
             "messagingConversations": 0,
             "costPerMessagingConversation": 0,
             "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-25",
+            "impressions": 328,
+            "clicks": 2,
+            "spend": 8.03,
+            "cpc": 4.015,
+            "ctr": 0.609756,
+            "cpm": 24.481707,
+            "reach": 309,
+            "frequency": 1.061489,
+            "conversions": 0,
+            "costPerResult": 0,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
+          },
+          {
+            "date": "2026-04-26",
+            "impressions": 354,
+            "clicks": 9,
+            "spend": 10.14,
+            "cpc": 1.126667,
+            "ctr": 2.542373,
+            "cpm": 28.644068,
+            "reach": 338,
+            "frequency": 1.047337,
+            "conversions": 1,
+            "costPerResult": 10.14,
+            "linkClicks": 0,
+            "landingPageViews": 0,
+            "costPerLandingPageView": 0,
+            "messagingConversations": 0,
+            "costPerMessagingConversation": 0,
+            "costPerThruplayVideoView": 0
           }
         ],
         "adsets": []
@@ -2622,7 +2481,137 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120242484578150249",
+            "name": "P1 [Mulheres] [18-65+] [FB+IG+MSG+AN] [CAIEIRAS, FRANCO DA ROCHA E PERUS]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.188763,
+                    "longitude": -46.879137,
+                    "radius": 5,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.275812,
+                    "longitude": -46.743181,
+                    "radius": 5,
+                    "primary_city_id": 253488,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.329876,
+                    "longitude": -46.732194,
+                    "radius": 5,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.364097,
+                    "longitude": -46.742653,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.411039,
+                    "longitude": -46.751435,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "name": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "address_string": "Rua Aureliano Guimarães, 150, São Paulo, SP, Brasil",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.6279,
+                    "longitude": -46.73751,
+                    "radius": 5,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "geo": 0
+                }
+              }
+            },
+            "createdTime": "2026-02-27T00:14:37-0300",
+            "startTime": "2026-02-27T00:14:37-0300",
+            "ads": [
+              {
+                "id": "120242484578130249",
+                "name": "C1 [Estático] [CTA: Visita ao Perfil]",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-27T00:14:42-0300",
+                "creativeId": "1932037644064693",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484701790249",
+                "name": "C2 [Estático] [CTA: Visita ao Perfil]",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-27T00:14:37-0300",
+                "creativeId": "1427562392188242",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243013295770249",
+                "name": "C3 [VIDEO] [CTA: LIPO SEM CORTE]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-07T19:24:26-0300",
+                "creativeId": "1368771531963559",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120242484503360249",
@@ -2976,7 +2965,877 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120243177272410249",
+            "name": "P4 [M] [27-45] [NORTE SP] [FB+IG] [Int: Fitness+Chocolate] [OPT: CONVERSATIONS] [WHATSAPP]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 27,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003133978408",
+                      "name": "Chocolate (comidas e bebidas)"
+                    },
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6002714895372",
+                      "name": "Frequent Travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.123045,
+                    "longitude": -46.565316,
+                    "radius": 5,
+                    "primary_city_id": 242981,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.207568,
+                    "longitude": -46.85096,
+                    "radius": 10,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.318627,
+                    "longitude": -46.581795,
+                    "radius": 5,
+                    "primary_city_id": 258786,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36445,
+                    "longitude": -46.747395,
+                    "radius": 10,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.51084,
+                    "longitude": -46.8762,
+                    "radius": 10,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "publisher_platforms": [
+                "facebook",
+                "instagram"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ]
+            },
+            "createdTime": "2026-03-10T17:42:54-0300",
+            "startTime": "2026-03-10T17:42:54-0300",
+            "ads": [
+              {
+                "id": "120243177274130249",
+                "name": "AD9 - RESULTADOS",
+                "status": "PAUSED",
+                "createdTime": "2026-03-10T17:42:58-0300",
+                "creativeId": "949504824266506",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243177274930249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "PAUSED",
+                "createdTime": "2026-03-10T17:43:05-0300",
+                "creativeId": "954198100613921",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243177275910249",
+                "name": "C3 [Estático] [Hook: lipo sem corte]",
+                "status": "PAUSED",
+                "createdTime": "2026-03-10T17:43:11-0300",
+                "creativeId": "1592941568630863",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120243128490670249",
+            "name": "[P3] [M] [27-45] [NORTE SP] [FB & IG] [INTERESSES]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 27,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003133978408",
+                      "name": "Chocolate (comidas e bebidas)"
+                    },
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6002714895372",
+                      "name": "Frequent Travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.123045,
+                    "longitude": -46.565316,
+                    "radius": 5,
+                    "primary_city_id": 242981,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.207568,
+                    "longitude": -46.85096,
+                    "radius": 10,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.318627,
+                    "longitude": -46.581795,
+                    "radius": 5,
+                    "primary_city_id": 258786,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36445,
+                    "longitude": -46.747395,
+                    "radius": 10,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.51084,
+                    "longitude": -46.8762,
+                    "radius": 10,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "user_age_unknown": true,
+              "publisher_platforms": [
+                "facebook",
+                "instagram",
+                "whatsapp"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ],
+              "whatsapp_positions": [
+                "status"
+              ]
+            },
+            "createdTime": "2026-03-10T00:22:54-0300",
+            "startTime": "2026-03-10T00:22:54-0300",
+            "ads": [
+              {
+                "id": "120243128490690249",
+                "name": "AD9 - RESULTADOS",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-10T00:22:56-0300",
+                "creativeId": "949504824266506",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243128490660249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-10T00:22:56-0300",
+                "creativeId": "954198100613921",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243128490680249",
+                "name": "C3 [Estático] [Hook: lipo sem corte]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-10T00:22:56-0300",
+                "creativeId": "1592941568630863",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120242484503480249",
+            "name": "[P2] [M] [30-55] [NORTE SP] [FB & IG] [INTERESSES]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003133978408",
+                      "name": "Chocolate (comidas e bebidas)"
+                    },
+                    {
+                      "id": "6003420915231",
+                      "name": "Academia (fitness)"
+                    }
+                  ],
+                  "behaviors": [
+                    {
+                      "id": "6002714895372",
+                      "name": "Frequent Travelers"
+                    },
+                    {
+                      "id": "6046096201583",
+                      "name": "People who prefer high-value goods in Brazil"
+                    },
+                    {
+                      "id": "6071631541183",
+                      "name": "Engaged Shoppers"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.123045,
+                    "longitude": -46.565316,
+                    "radius": 5,
+                    "primary_city_id": 242981,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.207568,
+                    "longitude": -46.85096,
+                    "radius": 10,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.318627,
+                    "longitude": -46.581795,
+                    "radius": 5,
+                    "primary_city_id": 258786,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.36445,
+                    "longitude": -46.747395,
+                    "radius": 10,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.51084,
+                    "longitude": -46.8762,
+                    "radius": 10,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "user_age_unknown": true,
+              "publisher_platforms": [
+                "facebook",
+                "instagram",
+                "whatsapp"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "explore",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ],
+              "whatsapp_positions": [
+                "status"
+              ]
+            },
+            "createdTime": "2026-02-26T23:54:49-0300",
+            "startTime": "2026-02-26T23:54:49-0300",
+            "ads": [
+              {
+                "id": "120242484503430249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "PAUSED",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "957069717211666",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120243127237570249",
+                "name": "C3 [Estático] [Hook: lipo sem corte]",
+                "status": "ACTIVE",
+                "createdTime": "2026-03-10T00:18:49-0300",
+                "creativeId": "2610217189381360",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503410249",
+                "name": "AD9 - RESULTADOS",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "1609217623613862",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120242484503470249",
+            "name": "[P2] [M] [30-55] [CAIEIRAS E REGIÃO] [FB & IG]",
+            "status": "ACTIVE",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                30,
+                55
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.187804,
+                    "longitude": -46.885213,
+                    "radius": 5,
+                    "primary_city_id": 257242,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.314859,
+                    "longitude": -46.733529,
+                    "radius": 5,
+                    "primary_city_id": 253504,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.363418,
+                    "longitude": -46.745982,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 1,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              },
+              "user_age_unknown": true,
+              "publisher_platforms": [
+                "facebook",
+                "instagram",
+                "whatsapp"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "explore",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ],
+              "whatsapp_positions": [
+                "status"
+              ]
+            },
+            "createdTime": "2026-02-26T23:54:49-0300",
+            "startTime": "2026-02-26T23:54:50-0300",
+            "ads": [
+              {
+                "id": "120242484503400249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "1610103383630183",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503420249",
+                "name": "AD5 - POWERSHAPE - CLICA NO LINK ME SEGUE NO INSTA",
+                "status": "PAUSED",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "811344368664856",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503390249",
+                "name": "AD9 - RESULTADOS",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "2087420852048868",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503380249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "931221122636412",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120242484503370249",
+            "name": "[P1] [M] [30-55] [GRANDE SP - REGIÕES NOBRES] [FB & IG]",
+            "status": "PAUSED",
+            "dailyBudget": 0,
+            "targeting": {
+              "age_max": 55,
+              "age_min": 30,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "custom_locations": [
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.458503,
+                    "longitude": -46.826837,
+                    "radius": 2,
+                    "primary_city_id": 268284,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.471257,
+                    "longitude": -46.857908,
+                    "radius": 2,
+                    "primary_city_id": 268284,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.486066,
+                    "longitude": -46.699979,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.489521,
+                    "longitude": -46.808469,
+                    "radius": 2,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.494109,
+                    "longitude": -46.835592,
+                    "radius": 2,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.496462,
+                    "longitude": -46.712682,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.499754,
+                    "longitude": -46.787183,
+                    "radius": 2,
+                    "primary_city_id": 261985,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.507093,
+                    "longitude": -46.86571,
+                    "radius": 2,
+                    "primary_city_id": 244379,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.542252,
+                    "longitude": -46.714056,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.563023,
+                    "longitude": -46.692255,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.592582,
+                    "longitude": -46.676822,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  },
+                  {
+                    "distance_unit": "kilometer",
+                    "latitude": -23.593703,
+                    "longitude": -46.702039,
+                    "radius": 2,
+                    "primary_city_id": 269969,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ],
+                "neighborhoods": [
+                  {
+                    "key": "2779832",
+                    "country": "BR",
+                    "name": "Itaim",
+                    "region": "São Paulo (state)",
+                    "region_id": "460"
+                  }
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0
+              },
+              "user_age_unknown": true,
+              "publisher_platforms": [
+                "facebook",
+                "instagram",
+                "whatsapp"
+              ],
+              "facebook_positions": [
+                "feed",
+                "facebook_reels",
+                "notification",
+                "instream_video",
+                "story",
+                "search"
+              ],
+              "instagram_positions": [
+                "stream",
+                "story",
+                "explore",
+                "reels"
+              ],
+              "device_platforms": [
+                "mobile"
+              ],
+              "whatsapp_positions": [
+                "status"
+              ]
+            },
+            "createdTime": "2026-02-26T23:54:49-0300",
+            "startTime": "2026-02-26T23:54:50-0300",
+            "ads": [
+              {
+                "id": "120242484503450249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI — Cópia",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "1636659297360841",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503440249",
+                "name": "AD5 - POWERSHAPE - CLICA NO LINK ME SEGUE NO INSTA",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "2240372040081868",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              },
+              {
+                "id": "120242484503460249",
+                "name": "AD03 - POWERSHAPE - CLICA AQUI",
+                "status": "ACTIVE",
+                "createdTime": "2026-02-26T23:54:51-0300",
+                "creativeId": "890286357340912",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120238443020240249",
@@ -3140,232 +3999,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120238443020310249",
-            "name": "[P1] [M] [30-55] [GRANDE SP - REGIÕES NOBRES] [FB & IG]",
-            "status": "ACTIVE",
-            "dailyBudget": 15,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                30,
-                55
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "custom_locations": [
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.458503,
-                    "longitude": -46.826837,
-                    "radius": 2,
-                    "primary_city_id": 268284,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.471257,
-                    "longitude": -46.857908,
-                    "radius": 2,
-                    "primary_city_id": 268284,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.486066,
-                    "longitude": -46.699979,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.489521,
-                    "longitude": -46.808469,
-                    "radius": 2,
-                    "primary_city_id": 244379,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.494109,
-                    "longitude": -46.835592,
-                    "radius": 2,
-                    "primary_city_id": 244379,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.496462,
-                    "longitude": -46.712682,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.499754,
-                    "longitude": -46.787183,
-                    "radius": 2,
-                    "primary_city_id": 261985,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.507093,
-                    "longitude": -46.86571,
-                    "radius": 2,
-                    "primary_city_id": 244379,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.542252,
-                    "longitude": -46.714056,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.563023,
-                    "longitude": -46.692255,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.592582,
-                    "longitude": -46.676822,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.593703,
-                    "longitude": -46.702039,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ],
-                "neighborhoods": [
-                  {
-                    "key": "2779832",
-                    "country": "BR",
-                    "name": "Itaim",
-                    "region": "São Paulo (state)",
-                    "region_id": "460"
-                  }
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 0
-                }
-              },
-              "user_age_unknown": false,
-              "publisher_platforms": [
-                "facebook",
-                "instagram",
-                "whatsapp"
-              ],
-              "facebook_positions": [
-                "feed",
-                "facebook_reels",
-                "notification",
-                "instream_video",
-                "story",
-                "search"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "explore",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile"
-              ],
-              "whatsapp_positions": [
-                "status"
-              ]
-            },
-            "createdTime": "2025-12-08T09:41:30-0300",
-            "startTime": "2025-12-08T09:41:30-0300",
-            "ads": [
-              {
-                "id": "120238443020250249",
-                "name": "AD03 - POWERSHAPE - CLICA AQUI — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-08T09:41:32-0300",
-                "creativeId": "25657168073887936",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120238443020260249",
-                "name": "AD5 - POWERSHAPE - CLICA NO LINK ME SEGUE NO INSTA",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-08T09:41:31-0300",
-                "creativeId": "1509256593682653",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120238443020270249",
-                "name": "AD03 - POWERSHAPE - CLICA AQUI",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-08T09:41:31-0300",
-                "creativeId": "1531651234788239",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120237951836320249",
@@ -3719,525 +4353,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120238444233940249",
-            "name": "[P2] [M] [30-55] [NORTE SP] [FB & IG] [INTERESSES]",
-            "status": "ACTIVE",
-            "dailyBudget": 0,
-            "targeting": {
-              "age_max": 55,
-              "age_min": 30,
-              "flexible_spec": [
-                {
-                  "interests": [
-                    {
-                      "id": "6003133978408",
-                      "name": "Chocolate (comidas e bebidas)"
-                    },
-                    {
-                      "id": "6003420915231",
-                      "name": "Academia (fitness)"
-                    }
-                  ],
-                  "behaviors": [
-                    {
-                      "id": "6002714895372",
-                      "name": "Frequent Travelers"
-                    },
-                    {
-                      "id": "6046096201583",
-                      "name": "People who prefer high-value goods in Brazil"
-                    },
-                    {
-                      "id": "6071631541183",
-                      "name": "Engaged Shoppers"
-                    }
-                  ]
-                }
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "custom_locations": [
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.123045,
-                    "longitude": -46.565316,
-                    "radius": 5,
-                    "primary_city_id": 242981,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.207568,
-                    "longitude": -46.85096,
-                    "radius": 10,
-                    "primary_city_id": 257242,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.318627,
-                    "longitude": -46.581795,
-                    "radius": 5,
-                    "primary_city_id": 258786,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.36445,
-                    "longitude": -46.747395,
-                    "radius": 10,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.51084,
-                    "longitude": -46.8762,
-                    "radius": 10,
-                    "primary_city_id": 244379,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0
-              },
-              "user_age_unknown": true,
-              "publisher_platforms": [
-                "facebook",
-                "instagram",
-                "whatsapp"
-              ],
-              "facebook_positions": [
-                "feed",
-                "facebook_reels",
-                "notification",
-                "instream_video",
-                "story",
-                "search"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "explore",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile"
-              ],
-              "whatsapp_positions": [
-                "status"
-              ]
-            },
-            "createdTime": "2025-12-08T10:03:20-0300",
-            "startTime": "2025-12-08T10:03:21-0300",
-            "ads": [
-              {
-                "id": "120238468965930249",
-                "name": "AD9 - RESULTADOS",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-08T18:35:20-0300",
-                "creativeId": "1197972455772995",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120238444233980249",
-                "name": "AD03 - POWERSHAPE - CLICA AQUI",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-08T10:03:23-0300",
-                "creativeId": "1938996566791278",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120237953082950249",
-            "name": "[P2] [M] [30-55] [CAIEIRAS E REGIÃO] [FB & IG]",
-            "status": "ACTIVE",
-            "dailyBudget": 0,
-            "targeting": {
-              "age_max": 55,
-              "age_min": 30,
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "custom_locations": [
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.187804,
-                    "longitude": -46.885213,
-                    "radius": 5,
-                    "primary_city_id": 257242,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.314859,
-                    "longitude": -46.733529,
-                    "radius": 5,
-                    "primary_city_id": 253504,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.363418,
-                    "longitude": -46.745982,
-                    "radius": 5,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "geo": 0
-                }
-              },
-              "user_age_unknown": true,
-              "publisher_platforms": [
-                "facebook",
-                "instagram",
-                "whatsapp"
-              ],
-              "facebook_positions": [
-                "feed",
-                "facebook_reels",
-                "notification",
-                "instream_video",
-                "story",
-                "search"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "explore",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile"
-              ],
-              "whatsapp_positions": [
-                "status"
-              ]
-            },
-            "createdTime": "2025-12-01T19:53:29-0300",
-            "startTime": "2025-12-01T19:53:29-0300",
-            "ads": [
-              {
-                "id": "120237953082960249",
-                "name": "AD5 - POWERSHAPE - CLICA NO LINK ME SEGUE NO INSTA",
-                "status": "PAUSED",
-                "createdTime": "2025-12-01T19:53:30-0300",
-                "creativeId": "1509256593682653",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120237953082970249",
-                "name": "AD03 - POWERSHAPE - CLICA AQUI",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-01T19:53:30-0300",
-                "creativeId": "1531651234788239",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120238468849750249",
-                "name": "AD9 - RESULTADOS",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-08T18:33:42-0300",
-                "creativeId": "1895569271034553",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120237953082940249",
-                "name": "AD03 - POWERSHAPE - CLICA AQUI — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-01T19:53:32-0300",
-                "creativeId": "25657168073887936",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120237951836330249",
-            "name": "[P1] [M] [30-55] [GRANDE SP - REGIÕES NOBRES] [FB & IG]",
-            "status": "PAUSED",
-            "dailyBudget": 0,
-            "targeting": {
-              "age_max": 55,
-              "age_min": 30,
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "custom_locations": [
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.458503,
-                    "longitude": -46.826837,
-                    "radius": 2,
-                    "primary_city_id": 268284,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.471257,
-                    "longitude": -46.857908,
-                    "radius": 2,
-                    "primary_city_id": 268284,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.486066,
-                    "longitude": -46.699979,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.489521,
-                    "longitude": -46.808469,
-                    "radius": 2,
-                    "primary_city_id": 244379,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.494109,
-                    "longitude": -46.835592,
-                    "radius": 2,
-                    "primary_city_id": 244379,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.496462,
-                    "longitude": -46.712682,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.499754,
-                    "longitude": -46.787183,
-                    "radius": 2,
-                    "primary_city_id": 261985,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.507093,
-                    "longitude": -46.86571,
-                    "radius": 2,
-                    "primary_city_id": 244379,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.542252,
-                    "longitude": -46.714056,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.563023,
-                    "longitude": -46.692255,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.592582,
-                    "longitude": -46.676822,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  },
-                  {
-                    "distance_unit": "kilometer",
-                    "latitude": -23.593703,
-                    "longitude": -46.702039,
-                    "radius": 2,
-                    "primary_city_id": 269969,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ],
-                "neighborhoods": [
-                  {
-                    "key": "2779832",
-                    "country": "BR",
-                    "name": "Itaim",
-                    "region": "São Paulo (state)",
-                    "region_id": "460"
-                  }
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0
-              },
-              "user_age_unknown": true,
-              "publisher_platforms": [
-                "facebook",
-                "instagram",
-                "whatsapp"
-              ],
-              "facebook_positions": [
-                "feed",
-                "facebook_reels",
-                "notification",
-                "instream_video",
-                "story",
-                "search"
-              ],
-              "instagram_positions": [
-                "stream",
-                "story",
-                "explore",
-                "reels"
-              ],
-              "device_platforms": [
-                "mobile"
-              ],
-              "whatsapp_positions": [
-                "status"
-              ]
-            },
-            "createdTime": "2025-12-01T19:39:14-0300",
-            "startTime": "2025-12-01T19:39:14-0300",
-            "ads": [
-              {
-                "id": "120237952832520249",
-                "name": "AD03 - POWERSHAPE - CLICA AQUI — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-01T19:39:15-0300",
-                "creativeId": "25657168073887936",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120237952191370249",
-                "name": "AD5 - POWERSHAPE - CLICA NO LINK ME SEGUE NO INSTA",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-01T19:39:15-0300",
-                "creativeId": "1509256593682653",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120237951836310249",
-                "name": "AD03 - POWERSHAPE - CLICA AQUI",
-                "status": "ACTIVE",
-                "createdTime": "2025-12-01T19:39:19-0300",
-                "creativeId": "1531651234788239",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120234286540230249",
@@ -4248,405 +4364,6 @@
         "lifetimeBudget": null,
         "createdTime": "2025-10-06T16:41:25-0300",
         "dailyInsights": [
-          {
-            "date": "2025-10-06",
-            "impressions": 811,
-            "clicks": 15,
-            "spend": 16.8,
-            "cpc": 1.12,
-            "ctr": 1.849568,
-            "cpm": 20.715166,
-            "reach": 664,
-            "frequency": 1.221386,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 1,
-            "costPerMessagingConversation": 16.8,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-07",
-            "impressions": 2178,
-            "clicks": 31,
-            "spend": 42.83,
-            "cpc": 1.381613,
-            "ctr": 1.423324,
-            "cpm": 19.66483,
-            "reach": 1273,
-            "frequency": 1.710919,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 3,
-            "costPerMessagingConversation": 14.276667,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-08",
-            "impressions": 1803,
-            "clicks": 34,
-            "spend": 36.3,
-            "cpc": 1.067647,
-            "ctr": 1.885746,
-            "cpm": 20.133111,
-            "reach": 1178,
-            "frequency": 1.53056,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 5,
-            "costPerMessagingConversation": 7.26,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-09",
-            "impressions": 1550,
-            "clicks": 20,
-            "spend": 37.17,
-            "cpc": 1.8585,
-            "ctr": 1.290323,
-            "cpm": 23.980645,
-            "reach": 1024,
-            "frequency": 1.513672,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 1,
-            "costPerMessagingConversation": 37.17,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-10",
-            "impressions": 1295,
-            "clicks": 36,
-            "spend": 33.72,
-            "cpc": 0.936667,
-            "ctr": 2.779923,
-            "cpm": 26.03861,
-            "reach": 936,
-            "frequency": 1.383547,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 9,
-            "costPerMessagingConversation": 3.746667,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-11",
-            "impressions": 1331,
-            "clicks": 19,
-            "spend": 31.02,
-            "cpc": 1.632632,
-            "ctr": 1.427498,
-            "cpm": 23.305785,
-            "reach": 918,
-            "frequency": 1.449891,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 5,
-            "costPerMessagingConversation": 6.204,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-12",
-            "impressions": 1484,
-            "clicks": 19,
-            "spend": 39.31,
-            "cpc": 2.068947,
-            "ctr": 1.280323,
-            "cpm": 26.489218,
-            "reach": 1021,
-            "frequency": 1.453477,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 1,
-            "costPerMessagingConversation": 39.31,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-13",
-            "impressions": 1146,
-            "clicks": 22,
-            "spend": 35.98,
-            "cpc": 1.635455,
-            "ctr": 1.919721,
-            "cpm": 31.396161,
-            "reach": 855,
-            "frequency": 1.340351,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 5,
-            "costPerMessagingConversation": 7.196,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-14",
-            "impressions": 1205,
-            "clicks": 16,
-            "spend": 37.35,
-            "cpc": 2.334375,
-            "ctr": 1.327801,
-            "cpm": 30.995851,
-            "reach": 843,
-            "frequency": 1.429419,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 6,
-            "costPerMessagingConversation": 6.225,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-15",
-            "impressions": 1250,
-            "clicks": 20,
-            "spend": 34.85,
-            "cpc": 1.7425,
-            "ctr": 1.6,
-            "cpm": 27.88,
-            "reach": 883,
-            "frequency": 1.415629,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 7,
-            "costPerMessagingConversation": 4.978571,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-16",
-            "impressions": 1276,
-            "clicks": 16,
-            "spend": 35.17,
-            "cpc": 2.198125,
-            "ctr": 1.253919,
-            "cpm": 27.562696,
-            "reach": 847,
-            "frequency": 1.506494,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 4,
-            "costPerMessagingConversation": 8.7925,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-17",
-            "impressions": 1276,
-            "clicks": 18,
-            "spend": 34.75,
-            "cpc": 1.930556,
-            "ctr": 1.410658,
-            "cpm": 27.233542,
-            "reach": 829,
-            "frequency": 1.539204,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 3,
-            "costPerMessagingConversation": 11.583333,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-18",
-            "impressions": 1038,
-            "clicks": 12,
-            "spend": 31.64,
-            "cpc": 2.636667,
-            "ctr": 1.156069,
-            "cpm": 30.481696,
-            "reach": 714,
-            "frequency": 1.453782,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 3,
-            "costPerMessagingConversation": 10.546667,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-19",
-            "impressions": 1395,
-            "clicks": 23,
-            "spend": 37.73,
-            "cpc": 1.640435,
-            "ctr": 1.648746,
-            "cpm": 27.046595,
-            "reach": 1006,
-            "frequency": 1.38668,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 5,
-            "costPerMessagingConversation": 7.546,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-20",
-            "impressions": 1222,
-            "clicks": 19,
-            "spend": 41.2,
-            "cpc": 2.168421,
-            "ctr": 1.554828,
-            "cpm": 33.715221,
-            "reach": 1011,
-            "frequency": 1.208704,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 2,
-            "costPerMessagingConversation": 20.6,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-21",
-            "impressions": 1279,
-            "clicks": 20,
-            "spend": 36.37,
-            "cpc": 1.8185,
-            "ctr": 1.563722,
-            "cpm": 28.436278,
-            "reach": 901,
-            "frequency": 1.419534,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 3,
-            "costPerMessagingConversation": 12.123333,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-22",
-            "impressions": 1287,
-            "clicks": 12,
-            "spend": 35.64,
-            "cpc": 2.97,
-            "ctr": 0.932401,
-            "cpm": 27.692308,
-            "reach": 841,
-            "frequency": 1.530321,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 9,
-            "costPerMessagingConversation": 3.96,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-23",
-            "impressions": 1379,
-            "clicks": 27,
-            "spend": 36.52,
-            "cpc": 1.352593,
-            "ctr": 1.957941,
-            "cpm": 26.482959,
-            "reach": 963,
-            "frequency": 1.431983,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 5,
-            "costPerMessagingConversation": 7.304,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-24",
-            "impressions": 1025,
-            "clicks": 15,
-            "spend": 28.29,
-            "cpc": 1.886,
-            "ctr": 1.463415,
-            "cpm": 27.6,
-            "reach": 740,
-            "frequency": 1.385135,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 1,
-            "costPerMessagingConversation": 28.29,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-25",
-            "impressions": 72,
-            "clicks": 1,
-            "spend": 1.38,
-            "cpc": 1.38,
-            "ctr": 1.388889,
-            "cpm": 19.166667,
-            "reach": 66,
-            "frequency": 1.090909,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 0,
-            "costPerMessagingConversation": 0,
-            "costPerThruplayVideoView": 0
-          },
-          {
-            "date": "2025-10-26",
-            "impressions": 0,
-            "clicks": 0,
-            "spend": 0,
-            "cpc": 0,
-            "ctr": 0,
-            "cpm": 0,
-            "reach": 0,
-            "frequency": 0,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 0,
-            "costPerMessagingConversation": 0,
-            "costPerThruplayVideoView": 0
-          },
           {
             "date": "2025-10-27",
             "impressions": 0,
@@ -5271,139 +4988,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120232400126440249",
-            "name": "CJ - 00 (CAIEIRAS 5KM/ ABERTO/25-45/MULHERES)",
-            "status": "ACTIVE",
-            "dailyBudget": 10,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                25,
-                45
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "places": [
-                  {
-                    "key": "110969782256951",
-                    "name": "Laranjeiras (Caieiras)",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3644444444,
-                    "longitude": -46.7408333333,
-                    "radius": 6,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 0,
-                  "geo": 0
-                }
-              }
-            },
-            "createdTime": "2025-09-11T14:07:35-0300",
-            "startTime": "2025-09-11T14:07:35-0300",
-            "ads": [
-              {
-                "id": "120232400341520249",
-                "name": "VÍDEO - PÓS OPERATÓRIO",
-                "status": "ACTIVE",
-                "createdTime": "2025-09-11T14:07:37-0300",
-                "creativeId": "1276202803716917",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          },
-          {
-            "id": "120232399992990249",
-            "name": "CJ - 01 (CAIEIRAS 5KM/ ABERTO/25-45/MULHERES)",
-            "status": "ACTIVE",
-            "dailyBudget": 10,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                25,
-                45
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "places": [
-                  {
-                    "key": "325128341535653",
-                    "name": "Laranjeiras-Caieiras-Sp",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3951792716,
-                    "longitude": -46.7156517392,
-                    "radius": 7,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 0
-                }
-              }
-            },
-            "createdTime": "2025-09-11T14:07:53-0300",
-            "startTime": "2025-09-11T14:07:53-0300",
-            "ads": [
-              {
-                "id": "120232400232610249",
-                "name": "VIDEO - CREMES MILAGROSOS — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2025-09-11T14:07:55-0300",
-                "creativeId": "1124271743139357",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120231724757910249",
@@ -5662,115 +5247,7 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": [
-          {
-            "id": "120231724758100249",
-            "name": "CONFIGURAÇÃO ATUAL",
-            "status": "ACTIVE",
-            "dailyBudget": 28,
-            "targeting": {
-              "age_max": 65,
-              "age_min": 18,
-              "age_range": [
-                25,
-                45
-              ],
-              "genders": [
-                2
-              ],
-              "geo_locations": {
-                "places": [
-                  {
-                    "key": "325128341535653",
-                    "name": "Laranjeiras-Caieiras-Sp",
-                    "distance_unit": "kilometer",
-                    "latitude": -23.3951792716,
-                    "longitude": -46.7156517392,
-                    "radius": 7,
-                    "primary_city_id": 246621,
-                    "region_id": 460,
-                    "country": "BR"
-                  }
-                ],
-                "location_types": [
-                  "home",
-                  "recent"
-                ]
-              },
-              "brand_safety_content_filter_levels": [
-                "FACEBOOK_RELAXED",
-                "AN_RELAXED"
-              ],
-              "targeting_automation": {
-                "advantage_audience": 0,
-                "individual_setting": {
-                  "age": 1,
-                  "gender": 0
-                }
-              }
-            },
-            "createdTime": "2025-08-29T08:12:12-0300",
-            "startTime": "2025-08-29T08:12:12-0300",
-            "ads": [
-              {
-                "id": "120231891101660249",
-                "name": "VIDEO -  PÓS OPEÁTORIO",
-                "status": "ACTIVE",
-                "createdTime": "2025-09-01T12:42:15-0300",
-                "creativeId": "731945253172170",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120231727951290249",
-                "name": "VIDEO - CREMES MILAGROSOS — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2025-08-29T08:12:13-0300",
-                "creativeId": "4487874978106053",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120231891110600249",
-                "name": "VÍDEO - PASSO A PASSO",
-                "status": "ACTIVE",
-                "createdTime": "2025-09-01T12:42:15-0300",
-                "creativeId": "769820875650124",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              },
-              {
-                "id": "120231891101670249",
-                "name": "VIDEO - CREMES MILAGROSOS — Cópia — Cópia",
-                "status": "ACTIVE",
-                "createdTime": "2025-09-01T12:42:05-0300",
-                "creativeId": "1968789647220251",
-                "thumbnailUrl": "",
-                "videoAvgTimeWatched": 0,
-                "videoP25Watched": 0,
-                "videoP50Watched": 0,
-                "videoP75Watched": 0,
-                "videoP100Watched": 0,
-                "videoThruplay": 0
-              }
-            ]
-          }
-        ]
+        "adsets": []
       },
       {
         "id": "120231333815990249",
@@ -5953,7 +5430,79 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120231333816310249",
+            "name": "MULHER - SAÚDE - 26D - CAIEIRAS",
+            "status": "ACTIVE",
+            "dailyBudget": 30,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 25,
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-08-21T14:55:19-0300",
+            "startTime": "2025-08-21T14:55:19-0300",
+            "ads": [
+              {
+                "id": "120231333816580249",
+                "name": "VIDEO - CREMES MILAGROSOS",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-21T14:55:21-0300",
+                "creativeId": "1129163692471663",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120230656430680249",
@@ -6098,7 +5647,383 @@
             "costPerThruplayVideoView": 0
           }
         ],
-        "adsets": []
+        "adsets": [
+          {
+            "id": "120230657325270249",
+            "name": "04 - [Laranjeiras 5km] - [10$] (Mulheres) — Cópia",
+            "status": "PAUSED",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:46:02-0300",
+            "startTime": "2025-08-08T10:46:02-0300",
+            "ads": [
+              {
+                "id": "120230657325230249",
+                "name": "VD004 - SAIR DISSO",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:46:04-0300",
+                "creativeId": "1532755074767917",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120230657325260249",
+            "name": "03 - [Laranjeiras 5km] - [10$] (Mulheres) — Cópia",
+            "status": "PAUSED",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:46:02-0300",
+            "startTime": "2025-08-08T10:46:02-0300",
+            "ads": [
+              {
+                "id": "120230657325300249",
+                "name": "VD003 - Perder de 5 a 7kg",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:46:04-0300",
+                "creativeId": "1271394374478350",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120230657325250249",
+            "name": "02 - [Laranjeiras 5km] - [10$] (Mulheres) — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:46:06-0300",
+            "startTime": "2025-08-08T10:46:07-0300",
+            "ads": [
+              {
+                "id": "120230657325290249",
+                "name": "VD002 - Cremes milagrosos",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:46:08-0300",
+                "creativeId": "1094516089304317",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120230657325240249",
+            "name": "01 - [Laranjeiras 5km] - [10$] (Mulheres)",
+            "status": "PAUSED",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:46:06-0300",
+            "startTime": "2025-08-08T10:46:07-0300",
+            "ads": [
+              {
+                "id": "120230657325280249",
+                "name": "VD001 - Janela",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:46:08-0300",
+                "creativeId": "1145040407671778",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120230656430960249",
+            "name": "05 - [Laranjeiras 5km] - [10$] (Mulheres)",
+            "status": "PAUSED",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 65,
+              "age_min": 18,
+              "age_range": [
+                25,
+                40
+              ],
+              "flexible_spec": [
+                {
+                  "interests": [
+                    {
+                      "id": "6003384248805",
+                      "name": "Saúde e boa forma (fitness)"
+                    }
+                  ]
+                }
+              ],
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "325128341535653",
+                    "name": "Laranjeiras-Caieiras-Sp",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.3951792716,
+                    "longitude": -46.7156517392,
+                    "radius": 5,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 1,
+                  "gender": 1
+                }
+              }
+            },
+            "createdTime": "2025-08-08T10:45:50-0300",
+            "startTime": "2025-08-08T10:45:50-0300",
+            "ads": [
+              {
+                "id": "120230656430970249",
+                "name": "VD005 - Diferença disso e isso",
+                "status": "ACTIVE",
+                "createdTime": "2025-08-08T10:45:52-0300",
+                "creativeId": "2141997682975461",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "120229772020200249",
@@ -7175,85 +7100,436 @@
         "dailyBudget": null,
         "lifetimeBudget": null,
         "createdTime": "2025-06-03T11:59:20-0300",
-        "dailyInsights": [
+        "dailyInsights": [],
+        "adsets": [
           {
-            "date": "2025-06-03",
-            "impressions": 1415,
-            "clicks": 9,
-            "spend": 22.44,
-            "cpc": 2.493333,
-            "ctr": 0.636042,
-            "cpm": 15.858657,
-            "reach": 971,
-            "frequency": 1.457261,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 1,
-            "costPerMessagingConversation": 22.44,
-            "costPerThruplayVideoView": 0
+            "id": "120226431932350249",
+            "name": "Localização: Caieiras, Interesse: Aberto (ainda), Gênero: Mulheres — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 25,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "692588714146296",
+                    "name": "Laranjeiras Av.pauliceia",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.390471940536,
+                    "longitude": -46.714360226078,
+                    "radius": 4,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-06-03T11:59:42-0300",
+            "startTime": "2025-06-03T11:59:42-0300",
+            "ads": [
+              {
+                "id": "120226431932280249",
+                "name": "FT06  - ROUPAS NOVAMENTE",
+                "status": "PAUSED",
+                "createdTime": "2025-06-03T11:59:44-0300",
+                "creativeId": "1225789988996512",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
           },
           {
-            "date": "2025-06-04",
-            "impressions": 3735,
-            "clicks": 25,
-            "spend": 67.64,
-            "cpc": 2.7056,
-            "ctr": 0.669344,
-            "cpm": 18.109772,
-            "reach": 2146,
-            "frequency": 1.740447,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 2,
-            "costPerMessagingConversation": 33.82,
-            "costPerThruplayVideoView": 0
+            "id": "120226431932330249",
+            "name": "Localização: Caieiras, Interesse: Aberto (ainda), Gênero: Mulheres — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 25,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "692588714146296",
+                    "name": "Laranjeiras Av.pauliceia",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.390471940536,
+                    "longitude": -46.714360226078,
+                    "radius": 4,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-06-03T11:59:42-0300",
+            "startTime": "2025-06-03T11:59:42-0300",
+            "ads": [
+              {
+                "id": "120226431932390249",
+                "name": "FT05  - SEU CORPO",
+                "status": "PAUSED",
+                "createdTime": "2025-06-03T11:59:44-0300",
+                "creativeId": "573248365482255",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
           },
           {
-            "date": "2025-06-11",
-            "impressions": 5755,
-            "clicks": 40,
-            "spend": 121.2,
-            "cpc": 3.03,
-            "ctr": 0.695048,
-            "cpm": 21.059948,
-            "reach": 3434,
-            "frequency": 1.675888,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 0,
-            "costPerMessagingConversation": 0,
-            "costPerThruplayVideoView": 0
+            "id": "120226431932320249",
+            "name": "Localização: Caieiras, Interesse: Aberto (ainda), Gênero: Mulheres — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 25,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "692588714146296",
+                    "name": "Laranjeiras Av.pauliceia",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.390471940536,
+                    "longitude": -46.714360226078,
+                    "radius": 4,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-06-03T11:59:42-0300",
+            "startTime": "2025-06-03T11:59:42-0300",
+            "ads": [
+              {
+                "id": "120226431932380249",
+                "name": "FT04  - POLCHETE",
+                "status": "PAUSED",
+                "createdTime": "2025-06-03T11:59:44-0300",
+                "creativeId": "993282936220360",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
           },
           {
-            "date": "2025-06-12",
-            "impressions": 1446,
-            "clicks": 11,
-            "spend": 31.83,
-            "cpc": 2.893636,
-            "ctr": 0.760719,
-            "cpm": 22.012448,
-            "reach": 1013,
-            "frequency": 1.427443,
-            "conversions": 0,
-            "costPerResult": 0,
-            "linkClicks": 0,
-            "landingPageViews": 0,
-            "costPerLandingPageView": 0,
-            "messagingConversations": 1,
-            "costPerMessagingConversation": 31.83,
-            "costPerThruplayVideoView": 0
+            "id": "120226431932310249",
+            "name": "Localização: Caieiras, Interesse: Aberto (ainda), Gênero: Mulheres — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 25,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "692588714146296",
+                    "name": "Laranjeiras Av.pauliceia",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.390471940536,
+                    "longitude": -46.714360226078,
+                    "radius": 4,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-06-03T11:59:42-0300",
+            "startTime": "2025-06-03T11:59:42-0300",
+            "ads": [
+              {
+                "id": "120226431932360249",
+                "name": "FT03  - ORGULHO",
+                "status": "PAUSED",
+                "createdTime": "2025-06-03T11:59:44-0300",
+                "creativeId": "1045888487497004",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120226431932300249",
+            "name": "Localização: Caieiras, Interesse: Aberto (ainda), Gênero: Mulheres — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 25,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "692588714146296",
+                    "name": "Laranjeiras Av.pauliceia",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.390471940536,
+                    "longitude": -46.714360226078,
+                    "radius": 4,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-06-03T11:59:42-0300",
+            "startTime": "2025-06-03T11:59:42-0300",
+            "ads": [
+              {
+                "id": "120226431932340249",
+                "name": "FT02  - COMPARAÇÃO",
+                "status": "PAUSED",
+                "createdTime": "2025-06-03T11:59:44-0300",
+                "creativeId": "1262252328597041",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120226431932290249",
+            "name": "Localização: Caieiras, Interesse: Aberto (ainda), Gênero: Mulheres — Cópia",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 25,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "692588714146296",
+                    "name": "Laranjeiras Av.pauliceia",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.390471940536,
+                    "longitude": -46.714360226078,
+                    "radius": 4,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-06-03T11:59:21-0300",
+            "startTime": "2025-06-03T11:59:21-0300",
+            "ads": [
+              {
+                "id": "120226431932370249",
+                "name": "FT07  - PODEROSA",
+                "status": "PAUSED",
+                "createdTime": "2025-06-03T11:59:22-0300",
+                "creativeId": "1653571695360852",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
+          },
+          {
+            "id": "120226425983200249",
+            "name": "Localização: Caieiras, Interesse: Aberto (ainda), Gênero: Mulheres",
+            "status": "ACTIVE",
+            "dailyBudget": 10,
+            "targeting": {
+              "age_max": 45,
+              "age_min": 25,
+              "genders": [
+                2
+              ],
+              "geo_locations": {
+                "places": [
+                  {
+                    "key": "692588714146296",
+                    "name": "Laranjeiras Av.pauliceia",
+                    "distance_unit": "kilometer",
+                    "latitude": -23.390471940536,
+                    "longitude": -46.714360226078,
+                    "radius": 4,
+                    "primary_city_id": 246621,
+                    "region_id": 460,
+                    "country": "BR"
+                  }
+                ],
+                "location_types": [
+                  "home",
+                  "recent"
+                ]
+              },
+              "brand_safety_content_filter_levels": [
+                "FACEBOOK_RELAXED",
+                "AN_RELAXED"
+              ],
+              "targeting_automation": {
+                "advantage_audience": 0,
+                "individual_setting": {
+                  "age": 0,
+                  "gender": 0
+                }
+              }
+            },
+            "createdTime": "2025-06-03T11:59:42-0300",
+            "startTime": "2025-06-03T11:59:42-0300",
+            "ads": [
+              {
+                "id": "120226425983180249",
+                "name": "FT01  - PODEROSA",
+                "status": "PAUSED",
+                "createdTime": "2025-06-03T11:59:44-0300",
+                "creativeId": "1313161559781574",
+                "thumbnailUrl": "",
+                "videoAvgTimeWatched": 0,
+                "videoP25Watched": 0,
+                "videoP50Watched": 0,
+                "videoP75Watched": 0,
+                "videoP100Watched": 0,
+                "videoThruplay": 0
+              }
+            ]
           }
-        ],
-        "adsets": []
+        ]
       },
       {
         "id": "120225818873930249",
