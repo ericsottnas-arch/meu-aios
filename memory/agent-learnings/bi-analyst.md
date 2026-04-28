@@ -327,3 +327,39 @@ https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400
 - Popular dados iniciais via Meta Ads API + GHL API
 
 - **Severidade:** HIGH
+
+---
+
+### [2026-04-27] BUG CRITICO: Map collision na atribuicao de MQL por ad set
+
+- **Contexto:** Eric reportou que numeros de campanhas/conjuntos/ads nao batiam com a realidade no dashboard da Gabrielle
+- **Causa raiz:** `audiences.ts` usava `Map<string, string>` para mapear `ad_name -> adset_name`. Como CBO distribui os MESMOS criativos (C7, C8, AD9) em MULTIPLOS ad sets, o `Map.set()` sobrescrevia -- o ultimo ad set processado roubava TODOS os MQLs daquele criativo
+- **Sintoma visivel:** Ad set P12 (Conectados/Oportunidade) com R$5,03 gastos e 0 leads aparecia com 27 MQL
+- **Fix aplicado:** Substituido por `Map<string, Map<string, number>>` (ad_name -> { adset_name -> spend }). MQLs sao atribuidos ao ad set com MAIS SPEND naquele criativo
+- **Arquivo:** `dashboards/gabrielle/src/lib/audiences.ts` linhas 58-94
+- **Segundo bug encontrado:** `campaigns.ts` linhas 140 e 202 somavam `leads + messagingConversations` nos niveis Daily e Campaign, mas ad set level so contava leads. Corrigido.
+- **REGRA PERMANENTE:** Quando o mesmo ad_name existe em multiplos ad sets (CBO), NUNCA usar Map 1:1 para atribuicao. Sempre usar Map 1:many com criterio de desempate (spend-weighted).
+- **Bug 3 - Cross-campaign contamination (mesmo deploy):** `getAudienceSummaries` e `getCreativeSummaries` nao verificavam `utmCampaign` -- so usavam `utmContent` (ad name). Como os mesmos criativos rodam em CBO + Retargeting, a conversao da Keite (UTM do CBO) era contada TAMBEM no Retargeting. Fix: filtrar oportunidades por `campaignNamesInView` antes de atribuir.
+- **REGRA PERMANENTE:** Ao cruzar dados GHL (oportunidades) com Meta Ads nos niveis ad set e ad, SEMPRE verificar que o `utmCampaign` da oportunidade pertence a campanha sendo visualizada. Caso contrario, oportunidades "vazam" entre campanhas que compartilham criativos.
+- **Deploy:** gabrielle.syradigital.com atualizado em 2026-04-27
+- **Severidade:** CRITICAL
+
+### [2026-04-27] SOLUCAO DEFINITIVA: attribution.ts centralizado (Single Source of Truth)
+
+- **Contexto:** Apos 3 bugs de atribuicao no mesmo deploy (Map collision, leads inflation, cross-campaign contamination), ficou claro que o problema raiz era arquitetural: 3 arquivos (campaigns.ts, audiences.ts, creatives.ts) implementavam logica de atribuicao independentemente, com regras diferentes.
+- **Solucao criada:** `dashboards/gabrielle/src/lib/attribution.ts` — funcao unica `computeAttribution()` com 7 regras explicitas:
+  1. Oportunidade so atribuida se tem `utmCampaign` valido que bate com campanha Meta
+  2. Atribuida a EXATAMENTE UM triple (campaign + ad + adset)
+  3. `utmCampaign` vazio = nao atribuida (lead organico/manual)
+  4. `utmContent` vazio = atribuicao so no nivel campanha (sem breakdown ad/adset)
+  5. Mesmo ad em multiplos adsets (CBO) = adset com mais spend recebe atribuicao
+  6. Filtro de escopo por campanha visualizada
+  7. Totais consistentes nos 3 niveis
+- **Refatoracao:** campaigns.ts, audiences.ts, creatives.ts agora chamam `computeAttribution()` ao inves de implementar logica propria
+- **Validacao confirmada no dashboard:**
+  - CBO: MQL 30, Consultas 5, Fechamento 1, CAC R$660,29
+  - Retargeting: MQL 6, sem consultas/fechamentos (antes tinha 1 fechamento fantasma)
+  - Adset level: P5=27 MQL, P9=2, P10=1, P12=0 (antes era 27 fantasma), P11=0
+  - Soma adsets (30) = total campanha (30) = consistente
+- **REGRA PERMANENTE para novos dashboards:** SEMPRE usar arquivo centralizado de atribuicao (attribution.ts). NUNCA implementar logica de match oportunidade-campanha inline em cada arquivo consumidor. O custo de inconsistencia entre niveis e altissimo e dificil de debugar.
+- **Severidade:** CRITICAL

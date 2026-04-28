@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Dr. Enio Leite
-**Atualizado em:** 27/04/2026, 04:47:21
+**Atualizado em:** 28/04/2026, 07:24:28
 **Período:** Últimos 7 dias
 
 ## Visão Geral

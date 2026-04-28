@@ -1,7 +1,7 @@
 {
   "clientId": "torre-1",
   "clientName": "Torre 1",
-  "exportedAt": "2026-04-27T10:59:54.887Z",
+  "exportedAt": "2026-04-28T10:55:24.662Z",
   "period": "last_7d",
   "meta": {
     "campaigns": [
@@ -165,7 +165,7 @@
       {
         "id": "120236458657540138",
         "name": "SEGUIDORES [Engajamento] [SYRA] [CBO]",
-        "status": "ACTIVE",
+        "status": "PAUSED",
         "objective": "OUTCOME_ENGAGEMENT",
         "dailyBudget": 7,
         "lifetimeBudget": null,
@@ -833,7 +833,7 @@
     ],
     "summary": {
       "totalCampaigns": 3,
-      "activeCampaigns": 1,
+      "activeCampaigns": 0,
       "totalSpend": 0,
       "avgCPL": 0,
       "totalImpressions": 0,
@@ -854,7 +854,7 @@
     "topPerformers": [],
     "opportunities": [],
     "nextSteps": [
-      "Escalar: SEGUIDORES [Engajamento] [SYRA] [CBO]",
+      "Ativar campanhas pausadas",
       "Analisar audiências",
       "Testar novos criativos"
     ]

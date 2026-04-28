@@ -2358,3 +2358,91 @@ Antes da análise, é necessário filtrar o ruído. Das 18 conversas, **nem toda
 |---|---|---|
 | **Localização** | *"A clínica fica em Macapá?"* | Explícita |
 | **Custo da avaliação** | *
+
+---
+
+## 🗓️ Análise de Campo — 27 de abril de 2026
+> 36 mensagens reais analisadas
+
+# 📊 Análise de Comportamento de Mercado — Leads & Clientes Reais
+**Base:** 36 mensagens | 18 contatos | Canal: WhatsApp Inbound
+**Contexto:** Alimenta o repertório da agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### 🔵 Como entram em contato
+- **Entram com mensagem padrão/genérica**, muitas vezes via clique em botão de anúncio:
+  > *"Olá! Tenho interesse e queria mais informações, por favor."*
+  Esse padrão aparece **4 vezes em contatos diferentes** (Tania, Desconhecido x2, suelymonteiro1112) — sinal de que vieram do mesmo CTA de anúncio ou link automático.
+
+- **Entram com dúvida geográfica antes de qualquer outra coisa:**
+  > *"A clínica fica em Macapá?"* — Vera Gonçalves
+  > *"Meu DDD é de Belém, mas estou morando em Macapá"* — Milena Moraes
+  Localização é uma barreira de entrada recorrente nesse mercado.
+
+- **Entram com intenção emocional declarada:**
+  > *"Quero muito ser paciente modelo nariz! ☺️"* — Tania
+  > *"Bom dia, amanhã vou pessoalmente até a clínica"* — Neize
+
+### 🟡 Como demonstram interesse
+- Fazem **várias perguntas em sequência sem esperar resposta** (padrão Vera Gonçalves: 5 mensagens seguidas sobre procedimentos, prazo e localização).
+- Demonstram interesse **ligando o procedimento à própria vida/condição**:
+  > *"Blefaroplastia superior com sobrancelhas/castanhares total"* — Cleide (sabe exatamente o que quer)
+  > *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — Cleide (interesse real, mas condicional)
+
+### 🔴 Como hesitam / somem
+- **Somem com desculpa de agenda cheia:**
+  > *"Ainda to sem tempo pra gente conversar"* — Pam
+  > *"Sim hoje foi pesado"* — Pam
+- **Aparecem, demonstram interesse e param no meio:**
+  Pam mantém contato, acena com positividade (*"Sim eu vou ti falando"*) mas nunca avança.
+- **Testam o custo antes de qualquer compromisso:**
+  > *"Terei que pagar a avaliação?"* — Pilar
+
+### 🟢 Como voltam
+- Voltam com **perguntas técnicas mais específicas**, indicando que pesquisaram no intervalo:
+  > *"Esse procedimento com fio é definitivo também?"*
+  > *"A rinoplastia é definitiva né?"* — Vera (voltou com perguntas mais profundas)
+- Voltam com **decisão semi-formada**: Cleide já sabe o procedimento, já tem condição (*"só farei se..."*)
+
+### ⚠️ Ruído na base
+- Há contatos que **claramente não são leads**: Maria (mensagem errada), Natural Chef (cardápio), Instituto HR Andrade (concorrente/fornecedor), Giovanne (oferta de curso de vendas).
+- Isso indica que **a lista de contatos não está segmentada** — oportunidade de conteúdo sobre qualificação de leads.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### 💬 Como descrevem seus problemas / situação
+> *"Sou uma senhora aposentada"* — HILDA MARIA
+*(Se apresenta pelo perfil socioeconômico antes de qualquer coisa — preço é uma preocupação implícita)*
+
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"* — Leandra
+*(Profissional experiente, mas recém-empreendedora — insegurança de gestão, não de técnica)*
+
+> *"Nada que não possa melhorar"* — Leandra
+*(Reconhece lacuna, mas minimiza — postura defensiva típica de quem ainda não contratou assessoria)*
+
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo"* — Leandra
+*(Resistência a contrato recorrente; prefere testar pontualmente)*
+
+### 💬 Como falam de dinheiro/preço
+> *"Terei que pagar a avaliação?"* — Pilar
+*(Objeção de custo logo na entrada — não quer se comprometer financeiramente antes de ver valor)*
+
+> *"1 sessão de criolipólise por 1.200, quando alugo a máquina"* — Leandra
+*(Fala de ticket alto com naturalidade — não é o preço que trava, é a estrutura de oferta)*
+
+> *"Fechar contratos de 3,5k a 5k por mês não é sorte, é método"* — Giovanne
+*(Contato de ruído, mas revela o benchmark de precificação percebido no mercado de assessoria)*
+
+### 💬 Como expressam insegurança ou desconfiança
+> *"Só farei se for conjugado com..."* — Cleide
+*(Impõe condição antes de fechar — precisa de segurança de que será ouvida)*
+
+> *"Como funciona a questão de ser paciente modelo?"* — Milena
+*(Interesse real, mas quer entender o "custo oculto" antes de avançar)*
+
+> *"Essa promoção vai

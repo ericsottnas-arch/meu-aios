@@ -1,5 +1,5 @@
 # Campanhas de Mídia Paga - Syra Digital (Agencia)
-**Atualizado em:** 27/04/2026, 04:47:21
+**Atualizado em:** 28/04/2026, 07:59:39
 **Período:** Últimos 7 dias
 
 ## Visão Geral
@@ -15,7 +15,7 @@
 ### [Syra] Emagrecimento Retargeting Morno [Formulário Instantâneo] [CBO]
 - **Status:** 🟢 ACTIVE
 - **Objetivo:** OUTCOME_LEADS
-- **Budget:** R$ 30.00/dia
+- **Budget:** R$ 25.00/dia
 - **Impressões:** 0
 - **Cliques:** 0
 - **CTR:** 0.00%
@@ -24,10 +24,10 @@
 - **Conversões:** 0
 - **Criado:** 15/04/2026
 
-### [Syra] Dra Gabrielle - Emagrecimento [Formulário Instantâneo] [CBO]
+### [Syra] Emagrecimento Publico Frio [Formulário Instantâneo] [ABO]
 - **Status:** 🟢 ACTIVE
 - **Objetivo:** OUTCOME_LEADS
-- **Budget:** R$ 50.00/dia
+- **Budget:** R$ N/A/dia
 - **Impressões:** 0
 - **Cliques:** 0
 - **CTR:** 0.00%

@@ -282,4 +282,17 @@ Regra gerada: Eric usa dialogos simulados como ferramenta de ensino. Ex: "A pess
 
 ---
 
+### [27/04/2026] FEEDBACK #8 - LEGENDA NAO E TRANSCRICAO ORGANIZADA
+
+**Conteudo:** Legenda para Reel sobre follow-up estrategico com leads
+
+**#1 - LEGENDA = TEXTO ESCRITO POR ERIC, NAO RESUMO DO VIDEO**
+O que nao gostou: Primeira versao parecia transcricao organizada do que ele falou no video. "Parece que apenas transcrevemos o que estava no video."
+Motivo: Legenda de Instagram e um texto ESCRITO, com raciocinio proprio, que complementa o video. Nao e um resumo nem uma reformatacao do que foi dito.
+Sugestao do Eric: "Quero algo escrito parecendo que foi eu e que tenha logica por tras."
+Regra gerada: **Legenda NUNCA deve ser reorganizacao da transcricao do video.** A legenda e um texto independente que: (1) captura o INSIGHT central do video, nao as palavras, (2) constroi um raciocinio escrito com logica propria, (3) funciona sozinha pra quem nao assistiu o video, (4) complementa o video em vez de repetir. Pegar a ESSENCIA e escrever como Eric escreveria se fosse explicar aquilo por texto, nao transcrever e formatar.
+- **Severidade:** CRITICAL
+
+---
+
 *Atualizado pela Nova a cada feedback recebido.*

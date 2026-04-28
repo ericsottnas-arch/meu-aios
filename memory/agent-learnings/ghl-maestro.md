@@ -109,3 +109,43 @@
 
 **Scripts criados:** `scripts/ghl-reassign-leads.js` (principal), `/tmp/ghl-ddd-reassign.js`, `/tmp/ghl-audit.js`, `/tmp/ghl-fix-by-user.js`
 **Severidade:** INFO
+
+---
+
+## [2026-04-27] Config: Dra. Gabrielle Oliveira — GHL Location e Token
+
+**Location ID:** `3iNi7kJci5f0BNUoq4kX`
+**Token PIT:** `pit-61f9a255-8d3a-499c-abc1-e1784803a6b7` (atualizado 2026-04-27, token anterior: pit-75807258-fcf2-4dcd-98db-fdee5d35feb1)
+**Script de extracao:** `meu-projeto/scripts/extract-ghl-gabrielle.js`
+**DB local:** `docs/clientes/estetica-gabrielleoliveira/banco-dados/conversas.db`
+
+**Severidade:** HIGH
+
+---
+
+## [2026-04-27] Aprendizado: DELETE /contacts/{id}/tags retorna 400 em alguns contatos
+
+**Contexto:** Re-tag de 63 contatos MQL da Dra. Gabrielle
+**Problema:** O endpoint `DELETE /contacts/{id}/tags` retornava 400 "Contact not found" para a maioria dos contatos, mesmo com IDs validos retornados pela API de listagem.
+**Solucao:** Usar `PUT /contacts/{id}` com o array completo de tags (sem "mql") para remover, e depois outro PUT com o array incluindo "mql" para adicionar. Funciona 100%.
+**Regra derivada:** Para operacoes de tag em massa, preferir PUT com array completo de tags em vez de DELETE/POST no endpoint /tags.
+**Severidade:** HIGH
+
+---
+
+## [2026-04-27] Aprendizado: Paginacao /opportunities/search usa `page`, NAO `startAfterId`
+
+**Contexto:** Auditoria de oportunidades do Dr. Humberto - script ficou em loop infinito buscando 85k+ oportunidades
+**Problema:** O endpoint `GET /opportunities/search` ignora o parametro `startAfterId`. Retorna sempre a mesma pagina (meta.currentPage=1, meta.nextPage=2), causando loop infinito de duplicatas.
+**Solucao:** Usar paginacao por `page` (query param `page=1`, `page=2`, etc). O `meta.nextPage` retorna o proximo numero de pagina corretamente.
+**Regra derivada:** Para /opportunities/search, SEMPRE usar `page={n}` para paginar. Para /contacts, usar `startAfterId`. Cada endpoint do GHL pode ter mecanismo de paginacao diferente.
+**Severidade:** CRITICAL
+
+---
+
+## [2026-04-27] Resultado: Auditoria e correcao de proprietarios Dr. Humberto
+
+**Dados reais:** 2.663 oportunidades unicas (18 AGENDAMENTOS + 5 EDUCACIONAL + 2.640 PROCEDIMENTO), 2.488 contatos unicos
+**Inconsistencias encontradas:** 246 (231 sem dono + 15 com dono diferente)
+**Corrigidos:** 246/246 (100% sucesso) via PUT /opportunities/{id} com assignedTo do contato
+**Severidade:** INFO
