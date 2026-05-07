@@ -10,7 +10,7 @@
   <link rel="shortcut icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Montserrat:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Montserrat:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -261,13 +261,14 @@
     }
     .hero__title-book {
       display: block;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(54px, 8vw, 108px);
-      font-weight: 700;
-      font-style: italic;
-      color: var(--blue);
-      line-height: 0.92;
-      letter-spacing: -.02em;
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(44px, 7vw, 90px);
+      font-weight: 400;
+      font-style: normal;
+      text-transform: uppercase;
+      color: #6878C8;
+      line-height: 0.95;
+      letter-spacing: .02em;
       margin-bottom: 14px;
     }
     .hero__title-topic {
@@ -550,6 +551,49 @@
       margin-top: 16px;
       max-width: 560px;
     }
+    .autores-perfil {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 56px;
+      align-items: flex-start;
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .autores-perfil__foto {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 4px;
+      filter: grayscale(12%) contrast(1.04);
+      border: 1px solid rgba(30,86,200,.15);
+    }
+    .autores-perfil__texto {}
+    .autores-perfil__tag {
+      font-family: var(--fd);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .autores-perfil__title {
+      font-family: var(--fd);
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .autores-perfil__title em { font-style: normal; color: var(--blue-lt); }
+    .autores-perfil__bio {
+      font-size: 17px;
+      color: var(--mid-lt);
+      line-height: 1.8;
+    }
     .autores-grid {
       margin-top: 40px;
       display: grid;
@@ -580,9 +624,20 @@
       line-height: 1.2;
     }
     .publico__title em { font-style: normal; color: var(--blue-lt); }
+    .publico__single {
+      text-align: center;
+      padding: 24px 0;
+    }
+    .publico__single-text {
+      font-family: var(--fd);
+      font-size: clamp(22px, 3vw, 38px);
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: .04em;
+    }
     .publico__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2px;
       border: 1px solid rgba(30,86,200,.15);
       border-radius: 8px;
@@ -778,6 +833,8 @@
       .motivos__list li { font-size: 17px; }
 
       /* Autores — coluna única */
+      .autores-perfil { grid-template-columns: 1fr; gap: 32px; }
+      .autores-perfil__foto { max-width: 100%; aspect-ratio: 3/4; }
       .autores-grid { grid-template-columns: 1fr; }
       .autores-grid .author-line:nth-child(odd) { padding-right: 0; border-right: none; }
       .autores-grid .author-line:nth-child(even) { padding-left: 0; }
@@ -884,20 +941,20 @@
   <div class="container">
     <div class="strip__grid">
       <div class="strip__item reveal">
-        <div class="strip__num">5<span>.</span></div>
-        <div class="strip__label">Especialistas Autores</div>
+        <div class="strip__num">1<span>.</span></div>
+        <div class="strip__label">Mestrado</div>
       </div>
       <div class="strip__item reveal">
         <div class="strip__num">28<span>+</span></div>
-        <div class="strip__label">Anos de Experiência</div>
+        <div class="strip__label">anos de experiência</div>
       </div>
       <div class="strip__item reveal">
-        <div class="strip__num">6<span>+</span></div>
-        <div class="strip__label">Especializações do Autor Principal</div>
+        <div class="strip__num">3<span>+</span></div>
+        <div class="strip__label">especializações</div>
       </div>
       <div class="strip__item reveal">
         <div class="strip__num">1<span>ª</span></div>
-        <div class="strip__label">Edição Nacional do Tema</div>
+        <div class="strip__label">edição do primeiro livro</div>
       </div>
     </div>
   </div>
@@ -916,12 +973,12 @@
         <div class="motivos__rule"></div>
       </div>
       <ul class="motivos__list motivos__list--wide reveal">
-        <li>Anatomia cirúrgica dos lábios, explicada com clareza</li>
-        <li>Como selecionar o paciente certo para o procedimento</li>
-        <li>Técnicas cirúrgicas com protocolo passo a passo</li>
-        <li>Como prevenir e manejar complicações</li>
-        <li>Casos reais documentados com análise fotográfica</li>
-        <li>Harmonização orofacial integrada ao contexto facial</li>
+        <li>Fundamentos anatômicos</li>
+        <li>Planejamento e execução</li>
+        <li>Técnicas cirúrgicas atuais</li>
+        <li>Abordagem prática e objetiva</li>
+        <li>Manejo de intercorrências</li>
+        <li>Cirurgias reais</li>
       </ul>
       <div class="motivos__cta-wrap reveal">
         <a class="motivos__cta" href="#acesso">
@@ -933,48 +990,64 @@
   </div>
 </section>
 
-<!-- FOLD 3: AUTORES -->
+<!-- SEÇÃO: AUTOR PRINCIPAL -->
 <section class="autores-section">
   <div class="container">
     <div class="autores-header reveal">
-      <span class="tag">Autores</span>
-      <h2 class="s-title" style="margin-top:18px;">5 especialistas. <em>Uma obra.</em></h2>
-      <p class="autores-sub reveal">Cada autor contribuiu com anos de prática clínica real. O conteúdo vem de quem executa, não de quem observa.</p>
+      <span class="tag">Autor</span>
+    </div>
+    <div class="autores-perfil reveal">
+      <img
+        class="autores-perfil__foto"
+        src="images/livro/foto-humberto-nova.jpg"
+        alt="Dr. Humberto Lino de Andrade"
+        loading="lazy"
+      >
+      <div class="autores-perfil__texto">
+        <span class="autores-perfil__tag">Referência em cirurgias estéticas da face</span>
+        <h2 class="autores-perfil__title">Dr. Humberto<br>de <em>Andrade</em></h2>
+        <p class="autores-perfil__bio">
+          Esta obra foi idealizada e desenvolvida pelo Dr. Humberto Lino de Andrade, cirurgião-dentista com atuação dedicada às cirurgias estéticas da face, cuja trajetória é marcada pela integração entre formação acadêmica sólida, prática clínica, experiência cirúrgica e dedicação como educador, atuando na formação de médicos e cirurgiões-dentistas nas Cirurgias Estéticas da Face.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO: COAUTORES -->
+<section class="autores-section" style="padding-top: 0; border-top: none;">
+  <div class="container">
+    <div class="autores-header reveal" style="margin-bottom: 32px;">
+      <span class="tag">Coautores</span>
+      <h2 class="s-title" style="margin-top:18px;">4 coautores. <em>Grandes referências.</em></h2>
     </div>
     <div class="autores-grid reveal">
-      <div class="author-line">
-        <div class="author-line__av">H</div>
-        <div class="author-line__body">
-          <div class="author-line__name">Dr. Humberto de Andrade</div>
-          <div class="author-line__role">Cirurgião Plástico · 28 anos de experiência · 6 especializações + mestrado</div>
-        </div>
-      </div>
       <div class="author-line">
         <div class="author-line__av">R</div>
         <div class="author-line__body">
           <div class="author-line__name">Dra. Rachel de Andrade</div>
-          <div class="author-line__role">Cirurgiã e Pesquisadora Facial</div>
+          <div class="author-line__role">Cirurgiã-Dentista · 3 Especializações · Criadora do Método HR</div>
         </div>
       </div>
       <div class="author-line">
         <div class="author-line__av">A</div>
         <div class="author-line__body">
           <div class="author-line__name">Dra. Ana Costa Correr</div>
-          <div class="author-line__role">Especialista em Harmonização Orofacial</div>
+          <div class="author-line__role">Cirurgiã-Dentista · Mestre · Doutora · Pós-Doutorado</div>
         </div>
       </div>
       <div class="author-line">
         <div class="author-line__av">M</div>
         <div class="author-line__body">
           <div class="author-line__name">Dra. Monica de Andrade</div>
-          <div class="author-line__role">Especialista em Estética Facial e HOF</div>
+          <div class="author-line__role">Advogada · 5 Especializações · Foco em direito médico e odontológico</div>
         </div>
       </div>
       <div class="author-line">
         <div class="author-line__av">F</div>
         <div class="author-line__body">
           <div class="author-line__name">Dr. Fábio Prosdocimi</div>
-          <div class="author-line__role">Cirurgião Oral e Maxilofacial</div>
+          <div class="author-line__role">Cirurgião-Dentista · Mestre · Doutor · Pós-Doutorado · 2 Especializações</div>
         </div>
       </div>
     </div>
@@ -990,22 +1063,8 @@
         Para profissionais que<br>operam com <em>precisão</em>
       </h2>
     </div>
-    <div class="publico__grid">
-      <div class="publico__card reveal">
-        <div class="publico__card-num">01</div>
-        <div class="publico__card-title">Médicos e Cirurgiões</div>
-        <p class="publico__card-desc">Cirurgiões plásticos, médicos esteticistas e dermatologistas que realizam ou pretendem incorporar a queiloplastia ao seu portfólio.</p>
-      </div>
-      <div class="publico__card reveal">
-        <div class="publico__card-num">02</div>
-        <div class="publico__card-title">Dentistas e HOF</div>
-        <p class="publico__card-desc">Cirurgiões dentistas com habilitação em HOF e bucomaxilofaciais que trabalham com harmonização da região perioral e facial.</p>
-      </div>
-      <div class="publico__card reveal">
-        <div class="publico__card-num">03</div>
-        <div class="publico__card-title">Outros Profissionais da Saúde</div>
-        <p class="publico__card-desc">Fisioterapeutas dermato-funcionais, enfermeiros estetas e outros profissionais habilitados na região labial e perioral.</p>
-      </div>
+    <div class="publico__single reveal">
+      <p class="publico__single-text">Médicos e Cirurgiões Dentistas</p>
     </div>
   </div>
 </section>
@@ -1045,27 +1104,10 @@
       </div>
 
       <div class="field-group" id="fg-cidade">
-        <label class="field-label" for="cidade">Cidade <span class="req">*</span></label>
+        <label class="field-label" for="cidade">Cidade / UF <span class="req">*</span></label>
         <input class="field-input" type="text" id="cidade" name="cidade" required
-          placeholder="Cidade onde você atua">
+          placeholder="Ex: São Paulo / SP">
         <span class="field-error-msg">Informe sua cidade.</span>
-      </div>
-
-      <div class="field-group" id="fg-area">
-        <label class="field-label" for="area">Área de atuação <span class="req">*</span></label>
-        <select class="field-select" id="area" name="area" required>
-          <option value="" disabled selected>Selecione sua área...</option>
-          <option value="Cirurgia Plástica">Cirurgia Plástica</option>
-          <option value="Harmonização Orofacial (HOF)">Harmonização Orofacial (HOF)</option>
-          <option value="Medicina Estética">Medicina Estética</option>
-          <option value="Cirurgia Oral e Maxilofacial">Cirurgia Oral e Maxilofacial</option>
-          <option value="Odontologia Estética">Odontologia Estética</option>
-          <option value="Dermatologia">Dermatologia</option>
-          <option value="Enfermagem Estética">Enfermagem Estética</option>
-          <option value="Fisioterapia Dermato-funcional">Fisioterapia Dermato-funcional</option>
-          <option value="Outro">Outro</option>
-        </select>
-        <span class="field-error-msg">Selecione sua área de atuação.</span>
       </div>
 
       <div class="field-group" id="fg-registro">
@@ -1075,15 +1117,11 @@
             <option value="" disabled selected>Conselho</option>
             <option value="CRM">CRM</option>
             <option value="CRO">CRO</option>
-            <option value="CREFITO">CREFITO</option>
-            <option value="COREN">COREN</option>
-            <option value="CFF/CRF">CFF / CRF</option>
-            <option value="Outro">Outro</option>
           </select>
           <input class="field-input" type="text" id="registro" name="registro" required
             placeholder="Ex: 12345-SP" minlength="4" autocomplete="off">
         </div>
-        <span class="field-hint">CRM para médicos · CRO para dentistas/HOF · CREFITO para fisioterapeutas</span>
+        <span class="field-hint">CRM para médicos · CRO para cirurgiões-dentistas</span>
         <span class="field-error-msg">Informe o conselho e número de registro.</span>
       </div>
 
@@ -1194,7 +1232,6 @@
       case 'email':   ok=isEmail(v);         setErr('fg-email',!ok);   break;
       case 'telefone':ok=isPhone(v);         setErr('fg-telefone',!ok);break;
       case 'cidade':  ok=v.trim().length>=2; setErr('fg-cidade',!ok);  break;
-      case 'area':    ok=isSel(v);           setErr('fg-area',!ok);    break;
     }
     return ok;
   }
@@ -1205,17 +1242,31 @@
     var ok=isSel(c)&&isReg(r); setErr('fg-registro',!ok); return ok;
   }
 
-  ['nome','email','telefone','cidade','area'].forEach(function(id){
+  ['nome','email','telefone','cidade'].forEach(function(id){
     var el=document.getElementById(id);
     if(el) el.addEventListener('blur',function(){chk(id);});
   });
   document.getElementById('conselho').addEventListener('blur',chkReg);
   document.getElementById('registro').addEventListener('blur',chkReg);
 
+  /* UTM — captura e persiste via sessionStorage */
+  (function(){
+    var p=new URLSearchParams(window.location.search);
+    var keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    keys.forEach(function(k){ if(p.get(k)) sessionStorage.setItem(k,p.get(k)); });
+  })();
+
+  function getUtms(){
+    var keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    var out={};
+    keys.forEach(function(k){ out[k]=sessionStorage.getItem(k)||''; });
+    return out;
+  }
+
   /* SUBMIT */
   document.getElementById('livroForm').addEventListener('submit',function(e){
     e.preventDefault();
-    var ok=chk('nome')&&chk('email')&&chk('telefone')&&chk('cidade')&&chk('area')&&chkReg();
+    var ok=chk('nome')&&chk('email')&&chk('telefone')&&chk('cidade')&&chkReg();
     if(!ok){
       var f=this.querySelector('.field-input.error,.field-select.error');
       if(f) f.scrollIntoView({behavior:'smooth',block:'center'});
@@ -1223,16 +1274,21 @@
     }
     var btn=document.getElementById('submitBtn');
     btn.classList.add('loading'); btn.disabled=true;
+    var utms=getUtms();
     var data={
       nome:      document.getElementById('nome').value.trim(),
       email:     document.getElementById('email').value.trim(),
       telefone:  document.getElementById('telefone').value.trim(),
       cidade:    document.getElementById('cidade').value.trim(),
-      area:      document.getElementById('area').value,
       conselho:  document.getElementById('conselho').value,
       registro:  document.getElementById('registro').value.trim(),
       origem:    'livro-queiloplastia-v2',
-      ts:        new Date().toISOString()
+      ts:        new Date().toISOString(),
+      utm_source:   utms.utm_source,
+      utm_medium:   utms.utm_medium,
+      utm_campaign: utms.utm_campaign,
+      utm_content:  utms.utm_content,
+      utm_term:     utms.utm_term
     };
     fetch('/submit-livro',{
       method:'POST',
