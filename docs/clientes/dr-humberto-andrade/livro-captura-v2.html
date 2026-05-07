@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Queiloplastia: Aumento Cirúrgico dos Lábios · HR Andrade</title>
+  <meta name="description" content="Baixe gratuitamente o primeiro tratado técnico em português sobre queiloplastia cirúrgica. Obra de 5 especialistas de referência nacional.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Montserrat:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:      #1E56C8;
+      --blue-lt:   #4A78DC;
+      --blue-dk:   #0F2E6E;
+      --cream:     #F0F4FB;
+      --cream-2:   #E8EEF8;
+      --parch:     #C8D8EE;
+      --ink:       #070C17;
+      --ink-lt:    #111827;
+      --ink-2:     #1C2840;
+      --mid:       #4E6280;
+      --mid-lt:    #7D93B0;
+      --gold:      #BBA96E;
+      --gold-lt:   #D4C48A;
+      --fd: 'Montserrat', system-ui, sans-serif;
+      --fb: 'DM Sans', system-ui, sans-serif;
+      --max: 1180px;
+      --r: 4px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: var(--fb);
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 9999;
+      pointer-events: none;
+      opacity: .022;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+    /* ── TAG ── */
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--fb);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .tag::before {
+      content: '';
+      display: block;
+      width: 18px; height: 1px;
+      background: var(--gold);
+      opacity: .7;
+    }
+    .tag--dark { color: var(--blue); }
+    .tag--dark::before { background: var(--blue); }
+
+    /* ── URGENCY BAR ── */
+    .urgency-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+      background: #B91C1C;
+      padding: 14px 24px;
+      padding-top: calc(14px + env(safe-area-inset-top));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .urgency-bar__text {
+      font-family: var(--fd);
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: .03em;
+      white-space: nowrap;
+    }
+    .urgency-bar__cta {
+      background: #fff;
+      color: #B91C1C;
+      font-family: var(--fd);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s, color .2s;
+    }
+    .urgency-bar__cta:hover { background: var(--cream); }
+    .urgency-bar__countdown {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cd-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(0,0,0,.25);
+      border-radius: 4px;
+      padding: 5px 10px;
+      min-width: 48px;
+    }
+    .cd-block__num {
+      font-family: var(--fd);
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .cd-block__label {
+      font-family: var(--fd);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.75);
+      margin-top: 3px;
+    }
+    .cd-sep {
+      font-family: var(--fd);
+      font-size: 22px;
+      font-weight: 700;
+      color: rgba(255,255,255,.5);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 18px 0;
+      background: rgba(240,244,251,.97);
+      border-bottom: 1px solid rgba(30,86,200,.1);
+      backdrop-filter: blur(8px);
+      transition: background .3s, border-color .3s, box-shadow .3s;
+    }
+    .nav.scrolled {
+      background: rgba(7,12,23,.97);
+      border-bottom-color: rgba(30,86,200,.15);
+      box-shadow: 0 2px 24px rgba(0,0,0,.3);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .nav__logo img {
+      height: 44px;
+      width: auto;
+      display: block;
+      /* invert para escurecer no fundo claro: logo é escura por padrão */
+      filter: none;
+      transition: filter .3s;
+    }
+    .nav.scrolled .nav__logo img {
+      filter: brightness(0) invert(1);
+    }
+    .nav__cta {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--blue);
+      border: none;
+      border-radius: var(--r);
+      padding: 10px 22px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .nav__cta:hover { background: var(--blue-lt); }
+
+    /* ── HERO (cream bg) ── */
+    .hero {
+      background: var(--cream);
+      height: 100svh;
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 40px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -10%; right: -5%;
+      width: 55%; height: 80%;
+      background: radial-gradient(ellipse, rgba(30,86,200,.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero__ghost {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--fd);
+      font-size: clamp(80px, 14vw, 180px);
+      font-weight: 700;
+      font-style: normal;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(30,86,200,.05);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero__grid {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .hero__kicker { margin-bottom: 28px; }
+
+    .hero__title { line-height: 1; }
+    .hero__title-pre {
+      display: block;
+      font-family: var(--fb);
+      font-size: clamp(14px, 1.6vw, 19px);
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 14px;
+    }
+    .hero__title-book {
+      display: block;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(54px, 8vw, 108px);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--blue);
+      line-height: 0.92;
+      letter-spacing: -.02em;
+      margin-bottom: 14px;
+    }
+    .hero__title-topic {
+      display: block;
+      font-family: var(--fd);
+      font-size: clamp(15px, 1.8vw, 22px);
+      font-weight: 500;
+      color: var(--ink-2);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .hero__rule {
+      width: 56px; height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin: 28px 0 20px;
+    }
+
+    .hero__desc {
+      font-size: 18px;
+      color: var(--ink-2);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+    .hero__desc + .hero__desc {
+      margin-top: 10px;
+      color: var(--mid);
+      font-size: 17px;
+    }
+
+    .hero__sep {
+      width: 32px; height: 1px;
+      background: var(--gold);
+      opacity: .5;
+      margin: 18px 0;
+    }
+
+    .hero__meta {
+      margin-top: 28px;
+      display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @keyframes pulse-btn {
+      0%   { box-shadow: 0 0 0 0 rgba(30,86,200,.7); }
+      70%  { box-shadow: 0 0 0 18px rgba(30,86,200,0); }
+      100% { box-shadow: 0 0 0 0 rgba(30,86,200,0); }
+    }
+    .hero__btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--r);
+      padding: 18px 36px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      animation: pulse-btn 2s ease-out infinite;
+    }
+    .hero__btn:hover { background: var(--blue-lt); transform: translateY(-2px); }
+    .hero__btn-arrow { font-size: 16px; }
+    .hero__edition {
+      font-size: 12px;
+      color: var(--mid);
+      letter-spacing: .06em;
+    }
+
+    /* Book visual */
+    .hero__book {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero__book-scene {
+      position: relative;
+      display: inline-block;
+      filter: drop-shadow(0 24px 48px rgba(0,0,0,.18)) drop-shadow(0 8px 16px rgba(30,86,200,.12));
+    }
+    .hero__book-img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 600px;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+    .hero__book-glow {
+      position: absolute;
+      inset: 10%;
+      background: radial-gradient(ellipse, rgba(30,86,200,.15) 0%, transparent 70%);
+      filter: blur(40px);
+      z-index: -1;
+    }
+
+    /* ── STATS STRIP ── */
+    .strip {
+      background: var(--ink-lt);
+      border-top: 1px solid rgba(30,86,200,.2);
+      border-bottom: 1px solid rgba(30,86,200,.15);
+    }
+    .strip__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .strip__item {
+      padding: 36px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(30,86,200,.1);
+    }
+    .strip__item:last-child { border-right: none; }
+    .strip__num {
+      font-family: var(--fd);
+      font-size: 54px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+    .strip__num span { color: var(--gold); }
+    .strip__label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      line-height: 1.4;
+    }
+
+    /* ── MOTIVOS (Fold 2) ── */
+    .motivos {
+      padding: 100px 0;
+      background: var(--ink);
+      position: relative;
+    }
+    .motivos::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(30,86,200,.25), transparent);
+    }
+    .motivos__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .s-title {
+      font-family: var(--fd);
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.1;
+      letter-spacing: -.01em;
+    }
+    .s-title em { font-style: normal; color: var(--blue-lt); }
+
+    .motivos__single { max-width: 800px; margin: 0 auto; text-align: center; }
+    .motivos__single-header { margin-bottom: 8px; }
+    .motivos__cta-wrap { margin-top: 48px; }
+    .motivos__rule { width: 48px; height: 1px; background: var(--gold); opacity: .6; margin: 24px auto 36px; }
+
+    .motivos__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 48px;
+    }
+    .motivos__list--wide {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 48px;
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto 0;
+    }
+    .motivos__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 19px;
+      color: var(--cream);
+      line-height: 1.55;
+    }
+    .motivos__list li::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: rgba(30,86,200,.2);
+      border: 1px solid rgba(30,86,200,.35);
+      color: var(--blue-lt);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+
+    .motivos__cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold);
+      color: var(--ink);
+      text-decoration: none;
+      border-radius: var(--r);
+      padding: 16px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: background .2s, transform .15s;
+    }
+    .motivos__cta:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+    /* Autores */
+    .motivos__authors-label {
+      font-family: var(--fd);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+    .motivos__authors-sub {
+      font-size: 14px;
+      color: var(--mid);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .author-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .author-line:first-of-type { border-top: 1px solid rgba(255,255,255,.06); }
+    .author-line__av {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--blue-dk);
+      border: 1px solid rgba(30,86,200,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--fd);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--parch);
+    }
+    .author-line__body {}
+    .author-line__name {
+      font-family: var(--fd);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .author-line__role {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+
+    /* ── AUTORES SECTION (Fold 3) ── */
+    .autores-section {
+      padding: 90px 0;
+      background: var(--ink-lt);
+      border-top: 1px solid rgba(30,86,200,.12);
+    }
+    .autores-header { margin-bottom: 12px; }
+    .autores-sub {
+      font-size: 17px;
+      color: var(--mid-lt);
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 560px;
+    }
+    .autores-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .autores-grid .author-line:nth-child(odd) { padding-right: 40px; border-right: 1px solid rgba(255,255,255,.06); }
+    .autores-grid .author-line:nth-child(even) { padding-left: 40px; }
+    .autores-grid .author-line:last-child { grid-column: 1 / -1; border-right: none; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.06); }
+
+    /* ── PUBLICO (Fold 4 — minimal) ── */
+    .publico {
+      padding: 72px 0;
+      background: var(--ink-lt);
+      border-top: 1px solid rgba(30,86,200,.12);
+      border-bottom: 1px solid rgba(30,86,200,.12);
+    }
+    .publico__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .publico__title {
+      font-family: var(--fd);
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 700;
+      color: var(--cream);
+      margin-top: 16px;
+      line-height: 1.2;
+    }
+    .publico__title em { font-style: normal; color: var(--blue-lt); }
+    .publico__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      border: 1px solid rgba(30,86,200,.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .publico__card {
+      background: rgba(7,12,23,.6);
+      padding: 36px 32px;
+      border-right: 1px solid rgba(30,86,200,.1);
+    }
+    .publico__card:last-child { border-right: none; }
+    .publico__card-num {
+      font-family: var(--fd);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .publico__card-title {
+      font-family: var(--fd);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .publico__card-desc {
+      font-size: 14px;
+      color: var(--mid-lt);
+      line-height: 1.75;
+    }
+
+    /* ── FORM SECTION (Fold final) ── */
+    .form-section {
+      background: var(--ink-lt);
+      padding: 90px 0;
+      border-top: 1px solid rgba(30,86,200,.15);
+    }
+    .form-solo {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .form-solo__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .form-solo__title {
+      font-family: var(--fd);
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.25;
+      margin: 16px 0 16px;
+    }
+    .form-solo__desc {
+      font-size: 19px;
+      color: var(--mid-lt);
+      line-height: 1.75;
+    }
+    .form-right {
+      background: transparent;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-right--solo { width: 100%; }
+    .form-right__sub { font-size: 17px; color: var(--mid); margin-bottom: 28px; text-align: center; }
+
+    .field-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
+    .field-label { font-size: 16px; font-weight: 500; color: var(--mid-lt); letter-spacing: .04em; }
+    .field-label .req { color: var(--blue-lt); margin-left: 2px; }
+    .field-input, .field-select {
+      width: 100%;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--r);
+      padding: 13px 14px;
+      font-family: var(--fb);
+      font-size: 19px;
+      color: var(--cream);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      appearance: none; -webkit-appearance: none;
+    }
+    .field-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237D93B0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+    .field-select option { background: #1C2840; color: var(--cream); }
+    .field-input:focus, .field-select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(30,86,200,.18);
+    }
+    .field-input::placeholder { color: var(--mid); }
+    .field-input.error, .field-select.error { border-color: #c0392b; box-shadow: 0 0 0 3px rgba(192,57,43,.12); }
+    .field-error-msg { font-size: 12px; color: #e07070; display: none; margin-top: 2px; }
+    .field-group.has-error .field-error-msg { display: block; }
+    .field-row { display: grid; grid-template-columns: 130px 1fr; gap: 10px; }
+    .field-row .field-group { margin-bottom: 0; }
+    .field-hint { font-size: 11px; color: var(--mid); margin-top: 4px; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--gold);
+      border: none;
+      border-radius: var(--r);
+      padding: 18px 24px;
+      font-family: var(--fb);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      margin-top: 8px;
+    }
+    .submit-btn:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .submit-btn:disabled { opacity: .6; cursor: not-allowed; }
+    .submit-btn.loading .btn-text { display: none; }
+    .submit-btn.loading .btn-loader { display: inline; }
+    .submit-btn .btn-loader { display: none; }
+    .form-privacy { font-size: 11px; color: var(--mid); margin-top: 14px; text-align: center; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px 0 32px;
+      border-top: 1px solid rgba(255,255,255,.05);
+      text-align: center;
+    }
+    footer p { font-size: 12px; color: var(--mid); line-height: 1.9; }
+    footer a { color: var(--mid-lt); text-decoration: none; }
+
+    /* ── REVEAL (disabled) ── */
+    .reveal { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding-bottom: 70px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 0; }
+      .hero__book { margin-top: 48px; }
+      .hero__book-scene { transform: perspective(1400px) rotateY(-8deg) rotateX(2deg); }
+      .hero__book-img { max-height: 360px; }
+      .motivos__grid { grid-template-columns: 1fr; gap: 56px; }
+      .publico__grid { grid-template-columns: 1fr; }
+      .publico__card { border-right: none; border-bottom: 1px solid rgba(30,86,200,.12); }
+      .publico__card:last-child { border-bottom: none; }
+      .form-section { grid-template-columns: 1fr; }
+      .form-left { padding: 64px 40px; }
+      .form-right { padding: 64px 40px; }
+      .strip__grid { grid-template-columns: repeat(2, 1fr); }
+      .strip__item:nth-child(2) { border-right: none; }
+    }
+    @media (max-width: 640px) {
+      /* Base */
+      .container { padding: 0 20px; }
+
+      /* Urgency bar — compacta no mobile, countdown mantido */
+      .urgency-bar { padding: 8px 12px; gap: 8px; flex-wrap: wrap; justify-content: center; }
+      .urgency-bar__text { font-size: 12px; white-space: normal; text-align: center; width: 100%; }
+      .urgency-bar__countdown { gap: 4px; }
+      .cd-block { min-width: 34px; padding: 3px 6px; }
+      .cd-block__num { font-size: 16px; }
+      .cd-block__label { font-size: 9px; }
+      .cd-sep { font-size: 16px; }
+      .urgency-bar__cta { font-size: 11px; padding: 6px 14px; }
+
+      /* Nav — completamente opaco no mobile */
+      .nav { background: rgba(240,244,251,1); backdrop-filter: none; }
+      .nav.scrolled { background: rgba(7,12,23,1); }
+      .nav__cta { display: none; }
+      .nav__logo img { height: 36px; }
+
+      /* Hero */
+      .hero { height: auto; min-height: 100svh; padding-bottom: 60px; }
+      .hero__book-scene { transform: none; filter: drop-shadow(0 12px 32px rgba(0,0,0,.2)); }
+      .hero__book-img { max-height: 360px; }
+      .hero__desc { font-size: 17px; }
+
+      /* Stats strip */
+      .strip__grid { grid-template-columns: repeat(2,1fr); }
+      .strip__item:nth-child(2) { border-right: none; }
+      .strip__num { font-size: 40px; }
+
+      /* Motivos — bullets em coluna única */
+      .motivos__list--wide { grid-template-columns: 1fr; gap: 12px; }
+      .motivos__list li { font-size: 17px; }
+
+      /* Autores — coluna única */
+      .autores-grid { grid-template-columns: 1fr; }
+      .autores-grid .author-line:nth-child(odd) { padding-right: 0; border-right: none; }
+      .autores-grid .author-line:nth-child(even) { padding-left: 0; }
+      .autores-grid .author-line:last-child { grid-column: auto; }
+
+      /* Público */
+      .publico__card { padding: 28px 20px; }
+      .publico__card-desc { font-size: 16px; }
+
+      /* Formulário */
+      .form-section { padding: 60px 0; }
+      .form-solo { padding: 0 4px; }
+      .form-solo__title { font-size: clamp(24px, 6vw, 32px); }
+      .form-solo__desc { font-size: 17px; }
+      .field-label { font-size: 15px; }
+      .field-input, .field-select { font-size: 17px; padding: 14px 12px; }
+      .field-row { grid-template-columns: 100px 1fr; }
+      .submit-btn { font-size: 16px; }
+
+      /* Form left/right (legado) */
+      .form-left { padding: 56px 24px; }
+      .form-right { padding: 48px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="urgency-bar__text">Disponível gratuitamente por tempo limitado</span>
+  <div class="urgency-bar__countdown">
+    <div class="cd-block"><span class="cd-block__num" id="cd-d">07</span><span class="cd-block__label">dias</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-block"><span class="cd-block__num" id="cd-h">00</span><span class="cd-block__label">horas</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-block"><span class="cd-block__num" id="cd-m">00</span><span class="cd-block__label">min</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-block"><span class="cd-block__num" id="cd-s">00</span><span class="cd-block__label">seg</span></div>
+  </div>
+  <a class="urgency-bar__cta" href="#acesso">Baixar Agora</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="container nav__inner">
+    <a class="nav__logo" href="#">
+      <img src="images/hr-logo.png" alt="HR Andrade · Cirurgias da Face">
+    </a>
+  </div>
+</nav>
+
+<!-- FOLD 1: HERO -->
+<section class="hero">
+  <div class="hero__ghost">Queiloplastia</div>
+  <div class="container">
+    <div class="hero__grid">
+
+      <div class="hero__text">
+        <div class="hero__kicker reveal">
+          <span class="tag tag--dark">HR Andrade · Lançamento 2026</span>
+        </div>
+        <h1 class="hero__title reveal">
+          <span class="hero__title-pre">Lançamento do meu primeiro livro</span>
+          <span class="hero__title-book">Queiloplastia</span>
+          <span class="hero__title-topic">Aumento Cirúrgico dos Lábios</span>
+        </h1>
+        <div class="hero__rule reveal"></div>
+        <p class="hero__desc reveal">
+          Um livro desenvolvido com base científica, experiência clínica e prática cirúrgica real, voltado para médicos e cirurgiões-dentistas que desejam evoluir nas cirurgias estéticas da face.
+        </p>
+        <div class="hero__sep reveal"></div>
+        <p class="hero__desc reveal">
+          Mais do que um livro, um guia técnico e objetivo para quem busca segurança,
+          previsibilidade e resultados de alto nível na prática clínica.
+        </p>
+        <div class="hero__meta reveal">
+          <a class="hero__btn" href="#acesso">
+            Baixar meu exemplar agora
+            <span class="hero__btn-arrow">&#8594;</span>
+          </a>
+          <span class="hero__edition">5 autores · Editora FHO · 2026</span>
+        </div>
+      </div>
+
+      <div class="hero__book reveal">
+        <div class="hero__book-glow"></div>
+        <div class="hero__book-scene">
+          <img
+            class="hero__book-img"
+            src="images/livro/capa-hero-v2.png"
+            alt="Capa do livro Queiloplastia: Aumento Cirúrgico dos Lábios"
+            width="1122" height="1402"
+            loading="eager"
+          >
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="strip">
+  <div class="container">
+    <div class="strip__grid">
+      <div class="strip__item reveal">
+        <div class="strip__num">5<span>.</span></div>
+        <div class="strip__label">Especialistas Autores</div>
+      </div>
+      <div class="strip__item reveal">
+        <div class="strip__num">28<span>+</span></div>
+        <div class="strip__label">Anos de Experiência</div>
+      </div>
+      <div class="strip__item reveal">
+        <div class="strip__num">6<span>+</span></div>
+        <div class="strip__label">Especializações do Autor Principal</div>
+      </div>
+      <div class="strip__item reveal">
+        <div class="strip__num">1<span>ª</span></div>
+        <div class="strip__label">Edição Nacional do Tema</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOLD 2: POR QUE BAIXAR + AUTORES -->
+<!-- FOLD 2: O QUE VOCÊ VAI ENCONTRAR -->
+<section class="motivos" id="sobre">
+  <div class="container">
+    <div class="motivos__single">
+      <div class="motivos__single-header reveal">
+        <span class="tag">O que você vai encontrar</span>
+        <h2 class="s-title" style="margin-top:18px;">
+          Tudo que você <em>precisa saber</em>
+        </h2>
+        <div class="motivos__rule"></div>
+      </div>
+      <ul class="motivos__list motivos__list--wide reveal">
+        <li>Anatomia cirúrgica dos lábios, explicada com clareza</li>
+        <li>Como selecionar o paciente certo para o procedimento</li>
+        <li>Técnicas cirúrgicas com protocolo passo a passo</li>
+        <li>Como prevenir e manejar complicações</li>
+        <li>Casos reais documentados com análise fotográfica</li>
+        <li>Harmonização orofacial integrada ao contexto facial</li>
+      </ul>
+      <div class="motivos__cta-wrap reveal">
+        <a class="motivos__cta" href="#acesso">
+          Baixar meu exemplar agora
+          <span>&#8594;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOLD 3: AUTORES -->
+<section class="autores-section">
+  <div class="container">
+    <div class="autores-header reveal">
+      <span class="tag">Autores</span>
+      <h2 class="s-title" style="margin-top:18px;">5 especialistas. <em>Uma obra.</em></h2>
+      <p class="autores-sub reveal">Cada autor contribuiu com anos de prática clínica real. O conteúdo vem de quem executa, não de quem observa.</p>
+    </div>
+    <div class="autores-grid reveal">
+      <div class="author-line">
+        <div class="author-line__av">H</div>
+        <div class="author-line__body">
+          <div class="author-line__name">Dr. Humberto de Andrade</div>
+          <div class="author-line__role">Cirurgião Plástico · 28 anos de experiência · 6 especializações + mestrado</div>
+        </div>
+      </div>
+      <div class="author-line">
+        <div class="author-line__av">R</div>
+        <div class="author-line__body">
+          <div class="author-line__name">Dra. Rachel de Andrade</div>
+          <div class="author-line__role">Cirurgiã e Pesquisadora Facial</div>
+        </div>
+      </div>
+      <div class="author-line">
+        <div class="author-line__av">A</div>
+        <div class="author-line__body">
+          <div class="author-line__name">Dra. Ana Costa Correr</div>
+          <div class="author-line__role">Especialista em Harmonização Orofacial</div>
+        </div>
+      </div>
+      <div class="author-line">
+        <div class="author-line__av">M</div>
+        <div class="author-line__body">
+          <div class="author-line__name">Dra. Monica de Andrade</div>
+          <div class="author-line__role">Especialista em Estética Facial e HOF</div>
+        </div>
+      </div>
+      <div class="author-line">
+        <div class="author-line__av">F</div>
+        <div class="author-line__body">
+          <div class="author-line__name">Dr. Fábio Prosdocimi</div>
+          <div class="author-line__role">Cirurgião Oral e Maxilofacial</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOLD 3: PARA QUEM É -->
+<section class="publico">
+  <div class="container">
+    <div class="publico__header reveal">
+      <span class="tag">Para quem é</span>
+      <h2 class="publico__title">
+        Para profissionais que<br>operam com <em>precisão</em>
+      </h2>
+    </div>
+    <div class="publico__grid">
+      <div class="publico__card reveal">
+        <div class="publico__card-num">01</div>
+        <div class="publico__card-title">Médicos e Cirurgiões</div>
+        <p class="publico__card-desc">Cirurgiões plásticos, médicos esteticistas e dermatologistas que realizam ou pretendem incorporar a queiloplastia ao seu portfólio.</p>
+      </div>
+      <div class="publico__card reveal">
+        <div class="publico__card-num">02</div>
+        <div class="publico__card-title">Dentistas e HOF</div>
+        <p class="publico__card-desc">Cirurgiões dentistas com habilitação em HOF e bucomaxilofaciais que trabalham com harmonização da região perioral e facial.</p>
+      </div>
+      <div class="publico__card reveal">
+        <div class="publico__card-num">03</div>
+        <div class="publico__card-title">Outros Profissionais da Saúde</div>
+        <p class="publico__card-desc">Fisioterapeutas dermato-funcionais, enfermeiros estetas e outros profissionais habilitados na região labial e perioral.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOLD FINAL: FORMULÁRIO -->
+<section class="form-section" id="acesso">
+  <div class="form-solo">
+    <div class="form-solo__header">
+      <span class="tag" style="color:var(--gold-lt);">Acesso ao livro</span>
+      <h2 class="form-solo__title">Preencha os dados abaixo para baixar gratuitamente.</h2>
+      <p class="form-solo__desc">Apenas profissionais poderão baixar. Depois que preencher, você será encaminhado para a página de download.</p>
+    </div>
+
+    <div class="form-right form-right--solo">
+    <p class="form-right__sub">Todos os campos são obrigatórios</p>
+
+    <form id="livroForm" novalidate>
+      <div class="field-group" id="fg-nome">
+        <label class="field-label" for="nome">Nome completo <span class="req">*</span></label>
+        <input class="field-input" type="text" id="nome" name="nome" required
+          placeholder="Seu nome completo" autocomplete="name">
+        <span class="field-error-msg">Informe seu nome completo.</span>
+      </div>
+
+      <div class="field-group" id="fg-email">
+        <label class="field-label" for="email">E-mail profissional <span class="req">*</span></label>
+        <input class="field-input" type="email" id="email" name="email" required
+          placeholder="seu@email.com.br" autocomplete="email">
+        <span class="field-error-msg">Informe um e-mail válido.</span>
+      </div>
+
+      <div class="field-group" id="fg-telefone">
+        <label class="field-label" for="telefone">WhatsApp / Telefone <span class="req">*</span></label>
+        <input class="field-input" type="tel" id="telefone" name="telefone" required
+          placeholder="(11) 99999-9999" autocomplete="tel" maxlength="16">
+        <span class="field-error-msg">Informe um número válido com DDD (10 ou 11 dígitos).</span>
+      </div>
+
+      <div class="field-group" id="fg-cidade">
+        <label class="field-label" for="cidade">Cidade <span class="req">*</span></label>
+        <input class="field-input" type="text" id="cidade" name="cidade" required
+          placeholder="Cidade onde você atua">
+        <span class="field-error-msg">Informe sua cidade.</span>
+      </div>
+
+      <div class="field-group" id="fg-area">
+        <label class="field-label" for="area">Área de atuação <span class="req">*</span></label>
+        <select class="field-select" id="area" name="area" required>
+          <option value="" disabled selected>Selecione sua área...</option>
+          <option value="Cirurgia Plástica">Cirurgia Plástica</option>
+          <option value="Harmonização Orofacial (HOF)">Harmonização Orofacial (HOF)</option>
+          <option value="Medicina Estética">Medicina Estética</option>
+          <option value="Cirurgia Oral e Maxilofacial">Cirurgia Oral e Maxilofacial</option>
+          <option value="Odontologia Estética">Odontologia Estética</option>
+          <option value="Dermatologia">Dermatologia</option>
+          <option value="Enfermagem Estética">Enfermagem Estética</option>
+          <option value="Fisioterapia Dermato-funcional">Fisioterapia Dermato-funcional</option>
+          <option value="Outro">Outro</option>
+        </select>
+        <span class="field-error-msg">Selecione sua área de atuação.</span>
+      </div>
+
+      <div class="field-group" id="fg-registro">
+        <label class="field-label" for="registro">Registro profissional <span class="req">*</span></label>
+        <div class="field-row">
+          <select class="field-select" id="conselho" name="conselho" required>
+            <option value="" disabled selected>Conselho</option>
+            <option value="CRM">CRM</option>
+            <option value="CRO">CRO</option>
+            <option value="CREFITO">CREFITO</option>
+            <option value="COREN">COREN</option>
+            <option value="CFF/CRF">CFF / CRF</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <input class="field-input" type="text" id="registro" name="registro" required
+            placeholder="Ex: 12345-SP" minlength="4" autocomplete="off">
+        </div>
+        <span class="field-hint">CRM para médicos · CRO para dentistas/HOF · CREFITO para fisioterapeutas</span>
+        <span class="field-error-msg">Informe o conselho e número de registro.</span>
+      </div>
+
+      <button class="submit-btn" type="submit" id="submitBtn">
+        <span class="btn-text">Baixar meu exemplar agora</span>
+        <span class="btn-loader">Enviando...</span>
+      </button>
+      <p class="form-privacy">🔒 Seus dados são protegidos e não serão compartilhados.</p>
+    </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>
+      © 2026 Instituto HR Andrade<br>
+      <a href="https://hrface.com.br">hrface.com.br</a> · Editora FHO · 1ª Edição<br>
+      <span style="color:var(--mid);font-size:11px;">Acesso restrito a profissionais de saúde habilitados.</span>
+    </p>
+  </div>
+</footer>
+
+
+<script>
+(function () {
+  'use strict';
+
+  /* COUNTDOWN */
+  (function(){
+    var KEY = 'hr_livro_deadline';
+    var stored = localStorage.getItem(KEY);
+    var deadline;
+    if(stored){
+      deadline = parseInt(stored, 10);
+    } else {
+      deadline = Date.now() + (7 * 24 * 60 * 60 * 1000);
+      localStorage.setItem(KEY, deadline);
+    }
+    function pad(n){ return n < 10 ? '0' + n : '' + n; }
+    function tick(){
+      var diff = deadline - Date.now();
+      if(diff <= 0){ diff = 0; }
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-d').textContent = pad(d);
+      document.getElementById('cd-h').textContent = pad(h);
+      document.getElementById('cd-m').textContent = pad(m);
+      document.getElementById('cd-s').textContent = pad(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  /* NAV SCROLL */
+  var nav = document.getElementById('mainNav');
+  var heroEl = document.querySelector('.hero');
+
+  function setOffsets() {
+    var barH = document.querySelector('.urgency-bar').offsetHeight;
+    var navH = nav.offsetHeight;
+    nav.style.top = barH + 'px';
+    nav.style.visibility = 'visible';
+    heroEl.style.paddingTop = (barH + navH + 24) + 'px';
+  }
+
+  nav.style.visibility = 'hidden';
+  setOffsets();
+  window.addEventListener('resize', setOffsets, {passive: true});
+
+  window.addEventListener('scroll', function(){
+    var heroH = heroEl.offsetHeight;
+    nav.classList.toggle('scrolled', window.scrollY > heroH - 80);
+  }, {passive: true});
+
+  /* PHONE MASK */
+  var tel = document.getElementById('telefone');
+  tel.addEventListener('input', function () {
+    var v = this.value.replace(/\D/g,'');
+    if (v.length > 11) v = v.slice(0,11);
+    if (v.length <= 10) v = v.replace(/^(\d{2})(\d{4})(\d{0,4})/,'($1) $2-$3');
+    else v = v.replace(/^(\d{2})(\d{5})(\d{0,4})/,'($1) $2-$3');
+    this.value = v;
+  });
+
+  /* VALIDATION */
+  function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+  function isPhone(v) { var d=v.replace(/\D/g,''); return d.length>=10&&d.length<=11; }
+  function isSel(v)   { return v!==''&&v!==null; }
+  function isReg(v)   { return v.trim().length>=4; }
+
+  function setErr(id,show) {
+    var g=document.getElementById(id); if(!g)return;
+    g.classList.toggle('has-error',show);
+    g.querySelectorAll('.field-input,.field-select').forEach(function(el){
+      el.classList.toggle('error',show);
+    });
+  }
+
+  function chk(id) {
+    var el=document.getElementById(id); if(!el)return true;
+    var v=el.value, ok=true;
+    switch(id){
+      case 'nome':    ok=v.trim().length>=3; setErr('fg-nome',!ok);    break;
+      case 'email':   ok=isEmail(v);         setErr('fg-email',!ok);   break;
+      case 'telefone':ok=isPhone(v);         setErr('fg-telefone',!ok);break;
+      case 'cidade':  ok=v.trim().length>=2; setErr('fg-cidade',!ok);  break;
+      case 'area':    ok=isSel(v);           setErr('fg-area',!ok);    break;
+    }
+    return ok;
+  }
+
+  function chkReg() {
+    var c=document.getElementById('conselho').value;
+    var r=document.getElementById('registro').value;
+    var ok=isSel(c)&&isReg(r); setErr('fg-registro',!ok); return ok;
+  }
+
+  ['nome','email','telefone','cidade','area'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.addEventListener('blur',function(){chk(id);});
+  });
+  document.getElementById('conselho').addEventListener('blur',chkReg);
+  document.getElementById('registro').addEventListener('blur',chkReg);
+
+  /* SUBMIT */
+  document.getElementById('livroForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=chk('nome')&&chk('email')&&chk('telefone')&&chk('cidade')&&chk('area')&&chkReg();
+    if(!ok){
+      var f=this.querySelector('.field-input.error,.field-select.error');
+      if(f) f.scrollIntoView({behavior:'smooth',block:'center'});
+      return;
+    }
+    var btn=document.getElementById('submitBtn');
+    btn.classList.add('loading'); btn.disabled=true;
+    var data={
+      nome:      document.getElementById('nome').value.trim(),
+      email:     document.getElementById('email').value.trim(),
+      telefone:  document.getElementById('telefone').value.trim(),
+      cidade:    document.getElementById('cidade').value.trim(),
+      area:      document.getElementById('area').value,
+      conselho:  document.getElementById('conselho').value,
+      registro:  document.getElementById('registro').value.trim(),
+      origem:    'livro-queiloplastia-v2',
+      ts:        new Date().toISOString()
+    };
+    fetch('/submit-livro',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    }).then(redirect).catch(redirect);
+    function redirect(){ window.location.href = '/livro-obrigado'; }
+  });
+
+
+})();
+</script>
+</body>
+</html>
