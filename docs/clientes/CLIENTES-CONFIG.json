@@ -219,7 +219,7 @@
       "id": "torre-1",
       "name": "Torre 1",
       "type": "Agency Client",
-      "status": "active",
+      "status": "not-a-client",
       "priority": "standard",
       "contact": {
         "email": "contato@torre1.com",
@@ -250,7 +250,7 @@
     },
     "humbertoandradebr": {
       "id": "humbertoandradebr",
-      "name": "Humberto Andrade",
+      "name": "HR Andrade",
       "status": "active",
       "priority": "standard",
       "paths": {
@@ -262,7 +262,8 @@
     "fourcred": {
       "id": "fourcred",
       "name": "Fourcred",
-      "status": "active",
+      "status": "churned",
+      "churnDate": "2026-04",
       "priority": "standard",
       "paths": {
         "folder": "docs/clientes/fourcred",
@@ -272,7 +273,7 @@
     },
     "prof-dr-humberto-andrade": {
       "id": "prof-dr-humberto-andrade",
-      "name": "Prof. Dr. Humberto Andrade",
+      "name": "HR Andrade",
       "type": "Education/Consulting",
       "category": "Acadêmica/Consultoria (A Validar)",
       "status": "active",

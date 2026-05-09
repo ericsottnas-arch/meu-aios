@@ -99,3 +99,127 @@
 - **Feedback:** "quando mandar mensagem pra mim, manda sem as aspas pq sem querer posso copiar e mandar junto"
 - **Regra derivada:** Scripts de mensagem NUNCA devem vir entre aspas. Apresentar o texto limpo, pronto pra copiar.
 - **Severidade:** CRITICAL
+
+---
+
+## [2026-04-09] Contexto: Dr. Cleugo Porto — atendente Keyla e fluxo comercial
+
+- **Contexto:** Eric pediu mapeamento do atendimento da Keyla (atendente/vendedora do Dr. Cleugo) e criação de script de pré-qualificação baseado nas conversas reais do CRM
+- **Aprendizados do mapeamento:**
+  - Keyla usa muito áudio — funciona para convencer mas não escala quando lead não ouve
+  - A conversa que fecha tem padrão claro: acolher, responder TUDO pacientemente, propor data+horário+formulário
+  - Maior buraco: não qualifica localidade no início (Atibaia vs Alphaville) — vira obstáculo tardio
+  - Follow-up genérico ("tudo bem?") não reativa lead — precisa de gancho (foto nova, aviso de agenda)
+  - Quando lead já disse a região do corpo, NUNCA repetir a pergunta
+  - Sequência de follow-up eficaz: 3 tentativas com progressão — resultado novo / urgência leve / porta aberta
+  - Propor data e horário específicos no fechamento — nunca deixar em aberto com "quando você pode?"
+  - Dream Incision: procedimento por região (glúteos, coxas, abdômen). Usa óxido nitroso para dor. Consulta já serve como avaliação completa.
+  - Unidades: Atibaia (sede) e Alphaville — Elevart Health Clinic, Alameda Xingu, 200, sala 501 — só às quartas
+- **Entrega:** Google Doc criado — https://docs.google.com/document/d/1DyMop7LQRrBVj2qxyx_j6SatzFXvEEMYK1OcY5tJTwo/edit
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-09] Contexto: Dra. Gabrielle Oliveira — atendimento secretaria e padroes de conversao
+
+- **Contexto:** Eric pediu analise completa do atendimento da secretaria Gabrielle (clinica de estetica Caieiras, SP) com base em 203 conversas do CRM (fev a abr/2026)
+- **Dados da clinica:** Lipo Sem Corte + Power Shape. Publico: mulheres Caieiras/Franco da Rocha. Ticket: avaliacao R$50 (abatido) + protocolo de sessoes. Secretaria tambem se chama Gabrielle.
+- **Aprendizados do mapeamento:**
+  - Secretaria tem talento genuino: acolhimento ("minha linda"), perguntas de urgencia, proposta de data especifica no fechamento
+  - Buraco 1: fala preco sem ancorar valor. Regra: resultado/protocolo ANTES do numero
+  - Buraco 2: parcelamento so aparece quando lead ja esta saindo. Regra: mencionar ao primeiro sinal de objecao financeira
+  - Buraco 3: follow-up generico nao reativa. Regra: 3 ganchos diferentes (resultado novo / urgencia leve / porta aberta)
+  - Buraco 4: objecao de academia nao e rebatida. Academia trabalha musculo, Lipo trata gordura localizada. Sao complementares.
+  - Buraco 5: desconto no sinal virou reflexo. Sinal precisa de contexto de valor, nao desconto.
+  - Taxa conversao atual: 2% (4/203). Meta realista pos-ajustes: 6 a 8%
+- **Entrega:** Google Doc criado — https://docs.google.com/document/d/1hU9kePj0jqYohICTeYGT8OLMQqWMx6G2AHVAyHVsibw/edit
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-16] Analise: Leide Lopes Conceicao (Dra. Gabrielle) + padroes recorrentes
+
+- **Contexto:** Eric pediu analise completa de conversa individual da lead Leide (Maria Leide), telefone (11) 91185-4424, da clinica Dra. Gabrielle. 5 dias de conversa (11-16/abr).
+- **Aprendizados da analise:**
+  - Confirmacao dos 4/5 buracos ja mapeados nas 203 conversas: preco sem ancoragem, parcelamento tardio, follow-up generico, pressao emocional antes de resolver objecao pratica
+  - Novo padrao identificado: "confronto de compromisso" (dizer pra lead que ela concordou com tudo mas nao marca) gera evasao, nao acao. Lead se sente culpada e evita a conversa
+  - Quando lead menciona produto caseiro (creme Inude), usar como ancora de comparacao: "voce ja gasta X por mes com creme, uma sessao custa Y e resolve de verdade"
+  - Excesso de audios sequenciais (6 em 35 min) sobrecarrega lead que trabalha e tem pouco tempo. Limitar a 2 audios seguidos no maximo
+  - Tecnica de "pagamento por sessao" precisa aparecer no PRIMEIRO sinal de preocupacao financeira, nao como ultimo recurso
+  - Prova social localizada (mencionar pacientes de Perus/Caieiras) gera identificacao imediata e reduz barreira
+  - Score de fechamento: 35%. Sobe pra 50-55% se clinica corrigir abordagem. Cai pra 15% se continuar pressionando
+  - Perfil da lead: compradora emocional com limitacao financeira real. Quer, mas precisa sentir que o compromisso financeiro e controlavel
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-16] Analise: 7 leads stage Oportunidade (Dra. Gabrielle) + ranking + padroes consolidados
+
+- **Contexto:** Eric pediu analise completa das 7 leads no stage "Oportunidade" da Dra. Gabrielle. Pipeline Comercial, procedimentos Lipo Sem Corte + Power Shape, Caieiras/SP.
+- **Aprendizados da analise:**
+  - Ranking por probabilidade: Elita (70%) > Jaqueline (55%) > Denise (45%) > Juh (40%) > Leide (35%) > Luana (20%) > Priscila (15%)
+  - 5 padroes consolidados da Gabriele (secretaria): (1) esconde preco quando lead pergunta, (2) parcelamento aparece tarde, (3) follow-up generico, (4) pressao antes de resolver objecao, (5) desconto no sinal como reflexo
+  - Lead que pergunta preco 3x e insiste NAO e tire-kicker, e compradora que precisa encaixar no orcamento. Esconder valor gera desconfianca
+  - "Confronto de compromisso" (cobrar que lead concordou mas nao marcou) confirmado como padrao que gera evasao em multiplas leads (Leide, Denise)
+  - Leads de Franco da Rocha sao cluster geografico relevante (Elita + Jaqueline): se uma fechar e gostar, potencializa a outra
+  - Desconto no sinal (R$40 vs R$50) nao resolve barreira financeira real. Contextualizar que sinal desconta do procedimento e mais eficaz
+  - Receita potencial top 3 ajustada por probabilidade: R$3.285 a R$7.550
+  - Agenda de acoes montada ate 01/05 com data e horario especifico por lead
+- **Entrega:** Google Doc: https://docs.google.com/document/d/1eO_iprzCGWBm5X5dxiHDXq1Uu_KMGP5hIRehwQYDsW8/edit
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-16] Analise: 20 leads stage "Lead Conectado" (Dra. Gabrielle) + follow-ups prontos
+
+- **Contexto:** Eric pediu analise das 20 conversas mais recentes no stage "Lead Conectado" da Dra. Gabrielle (81 leads totais). Leads que interagiram mas nao avancaram para Oportunidade.
+- **Aprendizados da analise:**
+  - 6 padroes de travamento identificados: (1) perguntou preco/nao obteve 35%, (2) agendou/nao pagou sinal 15%, (3) follow-up generico 60%, (4) impedimento real 20%, (5) conversa morreu sem conexao 20%, (6) desalinhamento de servico 5%
+  - Classificacao: 5 quentes (Valquiria, Andrea Braz, Fabiane Toledo, Tatiana Roberto, Nayame), 9 mornas, 6 frias
+  - "Ainda esta ai?" aparece em 60% das conversas como follow-up e tem taxa de reativacao proxima de zero
+  - Pedir Pix imediatamente apos confirmacao de agendamento gera abandono (Valquiria, Fabiane, Mariza)
+  - Leads que mandam audio longo sao as mais qualificadas (Andrea Braz, Abilene): audio longo = investimento emocional alto
+  - Lead que pede ligacao e recebe "e presencial" sente que a clinica nao quer se adaptar a ela (Andrea Braz)
+  - Quando clinica cancela consulta e nao compensa, lead esfria irreversivelmente (Fabiane: clinica cancelou por falta de energia)
+  - 7 erros consolidados da secretaria: esconder preco, Pix imediato, "ainda esta ai?", pressao emocional antes de objecao pratica, excesso de audios, recusar ligacao, nao redirecionar servico
+  - 5 modelos de follow-up generico criados: resultado novo, depoimento paciente, transparencia de valor, porta aberta, urgencia suave
+  - Receita potencial top 5 quentes: R$2.800 a R$4.200 (4 sessoes a R$350 ajustado por probabilidade)
+  - Plano de acao montado com datas especificas ate primeira semana de maio
+- **Entrega:** Google Doc: https://docs.google.com/document/d/1cTe97ah_6XiT_zEYSlbCfua2Z2cY8k-oVpZkEN-ExEg/edit
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-16] Processo: Cadencia de Prospeccao Instagram 14 Dias (multi-canal)
+
+- **Contexto:** Eric pediu processo formal de prospeccao com pipeline por ACAO (nao por status), cadencia de 14 dias, e expansao multi-canal no dia 8
+- **Aprendizados e decisoes:**
+  - Pipeline GHL deve ser por ACAO (cada estagio = 1 acao clara pra fazer em lote), nao por STATUS
+  - Estagios cadencia: DM Enviada (dia 1) → Comentar Post (dia 3) → Reagir Story (dia 5) → DM Valor multi-canal (dia 8) → Porta Aberta (dia 14)
+  - Pesquisar e Aquecer ficam FORA do GHL porque integracao Instagram so cria contato quando DM e enviada
+  - Dia 8 e multi-canal: Instagram (oferta completa) + Email ("garanti que voce veja") + WhatsApp (toque curto apontando pro IG)
+  - Eric NAO oferece edicao de video. Syra e Growth Performance: trafego, dash, landing page, criativo, comercial, script
+  - Ofertas de valor dia 8: metodo assinado/posicionamento, angulo de anuncio, benchmark do nicho, diagnostico rapido de perfil/link
+  - 30-60 dias de cadencia e muito longo pro Eric. Cadencia compacta de 14 dias e o ideal
+  - Se nao respondeu em 14 dias: Arquivo 30d (nao 60-90). Revisitar com 1 toque unico
+  - Volume minimo: 5-8 aberturas/dia
+- **Entrega:** Google Doc: https://docs.google.com/document/d/1TON2vsOqJmd9-bYgnRwC1TA8vFzZaMWd_ffDhSnRM7s/edit
+- **Severidade:** HIGH
+
+---
+
+## [2026-04-22] Feedback: Direcionamento já certo, sem precisar de correção
+
+- **Contexto:** Grant sugeriu pergunta de resultado pra Gabriella Chiari — Eric precisou empurrar de volta dizendo que ficaria parecendo que queria vender
+- **Feedback:** "se o instinto está certo, não são coisas que você já deveria saber ou ter na ponta da língua? Instruída é a melhor forma"
+- **Regra derivada:** O princípio "transição orgânica — esperar ELA mencionar a dor" está no playbook construído juntos. Grant NUNCA deve sugerir pergunta de qualificação/transição quando a conversa ainda está no aquecimento ou quando o lead voltou a responder após silêncio. O direcionamento correto já deve chegar sem precisar de correção do Eric. Se a regra do playbook contradiz a sugestão, a regra vence.
+- **Severidade:** CRITICAL
+
+---
+
+## [2026-04-16] Feedback: Escrever com acentuação correta
+
+- **Contexto:** Grant escreveu todo o processo e respostas sem acentos (nao, voce, acao, etc.)
+- **Feedback:** "você tá escrevendo tudo sem acento"
+- **Regra derivada:** SEMPRE escrever com acentuação correta em português. "não", "você", "ação", "próximo", etc. Tanto no chat quanto em documentos.
+- **Severidade:** CRITICAL

@@ -1,6 +1,32 @@
 # Aprendizados — @copy-chef
 
-## [2026-03-10] Feedback: roteiro de vídeo — naturalidade e CTA com força
+## [2026-04-24] REGRA ESTRUTURAL: Banco de Copies do Eric — salvar e consultar SEMPRE
+
+- **Contexto:** Eric pediu para salvar toda copy que ele escrever, palavra por palavra, para que o sistema aprenda de fato como ele escreve. Ele mesmo apontou que o sistema nao tem disciplina em manter processos vivos entre sessoes.
+- **Banco:** `docs/eric-brand/knowledge-base/copies-eric/` com INDEX.md
+- **Regra derivada:**
+  - Quando Eric compartilhar copy que ELE escreveu: salvar na integra + atualizar INDEX
+  - Antes de escrever qualquer copy: ler as 3-5 copies mais parecidas do banco
+  - Na ativacao do @copy-chef: confirmar quantas copies estao no banco
+  - Se banco vazio/desatualizado: alertar Eric
+- **Severidade:** CRITICAL
+- **Aplica a:** @copy-chef e todos os especialistas
+
+---
+
+## [2026-04-08] Feedback: ler TODOS os arquivos antes de analisar — não só os óbvios
+
+- **Contexto:** Análise dos 4 funis do PDN. Critiquei hooks com pergunta como "violação de regra" sem ter lido as transcrições dos vídeos do Alexandre Clare.
+- **Feedback:** "pq vc está tão limitado a ler outros arquivos? parece que está preguiçoso pra ir atrás das informações"
+- **Erro cometido:** Li só profile.md, pdn-evento.md, pdn-vendas.md e terceira-onda-trafego.md. Ignorei 14 transcrições de vídeo. Resultado: apliquei preferência estilística do Eric (hook = afirmação) em material de cliente cujo apresentador (Alexandre Clare) abre EXATAMENTE com perguntas nos vídeos.
+- **Regra derivada:**
+  - Antes de qualquer análise ou copy de cliente: ler TUDO na pasta do cliente — KB completa, transcrições, profile, funis, campanhas
+  - Glob no diretório do cliente ANTES de começar: `docs/clientes/{slug}/**/*`
+  - Só depois de ler tudo: analisar ou escrever
+  - NUNCA aplicar regras de voz/estilo de um cliente em material de outro cliente
+- **Severidade:** CRITICAL
+
+## [2026-04-08] Feedback: roteiro de vídeo — naturalidade e CTA com força
 
 - **Contexto:** Roteiro de vídeo para otomodelação, Dra. Vanessa Soares
 - **Feedback:** Eric apontou 4 problemas no roteiro entregue:
@@ -231,6 +257,29 @@
 - **Tom aprovado:** Direto, analitico, coloquial. Perguntas que constrangem o lead de forma saudavel. NUNCA guru, coach, corporativo.
 - **Doc Google criado:** https://docs.google.com/document/d/1ISyI841y6R0DBtuxAQmdRhQf3iddnfUza-ca7jzNAs0/edit
 - **Severidade:** HIGH (referencia para proximas demandas PDN)
+
+## [2026-04-08] Feedback CRÍTICO: pesquisar o produto antes de escrever copy
+
+- **Contexto:** Copy do funil PDN Evento Checkout — Eric rejeitou dizendo "sem identidade do Bruno, sem força, não fala das dores, não convence, não fala das pessoas que estarão lá, parece que não fez o mínimo de pesquisa"
+- **Causa raiz:** Copy escrita com base apenas no que estava na knowledge base (que continha só material do PDN Vendas) sem pesquisar ativamente o produto real (site, LP, speakers, dados do evento)
+- **Feedback do Eric:** "pesquise mais, vá atrás dos vídeos no youtube, instagram, conteúdo e tudo mais, isso é um feedback para o seu processo criativo para qualquer coisa"
+- **Regra derivada:**
+  - SEMPRE pesquisar o produto/empresa/personalidade ANTES de escrever qualquer copy
+  - Ordem obrigatória: KB interna → site oficial → LP existente → redes sociais → YouTube → só então escrever
+  - Se a KB não tem material suficiente sobre o produto, pesquisar ativamente via WebFetch/WebSearch
+  - Copy sem pesquisa de produto = copy genérica = REJECT automático do Eric
+  - Nunca assumir que o que está na KB é suficiente para entender a voz do produto
+- **O que resolveu:** WebFetch na LP de vendas + site oficial revelou: 70k empresários, 24+ edições, 10 speakers nomeados, Bruno (19 anos imigrante, 4 países), R$197, VIP esgotado, 13 horas de imersão
+- **Severidade:** CRITICAL
+- **Aplica a:** @copy-chef e qualquer agente que produza copy de produto/evento/cliente
+
+## [2026-04-17] Feedback CRITICO: Dr. Humberto Andrade NAO oferece avaliacao gratuita
+
+- **Contexto:** Roteiros de retargeting para procedimentos faciais do Dr. Humberto Andrade
+- **Feedback:** "NAO EXISTE AVALIACAO GRATUITA, PRA NINGUEM"
+- **Regra derivada:** PROIBIDO usar "avaliacao gratuita", "sem custo", "gratis" ou qualquer variacao em material do Dr. Humberto Andrade. Ele cobra pela consulta. CTA deve ser "me chama pra agendar", "agendar avaliacao" (sem "gratuita"), "fale com o Dr. Humberto".
+- **Severidade:** CRITICAL
+- **Aplica a:** @copy-chef e qualquer agente que produza material para Dr. Humberto Andrade
 
 ## [2026-04-02] Feedback CRÍTICO: erros de português em documento entregue ao Eric
 

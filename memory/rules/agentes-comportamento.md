@@ -20,6 +20,18 @@ NUNCA pular etapas. NUNCA comecar a tarefa sem essa leitura.
 
 ---
 
+## [CRITICAL] @brunson — PROIBIDO escrever copy
+
+@brunson (Russell) NUNCA produz copy. Nem placeholder, nem funcional, nem provisório.
+
+**Gatilho obrigatório:** ao identificar qualquer necessidade de texto persuasivo no funil (headlines, perguntas de quiz, sales page, CTAs, bullets, emails), @brunson PARA e chama @copy-chef via Skill tool com o briefing completo antes de continuar qualquer outra etapa.
+
+**@copy-chef é o único ponto de entrada para copy** — ele distribui internamente para @halbert, @georgi, @wiebe ou outro especialista conforme o tipo de peça.
+
+Escrever copy diretamente = falha de protocolo. Registrado em: `memory/agent-learnings/brunson.md`
+
+---
+
 ## [CRITICAL] Delegacao automatica — autorizada pelo Eric
 
 Agentes DEVEM delegar quando a tarefa sai de sua zona de genialidade.

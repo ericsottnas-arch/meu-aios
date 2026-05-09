@@ -13,6 +13,18 @@
 
 ---
 
+## [CRITICAL] nico-whatsapp roda via launchctl, NAO PM2
+
+- Servidor real: `~/Library/LaunchAgents/com.syra.nico-server.plist` (launchd job)
+- Servicos relacionados: `com.syra.nico-server` (Node) + `com.syra.nico-tunnel` (cloudflared)
+- Porta 3001
+- Reinicio correto: `launchctl kickstart -k gui/501/com.syra.nico-server`
+- NAO usar `pm2 restart nico-whatsapp` (o PM2 job fica em loop de crash, nao afeta o servico real)
+- Diagnostico: `lsof -i :3001` mostra o PID real; se tiver PPID=1 e launchd
+- Similar para outros servicos: antes de reiniciar, verificar `launchctl list` e `~/Library/LaunchAgents/`
+
+---
+
 ## [HIGH] Stevo WhatsApp API
 
 - NAO passar `subscribe` vazio na payload

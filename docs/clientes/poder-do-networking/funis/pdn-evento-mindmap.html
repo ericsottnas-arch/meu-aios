@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDN Evento — Mapa do Funil</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0f0f0f; font-family: 'Inter', sans-serif; }
+    #mindmap { display: block; width: 100vw; height: 100vh; }
+    .markmap-node circle { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <svg id="mindmap"></svg>
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
+  <script>
+    window.markmap = { autoLoader: { manual: true } };
+  </script>
+
+  <div class="markmap" style="display:none">
+    <script type="text/template">
+---
+markmap:
+  colorFreezeLevel: 2
+  duration: 500
+  maxWidth: 320
+  initialExpandLevel: 3
+---
+
+# 🔺 PDN Evento — Funil de Inscrição
+
+## 🎯 Objetivo
+- Inscrição para evento presencial de networking
+- Segmentação de leads por perfil, momento e localização
+- Alimentar fluxos distintos no GHL por intenção de compra
+
+## 🎨 Identidade Visual
+- Dark theme premium: **preto + dourado**
+- Autor: **Bruno Avelar**
+- URL: `form.poderdonetwork.com`
+- Plataforma: **INLEAD**
+
+## 📍 Etapa 0 — Landing / Hook
+- **Headline:** "Qual negócio você deixou de fazer por não estar no ambiente certo?"
+- **Subtext:** "Em 4 perguntas, você descobre o que está travando o seu próximo nível."
+- **CTA:** Quero saber mais agora
+
+## ❓ Etapa 1 — Pain Point
+- **Pergunta:** "O que mais trava o crescimento do seu negócio hoje?"
+- Tudo depende de mim — teto de faturamento
+- Falta clareza e foco, começo mas não executo
+- Meu ambiente não me puxa pra cima
+- Tenho negócio, falta mentalidade para o próximo nível
+
+## 🚀 Etapa 2 — Transformação Desejada
+- **Pergunta:** "Se daqui a 6 meses você olhar pra trás e disser 'foi aí que mudou'..."
+- Faturamento crescido sem depender só de mim
+- Rodeado de pessoas que me puxam pra cima
+- Clareza e foco para executar o que importa
+- Mentalidade e gestão emocional de alto nível
+
+## 🪞 Etapa 3 — Momento Atual
+- **Pergunta:** "Como você se descreve hoje?"
+- Crescendo, mas muito abaixo do que sei que é possível
+- Estagnado — negócio funciona mas não evolui
+- Momento de virada — preciso de decisão e ambiente novo
+- Já opero bem — quero subir o nível ao meu redor ⭐
+
+## 🌍 Etapa 4a — Localização
+- **Pergunta:** "Você está no Brasil ou fora?"
+- No Brasil → vai para Etapa 4b
+- Nos EUA ou vou estar nos EUA
+- Na Europa
+- Outro país
+
+### 🏙️ Etapa 4b — Cidade (condicional: Brasil)
+- **Pergunta:** "Qual cidade fica mais viável para você?"
+- São Paulo ou região
+- Rio de Janeiro ou região
+- Belo Horizonte, Brasília ou Goiânia
+- Outra cidade
+
+## 💰 Etapa 5 — Intenção de Compra
+- **Pergunta:** "Para um dia de imersão que pode mudar o nível do seu negócio, como você decide?"
+- **"Vou na experiência completa"** → 🔥 Lead QUENTE
+- **"Avalio o custo-benefício"** → 🟡 Lead MORNO
+- **"Prefiro ingresso de entrada"** → 🔵 Lead FRIO (tripwire)
+- **"Depende do momento financeiro"** → ⚠️ Objeção financeira
+
+## 📋 Etapa 6 — Lead Capture
+- **Headline:** "Seu perfil está pronto. Me diz onde te encontro."
+- Campo: Nome completo
+- Campo: WhatsApp com DDD
+- Campo: E-mail
+- **CTA:** QUERO PARTICIPAR DO PDN
+
+## 🔄 Follow-up GHL (por segmento)
+- 🔥 Quente → SDR contata em até 2h + link de compra
+- 🟡 Morno → Sequência prova social + ROI do evento
+- 🔵 Frio → Oferta ingresso básico (se existir)
+- ⚠️ Financeiro → Parcelamento + urgência + escassez
+
+## ⚠️ Pontos de Atenção
+- Bug na captura: nome vazio aparece como ", ." no headline
+- Q5 só entrega valor se GHL tiver 4 fluxos distintos configurados
+- Sem prova social na landing antes do quiz
+- Página pós-submit ainda não mapeada
+    </script>
+  </div>
+
+  <script>
+    const { autoLoader } = window.markmap;
+    autoLoader.onReady = () => {
+      autoLoader.renderAll();
+    };
+    autoLoader.loadAll();
+  </script>
+</body>
+</html>

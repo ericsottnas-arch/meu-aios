@@ -149,16 +149,51 @@ Ultima atualizacao: 2026-03-24
 =======
 ---
 
-## [CRITICAL] Playwright — Execucao autonoma sem confirmacao (2026-04-02)
+## [CRITICAL] Playwright — Apenas em modo autonomo ou com permissao explicita (atualizado 2026-04-06)
 
-- Eric autorizou execucao TOTAL de acoes no browser sem pedir permissao
-- NUNCA perguntar "posso clicar?", "posso navegar?", "posso preencher o formulario?"
-- Executar diretamente: navigate, click, type, screenshot, snapshot, fill, select
-- Sequencia correta: navegar → snapshot (pegar refs) → executar acao → screenshot → proxima acao
-- Reportar apenas o RESULTADO ao Eric, nao o plano de execucao passo a passo
+- PROIBIDO usar Playwright enquanto Eric esta usando o computador
+- Playwright abre janela de browser e interrompe o que Eric esta fazendo — isso e inaceitavel
+- SO usar Playwright quando:
+  1. Eric rodar `/trabalhe-para-mim` (modo autonomo 100%)
+  2. Eric disser explicitamente "pode abrir o browser", "pode usar playwright", "vc tem permissao"
+- Se precisar mapear/analisar URLs durante conversa normal: pedir permissao primeiro ou usar WebFetch
+- Historico: Eric reclamou em 2026-04-06 que playwright abriu enquanto ele estava no computador
 - Severidade: CRITICAL
 
 ---
 
+<<<<<<< HEAD
 Ultima atualizacao: 2026-04-02
+>>>>>>> origin/eric/main
+=======
+## [CRITICAL] Banco de Copies Eric Santos — salvar TODA copy que Eric escrever
+
+> Eric pediu explicitamente em 2026-04-24. Ele mesmo reconheceu que o sistema
+> nao tem disciplina em manter processos. Esta regra existe pra resolver isso.
+
+**O que fazer:**
+- Quando Eric compartilhar uma copy que ELE ESCREVEU (nao gerada por agente):
+  1. Salvar na integra em `docs/eric-brand/knowledge-base/copies-eric/{tipo}/`
+  2. Atualizar o INDEX.md com a nova entrada
+  3. Confirmar: "Copy salva no banco. #{numero}"
+
+**Quando consultar:**
+- ANTES de escrever qualquer copy para Eric ou @byericsantos
+- Ler as 3-5 copies mais parecidas por tipo/tema
+- Usar como referencia direta de tom, ritmo, vocabulario
+- No quality gate: "parece uma copy que o Eric escreveu?" comparando com copies REAIS
+
+**Tipos aceitos:** caption/, ad/, roteiro/, email/, sequencia/, post/
+**Nomenclatura:** {YYYY-MM-DD}_{tema-curto}.md
+
+**Na ativacao do @copy-chef:**
+- Passo obrigatorio: ler INDEX.md e confirmar quantas copies estao no banco
+- Se banco vazio ou desatualizado: alertar Eric
+
+- Severidade: CRITICAL
+- Aplica a: @copy-chef, @nova, @halbert, @georgi, @wiebe, @morgan, @orzechowski, @ogilvy
+
+---
+
+Ultima atualizacao: 2026-04-24
 >>>>>>> origin/eric/main

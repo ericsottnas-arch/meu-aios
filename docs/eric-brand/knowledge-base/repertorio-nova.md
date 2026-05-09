@@ -1375,3 +1375,1074 @@ Antes da análise, é necessário filtrar o ruído. Das 18 conversas, **nem toda
 
 ### Como demonstram interesse real
 > *"Quero muito ser paciente modelo nariz! ☺️"* —
+
+---
+
+## 🗓️ Análise de Campo — 11 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads Inbound WhatsApp
+**Base:** 36 mensagens | 18 contatos | Setor: Saúde & Estética
+**Alimenta:** Repertório da agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- Usam **mensagens automáticas padronizadas** sem personalização: *"Olá! Tenho interesse e queria mais informações, por favor."* — aparece 4 vezes de contatos diferentes, indicando que chegam via anúncio com botão de CTA direto, sem esforço próprio de comunicação.
+- Leads mais qualificados chegam com **perguntas específicas já formuladas** (Vera Gonçalves com 5 perguntas consecutivas; Cleide descrevendo o procedimento pelo nome técnico correto).
+- Leads frios chegam com **mensagens de contexto mínimo**, às vezes nem apresentam nome ou situação.
+
+### Como demonstram interesse real
+- Fazem **múltiplas perguntas em sequência** sem esperar resposta (padrão Vera Gonçalves: 5 mensagens seguidas).
+- Revelam **contexto de vida** espontaneamente: *"Meu ddd é de Belém, mas estou morando em Macapá"* — o lead se esforça para justificar a viabilidade do atendimento.
+- Declaram **intenção de ação concreta**: *"amanhã vou pessoalmente até a clínica"* (Neize), *"Quero muito ser paciente modelo nariz!"* (Tania).
+- Perguntam sobre **condições de acesso reduzido**: *"Como funciona a questão de ser paciente modelo?"* — sinal de interesse com restrição financeira.
+
+### Como hesitam
+- Usam **ambiguidade de agenda como escudo**: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"* — o lead mantém a conversa viva mas adia o compromisso.
+- Colocam **condicionantes antes de fechar**: *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — a compra existe, mas depende de uma condição específica atendida.
+- Perguntam sobre **durabilidade do resultado** antes de avançar: *"A rinoplastia é definitiva né?"*, *"Esse procedimento com fio é definitivo também?"* — hesitação disfarçada de curiosidade técnica.
+
+### Como somem (e como voltam)
+- Somem **sem sinalizar** — simplesmente param de responder após demonstrar interesse (padrão Pam: estava engajada, depois só respostas vagas de cancelamento suave).
+- Voltam com **mensagem padrão de anúncio** — indicando que foram impactados novamente por mídia paga e clicaram de novo (*"Olá! Tenho interesse..."* enviada duas vezes pelo mesmo "Desconhecido").
+- Voltam com **decisão mais madura**: Tania enviou a mensagem genérica do botão E depois uma mensagem emocional própria (*"Quero muito ser paciente modelo nariz! ☺️"*) — o ciclo de nutrição funcionou.
+
+### Comportamentos de mercado B2B (profissionais de saúde/estética como clientes)
+- Esteticistas chegam **com o negócio já rodando** e buscam escalar: *"estou a 14 anos na área"*, *"já tenho bastante cliente, mas nada que não possa melhorar"*.
+- Descrevem o negócio em **detalhes operacionais espontâneos**: volume de procedimentos, parceria com biomédica, contratação de funcionária — contexto rico entregue sem ser pedido.
+- Perguntam sobre **serviços específicos** (assessoria jurídica, catálogo, anúncios) — não chegam perguntando "o que você faz?", chegam com problema já nomeado.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas
+> *"Muitas coisas preciso fazer um catálogo"*
+> *"sou Esteticista facial e corporal faço uns 30 procedimentos"* — sobrecarga de oferta sem organização de apresentação.
+
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo, não contratei ainda"* — relação informal/avulsa com marketing, sem estrutura.
+
+> *"já tenho bastante cliente, mais nada que não possa melhorar"* — consciência de teto de crescimento, mas sem urgência declarada.
+
+> *"Já vai começar uma moça mês que vem pq não estou tendo horário"* — crescimento gerando caos operacional (bom sinal: ela precisa de estrutura).
+
+### Como falam de dinheiro/preço
+> *"meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200"* — ela não fala do próprio preço, fala do ticket do cliente dela.
+
+> *"Terei que pagar a avaliação?"* — primeira barreira financeira declarada, antes de qualquer avanço.
+
+> *"Como funciona a questão de ser paciente modelo?"* — busca por acesso com desconto sem nomear a palavra "desconto".
+
+### Como expressam insegurança ou desconfiança
+> *"A rinoplastia é definitiva né?"* — busca por garantia de permanência antes de investir.
+
+> *"Esse procedimento com fio é definitivo também?"* — padrão de insegurança sobre durabilidade (recorrente em procedimentos estéticos).
+
+> *"A clínica fica em Macap
+
+---
+
+## 🗓️ Análise de Campo — 12 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads e Clientes Inbound
+**Base:** 36 mensagens · 18 contatos · Canal: WhatsApp · Setor: Saúde & Estética
+**Aplicação:** Repertório da agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- **Mensagem padrão genérica e curta:** Vários leads usam exatamente a mesma frase automática (*"Olá! Tenho interesse e queria mais informações, por favor."*), indicando que vieram de um anúncio com botão de CTA direto para WhatsApp — **eles clicam, mas não sabem exatamente o que perguntar**.
+- **Perguntas isoladas e fragmentadas:** Vera Gonçalves fez 5 perguntas separadas, cada uma em mensagem diferente, sobre localização, prazo, procedimentos distintos — comportamento típico de quem está **em fase de pesquisa ativa**, comparando opções.
+- **Entrada por interesse em ser "paciente modelo":** Tania e Milena Moraes demonstraram interesse nessa modalidade específica — **o desconto é o gatilho de entrada**, não o procedimento em si.
+
+### Como demonstram interesse
+- Fazem perguntas práticas e operacionais: *"Essa promoção vai até quando?"*, *"Terei que pagar a avaliação?"*, *"Quando ela poderia me avaliar?"*
+- Antecipam presença física: *"Amanhã vou pessoalmente até a clínica"* — sinal de comprometimento real.
+- Combinam interesse em múltiplos procedimentos na mesma conversa (Vera, Cleide), sugerindo **intenção de resolver mais de uma coisa de uma vez**.
+
+### Como hesitam
+- Usam o tempo como escudo: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"* — **a agenda é a desculpa mais usada para adiar decisão**.
+- Condicionam a compra: *"Só farei se for conjugado com..."* (Cleide) — impõem exigências antes de fechar.
+- Perguntam sobre definitividade dos procedimentos (*"É definitivo?"*) sem dizer explicitamente que têm medo — **o medo não é dito, é camuflado em pergunta técnica**.
+
+### Como somem
+- Respondem de forma vaga e não comprometida: *"Sim eu vou ti falando"* — clássico "não fecho agora, mas não descarto".
+- Deixam a conversa morrer com respostas que não abrem próximo passo.
+
+### Como voltam
+- Voltam com perguntas novas sobre procedimentos diferentes, como se a conversa anterior não tivesse acontecido.
+- Mandam mensagem direta sinalizando ação concreta (*"Amanhã vou pessoalmente"*) após período de silêncio.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas (ou situação)
+> *"Sou uma senhora aposentada"* — autodefinição que antecipa objeção financeira antes mesmo de ser perguntada.
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"* — profissional que trabalhou para outros e agora tenta construir algo próprio, sem estrutura de marketing.
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo"* — resistência a contratos/recorrência, prefere testar pontualmente.
+> *"Muitas coisas preciso fazer um catálogo, sou esteticista facial e corporal faço uns 30 procedimentos"* — profissional com muita oferta, zero posicionamento claro.
+
+### Como falam de dinheiro/preço
+> *"Meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200"* — conhece o ticket mas não sabe como comunicá-lo.
+> *"Terei que pagar a avaliação?"* — o primeiro movimento é verificar o custo de entrada, não o resultado.
+> *"Fechar contratos de 3,5k a 5k por mês não é sorte, é método"* *(spam recebido)* — ironicamente revela o que **o próprio mercado de marketing promete** como sonho ao público.
+
+### Como expressam insegurança ou desconfiança
+> *"A rinoplastia é definitiva né?"* — busca confirmação para reduzir o risco percebido.
+> *"Esse procedimento com fio é definitivo também?"* — padrão repetido: **definitivo = seguro = posso confiar**.
+> *"Só farei se for conjugado com..."* — cria condição para manter controle da decisão.
+> *"Como funciona a questão de ser paciente modelo?"* — antes de se comprometer, quer entender as "regras do jogo".
+
+### Como demonstram interesse real
+> *"Quero muito ser paciente modelo nariz!"* — afirmação emocional direta, com emoji.
+> *"Amanhã vou pessoalmente até a clínica"* — compromisso físico agendado espontaneamente.
+> *"Quando ela poderia me avaliar?"* — pergunta que pressupõe que já decidiu avaliar, só falta data.
+> *"Blefaroplastia superior com sobrancelhas/castanhares total"* — nível de especificidade que indica pesquisa prévia e decisão quase tomada.
+
+---
+
+## 3. OBJEÇÕES IMPLÍCITAS OU EXPLÍCITAS
+
+| Tipo | Objeção | Como aparece nas mensagens |
+|---|---|---|
+| **Financeira** | *"
+
+---
+
+## 🗓️ Análise de Campo — 13 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads e Clientes Inbound
+### Base: 36 mensagens reais via WhatsApp | Setor: Saúde & Estética Brasileira
+### Aplicação: Repertório da Agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- **Mensagem curta e direta**, muitas vezes sem contexto: *"Olá! Tenho interesse e queria mais informações, por favor."* — aparece 4 vezes de contatos diferentes, sugerindo que chegam via anúncio com CTA padronizado e não elaboram espontaneamente.
+- **Chegam com dúvida localizada**, não com clareza sobre o serviço completo: perguntam sobre localização, prazo da promoção, se é definitivo — uma coisa de cada vez.
+- Profissionais da área (esteticistas, biomédicas) chegam **descrevendo o próprio negócio** antes de perguntar qualquer coisa — como Leandra, que explica toda a estrutura do consultório antes de sinalizar interesse.
+
+### Como demonstram interesse
+- Fazem perguntas **em sequência**, não tudo de uma vez: Vera enviou 5 mensagens separadas sobre procedimentos diferentes.
+- Mencionam **intenção de ir presencialmente**: *"amanhã vou pessoalmente até a clínica"* — sinal de aquecimento real.
+- Perguntam sobre **paciente modelo**, o que indica interesse com restrição financeira ou desejo de testar antes de pagar valor cheio.
+
+### Como hesitam
+- Dão desculpas de tempo: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"* — Pam some com justificativas suaves, sem encerrar o contato.
+- Condicionam a compra: *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — Cleide impõe condições antes de qualquer avanço.
+- Perguntam se a avaliação é paga antes de qualquer outra coisa — barreira de entrada mesmo no primeiro passo.
+
+### Como somem
+- Ficam em modo *"vou te avisando"* sem dar próximo passo concreto: *"Sim eu vou ti falando"*.
+- Não encerram a conversa, mas **param de responder após receber informação** (padrão Desconhecido — enviou a mesma mensagem duas vezes, provavelmente de fluxos diferentes, sem seguir adiante).
+
+### Como voltam
+- Voltam com pergunta nova, como se a conversa anterior não tivesse acontecido.
+- Reaparecem após ver nova oferta ou promoção (padrão Tania — voltou com *"Quero muito ser paciente modelo nariz!"* após provavelmente ver conteúdo novo).
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas / situação
+- *"Sou úma senhora aposentada"* — identidade antes da dor; buscam se qualificar socialmente antes de perguntar preço.
+- *"Meu ddd é de Belém, mas estou morando em Macapá"* — explicam contexto geográfico como forma de verificar se têm acesso ao serviço.
+- *"Estou a 14 anos na área e 1 ano e pouco pra mim"* — profissional que acabou de abrir o próprio negócio, ainda insegura com gestão e marketing.
+- *"Muitas coisas preciso fazer um catálogo sou Esteticista facial e corporal faço uns 30 procedimentos"* — caos de oferta, sem posicionamento claro.
+- *"Nada que não possa melhorar"* — reconhece que precisa de ajuda, mas de forma defensiva/minimizadora.
+
+### Como falam de dinheiro / preço
+- *"1 sessão de criolipólise por 1200, quando alugo a máquina"* — fala de ticket alto com orgulho, sinalizando que já tem maturidade comercial.
+- *"Terei que pagar a avaliação?"* — primeira pergunta é sobre custo, antes de qualquer pergunta sobre o serviço.
+- *"Fechar contratos de 3,5k a 5k por mês não é sorte, é método"* — linguagem de guru de vendas infiltrada na caixa de entrada (ruído, mas revela o vocabulário do ecossistema).
+
+### Como expressam insegurança ou desconfiança
+- *"Voce deve te mamdado mensagem pra pessoa erada"* — confusão com o contato, possível descuido no disparo ou lead frio.
+- *"A clínica fica em Macapá?"* — antes de qualquer interesse no procedimento, verifica se o serviço existe na sua realidade geográfica.
+- *"Essa promoção vai até quando?"* — urgência artificial que o lead testa para entender se é real ou pressão de vendas.
+- *"Só farei se for conjugado com…"* — negociação com condição, desconfiança de que o resultado isolado não será suficiente.
+
+### Como demonstram interesse real
+- *"Quero muito ser paciente modelo nariz! ☺️"* — emoção explícita + procedimento específico = intenção clara.
+- *"Amanhã vou pessoalmente até a clínica"* — compromisso de ação física no curto prazo.
+- *"Como funciona a questão de ser paciente modelo?"* — pergunta sobre mecanismo de acesso = lead qualificado com restrição financeira.
+- *"Quando ela poderia me avaliar?"* — pergunta de agendamento = fundo de funil.
+
+---
+
+## 🗓️ Análise de Campo — 14 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads Inbound WhatsApp
+> **Base:** 36 mensagens | 18 contatos | Setor: Saúde & Estética | Contexto: @byericsantos
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### 🔵 Como entram em contato
+- **Mensagem genérica e curta como porta de entrada:** vários leads usam exatamente a mesma frase padrão *"Olá! Tenho interesse e queria mais informações, por favor."* — o que indica que vieram de um anúncio com CTA direto, mas **chegam sem intenção qualificada clara**. Precisam ser aquecidos após o primeiro contato.
+- **Chegam com dúvida geográfica antes de qualquer outra coisa:** Vera e Milena perguntam sobre localização antes de perguntar preço ou procedimento. A barreira logística é o primeiro filtro mental do lead.
+
+### 🟡 Como demonstram interesse real
+- **Fazem múltiplas perguntas em sequência, sem esperar resposta:** Vera enviou 5 mensagens diferentes sobre procedimentos distintos (fio, rinoplastia, prazo da promoção). Esse comportamento indica lead **quente em modo de pesquisa ativa** — está comparando opções.
+- **Usam linguagem emocional + aspiracional:** *"Quero muito ser paciente modelo nariz! ☺️"* — o desejo já está formado, falta apenas a estrutura (condição financeira ou coragem) para avançar.
+- **Profissionais do setor chegam com contexto detalhado:** Leandra chegou descrevendo seu negócio, seus procedimentos, sua parceria com biomédica e seu volume de atendimentos. Isso é um lead **que quer ser compreendido antes de ser vendido.**
+
+### 🔴 Como hesitam e somem
+- **Usam "falta de tempo" como escudo:** *"Ainda to sem tempo pra gente conversar"* / *"Sim hoje foi pesado"* — Pam demonstra desejo de continuar o contato, mas usa a rotina como barreira. Esse lead não sumiu: **está postergando com culpa.**
+- **Condicionam a decisão a fatores externos:** *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — Cleide não está recusando, está negociando internamente antes de negociar com a clínica.
+- **Chegam e não se identificam:** "Desconhecido" enviou a mensagem padrão duas vezes. Provavelmente erro ou ansiedade. Lead existe, mas **o fluxo de captura não coletou dados mínimos.**
+
+### 🟢 Como voltam
+- **Com compromisso concreto de presença física:** *"Bom dia, amanhã vou pessoalmente até a clínica"* — Neize não perguntou mais nada. A decisão já foi tomada internamente. O conteúdo ou o atendimento anterior já fez o trabalho.
+- **Com perguntas sobre o modelo de acesso (paciente modelo):** Milena e Tania perguntam sobre paciente modelo — esse é o comportamento de quem **quer o resultado mas está testando se consegue encaixar financeiramente.**
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### 💬 Como descrevem seus problemas / contexto
+> *"Sou uma senhora aposentada"*
+— Sinaliza limitação financeira de forma indireta, sem dizer "não tenho dinheiro".
+
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"*
+— Profissional que priorizou o cliente por anos e agora está tentando construir algo próprio. Carrega culpa e urgência ao mesmo tempo.
+
+> *"Muitas coisas [para fazer], preciso fazer um catálogo, sou Esteticista facial e corporal, faço uns 30 procedimentos"*
+— Sobrecarga de oferta sem organização de comunicação. Esse é o problema central que o @byericsantos resolve.
+
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo, não contratei ainda"*
+— Resistência ao comprometimento com serviço recorrente. Prefere testar pontualmente.
+
+### 💬 Como falam de dinheiro/preço
+> *"Meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200"*
+— Não fala do próprio preço, fala do que o *cliente dela* aceita pagar. Forma indireta de validar o próprio posicionamento.
+
+> *"Terei que pagar a avaliação?"*
+— Objeção financeira disfarçada de dúvida operacional.
+
+> *"Como funciona a questão de ser paciente modelo?"*
+— Tradução: "existe um jeito de pagar menos ou não pagar?"
+
+### 💬 Como expressam insegurança ou desconfiança
+> *"A rinoplastia é definitiva né?"*
+— Busca de confirmação de segurança antes de qualquer outra informação.
+
+> *"Esse procedimento com fio é definitivo também?"*
+— O medo do resultado temporário (= dinheiro jogado fora) paralisa a decisão.
+
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas"*
+— Insegurança de deixar o resultado pela metade. Controla o que pode para reduzir o risco percebido.
+
+### 💬 Como demonstram interesse real
+> *"Quero muito ser paciente modelo nariz! ☺️"*
+— Desejo declarado, com emoção. Lead quente.
+
+---
+
+## 🗓️ Análise de Campo — 15 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads e Clientes Inbound
+### Base: 36 mensagens reais via WhatsApp | Setor: Saúde & Estética | Contexto: @byericsantos
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### 🔵 Como entram em contato
+- Usam **mensagem padrão curta e vaga**: *"Olá! Tenho interesse e queria mais informações, por favor."* (aparece 4 vezes de contatos diferentes — indica que vieram de anúncio ou link com mensagem pré-preenchida)
+- Chegam com **perguntas operacionais imediatas**, sem se apresentar: localização, preço, validade da promoção, se o procedimento é definitivo
+- Alguns chegam já com **intenção declarada e emocional**: *"Quero muito ser paciente modelo nariz! ☺️"*
+
+### 🟡 Como demonstram interesse
+- Fazem **múltiplas perguntas em sequência** no mesmo chat (Vera Gonçalves: 5 mensagens, cada uma uma pergunta diferente) — comportamento de pesquisa ativa, comparando opções
+- Citam **procedimentos específicos** que já pesquisaram: rinoplastia, fio, blefaroplastia, lifting — chegam com vocabulário técnico parcial
+- Profissionais da área (esteticistas, biomédicas) chegam com **contexto de negócio já elaborado**, descrevendo estrutura, parceiros e ticket médio
+
+### 🔴 Como hesitam e somem
+- Usam **evasivas cordiais sem comprometimento**: *"Sim eu vou ti falando"*, *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"* — o lead mantém a porta aberta mas posterga indefinidamente
+- A hesitação raramente é explícita — ela aparece como **ausência de resposta objetiva** ou desvio para assuntos do cotidiano
+- Há sinais de **interesse condicionado**: *"Só farei se for conjugado com..."* — a conversão depende de uma condição que precisa ser endereçada antes
+
+### 🟢 Como voltam
+- Voltam com **comprometimento físico**: *"Amanhã vou pessoalmente até a clínica"* — quando voltam, geralmente já tomaram a decisão
+- Voltam com **perguntas de detalhe pré-compra**: *"Terei que pagar a avaliação?"*, *"Como funciona a questão de ser paciente modelo?"* — perguntas que só fazem sentido para quem já decidiu ir
+
+### ⚠️ Ruído na base
+- Há **contatos que não são leads**: spam de fornecedor (Natural Chef, Giovanne Destruindo Metas), concorrente que enviou seus próprios dados bancários por engano (Instituto HR Andrade), contato errado (Maria)
+- Isso indica que **o número/canal não tem filtragem clara** — oportunidade de conteúdo sobre qualificação de leads
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas / contexto
+> *"Muitas coisas — preciso fazer um catálogo, sou Esteticista facial e corporal, faço uns 30 procedimentos"*
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"* *(clínica própria recente)*
+> *"Já vai começar uma moça mês que vem porque não estou tendo horário"*
+> *"Tenho uma amiga que vou fechar só um anúncio com ela — eu faço mais avulso mesmo, não contratei ainda"*
+
+### Como falam de dinheiro / preço
+> *"Meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1.200, quando alugo a máquina"*
+> *"Terei que pagar a avaliação?"*
+> *"Essa promoção vai até quando?"*
+
+### Como expressam insegurança ou desconfiança
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas"*
+> *"E talvez lifting do terço médio"* *(o "talvez" como escudo)*
+> *"Ainda to sem tempo pra gente conversar"*
+
+### Como demonstram interesse real
+> *"Quero muito ser paciente modelo nariz! ☺️"*
+> *"Amanhã vou pessoalmente até a clínica"*
+> *"Quando ela poderia me avaliar?"*
+> *"Como funciona a questão de ser paciente modelo?"*
+> *"Esse procedimento com fio é definitivo também?"*
+
+---
+
+## 3. OBJEÇÕES IMPLÍCITAS OU EXPLÍCITAS
+
+| Objeção | Como aparece nas mensagens | Tipo |
+|---|---|---|
+| **Localização geográfica** | *"A clínica fica em Macapá?"* / *"Meu DDD é de Belém, mas estou morando em Macapá"* | Explícita |
+| **Durabilidade / permanência do resultado** | *"A rinoplastia é definitiva né?"* / *"Esse procedimento com fio é definitivo também?"* | Explícita |
+| **Custo da avaliação** | *"Terei que pagar a avaliação?"* | Explícita |
+| **Falta de tempo** | *"Ainda to sem tempo pra gente conversar"* | Implícita (evasiva) |
+| **Condicionamento da compra** | *"Só farei se for conjugado com..."* | Explícita com condição |
+| **Insegurança sobre o próprio estágio** | *
+
+---
+
+## 🗓️ Análise de Campo — 16 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads & Clientes Inbound
+### Base: 36 mensagens reais via WhatsApp | Setor: Saúde & Estética | Contexto: @byericsantos
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- **Entram com mensagens curtíssimas e vagas:** *"Olá! Tenho interesse e queria mais informações, por favor."* aparece 4 vezes quase idêntica — indica que vieram de um anúncio com CTA direto, mas **não sabem exatamente o que querem** ainda.
+- **Fazem perguntas operacionais antes de qualquer coisa:** localização, validade da promoção, se precisa pagar avaliação. O interesse existe, mas a barreira de entrada (logística, custo) é o primeiro filtro mental deles.
+- **Profissionais de estética entram misturando currículo com dúvida:** Leandra apresenta seu portfólio inteiro antes de perguntar qualquer coisa — comportamento de quem **quer ser levado a sério** antes de ser vendido.
+
+### Como demonstram interesse real
+- Fazem **múltiplas perguntas em sequência** (Vera: 5 mensagens diferentes sobre procedimentos distintos — rinoplastia, fio, promoção, localização).
+- **Declaram intenção explícita com emoção:** *"Quero muito ser paciente modelo nariz! ☺️"*
+- **Anunciam presença física:** *"Amanhã vou pessoalmente até a clínica"* — sinal de comprometimento alto.
+
+### Como hesitam
+- Somem sem avisar e voltam com desculpas relacionais: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"* — **não é falta de interesse, é gestão de energia/agenda.**
+- Condicionam a decisão: *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — **a compra depende de uma condição específica ser atendida.**
+- Perguntam se é definitivo (rinoplastia, procedimento com fio) — **medo de arrependimento** é a objeção emocional central.
+
+### Como somem
+- Pam é o caso clássico: 4 mensagens em dias diferentes, todas adiando. **Não bloqueou, não negou — só posterga.** Esse lead ainda está no funil.
+- Entram com mensagem genérica e não respondem o follow-up (Desconhecido, suelymonteiro1112).
+
+### Como voltam
+- Voltam quando há **nova promoção, novo procedimento anunciado ou prazo** — Vera perguntou *"Essa promoção vai até quando?"*, o que indica que prazo funciona como gatilho de retorno.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem interesse/desejo
+> *"Quero muito ser paciente modelo nariz!"*
+> *"Amanhã vou pessoalmente até a clínica"*
+> *"Tenho interesse e queria mais informações"*
+
+### Como falam de localização (barreira geográfica real)
+> *"A clínica fica em Macapá?"*
+> *"Meu ddd é de Belém, mas estou morando em Macapá"*
+
+### Como falam de dinheiro/preço (de forma indireta)
+> *"Terei que pagar a avaliação?"*
+> *"1 sessão de criolipólise por 1.200, quando alugo a máquina"*
+> *"São protocolos mais caros"*
+> *"Fechar contratos de 3,5k a 5k por mês"* *(ruído de mercado — concorrente/guru)*
+
+### Como expressam insegurança sobre procedimentos
+> *"A rinoplastia é definitiva né?"*
+> *"Esse procedimento com fio é definitivo também?"*
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas"*
+
+### Como profissionais de estética falam do próprio negócio
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"*
+> *"Já tenho bastante cliente, mas nada que não possa melhorar"*
+> *"O que mais vendo é drenagem"*
+> *"Faço uns 30 procedimentos"*
+> *"Já vai começar uma moça mês que vem pq não estou tendo horário"*
+
+### Como expressam confusão/erro de segmentação
+> *"Você deve ter mandado mensagem pra pessoa errada"*
+> *"Sou uma senhora aposentada"*
+
+---
+
+## 3. OBJEÇÕES IMPLÍCITAS OU EXPLÍCITAS
+
+| Objeção | Como aparece nas mensagens | Tipo |
+|---|---|---|
+| **"Isso é definitivo?"** | Vera pergunta duas vezes sobre permanência de resultados | Medo de arrependimento / risco percebido |
+| **"Preciso pagar só para ser avaliada?"** | Pilar pergunta diretamente | Barreira financeira de entrada |
+| **"Não tenho tempo agora"** | Pam repete em 4 mensagens diferentes | Procrastinação / prioridade baixa momentânea |
+| **"Estou longe / não sei se atende minha região"** | Vera e Milena perguntam sobre localização | Barreira geográfica |
+| **"Só faço se tiver minha condição atendida"** | Cleide é explícita sobre blefaroplastia + sobrancelhas | Objeção de personalização |
+| **"Não sei se vale o invest
+
+---
+
+## 🗓️ Análise de Campo — 17 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads Inbound WhatsApp
+> **Fonte:** 36 mensagens reais / 18 contatos / setor saúde & estética
+> **Finalidade:** Repertório da agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### 🔵 Como entram em contato
+- Usam **mensagens curtas, diretas e sem contexto** — esperam que o outro lado "saiba" do que se trata: *"Olá! Tenho interesse e queria mais informações, por favor."* (aparece 3x quase idêntica, provavelmente via botão de WhatsApp ou link de bio)
+- Parte dos contatos chega por **tráfego frio com baixa qualificação** — não sabem nem onde a clínica fica: *"A clínica fica em Macapá?"*
+- Há contatos que **não são leads reais** (spam de fornecedores, concorrentes, grupos errados): Instituto HR Andrade enviando proposta comercial, Giovanne enviando convite de treinamento, Natural Chef enviando cardápio — **ruído de lista/grupo**
+
+### 🟡 Como demonstram interesse
+- Fazem **perguntas técnicas em sequência** sem esperar resposta — sinal de curiosidade alta mas ansiedade não gerenciada (Vera Gonçalves: 5 perguntas seguidas sobre procedimentos diferentes)
+- Demonstram interesse via **desejo de ser paciente modelo**: *"Quero muito ser paciente modelo nariz! ☺️"* — enxergam isso como porta de entrada acessível
+- Profissionais da área (esteticistas, biomédicas) chegam **descrevendo o próprio negócio** antes de perguntar qualquer coisa — querem ser entendidos antes de comprar
+
+### 🔴 Como hesitam e somem
+- **Postergação com justificativa real**: *"Ainda to sem tempo pra gente conversar"* / *"Sim hoje foi pesado"* — Pam demonstra interesse mas usa rotina como escudo
+- **Silêncio após demonstrar interesse** — Tania envia duas mensagens (uma calorosa, uma genérica) sem continuidade clara
+- Milena pergunta sobre "paciente modelo" mas logo contextualiza distância geográfica (*"Meu DDD é de Belém"*) — **a localização aparece como objeção disfarçada de dado**
+
+### 🟢 Como voltam
+- Neize sinalizou retorno presencial espontâneo: *"Amanhã vou pessoalmente até a clínica"* — **leads que somem podem reaparecer prontos para converter**
+- Cleide retorna com **especificidade cirúrgica crescente** (blefaroplastia + sobrancelhas + terço médio) — quanto mais detalhes técnicos, mais próxima da decisão
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### 🔍 Como descrevem seus problemas / situação
+> *"Sou uma senhora aposentada"* — autodescrição como filtro; quer saber se é atendida, se tem desconto, se "é para ela"
+
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"* — profissional que finalmente está investindo em si mesma; carrega culpa e orgulho juntos
+
+> *"Nada que não possa melhorar"* — aceitação com abertura; não está insatisfeita, está em evolução
+
+> *"Faço uns 30 procedimentos"* — abundância de serviço sem clareza de posicionamento
+
+### 💰 Como falam de dinheiro/preço
+> *"Meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200"* — referência de valor pelo que o cliente dela paga, não pelo que ela cobra
+
+> *"Fechar contratos de 3,5k a 5k por mês"* (ruído — mas revela o que circula no imaginário do mercado)
+
+> *"Terei que pagar a avaliação?"* — objeção financeira na porta de entrada; medo de pagar antes de confiar
+
+### 😟 Como expressam insegurança ou desconfiança
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — impõe condição antes de confirmar; quer controle sobre o processo
+
+> *"Terei que pagar a avaliação?"* — desconfiança de ser cobrada antes de receber valor
+
+> *"A clínica fica em Macapá?"* — não sabe nada; chegou fria; pode virar objeção de deslocamento
+
+### ✅ Como demonstram interesse real
+> *"Quero muito ser paciente modelo nariz! ☺️"* — emoção + especificidade = intenção alta
+
+> *"Amanhã vou pessoalmente até a clínica"* — compromisso público com ação física
+
+> *"Quando ela poderia me avaliar?"* — pergunta de agendamento = fundo de funil
+
+> *"Essa promoção vai até quando?"* — urgência ativada; quer saber o prazo para decidir
+
+---
+
+## 3. OBJEÇÕES IMPLÍCITAS OU EXPLÍCITAS
+
+| Objeção | Como aparece nas mensagens | Tipo |
+|---|---|---|
+| **Localização / distância** | *"A clínica fica em Macapá?"* / *"Meu DDD é de Belém, mas estou em Macapá"* | Explícita |
+| **Custo da avaliação** | *"Terei que pagar a avaliação?"* | Explícita |
+| **Falta de tempo** | *"Ainda to sem tempo
+
+---
+
+## 🗓️ Análise de Campo — 18 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads Inbound @byericsantos
+
+> **Base:** 36 mensagens · 18 contatos · canal WhatsApp · setor saúde/estética · região predominante Macapá/AP
+> **Uso:** Repertório da agente Nova para criação de conteúdo estratégico
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- Usam **mensagem padrão genérica** sem contexto: *"Olá! Tenho interesse e queria mais informações, por favor."* — aparece 4 vezes de contatos diferentes. Isso indica que **chegam via anúncio ou link direto**, com baixo esforço cognitivo na abordagem inicial.
+- Fazem **perguntas pontuais e fragmentadas**, sem apresentar o quadro completo. Vera, por exemplo, disparou 5 mensagens separadas sobre procedimentos diferentes — cada uma um gatilho isolado de curiosidade.
+- Alguns chegam **já com intenção declarada e específica**: *"Quero muito ser paciente modelo nariz!"* (Tania) e *"Amanhã vou pessoalmente até a clínica"* (Neize).
+
+### Como demonstram interesse
+- Fazem perguntas sobre **logística antes de preço**: localização, funcionamento, prazo da promoção — o preço vem depois ou não vem (indica barreira de vergonha em perguntar).
+- Profissionais do setor (Leandra, Gabrielle) chegam com **contexto de negócio próprio**, descrevendo o que já fazem antes de perguntar o que precisam — padrão de quem quer ser entendido antes de comprar.
+- Demonstram interesse por **programas de acesso reduzido** (*"Como funciona a questão de ser paciente modelo?"*) — sinal de desejo real com restrição financeira ou desconfiança ainda não resolvida.
+
+### Como hesitam
+- Somem no meio da conversa e voltam sem explicação (Pam: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"*) — **a vida real interrompe o processo de decisão** e ninguém retoma o fio com naturalidade.
+- Impõem **condições para fechar**: *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* (Cleide) — negociam antes mesmo de receber proposta formal.
+- Perguntam sobre custo de forma indireta: *"Terei que pagar a avaliação?"* — **o medo do primeiro gasto é maior do que o medo do procedimento**.
+
+### Como somem
+- Param de responder após receberem informação — sem rejeição explícita. O silêncio é a objeção mais comum.
+- Leads com DDD de outra cidade (*"Meu ddd é de Belém, mas estou morando em Macapá"*) surgem como sinal de fricção geográfica que pode ser usada como desculpa para sumir.
+
+### Como voltam
+- Retornam com **nova pergunta específica**, como se a conversa anterior não tivesse acontecido (padrão de Vera com múltiplas perguntas em dias diferentes).
+- Voltam após ver novo conteúdo — o lead *"Desconhecido"* enviou a mesma mensagem duas vezes, sugerindo **reexposição ao anúncio ou conteúdo**.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas / contexto
+> *"Muitas coisas preciso fazer um catálogo — sou Esteticista facial e corporal faço uns 30 procedimentos"*
+> — Leandra (sobrecarga de oferta sem organização de comunicação)
+
+> *"Já vai começar uma moça mês que vem pq não estou tendo horário"*
+> — Leandra (crescimento acontecendo sem estrutura)
+
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim — por isso já tenho bastante cliente, mas nada que não possa melhorar"*
+> — Leandra (profissional experiente que minimiza a própria dor para não parecer vulnerável)
+
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo não contratei ainda"*
+> — Leandra (resistência a contrato recorrente, preferência por avulso)
+
+### Como falam de dinheiro/preço
+> *"Meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200"*
+> — Leandra (usa o comportamento do cliente dela para justificar o próprio ticket)
+
+> *"Terei que pagar a avaliação?"*
+> — Pilar (primeira barreira é o custo de entrada, não o procedimento em si)
+
+> *"Como funciona a questão de ser paciente modelo?"*
+> — Milena (busca ativa por desconto embrulhado em curiosidade)
+
+### Como expressam insegurança ou desconfiança
+> *"A rinoplastia é definitiva né?"*
+> — Vera (busca confirmação pública antes de se comprometer)
+
+> *"Esse procedimento com fio é definitivo também?"*
+> — Vera (padrão repetido — insegurança sobre durabilidade = medo de investir e perder)
+
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas"*
+> — Cleide (impõe condição como mecanismo de controle antes de ceder)
+
+> *"Voce deve te mandado mensagem pra pessoa errada"*
+> — Maria (lead que não reconhece o próprio interesse — pode ser quebra de expectativa no anúncio)
+
+---
+
+## 🗓️ Análise de Campo — 19 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads & Clientes Inbound
+**Base:** 36 mensagens | 18 contatos | Canal: WhatsApp | Setor: Saúde & Estética
+**Destino:** Repertório da agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### 🔵 Como entram em contato
+- Usam **mensagens automáticas ou copiadas** como ponto de entrada: *"Olá! Tenho interesse e queria mais informações, por favor."* — aparece 4 vezes, de contatos diferentes. Indica geração de lead via anúncio com resposta automática. O lead clica, mas **ainda não tem intenção formada**.
+- Chegam com **dúvidas logísticas antes de qualquer dúvida técnica**: localização da clínica, validade da promoção, se precisa pagar a avaliação. A pergunta real por trás é: *"isso é acessível pra mim?"*
+
+### 🟡 Como demonstram interesse real
+- Fazem **múltiplas perguntas em sequência**, sobre procedimentos diferentes (Vera: rinoplastia, fio, promoção — tudo no mesmo fluxo). Sinal de pesquisa ativa, ainda comparando opções.
+- Declaram intenção de forma direta e emocional: *"Quero muito ser paciente modelo nariz! ☺️"* — afeto + desejo + ação específica na mesma frase.
+- Anunciam visita presencial como compromisso: *"amanhã vou pessoalmente até a clínica"* — lead quente, decisão tomada.
+
+### 🔴 Como hesitam e somem
+- Usam **tempo e ocupação como escudo**: *"Ainda to sem tempo pra gente conversar"*, *"Sim hoje foi pesado"* — mantêm o contato aquecido sem avançar. Não é desinteresse, é adiamento por atrito.
+- Condicionam a compra: *"Só farei se for conjugado com…"* — a hesitação vem embrulhada em condição técnica.
+- Somem sem encerrar a conversa — padrão Pam: engaja, justifica ausência, mantém a porta aberta, mas não agenda.
+
+### 🟢 Como voltam
+- Retornam com **detalhes mais específicos**, sinal de que pesquisaram no intervalo: saem de *"tenho interesse"* e voltam com *"Blefaroplastia superior com sobrancelhas/castanhares total"*.
+- Voltam com **pergunta de viabilidade financeira ou modelo de acesso** (paciente modelo, avaliação gratuita).
+
+### ⚪ Ruído na base
+- Mensagens que **não são leads**: spam de concorrente (Instituto HR Andrade enviando próprio conteúdo + dados bancários), fornecedor de alimentos (Natural Chef), vendedor de método de vendas (Giovanne). Precisam ser filtrados para não contaminar análise de persona.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### 🔸 Como descrevem interesse em procedimento
+> *"Quero muito ser paciente modelo nariz!"*
+> *"A rinoplastia é definitiva né?"*
+> *"Esse procedimento com fio é definitivo também?"*
+> *"Blefaroplastia superior com sobrancelhas/castanhares total."*
+> *"E talvez lifting do terço médio."*
+
+**Padrão:** Usam o nome técnico do procedimento quando já pesquisaram, mas validam com o profissional questões básicas (durabilidade, definitivo/temporário). O lead chegou informado, mas inseguro.
+
+---
+
+### 🔸 Como falam de dinheiro e preço (sem falar diretamente)
+> *"Terei que pagar a avaliação?"*
+> *"Como funciona a questão de ser paciente modelo?"*
+> *"Essa promoção vai até quando?"*
+
+**Padrão:** Nenhum lead perguntou o preço diretamente. Eles **chegam pela lateral** — paciente modelo, avaliação gratuita, promoção. A pergunta real é *"existe uma forma de eu acessar isso com menos custo?"*
+
+---
+
+### 🔸 Como expressam insegurança ou desconfiança
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas."*
+> *"A clínica fica em Macapá?"*
+> *"Meu ddd é de Belém, mas estou morando em Macapá."*
+
+**Padrão:** Insegurança se manifesta como **condição** (só faço se…) ou como **verificação de contexto** (você é daqui? isso é pra mim?). A pergunta sobre localização é também uma pergunta sobre pertencimento.
+
+---
+
+### 🔸 Como demonstram interesse real (frases quentes)
+> *"Amanhã vou pessoalmente até a clínica."*
+> *"Quero muito ser paciente modelo nariz! ☺️"*
+> *"O que mais vendo é drenagem, mais meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1200."*
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim, então por isso já tenho bastante cliente, mais nada que não possa melhorar."*
+
+---
+
+## 3. OBJEÇÕES IMPLÍCITAS OU EXPLÍCITAS
+
+| Objeção | Como aparece nas mensagens | Tipo |
+|---|---|---|
+| **"Não sei se é pra mim / se chego lá"** | Pergunta sobre localização, DDD diferente, "sou
+
+---
+
+## 🗓️ Análise de Campo — 20 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads & Clientes Inbound
+**Base:** 36 mensagens reais / 18 contatos / WhatsApp
+**Contexto:** @byericsantos — Assessoria de marketing para saúde e estética
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- Entram com mensagens **curtíssimas e diretas**, sem contexto: *"Olá! Tenho interesse e queria mais informações, por favor."* (mensagem idêntica repetida por 3 contatos diferentes — indica origem de anúncio com botão de WhatsApp)
+- Parte dos contatos **chegou pelo contato errado** (Maria: *"Você deve ter mandado mensagem pra pessoa errada"*) — sinal de lista fria ou disparo sem segmentação
+- Há **spam entrando na base** (Natural Chef, Giovanne, Instituto HR) — a caixa de WhatsApp não está filtrada, o que polui a leitura de leads reais
+
+### Como demonstram interesse
+- Fazem **várias perguntas em sequência**, sem esperar resposta entre elas (padrão Vera Gonçalves: 5 mensagens seguidas sobre procedimentos, prazo e localização)
+- Demonstram interesse por **programas de paciente modelo** — Tania e Milena chegaram especificamente por isso
+- Interesse se manifesta como **curiosidade técnica** antes de qualquer pergunta de preço (*"Esse procedimento com fio é definitivo?"*, *"A rinoplastia é definitiva né?"*)
+
+### Como hesitam
+- Usam **tempo como escudo**: *"Ainda to sem tempo pra gente conversar"* / *"Sim hoje foi pesado"* (Pam — ghosting suavizado)
+- Colocam **condicionantes antes de comprar**: *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* (Cleide)
+- Perguntam se **precisam pagar pela avaliação** antes de qualquer outro dado (Pilar — objeção de custo disfarçada de dúvida)
+
+### Como somem
+- Dão sinais de vida com mensagens vagas (*"Sim eu vou ti falando"*) e desaparecem
+- Confirmam intenção de presença física (*"amanhã vou pessoalmente até a clínica"* — Neize) sem follow-up posterior visível
+
+### Como voltam
+- Retornam com **intenção mais específica** do que na primeira mensagem (Tania voltou com *"Quero muito ser paciente modelo nariz!"* após a mensagem genérica)
+- Milena qualificou a própria localização espontaneamente (*"Meu DDD é de Belém, mas estou morando em Macapá"*) — sinal de lead que quer remover objeções para avançar
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem interesse em procedimentos
+> *"Quero muito ser paciente modelo nariz!"*
+> *"A rinoplastia é definitiva né?"*
+> *"Esse procedimento com fio é definitivo também?"*
+> *"Vi também um procedimento com fio"*
+> *"Blefaroplastia superior com sobrancelhas/castanhares total"*
+> *"Talvez lifting do terço médio"*
+
+### Como falam de dinheiro/preço (indireto)
+> *"Terei que pagar a avaliação?"*
+> *"1 sessão de criolipólise por 1.200, quando alugo a máquina"*
+> *"O que mais vendo é drenagem / meu público compra produtos com ticket mais alto"*
+
+### Como expressam insegurança ou condicionamento
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas"*
+> *"Ainda to sem tempo pra gente conversar"*
+> *"A clínica fica em Macapá?"*
+> *"Essa promoção vai até quando?"*
+
+### Como demonstram interesse real
+> *"Amanhã vou pessoalmente até a clínica"*
+> *"Como funciona a questão de ser paciente modelo?"*
+> *"Quero mais informações, por favor"*
+> *"Meu DDD é de Belém, mas estou morando em Macapá"* *(auto-qualificação espontânea)*
+
+### Como profissionais de estética falam do próprio negócio
+> *"Faço uns 30 procedimentos"*
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"*
+> *"Já vai começar uma moça mês que vem pq não estou tendo horário"*
+> *"Nada que não possa melhorar"*
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo, não contratei ainda"*
+
+---
+
+## 3. OBJEÇÕES — IMPLÍCITAS E EXPLÍCITAS
+
+| Tipo | Objeção | Evidência |
+|---|---|---|
+| **Geográfica** | "Será que atende minha região?" | *"A clínica fica em Macapá?"* / *"Meu DDD é de Belém"* |
+| **Financeira velada** | "Não quero pagar pra só conversar" | *"Terei que pagar a avaliação?"* |
+| **Tempo** | "Não tenho espaço agora" | *"Ainda to sem tempo pra gente conversar"* |
+| **Definitivo/reversível** | "Tenho medo que não dure / que seja permanente demais" | Perguntas sobre durabilidade de fio e rinoplastia |
+| **
+
+---
+
+## 🗓️ Análise de Campo — 22 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads e Clientes Inbound
+**Base:** 36 mensagens | 18 contatos | Canal: WhatsApp | Setor: Saúde & Estética
+**Alimenta:** Repertório da agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- Usam **mensagens curtas e diretas**, muitas vezes sem contexto prévio: *"Olá! Tenho interesse e queria mais informações, por favor."* — exatamente igual, copiada/colada por 4 contatos diferentes. Isso indica que vieram de um CTA padronizado (anúncio, link de bio ou automação).
+- Chegam com **perguntas pontuais e fragmentadas**, raramente num bloco completo: Vera mandou 5 mensagens separadas, cada uma com uma dúvida diferente.
+- Algumas entram **sem nem saber se são o público certo**: Maria (*"Você deve ter mandado mensagem pra pessoa errada"*), Hilda (*"Sou uma senhora aposentada"*) — entram por impulso e precisam de qualificação rápida.
+
+### Como demonstram interesse real
+- Fazem **perguntas de viabilidade logística antes de qualquer outra coisa**: localização (*"A clínica fica em Macapá?"*), custo da avaliação (*"Terei que pagar a avaliação?"*), prazo da promoção (*"Essa promoção vai até quando?"*).
+- Demonstram **intenção emocional clara**: *"Quero muito ser paciente modelo nariz! ☺️"* — o emoji reforça desejo genuíno, não apenas curiosidade.
+- Profissionais do setor revelam interesse ao **expor a própria operação**: Leandra detalhou sua carteira de serviços, ticket médio, parceria com biomédica e volume de atendimentos sem ser perguntada.
+
+### Como hesitam
+- Usam **linguagem de adiamento sem rejeição**: *"Ainda to sem tempo pra gente conversar"*, *"Sim eu vou ti falando"* — o lead Pam não saiu, mas também não avança.
+- Colocam **condições antes de fechar**: *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — Cleide não está negando, está negociando internamente.
+- **Fragmentam o processo** como mecanismo inconsciente de controle: quanto mais mensagens curtas, mais o lead está processando a decisão aos poucos.
+
+### Como somem e voltam
+- O padrão de Pam é clássico: engajou, sumiu com justificativa (*"hoje foi pesado"*), ainda não converteu — mas também não bloqueou. **Leads quentes que somem raramente estão frios: estão ocupados ou inseguros.**
+- Neize deu um sinal de retomada ativa: *"Amanhã vou pessoalmente até a clínica"* — provavelmente sumiu antes e voltou com decisão tomada.
+
+### Ruído na base
+- Há **contatos completamente fora do ICP**: Instituto HR Andrade (concorrente fazendo spam), Giovanne (vendedor de curso), Natural Chef (alimentação), Rachel Andrade (compartilhou endereço de evento). Esses contatos poluem a análise mas revelam que a base não está segmentada — oportunidade de melhoria para o cliente.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem problemas e contexto
+- *"Sou uma senhora aposentada"* — identidade como filtro; ela quer saber se o produto é para ela antes de qualquer coisa.
+- *"Estou a 14 anos na área e 1 ano e pouco pra mim"* — profissional experiente, mas iniciante como empresária. Esse gap é uma dor real.
+- *"Muitas coisas — preciso fazer um catálogo, sou esteticista facial e corporal, faço uns 30 procedimentos"* — excesso de serviços sem organização de oferta. Dor de posicionamento.
+- *"Já vai começar uma moça mês que vem porque não estou tendo horário"* — crescimento desordenado, sem estrutura.
+- *"Nada que não possa melhorar"* — abertura para assessoria, mas com ego preservado (não admite diretamente que precisa de ajuda).
+
+### Como falam de dinheiro/preço
+- *"1 sessão de criolipólise por 1.200, quando alugo a máquina"* — ela pensa em ticket por sessão, não em pacote ou recorrência.
+- *"Tenho uma amiga que vou fechar só um anúncio com ela — faço mais avulso mesmo, não contratei ainda"* — resistência a contratos, preferência por avulso. Objeção financeira disfarçada de preferência.
+- *"Terei que pagar a avaliação?"* — primeira pergunta é sobre custo, não sobre o procedimento. Sensibilidade a preço na entrada.
+
+### Como expressam insegurança ou desconfiança
+- *"Você deve ter mandado mensagem pra pessoa errada"* — desconfiança de que o contato foi genérico/impessoal.
+- *"Como funciona a questão de ser paciente modelo?"* — quer o benefício (desconto), mas precisa entender o que está "cedendo" em troca.
+- *"Só farei se for conjugado com..."* — condiciona a compra para sentir que tem controle.
+- *"Ainda to sem tempo pra gente conversar"* — desconforto com o processo de venda, não necessariamente com o produto.
+
+### Como demonstram interesse real
+- *
+
+---
+
+## 🗓️ Análise de Campo — 23 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads e Clientes Inbound
+### Base: 36 mensagens reais via WhatsApp | Setor: Saúde & Estética | Contexto: @byericsantos
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- **Entrada por mensagem-padrão gerada por anúncio:** Pelo menos 4 contatos enviaram a frase idêntica *"Olá! Tenho interesse e queria mais informações, por favor."* — indicando que clicaram em um botão de CTA automático, mas **não elaboraram o interesse**. O lead chegou, mas não estava preparado para conversar.
+- **Entrada com dúvida geográfica imediata:** Vera Gonçalves perguntou sobre localização antes de qualquer outra coisa (*"A clínica fica em Macapá?"*). Milena reforça o mesmo padrão (*"Meu ddd é de Belém, mas estou morando em Macapá"*). Localização é filtro primário.
+- **Entrada direta com desejo declarado:** Tania escreveu *"Quero muito ser paciente modelo nariz!"* — lead quente, com procedimento específico na cabeça, buscando acesso via formato mais acessível (paciente modelo).
+
+### Como demonstram interesse
+- Fazem **múltiplas perguntas em sequência** sem esperar resposta (Vera: 5 mensagens encadeadas sobre procedimentos diferentes).
+- Mencionam **procedimentos específicos** pelo nome: rinoplastia, blefaroplastia, lifting, criolipólise, fios — sinal de pesquisa prévia feita.
+- Perguntam sobre **permanência do resultado** (*"É definitivo?"*) — interesse real, mas com medo de arriscar.
+
+### Como hesitam
+- **Somem sem explicação:** Pam iniciou contato, demonstrou intenção futura (*"Sim eu vou ti falando"*) mas foi postergando com justificativas vagas (*"Ainda to sem tempo", "Hoje foi pesado"*).
+- **Condicionam a compra:** Cleide só fará o procedimento *"se for conjugado"* com outra demanda — o interesse existe, mas há uma condição não negociável não verbalizada antes.
+- **Perguntam sobre custo da avaliação** antes de qualquer outra coisa (Pilar: *"Terei que pagar a avaliação?"*) — barreira financeira ou teste de comprometimento da clínica.
+
+### Como voltam
+- Neize avisou presença física futura (*"Amanhã vou pessoalmente até a clínica"*) — retorno proativo, lead que saiu do digital para o presencial por iniciativa própria.
+- Milena perguntou sobre **paciente modelo** — formato de retorno com menor barreira financeira.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem seus problemas / situação
+> *"Muitas coisas preciso fazer um catálogo — sou Esteticista facial e corporal, faço uns 30 procedimentos"*
+> — Leandra Tavares
+
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim — então por isso já tenho bastante cliente, mais nada que não possa melhorar"*
+> — Leandra Tavares
+
+> *"Já vai começar uma moça mês que vem porque não estou tendo horário"*
+> — Leandra Tavares
+
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo"*
+> — Leandra Tavares
+
+### Como falam de dinheiro/preço
+> *"Meu público compra produtos com ticket mais alto como 1 sessão de criolipólise por 1.200, quando alugo a máquina"*
+> — Leandra Tavares
+
+> *"Terei que pagar a avaliação?"*
+> — Pilar De Souza
+
+> *"Fechar contratos de 3,5k a 5k por mês não é sorte, é método"* *(mensagem de spam/concorrente — relevante como sinal do ambiente)*
+> — Giovanne
+
+### Como expressam insegurança ou desconfiança
+> *"A rinoplastia é definitiva né?"*
+> — Vera Gonçalves
+
+> *"Esse procedimento com fio é definitivo também?"*
+> — Vera Gonçalves
+
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas"*
+> — Cleide
+
+> *"Como funciona a questão de ser paciente modelo?"*
+> — Milena Moraes
+
+### Como demonstram interesse real
+> *"Quero muito ser paciente modelo nariz! ☺️"*
+> — Tania
+
+> *"Bom dia, amanhã vou pessoalmente até a clínica"*
+> — Neize
+
+> *"Blefaroplastia superior com sobrancelhas/castanhares total"*
+> — Cleide *(sabe exatamente o que quer)*
+
+> *"Quando ela poderia me avaliar?"*
+> — Milena Moraes
+
+---
+
+## 3. OBJEÇÕES IMPLÍCITAS OU EXPLÍCITAS
+
+| Objeção | Como aparece nas mensagens | Classificação |
+|---|---|---|
+| **"Isso é perto de mim?"** | *"A clínica fica em Macapá?"* / *"Meu ddd é de Belém"* | Explícita / Logística |
+| **"Vai durar? Vale o investimento?"** | *"É definitivo?"* (perguntada 2x por Vera) | Explícita / R
+
+---
+
+## 🗓️ Análise de Campo — 24 de abril de 2026
+> 36 mensagens reais analisadas
+
+# Análise de Comportamento de Mercado — Leads e Clientes Inbound
+### Base: 36 mensagens reais via WhatsApp | Setor: Saúde & Estética | Contexto: @byericsantos
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### Como entram em contato
+- **Entrada passiva e direta:** A maioria entra com mensagens curtas e vagas — *"Olá! Tenho interesse e queria mais informações, por favor."* — sem explicar o que viram, de onde vieram ou o que exatamente querem. Isso indica que o conteúdo ou anúncio gerou curiosidade, mas não qualificação suficiente.
+- **Entrada por procedimento específico:** Leads mais quentes chegam mencionando o procedimento pelo nome (*rinoplastia, blefaroplastia, lifting, fios*), o que sinaliza pesquisa prévia e intenção mais madura.
+- **Confusão de contato:** Há leads que chegaram por engano (*"Você deve ter mandado mensagem pra pessoa errada"*), sugerindo uso de disparo em massa pouco segmentado por parte de algum concorrente ou parceiro.
+
+### Como demonstram interesse
+- Fazem **sequência de perguntas** no próprio WhatsApp, sem esperar resposta entre uma e outra (*Vera Gonçalves: 5 mensagens seguidas sobre procedimentos diferentes*).
+- Demonstram interesse via **programa de paciente modelo** — redução de preço é o gatilho de ação (*"Quero muito ser paciente modelo nariz!"*).
+- Profissionais do setor chegam com **interesse técnico + comercial misturado** — falam do próprio negócio antes de perguntar o que você oferece (*Leandra Tavares*).
+
+### Como hesitam
+- Somem no meio da conversa e voltam com justificativas vagas: *"Ainda to sem tempo pra gente conversar"*, *"Hoje foi pesado"*.
+- Colocam **condições antes de fechar**: *"Só farei se for conjugado com a reposição de minhas sobrancelhas."*
+- Fazem perguntas logísticas como forma de adiamento real: *"A clínica fica em Macapá?"*, *"Terei que pagar a avaliação?"*
+
+### Como somem e voltam
+- O padrão de *Pam* é clássico: engaja, some com desculpa plausível (*tempo, dia pesado*), reaparece sem avançar. Esse lead está em ciclo de procrastinação emocional.
+- *Neize* some e volta com intenção de ação concreta: *"Amanhã vou pessoalmente até a clínica"* — esse é o sinal de retorno quente.
+
+### Ruído na base
+- Há **mensagens de spam e concorrentes** infiltrados na lista: *Instituto HR Andrade* (concorrente enviando material de vendas), *Giovanne Destruindo Metas* (infoprodutor), *Natural Chef* (cardápio). Isso indica que a base de contatos precisa de limpeza e que a segmentação de entrada tem falhas.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### Como descrevem interesse em procedimentos
+> *"Quero muito ser paciente modelo nariz!"*
+> *"Esse procedimento com fio é definitivo também?"*
+> *"A rinoplastia é definitiva né?"*
+> *"Blefaroplastia superior com sobrancelhas/castanhares total."*
+> *"Talvez lifting do terço médio."*
+
+### Como falam de dinheiro e preço (de forma indireta)
+> *"Como funciona a questão de ser paciente modelo?"*
+> *"Terei que pagar a avaliação?"*
+> *"1 sessão de criolipólise por 1.200, quando alugo a máquina"*
+
+> **Nota:** Nenhum lead perguntou o preço diretamente. O acesso ao preço é sempre mediado por uma pergunta "mais segura" — paciente modelo, avaliação gratuita, condições. Falar de dinheiro de frente é desconfortável para esse público.
+
+### Como expressam insegurança ou desconfiança
+> *"Só farei se for conjugado com a reposição de minhas sobrancelhas."*
+> *"Essa promoção vai até quando?"*
+> *"A clínica fica em Macapá?"* *(antes de qualquer outro passo)*
+
+### Como demonstram interesse real (leads quentes)
+> *"Amanhã vou pessoalmente até a clínica."*
+> *"Quero muito ser paciente modelo nariz!"*
+> *"Quando ela poderia me avaliar?"*
+> *"Meu DDD é de Belém, mas estou morando em Macapá."* *(espontaneamente se situa geograficamente — quer ser atendida)*
+
+### Como falam do próprio negócio (clientes B2B — profissionais de saúde/estética)
+> *"O que mais vendo é drenagem."*
+> *"Meu público compra produtos com ticket mais alto."*
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim."*
+> *"Faço uns 30 procedimentos."*
+> *"Já vai começar uma moça mês que vem porque não estou tendo horário."*
+> *"Nada que não possa melhorar."*
+
+---
+
+## 3. OBJEÇÕES IMPLÍCITAS E EXPLÍCITAS
+
+| Objeção | Como aparece | Tipo |
+|---|---|---|
+| **Localização** | *"A clínica fica em Macapá?"* | Explícita |
+| **Custo da avaliação** | *
+
+---
+
+## 🗓️ Análise de Campo — 27 de abril de 2026
+> 36 mensagens reais analisadas
+
+# 📊 Análise de Comportamento de Mercado — Leads & Clientes Reais
+**Base:** 36 mensagens | 18 contatos | Canal: WhatsApp Inbound
+**Contexto:** Alimenta o repertório da agente Nova (@byericsantos)
+
+---
+
+## 1. PADRÕES DE COMPORTAMENTO
+
+### 🔵 Como entram em contato
+- **Entram com mensagem padrão/genérica**, muitas vezes via clique em botão de anúncio:
+  > *"Olá! Tenho interesse e queria mais informações, por favor."*
+  Esse padrão aparece **4 vezes em contatos diferentes** (Tania, Desconhecido x2, suelymonteiro1112) — sinal de que vieram do mesmo CTA de anúncio ou link automático.
+
+- **Entram com dúvida geográfica antes de qualquer outra coisa:**
+  > *"A clínica fica em Macapá?"* — Vera Gonçalves
+  > *"Meu DDD é de Belém, mas estou morando em Macapá"* — Milena Moraes
+  Localização é uma barreira de entrada recorrente nesse mercado.
+
+- **Entram com intenção emocional declarada:**
+  > *"Quero muito ser paciente modelo nariz! ☺️"* — Tania
+  > *"Bom dia, amanhã vou pessoalmente até a clínica"* — Neize
+
+### 🟡 Como demonstram interesse
+- Fazem **várias perguntas em sequência sem esperar resposta** (padrão Vera Gonçalves: 5 mensagens seguidas sobre procedimentos, prazo e localização).
+- Demonstram interesse **ligando o procedimento à própria vida/condição**:
+  > *"Blefaroplastia superior com sobrancelhas/castanhares total"* — Cleide (sabe exatamente o que quer)
+  > *"Só farei se for conjugado com a reposição de minhas sobrancelhas"* — Cleide (interesse real, mas condicional)
+
+### 🔴 Como hesitam / somem
+- **Somem com desculpa de agenda cheia:**
+  > *"Ainda to sem tempo pra gente conversar"* — Pam
+  > *"Sim hoje foi pesado"* — Pam
+- **Aparecem, demonstram interesse e param no meio:**
+  Pam mantém contato, acena com positividade (*"Sim eu vou ti falando"*) mas nunca avança.
+- **Testam o custo antes de qualquer compromisso:**
+  > *"Terei que pagar a avaliação?"* — Pilar
+
+### 🟢 Como voltam
+- Voltam com **perguntas técnicas mais específicas**, indicando que pesquisaram no intervalo:
+  > *"Esse procedimento com fio é definitivo também?"*
+  > *"A rinoplastia é definitiva né?"* — Vera (voltou com perguntas mais profundas)
+- Voltam com **decisão semi-formada**: Cleide já sabe o procedimento, já tem condição (*"só farei se..."*)
+
+### ⚠️ Ruído na base
+- Há contatos que **claramente não são leads**: Maria (mensagem errada), Natural Chef (cardápio), Instituto HR Andrade (concorrente/fornecedor), Giovanne (oferta de curso de vendas).
+- Isso indica que **a lista de contatos não está segmentada** — oportunidade de conteúdo sobre qualificação de leads.
+
+---
+
+## 2. FRASES EXATAS QUE O MERCADO USA
+
+### 💬 Como descrevem seus problemas / situação
+> *"Sou uma senhora aposentada"* — HILDA MARIA
+*(Se apresenta pelo perfil socioeconômico antes de qualquer coisa — preço é uma preocupação implícita)*
+
+> *"Estou a 14 anos na área e 1 ano e pouco pra mim"* — Leandra
+*(Profissional experiente, mas recém-empreendedora — insegurança de gestão, não de técnica)*
+
+> *"Nada que não possa melhorar"* — Leandra
+*(Reconhece lacuna, mas minimiza — postura defensiva típica de quem ainda não contratou assessoria)*
+
+> *"Tenho uma amiga que vou fechar só um anúncio com ela, eu faço mais avulso mesmo"* — Leandra
+*(Resistência a contrato recorrente; prefere testar pontualmente)*
+
+### 💬 Como falam de dinheiro/preço
+> *"Terei que pagar a avaliação?"* — Pilar
+*(Objeção de custo logo na entrada — não quer se comprometer financeiramente antes de ver valor)*
+
+> *"1 sessão de criolipólise por 1.200, quando alugo a máquina"* — Leandra
+*(Fala de ticket alto com naturalidade — não é o preço que trava, é a estrutura de oferta)*
+
+> *"Fechar contratos de 3,5k a 5k por mês não é sorte, é método"* — Giovanne
+*(Contato de ruído, mas revela o benchmark de precificação percebido no mercado de assessoria)*
+
+### 💬 Como expressam insegurança ou desconfiança
+> *"Só farei se for conjugado com..."* — Cleide
+*(Impõe condição antes de fechar — precisa de segurança de que será ouvida)*
+
+> *"Como funciona a questão de ser paciente modelo?"* — Milena
+*(Interesse real, mas quer entender o "custo oculto" antes de avançar)*
+
+> *"Essa promoção vai

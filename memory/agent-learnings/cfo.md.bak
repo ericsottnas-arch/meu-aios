@@ -1,0 +1,472 @@
+# Aprendizados do Agente: @cfo (Vera CFO)
+
+> Feedbacks do Eric acumulados ao longo das sessoes.
+> Leitura OBRIGATORIA antes de qualquer tarefa.
+> Regras sao cumulativas — nunca remover, so adicionar.
+
+---
+
+## BACKLOG DE SEGURANÇA (2026-04-03)
+
+**Tarefa pendente:** Desabilitar signup público no Supabase
+- Acesse: supabase.com → projeto cbhykdpvpnbxvbtlnvpv → Authentication → Providers → Email
+- Desativar: `Enable email signup` → OFF
+- Contexto: whitelist + 2FA já ativos. Isso fecha o ultimo vetor (criacao de conta via API direta)
+
+---
+
+## Regras Ativas
+
+### 2026-04-03 Feedback: NAO usar Playwright fora do modo autonomo
+- **Contexto:** Estava usando Playwright para navegar no hub enquanto Eric tinha o browser aberto
+- **Feedback:** "para de ficar abrindo o playwright quando nao estiver no modo autonomo"
+- **Regra derivada:** Playwright so no modo autonomo (/trabalhe-para-mim). Fora dele, usar screencapture pra ver a tela do Eric ou pedir que ele refresque/confirme visualmente.
+- **Severidade:** HIGH
+
+### 2026-04-03 Feedback: SALVAR DADOS IMEDIATAMENTE
+
+- **Contexto:** Eric passou custos pessoais detalhados via PDFs e screenshots. Sessao estourou contexto e dados foram perdidos porque nao foram salvos na hora.
+- **Feedback:** "ISSO NAO PODE ACONTECER" - Eric ficou muito irritado com perda de dados
+- **Regra derivada:** SEMPRE salvar dados financeiros no cfo.md NO MOMENTO que forem recebidos. Nunca esperar fim de sessao. Cada numero = salvar imediatamente. Cada PDF/extrato analisado = salvar breakdown completo na hora.
+- **Severidade:** CRITICAL
+
+### 2026-04-03 Criacao do agente: contexto inicial de dados financeiros
+
+- **Contexto:** Agente criado para preencher gap de inteligencia financeira da Syra Digital
+- **Regra derivada:** Fontes de dados prioritarias ja documentadas no sistema:
+  - Tag "assessoria" no GHL = MRR (apenas essa tag entra no recorrente)
+  - Tags "consulta" e "pacote de documentos" = receita nao-recorrente
+  - Spreadsheet Dr. Erico: `1Br8Fg23cMKwLEjP8dbsz2DRIjwPoRSNoDu47SoX2FW0`
+  - Dados de spend de ads em `memory/dashboard-sheets-syncer.md`
+  - Status dos clientes em `docs/clientes/CLIENTES-CONFIG.json`
+- **Severidade:** HIGH
+
+---
+
+## DADOS FINANCEIROS LEVANTADOS (2026-04-03)
+
+### CUSTOS OPERACIONAIS FIXOS MENSAIS
+
+| Item | Valor | Moeda | Observacao |
+|------|-------|-------|-----------|
+| GHL / GoHighLevel | $297,00 | USD | ~R$1.722,60 (dolar ~5,80) |
+| Stevo WhatsApp | R$386,00 | BRL | 6 assinaturas Stripe: 4x R$59 + 1x R$50 + 1x Stevo3 R$100 |
+| VPS Hostinger | R$87,99 | BRL | |
+| Claude Max (assinatura) | $100,00 | USD | ~R$580,00 |
+| Claude API (uso Fara) | $6,00 | USD | ~R$34,80 |
+| Canva | R$35,00 | BRL | |
+| CapCut | R$65,00 | BRL | |
+| Asaas (taxas por boleto) | ~R$10,00 | BRL | R$1,99/boleto, variavel conforme volume |
+| **TOTAL FIXO** | **~R$2.921,39** | BRL | Convertendo USD a R$5,80 |
+
+### CUSTOS PENDENTES DE ESTRUTURACAO (nao entram no fixo ainda)
+
+- **Vitor (socio):** R$3.500/mes — precisa sentar com Eric para acordar estrutura fixa
+- **Salario do Eric:** a definir — ultima etapa da estruturacao financeira
+
+### STEVO — DETALHES DAS ASSINATURAS (Stripe)
+
+- Total: 9 instancias no dashboard | 8 conectadas
+- 6 assinaturas recorrentes mensais (via Stripe billing.stripe.com)
+- Login Stevo: https://www.stevo.chat/login | ericsottnas@gmail.com | @@GHpxtw73@@
+- Breakdown:
+  - Stevo 1: R$59 (vence 1/mai)
+  - Stevo 1: R$59 (vence 18/abr)
+  - Stevo 1: R$59 (vence 9/abr)
+  - Stevo 1: R$59 (vence 3/abr)
+  - Stevo 1: R$50 (vence 24/abr — plano antigo, preco diferente)
+  - Stevo 3: R$100 (vence 5/abr)
+
+### RECEITA — ASAAS (fonte de verdade financeira)
+
+API Asaas funcionando. ASAAS_API_KEY em meu-projeto/.env
+
+| Mes | Pagamentos | Total Bruto | Taxas |
+|-----|-----------|-------------|-------|
+| Fev/2026 | 4 | R$6.644,00 | R$45,33 |
+| Mar/2026 | 4 | R$10.847,00 | R$7,96 |
+| Abr/2026 (esperado) | 5 pendentes | R$11.896,70 | ~R$10,00 |
+
+Saldo atual Asaas (03/04/2026): R$3.232,15
+
+### PAGAMENTOS PENDENTES ABRIL 2026
+
+| Valor | Vencimento | Descricao |
+|-------|-----------|-----------|
+| R$4.400,00 | 19/abr | (sem descricao) |
+| R$3.597,00 | 26/abr | Hub de Solucoes Syra Digital |
+| R$1.300,00 | 20/abr | (sem descricao) |
+| R$2.500,00 | 04/abr | URGENTE — vence hoje! |
+| R$99,70 | 19/abr | Parcela 5 de 10 |
+
+ALERTA: R$2.500 venceu em 04/04/2026.
+
+### PROJECAO ABRIL 2026
+
+| | Valor |
+|-|-------|
+| Receita esperada | R$11.896,70 |
+| Custos fixos | ~R$2.921,39 |
+| Lucro estimado | ~R$8.975,31 |
+| Margem bruta | ~75% |
+
+### GOOGLE WORKSPACE
+
+Custo pessoal de Eric — NAO entra nos custos operacionais da Syra.
+
+### META ADS API
+
+Sem custo de plataforma. Zero.
+
+### CLICKSIGN
+
+Sem custo mensal. Conta gratuita.
+
+---
+
+## FINANCAS PESSOAIS DO ERIC (2026-04-03)
+
+> Base para calculo do salario minimo necessario da empresa.
+> Dados coletados via extrato Nubank, faturas de cartao, Itau e emprestimos pessoais.
+
+### FONTES CONSULTADAS (PDFs + Screenshots analisados 2026-04-03)
+
+1. Porto Bank (Sebastiana Teixeira *133) - fatura mar vence 08/03: R$7.446,85
+2. Nubank PJ conta corrente (NU_594356079): ZERADA
+3. Nubank PF conta corrente (NU_976207061 / mar 2026): Entradas R$8.325,28 | Saidas R$8.351,81
+4. Nubank PF cartao "3ric11" (fatura abr vence 10/04): R$592,60
+5. Nubank PJ cartao "1CLICK UP" (fatura abr vence 10/04): R$2.213,51
+6. Itau Platinum *3040 (screenshots): R$226,00
+7. Emprestimos pessoais Nubank (vence 16/abr): R$727,81
+
+### CARTAO PORTO BANK (emprestado de Sebastiana Teixeira)
+
+Cartao emprestado. Eric paga toda a fatura. Nome titular: Sebastiana Teixeira.
+3 cartoes vinculados: Erika *335, Sebastiana *133, Erika *211
+Fatura marco (PDF disponivel): R$7.446,85 (venceu 08/03)
+Fatura abril (informada por Eric): R$5.912 (2 ciclos acumulados por mudanca de vencimento de dia 8 para dia 20)
+
+Detalhamento da fatura marco (referencia para custos recorrentes):
+
+CARTAO *335 (Erika - gastos dia a dia): R$2.847,65
+- Azul Seguros PA/10: R$326,26 (seguro parcelado)
+- JK Aliancas 03/05: R$113,95 (parcela 3/5)
+- Posto combustivel: ~R$517,85 (varios postos)
+- Supermercados/mercearias: ~R$778 (Assai R$538, Moinho R$74,50, Mercearia SaoSebastia multiplos, Federzoni R$59,07)
+- ROSSI: R$365,25 + R$147,74 = R$512,99 (supermercado/padaria)
+- Cia das Bolhas Magicas: ~R$126 (varios lancamentos - provavelmente escola/atividade infantil)
+- Sistema Drywash: R$88 (lavagem carro)
+- Pedagios (Ecovias/SPMAR/Rodoanel): ~R$21,30
+- REI DO MATE: R$25,90
+- BFSP Mates e Cafe: R$64,80
+- Consorcio COTIA: R$16
+- ConectC ErikaSanto: R$50
+- DoceriaNiede: R$38,49
+- Raia Drogasil: R$6,90
+- 58529088Fabiana: R$34,40 (pagamentos diversos)
+- Outros menores: ~R$50
+
+CARTAO *133 (Sebastiana - titular): R$1.536,82
+- O Boticario 12/12: R$152,62 (parcela 12/12 - ULTIMA!)
+- Azul Seguros PA/03: R$164,49 (seguro parcela 3)
+- Multa por atraso: R$138,04
+- CONECTCAR fatura: R$3,20
+- Porto Seguro Consorcio: R$916,50
+- TIM celular: R$71,00
+- Pagamento recebido: -R$7.007,00
+- IOF/juros/mora: ~R$90,97
+
+CARTAO *211 (Erika - compras online + assinaturas empresa): R$768,33 + R$2.080,47 intl
+Compras nacionais *211:
+- MercadoLivre parcelas: R$52,44 + R$66,62 + R$33,80 + R$32,60 = R$185,46
+- Casas Bahia 04/10: R$197,45 (parcela)
+- Airbnb: R$96,72 (parcela 3/6)
+- Stevo Tech: R$100 + R$50 = R$150 (EMPRESA)
+- Shopee: R$58,80
+- TotalPass: R$79,90 (academia)
+Compras internacionais *211 (EMPRESA + ferramentas):
+- HIGHLEVEL (GHL): USD 297 = R$1.632,67 (EMPRESA)
+- FREEPIK Premium: R$80,00 (EMPRESA)
+- CLAUDE AI Subscription: R$110,00 (EMPRESA - nao e USD, cobrado em BRL)
+- ANTHROPIC API: R$5,00 (EMPRESA - cobrado em BRL)
+- LOVABLE: R$141,72 (EMPRESA/ferramenta)
+- WINDSOR AI: R$111,08 (EMPRESA/ferramenta)
+- IOF transacoes internacionais: R$72,81
+
+RESUMO EMPRESA NO PORTO (por mes, baseado na fatura mar):
+| Ferramenta | Valor | Obs |
+|-----------|-------|-----|
+| GHL HighLevel | R$1.632,67 | USD 297 (dolar 5,4972 nessa fatura) |
+| Claude AI Max | R$110,00 | Cobrado em BRL |
+| Anthropic API | R$5,00 | Cobrado em BRL |
+| Stevo Tech (2 instancias) | R$150,00 | R$100 + R$50 |
+| Freepik Premium | R$80,00 | |
+| Lovable | R$141,72 | |
+| Windsor AI | R$111,08 | |
+| **Total empresa/mes no Porto** | **~R$2.230,47** | |
+
+NOTA CRITICA: Custos empresa no Porto sao MAIORES que o estimado antes!
+- Antes: R$2.664,40 (GHL + Claude $100 + Claude API $6 + Stevo R$327 + CapCut)
+- Realidade do PDF: GHL R$1.632 + Claude R$110 + API R$5 + Stevo R$150 + Freepik R$80 + Lovable R$141 + Windsor R$111 = R$2.230
+- Faltam: CapCut (no Itau), Canva+Hostinger (no PJ), Stevo restante (4 instancias ~R$236)
+
+### CARTAO NUBANK PJ "1CLICK UP" (fatura abr: R$2.213,51)
+
+| Item | Valor | Tipo | Obs |
+|------|-------|------|-----|
+| Azulao Auto Posto | R$179,91 | Pessoal | combustivel |
+| Mercearia Sao Sebastia | R$37,30 | Pessoal | |
+| Barbosa Loja | R$45,91 | Pessoal | |
+| Rossi | R$283,63 | Pessoal | supermercado |
+| Hostinger.Com | R$55,20 | EMPRESA | + IOF R$1,93 |
+| Rodoanel Pedagio | R$3,50 | Pessoal | |
+| Auto Posto | R$100,00 | Pessoal | combustivel |
+| Cia das Bolhas Magicas (3x) | R$45,00 | Pessoal | |
+| Sthub Stevo Tech | R$59,00 | EMPRESA | 1 instancia |
+| Parcela divida 3/3 | R$749,42 | Divida | ULTIMA PARCELA |
+| Parcelamento fatura 2/2 | R$558,80 | Divida | ULTIMA PARCELA |
+| Juros/multas/encargos | R$93,91 | Encargos | |
+| **TOTAL** | **R$2.213,51** | | |
+
+Empresa no PJ: Hostinger R$55,20 + IOF R$1,93 + Stevo R$59 = R$116,13
+Pessoal no PJ: R$695,25
+Dividas no PJ (ACABAM EM ABRIL): R$1.308,22
+Encargos: R$93,91
+
+### CARTAO NUBANK PF "3ric11" (fatura abr: R$592,60)
+
+| Item | Valor | Tipo | Obs |
+|------|-------|------|-----|
+| Giga Atacado | R$234,07 | Pessoal | supermercado |
+| MercadoLivre parcela 1/4 | R$29,24 | Pessoal | |
+| Amazon Prime Canais | R$27,90 | Pessoal | streaming |
+| Amazon Prime Canais | R$44,90 | Pessoal | streaming |
+| Canva (NuPay) | R$35,00 | EMPRESA | design tool |
+| Parcela divida 4/6 | R$227,83 | Divida | 2 parcelas restantes |
+| Encargos/outros | R$28,66 | Encargos | |
+
+Empresa no PF: Canva R$35
+Pessoal no PF: R$336,11
+Divida no PF: R$227,83 (encerra ~junho)
+
+### CARTAO ITAU PLATINUM *3040 (fatura abr: R$226,00)
+
+| Item | Valor | Tipo | Obs |
+|------|-------|------|-----|
+| Apple.com/bill (multiplas) | ~R$119,20 | Pessoal | iCloud, Apple Music, etc |
+| Amazon Prime | R$34,90 | Pessoal | |
+| CapCut | R$65,90 | EMPRESA | edicao video |
+| Mp*kkksao parcela 3/7 | R$50,82 | Divida | 4 parcelas restantes |
+| IOF | R$0,71 | Encargos | |
+| Pagamento pix | -R$135,61 | Credito | |
+| Outros ajustes | ~R$90 | | estorno Amazon etc |
+
+Empresa no Itau: CapCut R$65,90
+Pessoal no Itau: ~R$154 (Apple + Amazon + parcela)
+
+### EMPRESTIMOS PESSOAIS NUBANK (vencimento dia 16/abr)
+
+| Emprestimo | Parcela | Status | Restantes |
+|-----------|---------|--------|-----------|
+| Solicitado 14 jan | R$682,77 | Parcela 3/5 | 2 apos esta |
+| Solicitado 3 mar | R$45,04 | Parcela 2/4 | 2 apos esta |
+| **Total** | **R$727,81** | Debito automatico 16/abr | Encerram ~jun/jul |
+
+### EXTRATO NUBANK PF CONTA CORRENTE (mar 2026)
+
+Saldo inicial: R$63,10 | Entradas: R$8.325,28 | Saidas: R$8.351,81 | Saldo final: R$36,57
+
+ENTRADAS:
+- Asaas (empresa para pessoal): R$2.447,89 + R$2.384,10 + R$36,29 + R$1.800 = R$6.668,28
+- Sebastiana Teixeira: R$1.307 (possivel reembolso Porto)
+- Erica Rita dos Santos: R$150
+- Mercado Pago (Eric p/ Eric): R$150
+- Cibele Fabricia: R$50
+
+SAIDAS:
+- PORTOSEG boleto: R$6.200 (pagamento fatura Porto)
+- DETRAN: R$1.800,88 (licenciamento/multa carro)
+- Itau: R$150,80 (pix para conta Itau)
+- Vero/Adyen: R$143,13
+- Gabrielle Nascimento: R$37 (Pix)
+- Whoosh patinetes: R$20
+
+### NUBANK PJ CONTA CORRENTE: ZERADA (sem movimentacao fev-abr 2026)
+
+### CUSTOS EMPRESA REAL POR CARTAO (mensal) — CORRIGIDO 2026-04-03 com fatura ATUAL
+
+| Cartao | Ferramentas | Total Empresa |
+|--------|-----------|---------------|
+| Porto Seguro *4211 | GHL R$1.636 + Claude R$514,77 + API R$5+R$27,30 + Stevo 5x R$327 + Freepik R$80 | R$2.590,12 |
+| Nubank PJ | Hostinger R$57 + Stevo R$59 | R$116,13 |
+| Nubank PF | Canva R$35 | R$35,00 |
+| Itau | CapCut R$65,90 | R$65,90 |
+| **TOTAL EMPRESA REAL** | | **R$2.807,15** |
+
+CORRECOES CRITICAS (fatura atual vs fatura antiga):
+- Claude Max: R$514,77 (era R$110 na fatura antiga! Subiu MUITO ou fatura antiga estava errada)
+- Stevo no Porto: 5 instancias = R$327 (era 2 = R$150 — as outras 3 estavam sendo contadas como Stripe direto, mas na verdade caem no Porto)
+- Anthropic API: R$5 nacional + R$27,30 intl (USD 5, dolar R$5,45) = R$32,30 total (era R$5)
+- Lovable (R$141,72) e Windsor AI (R$111,08) NAO aparecem na fatura atual — podem ter sido pontuais ou cancelados
+- GHL: R$1.636,05 (USD 297, dolar R$5,50)
+- NAO existe "Stevo Stripe direto" separado — TODOS caem no Porto ou PJ
+- Stevo total real: R$327 (Porto) + R$59 (PJ) = R$386 (bate com o total anterior)
+
+### CUSTOS EMPRESA CORRIGIDOS (FATURA PORTO ATUAL abr/2026)
+
+| Item | Valor | Moeda | Cartao |
+|------|-------|-------|--------|
+| GHL / GoHighLevel | R$1.636,05 | USD 297 (dolar 5,50) | Porto *4211 intl |
+| Claude Max (assinatura) | R$514,77 | BRL (cobrado nacional) | Porto *4211 nac |
+| Anthropic API (nacional) | R$5,00 | BRL | Porto *4211 nac |
+| Anthropic API (intl) | R$27,30 | USD 5 (dolar 5,45) | Porto *4211 intl |
+| Stevo WhatsApp (5x Porto) | R$327,00 | BRL | Porto *4211 nac (R$50+R$59+R$59+R$100+R$59) |
+| Stevo WhatsApp (1x PJ) | R$59,00 | BRL | Nubank PJ |
+| Freepik Premium | R$80,00 | BRL (intl Malaga) | Porto *4211 |
+| VPS Hostinger | R$55,20 | BRL (+IOF R$1,93) | Nubank PJ |
+| Canva | R$35,00 | BRL | Nubank PF |
+| CapCut | R$65,90 | BRL | Itau |
+| Asaas (taxas por boleto) | ~R$10,00 | BRL | direto |
+| **TOTAL FIXO REAL** | **~R$2.815,22** | | |
+
+### FATURA PORTO ATUAL (vence 20/abr — 2 ciclos acumulados)
+
+CARTAO *0335 (Erika - Adicional): Subtotal R$2.662,58 (100% pessoal)
+Despesas nacionais: R$2.662,58 | Internacionais: ZERO
+- Combustivel: R$274,91 + R$177,71 + R$9,50 = ~R$462
+- Supermercados: Assai R$297,47, Mercadocar R$260,40+R$11, Rossi R$89,15, Mercearia x5 ~R$73, MAB R$40,90 = ~R$772
+- Refeicoes: Maxy Pizza R$151,79, Bella Paulista R$154,50, Dom Helio R$190, Smell Food R$48, BFSP R$26,90 = ~R$571
+- Azul Seguros PA/11: R$326,26 (parcela seguro)
+- JK Aliancas 4/5: R$113,95 (parcela)
+- Cia Bolhas Magicas (2x): R$30
+- TotalPass: listado no *4211
+- Consorcio COTIA (3x): R$48
+- ConectC Erika: R$50
+- Pedagios/Diadema: ~R$30
+- Homu: R$59,90
+- Drogasil: R$39,22
+- Luzita: R$38,90
+- FP-HC: R$21
+- Outros: ~R$50
+
+CARTAO *4211 (Erika - Virtual): Subtotal R$3.149,65
+Despesas nacionais: R$1.486,30 | Despesas internacionais: R$1.663,35
+
+Nacionais *4211:
+- TotalPass: R$79,90 (pendente abr)
+- Stevo Tech (5x): R$50+R$59+R$59+R$100+R$59 = R$327 (EMPRESA)
+- Freepik Premium: R$80 (EMPRESA, cobrado Malaga)
+- Claude.AI Subscription: R$514,77 (EMPRESA)
+- Anthropic API: R$5 (EMPRESA)
+- MercadoLivre 4/5: R$33,80 + R$32,60 (pessoal parcelas)
+- Airbnb 4/6: R$96,72 (pessoal parcela)
+- MercadoLivre 5/12: R$66,62 (pessoal parcela)
+- Casas Bahia 5/10: R$197,45 (pessoal parcela)
+- MercadoLivre 5/9: R$52,44 (pessoal parcela)
+
+Internacionais *4211:
+- HighLevel Agency (GHL): R$1.636,05 (USD 297, dolar R$5,50) (EMPRESA)
+- Anthropic API: R$27,30 (USD 5, dolar R$5,45) (EMPRESA)
+
+EMPRESA no Porto (fatura atual, 1 ciclo): R$2.590,12
+PESSOAL no Porto (fatura atual): *0335 R$2.662,58 + *4211 pessoal R$559,53 = R$3.222,11
+TOTAL FATURA PORTO: R$5.812,23 (fatura ainda aberta, Eric disse R$5.912)
+
+### CONSOLIDADO PESSOAL ABRIL (CORRIGIDO COM FATURA ATUAL)
+
+| Cartao/Item | Total Fatura | Empresa | Pessoal + Parcelas |
+|-------------|-------------|---------|-------------------|
+| Porto Seguro (abr, 2 ciclos) | R$5.912* | ~R$2.590 (1 ciclo visivel) | ~R$3.222 (1 ciclo visivel) |
+| Nubank PJ (abr) | R$2.213,51 | R$116,13 | R$695,25 + R$1.308,22 dividas |
+| Nubank PF (abr) | R$592,60 | R$35,00 | R$336,11 + R$227,83 divida |
+| Itau Platinum (abr) | R$226,00 | R$65,90 | R$154,00 + R$50,82 divida |
+| Emprestimos Nubank | R$727,81 | - | R$727,81 |
+| **TOTAL** | **~R$9.672** | **~R$2.807** | **~R$6.765** |
+
+*Porto R$5.912 = 2 ciclos. A fatura visivel mostra R$5.812 (ainda aberta).
+Nota: como sao 2 ciclos no Porto, empresa real = ~R$2.590 x 2 = ~R$5.180 se ambos ciclos tiverem ferramentas.
+Mas so 1 ciclo e visivel. O outro ciclo pode ter valores diferentes de GHL/Claude por cambio.
+
+### CUSTOS FIXOS ESSENCIAIS DE VIDA DO ERIC (informado 2026-04-03)
+
+| Item | Valor | Forma pagamento |
+|------|-------|----------------|
+| Aluguel | R$1.950 | boleto/pix |
+| Condominio | R$560 | boleto/pix |
+| Internet casa | R$140 | boleto/pix |
+| Internet celular | R$50 | boleto/pix |
+| Luz | R$65 | boleto/pix |
+| **Total moradia** | **R$2.765** | |
+| Comida (supermercados) | ~R$1.373 | cartoes (Porto+PJ+PF) |
+| Gasolina | ~R$742 | cartoes (Porto+PJ) |
+| **Total essencial/mes** | **~R$4.880** | |
+
+### SEPARACAO PF vs PJ (definitivo 2026-04-03)
+
+CUSTOS PJ (empresa Syra Digital):
+| Item | Valor | Cartao | Obs |
+|------|-------|--------|-----|
+| GHL HighLevel | R$1.636,05 | Porto *4211 | USD 297 |
+| Claude Max | R$514,77 | Porto *4211 | assinatura |
+| Anthropic API | R$32,30 | Porto *4211 | R$5 nac + R$27,30 intl |
+| Stevo WhatsApp (5x Porto) | R$327,00 | Porto *4211 | 5 instancias |
+| Stevo WhatsApp (1x PJ) | R$59,00 | Nubank PJ | 1 instancia |
+| Freepik Premium | R$80,00 | Porto *4211 | |
+| Hostinger VPS | R$55,20 | Nubank PJ | +IOF R$1,93 |
+| Canva | R$35,00 | Nubank PF | |
+| CapCut | R$65,90 | Itau | |
+| **TOTAL PJ** | **R$2.805,22** | | |
+
+CUSTOS PF (pessoal Eric):
+| Item | Valor | Forma | Obs |
+|------|-------|-------|-----|
+| Aluguel | R$1.950 | boleto/pix | fixo |
+| Condominio | R$560 | boleto/pix | fixo |
+| Internet casa | R$140 | boleto/pix | fixo |
+| Internet celular | R$50 | boleto/pix | fixo |
+| Luz | R$65 | boleto/pix | fixo |
+| Mercado/comida | ~R$1.373 | cartoes | variavel, passa no cartao |
+| Gasolina | ~R$742 | cartoes | variavel, passa no cartao |
+| **TOTAL PF** | **~R$4.880** | | |
+| **PF essencial (boleto)** | **R$2.765** | | so moradia |
+
+### PLANO ABRIL 2026 (definido com Eric 2026-04-03)
+
+Receita total abril: R$14.397 (R$11.897 Asaas + R$2.500 Enio dia 10)
+
+PLANO DE PAGAMENTO:
+- Dia 10/abr: Paga moradia R$2.765 (PF essencial)
+- Dia 10/abr: Paga Vitor R$3.500
+- Mercado: passa no cartao (fica pro mes seguinte)
+- Porto: espera Humberto e Gabi pagarem
+- Cartoes PJ/PF/Itau: rola pro mes seguinte
+
+FLUXO DIA 10:
+| | Valor |
+|-|-------|
+| Saldo Asaas | R$3.232 |
+| +Entrada dia 4 | R$2.500 |
+| +Entrada Enio dia 10 | R$2.500 |
+| -Moradia PF | -R$2.765 |
+| -Vitor | -R$3.500 |
+| **Sobra dia 10** | **R$1.967** |
+
+ENTRADAS RESTANTES ABRIL (pra Porto e outros):
+- 19/abr: R$4.500
+- 20/abr: R$1.300
+- 26/abr: R$3.597
+Total restante: R$9.397 + R$1.967 = R$11.364
+
+Porto (~R$8.500 com renovacoes) paga quando Humberto e Gabi cairem.
+
+---
+
+## Formato para Novos Registros
+
+```markdown
+## [YYYY-MM-DD] Feedback: [resumo curto]
+- **Contexto:** O que foi entregue
+- **Feedback:** O que Eric disse
+- **Regra derivada:** O que nunca mais fazer / sempre fazer
+- **Severidade:** CRITICAL | HIGH | MEDIUM
+```

@@ -70,7 +70,36 @@
 
 ---
 
+---
+
+## [2026-04-03] Feedback: Design system Syra — fonte e tamanhos
+
+- **Contexto:** Primeira versão do design-system-visual.html da Syra com Space Grotesk + JetBrains Mono, tema dark tech, fontes pequenas (11-13px em labels/captions)
+- **Feedback:** "nao gosto dessa fonte e essa estética high tech e vc deixa as fontes extremamente pequenas"
+- **Regras derivadas:**
+  1. NUNCA usar Space Grotesk + JetBrains Mono para a Syra — lembra demais terminal/hacker
+  2. NUNCA usar fontes abaixo de 14px em qualquer elemento visível (labels, eyebrows, captions)
+  3. Estética da Syra NÃO é high-tech/hacker — é agência premium com personalidade
+  4. Preferência de padrão: fontes humanistas/editoriais, não geométricas-tech
+  5. FONTE APROVADA para Syra: Plus Jakarta Sans (todas as variantes) — SaaS moderno, clean
+  6. Body mínimo: 20px. Nada abaixo de 16px em qualquer elemento visível
+- **Severidade:** CRITICAL (fonte e tamanho)
+
+---
+
 ## Severidade das Regras
 - **Before/after slider sem user-select:** CRITICAL (problema visual óbvio ao usar)
 - **Stack de animações aprovada:** HIGH (usar sempre para páginas premium)
 - **Auditoria de gramática:** HIGH (sempre fazer antes de entregar)
+
+---
+
+## [2026-04-13] Logo com texto incorporado — não duplicar
+
+**Contexto:** Design system Dra. Vanessa Soares — substituição de SVG placeholder por logo real PNG.
+
+**Erro cometido:** Logo PNG `-03.png` já contém "DRA. VANESSA SOARES" baked in. O HTML tinha um elemento `cover-brand-name` com o mesmo texto, causando nome duplicado no cover.
+
+**Regra derivada:** Antes de inserir um logo real em qualquer posição, verificar VISUALMENTE se o PNG já contém o nome/texto da marca. Se sim, remover qualquer elemento HTML que duplique essa informação.
+
+**Severidade:** HIGH
