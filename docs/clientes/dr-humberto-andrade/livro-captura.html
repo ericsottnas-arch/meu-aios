@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queiloplastia: Aumento Cirúrgico dos Lábios · HR Andrade</title>
+  <meta name="description" content="Acesso exclusivo ao livro Queiloplastia: Aumento Cirúrgico dos Lábios. Obra técnica desenvolvida por especialistas de referência nacional. Exclusivo para profissionais habilitados.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:      #1E56C8;
+      --blue-lt:   #4A78DC;
+      --blue-dk:   #0F2E6E;
+      --cream:     #F0F4FB;
+      --parch:     #C8D8EE;
+      --ink:       #070C17;
+      --ink-lt:    #111827;
+      --ink-2:     #1C2840;
+      --mid:       #4E6280;
+      --mid-lt:    #7D93B0;
+      --gold:      #BBA96E;
+      --gold-lt:   #D4C48A;
+      --fd: 'Cormorant Garamond', Georgia, serif;
+      --fb: 'DM Sans', system-ui, sans-serif;
+      --max: 1180px;
+      --r: 4px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: var(--fb);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* grain overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 9999;
+      pointer-events: none;
+      opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+    /* ── LABEL TAG ── */
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--fb);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .tag::before {
+      content: '';
+      display: block;
+      width: 18px; height: 1px;
+      background: var(--gold);
+      opacity: .7;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 20px 0;
+      background: linear-gradient(to bottom, rgba(7,12,23,.96) 60%, transparent);
+      backdrop-filter: blur(6px);
+    }
+    .nav__inner {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+    }
+    .nav__logo {
+      grid-column: 2;
+      font-family: var(--fd);
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--cream);
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .nav__logo span { color: var(--gold); }
+    .nav__right { grid-column: 3; display: flex; justify-content: flex-end; }
+    .nav__cta {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--gold);
+      border: none;
+      border-radius: var(--r);
+      padding: 10px 22px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .nav__cta:hover { background: var(--gold-lt); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 130px 0 80px;
+    }
+
+    /* ghosted background word */
+    .hero__ghost {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--fd);
+      font-size: clamp(80px, 14vw, 180px);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -.02em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(30,86,200,.1);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    /* radial glow */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -10%; right: -5%;
+      width: 60%; height: 80%;
+      background: radial-gradient(ellipse, rgba(30,86,200,.14) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* thin horizontal rule lines */
+    .hero__lines {
+      position: absolute; inset: 0;
+      pointer-events: none; z-index: 0;
+      overflow: hidden;
+    }
+    .hero__lines::before,
+    .hero__lines::after {
+      content: '';
+      position: absolute; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent 0%, rgba(30,86,200,.15) 30%, rgba(30,86,200,.15) 70%, transparent 100%);
+    }
+    .hero__lines::before { top: 38%; }
+    .hero__lines::after  { top: 62%; }
+
+    .hero__grid {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero__kicker { margin-bottom: 24px; }
+
+    .hero__title {
+      font-family: var(--fd);
+      font-size: clamp(44px, 5.5vw, 80px);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--cream);
+      margin-bottom: 6px;
+      letter-spacing: -.01em;
+    }
+    .hero__title em { font-style: italic; color: var(--blue-lt); }
+    .hero__title .sub {
+      display: block;
+      font-size: clamp(20px, 2.5vw, 34px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--parch);
+      margin-top: 6px;
+      letter-spacing: 0;
+    }
+
+    .hero__rule {
+      width: 64px; height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin: 24px 0;
+    }
+
+    .hero__desc {
+      font-size: 15px;
+      color: var(--mid-lt);
+      line-height: 1.8;
+      max-width: 460px;
+      margin-bottom: 36px;
+    }
+
+    .hero__meta {
+      display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero__btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--r);
+      padding: 14px 28px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: background .2s, transform .15s;
+    }
+    .hero__btn:hover { background: var(--blue-lt); transform: translateY(-2px); }
+    .hero__btn-arrow { font-size: 16px; }
+
+    .hero__edition {
+      font-size: 12px;
+      color: var(--mid);
+      letter-spacing: .06em;
+    }
+
+    /* book visual */
+    .hero__book {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero__book-scene {
+      position: relative;
+      display: inline-block;
+      transform: perspective(1400px) rotateY(-14deg) rotateX(4deg);
+      transition: transform .7s ease;
+      filter: drop-shadow(-20px 30px 60px rgba(0,0,0,.7)) drop-shadow(0 0 40px rgba(30,86,200,.25));
+    }
+    .hero__book-scene:hover {
+      transform: perspective(1400px) rotateY(-6deg) rotateX(2deg);
+    }
+    .hero__book-img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+    /* spine line */
+    .hero__book-scene::after {
+      content: '';
+      position: absolute;
+      top: 2%; bottom: 2%; left: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.25), rgba(255,255,255,.05));
+      border-radius: 1px;
+    }
+
+    .hero__book-glow {
+      position: absolute;
+      inset: 5%;
+      background: radial-gradient(ellipse, rgba(30,86,200,.35) 0%, transparent 70%);
+      filter: blur(50px);
+      z-index: -1;
+    }
+
+    /* ── STRIP STATS ── */
+    .strip {
+      background: var(--ink-lt);
+      border-top: 1px solid rgba(30,86,200,.15);
+      border-bottom: 1px solid rgba(30,86,200,.15);
+      padding: 0;
+    }
+    .strip__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .strip__item {
+      padding: 36px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(30,86,200,.1);
+      position: relative;
+    }
+    .strip__item:last-child { border-right: none; }
+    .strip__num {
+      font-family: var(--fd);
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+    .strip__num span { color: var(--gold); }
+    .strip__label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* ── SECTION TYPOGRAPHY ── */
+    .s-kicker { margin-bottom: 16px; }
+    .s-title {
+      font-family: var(--fd);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.1;
+      letter-spacing: -.01em;
+    }
+    .s-title em { font-style: italic; color: var(--blue-lt); }
+    .s-title .light { font-weight: 300; font-style: italic; color: var(--parch); }
+
+    /* ── ABOUT ── */
+    .about { padding: 110px 0; }
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 96px;
+      align-items: center;
+    }
+    .about__book-wrap {
+      position: relative;
+    }
+    .about__book-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      filter: drop-shadow(0 24px 56px rgba(0,0,0,.55));
+    }
+    /* floating accent box */
+    .about__accent {
+      position: absolute;
+      bottom: -24px; right: -24px;
+      background: var(--blue-dk);
+      border: 1px solid rgba(30,86,200,.4);
+      border-radius: var(--r);
+      padding: 20px 24px;
+      max-width: 200px;
+    }
+    .about__accent-num {
+      font-family: var(--fd);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .about__accent-label {
+      font-size: 12px;
+      color: var(--parch);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .about__content { }
+    .about__rule { width: 48px; height: 1px; background: var(--gold); margin: 20px 0 28px; opacity: .7; }
+    .about__lead {
+      font-family: var(--fd);
+      font-size: clamp(19px, 2vw, 26px);
+      font-style: italic;
+      color: var(--parch);
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+    .about__text {
+      font-size: 15px;
+      color: var(--mid-lt);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    /* ── CHAPTERS ── */
+    .chapters {
+      padding: 80px 0 100px;
+      background: var(--ink-lt);
+      position: relative;
+    }
+    .chapters::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(30,86,200,.3), transparent);
+    }
+    .chapters__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .chapters__intro {
+      font-size: 15px;
+      color: var(--mid-lt);
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+
+    .chapter-list { display: flex; flex-direction: column; }
+    .chapter-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 32px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      cursor: default;
+      transition: border-color .3s;
+    }
+    .chapter-item:first-child { border-top: 1px solid rgba(255,255,255,.06); }
+    .chapter-item:hover { border-color: rgba(30,86,200,.3); }
+    .chapter-item__num {
+      font-family: var(--fd);
+      font-size: 52px;
+      font-weight: 700;
+      color: rgba(30,86,200,.2);
+      line-height: 1;
+      padding-top: 4px;
+      transition: color .3s;
+    }
+    .chapter-item:hover .chapter-item__num { color: rgba(30,86,200,.5); }
+    .chapter-item__body { }
+    .chapter-item__title {
+      font-family: var(--fd);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 8px;
+      line-height: 1.3;
+      transition: color .3s;
+    }
+    .chapter-item:hover .chapter-item__title { color: var(--blue-lt); }
+    .chapter-item__desc {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.75;
+    }
+
+    /* ── QUOTE BANNER ── */
+    .quote-banner {
+      padding: 110px 0;
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .quote-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(30,86,200,.08) 0%, transparent 60%);
+    }
+    .quote-banner__inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .quote-banner__mark {
+      font-family: var(--fd);
+      font-size: 200px;
+      font-weight: 700;
+      color: rgba(30,86,200,.08);
+      line-height: 1;
+      text-align: right;
+      padding-top: 20px;
+    }
+    .quote-banner__content { text-align: center; }
+    .quote-banner__text {
+      font-family: var(--fd);
+      font-size: clamp(24px, 3vw, 42px);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.4;
+      margin-bottom: 28px;
+    }
+    .quote-banner__rule {
+      width: 40px; height: 1px;
+      background: var(--gold);
+      margin: 0 auto 16px;
+      opacity: .7;
+    }
+    .quote-banner__attr {
+      font-size: 13px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--mid-lt);
+    }
+    .quote-banner__mark-close {
+      font-family: var(--fd);
+      font-size: 200px;
+      font-weight: 700;
+      color: rgba(30,86,200,.08);
+      line-height: 1;
+      padding-bottom: 20px;
+    }
+
+    /* ── AUTHORS ── */
+    .authors {
+      padding: 100px 0;
+      background: var(--ink-lt);
+      border-top: 1px solid rgba(30,86,200,.12);
+    }
+    .authors__header { margin-bottom: 56px; }
+    .authors__grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    .author-card {
+      padding: 28px 20px 24px;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 6px;
+      background: rgba(7,12,23,.6);
+      text-align: center;
+      transition: border-color .25s, transform .25s;
+    }
+    .author-card:hover { border-color: rgba(30,86,200,.35); transform: translateY(-4px); }
+    .author-card__av {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      border: 1px solid rgba(30,86,200,.3);
+      background: var(--blue-dk);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-family: var(--fd);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--parch);
+    }
+    .author-card__name {
+      font-family: var(--fd);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .author-card__role { font-size: 11px; color: var(--mid); line-height: 1.5; }
+
+    /* ── FOR WHOM ── */
+    .for-whom { padding: 100px 0; }
+    .for-whom__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+      border: 1px solid rgba(30,86,200,.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .for-card {
+      padding: 40px 36px;
+      background: var(--ink-lt);
+      border-right: 1px solid rgba(30,86,200,.12);
+      transition: background .25s;
+    }
+    .for-card:last-child { border-right: none; }
+    .for-card:hover { background: rgba(30,86,200,.06); }
+    .for-card__num {
+      font-family: var(--fd);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .for-card__title {
+      font-family: var(--fd);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .for-card__desc { font-size: 14px; color: var(--mid-lt); line-height: 1.8; }
+
+    /* ── FORM SECTION ── */
+    .form-section {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 700px;
+    }
+    .form-left {
+      background: var(--blue-dk);
+      padding: 90px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 100% 100% at 100% 0%, rgba(30,86,200,.4) 0%, transparent 60%);
+    }
+    .form-left__content { position: relative; z-index: 1; }
+    .form-left__title {
+      font-family: var(--fd);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.1;
+      margin: 16px 0 24px;
+    }
+    .form-left__title em { font-style: italic; color: var(--gold-lt); }
+    .form-left__desc { font-size: 15px; color: rgba(240,244,251,.7); line-height: 1.8; margin-bottom: 40px; }
+    .form-left__list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .form-left__list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 14px; color: rgba(240,244,251,.75); line-height: 1.5;
+    }
+    .form-left__list li::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      color: var(--gold-lt);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .form-right {
+      background: #0B1221;
+      padding: 90px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .form-right__title {
+      font-family: var(--fd);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+    .form-right__sub { font-size: 13px; color: var(--mid); margin-bottom: 32px; }
+
+    /* fields */
+    .field-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; }
+    .field-label { font-size: 12px; font-weight: 500; color: var(--mid-lt); letter-spacing: .04em; }
+    .field-label .req { color: var(--blue-lt); margin-left: 2px; }
+    .field-input, .field-select {
+      width: 100%;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--r);
+      padding: 12px 14px;
+      font-family: var(--fb);
+      font-size: 15px;
+      color: var(--cream);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      appearance: none; -webkit-appearance: none;
+    }
+    .field-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237D93B0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+    .field-select option { background: #1C2840; color: var(--cream); }
+    .field-input:focus, .field-select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(30,86,200,.18);
+    }
+    .field-input::placeholder { color: var(--mid); }
+    .field-input.error, .field-select.error { border-color: #c0392b; box-shadow: 0 0 0 3px rgba(192,57,43,.12); }
+    .field-error-msg { font-size: 12px; color: #e07070; display: none; margin-top: 2px; }
+    .field-group.has-error .field-error-msg { display: block; }
+    .field-row { display: grid; grid-template-columns: 130px 1fr; gap: 10px; }
+    .field-row .field-group { margin-bottom: 0; }
+    .field-hint { font-size: 11px; color: var(--mid); margin-top: 4px; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--gold);
+      border: none;
+      border-radius: var(--r);
+      padding: 15px 24px;
+      font-family: var(--fb);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      margin-top: 8px;
+    }
+    .submit-btn:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .submit-btn:disabled { opacity: .6; cursor: not-allowed; }
+    .submit-btn.loading .btn-text { display: none; }
+    .submit-btn.loading .btn-loader { display: inline; }
+    .submit-btn .btn-loader { display: none; }
+    .form-privacy { font-size: 11px; color: var(--mid); margin-top: 14px; text-align: center; }
+
+    /* ── THANK YOU ── */
+    .thankyou { display: none; text-align: center; padding: 16px 0; }
+    .thankyou__icon { font-size: 40px; margin-bottom: 20px; }
+    .thankyou__title { font-family: var(--fd); font-size: 30px; font-weight: 700; color: var(--cream); margin-bottom: 12px; }
+    .thankyou__text { font-size: 14px; color: var(--mid-lt); line-height: 1.75; margin-bottom: 28px; }
+    .wpp-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: #fff; text-decoration: none;
+      border-radius: var(--r); padding: 14px 28px;
+      font-weight: 600; font-size: 14px;
+      transition: background .2s, transform .15s;
+    }
+    .wpp-cta:hover { background: #1ebe5d; transform: translateY(-2px); }
+    .wpp-cta svg { width: 20px; height: 20px; fill: currentColor; }
+    .wpp-skip { display: block; margin-top: 14px; font-size: 12px; color: var(--mid); cursor: pointer; text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px 0 32px;
+      border-top: 1px solid rgba(255,255,255,.05);
+      text-align: center;
+    }
+    footer p { font-size: 12px; color: var(--mid); line-height: 1.9; }
+    footer a { color: var(--mid-lt); text-decoration: none; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); }
+    .reveal.visible { opacity: 1; transform: translateY(0); transition: opacity .75s ease, transform .75s ease; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .quote-banner__inner { grid-template-columns: auto 1fr auto; }
+      .quote-banner__mark, .quote-banner__mark-close { font-size: 120px; }
+    }
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding: 110px 0 70px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 0; }
+      .hero__book { margin-top: 48px; }
+      .hero__book-scene { transform: perspective(1400px) rotateY(-8deg) rotateX(2deg); }
+      .hero__book-img { max-height: 360px; }
+      .about__grid { grid-template-columns: 1fr; gap: 56px; }
+      .about__accent { bottom: 16px; right: 16px; }
+      .chapters__header { grid-template-columns: 1fr; gap: 16px; }
+      .authors__grid { grid-template-columns: repeat(3,1fr); }
+      .for-whom__grid { grid-template-columns: 1fr; }
+      .for-card { border-right: none; border-bottom: 1px solid rgba(30,86,200,.12); }
+      .for-card:last-child { border-bottom: none; }
+      .form-section { grid-template-columns: 1fr; }
+      .form-left { padding: 64px 40px; }
+      .form-right { padding: 64px 40px; }
+      .strip__grid { grid-template-columns: repeat(2, 1fr); }
+      .strip__item:nth-child(2) { border-right: none; }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      .nav__logo { font-size: 15px; letter-spacing: .08em; }
+      .nav__cta { display: none; }
+      .hero__title { font-size: 38px; }
+      .hero__book-scene { transform: none; filter: drop-shadow(0 16px 40px rgba(0,0,0,.6)); }
+      .hero__book-img { max-height: 280px; }
+      .about__accent { display: none; }
+      .chapter-item { grid-template-columns: 48px 1fr; gap: 16px; }
+      .chapter-item__num { font-size: 38px; }
+      .quote-banner { padding: 72px 0; }
+      .quote-banner__inner { grid-template-columns: 1fr; }
+      .quote-banner__mark, .quote-banner__mark-close { display: none; }
+      .authors__grid { grid-template-columns: repeat(2,1fr); }
+      .form-left { padding: 56px 24px; }
+      .form-right { padding: 48px 24px; }
+      .field-row { grid-template-columns: 110px 1fr; }
+      .strip__grid { grid-template-columns: repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <span class="nav__logo"><span>HR</span> Andrade</span>
+    <div class="nav__right">
+      <a class="nav__cta" href="#acesso">Resgatar o Livro</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__ghost">Queiloplastia</div>
+  <div class="hero__lines"></div>
+  <div class="container">
+    <div class="hero__grid">
+
+      <div class="hero__text">
+        <div class="hero__kicker reveal">
+          <span class="tag">HR Andrade</span>
+        </div>
+        <h1 class="hero__title reveal">
+          <em>Queiloplastia</em>
+          <span class="sub">Aumento Cirúrgico dos Lábios</span>
+        </h1>
+        <div class="hero__rule reveal"></div>
+        <p class="hero__desc reveal">
+          Um livro desenvolvido com base científica, experiência clínica e prática cirúrgica real, voltado para médicos e cirurgiões-dentistas que desejam evoluir nas cirurgias estéticas da face.
+          Mais do que um livro, um guia técnico e objetivo para quem busca segurança,
+          previsibilidade e resultados de alto nível na prática clínica.
+        </p>
+        <div class="hero__meta reveal">
+          <a class="hero__btn" href="#acesso">
+            Garantir meu acesso
+            <span class="hero__btn-arrow">&#8594;</span>
+          </a>
+          <span class="hero__edition">5 autores · Editora FHO · 2026</span>
+        </div>
+      </div>
+
+      <div class="hero__book reveal">
+        <div class="hero__book-glow"></div>
+        <div class="hero__book-scene">
+          <img
+            class="hero__book-img"
+            src="images/livro/capa-hero.webp"
+            srcset="images/livro/capa-hero-sm.webp 420w, images/livro/capa-hero.webp 700w"
+            sizes="(max-width: 640px) 280px, 420px"
+            alt="Capa do livro Queiloplastia: Aumento Cirúrgico dos Lábios"
+            width="700" height="875"
+            loading="eager"
+          >
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="strip">
+  <div class="container">
+    <div class="strip__grid">
+      <div class="strip__item reveal">
+        <div class="strip__num">5<span>.</span></div>
+        <div class="strip__label">Especialistas Autores</div>
+      </div>
+      <div class="strip__item reveal">
+        <div class="strip__num">28<span>+</span></div>
+        <div class="strip__label">Anos de Experiência</div>
+      </div>
+      <div class="strip__item reveal">
+        <div class="strip__num">6<span>+</span></div>
+        <div class="strip__label">Especializações do Autor Principal</div>
+      </div>
+      <div class="strip__item reveal">
+        <div class="strip__num">1<span>ª</span></div>
+        <div class="strip__label">Edição Nacional do Tema</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about__grid">
+
+      <div class="about__book-wrap reveal">
+        <img
+          class="about__book-img"
+          src="images/livro/img-2.png"
+          alt="Exemplar físico do livro"
+          loading="lazy"
+        >
+        <div class="about__accent">
+          <div class="about__accent-num">6</div>
+          <div class="about__accent-label">Capítulos técnicos com protocolos cirúrgicos</div>
+        </div>
+      </div>
+
+      <div class="about__content reveal">
+        <span class="tag">Sobre a Obra</span>
+        <div class="about__rule"></div>
+        <h2 class="s-title">
+          O que faltava<br>
+          na <em>literatura brasileira</em>
+        </h2>
+        <p class="about__lead" style="margin-top:20px;">
+          A queiloplastia é um dos procedimentos mais solicitados na estética facial
+          e um dos menos documentados em língua portuguesa.
+        </p>
+        <p class="about__text">
+          Esta obra preenche essa lacuna com rigor científico: do mapeamento anatômico
+          às indicações cirúrgicas precisas, das técnicas de incisão ao manejo de complicações.
+          Cada capítulo foi construído a partir de anos de prática clínica real.
+        </p>
+        <p class="about__text">
+          Se você realiza ou pretende realizar procedimentos labiais na medicina, odontologia,
+          cirurgia plástica ou HOF, este é o material de referência que vai elevar o seu protocolo.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section class="chapters">
+  <div class="container">
+    <div class="chapters__header">
+      <div class="reveal">
+        <span class="tag">Conteúdo</span>
+        <h2 class="s-title" style="margin-top:14px;">
+          O que você vai<br><em>dominar</em>
+        </h2>
+      </div>
+      <p class="chapters__intro reveal">
+        Cada capítulo foi desenvolvido para ser aplicado diretamente no consultório.
+        Do embasamento anatômico ao protocolo pós-operatório, a obra cobre todas
+        as etapas que definem um resultado de excelência.
+      </p>
+    </div>
+
+    <div class="chapter-list">
+      <div class="chapter-item reveal">
+        <div class="chapter-item__num">01</div>
+        <div class="chapter-item__body">
+          <div class="chapter-item__title">Anatomia Cirúrgica dos Lábios</div>
+          <p class="chapter-item__desc">Mapeamento preciso das estruturas musculares, vasculares e nervosas que regem a função e estética labial. Base indispensável para qualquer abordagem cirúrgica segura.</p>
+        </div>
+      </div>
+      <div class="chapter-item reveal">
+        <div class="chapter-item__num">02</div>
+        <div class="chapter-item__body">
+          <div class="chapter-item__title">Indicações Clínicas e Contraindicações</div>
+          <p class="chapter-item__desc">Critérios objetivos para seleção de pacientes, análise de proporcionalidade facial e identificação de condições que contraindicam a intervenção cirúrgica.</p>
+        </div>
+      </div>
+      <div class="chapter-item reveal">
+        <div class="chapter-item__num">03</div>
+        <div class="chapter-item__body">
+          <div class="chapter-item__title">Técnicas Cirúrgicas Documentadas</div>
+          <p class="chapter-item__desc">Descrição detalhada das abordagens mais utilizadas: incisões, suturas, manejo de tecidos, com protocolos passo a passo e variações por perfil de paciente.</p>
+        </div>
+      </div>
+      <div class="chapter-item reveal">
+        <div class="chapter-item__num">04</div>
+        <div class="chapter-item__body">
+          <div class="chapter-item__title">Pos-Operatorio e Manejo de Complicacoes</div>
+          <p class="chapter-item__desc">Protocolos de recuperação, cuidados com cicatrização e abordagem clínica para as complicações mais frequentes, com critérios de conduta conservadora versus reintervenção.</p>
+        </div>
+      </div>
+      <div class="chapter-item reveal">
+        <div class="chapter-item__num">05</div>
+        <div class="chapter-item__body">
+          <div class="chapter-item__title">Resultados Clínicos e Análise Fotográfica</div>
+          <p class="chapter-item__desc">Casos documentados com análise comparativa pré e pós-operatória, discutindo parâmetros estéticos, satisfação do paciente e critérios de excelência de resultado.</p>
+        </div>
+      </div>
+      <div class="chapter-item reveal">
+        <div class="chapter-item__num">06</div>
+        <div class="chapter-item__body">
+          <div class="chapter-item__title">HOF Integrada: Harmonização do Conjunto Facial</div>
+          <p class="chapter-item__desc">Integração da queiloplastia no contexto da Harmonização Orofacial, com análise de proporções faciais globais, combinação de técnicas e planejamento multidisciplinar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- AUTHORS -->
+<section class="authors">
+  <div class="container">
+    <div class="authors__header reveal">
+      <span class="tag">Autores</span>
+      <h2 class="s-title" style="margin-top:14px;">
+        Cinco especialistas,<br>
+        <span class="light">uma obra de referência</span>
+      </h2>
+    </div>
+    <div class="authors__grid">
+      <div class="author-card reveal">
+        <div class="author-card__av">H</div>
+        <div class="author-card__name">Dr. Humberto de Andrade</div>
+        <div class="author-card__role">Cirurgião Plástico, 28 anos de experiência, 6 especializações e 1 mestrado</div>
+      </div>
+      <div class="author-card reveal">
+        <div class="author-card__av">A</div>
+        <div class="author-card__name">Dra. Ana Costa Correr</div>
+        <div class="author-card__role">Especialista em Harmonização Orofacial</div>
+      </div>
+      <div class="author-card reveal">
+        <div class="author-card__av">R</div>
+        <div class="author-card__name">Dra. Rachel de Andrade</div>
+        <div class="author-card__role">Cirurgiã e Pesquisadora da área facial</div>
+      </div>
+      <div class="author-card reveal">
+        <div class="author-card__av">M</div>
+        <div class="author-card__name">Dra. Monica de Andrade</div>
+        <div class="author-card__role">Especialista em Estética Facial e HOF</div>
+      </div>
+      <div class="author-card reveal">
+        <div class="author-card__av">F</div>
+        <div class="author-card__name">Dr. Fábio Prosdocimi</div>
+        <div class="author-card__role">Cirurgião Oral e Maxilofacial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="for-whom">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Para quem é</span>
+      <h2 class="s-title" style="margin-top:14px;">
+        Para profissionais que<br>
+        operam com <em>precisão</em>
+      </h2>
+    </div>
+    <div class="for-whom__grid">
+      <div class="for-card reveal">
+        <div class="for-card__num">01</div>
+        <div class="for-card__title">Médicos e Cirurgiões</div>
+        <p class="for-card__desc">Cirurgiões plásticos, médicos esteticistas e dermatologistas que realizam ou pretendem incorporar a queiloplastia ao seu portfólio cirúrgico.</p>
+      </div>
+      <div class="for-card reveal">
+        <div class="for-card__num">02</div>
+        <div class="for-card__title">Dentistas e HOF</div>
+        <p class="for-card__desc">Cirurgiões dentistas com habilitação em HOF (CRO) e bucomaxilofaciais que trabalham com harmonização da região perioral e facial.</p>
+      </div>
+      <div class="for-card reveal">
+        <div class="for-card__num">03</div>
+        <div class="for-card__title">Demais Profissionais da Saúde</div>
+        <p class="for-card__desc">Fisioterapeutas dermato-funcionais, enfermeiros estetas e outros profissionais habilitados que trabalham com procedimentos na região labial e perioral.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="acesso">
+  <div class="form-left">
+    <div class="form-left__content">
+      <span class="tag" style="color: var(--gold-lt);">Acesso Exclusivo</span>
+      <h2 class="form-left__title">
+        Lançamento do meu livro:<br>
+        <em>Baixe agora gratuitamente.</em>
+      </h2>
+      <p class="form-left__desc">
+        O acesso é disponibilizado diretamente pelos autores, sem custo adicional,
+        para profissionais e estudantes comprometidos com o avanço técnico na área.
+      </p>
+      <ul class="form-left__list">
+        <li>Acesso enviado após confirmação dos dados</li>
+        <li>Exclusivo para profissionais com registro ativo</li>
+        <li>Conteúdo técnico sem fins comerciais</li>
+        <li>Opção de entrar no grupo de atualizações dos autores</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-right">
+    <form id="livroForm" novalidate>
+      <div class="form-right__title">Quero o livro</div>
+      <p class="form-right__sub">Todos os campos são obrigatórios</p>
+
+      <div class="field-group" id="fg-nome">
+        <label class="field-label" for="nome">Nome completo <span class="req">*</span></label>
+        <input class="field-input" type="text" id="nome" name="nome" required
+          placeholder="Seu nome completo" autocomplete="name">
+        <span class="field-error-msg">Informe seu nome completo.</span>
+      </div>
+
+      <div class="field-group" id="fg-email">
+        <label class="field-label" for="email">E-mail profissional <span class="req">*</span></label>
+        <input class="field-input" type="email" id="email" name="email" required
+          placeholder="seu@email.com.br" autocomplete="email">
+        <span class="field-error-msg">Informe um e-mail válido.</span>
+      </div>
+
+      <div class="field-group" id="fg-telefone">
+        <label class="field-label" for="telefone">WhatsApp / Telefone <span class="req">*</span></label>
+        <input class="field-input" type="tel" id="telefone" name="telefone" required
+          placeholder="(11) 99999-9999" autocomplete="tel" maxlength="16">
+        <span class="field-error-msg">Informe um número válido com DDD (10 ou 11 dígitos).</span>
+      </div>
+
+      <div class="field-group" id="fg-cidade">
+        <label class="field-label" for="cidade">Cidade <span class="req">*</span></label>
+        <input class="field-input" type="text" id="cidade" name="cidade" required
+          placeholder="Cidade onde você atua">
+        <span class="field-error-msg">Informe sua cidade.</span>
+      </div>
+
+      <div class="field-group" id="fg-area">
+        <label class="field-label" for="area">Área de atuação <span class="req">*</span></label>
+        <select class="field-select" id="area" name="area" required>
+          <option value="" disabled selected>Selecione sua área...</option>
+          <option value="Cirurgia Plástica">Cirurgia Plástica</option>
+          <option value="Harmonização Orofacial (HOF)">Harmonização Orofacial (HOF)</option>
+          <option value="Medicina Estética">Medicina Estética</option>
+          <option value="Cirurgia Oral e Maxilofacial">Cirurgia Oral e Maxilofacial</option>
+          <option value="Odontologia Estética">Odontologia Estética</option>
+          <option value="Dermatologia">Dermatologia</option>
+          <option value="Enfermagem Estética">Enfermagem Estética</option>
+          <option value="Fisioterapia Dermato-funcional">Fisioterapia Dermato-funcional</option>
+          <option value="Outro">Outro</option>
+        </select>
+        <span class="field-error-msg">Selecione sua área de atuação.</span>
+      </div>
+
+      <div class="field-group" id="fg-registro">
+        <label class="field-label" for="registro">Registro profissional <span class="req">*</span></label>
+        <div class="field-row">
+          <select class="field-select" id="conselho" name="conselho" required>
+            <option value="" disabled selected>Conselho</option>
+            <option value="CRM">CRM</option>
+            <option value="CRO">CRO</option>
+            <option value="CREFITO">CREFITO</option>
+            <option value="COREN">COREN</option>
+            <option value="CFF/CRF">CFF / CRF</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <input class="field-input" type="text" id="registro" name="registro" required
+            placeholder="Ex: 12345-SP" minlength="4" autocomplete="off">
+        </div>
+        <span class="field-hint">CRM para médicos · CRO para dentistas/HOF · CREFITO para fisioterapeutas</span>
+        <span class="field-error-msg">Informe o conselho e número de registro.</span>
+      </div>
+
+      <button class="submit-btn" type="submit" id="submitBtn">
+        <span class="btn-text">Garantir meu acesso ao livro</span>
+        <span class="btn-loader">Enviando...</span>
+      </button>
+      <p class="form-privacy">🔒 Seus dados são protegidos e não serão compartilhados.</p>
+    </form>
+
+    <div class="thankyou" id="thankyou">
+      <div class="thankyou__icon">📚</div>
+      <h3 class="thankyou__title">Acesso confirmado!</h3>
+      <p class="thankyou__text">
+        Seu cadastro foi recebido. Você receberá o acesso ao livro no e-mail informado em breve.<br><br>
+        <strong>Quer ir além?</strong> Os autores mantêm um grupo exclusivo no WhatsApp com atualizações,
+        casos clínicos e conteúdos que não estão no livro.
+      </p>
+      <a class="wpp-cta" href="https://chat.whatsapp.com/LINK_DO_GRUPO" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Entrar no grupo exclusivo
+      </a>
+      <span class="wpp-skip">Não, obrigado. Já tenho o livro.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>
+      © 2026 Instituto HR Andrade<br>
+      <a href="https://hrface.com.br">hrface.com.br</a> · Editora FHO · 1ª Edição<br>
+      <span style="color:var(--mid);font-size:11px;">Acesso restrito a profissionais de saúde habilitados.</span>
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* PHONE MASK */
+  var tel = document.getElementById('telefone');
+  tel.addEventListener('input', function () {
+    var v = this.value.replace(/\D/g,'');
+    if (v.length > 11) v = v.slice(0,11);
+    if (v.length <= 10) v = v.replace(/^(\d{2})(\d{4})(\d{0,4})/,'($1) $2-$3');
+    else v = v.replace(/^(\d{2})(\d{5})(\d{0,4})/,'($1) $2-$3');
+    this.value = v;
+  });
+
+  /* VALIDATION */
+  function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+  function isPhone(v) { var d=v.replace(/\D/g,''); return d.length>=10&&d.length<=11; }
+  function isSel(v)   { return v!==''&&v!==null; }
+  function isReg(v)   { return v.trim().length>=4; }
+
+  function setErr(id,show) {
+    var g=document.getElementById(id); if(!g)return;
+    g.classList.toggle('has-error',show);
+    g.querySelectorAll('.field-input,.field-select').forEach(function(el){
+      el.classList.toggle('error',show);
+    });
+  }
+
+  function chk(id) {
+    var el=document.getElementById(id); if(!el)return true;
+    var v=el.value, ok=true;
+    switch(id){
+      case 'nome':    ok=v.trim().length>=3; setErr('fg-nome',!ok);    break;
+      case 'email':   ok=isEmail(v);         setErr('fg-email',!ok);   break;
+      case 'telefone':ok=isPhone(v);         setErr('fg-telefone',!ok);break;
+      case 'cidade':  ok=v.trim().length>=2; setErr('fg-cidade',!ok);  break;
+      case 'area':    ok=isSel(v);           setErr('fg-area',!ok);    break;
+    }
+    return ok;
+  }
+
+  function chkReg() {
+    var c=document.getElementById('conselho').value;
+    var r=document.getElementById('registro').value;
+    var ok=isSel(c)&&isReg(r); setErr('fg-registro',!ok); return ok;
+  }
+
+  ['nome','email','telefone','cidade','area'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.addEventListener('blur',function(){chk(id);});
+  });
+  document.getElementById('conselho').addEventListener('blur',chkReg);
+  document.getElementById('registro').addEventListener('blur',chkReg);
+
+  /* SUBMIT */
+  document.getElementById('livroForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=chk('nome')&&chk('email')&&chk('telefone')&&chk('cidade')&&chk('area')&&chkReg();
+    if(!ok){
+      var f=this.querySelector('.field-input.error,.field-select.error');
+      if(f) f.scrollIntoView({behavior:'smooth',block:'center'});
+      return;
+    }
+    var btn=document.getElementById('submitBtn');
+    btn.classList.add('loading'); btn.disabled=true;
+    var data={
+      nome:      document.getElementById('nome').value.trim(),
+      email:     document.getElementById('email').value.trim(),
+      telefone:  document.getElementById('telefone').value.trim(),
+      cidade:    document.getElementById('cidade').value.trim(),
+      area:      document.getElementById('area').value,
+      conselho:  document.getElementById('conselho').value,
+      registro:  document.getElementById('registro').value.trim(),
+      origem:    'livro-queiloplastia',
+      ts:        new Date().toISOString()
+    };
+    fetch('/submit-livro',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    }).then(done).catch(done);
+    function done(){ showThanks(); }
+  });
+
+  function showThanks() {
+    document.getElementById('livroForm').style.display='none';
+    var ty=document.getElementById('thankyou');
+    ty.style.display='block';
+    ty.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  document.querySelector('.wpp-skip').addEventListener('click',function(){
+    this.style.display='none';
+    document.querySelector('.wpp-cta').style.display='none';
+  });
+
+  /* REVEAL */
+  function initReveal() {
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    },{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initReveal);
+  else initReveal();
+
+  /* LENIS */
+  window.addEventListener('load',function(){
+    if(window.Lenis){
+      var l=new Lenis({lerp:.08});
+      function r(t){l.raf(t);requestAnimationFrame(r);}
+      requestAnimationFrame(r);
+    }
+  });
+
+})();
+</script>
+</body>
+</html>
