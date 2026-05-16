@@ -766,6 +766,12 @@
             overflow: visible;
         }
 
+        .sobre-photo picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
         .sobre-photo img {
             width: 100%;
             height: 100%;
@@ -1494,7 +1500,7 @@
             flex-shrink: 0;
         }
     </style>
-    <link rel="preload" as="image" href="dr-enio-hero.webp" type="image/webp">
+    <link rel="preload" as="image" href="dr-enio-hero.webp?v=2" type="image/webp">
     <!-- Microsoft Clarity — deferred 2s após load para não bloquear TTI -->
     <script>
     window.addEventListener('load', function() {
@@ -1534,7 +1540,7 @@
     <nav id="nav">
         <a href="#hero" class="nav-logo">
             <picture>
-                <source srcset="logo-horizontal.webp" type="image/webp">
+                <source srcset="logo-horizontal.webp?v=2" type="image/webp">
                 <img src="logo-horizontal.png" alt="Dr. Enio Leite" class="nav-logo-img" width="1342" height="305">
             </picture>
         </a>
@@ -1599,7 +1605,7 @@
 
         <div class="hero-photo">
             <picture>
-                <source srcset="dr-enio-hero.webp" type="image/webp">
+                <source srcset="dr-enio-hero.webp?v=2" type="image/webp">
                 <img src="dr-enio-hero.png" alt="Dr. Enio Leite" width="896" height="1200" fetchpriority="high">
             </picture>
         </div>
@@ -1633,7 +1639,7 @@
     <!-- MOBILE PHOTO -->
     <div class="mobile-dr-photo">
         <picture>
-            <source srcset="dr-enio-hero.webp" type="image/webp">
+            <source srcset="dr-enio-hero.webp?v=2" type="image/webp">
             <img loading="lazy" src="dr-enio-hero.png" alt="Dr. Enio Leite" width="896" height="1200">
         </picture>
         <div class="mobile-dr-photo-caption">
@@ -1788,8 +1794,8 @@
             <div class="sobre-grid">
                 <div class="sobre-photo reveal">
                     <picture>
-                        <source srcset="dr-enio-about.webp" type="image/webp">
-                        <img loading="lazy" src="dr-enio-about.png" alt="Dr. Enio Leite" width="896" height="1200" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;">
+                        <source srcset="dr-enio-about.webp?v=2" type="image/webp">
+                        <img loading="lazy" src="dr-enio-about.png?v=2" alt="Dr. Enio Leite" width="896" height="1200" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;">
                     </picture>
                 </div>
 
@@ -1964,13 +1970,22 @@
             <div class="clinica-grid">
                 <div class="clinica-fotos">
                     <div class="clinica-foto reveal">
-                        <img src="https://lh3.googleusercontent.com/d/1rywR8lagtuoh_rHcgE4ZgmKSbGnQLoAV" alt="Recepção Instituto Dr. Enio Leite" loading="lazy">
+                        <picture>
+                            <source srcset="clinica/clinica-1.webp" type="image/webp">
+                            <img src="clinica/clinica-1.png" alt="Entrada Instituto Dr. Enio Leite" loading="lazy">
+                        </picture>
                     </div>
                     <div class="clinica-foto reveal reveal-d1">
-                        <img src="https://lh3.googleusercontent.com/d/1P24jHb25rtOBYKc03oEqTrg46TQ-3h61" alt="Consultório Instituto Dr. Enio Leite" loading="lazy">
+                        <picture>
+                            <source srcset="clinica/clinica-2.webp" type="image/webp">
+                            <img src="clinica/clinica-2.png" alt="Consultório Instituto Dr. Enio Leite" loading="lazy">
+                        </picture>
                     </div>
                     <div class="clinica-foto reveal reveal-d2">
-                        <img src="https://lh3.googleusercontent.com/d/1ORYhgRVHRqVGqw9J9hz5DDbWZqgeXHLr" alt="Recepção Instituto Dr. Enio Leite" loading="lazy">
+                        <picture>
+                            <source srcset="clinica/clinica-5.webp" type="image/webp">
+                            <img src="clinica/clinica-5.png" alt="Instituto Dr. Enio Leite" loading="lazy">
+                        </picture>
                     </div>
                 </div>
 

@@ -1,0 +1,53 @@
+════ MELHORES CRIATIVOS — DRA. GABRIELLE (últimos 90 dias) ════
+
+── TOP 5 POR LEADS ──
+1. C7 [Vídeo] [Hook: Eu Descobri um Procedimento [Variação: imagem barriga] [CTA: Saiba Mais]
+   Leads: 39 | CPL: R$9.35 | CTR: 2.25% | Gasto: R$364.58
+   Copy: "💪 Até 7kg de gordura corporal eliminados em 4 semanas.
+
+  Sem bariátrica. Sem c"
+2. C13 [Estático] [Hook: Promoção Dia das Mães] [CTA: Saiba Mais] — Cópia
+   Leads: 33 | CPL: R$2.60 | CTR: 5.77% | Gasto: R$85.73
+   Copy: "Mês das Mães com valores especiais. 
+Procedimentos partir de R$95 na Estética Av"
+3. C11 [Estático] [Stories 9x16] [Hook: Espelho] [CTA: Saiba Mais]
+   Leads: 29 | CPL: R$9.21 | CTR: 2.10% | Gasto: R$267.09
+   Copy: "Você se olha no espelho e não se reconhece mais...
+
+Não é frescura. O seu bem-es"
+4. C4 [Vídeo] [Hook: Você Faz Academia, Cuida da Alimentação] [CTA: Saiba Mais]
+   Leads: 25 | CPL: R$9.49 | CTR: 2.75% | Gasto: R$237.31
+   Copy: "✨ Academia, dieta e a gorduinha continua no mesmo lugar.
+
+  Isso não é falta de "
+5. C13 [Estático] [Hook: Promoção Dia das Mães] [CTA: Saiba Mais] — Cópia — Cópia
+   Leads: 25 | CPL: R$1.95 | CTR: 6.21% | Gasto: R$48.63
+   Copy: "Mês das Mães com valores especiais. 
+Procedimentos partir de R$95 na Estética Av"
+
+── TOP 5 POR CTR (mín. 500 impressões) ──
+1. C13 [Estático] [Hook: Promoção Dia das Mães] [CTA: Saiba Mais] — Cópia — Cópia
+   CTR: 6.90% | Leads: 2 | Impressões: 826 | Gasto: R$15.10
+2. C12 [Estático] [Hook: Promoção Dia das Mães] [CTA: Saiba Mais] — Cópia
+   CTR: 6.39% | Leads: 2 | Impressões: 783 | Gasto: R$17.12
+3. C13 [Estático] [Hook: Promoção Dia das Mães] [CTA: Saiba Mais] — Cópia — Cópia
+   CTR: 6.21% | Leads: 25 | Impressões: 3,493 | Gasto: R$48.63
+4. C13 [Estático] [Hook: Promoção Dia das Mães] [CTA: Saiba Mais] — Cópia
+   CTR: 5.77% | Leads: 33 | Impressões: 5,080 | Gasto: R$85.73
+5. C10 [Estático] [Feed 4x5] [Hook: Roupa Larga] [CTA: Cadastre-se]
+   CTR: 3.54% | Leads: 2 | Impressões: 509 | Gasto: R$10.99
+
+── TOP 5 MENOR CPL (mín. 5 leads) ──
+1. C13 [Estático] [Hook: Promoção Dia das Mães] [CTA: Saiba Mais] — Cópia — Cópia
+   CPL: R$1.95 | Leads: 25 | CTR: 6.21%
+2. C13 [Estático] [Hook: Promoção Dia das Mães] [CTA: Saiba Mais] — Cópia
+   CPL: R$2.60 | Leads: 33 | CTR: 5.77%
+3. C10 [Estático] [Feed 4x5] [Hook: Roupa Larga] [CTA: Cadastre-se]
+   CPL: R$6.59 | Leads: 11 | CTR: 2.17%
+4. C8 [Hook: Eu Descobri um Procedimento [Variação: Body2 ] [CTA: Saiba Mais]
+   CPL: R$7.10 | Leads: 17 | CTR: 3.47%
+5. C12 [Estático] [Hook: Promoção Dia das Mães] [CTA: Saiba Mais]
+   CPL: R$7.28 | Leads: 8 | CTR: 3.36%
+
+⚠️  NOTA: Venda e Consulta Agendada não aparecem pois Meta CAPI não está configurado para Gabrielle.
+Para ter esses dados, configurar CAPI com eventos Purchase e Schedule na landing page.
