@@ -212,3 +212,48 @@
   - Escassez no step final: "Ainda tenho uma vaga essa semana"
   - CTA curto e direto: "Me chama." "Me conta."
 - **Severidade:** HIGH
+
+---
+
+### [2026-05-19] Meta API v21.0 - Custom Audiences: limitacoes criticas (Dr. Cleugo Porto)
+
+**Contexto:** Criacao de audiencias e adsets para Dr. Cleugo Porto via API (act_944253477334195)
+
+**Aprendizados:**
+
+1. **IG_BUSINESS audiences via API bloqueadas (erro 2654 subcode 1713151)**
+   - Meta nao permite mais criar audiencias de engajamento IG via API (seguidores, visitantes, interacoes)
+   - Erro: "Nome do evento invalido" mesmo com eventos validos como ig_business_profile_all
+   - Audiencias existentes continuam funcionando mas novas nao podem ser criadas via API
+   - Solucao: criar no Business Manager UI ou usar VV 75%/95% como substituto de seed
+
+2. **Custom Audience TOS obrigatorio para listas de clientes (erro 200 subcode 1870090)**
+   - Para criar audiencias CUSTOM (lista de clientes, leads) o cliente precisa aceitar TOS primeiro
+   - URL: https://business.facebook.com/ads/manage/customaudiences/tos/?act={AD_ACCOUNT_ID}
+
+3. **Video engagement audiences: usar object_ids de videos JA associados a uma Page**
+   - Videos do endpoint advideos nao sao automaticamente associados a Page
+   - Usar object_ids das audiencias de VV existentes no mesmo account
+   - Alternativa mais simples: criar LLK direto de audiencia de engajamento existente (origin_audience_id)
+
+4. **Adsets: targeting_automation.advantage_audience obrigatorio**
+   - Erro 1870227 se nao definir. Usar { advantage_audience: 0 } para manter controle manual.
+
+5. **Adsets: explore_home requer explore tambem nos instagram_positions**
+   - Erro 2490392 se explore_home presente sem explore.
+
+6. **Custom audience POST: form-encoded (URLSearchParams), nao JSON**
+   - Adsets e ads: JSON body funciona
+   - Custom audiences: precisa de form-encoded
+   - Upload /users: JSON funciona
+
+7. **tracking_specs correto para ads de LEAD_GENERATION**
+   - Correto: [{ 'action.type': ['onsite_conversion'] }, { 'action.type': ['offsite_conversion'], 'fb_pixel': [PIXEL_ID] }]
+   - Errado: { 'action.type': ['lead'], 'fb_pixel': [PIXEL_ID] } -> erro 1634034
+
+8. **Dr. Cleugo Porto - dados de conta:**
+   - Pixel: 1030009936870928 (CELULITE DR CLEUGO)
+   - IG @drcleugo: ID 17841416350572596 (70k seguidores)
+   - Conta: act_944253477334195 | Page: 275505112301938
+
+- **Severidade:** HIGH
